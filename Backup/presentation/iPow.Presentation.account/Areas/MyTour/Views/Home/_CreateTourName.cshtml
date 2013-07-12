@@ -1,0 +1,24 @@
+﻿<div>
+    @using (Html.BeginForm("CreatePlan", "Home", FormMethod.Post))
+    {   
+        <label for="edit-field-trip-city-0-nid-nid">
+            &nbsp;&nbsp;&nbsp;&nbsp;目的地：</label>                                       
+        <input id="city" type="text" name="city" value="输入目的地" data-autocomplete="/mytour/home/searchcity" /><br />
+        <label for="edit-title">
+            行程名称：</label>
+        <input id="tourTitle" class="form-text required" type="text" value="输入行程名称" size="40"
+            name="PlanTitle" /><br />
+        <label for="edit-field-trip-date-0-value">
+            出发日期：</label>
+        <input class="HinputText" id="txtComeTime" name="AddTime" onkeypress="javascript:return onlyDate();"
+            value="" size="20" onclick="ShowTwoMonthList('txtComeTime',0,'thisDay'); return false;" />
+        <span class="buttonTime" onclick="ShowTwoMonthList('txtComeTime',0,'thisDay');return false;">
+        </span>
+        <label for="edit-field-trip-date-0-value">
+            天数：</label><input id="days" class="form-text form-autocomplete required text" type="text"
+                size="10" name="Days" value="2" /><span class="field-suffix"> 天</span>
+        <br />
+        <input id="edit-submit" type="submit" value="创建" onclick="return  searchCheckedForm();" />
+    }
+</div>
+

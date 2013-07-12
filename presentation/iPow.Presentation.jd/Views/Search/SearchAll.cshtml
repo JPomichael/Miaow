@@ -1,0 +1,457 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model iPow.jd.Models.SearchModel
+@{
+    ViewBag.Title = "酒店搜索_iPow自助旅行网";
+}
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/top.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/ad.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/sight_index.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/marker.css")" />
+<script src="http://ditu.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAmoR-oBdyeH4Zkn00S2LOLhT-tqwx4-VCPSxFJFpWv08I4sXs-xSw-MRQol8MMydn49N-WwwDGVwBGA"
+    type="text/javascript">
+</script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/pkgHotelMarker.js")">
+</script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/floatbox.js")">
+</script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/search.js")">
+</script>
+<script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    //酒店搜索地图过滤参数
+    var tempMapData;
+    enableDrag = true;
+    //end
+    jQuery(document).ready(function () {
+        jQuery("#selectOrder").selectList({
+            listObj: "selectList",
+            showObj: "showOption"
+        });
+        jQuery("#c_starting").selectTab({
+            clicked: "onClick"
+
+        });
+        //地图滚动
+        //        jQuery("#mapContainer").scrollDiv({
+        //            top: 100
+        //        });
+    })
+</script>
+<div class="mainContainer">
+    @{
+        if (Model != null)
+        {
+        <div class="sRight"  style = " height:@((Model != null && Model.HotelBaseInfo.Count < 7) ? "510px" : "auto");">
+            <div class="search_guidTitle">
+                <ul>
+                    <li>
+                        @Html.ActionLink("￥200以内", "SearchAll", "Search", new
+                           {
+                               bide = Model.Bide,
+                               key = Model.Key,
+                               cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                               leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                               min = 0,
+                               max = 200,
+                               starts = ViewBag.statrs == null ? "all" : ViewBag.starts,
+                               mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                               pi = 1
+                           }
+                               , null)
+                    </li>
+                    <li>@Html.ActionLink("￥200-￥300", "SearchAll", "Search", new
+                            {
+                                bide = Model.Bide,
+                                key = Model.Key,
+                                cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                                leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                                min = 201,
+                                max = 300,
+                                starts = ViewBag.statrs == null ? "all" : ViewBag.starts,
+                                mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                                pi = 1
+                            }
+                               , null) </li>
+                    <li>@Html.ActionLink("￥300-￥500", "SearchAll", "Search", new
+                            {
+                                bide = Model.Bide,
+                                key = Model.Key,
+                                cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                                leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                                min = 301,
+                                max = 500,
+                                starts = ViewBag.statrs == null ? "all" : ViewBag.starts,
+                                mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                                pi = 1
+                            }
+                               , null) </li>
+                    <li>@Html.ActionLink("￥500以上", "SearchAll", "Search", new
+                            {
+                                bide = Model.Bide,
+                                key = Model.Key,
+                                cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                                leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                                min = 500,
+                                max = 0,
+                                starts = ViewBag.statrs == null ? "all" : ViewBag.starts,
+                                mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                                pi = 1
+                            }
+                               , null) </li>
+                </ul>
+            </div>
+            <div class="gridColumn">
+                <div class="searchInfo">
+                    <em>搜索：<font id="hotelCity"></font>@(Model.Key)</em> <span class="hotelCount">共<font
+                        style="color: #EA8E00;" id="ResultCount">@((Model == null || Model.HotelBaseInfo == null) ? 0 : Model.HotelBaseInfo.TotalItemCount)</font>家酒店信息</span>
+                </div>
+                <ul class="gridLeft" style="position: relative; z-index: 0;">
+                    <li id="c_starting"><em>星级：</em><a href="javascript:;">请选择</a> </li>
+                </ul>
+                <div class="sortMode">
+                    <span>显示方式：</span> <a href="javascript:;" title="列表" onclick="rhPage(0, 10, 1,'list');"
+                        class="s1"></a><a href="javascript:;" title="图片" onclick="rhPage(0, 10, 1,'pic');"
+                            class="s2"></a>
+                </div>
+                <div style="float: right; width: 135px; height: 26px;">
+                    <div class="selectContainer" id="selectOrder">
+                        <div class="selectTitleLine">
+                            <div class="selectButton">
+                                <img src="/images/icon_SelectDown.gif" />
+                            </div>
+                            <div class="selectTitleText">
+                                <span id="showOption">选择排序方式 默认</span>
+                            </div>
+                        </div>
+                        <ul class="selectList" id="selectList">
+                            <li class="onhover" title="选择排序方式 默认">选择排序方式 默认</li>
+                            <li title="按价格 从低到高">
+                                @Html.ActionLink("按价格 从低到高", "SearchAll", "Search", new
+                                   {
+                                       bide = Model.Bide,
+                                       key = Model.Key,
+                                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                                       starts = ViewBag.starts == null ? "all" : ViewBag.starts,
+                                       mintomax = "mintomax",
+                                       pi = 1
+                                   }
+                        , new { @class = "onhover" })
+                            </li>
+                            <li title="按价格 从高到低">
+                                @Html.ActionLink("按价格 从高到低", "SearchAll", "Search", new
+                                   {
+                                       bide = Model.Bide,
+                                       key = Model.Key,
+                                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                                       starts = ViewBag.starts == null ? "all" : ViewBag.starts,
+                                       mintomax = "maxtomin",
+                                       pi = 1
+                                   }
+                                       , null)
+                            </li>
+                            <li title="按星级 从低到高">
+                                @Html.ActionLink("按星级 从低到高", "SearchAll", "Search", new
+                                   {
+                                       bide = Model.Bide,
+                                       key = Model.Key,
+                                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                                       starts = ViewBag.starts == null ? "all" : ViewBag.starts,
+                                       mintomax = "startsdesc",
+                                       pi = 1
+                                   }
+                                       , null)
+                            </li>
+                            <li title="按星级 从高到低">
+                                @Html.ActionLink("按星级 从高到低", "SearchAll", "Search", new
+                                   {
+                                       bide = Model.Bide,
+                                       key = Model.Key,
+                                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                                       starts = ViewBag.starts == null ? "all" : ViewBag.starts,
+                                       mintomax = "startsasc",
+                                       pi = 1
+                                   }
+                                       , null)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="conditionList" id="conditionList1">
+                    @Html.ActionLink("[二星级]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "二星级",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[三星级]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "三星级",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[四星级]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "四星级",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[五星级]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "五星级",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[酒店式公寓]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "酒店式公寓",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[青年旅社]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "青年旅社",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[青年旅社]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "青年旅社",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[农家乐]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "农家乐",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[度假村]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "度假村",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[招待所]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "招待所",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[客栈]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "客栈",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                    @Html.ActionLink("[经济型酒店]", "SearchAll", "Search", new
+                   {
+                       bide = Model.Bide,
+                       key = Model.Key,
+                       cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                       leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                       min = ViewBag.min == null ? 0 : ViewBag.min,
+                       max = ViewBag.max == null ? 0 : ViewBag.max,
+                       starts = "经济型酒店",
+                       mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                       pi = 1
+                   }
+                       , null)
+                </div>
+            </div>
+            <div id="updateSearch">
+                <div class="sList" id="ResultList">
+                    @*  <img src="/images/loading.gif" class="loading" id="imgLoading" />*@
+                    <ul>
+                        @{
+            System.Text.StringBuilder sightCirHotel = new System.Text.StringBuilder();
+            sightCirHotel.AppendLine(" var hotelMap = [ ");
+            if (Model != null && Model.HotelBaseInfo.Count() > 0)
+            {
+                int hotelCount = 0;
+                foreach (var it in Model.HotelBaseInfo)
+                {
+                            <li><a href="/hotel/@(it.IdentityId)" id="acirHotel@(hotelCount)" target="_blank" class="LR" title = "@(it.HotelName)">
+                                <dl>
+                                    <span class="emNoIco">@(hotelCount + 1)</span> <span class="fontBlue3">@(it.HotelName.Length > 8 ? it.HotelName.Substring(0, 8) : it.HotelName)</span>
+                                    <span class="start"><em style="width: @(int.Parse(string.IsNullOrEmpty(it.Starrating.Trim()) ? "0" : it.Starrating) * 12)px;" >
+                                    </em></span>
+                                    <dd>
+                                        @(it.Address)</dd>
+                                </dl>
+                                <span class="info2"><em class="emImg">@(it.PicCount)</em> <em class="emComm">@(it.CommCount)</em>
+                                </span><font class="fontBlue3" style="display: block; height: 50px; line-height: 50px;">
+                                    ￥@(it.MinPrice)</font> </a>
+                                <img src="/images/btn_reserver01.jpg" border="0" style="margin-top: 15px; display: none;"
+                                    alt="" />
+                            </li>
+                    if (hotelCount >= Model.HotelBaseInfo.Count() - 1)
+                    {
+                        sightCirHotel.AppendLine("   { Name: '" + it.HotelName + "', Url: '" + "null" + "', Type: 'Hotel', Latitude: " + (string.IsNullOrEmpty(it.Lat) ? "0" : it.Lat) + ", Longitude: " + (string.IsNullOrEmpty(it.Long) ? "0" : it.Long) + ", Price: " + it.MinPrice + ", ImageSrc: '" + "null" + "', Address: '" + it.Address + "', CommCount: " + it.CommCount + ", PicCount: " + it.PicCount + ", HotelType: '" + it.ClassName + "', DomID: 'acirHotel" + hotelCount + "' }");
+                    }
+                    else
+                    {
+                        sightCirHotel.AppendLine("   { Name: '" + it.HotelName + "', Url: '" + "null" + "', Type: 'Hotel', Latitude: " + (string.IsNullOrEmpty(it.Lat) ? "0" : it.Lat) + ", Longitude: " + (string.IsNullOrEmpty(it.Long) ? "0" : it.Long) + ", Price: " + it.MinPrice + ", ImageSrc: '" + "null" + "', Address: '" + it.Address + "', CommCount: " + it.CommCount + ", PicCount: " + it.PicCount + ", HotelType: '" + it.ClassName + "', DomID: 'acirHotel" + hotelCount + "' },");
+                    }
+                    hotelCount++;
+                }
+            }
+            sightCirHotel.AppendLine("];");
+                        }
+                    </ul>
+                </div>
+                <div id="RusultPage">
+                    @{
+            if (Model != null)
+            {
+                        @MvcHtmlString.Create(
+                                    Html.Pager(Model.HotelBaseInfo.TotalPageCount,
+                                    Model.HotelBaseInfo.CurrentPageIndex,
+                                    "SearchAll",
+                                    "Search",
+                                    new PagerOptions()
+                                    {
+                                        PageIndexParameterName = "pi",
+                                        LastPageText = "尾页",
+                                        FirstPageText = "首页",
+                                        PrevPageText = "上一页",
+                                        NextPageText = "下一页",
+                                        CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>",
+                                        CssClass = "Pagecon"
+                                    },
+                                    "searchall",
+                                        new
+                                        {
+                                            bide = Model.Bide,
+                                            key = Model.Key,
+                                            cometime = ((DateTime)(Model.ComeTime == null ? System.DateTime.Now : Model.ComeTime)).ToString("yyyy-MM-dd"),
+                                            leavetime = ((DateTime)(Model.LeaveTime == null ? System.DateTime.Now.AddDays(2) : Model.LeaveTime)).ToString("yyyy-MM-dd"),
+                                            min = ViewBag.min == null ? 0 : ViewBag.min,
+                                            max = ViewBag.max == null ? 0 : ViewBag.max,
+                                            starts = ViewBag.statrs == null ? "all" : ViewBag.starts,
+                                            mintomax = ViewBag.mintomax == null ? "mintomax" : ViewBag.mintomax,
+                                            pi = Model.HotelBaseInfo.CurrentPageIndex
+                                        },
+                                    null));
+            }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="sLeft" style="position: relative; margin-top: 0px; padding-top: 41px;
+            z-index: 0;" id="mapContainer">
+            <div id="jxMapTipPanel" style="z-index: 1;">
+            </div>
+            <div id="gMap" style="width: 376px; height: 480px; border: 1px solid;">
+                loading.....
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+        @(MvcHtmlString.Create(sightCirHotel.ToString()))
+            $(function () {
+                mapinitialize(hotelMap);
+            });
+        </script>
+        }
+        else
+        {
+        <div style="width: 100%; text-align: center;">
+            <h2 style="padding-top: 20px;">
+                请确定你的查询内容
+            </h2>
+        </div>
+        }
+    }
+    <div class="clear">
+    </div>
+</div>
+<input type="hidden" id="showmode" value="pic" />

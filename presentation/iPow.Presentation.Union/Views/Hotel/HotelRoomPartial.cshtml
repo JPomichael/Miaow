@@ -1,0 +1,64 @@
+﻿@model iPow.Application.Union.Dto.HotelRoomDto
+@{
+    var hotelRoomService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
+        iPow.Service.Union.Service.IHotelRoomService>();
+}
+<!--酒店价格开始-->
+<div class="tabcontainershow" id="hotelInfo1">
+    <div class="infoGuid">
+        <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />房型价格 ///
+    </div>
+    <div class="hotelPrice">
+        <ul id="PriceUl">
+            <li class="tr0"><span class="width1">房型名称</span> <span class="width3">房价</span> <span
+                class="width4">房型描述</span> <span class="width5">在线预订</span>
+                <div class="clear">
+                </div>
+            </li>
+            @{
+                if (Model != null && Model.Room != null && Model.Room.Count > 0 && Model.Hs <= 500)
+                {
+                    var isNextRoom = -20;
+                    foreach (var item in Model.Room)
+                    {
+                        if (!string.IsNullOrEmpty(item.RoomName))
+                        {
+                            var inTime = hotelRoomService.GetRoomTimeHasRoom(item.hs_list, Model.DayList);
+                            var roomPrice = hotelRoomService.GetHotelRoomPrice(inTime, Model.DayList, item.PriceList);
+                            if (roomPrice > 0)
+                            {
+                <li class="tr1"><span class="width1"><a href="javascript:void(0);" title="@(item.RoomName)">@(item.RoomName)</a></span>
+                    <span class="width33">RMB@(roomPrice)</span> <span class="width4"><a href="javascript:void(0);"
+                        title="@(item.Detail.Replace("@", "，")) 上网 @(item.Net)">@(string.IsNullOrEmpty(item.Desc) == true ? item.Detail.Replace("@", "，") : item.Desc)</a></span>
+                    <span class="width5">
+                        @{
+                                //fang tai
+                                isNextRoom = hotelRoomService.GetHotelRoomFangTai(inTime, inTime.AddDays(1), Model.DayList, item.hs_list);
+                                if (isNextRoom == 0)
+                                {
+                            <a href="/ebook/@(Model.HotelId)/@(item.RoomId)/@(item.RatePlanId)@("/?time=")@(Server.UrlEncode(inTime.ToString("yyyy-MM-dd")))" target="_blank" title="预定">
+                                <img src="/images/btn_reserver01.jpg" border="0" style="margin-top: 5px;" alt="" /></a>
+                                }
+                                else
+                                {
+                            <a href="javascript:;" title="满房"><font style="color: Red;">满房</font></a>
+                                }
+                        }
+                    </span>
+                    <div class="clear">
+                    </div>
+                </li>
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                <li class=""><span style="text-align: center; width: 100%; margin-top: 10px; color: Red;">
+                    暂时没有房间可以入住,你可以再看看其他的酒店 </span></li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+<!--酒店价格结束-->

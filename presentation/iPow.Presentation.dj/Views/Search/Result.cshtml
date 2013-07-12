@@ -1,0 +1,136 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model  PagedList<iPow.Application.dj.Dto.SearchTourDto>
+@{
+var listService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+    iPow.Application.dj.Service.IListService>();
+}
+<title>行程搜索-ipow自助旅行网-中国最好的自助旅游网站</title>
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/tour.css")" />
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        $("#searchAdvanced").click(function () {
+            $("#searchDiv").toggle("slow");
+        });
+    });
+</script>
+<div class="mainContainer">
+    <div class="filterPane" style="display: none;" id="searchDiv">
+        @Html.Partial("SearchAdvancedPartial")
+    </div>
+    <div class="tourSearchLeft">
+        <div class="tourSearchTip" style="border-bottom: none;">
+            <span><font class="fontBlue" id="sTripCount">@(Model != null ? Model.TotalItemCount : 0)</font>条线路满足条件：关键字<font
+                class="fontBlue" id="fKeyword">@(Server.UrlDecode(ViewBag.para != null ? ViewBag.para.Bide : ""))</font><font
+                    class="tresultInfo" id="sTripInfo"></font></span>
+            @{
+                if (Model != null && Model.Count > 0)
+                {
+                <a href="javascript:;" id="searchAdvanced">点我进行高级搜索</a>
+                }
+            }
+        </div>
+        <div class="mainInfoList" id="ResultList">
+            @{
+                if (Model != null && Model.Count > 0)
+                {
+                    IQueryable< iPow.Application.dj.Dto.ListTypeMidSightDto> SightList = null;
+                    foreach (var item in Model)
+                    {
+                <span><a href='@Url.Action("index", "tour", new { id = item.Id})' class='imgLeft'>
+                    @{
+                        var tourPicPath = listService.GetTourDefaultPicByPlanId(item.Id);
+                    }
+                    <img border='0px' 
+                    src="@(tourPicPath.Count == 3 ? tourPicPath[0] + "cutdown/116_103_" + tourPicPath[1] : "/images/nopic116.jpg")"
+                     alt = "@(tourPicPath.Count == 3 ? tourPicPath[2] : "暂无图片")" />
+                </a>
+                    <dl>
+                        <dt>
+                            <p>
+                                ¥<font class='fPrice'>@(item.PlanTotalMoney)</font>/全程(@(item.Days)天)</p>
+                            <a href='@Url.Action("index", "tour", new { id = item.Id})' target='_blank' class='aEditTrip'>查看详细</a>
+                        </dt>
+                        <dd>
+                            <h2>
+                                <a target='_blank' href='@Url.Action("index", "tour", new { id = item.Id})'>@(item.PlanTitle)</a></h2>
+                        </dd>
+                        <dd class='intro'>
+                            <strong>途径景点：</strong>
+                            @{
+                        SightList = listService.GetListTypeMidSightListByTourPlanId(item.Id);
+                        if (SightList != null && SightList.Count() > 0)
+                        {
+                            int sightTotal = SightList.Count();
+                            int counter = 0;
+                            foreach (var it in SightList)
+                            {
+                                if (counter == sightTotal - 1)
+                                { 
+                                <a href='http://jq.ipow.cn/sight/@(it.Py)/@(it.Id)/1' target='_blank'>@(it.Name)</a>
+                                }
+                                else
+                                {
+                                <a href='http://jq.ipow.cn/sight/@(it.Py)/@(it.Id)/1' target='_blank'>@(it.Name)</a>@("-")
+                                }
+                                counter++;
+                            }
+                        }
+                            }
+                        </dd>
+                        <dd class='intro'>
+                            <strong>推荐理由：</strong> @(item.TopReason)
+                        </dd>
+                        <dd class='info'>
+                            <em style="float: left">路线定制：</em><a href='javascript:void(0)'>@(item.UserName)</a>
+                            <em>人气：@(item.ViCount)
+                            </em>
+                        </dd>
+                    </dl>
+                </span>
+                    }
+                }
+                else
+                {
+                <h2 style="text-align: center; margin-top: 15px;">
+                    @("没有收到相关信息")
+                </h2>
+                }     
+            }
+            @{
+                if (Model != null)
+                {
+                @Html.Pager(Model.TotalItemCount,
+                    Model.PageSize,
+                    Model.CurrentPageIndex,
+                    "Result",
+                    "Search",
+                    new PagerOptions()
+                    {
+                        PageIndexParameterName = "pi",
+                        LastPageText = "尾页",
+                        FirstPageText = "首页",
+                        PrevPageText = "上一页",
+                        NextPageText = "下一页",
+                        CurrentPagerItemWrapperFormatString = "<a href='javascript:;' class = 'current'>{0}</a>",
+                        CssClass = "Pagecon"
+                    },
+                    "",
+                        new
+                        {
+                            b = (ViewBag.para != null ? ViewBag.para.Bide : ""),
+                            d = (ViewBag.para != null ? ViewBag.para.Days : ""),
+                            t = (ViewBag.para != null ? ViewBag.para.Type : ""),
+                            p = (ViewBag.para != null ? ViewBag.para.Money : ""),
+                            pi = Model.CurrentPageIndex
+                        },
+                    null);
+                }
+            }
+        </div>
+    </div>
+    <div class="tourSearchRight">
+        @Html.Partial("SearchAcvancedRightPartial")
+    </div>
+    <div class="clear">
+    </div>
+</div>

@@ -1,0 +1,147 @@
+﻿@model iPow.Presentation.account.Models.TourPlanDetailDto
+@{
+    ViewBag.subtitle = "添加线路玩点";
+    ViewBag.title = "添加线路玩点";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Ajax.BeginForm("create", "tourdetail", new AjaxOptions
+{
+    HttpMethod = "post",
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "",
+    OnSuccess = "ajaxCreateTourDetailPlanSuccess",
+    OnFailure = "ajaxCreateTourDetailPlanFail",
+    OnBegin = "AjaxCheckTargetName"
+}))
+{ 
+    @Html.ValidationSummary(true)
+    <fieldset class="module width_full">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DetailTypeName)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DetailTypeName", new List<SelectListItem>(){
+            new SelectListItem(){ Text = "逛景区" , Value = "sight", Selected = true},
+            new SelectListItem(){ Text = "住酒店" , Value = "hotel"},
+            new SelectListItem(){ Text = "其他" , Value = "other"}})
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TargetName)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.TargetName,
+            new Dictionary<string, object>() { 
+            { "width", "20px" },
+            {"data-autocomplete","/myadmin/tourdetail/ajaxtip"}})
+            @Html.ValidationMessageFor(model => model.TargetName)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CurrentPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CurrentPrice)
+            @Html.ValidationMessageFor(model => model.CurrentPrice)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DayID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DayID)
+            @Html.ValidationMessageFor(model => model.DayID)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Remark)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Remark)
+            @Html.ValidationMessageFor(model => model.Remark)
+        </div>
+        <div style="display: none;">
+            @Html.HiddenFor(model => model.PlanDetailID, new { value = ViewBag.id })
+            @Html.HiddenFor(model => model.SightIDOrHotelID, new { value = "0" })
+            @Html.HiddenFor(model => model.VisitCount, new { value = "0" })
+            @Html.HiddenFor(model => model.AddTime, new { value = System.DateTime.Now })
+        </div>
+    </fieldset>
+    <p>
+        <input type="submit" value="添加玩点" />
+    </p>
+}
+<script type="text/javascript">
+
+    function split(val) {
+        return val.split(/,\s*/);
+    }
+
+    function extractLast(term) {
+        return split(term).pop();
+    }
+
+    $(":input[data-autocomplete]").each(function () {
+        $(this).autocomplete({
+            source: function (request, response) {
+                var selectType = $('#DetailTypeName').val();
+                var url = '/tourdetail/ajaxtip/';
+                $.getJSON(url, {
+                    term: extractLast($.trim(request.term)),
+                    targetType: selectType
+                }, response);
+            }
+            //            ,focus: function () {
+            //                // prevent value inserted on focus
+            //                return false;
+            //            }
+            //            ,select: function (event, ui) {
+            //                var terms = split(this.value);
+            //                // remove the current input
+            //                terms.pop();
+            //                // add the selected item
+            //                terms.push(ui.item.value);
+            //                // add placeholder to get the comma-and-space at the end
+            //                terms.push("");
+            //                this.value = terms.join(", ");
+            //                return false;
+            //            }
+        });
+    });
+
+    function AjaxCheckTargetName() {
+        var res = false;
+        var uri = '/tourdetail/ajaxchecktargetname';
+        var targetNameStr = $('#TargetName').val();
+        var targetTypeStr = $('#DetailTypeName').val();
+        if (targetNameStr != undefined && targetNameStr != '') {
+            $.get(uri,
+            { id: targetNameStr, targetType: targetTypeStr },
+            function (item) {
+                res = item;
+                var message = "部分数据验证不正确请仔细检查";
+                if (res == false) {
+                    if (targetTypeStr == 'sight') {
+                        message = '逛景区没有目的地名：' + targetNameStr;
+                    } else if (targetTypeStr == 'hotel') {
+                        message = '住酒店没有目的地名：' + targetNameStr;
+                    }
+                    if (confirm(message)) {
+                        if (targetTypeStr == 'sight') {
+                            //window.location = '/tour/index';
+                        }
+                        else if (targetTypeStr == 'hotel') {
+                            // window.location = '/home';
+                        }
+                    }
+                }
+            });
+        }
+        setTimeout(function () { return res; }, 1500);
+        //return res;
+    }
+
+    function ajaxCreateTourDetailPlanSuccess() {
+        alert("添加玩点成功^_^");
+    }
+
+    function ajaxCreateTourDetailPlanFail() {
+        alert("添加玩点失败了T_T，可能某些项填写不正确");
+    }
+</script>

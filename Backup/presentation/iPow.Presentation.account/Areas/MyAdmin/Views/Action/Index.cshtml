@@ -1,0 +1,111 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@model  IEnumerable<iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto>
+@{
+    ViewBag.subtitle = "行为管理";
+    ViewBag.title = "行为管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{Html.Telerik().Grid(Model)
+    .Name("ActionGrid")
+    .ToolBar(toolBar => toolBar.Template(
+    @<text>
+    <label class="customer-label" for="Customers-input">
+        动作名搜索:
+    </label>
+    <input type="text" id="SearchAction" value="行为名称" data-autocomplete="/action/searchaction" />
+    <input type='button' value='我要搜索' class='t-button' onclick='searchChange()' />
+    <a href="/myadmin/action/add/" class="t-button">添加控制器</a> <a href='javascript:;' class='t-button '
+        onclick='mulDelete()'>删除选择项</a>
+    </text>))
+    .Columns(columns =>
+    {
+        columns.Template(@<text><input name="selectRow" type="checkbox" value="@item.Id " title="checkedRecords" /></text>)
+        .HeaderTemplate(@<text><input type="checkbox" title="check all records" id="checkAllRecords" /></text>)
+        .Width(50).HeaderHtmlAttributes(new { style = "text-align:center" }).HtmlAttributes(new { style = "text-align:center" })
+        .ClientTemplate("<input type=\"checkbox\" title=\"check all records\" name = 'selectRow' value = '<#= Id #>'/>");
+        columns.Bound(o => o.Id).Width(50).Title("行为Id").Hidden();
+        columns.Bound(o => o.ControllerName).Width(300).Title("分类名称");
+        columns.Bound(o => o.Name).Width(100).Title("行为名称");
+        columns.Bound(o => o.Remark).Width(150).Title("行为说明");
+        columns.Bound(o => o.AddTime).Width(150).Title("添加时间");
+        columns.Bound(o => o.IpAddress).Width(150).Title("IP地址");
+        columns.Bound(o => o.State).Width(100).Title("状态");
+        columns.Bound(o => o.SortNum).Width(100).Title("排序");
+
+        columns.Command(comm =>
+        {
+            comm.Custom("detailCustom")
+                .Text("编辑详细")
+                .ButtonType(GridButtonType.Text)
+                .Action("edit", "action").HtmlAttributes(new { target = "" });
+            comm.Delete().ButtonType(GridButtonType.Text);
+        }).Width(300);
+    })
+    .ClientEvents(clientEvents => clientEvents.OnDataBinding("dataBinding"))
+    .DataKeys(key => key.Add("Id"))//添加主键
+    .DataBinding(dataBinding => dataBinding.Ajax().Select("ajaxindex", "action")
+        .Insert("create", "action")
+        .Update("edit", "action")
+        .Delete("delete", "action"))
+    .Editable(editing => editing.Mode(GridEditMode.InLine))
+    .Pageable(page => page.PageSize(10))
+    .Render();
+}
+<script type="text/javascript">
+    var preSearch = "";
+    var isSearch = false;
+    function searchChange() {
+        var currentSearch = $("#SearchAction").val();
+        if (preSearch != currentSearch) {
+            $("#ActionGrid").data("tGrid").rebind();
+        }
+    }
+
+    function dataBinding(args) {
+        var searchKeyStr = $("#SearchAction").val();
+        preSearch = searchKeyStr;
+        if (searchKeyStr == '行为名称') {
+            searchKeyStr = '';
+        }
+        args.data = $.extend(args.data, { searchKey: searchKeyStr });
+    }
+
+    function mulDelete() {
+        var delStr = $(':checked');
+        if (delStr.length < 1) {
+            alert('Check a few grid rows first.');
+            return;
+        }
+        jQuery.post('/action/deletemul', delStr, function (res) {
+            if (res.success) {
+                setTimeout(function () {
+                    $("#ActionGrid").data("tGrid").rebind();
+                    $("#checkAllRecords").attr("checked", false);
+                }, 1000);
+            }
+            else {
+                alert(res.message);
+            }
+        })
+    }
+
+    $(function () {
+        $('#checkAllRecords').click(function checkAll() { $("#ActionGrid tbody input:checkbox").attr("checked", this.checked); });
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+        $("#SearchAction").focus(function () {
+            if (this.value == "行为名称") {
+                $("#SearchAction").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#SearchAction").val("行为名称");
+            }
+        });
+    });
+</script>

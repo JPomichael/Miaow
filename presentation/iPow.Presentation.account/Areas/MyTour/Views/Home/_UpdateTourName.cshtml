@@ -1,0 +1,91 @@
+﻿@model  iPow.Application.account.Dto.TourPlanDto 
+<div>
+    @using (Html.BeginForm("edit", "Home", FormMethod.Post))
+    {   
+        <!--ID默认隐藏-->
+        <input  id="id" name="id" value="@(Model.TourPlan.PlanID)" type="text" style="display:none" /><br />
+        <label for="edit-field-trip-city-0-nid-nid">
+            &nbsp;&nbsp;&nbsp;&nbsp;目的地：</label>                                       
+        <input id="city" type="text" name="city" value="@(Model.TourPlan.Destination)" data-autocomplete="/mytour/home/searchcity" /><br />
+        <label for="edit-title">
+            行程名称：</label>
+        <input id="tourTitle" class="form-text required" type="text" value="@(Model.TourPlan.PlanTitle)" size="40"
+            name="PlanTitle" /><br />
+        <label>
+            出发日期：</label>
+        <input class="HinputText" id="txtComeTime" name="AddTime"  value="@(Model.TourPlan.AddTime)" size="20" onkeypress="javascript:return onlyDate();"  onclick="ShowTwoMonthList('txtComeTime',0,'thisDay'); return false;" />
+        <span class="buttonTime" onclick="ShowTwoMonthList('txtComeTime',0,'thisDay');return false;">
+        </span>
+        <label>
+            天数：</label><input id="days" class="form-text form-autocomplete required text" type="text"
+                size="10" name="Days" value="@(Model.TourPlan.Days)" /><span class="field-suffix"> 天</span>
+        <br />
+        <input id="edit-submit" class="form-submit" type="submit" value="修改" onclick="return searchCheckedForm()" />
+    }
+</div>
+<script type="text/javascript">
+    var days = $("#days").val();
+    var city = $("#city").val();
+    var tourTitle = $("#tourTitle").val();
+
+    $(function () {
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            });
+        });
+
+        $("#tourTitle").focus(function () {
+            if (this.value == "输入行程名称") {
+                $("#tourTitle").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#tourTitle").val("输入行程名称");
+            }
+        });
+
+        $("#city").focus(function () {
+            if (this.value == "输入目的地") {
+                $("#city").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#city").val("输入目的地");
+            }
+        });
+    });
+
+    function searchCheckedForm() {
+        if (tourtitle == ' ' || tourtitle == '输入行程名称') {
+            $('#tourtitle').focus();
+            alert('行程名称不能为空！');
+            return false;
+        }
+
+        if (city == ' ' || city == "输入目的地") {
+            $('#city').focus();
+            alert('目的地不能为空！');
+            return false;
+        }
+
+        if ($('#txtComeTime').val() == ' ' || $('#txtComeTime').val() == '输入行程日期') {
+            $('#txtComeTime').focus();
+            alert('行程日期不能为空！');
+            return false;
+        }
+
+        if (days == ' ' || isNaN(days)) {
+            $('#days').focus();
+            alert('天数非数字或为空！');
+            return false;
+        }
+
+        if ($('#txtComeTime').val() == '') {
+            $('#txtComeTime').click();
+            return false;
+        }
+        return true;
+    }
+
+</script>

@@ -1,0 +1,14 @@
+﻿@{
+    if (Request.IsAuthenticated)
+    {
+    <text>欢迎您 <b>
+        @Context.User.Identity.Name
+    </b><a href="http://account.ipow.cn/account/managecenter?redirectUrl=/account/managecenter">![个人中心]</a> <a href="/account/logoff">[退出]</a></text>
+    }
+    else
+    {
+        //http://account.ipow.cn/ucenter
+    <span class="loginInfo" id="LoginInfo"><a href="/account/logon">[登录]</a> <a
+        href="http://account.ipow.cn/account/register">[注册]</a></span>
+    }
+}

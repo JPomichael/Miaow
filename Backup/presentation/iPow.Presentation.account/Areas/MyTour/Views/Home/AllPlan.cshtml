@@ -1,0 +1,62 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model  iPow.Application.account.Dto.TourPlanDto
+<div id="info">
+    <h2 style="color: Gray">
+        最新线路</h2>
+    <a style="color: Green; font-size: 14px;" href="/MyTour/Home/planlist/1?userId=1">我的行程</a>
+    <a class="js-dialog btn-grey fi-150 " href="/mytour/home/index/"><span class="add">创建行程</span>
+    </a>
+    @{
+        var planList = Model.TourPlanList;
+        var count = planList.Count();
+        if (count != 0)
+        {
+            foreach (var item in planList)
+            {
+        <div style="width: 800px; height: 90px; border: 1px dashed #DDDDDD">
+            <ul class="tl-info">
+                <li class="tl-tit"><a href="/mytour/home/plan/1?planid=@item.PlanID" title="点击查看线路详情">@item.PlanTitle</a></li>
+                @* MyTour/Home/plan/1?PlanID=1078*@
+                <li><span class="comment">目的地：</span> <a>@item.Destination</a> </li>
+                <li><span class="comment">天数：</span> @item.Days</li>
+                @{
+                if (item.VisitCount == 0)
+                {
+                    // This is null
+                }
+                else
+                { 
+                    <li><span class="comment">热火：</span> @item.VisitCount</li>}
+                }
+                <li><b></b><em></em></li>
+                <li><em><a href="">@item.UserName </a>添加于 @Convert.ToDateTime(item.AddTime).ToString("yyyy-MM-dd")</em>
+                </li>
+            </ul>
+        </div>
+        <br />
+            }
+        @Html.Pager(Model.TourPlanList.TotalItemCount, 15, Model.TourPlanList.CurrentPageIndex, "allplan", "home",
+                  new PagerOptions { PageIndexParameterName = "Id" },
+             null, null, null)
+        }
+        else
+        {
+           
+        <a style="color: #004b80; text-decoration: none">抱歉！页码超过索引范围。</a> 
+        }
+        
+    }
+</div>
+<div class="page">
+    }
+</div>
+<style type="text/css">
+    li
+    {
+        list-style: none outside none;
+    }
+    a
+    {
+        text-decoration: none;
+    }
+</style>

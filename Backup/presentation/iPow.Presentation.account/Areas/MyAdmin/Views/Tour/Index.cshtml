@@ -1,0 +1,117 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@model IEnumerable<iPow.Domain.Dto.Sys_TourPlanDto>
+@{
+    ViewBag.subtitle = "线路表";
+    ViewBag.title = "线路表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{Html.Telerik().Grid(Model)
+    .Name("TourPlanGrid")
+    .ToolBar(toolBar => toolBar.Template(
+    @<text>
+    <label class="customer-label" for="Customers-input">
+        线路搜索:
+    </label>
+    <input type="text" id="searchTourPlan" value="线路名字" data-autocomplete="/tour/searchtourplan" />
+    <input type='button' value='我要搜索' class='t-button' onclick='searchChange()' />
+    <a href="/tour?mode=insert" class="t-button t-grid-add">添加线路</a> <a href='javascript:;'
+        class='t-button' onclick='mulDelete()'>删除选择项</a>
+    </text>))
+    .Columns(columns =>
+    {
+        columns.Template(@<text><input name="selectRow" type="checkbox" value="@item.PlanID " title="checkedRecords" /></text>)
+        .HeaderTemplate(@<text><input type="checkbox" title="check all records" id="checkAllRecords" /></text>)
+        .Width(50).HeaderHtmlAttributes(new { style = "text-align:center" }).HtmlAttributes(new { style = "text-align:center" })
+        .ClientTemplate("<input type=\"checkbox\" title=\"check all records\" name = 'selectRow' value = '<#= PlanID #>'/>");
+        columns.Bound(o => o.PlanID).Width(50).Title("线路Id").Hidden();
+
+        columns.Bound(o => o.PlanTitle).Width(300).Title("线路名")
+        .Template(@<text><a href='http://www.ipow.cn/2011/tour/index/@(item.PlanID)' target ="_blank">@(item.PlanTitle)</a></text>)
+        .ClientTemplate("<a href='http://www.ipow.cn/2011/tour/index/<#= PlanID #>' target ='_blank'><#=PlanTitle#></a>");
+
+        columns.Bound(o => o.PlanClass).Width(50).Title("线路分类名");
+        columns.Bound(o => o.Days).Width(20).Title("出行天数");
+        columns.Bound(o => o.Destination).Width(100).Title("目的地");
+        columns.Bound(o => o.Remark).Width(300).Title("线路备注");
+
+        //columns.Bound(o => o.UserId).Width(100).Title("添加用户Id");
+        //columns.Bound(o => o.UserName).Width(100).Title("添加用户名");
+        //columns.Bound(o => o.TempDataCreateHtml).Width(100).Title("模板HTML");
+        //columns.Bound(o => o.VisitCount).Width(50).Title("线路访问量");
+        //columns.Bound(o => o.IsTop).Width(100).Title("是否顶置");
+        //columns.Bound(o => o.TopReason).Width(100).Title("顶置原因");
+        //columns.Bound(o => o.TopTime).Width(100).Title("顶置时间");
+        //columns.Bound(o => o.AddTime).Width(100).Title("添加时候");
+        //columns.Bound(o => o.IsDelete).Width(100).Title("删除时间");
+        columns.Command(comm =>
+        {
+            comm.Edit().ButtonType(GridButtonType.Text);
+            comm.Custom("detailCustom")
+                .Text("编辑详细")
+                .ButtonType(GridButtonType.Text)
+                .Action("index", "tourdetail").HtmlAttributes(new { target = "" });
+            comm.Delete().ButtonType(GridButtonType.Text);
+        }).Width(300);
+    })
+    .ClientEvents(clientEvents => clientEvents.OnDataBinding("dataBinding"))
+    .DataKeys(key => key.Add("PlanID"))//添加主键
+    .DataBinding(dataBinding => dataBinding.Ajax().Select("ajaxindex", "tour")
+        .Insert("createplan", "tour")
+        .Update("editplan", "tour")
+        .Delete("deleteplan", "tour"))
+    .Editable(editing => editing.Mode(GridEditMode.InLine))
+    .Pageable(page => page.PageSize(10))
+    .Render();
+}
+<script type="text/javascript">
+    var preSearch = "";
+    var isSearch = false;
+    function searchChange() {
+        var currentSearch = $("#searchTourPlan").val();
+        if (preSearch != currentSearch) {
+            $("#TourPlanGrid").data("tGrid").rebind();
+        }
+    }
+
+    function dataBinding(args) {
+        var searchKeyStr = $("#searchTourPlan").val();
+        preSearch = searchKeyStr;
+        if (searchKeyStr == '线路名字') {
+            searchKeyStr = '';
+        }
+        args.data = $.extend(args.data, { searchKey: searchKeyStr });
+    }
+
+    function mulDelete() {
+        var delStr = $(':checked');
+        if (delStr.length < 1) {
+            alert('Check a few grid rows first.');
+            return;
+        }
+        jQuery.post('/tour/deletemulplan', delStr )
+                setTimeout(function () {
+                    $("#TourPlanGrid").data("tGrid").rebind();
+                    $("#checkAllRecords").attr("checked", false);
+                }, 1000);
+    }
+
+    $(function () {
+        $('#checkAllRecords').click(function checkAll() { $("#TourPlanGrid tbody input:checkbox").attr("checked", this.checked); });
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+        $("#searchTourPlan").focus(function () {
+            if (this.value == "线路名字") {
+                $("#searchTourPlan").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#searchTourPlan").val("线路名字");
+            }
+        });
+    });
+</script>

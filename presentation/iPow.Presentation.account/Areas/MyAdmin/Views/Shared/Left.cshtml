@@ -1,0 +1,84 @@
+﻿<section id="secondary_bar">
+    <div class="user">
+        @Html.Partial("_LogOnPartial")
+    </div>
+    <div class="breadcrumbs_container">
+        <article class="breadcrumbs">
+            <a href="javascript:;">当前页</a>
+            <div class="breadcrumb_divider">
+            </div>
+            <a class="current">@(ViewBag.subtitle)</a>
+        </article>
+    </div>
+</section>
+<!-- end of secondary bar -->
+<aside id="sidebar" class="column">
+    <form class="quick_search" action="">
+    <input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+    </form>
+    <hr />
+    <h3>
+        线路口袋</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a href="/myadmin/tour/index">线路表</a> </li>
+        @*<li><a href="/tour/createplan">添加我的线路</a></li>*@ 
+        @*<li class="icn_new_article"><a href="#">New Article</a></li>
+			<li class="icn_edit_article"><a href="#">Edit Articles</a></li>
+			<li class="icn_categories"><a href="#">Categories</a></li>
+			<li class="icn_tags"><a href="#">Tags</a></li>*@
+    </ul>
+    <h3>用户管理</h3>
+    <ul class="toggle">
+        <li class="icn_profile"><a href="/myadmin/user/index/">用户列表</a></li>
+        <li class="icn_add_user"><a href="/myadmin/user/adduser/">添加用户</a></li> 
+        <li class="icn_profile"><a href="/myadmin/userrole/index/">用户角色列表</a></li>
+        <li class="icn_add_user"><a href="/myadmin/userrole/adduserrole/">添加用户角色</a></li>
+    </ul>
+    <h3> 角色管理</h3>
+    <ul class="toggle">
+        <li class="icn_profile"><a href="/myadmin/role/index/">角色管理</a></li>
+    </ul>
+
+    <h3> 权限管理</h3>
+    <ul class="toggle">
+        <li class="icn_profile"><a href="/myadmin/controllerclass/index/">控制器分类列表</a></li>
+        <li class="icn_add_user"><a href="/myadmin/controllerclass/add/">添加控制器分类</a></li>
+        <li class="icn_profile"><a href="/myadmin/controller/index/">控制器列表</a></li>
+        <li class="icn_add_user"><a href="/myadmin/controller/add/">添加控制器</a></li>
+    </ul>
+
+  @*  <h3>帐户信息</h3>
+    <ul class="toggle">
+        <li class="icn_add_user"><a href="#">Add New User</a></li>
+        <li class="icn_view_users"><a href="#">View Users</a></li>
+        <li class="icn_profile"><a href="#">Your Profile</a></li>
+    </ul>
+    <h3>
+        视频管理</h3>
+    <ul class="toggle">
+        <li class="icn_folder"><a href="#">File Manager</a></li>
+        <li class="icn_photo"><a href="#">Gallery</a></li>
+        <li class="icn_audio"><a href="#">Audio</a></li>
+        <li class="icn_video"><a href="#">Video</a></li>
+    </ul>
+    <h3>
+        设置</h3>
+    <ul class="toggle">
+        <li class="icn_settings"><a href="#">Options</a></li>
+        <li class="icn_security"><a href="#">Security</a></li>
+        <li class="icn_jump_back"><a href="#">Logout</a></li>
+    </ul>*@
+    <footer>
+        <hr />
+        <p>
+            <strong>Copyright &copy; 2012 iPow</strong></p>
+        <p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </p>
+    </footer>
+</aside>
+<!-- end of sidebar -->

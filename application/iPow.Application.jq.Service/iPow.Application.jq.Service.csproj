@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF576A93-AB73-40EC-9CCF-3171E32B8C2F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iPow.Application.jq.Service</RootNamespace>
+    <AssemblyName>iPow.Application.jq.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HomeService.cs" />
+    <Compile Include="iPowAppJqServiceEntityMap.cs" />
+    <Compile Include="ISearchService.cs" />
+    <Compile Include="ISightInfoSortService.cs" />
+    <Compile Include="SearchService.cs" />
+    <Compile Include="AddSortService.cs" />
+    <Compile Include="ArticleService.cs" />
+    <Compile Include="IAddSortService.cs" />
+    <Compile Include="IArticleService.cs" />
+    <Compile Include="IHomeService.cs" />
+    <Compile Include="IPageService.cs" />
+    <Compile Include="IPicInfoService.cs" />
+    <Compile Include="ISightInfoService.cs" />
+    <Compile Include="ISinaInfoService.cs" />
+    <Compile Include="ITicketService.cs" />
+    <Compile Include="ITopClassService.cs" />
+    <Compile Include="IVideoService.cs" />
+    <Compile Include="PageService.cs" />
+    <Compile Include="PicInfoService.cs" />
+    <Compile Include="SightInfoService.cs" />
+    <Compile Include="SightInfoSortService.cs" />
+    <Compile Include="SinaInfoService.cs" />
+    <Compile Include="TicketService.cs" />
+    <Compile Include="TopClassService.cs" />
+    <Compile Include="VideoInfoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Dto\iPow.Domain.Dto.csproj">
+      <Project>{94ECD31C-902A-4734-9265-D6E3385B0490}</Project>
+      <Name>iPow.Domain.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Intrastructure\iPow.Domain.Infrastructure.csproj">
+      <Project>{36E4E2ED-E857-46DE-9CAB-F962AEFC26F3}</Project>
+      <Name>iPow.Domain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Repository\iPow.Domain.Repository.csproj">
+      <Project>{5A44C5B5-A925-487D-B4FA-F7A187BFEF1A}</Project>
+      <Name>iPow.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Comm.Dto\iPow.Infrastructure.Crosscutting.Comm.Dto.csproj">
+      <Project>{00B1115B-0DDC-482D-AAF8-13D3C56A65D5}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.Comm.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Comm.Service\iPow.Infrastructure.Crosscutting.Comm.Service.csproj">
+      <Project>{87E6A634-A50D-4277-982B-0B16CFAC5738}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.Comm.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.EntityToDto\iPow.Infrastructure.Crosscutting.EntityToDto.csproj">
+      <Project>{75F909AB-BBC3-44F0-BFC6-FA015E8EACA0}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.EntityToDto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.DataSys\iPow.Infrastructure.Data.DataSys.csproj">
+      <Project>{2C911DAF-3B6C-49C7-AF21-6224BFB0FE74}</Project>
+      <Name>iPow.Infrastructure.Data.DataSys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.Repository\iPow.Infrastructure.Data.Repository.csproj">
+      <Project>{B1F38D7C-A9AC-46D8-88F0-9980BEAA4DC3}</Project>
+      <Name>iPow.Infrastructure.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data\iPow.Infrastructure.Data.csproj">
+      <Project>{33D73385-13E6-4BFA-BC76-23AF380E7F3E}</Project>
+      <Name>iPow.Infrastructure.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\MvcPager\MvcPager.csproj">
+      <Project>{23C75583-F15F-4464-BD48-6E5C656D7B78}</Project>
+      <Name>MvcPager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Application.jq.Dto\iPow.Application.jq.Dto.csproj">
+      <Project>{4F6A4DA9-B5C4-40A0-A702-4BCB992750F7}</Project>
+      <Name>iPow.Application.jq.Dto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

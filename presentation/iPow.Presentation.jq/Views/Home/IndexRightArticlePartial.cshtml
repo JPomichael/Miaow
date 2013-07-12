@@ -1,0 +1,25 @@
+﻿@{
+    var locationService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+        
+    var articleService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Application.jq.Service.IArticleService>();
+
+
+    var prov = locationService.GetLocationInfo();
+    var articleList = articleService.GetSightArticleDefaultPageByProv(
+        (prov != null && !string.IsNullOrEmpty(prov.Province)) ? prov.Province : "广东", 10);
+        
+    if (articleList != null && articleList.Count() > 0)
+    {
+        foreach (var item in articleList)
+        {
+            var url = string.Empty;
+            url = "http://article.ipow.cn/" + item.AddTime.ToString("yyyyMMdd") + "/" + item.Id + "_1.shtml";
+            var title = item.Title.Length > 12 ? item.Title.Substring(0, 11) : item.Title;
+    <span name="articleinfo" id="voArticle"><a href="@Url.Action("ArticleDetail", "SightOther", new { sid = item.Sid, id = item.Id })" title="@( item.Title)"  target="_blank">
+        [@((prov != null && !string.IsNullOrEmpty(prov.Province)) ? prov.Province : "广东")]&nbsp;@(title)
+    </a></span>
+        }
+    }
+}

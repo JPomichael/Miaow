@@ -1,0 +1,43 @@
+﻿@model  IQueryable<iPow.Application.dj.Dto.TopTourPlanDto>
+@{
+    if (Model != null)
+    {
+    <ul>
+        @{
+        int tar = 1;
+        foreach (var item in Model)
+        {
+            if (tar == 2)
+            {
+            <li class="shancon" style="background: #fef8ee; height: 56px; width: 316px; border-left: dashed 1px #7f7f7f;
+                border-right: dashed 1px #7f7f7f;"><a href = "@Url.Action("index", "tour", new { id = item.Id })">
+                    <h1>
+                        @item.PlanTitle<span>¥@(item.PlanTotalMoney)/全程(@(item.Days)
+                            天)</span></h1>
+                    <span style="color: #6bc700;">推荐理由：</span>
+                    @(item.TopReason)</a> </li>
+            }
+            else
+            { 
+            <li class="shancon"><a href = "@Url.Action("index", "tour", new { id = item.Id })">
+                <h1>
+                    @item.PlanTitle<span>¥@(item.PlanTotalMoney)/全程(@(item.Days)天)</span></h1>
+                <span style="color: #6bc700;">推荐理由：</span>
+                @(item.TopReason)</a> </li>
+            }
+            tar += 1;
+        }
+        }
+    </ul>
+    }
+    else
+    {
+    <ul>
+        <li class="shancon">
+            <h1>
+                没有信息
+            </h1>
+        </li>
+    </ul>
+    }
+}

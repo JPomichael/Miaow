@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B1F38D7C-A9AC-46D8-88F0-9980BEAA4DC3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iPow.Infrastructure.Data.Repository</RootNamespace>
+    <AssemblyName>iPow.Infrastructure.Data.Repository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminUserClassRepository.cs" />
+    <Compile Include="ArticleClassRepository.cs" />
+    <Compile Include="ArticleCommRepository.cs" />
+    <Compile Include="ArticleInfoRepository.cs" />
+    <Compile Include="CityAreaCodeRepository.cs" />
+    <Compile Include="CityInfoMoreRepository.cs" />
+    <Compile Include="CityInfoRepository.cs" />
+    <Compile Include="DiscountClassRepository.cs" />
+    <Compile Include="DiscountCommRepository.cs" />
+    <Compile Include="HotelCommRepository.cs" />
+    <Compile Include="LinkInfoRepository.cs" />
+    <Compile Include="MvcControllerActionClassRepository.cs" />
+    <Compile Include="MvcControllerActionRepository.cs" />
+    <Compile Include="MvcControllerClassRepository.cs" />
+    <Compile Include="MvcControllerRepository.cs" />
+    <Compile Include="MvcControllerRolePermissionRepository.cs" />
+    <Compile Include="PicInfoRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SightInfoRepository.cs" />
+    <Compile Include="PicCommRepository.cs" />
+    <Compile Include="PicClassRepository.cs" />
+    <Compile Include="SightVouchItemRepository.cs" />
+    <Compile Include="SightCommRepository.cs" />
+    <Compile Include="HotelPropertyInfoRepository.cs" />
+    <Compile Include="SightClassRepository.cs" />
+    <Compile Include="SightTicketRepository.cs" />
+    <Compile Include="VideoClassRepository.cs" />
+    <Compile Include="VideoInfoRepository.cs" />
+    <Compile Include="VideoCommRepository.cs" />
+    <Compile Include="TourPlanRepository.cs" />
+    <Compile Include="TourPlanDetailRepository.cs" />
+    <Compile Include="HotelPicRepository.cs" />
+    <Compile Include="HotelPropertyInfo2Repository.cs" />
+    <Compile Include="SearchInfoRepository.cs" />
+    <Compile Include="AdminUserExtensionRepository.cs" />
+    <Compile Include="AdminUserIndividuationRepository.cs" />
+    <Compile Include="AdminUserRepository.cs" />
+    <Compile Include="DisCountInfoRepository.cs" />
+    <Compile Include="UserActionRepository.cs" />
+    <Compile Include="UserRoleRepository.cs" />
+    <Compile Include="RolePermissionRepository.cs" />
+    <Compile Include="TourClassRepository.cs" />
+    <Compile Include="SightInfoCirHotelRepository.cs" />
+    <Compile Include="SightInfoCirSightRepository.cs" />
+    <Compile Include="SightInfoSortRepository.cs" />
+    <Compile Include="RolesRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Intrastructure\iPow.Domain.Infrastructure.csproj">
+      <Project>{36E4E2ED-E857-46DE-9CAB-F962AEFC26F3}</Project>
+      <Name>iPow.Domain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Repository\iPow.Domain.Repository.csproj">
+      <Project>{5A44C5B5-A925-487D-B4FA-F7A187BFEF1A}</Project>
+      <Name>iPow.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Data.DataSys\iPow.Infrastructure.Data.DataSys.csproj">
+      <Project>{2C911DAF-3B6C-49C7-AF21-6224BFB0FE74}</Project>
+      <Name>iPow.Infrastructure.Data.DataSys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Data\iPow.Infrastructure.Data.csproj">
+      <Project>{33D73385-13E6-4BFA-BC76-23AF380E7F3E}</Project>
+      <Name>iPow.Infrastructure.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

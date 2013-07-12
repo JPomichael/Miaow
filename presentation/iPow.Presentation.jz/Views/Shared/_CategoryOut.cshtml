@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" @(Model.CurrentCatalog.name == null ? "" : Model.CurrentCatalog.name), 分类目录, @(Model.SiteName), 家族,圈子" />
+    <meta name="description" content="@(Model.CurrentCatalog.name == null ? "" : Model.CurrentCatalog.name), 分类目录, @(Model.SiteName), 家族,圈子" />
+    <title>@(Model.CurrentCatalog.name == null ? "" : Model.CurrentCatalog.name)-@(Model.TotalTheme)-家族圈-ipow自助旅行网
+    </title>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/thickbox.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/w3c.css")" />
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bar.css")" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/thickbox.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/ipowring.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery.blockUI.js")"></script>
+    <script language="javascript" type="text/javascript">
+        function AjaxStart() {
+            $.blockUI({ message: '<font color="#2E6092" size="2">正在加载，稍候更精彩...</font><br/><img src="/images/loadingAnimation.gif" width="auto"  height="auto"/><br/>' });
+        }
+
+        function AjaxStop() {
+            $.unblockUI();
+        }
+    </script>
+</head>
+<body>
+    @{
+        Html.RenderPartial("ForumHeaderPartial");
+    }
+    <div id="main">
+        @RenderBody()
+    </div>
+    @{
+        Html.RenderPartial("ForumFooterPartial");
+    }
+</body>
+</html>

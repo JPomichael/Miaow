@@ -1,0 +1,182 @@
+﻿<error errorId="d67aafb7-4ee3-4e47-8e9b-a17b3f11c564" application="/LM/W3SVC/6/ROOT" host="VTYDIADE7F93GSN" type="System.ServiceModel.FaultException" message="The request for security token could not be satisfied because authentication failed." source="System.ServiceModel" detail="System.ServiceModel.Security.SecurityNegotiationException: 调用方未由服务进行身份验证。 ---&gt; System.ServiceModel.FaultException: The request for security token could not be satisfied because authentication failed.&#xD;&#xA;   在 System.ServiceModel.Security.SecurityUtils.ThrowIfNegotiationFault(Message message, EndpointAddress target)&#xD;&#xA;   在 System.ServiceModel.Security.SspiNegotiationTokenProvider.GetNextOutgoingMessageBody(Message incomingMessage, SspiNegotiationTokenProviderState sspiState)&#xD;&#xA;   --- 内部异常堆栈跟踪的结尾 ---&#xD;&#xA;&#xD;&#xA;Server stack trace: &#xD;&#xA;   在 System.ServiceModel.Security.IssuanceTokenProviderBase`1.DoNegotiation(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Security.SspiNegotiationTokenProvider.OnOpen(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Security.SymmetricSecurityProtocol.OnOpen(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.SecurityChannelFactory`1.ClientSecurityChannel`1.OnOpen(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Security.SecuritySessionSecurityTokenProvider.DoOperation(SecuritySessionOperation operation, EndpointAddress target, Uri via, SecurityToken currentToken, TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Security.SecuritySessionSecurityTokenProvider.GetTokenCore(TimeSpan timeout)&#xD;&#xA;   在 System.IdentityModel.Selectors.SecurityTokenProvider.GetToken(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Security.SecuritySessionClientSettings`1.ClientSecuritySessionChannel.OnOpen(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.ServiceChannel.OnOpen(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.CommunicationObject.Open(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.ServiceChannel.CallOnceManager.CallOnce(TimeSpan timeout, CallOnceManager cascade)&#xD;&#xA;   在 System.ServiceModel.Channels.ServiceChannel.EnsureOpened(TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)&#xD;&#xA;   在 System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)&#xD;&#xA;   在 System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)&#xD;&#xA;&#xD;&#xA;Exception rethrown at [0]: &#xD;&#xA;   在 System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)&#xD;&#xA;   在 System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)&#xD;&#xA;   在 iPow.Service.SSO.Client.AuthService.IAuthenticationService.ValidateToken(TokenRequest tokenRequest)&#xD;&#xA;   在 iPow.Service.SSO.Client.AuthService.AuthenticationServiceClient.ValidateToken(TokenRequest tokenRequest) 位置 E:\work\IPOW\distributedservices\iPow.Service.SSO.Client\Service References\AuthService\Reference.cs:行号 883&#xD;&#xA;   在 ASP._Page_Views_Shared_SSOPartial_cshtml.Execute() 位置 e:\work\IPOW\presentation\iPow.Presentation.dj\Views\Shared\SSOPartial.cshtml:行号 12&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()&#xD;&#xA;   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)&#xD;&#xA;   在 System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)&#xD;&#xA;   在 ASP._Page_Views_Shared__Layout_cshtml.Execute() 位置 e:\work\IPOW\presentation\iPow.Presentation.dj\Views\Shared\_Layout.cshtml:行号 18&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()&#xD;&#xA;   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.Write(HelperResult result)&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)&#xD;&#xA;   在 System.Web.WebPages.WebPageBase.PopContext()&#xD;&#xA;   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass1c.&lt;InvokeActionResultWithFilters&gt;b__19()&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)&#xD;&#xA;   在 System.Web.Mvc.Controller.ExecuteCore()&#xD;&#xA;   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass6.&lt;&gt;c__DisplayClassb.&lt;BeginProcessRequest&gt;b__5()&#xD;&#xA;   在 System.Web.Mvc.Async.AsyncResultWrapper.&lt;&gt;c__DisplayClass1.&lt;MakeVoidDelegate&gt;b__0()&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClasse.&lt;EndProcessRequest&gt;b__d()&#xD;&#xA;   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2012-04-27T06:06:17.5661654Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3&#xD;&#xA;HTTP_COOKIE:__utma=22465390.920447831.1335505179.1335505179.1335505179.1; __utmb=22465390.2.10.1335505179; __utmc=22465390; __utmz=22465390.1335505179.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmuled=1&#xD;&#xA;HTTP_HOST:djipow.ipow.cn&#xD;&#xA;HTTP_REFERER:http://xui.ptlogin2.qq.com/div/qlogin_div.html?lang=2052&amp;flag2=3&amp;u1=https%3A%2F%2Fgraph.qq.com%2Foauth2.0%2Fauthorize%3Fwhich%3DLogin%26response_type%3Dcode%26client_id%3D100249718%26redirect_uri%3Dhttp%3A%2F%2Fsso.ipow.cn%2Ftencent%2Fcallback%26state%3Dd59fc042d68c4af6bb9a30548501393d%26scope%3Dget_user_info%2Cadd_share%2Clist_album%2Cupload_pic%2Ccheck_page_fans%2Cadd_t%2Cadd_pic_t%2Cdel_t%2Cget_repost_list%2Cget_info%2Cget_other_info%2Cget_fanslist%2Cget_idolist%2Cadd_idol%2Cdel_idol%2Cadd_one_blog%2Cadd_topic%2Cget_tenpay_addr%26src%3D1&amp;appid=15004501&amp;wording=%u767B%u5F55&amp;css=http%3A%2F%2Fimgcache.qq.com%2Fptcss%2Fb2%2Fsjpt%2F15004501%2Fqlogin.css&amp;ptredirect=2&amp;mibao_css=bqq_pwd&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0&#xD;&#xA;HTTP_X_CLICKONCESUPPORT:( .NET CLR 3.5.30729; .NET4.0E)&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3&#xD;&#xA;Cookie: __utma=22465390.920447831.1335505179.1335505179.1335505179.1; __utmb=22465390.2.10.1335505179; __utmc=22465390; __utmz=22465390.1335505179.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmuled=1&#xD;&#xA;Host: djipow.ipow.cn&#xD;&#xA;Referer: http://xui.ptlogin2.qq.com/div/qlogin_div.html?lang=2052&amp;flag2=3&amp;u1=https%3A%2F%2Fgraph.qq.com%2Foauth2.0%2Fauthorize%3Fwhich%3DLogin%26response_type%3Dcode%26client_id%3D100249718%26redirect_uri%3Dhttp%3A%2F%2Fsso.ipow.cn%2Ftencent%2Fcallback%26state%3Dd59fc042d68c4af6bb9a30548501393d%26scope%3Dget_user_info%2Cadd_share%2Clist_album%2Cupload_pic%2Ccheck_page_fans%2Cadd_t%2Cadd_pic_t%2Cdel_t%2Cget_repost_list%2Cget_info%2Cget_other_info%2Cget_fanslist%2Cget_idolist%2Cadd_idol%2Cdel_idol%2Cadd_one_blog%2Cadd_topic%2Cget_tenpay_addr%26src%3D1&amp;appid=15004501&amp;wording=%u767B%u5F55&amp;css=http%3A%2F%2Fimgcache.qq.com%2Fptcss%2Fb2%2Fsjpt%2F15004501%2Fqlogin.css&amp;ptredirect=2&amp;mibao_css=bqq_pwd&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0&#xD;&#xA;X-ClickOnceSupport: ( .NET CLR 3.5.30729; .NET4.0E)&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/6/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="E:\work\IPOW\presentation\iPow.Presentation.dj\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="6" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/6" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="E:\work\IPOW\presentation\iPow.Presentation.dj" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="token=8537f88b-938f-4f3a-932c-88e8f1afc73e-zRB67JKYdW" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="127.0.0.1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="7281" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="djipow.ipow.cn" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="80" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/7.5" />
+    </item>
+    <item name="URL">
+      <value string="/" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__utma=22465390.920447831.1335505179.1335505179.1335505179.1; __utmb=22465390.2.10.1335505179; __utmc=22465390; __utmz=22465390.1335505179.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); __utmuled=1" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="djipow.ipow.cn" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://xui.ptlogin2.qq.com/div/qlogin_div.html?lang=2052&amp;flag2=3&amp;u1=https%3A%2F%2Fgraph.qq.com%2Foauth2.0%2Fauthorize%3Fwhich%3DLogin%26response_type%3Dcode%26client_id%3D100249718%26redirect_uri%3Dhttp%3A%2F%2Fsso.ipow.cn%2Ftencent%2Fcallback%26state%3Dd59fc042d68c4af6bb9a30548501393d%26scope%3Dget_user_info%2Cadd_share%2Clist_album%2Cupload_pic%2Ccheck_page_fans%2Cadd_t%2Cadd_pic_t%2Cdel_t%2Cget_repost_list%2Cget_info%2Cget_other_info%2Cget_fanslist%2Cget_idolist%2Cadd_idol%2Cdel_idol%2Cadd_one_blog%2Cadd_topic%2Cget_tenpay_addr%26src%3D1&amp;appid=15004501&amp;wording=%u767B%u5F55&amp;css=http%3A%2F%2Fimgcache.qq.com%2Fptcss%2Fb2%2Fsjpt%2F15004501%2Fqlogin.css&amp;ptredirect=2&amp;mibao_css=bqq_pwd" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:12.0) Gecko/20100101 Firefox/12.0" />
+    </item>
+    <item name="HTTP_X_CLICKONCESUPPORT">
+      <value string="( .NET CLR 3.5.30729; .NET4.0E)" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="token">
+      <value string="8537f88b-938f-4f3a-932c-88e8f1afc73e-zRB67JKYdW" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="__utma">
+      <value string="22465390.920447831.1335505179.1335505179.1335505179.1" />
+    </item>
+    <item name="__utmb">
+      <value string="22465390.2.10.1335505179" />
+    </item>
+    <item name="__utmc">
+      <value string="22465390" />
+    </item>
+    <item name="__utmz">
+      <value string="22465390.1335505179.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)" />
+    </item>
+    <item name="__utmuled">
+      <value string="1" />
+    </item>
+  </cookies>
+</error>

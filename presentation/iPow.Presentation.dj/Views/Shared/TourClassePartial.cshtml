@@ -1,0 +1,34 @@
+﻿@{
+    var tourPlanService = iPow.Presentation.dj.iPowPreDjEngine
+        .Current.Resolve<iPow.Application.dj.Service.ITourPlanService>();
+        
+    var listService =  iPow.Presentation.dj.iPowPreDjEngine
+        .Current.Resolve<iPow.Application.dj.Service.IListService>();
+
+    var tourClasses = tourPlanService.GetTourClass();
+    if (tourClasses != null && tourClasses.Count() > 0)
+    {
+        int tar = 0;
+        List<string> defaultPicPath = null;
+        foreach (var item in tourClasses)
+        {
+    <li class="@(tar == 0 ? "tottbg" : "")  ">
+        <div class="touricon">
+            <a href="@Url.Action("index", "list", new { id = item.ClassID, pi = 1 })">
+                @{
+            defaultPicPath = listService.GetTourClassDefaultPicByClassId(item.ClassID);
+                }
+                <img border='0px' 
+                    src='@(  (defaultPicPath != null && defaultPicPath.Count == 3) ? defaultPicPath[0] + "cutdown/116_103_" + defaultPicPath[1] : "/images/trouicon.jpg")'
+                     alt = "@( (defaultPicPath != null && defaultPicPath.Count == 3) ? defaultPicPath[2] : "暂无图片")" />
+                <h2>
+                    @(item.ClassName)</h2>
+                <p>
+                    @(item.ClassIntro)</p>
+            </a>
+        </div>
+    </li>   
+            tar += 1;
+        }
+    }
+}

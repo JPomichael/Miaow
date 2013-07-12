@@ -1,0 +1,770 @@
+﻿@charset "utf-8";
+body {
+    background: url("../images/bg.jpg") repeat scroll 0 0 transparent;
+    color: #2F2F2F;
+    font-family: Helvetica,Georgia,Arial,sans-serif,"宋体","微软雅黑";
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.clear {
+    clear: both;
+}
+h1, h2, h3, h4 {
+    margin: 0;
+    padding: 0;
+}
+ul, dl, dd, form, fieldset, em {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none outside none;
+}
+em {
+    font-style: normal;
+    font-weight: normal;
+}
+.topContainer {
+    background-color: #FFFFFF;
+    height: 139px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 960px;
+}
+.topTop {
+    background: url("../images/top_topBG.jpg") repeat-x scroll 0 0 transparent;
+    float: left;
+    height: 79px;
+    width: 100%;
+}
+.topBottom {
+    background: url("../images/top_bomBG.jpg") repeat-x scroll 0 0 transparent;
+    float: left;
+    height: 60px;
+    width: 100%;
+}
+#header, .headerSearch {
+    float: left;
+    width: 100%;
+}
+#header {
+    background: url("../images/chunjieBg.jpg") repeat scroll 0 0 transparent;
+}
+.headerSearch {
+    background: url("../images/ipow_Title.jpg") no-repeat scroll right center transparent;
+    padding-bottom: 12px;
+    padding-left: 90px !important;
+    padding-right: 180px !important;
+    padding-top: 18px;
+    width: 600px;
+}
+#headerMid {
+    float: left;
+    height: 79px;
+    text-align: left;
+    width: 450px;
+}
+#headerRight {
+    float: right;
+    height: 25px;
+    line-height: 25px;
+    padding-right: 5px;
+    text-align: right;
+    width: 245px;
+}
+#headerRight span.login {
+    display: block;
+    float: left;
+    height: 25px;
+    width: 100%;
+}
+#headerRight span.banner {
+    display: block;
+    float: right;
+    font-weight: 700;
+    height: 24px;
+    padding-top: 30px;
+    width: 180px;
+}
+#headerRight span.banner a {
+    background: url("../images/top_tabbg.gif") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    margin-right: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 66px;
+}
+.logo {
+    float: left;
+    height: 79px;
+    width: 250px;
+}
+
+
+
+/* --------------->>> 头部导航样式 <<<------------------*/
+/*edit by yjihp 2011.8.12.9.46 the css is copy from jq css*/
+.topNav
+{
+	position:absolute;
+	width:450px; 
+	float:left;
+	margin-top:47px;
+	padding:0px;
+	font-size:14px;
+}
+.topNav a
+{
+	text-decoration:none;
+}
+.topNav ul 
+{ 
+	margin:0;
+	list-style:none;
+	padding: 0;
+}
+.topNav span 
+{
+	float:left; 
+	display:block; 
+	color:#fff;
+	text-align:center;  
+	padding: 10px 22px 9px 17px;
+	text-decoration:none; 
+	font-weight: bold; 
+}
+.topNav li 
+{ 
+	float:left; 
+	color: #FFF;
+	width:89px;
+	margin:0; 
+	padding:0; 
+}
+.topNav li a,.topNav li a.current
+{
+	display:block;
+	float:left;
+	width:89px;
+	height:33px;
+	background:url(/images/navBg.gif) left -33px no-repeat;
+	text-align:center;
+	line-height:33px;
+	color:#fff;
+	font-weight:700;
+}
+.topNav li a:hover,.topNav li a.current
+{
+	background-position:left top;
+}
+
+/*end edit by yjihp 2011.8.12.9.46*/
+
+.headerSearch {
+    color: #FFFFFF;
+    font-weight: bold;
+    height: 30px;
+    text-align: center;
+}
+.headerSearch span {
+    display: block;
+    float: left;
+    line-height: 24px;
+}
+.headerSearch a.search {
+    background: url("../images/btn_search01.jpg") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 24px;
+    width: 103px;
+}
+.headerSearch a.makeTrip {
+    background: url("../images/btn_makeTrip.jpg") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 24px;
+    margin-left: 10px;
+    margin-top: 2px;
+    width: 104px;
+}
+.headerSearch a.myTrip {
+    background: url("/images/mytrip.jpg") no-repeat scroll center center transparent;
+    display: block;
+    float: left;
+    height: 24px;
+    margin-left: 20px;
+    margin-top: 2px;
+    width: 71px;
+}
+.spanText {
+    font-size: 14px;
+    height: 26px;
+    line-height: 26px;
+    text-align: right;
+    width: 80px;
+}
+.spanSearch, .spanInput {
+    margin: 0 0 0 2px;
+    padding: 0;
+    width: 100px;
+}
+.inputText3 {
+    border: 0 none;
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 264px;
+}
+.spanSelect {
+    background-color: #FBEBE6;
+    color: #E08300;
+    float: left;
+    height: 22px;
+    margin-left: 2px;
+    margin-top: 2px;
+    width: 73px !important;
+}
+.selectDown {
+    background-color: #FBEBE6;
+    border: 0 none;
+    color: #BD8249;
+    cursor: pointer;
+    float: left;
+    height: 22px;
+    margin-top: 2px;
+    width: 23px;
+}
+.aSearch {
+    background: url("/images/btn_search01.jpg") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 24px;
+    margin-left: 5px;
+    margin-top: 2px;
+    width: 103px;
+}
+.aSearch:hover {
+    background: url("/images/btn_search02.jpg") no-repeat scroll 0 0 transparent;
+}
+.inputText2 {
+    background: url("../images/search_inputBG.gif") repeat scroll 0 0 transparent;
+    border: 0 none;
+    height: 22px;
+    line-height: 20px;
+    margin-left: 1px;
+    padding-left: 3px;
+    padding-top: 4px;
+    width: 290px;
+}
+.inputDiv {
+    background: url("../images/search_inputBG1.gif") repeat scroll 0 0 transparent;
+    float: left;
+    height: 26px;
+    width: 366px;
+}
+a.aBeta {
+    display: block;
+    float: left;
+    height: 100%;
+    /*
+    margin-left: 92px !important;
+    margin-top: 6px;*/
+    width: 100%;
+}
+.loginInfo {
+}
+.loginDialog {
+    border-bottom: 1px solid #999999;
+    float: left;
+    width: 367px;
+}
+.loginDialogTop {
+    background: url("../images/dialog_TopBg.gif") no-repeat scroll 0 0 transparent;
+    float: left;
+    font-size: 1px;
+    height: 6px;
+    width: 367px;
+}
+.loginDialogContainer {
+    -moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #999999;
+    border-style: solid;
+    border-width: 0 1px;
+    float: left;
+    width: 365px;
+}
+.dialog-header {
+    background-color: #FFFFFF;
+    float: left;
+    height: 25px;
+    padding: 10px;
+    width: 345px;
+}
+.dialog-title {
+    float: left;
+    font-size: 14px;
+    font-weight: 700;
+    width: 150px;
+}
+.dialog-close {
+    float: right;
+    line-height: 25px;
+    text-align: right;
+    width: 50px;
+}
+.dialog-close a {
+    font-size: 20px;
+    text-decoration: none;
+}
+.dialog-content {
+    background-color: #FFFFFF;
+    float: left;
+    padding: 0 10px;
+    width: 345px;
+}
+.dialog-content span {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+}
+.dialog-content label {
+    float: left;
+    text-align: right;
+    width: 100px;
+}
+.dialog-content input {
+    border: 1px solid #CACACA;
+    float: left;
+    height: 16px;
+    margin-top: 5px;
+    width: 140px;
+}
+.dialog-content a {
+    float: left;
+    text-align: center;
+    width: 60px;
+}
+.dialog-content button {
+    background: url("../images/loginBg.gif") no-repeat scroll center center transparent;
+    border: 1px solid #CACACA;
+    cursor: pointer;
+    height: 18px;
+    line-height: 18px;
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 52px;
+}
+#loginContainer {
+    display: none;
+}
+.pageBottom {
+    background: none repeat scroll 0 0 #FFFFFF;
+    line-height: 25px;
+    margin: 0 auto;
+    padding: 5px 20px 10px;
+    text-align: center;
+    width: 960px;
+}
+.pageBottom h1 {
+    display: block;
+    font-size: 14px;
+    padding-bottom: 10px;
+    text-align: left;
+    width: 100%;
+}
+.pageBottom2 {
+    float: left;
+    height: 67px;
+    width: 100%;
+}
+.pageBottom2Left {
+    background: url("../images/bottomLeft.jpg") no-repeat scroll 0 0 transparent;
+    float: left;
+    height: 67px;
+    width: 135px;
+}
+.pageBottom2Right {
+    background: url("../images/bottomRight.jpg") no-repeat scroll 0 0 transparent;
+    float: right;
+    height: 67px;
+    width: 18px;
+}
+.pageBottom2Mid {
+    background: url("../images/bottomBG.jpg") repeat-x scroll 0 0 transparent;
+    color: #795205;
+    float: left;
+    height: 57px;
+    padding-top: 10px;
+    width: 807px;
+}
+.pageBottom2Mid a {
+    color: #000000;
+    text-decoration: none;
+}
+.pageBottom2Mid a:hover {
+    color: #B85E00;
+}
+.pageBottom2Mid p {
+    height: 25px;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.pageBottom span {
+    border-top: 4px solid #D5D5D5;
+    display: block;
+    padding-top: 10px;
+    width: 100%;
+}
+.linkContainer {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin: 0 auto;
+    padding: 0 20px !important;
+    width: 960px;
+}
+.linkContainer div.LinkList {
+    border: 1px solid #D3D3D3;
+    display: block;
+    float: left;
+    line-height: 25px;
+    margin-top: 20px;
+    padding: 10px;
+    width: 940px;
+}
+.linkContainer div.LinkList span {
+    width: 100%;
+}
+.linkContainer span img {
+    border: 0 none;
+    display: block;
+    height: 31px;
+    width: 88px;
+}
+.linkContainer a {
+    color: #000000;
+    display: block;
+    float: left;
+}
+.linkContainer span a.aLink {
+    height: 31px;
+    margin: 8px;
+    width: 88px;
+}
+.linkContainer span a.aText {
+    height: 25px;
+    line-height: 25px;
+    margin-left: 8px;
+    margin-right: 6px;
+    text-align: center;
+    width: 90px;
+}
+.HinputText {
+    border: 1px solid #FFFFFF;
+    height: 16px;
+    line-height: 16px;
+    margin-left: 1px;
+    padding: 0;
+    width: 68px;
+}
+.buttonTime {
+    background: url("../images/DatePick.gif") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    width: 18px;
+}
+.buttonCity {
+    background: url("/images/HotCity.gif") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    height: 18px;
+    margin: 0;
+    padding: 0;
+    width: 18px;
+}
+.spanInput1 {
+    background-color: #FFFFFF;
+    border: 1px solid #A3A3A3;
+    height: 22px;
+    line-height: 22px;
+    /*add by yjihrp 2011.7.18.16.59*/
+   padding-top:1px;
+}
+
+
+
+/*added by yjihrp 2011.7.18.16.38*/
+.spanInput1 input 
+{
+    float:left;
+}
+.spanInput1 span 
+{
+    height:100%;
+     float:right;
+      display:inline;
+      vertical-align:text-bottom;
+}
+
+.linkContainer
+{
+	width:960px;
+	padding:0 20px!important;
+	padding:0 19px;
+	margin:0 auto;
+	background:#fff;
+}
+.linkContainer div.LinkList
+{
+	display:block;
+	float:left;
+	width:940px;
+	margin-top:20px;
+	padding:10px;
+	border:#D3D3D3 solid 1px;
+	line-height:25px;
+}
+.linkContainer div.LinkList span
+{
+	width:100%;
+}
+.linkContainer span img
+{
+	display:block;
+	width:88px;
+	height:31px;
+	border:0px;
+}
+.linkContainer  a
+{
+	display:block;
+	float:left;
+	color:#000;
+}
+.linkContainer span a.aLink
+{
+	width:88px;
+	height:31px;
+	margin:8px;
+}
+.linkContainer span a.aText
+{
+	width:90px;
+	height:25px;
+	text-align:center;
+	margin-left:8px;
+	margin-right:6px;
+	line-height:25px;
+}
+/*end added by yjihrp 2011.7.18.16.38*/
+
+
+.hotel_spanText {
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    text-align: right;
+    width: 80px;
+}
+#floatHotelBg {
+    background-color: #000000;
+    height: 700px;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.floatLoading {
+    height: 50px;
+    margin: 150px auto auto;
+    width: 200px;
+    z-index: 999;
+}
+#winSuggest {
+    background-color: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    padding: 5px;
+    z-index: 999;
+}
+#winSuggest ul li {
+    float: left;
+    height: 22px;
+    width: 100%;
+}
+#winSuggest li a {
+    color: #000000;
+    display: block;
+    float: left;
+    height: 22px;
+    text-decoration: none;
+    width: 100%;
+}
+#winSuggest li.current a {
+    background-color: #66CC00;
+    color: #FFFFFF;
+}
+#TB_WinBg {
+    background-color: #000000;
+    left: 0;
+    opacity: 0.75;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1200;
+}
+#TB_Windows {
+    background-color: #FFFFFF;
+    border: 6px solid #7D7D7D;
+    display: none;
+    height: 450px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 640px;
+    z-index: 1203;
+}
+#TB_WinTitle {
+    background: url("/images/TB_TitleBG.jpg") no-repeat scroll right center #CCCCCC;
+    border-bottom: 2px solid #AAAAAA;
+    float: left;
+    height: 30px;
+    width: 100%;
+}
+#TB_WinTitle a.close {
+    background: url("/images/TB_WinClose.jpg") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: right;
+    height: 21px;
+    margin-right: 5px;
+    margin-top: 3px;
+    width: 22px;
+}
+#TB_WinTitle a.close:hover {
+    background: url("/images/TB_WinClose2.jpg") no-repeat scroll 0 0 transparent;
+}
+#TB_WinTitle h3.title {
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 30px;
+    text-indent: 4px;
+}
+#TB_WinContent {
+    clear: both;
+    height: 390px;
+    margin: 10px auto 0;
+    overflow: auto;
+    width: 96%;
+}
+.TB_Cotainer {
+    float: left;
+    width: 100%;
+}
+.TB_Cotainer h4 {
+    display: block;
+    float: right;
+    font-size: 12px;
+    padding-top: 40px;
+    text-align: left;
+    width: 250px;
+}
+.TB_Form {
+    float: left;
+    width: 100%;
+}
+.TB_Login {
+    border-right: 2px solid #999999;
+    float: left;
+    height: 180px;
+    margin-top: 20px;
+    padding-top: 15px;
+    width: 300px;
+}
+.TB_Login h3 {
+    font-size: 12px;
+    line-height: 22px;
+}
+.TB_Form span, .TB_Login span {
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 100%;
+}
+.TB_Form span label, .TB_Login span label {
+    display: block;
+    float: left;
+    height: 30px;
+    text-align: right;
+    width: 80px;
+}
+.TB_Form span em, .TB_Login span em {
+    color: #FF0000;
+    display: block;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 10px;
+}
+.TB_Form span textarea {
+    border: 1px solid #ABADB3;
+    display: block;
+    float: left;
+    height: 46px;
+    line-height: 16px;
+    margin-top: 5px;
+    width: 180px;
+}
+.TB_Form span .selStyle {
+    display: block;
+    float: left;
+    height: 20px;
+    margin-top: 5px;
+    width: 100px;
+}
+.TB_Form span .txtInput, .TB_Login span .txtInput {
+    border: 1px solid #ABADB3;
+    display: block;
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    margin-top: 5px;
+    width: 180px;
+}
+.TB_Form span a.btnSubmit, .TB_Login span a.btnLogin, .TB_Login span a.btnRegister, .TB_Form span a.btnReset, .TB_Login span a.btnReset {
+    background: url("/images/btn_Submit.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    float: left;
+    height: 19px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-decoration: none;
+    width: 50px;
+}
+.TB_Login span a.btnLogin {
+    background: url("/images/btnLogin.gif") no-repeat scroll 0 0 transparent;
+}
+.TB_Login span a.btnRegister {
+    background: url("/images/btnRegister.gif") no-repeat scroll 0 0 transparent;
+}
+.TB_Form span a.btnReset, .TB_Login span a.btnReset {
+    background: url("/images/btn_Reset.gif") no-repeat scroll 0 0 transparent;
+}

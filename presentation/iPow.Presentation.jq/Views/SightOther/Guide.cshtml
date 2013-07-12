@@ -1,0 +1,59 @@
+﻿@model  iPow.Application.jq.Dto.DetailSightBaseDto
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
+<script src="@Url.Content("~/Scripts/viewthread.js")" type="text/javascript"></script>
+<!--左侧内容开始-->
+@{
+    if (this.Model != null)
+    {
+    <div class="guidTitle">
+        <h2>@(Model.Title)</h2>
+        <span class="typeName">[@(Model.Type)]</span> <span class="ticketName">门票价格：</span>
+        <span class="ticketPrice">￥@(Model.Ticket)
+        </span><span class="rightControl"><a href="javascript:;" onclick="GetSightData(@(Model.ParkID),'GoCount');" class="wantbutton">
+            我去过</a> | <a href="javascript:;" onclick="GetSightData(@(Model.ParkID),'WantCount');">
+                我想去</a> | <a href="#">添加到我的行程</a> </span>
+    </div>
+    <div class="guidMenu">
+        <span class="spanTab"><a href="@Url.Action("Index", "SightDetail", new { sight = Model.Py, sid = Model.ParkID, id = 1 })">
+            基本信息</a> <a onclick = "updateSightInfo('/sight/ticket/@(Model.ParkID)/tic','updateContianer');" href="javascript:;" title="门票">
+                门票</a> <a onclick = "updateSightInfo('/sight/article/@(Model.ParkID)/art/A/1','updateContianer');"
+                         href="javascript:;" title="攻略游记">攻略游记</a> <a  class="curren" onclick = "updateSightInfo('/sight/guide/@(Model.ParkID)/gui','updateContianer');"
+                            href="javascript:;"title="导游图">导游图</a> <a onclick = "updateSightInfo('/sight/pic/@(Model.ParkID)/pic/A/1','updateContianer');" href="javascript:;" title="图片">
+                                图 片</a> <a onclick = "updateSightInfo('/sight/video/@(Model.ParkID)/vid/A/1','updateContianer');" href="javascript:;"title="视频">
+                                    视 频</a> </span><span class="spanInfo"><em style="background-color: #286903;" id="GoCount">@(Model.GoCount)</em>人去过&nbsp;&nbsp;
+                                        <em id="WantCount">@(Model.WantCount)</em>人想去 </span>
+    </div>
+    <div class="intro">
+        <div class="introMain">
+            <div class="introMenu" id="picvideoTab">
+                <a href="javascript:;" id="pictab" title="导游地图" class="current">导游图</a></div>
+            <div class="infoContainer">
+                <div class="articleList" id="ArticleList">
+                    @{
+        if (Model != null && !string.IsNullOrEmpty(Model.ParkMap))
+        {
+                        <a href="javascript:void(0);" class="guideHref" onclick="zoom('guideImg', '@(Model.ParkMap)')">
+                            <img id="guideImg" width="640" onload="javascript:if(this.width>640)this.width=640"
+                                src="@(Model.ParkMap)" alt="点击查看导游图" />
+                        </a>
+        }
+        else
+        {
+                        <img width="135px" height="125px;" src="/images/nopic135.jpg" alt="暂无图片" />
+        }
+                    }
+                </div>
+            </div>
+            <div class="infoContainer">
+            </div>
+            <div class="infoContainer">
+                <p>
+                    &nbsp;</p>
+            </div>
+        </div>
+    </div>
+    }
+}
+<!--左侧内容结束-->
+<div id="append_parent">
+</div>

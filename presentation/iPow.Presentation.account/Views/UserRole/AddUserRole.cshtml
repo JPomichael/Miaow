@@ -1,0 +1,73 @@
+﻿@model iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto
+@{
+    ViewBag.subtitle = "添加用户角色";
+    ViewBag.title = "添加用户角色";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>UserRoleDto</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            <input type="text" id="UserName" name="UserName" value="用户名字" data-autocomplete="/userrole/searchuserrole" />
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleName)
+        </div>
+        <div class="editor-field">
+            <select id="RoleID" name="RoleID">
+                <option value="-1">---请选择---</option>
+                @{
+    foreach (var item in ViewBag.rolemodel)
+    {
+                    <option value="@(item.RoleID)" @((Model.RoleID != null && Model.RoleID.CompareTo(item.RoleID) == 0) ? "selected = 'selected'" : "")>@(item.Description)</option>
+    }
+                }
+            </select>
+        </div>
+        <p>
+            <input type="submit" value="Create" onclick="return CheckForm();" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script type="text/javascript">
+
+    function CheckForm() {
+        var rolevalue = $("#RoleID").val();
+        var uservalue = $("#UserName").val();
+        if (rolevalue == "-1" || uservalue == "用户名字") {
+            alert('Please Select Role or UserName');
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+
+    $(function () {
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+
+        $("#UserName").focus(function () {
+            if (this.value == "用户名字") {
+                $("#UserName").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#UserName").val("用户名字");
+            }
+        }); 
+    });
+</script>

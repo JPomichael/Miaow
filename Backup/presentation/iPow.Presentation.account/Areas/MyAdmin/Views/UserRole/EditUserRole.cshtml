@@ -1,0 +1,48 @@
+﻿@model iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto   
+@{
+    ViewBag.subtitle = "编辑角色";
+    ViewBag.title = "编辑角色";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset class="module width_full" style = " float:left;">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserName)
+        </div>
+        <div class="editor-field">
+            @(Model.UserName)
+        </div>
+        <div class="editor-label" style="float: left;">
+            @Html.LabelFor(model => model.RoleName)
+        </div>
+        <div class="editor-field" style="float: left;">
+            @if (Model.RoleName != "")
+            {
+                @Html.DropDownList("RoleID", new[]{
+                    new SelectListItem(){ Text = "超级管理员" ,Value = "1" , Selected =Model.RoleName == "超级管理员" ? true : false },
+                    new SelectListItem(){ Text = "系统管理员" ,Value = "2", Selected =Model.RoleName == "系统管理员" ? true : false },
+                    new SelectListItem(){ Text = "普通管理员" ,Value = "3", Selected =Model.RoleName == "普通管理员" ? true : false },
+                    new SelectListItem(){ Text = "景区用户" ,Value = "4", Selected =Model.RoleName == "景区用户" ? true : false },
+                    new SelectListItem(){ Text = "酒店用户" ,Value = "5", Selected =Model.RoleName == "酒店用户" ? true : false },
+                    new SelectListItem(){ Text = "手机用户" ,Value = "6", Selected =Model.RoleName == "手机用户" ? true : false },   
+                    new SelectListItem(){ Text = "旅行社用户" ,Value = "7", Selected =Model.RoleName == "旅行社用户" ? true : false },
+                    new SelectListItem(){ Text = "新浪用户" ,Value = "8", Selected =Model.RoleName == "新浪用户" ? true : false },
+                    new SelectListItem(){ Text = "腾讯用户" ,Value = "9", Selected =Model.RoleName == "腾讯用户" ? true : false }})
+            }
+            
+            @Html.ValidationMessageFor(model => model.RoleName)
+        </div>
+        <div style="display: none;">
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.UserName)
+            @Html.HiddenFor(model => model.UserID)
+        </div>
+    </fieldset>
+    <p>
+        <input type="submit" value="保存" />
+    </p>
+}

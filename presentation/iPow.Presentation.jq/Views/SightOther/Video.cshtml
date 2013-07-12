@@ -1,0 +1,106 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model  iPow.Application.jq.Dto.DetailSightBaseDto
+@{
+    var videoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Application.jq.Service.IVideoInfoService>();
+}
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
+<!--左侧内容开始-->
+@{
+    if (this.Model != null)
+    {
+    <div class="guidTitle">
+        <h2>@(Model.Title)</h2>
+        <span class="typeName">[@(Model.Type)]</span> <span class="ticketName">门票价格：</span>
+        <span class="ticketPrice">￥@(Model.Ticket)
+        </span><span class="rightControl"><a href="javascript:;" onclick="GetSightData(@(Model.ParkID),'GoCount');" class="wantbutton">
+            我去过</a> | <a href="javascript:;" onclick="GetSightData(@(Model.ParkID),'WantCount');">
+                我想去</a> | <a href="#">添加到我的行程</a> </span>
+    </div>
+    <div class="guidMenu">
+        <span class="spanTab"><a href="@Url.Action("Index", "SightDetail", new { sight = Model.Py, sid = Model.ParkID, id = 1 })">
+            基本信息</a> <a onclick = "updateSightInfo('/sight/ticket/@(Model.ParkID)/tic','updateContianer');" href="javascript:;" title="门票">
+                门票</a> <a onclick = "updateSightInfo('/sight/article/@Model.ParkID/art/A/1','updateContianer');"
+                         href="javascript:;" title="攻略游记">攻略游记</a> <a onclick = "updateSightInfo('/sight/guide/@(Model.ParkID)/gui','updateContianer');"
+                            href="javascript:;"title="导游图">导游图</a> <a onclick = "updateSightInfo('/sight/pic/@(Model.ParkID)/pic/A/1','updateContianer');" href="javascript:;" title="图片">
+                                图 片</a> <a class="curren" onclick = "updateSightInfo('/sight/video/@Model.ParkID/vid/A/1','updateContianer');" href="javascript:;" title="视频">
+                                    视 频</a> </span><span class="spanInfo"><em style="background-color: #286903;" id="GoCount">@(Model.GoCount)</em>人去过&nbsp;&nbsp;
+                                        <em id="WantCount">@(Model.WantCount)</em>人想去 </span>
+    </div>
+    <div class="intro">
+        <div class="introMain">
+            <div class="introMenu" id="picvideoTab">
+                <a href="javascript:;" title="视频" class="current">视 频</a>
+                <div class="yjgl">
+                    <a  onclick = "updateSightInfo('/sight/video/@(Model.ParkID)/vid/N/1','updateContianer');" href="javascript:;">
+                        最新视频</a> <a  onclick = "updateSightInfo('/sight/video/@(Model.ParkID)/vid/H/1','updateContianer');" href="javascript:;">
+                            热门视频</a>
+                </div>
+            </div>
+            <div class="infoContainer" id="PicList">
+                @{
+        IQueryable<iPow.Domain.Dto.Sys_VideoInfoDto> videList = null;
+        int total = 0;
+        if (ViewBag.ord != null && ViewBag.ord == "H")
+        {
+            videList = videoService.GetSightVideoListByHot(Model.ParkID, ViewBag.id, 9, ref total);
+        }
+        else
+        {
+            videList = videoService.GetSightVideoListByNew(Model.ParkID, ViewBag.id, 9, ref total);
+        }
+        foreach (var item in videList)
+        {
+            if (!string.IsNullOrEmpty(item.PicFile) && !string.IsNullOrEmpty(item.PicPath))
+            {
+                var picPath = item.PicPath + item.PicFile;
+                    <dl>
+                        <dd class="img">
+                            <!-- 这里，还得改哈，这个是图片服务器上的  -->
+                            <a href="javascript:;" target="_blank" title="@(item.VideoName)">
+                                <img src="@(picPath)" alt = "@(item.VideoName)" /></a>
+                        </dd>
+                        <dd class="info">
+                            @item.VideoName</dd>
+                    </dl>                       
+            }
+        }
+                }
+            </div>
+            <div class="infoContainer">
+                <div class="indexPage">
+                    <div class="Pagecon">
+                        @Html.AjaxPager((total % 9) == 0 ? (total / 9) : (total / 9) + 1, 9, (int)(ViewBag.id == null ? 1 : ViewBag.id),
+                        "Video", "SightOther", "",
+                        new PagerOptions
+                        {
+                            PageIndexParameterName = "id",
+                            LastPageText = "尾页",
+                            FirstPageText = "首页",
+                            PrevPageText = "上一页",
+                            NextPageText = "下一页",
+                            NumericPagerItemCount = 5,
+                            CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>"
+                        },
+                        new
+                        {
+                            sid = Model.ParkID,
+                            other = "vid",
+                            ord = (ViewBag.ord == null ? "N" : ViewBag.ord),
+                            id = (ViewBag.id == null ? 1 : ViewBag.id + 1)
+                        },
+                        new AjaxOptions
+                        {
+                            UpdateTargetId = "updateContianer",
+                            OnBegin = "AjaxStart",
+                            OnComplete = "AjaxStop"
+                        }
+                        , null)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+}
+<!--左侧内容结束-->

@@ -1,0 +1,403 @@
+﻿@using iPow.DataSys;
+@using Webdiyer.WebControls.Mvc;
+@model iPow.DataClass.jz.TopPicDetail
+@{
+    Layout = "~/Views/Shared/_CategoryOut.cshtml";
+    ViewBag.Title = "ListTopic";
+    //家庭圈帖子详情
+}
+<script type="text/javascript" src="@Url.Content("~/Scripts/Froum.js")"></script>
+<div class="guid">
+    <a href="/">@(Model.SiteName)</a> &gt;<a href="/catalog/18/1">@(Model.TotalTheme)</a>
+    &gt;<a href="/catalog/@( (Model != null && Model.CurrentCatalog != null) ? Model.CurrentCatalog.cid : 0)/1">@((Model != null && Model.CurrentCatalog != null) ? Model.CurrentCatalog.name.Trim() : "")</a>
+    &gt;<a href="/catalog/@((Model != null && Model.CurrentForum != null) ? Model.CurrentForum.fid : 0)/2">@( (Model != null && Model.CurrentForum != null) ? Model.CurrentForum.name : "家族圈")</a>
+    <!-- IF ForumArr.classid>"0" -->
+</div>
+<div id="rightmain">
+    <div class="bd_l2">
+        <input name="dingyue" type="button" value="" class="dingyue" onclick="barRss(@Model.TopPic.fid);" />
+        <h1>
+            其它帖子</h1>
+        <ul class="relate">
+            @{
+                if (Model != null && Model.TopPic != null)
+                {
+                    var otherTopPic = iPow.DataClass.jz.Querys.GetOtherTopPicById(Model.TopPic.authorid, Model.TopPic.tid);
+                    if (otherTopPic != null && otherTopPic.Count() > 0)
+                    {
+                        foreach (var item in otherTopPic)
+                        {
+                <li><a href="/topic/@(item.Tid)/X" title="@(item.Subject)" target="_blank">@(item.Subject)</a>
+                    <p>
+                        点击:@(item.ViewNum)回复:@(item.ReNum)</p>
+                </li>
+                        }
+                    }
+                    else
+                    {
+                <li>什么都没有了</li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>
+<div id="leftmain">
+    <div class="barInfo">
+        @{
+            if (Model != null && Model.TopPic != null)
+            {
+                if (Model.TopPic.stick != 0)
+                {
+            <span class="icon_ding" title="置顶帖">&nbsp;</span>
+                }
+            <strong class="fs_14 p_b">@(Model.TopPic.subject)</strong>
+                if (Model.TopPic.digest == 1)
+                {
+            <span class="icon_jing" title="精华帖">&nbsp;</span>
+                }
+                if (Model.TopPic.picture == 1)
+                {
+            <span class="icon_huan hand" title="图片帖" onclick="location.href='#f1'">&nbsp;</span>
+                }
+            <p>
+                点击数：@(Model.TopPic.views)&nbsp;&nbsp;|&nbsp;&nbsp;回复数：@(Model.TopPic.replies)&nbsp;&nbsp;|&nbsp;&nbsp;
+                最后回复发表于 @(iPow.function.DateHelper.GetMysqlDateTime(Model.TopPic.lasttime, DateTimeKind.Local).ToString("yyyy-MM-dd"))
+            </p>
+            }
+        }
+    </div>
+    <div class="barFun">
+        <div class="ft_l">
+            <a href="/catalog/@(Model.CurrentForum.fid)/2" class="btn_index">本族首页</a> <a href="#say"
+                class="btn_reply">快捷回复</a> <a href="javascript:AddFavorite();" class="btn_collect">收藏该帖</a>
+            <!-- IF loginArr.group>="4" -->
+            @{
+                if (Model != null && Model.TopPic != null)
+                {
+                    if (Model.TopPic.digest == 1)
+                    {
+                <a href="javascript:;" onclick="topicManage(@(Model.TopPic.fid),@(Model.TopPic.tid),0,'digest');" class="btn_good">
+                    取消精华</a>
+                    }
+                    else
+                    {
+                <a href="javascript:;" onclick="topicManage(@(Model.TopPic.fid),@(Model.TopPic.tid),1,'digest');" class="btn_good">
+                    加为精华</a>
+                    }
+
+                    if (Model.TopPic.stick != 0)
+                    {
+                <a href="javascript:;" onclick="topicManage(@(Model.TopPic.fid),@(Model.TopPic.tid),0,'stick');" class="btn_top">
+                    取消置顶</a>
+                    }
+                    else
+                    {
+                <a href="javascript:;" onclick="topicManage(@(Model.TopPic.fid),@(Model.TopPic.tid),1,'stick');" class="btn_top">
+                    设为置顶</a>
+                    }
+                }
+            }
+            <!-- ENDIF loginArr.group -->
+        </div>
+        <!-- IF loginArr.group>="4" -->
+        <div class="ft_r">
+            @{
+                if (Model != null && Model.TopPic != null)
+                {
+                <a href="javascript:;" onclick="topicManage(@(Model.TopPic.fid),@(Model.TopPic.tid),0,'delete');"
+                    class="btn_del">删除该帖</a>
+                }
+            }
+        </div>
+        <div class="k">
+        </div>
+    </div>
+    <div id="divFroum">
+        <div class="barFun" style="margin-top: 0;">
+            <!-- ENDIF loginArr.group -->
+            <div class="pagecontent ft_r">
+                @{
+                    Webdiyer.WebControls.Mvc.PagedList<iPow.DataClass.jz.SinglePostDetail> forumPostList = null;
+                    if (Model != null && Model.TopPic != null)
+                    {
+                        forumPostList = iPow.DataClass.jz.Querys.GetTopPicPostDetailListById(Model.TopPic.tid, 1, 15);
+                    }
+                }
+                <!--分页 -->
+                @Html.AjaxPager(forumPostList, new PagerOptions()
+                   {
+                       SeparatorHtml = "",
+                       CssClass = "pg",
+                       CurrentPagerItemWrapperFormatString = "<b>{0}</b>",
+                       PageIndexParameterName = "pageIndex",
+                       ShowNumericPagerItems = true,
+                       ShowFirstLast = false,
+                       ShowPrevNext = false,
+                       NumericPagerItemCount = 10,
+                       FirstPageText = "<span class=\"pgpre\">首页</span>",
+                       LastPageText = "<span class=\"pgnext\">尾页</span>",
+                       PrevPageText = " <span class=\"pgpre\">上一页</span>",
+                       NextPageText = "<span class=\"pgnext\">下一页</span>",
+                   },
+                   new AjaxOptions()
+                   {
+                       UpdateTargetId = "divFroum",
+                       OnBegin = "AjaxStart",
+                       OnComplete = "AjaxStop"
+                   })
+                <!--分页 -->
+            </div>
+            <div class="k">
+            </div>
+        </div>
+        <div class="barList" style="border-top: 0;">
+            <!-- BEGIN postArr.Post -->
+            @{
+                for (int i = 0; i < forumPostList.Count; i++)
+                {
+                    if (forumPostList[i].replyfloor == 0)
+                    {
+                <div class="barFloor1" id="f@(forumPostList[i].replyfloor + 1)">
+                    <div class="barFloor_title1">
+                        <span class="barFloor_id"><b>@(forumPostList[i].replyfloor + 1)</b>楼</span>
+                        <dl>
+                            @{
+                        if (forumPostList[i].authorid > 0)
+                        {
+                                <dt><a href="./member.php?uid=@(forumPostList[i].authorid)"  target="_blank">
+                                    <img src="/images/group_face_1.gif" /></a> </dt>
+                                <dd>
+                                    <a href="http://192.168.1.65:211/index.php?s=/space/{authorid}" target="_blank" class="blue">@(forumPostList[i].author)</a>
+                                </dd>
+                        }
+                        else
+                        {
+                                <dt>
+                                    <img src="/images/group_face_0.gif" alt="游客" title="游客" /></dt>
+                                <dd>
+                                    @{
+                            if (forumPostList[i].guestname == 0)
+                            {
+                                        <span class="ip2">@forumPostList[i].author</span>
+                            }
+                            else
+                            {
+                                        <span class="anonymity2">@forumPostList[i].author</span>
+                                        <span class="icon_guest" title="游客">&nbsp;</span>
+                            }
+                                    }
+                                </dd>
+                        }
+                            }
+                            <dd>
+                                <span class="bar_info">
+                                发表于@( iPow.function.DateHelper.GetMysqlDateTime(forumPostList[i].dateline, DateTimeKind.Local).ToString())</span>
+                                @(Html.Raw(Model.TopPic.replies > 50 ? "<span class=\"icon_hot\">&nbsp;</span>" : ""))
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                    }
+                    else
+                    {
+                <div class="barFloor1" id="f@(forumPostList[i].replyfloor)">
+                    <div class="barFloor_title">
+                        <span class="barFloor_id"><b>@(forumPostList[i].replyfloor)</b>楼</span>
+                        @{
+                        if (forumPostList[i].authorid >= 0)
+                        {
+                            <a href="http://192.168.1.65:211/index.php?s=/space/{authorid}" target="_blank" class="blue">@forumPostList[i].author</a>
+                        }
+                        else
+                        {
+                            if (forumPostList[i].guestname == 1)
+                            {
+                            <span class="anonymity">@forumPostList[i].author</span>
+                            <span class="icon_guest" title="游客">&nbsp;</span>
+                            }
+                            else
+                            {
+                                //if (requestgroup<4)
+                                //{
+                                //    <span class="ip">{author}</span>
+                                //}
+                            }
+                        }
+                        }
+                        <span class="bar_info">
+                        发表于@(iPow.function.DateHelper.GetMysqlDateTime(forumPostList[i].dateline, DateTimeKind.Local).ToString())
+                        </span>
+                    </div>
+                </div>
+                    }
+                <div class="barFloor_con">
+                    @Html.Raw(forumPostList[i].message)
+                </div>
+                
+                <div class="barFloor_bot">
+                    <div class="ft_l">
+                        <a href="#say" class="btn_reply2" onclick="setReplyTitle({floor});"></a>
+                    </div>
+                    <div class="barFloor_oper">
+                        <a href="./report.php?pid={pid}&height=150&width=296" class="thickbox" title="\"
+                            rel="nofollow"><span>举报</span></a> <a  href='javascript:' onclick="GoUp(@(forumPostList[i].pid),'wave')" class="quiet">
+                                <span id="wave@(forumPostList[i].pid)">飘过@(forumPostList[i].wave)</span></a>
+                        <a href='javascript:' onclick="GoUp(@forumPostList[i].pid,'down')"  class="against">
+                            <span  id="down@(forumPostList[i].pid)">砸@(forumPostList[i].down)</span></a>
+                        <a  href='javascript:' onclick="GoUp(@forumPostList[i].pid,'up')"  class="support"><span id="up@(forumPostList[i].pid)">
+                            顶@(forumPostList[i].up)</span></a>
+                    </div>
+                </div>
+                }
+            }
+            <div class="barPage">
+                <!-- IF loginArr.group>="4" -->
+                <!-- ENDIF loginArr.group -->
+                <div class="pagecontent ft_r">
+                    <!--分页 -->
+                    @Html.AjaxPager(forumPostList, new PagerOptions()
+                       {
+                           SeparatorHtml = "",
+                           CssClass = "pg",
+                           CurrentPagerItemWrapperFormatString = "<b>{0}</b>",
+                           PageIndexParameterName = "pageIndex",
+                           ShowNumericPagerItems = true,
+                           ShowFirstLast = false,
+                           ShowPrevNext = false,
+                           NumericPagerItemCount = 10,
+                           FirstPageText = "<span class=\"pgpre\">首页</span>",
+                           LastPageText = "<span class=\"pgnext\">尾页</span>",
+                           PrevPageText = " <span class=\"pgpre\">上一页</span>",
+                           NextPageText = "<span class=\"pgnext\">下一页</span>",
+                       },
+                       new AjaxOptions()
+                       {
+                           UpdateTargetId = "divFroum",
+                           OnBegin = "AjaxStart",
+                           OnComplete = "AjaxStop"
+                       })
+                    <!--分页 -->
+                </div>
+                <div class="k">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bar_new" onkeyup="quick_send(event);">
+        <a name="say" style="visibility: hide">&nbsp;</a>
+        <div class="bar_new_con fs_14">
+            <form id="submit_form" name="submit_form" method="post" action="" target="sypost">
+            <input type="hidden" name="do" id="do" value="Reply" />
+            <input type="hidden" name="tid" id="tid" value="@(Model.TopPic.tid)" />
+            <input type="hidden" name="fid" id="fid" value="@(Model.TopPic.fid)" />
+            <input type="hidden" name="uid" id="uid" value="@("")" />
+            <ul>
+                @{ 
+                    <!-- IF loginArr.state=="1" -->
+                    
+                    if (Model.LoginArr["state"] == "1")
+                    {
+                    <li>
+                        <label>
+                            &nbsp;</label>@Model.LoginArr["name"]
+                        @{
+                        if (Convert.ToInt32(Model.LoginArr["group"]) > 2)
+                        {
+                            @("您是groupArr.name")
+                        }
+                        else
+                        {
+                            @("您已登录")
+                        }
+                        }
+                        &nbsp;&nbsp;<input name="anony" type="checkbox" value="\" tabindex="999" />匿名发表</li>
+                    }
+                    else
+                    {
+                    <li>
+                        <label>
+                            &nbsp;</label><span id="loginStateInfo">
+                                @{
+                        if (Model.LoginArr["name"] == null)
+                        {
+                                    @(Model.LoginArr["name"] + ",您未登录!")
+                        }
+                        else
+                        {
+                                    @("您未登录，帖子将以匿名发表。")
+                        }
+                                }
+                            </span><a href="./anonymity.php?height=139&width=303" class="thickbox" title="游客昵称设置">
+                                设置昵称</a>| <a href="../login.php?height=139&width=296" class="thickbox" title="用户登录">
+                                    登录</a>| <a href="http://192.168.1.65:211/?reg&ap=qz" title="加入我们">注册</a></li>
+                    }
+                }
+                <li style="display: none;">
+                    <input type="hidden" id="title" name="title" maxlength="32" value="回复：@(Model.TopPic.subject)" /></li>
+                <li>
+                    <label>
+                        回复内容：</label>
+                    @{
+                        if (true)
+                        {
+                        <textarea id='content' name="content" rows="8" class="bar_inp" cols="\"></textarea>
+                        }
+                        else
+                        {
+                        <textarea id='content' name="content" rows="8" class="bar_inp" onfocus="show_verify_image('reply');"
+                            cols="\"></textarea>
+                        }  
+                    }
+                </li>
+                <li>
+                    <label>
+                        插入图片：</label><input type="text" id="pic" name="pic" maxlength="180" class="bar_inp"
+                            style="color: #666;" value="" /></li>
+                @{
+                    if (Convert.ToInt32(Model.GroupArr[Model.LoginArr["group"]]["verify"]) == 1)
+                    {       
+                    <!-- IF groupArr.verify=="1" -->
+                    <li id="verify_div">
+                        <label>
+                            验 证 码：</label>
+                        <table width="230" cellpadding="0" cellspacing="0" class="bar_codet">
+                            <tr>
+                                <td colspan="2" valign="middle">
+                                    <input type="text" name="verifyNum1" id="verifyNum1" class="disableAutoComplete bar_code"
+                                        style="color: #666;" value="输入图中字符，区分大小写" onfocus="if (this.value.length > 4) this.value='';this.style.color='';" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="138" valign="middle" id="verify_cell1">
+                                    <br />
+                                    <img alt="验证码" id="Logon-vcode" height="40" width="100" src="@Url.Action("Vcode", "Admin", new { id = "Logon" })" style="cursor:pointer;" />
+                                    区分大小写
+                                </td>
+                                <td valign="middle">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <span id="IdMessage" style="color: Red"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </li>  
+                    }
+                }
+                <!-- ENDIF groupArr.verify -->
+                <li class="bd_t1" style="clear: left">
+                    <label>
+                        &nbsp;</label>
+                    <input type="submit" id="btn1" name="btn1" class="btn_sub" value="确认回复" />
+                    <span class="bar_new_txt">快捷键：Ctrl+Enter</span> </li>
+            </ul>
+            </form>
+            <iframe scrolling="no" width="0" height="0" src="" name="sypost" id="sypost" style="display: none">
+            </iframe>
+            <div class="k">
+            </div>
+        </div>
+    </div>
+</div>

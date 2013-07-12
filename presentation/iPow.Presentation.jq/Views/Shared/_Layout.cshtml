@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title</title>
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/top.css")" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/ad.css")" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/themes/base/jquery-ui.css")"  />
+    @*<script src="@Url.Content("~/Scripts/jquery.1.4.2.min.js")" type="text/javascript"></script>*@
+    @*<script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>*@
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui-1.8.18.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.blockUI.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/main.js")" type="text/javascript" ></script>
+    <script language="javascript" type="text/javascript">
+        function AjaxStart() {
+            $.blockUI({ message: '<img  src="/images/loading4.gif" width="16"  height="16"/><font color="#2E6092" size="2">正在加载，稍候更精彩...</font>' });
+        }
+        function AjaxStop() {
+            $.unblockUI();
+        }
+    </script>
+</head>
+<body>
+    @Html.Partial("SSOPartial")
+         @*  @Html.Partial("_TopPartial")*@
+             @Html.Partial("_LogOnPartial")
+    <!--页面头头部开始-->
+    <div class="topContainer">
+        <div class="topTop">
+            <div id="header">
+                <div class="logo">
+                    <a href="http://jq.ipow.cn"></a>
+                </div>
+                <div id="headerMid">
+                    <div class="topNav">
+                        <ul>
+                            <li><a href="http://www.ipow.cn" title="去度假">去度假</a></li>
+                            <li><a class="current" href="http://jq.ipow.cn" title="逛景区">逛景区</a></li>
+                            <li><a href="http://hotel.ipow.cn" title="住酒店">住酒店</a></li>
+                            <li><a href="http://jz.ipow.cn/category.php?cid=18&page=1" title="家族圈">家族圈</a></li>
+                           <!-- <li><a href="http://p.ipow.cn" title="互动旅行">互动旅行</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div id="headerRight">
+                    <span class="login">
+                       @* @{
+                            Html.RenderPartial("_LogOnPartial");
+                        }*@
+                    </span><span class="banner"><a href="http://www.ipow.cn/activity/" title="iPow专题"
+                        target="_blank">iPow专题</a> </span>
+                </div>
+            </div>
+        </div>
+        <div class="topBottom">
+            @Html.Partial("SearchPartial")
+        </div>
+    </div>
+    <!--页面头部结束-->
+    @RenderBody()
+    <div class="pageBottom">
+        @Html.Partial("BottomPartial")
+    </div>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-7332262-1");
+            pageTracker._trackPageview();
+        } catch (err) { }</script>
+</body>
+</html>

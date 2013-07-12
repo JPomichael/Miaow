@@ -1,0 +1,33 @@
+﻿@{
+    var linkService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+        iPow.Application.dj.Service.ILinksAndTopCountService>();
+        
+    var imgLink = linkService.GetImgLinkList();
+    var textLink = linkService.GetTextLinkList();
+    
+    <span class="imgLink">
+        @{
+            if (imgLink != null && imgLink.Count > 0)
+            {
+                foreach (var item in imgLink)
+                {
+            <a href="@(item.WebUrl)" target="_blank" class="aLink" title="@(item.Title)">
+                <img src="@(item.LinksPath + item.LinksName)" alt = "@(item.Title)"/></a>        
+                }
+            }
+        }
+    </span><span class="textLink">
+        @{
+            if (textLink != null && textLink.Count > 0)
+            {
+                foreach (var item in textLink)
+                {
+            <a href="@(item.WebUrl)" target="_blank" class="aText" title="@(item.Title)">
+                @(item.Title)</a> 
+                }
+            }
+        }
+    </span>
+    <div class="clear">
+    </div>
+}

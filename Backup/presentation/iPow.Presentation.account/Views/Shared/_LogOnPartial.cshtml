@@ -1,0 +1,12 @@
+﻿@{
+    if (Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] != null)
+    {
+        var user = Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] as iPow.Service.SSO.Client.AuthService.User;
+    <text>Welcome <strong>@user.username</strong>! [ @Html.ActionLink("退出", "logoff", "account")]</text>
+    }
+    else
+    {
+        var loginUrl = iPow.Infrastructure.Crosscutting.Comm.Service.SsoService.GetSsoLogOnAndReturnUrl();
+    <a href = "@(loginUrl)">我要登陆</a>
+    }
+}

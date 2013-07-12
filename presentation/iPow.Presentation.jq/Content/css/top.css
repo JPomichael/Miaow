@@ -1,0 +1,684 @@
+﻿@charset "utf-8";
+body
+{
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	background:url(/images/bg.jpg) repeat;
+	font-family:Helvetica,Georgia,Arial,sans-serif,"宋体","微软雅黑";
+	color:#2f2f2f;
+}
+.clear
+{
+	clear:both;
+}
+h1,h2,h3,h4,h5
+{
+	margin:0px;
+	padding:0px;
+}
+ul, dl, dd,form, fieldset,em { margin: 0; padding: 0; }
+li{ list-style:none;}
+em{font-style: normal; font-weight: normal;}
+.topContainer
+{
+	width:960px;
+	height:139px;
+	padding:0px 20px;
+	margin:0 auto;
+	background-color:#fff;
+}
+.topTop
+{
+	float:left;
+	width:100%;
+	height:79px;
+	background:url(/images/top_topBG.jpg) repeat-x;
+}
+.topBottom
+{
+	float:left;
+	width:100%;
+	height:60px;
+	background:url(/images/top_bomBG.jpg) repeat-x;
+}
+#header,.headerSearch
+{	
+	float:left;
+	width:100%;
+}
+#header
+{
+	background:url(http://www.ipow.cn/images/chunjieBg.jpg);
+}
+.headerSearch
+{
+	width:600px;
+	padding-left:90px!important;
+	padding-right:180px!important;
+	padding-left:50px;
+	padding-right:180px;
+	padding-top:18px;
+	padding-bottom:12px;
+	background:url(/images/ipow_Title.jpg) right no-repeat;
+}
+#headerMid
+{
+	float:left;
+	width:450px;
+	height:79px;
+	text-align:left;
+}
+#headerRight
+{
+	float:right;
+	width:245px;
+	height:25px;
+	padding-right:5px;
+	line-height:25px;
+	text-align:right;
+}
+
+#headerRight span.login
+{
+	float:left;
+	display:block;
+	width:100%;
+	height:25px;
+}
+#headerRight span.banner
+{
+	float:right;
+	display:block;
+	width:180px;
+	height:24px;
+	padding-top:30px;
+	font-weight:700;
+}
+#headerRight span.banner a
+{
+	display:block;
+	float:left;
+	width:66px;
+	height:24px;
+	margin-right:5px;
+	background:url(/images/top_tabbg.gif) no-repeat;
+	text-align:center;
+	text-decoration:none;
+	color:#fff;
+	line-height:24px;
+}
+.logo
+{
+	float:left;
+	width:250px;
+	height:79px;
+}
+
+/*added by yjihrp 2011.7.27.12.45*/
+.logo a
+{
+	float:left;
+	width:100%;
+	height:100%;
+}
+/*added by yjihrp 2011.7.27.12.45*/
+
+
+
+/* --------------->>> 头部导航样式 <<<------------------*/
+.topNav
+{
+	position:absolute;
+	width:450px; 
+	float:left;
+	margin-top:47px;
+	padding:0px;
+	font-size:14px;
+}
+.topNav a
+{
+	text-decoration:none;
+}
+.topNav ul 
+{ 
+	margin:0;
+	list-style:none;
+	padding: 0;
+}
+.topNav span 
+{
+	float:left; 
+	display:block; 
+	color:#fff;
+	text-align:center;  
+	padding: 10px 22px 9px 17px;
+	text-decoration:none; 
+	font-weight: bold; 
+}
+.topNav li 
+{ 
+	float:left; 
+	color: #FFF;
+	width:89px;
+	margin:0; 
+	padding:0; 
+}
+.topNav li a,.topNav li a.current
+{
+	display:block;
+	float:left;
+	width:89px;
+	height:33px;
+	background:url(/images/navBg.gif) left -33px no-repeat;
+	text-align:center;
+	line-height:33px;
+	color:#fff;
+	font-weight:700;
+}
+.topNav li a:hover,.topNav li a.current
+{
+	background-position:left top;
+}
+
+/* --------------->>> 头部搜索条样式 <<<------------------*/
+.headerSearch
+{
+	height:30px;
+	color:#FFFFFF;
+	font-weight:bold;
+	text-align:center;
+}
+.headerSearch span
+{
+	display:block;
+	float:left;
+	line-height:24px;
+}
+.headerSearch a.makeTrip
+{
+	float:left;
+	display:block;
+	width:104px;
+	height:24px;
+	margin-left:10px;
+	margin-top:2px;
+	background:url(/images/btn_makeTrip.jpg) no-repeat;
+}
+.headerSearch a.myTrip
+{
+	float:left;
+	display:block;
+	width:71px;
+	height:24px;
+	margin-left:20px;
+	margin-top:2px;
+	background:url(/images/mytrip.jpg) center center no-repeat;
+}
+.spanText
+{
+	width:80px;
+	height:26px;
+	line-height:26px;
+	text-align:right;
+	font-size:14px;
+}
+.spanSearch,.spanInput
+{
+	width:100px;
+	margin:0px;
+	margin-left:2px;
+	padding:0px;
+
+}
+.inputText3
+{
+	float:left;
+	display:block;
+	width:264px;
+	height:20px;
+	margin-left:2px;
+	margin-top:2px;
+	line-height:20px;
+	border:0px;
+}
+.spanSelect
+{
+	float:left;
+	width:73px!important;
+	width:70px;
+	height:22px;
+	margin-top:2px;
+	margin-left:2px;
+	background-color:#FBEBE6;
+	color:#E08300;
+}
+.selectDown
+{
+	float:left;
+	width:23px;
+	height:22px;
+	margin-top:2px;
+	background-color:#FBEBE6;
+	color:#BD8249;
+	border:0px;
+	cursor:pointer;
+}
+.aSearch
+{
+	display:block;
+	float:left;
+	width:103px;
+	height:24px;
+	margin-left:5px;
+	margin-top:2px;
+	background:url(/images/btnSearch.gif) left top no-repeat;
+}
+.aSearch:hover
+{
+	background-position:left -24px;
+}
+.inputText2
+{
+	height:22px;
+	width:290px;
+	background:url(/images/search_inputBG.gif);
+	padding-top:4px;
+	border:0px;
+	padding-left:3px;
+	margin-left:1px;
+	line-height:20px;
+}
+.inputDiv
+{
+	float:left;
+	height:26px;
+	width:366px;
+	background:url(/images/search_inputBG1.gif);
+}
+a.aBeta
+{
+	display:block;
+	float:left;
+	height:15px;
+	width:40px;
+	margin-left:92px!important;
+	margin-left:46px;
+	margin-top:6px;
+}
+.loginInfo
+{
+
+}
+/*页面底部样式*/
+.pageBottom
+{
+	width:960px;
+	padding:0px 20px;
+	margin:0px auto;
+	background:#fff;
+	text-align:center;
+	line-height:25px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+.pageBottom h1
+{
+	font-size:14px;
+	display:block;
+	width:100%;
+	text-align:left;
+	padding-bottom:10px;
+}
+.pageBottom2
+{
+	float:left;
+	width:100%;
+	height:67px;
+}
+.pageBottom2Left
+{
+	float:left;
+	width:135px;
+	height:67px;
+	background:url(/images/bottomLeft.jpg) no-repeat;
+	
+}
+.pageBottom2Right
+{
+	float:right;
+	width:18px;
+	height:67px;
+	background:url(/images/bottomRight.jpg) no-repeat;
+}
+.pageBottom2Mid
+{
+	float:left;
+	width:807px;
+	height:57px;
+	padding-top:10px;
+	background:url(/images/bottomBG.jpg) repeat-x;
+	color:#795205;
+}
+.pageBottom2Mid a
+{
+	color:#000;
+	text-decoration:none;
+}
+.pageBottom2Mid a:hover
+{
+	color:#B85E00;
+}
+.pageBottom2Mid p
+{
+	width:100%;
+	margin:0px;
+	padding:0px;
+	height:25px;
+	line-height:25px;
+}
+.pageBottom span
+{
+	display:block;
+	width:100%;
+	padding-top:10px;
+	border-top:#d5d5d5 4px solid;
+}
+.linkContainer
+{
+	width:960px;
+	padding:0 20px!important;
+	padding:0 19px;
+	margin:0 auto;
+	background:#fff;
+}
+.linkContainer div.LinkList
+{
+	display:block;
+	float:left;
+	width:940px;
+	margin-top:20px;
+	padding:10px;
+	border:#D3D3D3 solid 1px;
+	line-height:25px;
+}
+.linkContainer div.LinkList span
+{
+	width:100%;
+}
+.linkContainer span img
+{
+	display:block;
+	width:88px;
+	height:31px;
+	border:0px;
+}
+.linkContainer  a
+{
+	display:block;
+	float:left;
+	color:#000;
+}
+.linkContainer span a.aLink
+{
+	width:88px;
+	height:31px;
+	margin:8px;
+}
+.linkContainer span a.aText
+{
+	width:90px;
+	height:25px;
+	text-align:center;
+	margin-left:8px;
+	margin-right:6px;
+	line-height:25px;
+}
+
+#TB_WinBg
+{
+	width:100%;
+	height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+	left:0px;
+	top:0px;
+	position:absolute;
+	background-color:#000;
+	filter:alpha(opacity=75);  
+	-moz-opacity: 0.75;  
+	opacity: 0.75;
+	z-index:1200;     
+	
+}
+#TB_Windows
+{
+	display:none;
+	position:absolute;
+	width:640px;
+	height:450px;
+	border:#7D7D7D 6px solid;
+	background-color:#fff;
+	left:0px;
+	overflow:hidden;
+	z-index:1203;
+}
+#TB_WinTitle
+{
+	float:left;
+	width:100%;
+	height:30px;
+	background:#CCCCCC url(/images/TB_TitleBG.jpg) right no-repeat;
+	border-bottom:#AAAAAA 2px solid;
+}
+#TB_WinTitle a.close
+{
+	display:block;
+	float:right;
+	width:22px;
+	height:21px;
+	margin-right:5px;
+	margin-top:3px;
+	background:url(/images/TB_WinClose.jpg) no-repeat;
+}
+#TB_WinTitle a.close:hover
+{
+	background:url(/images/TB_WinClose2.jpg) no-repeat;
+}
+#TB_WinTitle h3.title
+{
+	display:block;
+	float:left;
+	font-size:12px;
+	text-indent:4px;
+	line-height:30px;
+}
+#TB_WinContent
+{
+	clear:both;
+	margin:0 auto;
+	margin-top:10px;
+	width:96%;
+	height:390px;
+	overflow:auto;
+	background-color:#00;
+}
+.TB_Cotainer
+{
+	float:left;
+	width:100%;
+}
+.TB_Cotainer h4
+{
+	display:block;
+	float:right;
+	width:250px;
+	padding-top:40px;
+	text-align:left;
+	font-size:12px;
+	
+}
+.TB_Form
+{
+	float:left;
+	width:100%;
+}
+.TB_Login
+{
+	float:left;
+	width:300px;
+	height:180px;
+	border-right:#999 2px solid;
+	margin-top:20px;
+	padding-top:15px;
+	
+}
+.TB_Login h3
+{
+	font-size:12px;
+	line-height:22px;
+}
+.TB_Form span,.TB_Login span
+{
+	display:block;
+	float:left;
+	width:100%;
+	height:30px;
+	line-height:30px;
+}
+.TB_Form span label,.TB_Login span label
+{
+	display:block;
+	float:left;
+	width:80px;
+	height:30px;
+	text-align:right;
+}
+.TB_Form span em,.TB_Login span em
+{
+	display:block;
+	float:left;
+	width:10px;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+	color:#F00;
+}
+.TB_Form span textarea
+{
+	display:block;
+	float:left;
+	width:180px;
+	height:46px;
+	margin-top:5px;
+	line-height:16px;
+	border:1px solid #ABADB3;
+}
+.TB_Form span .selStyle
+{
+	display:block;
+	float:left;
+	width:100px;
+	height:20px;
+	margin-top:5px;
+}
+.TB_Form span .txtInput,.TB_Login span .txtInput
+{
+	display:block;
+	float:left;
+	width:180px;
+	height:16px;
+	margin-top:5px;
+	line-height:16px;
+	border:1px solid #ABADB3;
+}
+.TB_Form span a.btnSubmit,.TB_Login span a.btnLogin,.TB_Login span a.btnRegister,.TB_Form span a.btnReset,.TB_Login span a.btnReset
+{
+	display:block;
+	float:left;
+	width:50px;
+	height:19px;
+	background:url(/images/btn_Submit.gif) no-repeat;
+	margin-left:5px;
+	margin-top:5px;
+	text-decoration:none;
+}
+.TB_Login span a.btnLogin
+{
+	background:url(/images/btnLogin.gif) no-repeat;
+}
+.TB_Login span a.btnRegister
+{
+	background:url(/images/btnRegister.gif) no-repeat;
+}
+.TB_Form span a.btnReset,.TB_Login span a.btnReset
+{
+	background:url(/images/btn_Reset.gif) no-repeat;
+}
+#divCity{
+	float:left;
+	position:absolute;
+	width:320px;
+	background-color:#FFFFFF;
+	border:2px solid #d3d3d3;
+	margin-top:20px;
+	margin-left:-90px;
+	*margin-left:-140px!important;
+	_margin-left:-140px;
+	display:none;
+}
+#CityTitle
+{
+	float:left;
+	width:100%;
+	height:25px;
+	background-color:#e4e4e4;
+	border-bottom:1px solid #d3d3d3;
+}
+#CityTitle h2
+{
+	display:inline;
+	float:left;
+	width:200px;
+	font-size:12px;
+	line-height:25px;
+	padding-left:5px;
+	color:#848484;
+}
+#divCity ul
+{
+	display:inline;
+	float:left;
+	width:300px;
+	padding:10px;
+	margin:0px;
+}
+#divCity ul li
+{
+	display:inline;
+	float:left;
+	width:60px;
+	text-align:center;
+}
+#divCity ul li a
+{
+	height:25px;
+	text-align:center;
+	color:#848484;
+	text-decoration:none;
+}
+#divCity ul li a:hover
+{
+	background-color:#c60000;
+	color:#fff;
+}
+
+
+.buttonCity {
+    background: url("/images/HotCity.gif") no-repeat scroll 0 0 transparent;
+    border: 0 none;
+    cursor: pointer;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    width: 18px;
+     vertical-align:middle;
+}

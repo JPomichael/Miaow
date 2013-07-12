@@ -1,0 +1,95 @@
+﻿@model iPow.Application.dj.Dto.HomeDto
+@{
+    ViewBag.Title = "主页";
+}
+<script src="@Url.Content("~/Scripts/index.js")" type="text/javascript"></script>
+<!----------页面内容开始---------->
+<div id="secity">
+    <div class="secitytitle">
+        <ul>
+            @{
+                if (Model != null && Model.TopTourCitys != null && Model.TopTourCitys.Count() > 0)
+                {
+                    int tar = 1;
+                    foreach (var item in Model.TopTourCitys)
+                    {
+                <li><a href="javascript:;" id="@( "one" + tar.ToString())" class=" @(tar == 1 ? "cityxu" : "")  " onclick="GetTopTourCity('one',@(tar) , @(Model.TopTourCitys.Count()), '@(item.CityName)')">@(item.CityName)</a></li>
+                        tar += 1;
+                    }
+                }
+            }
+        </ul>
+    </div>
+    <div id="divTopTrou">
+        @{
+            if (Model != null && Model.TopTourPlans != null && Model.TopTourPlans.Count > 0)
+            {
+            <ul>
+                @{
+                for (int i = 0; i < Model.TopTourPlans.Count; i++)
+                {
+                    var item = Model.TopTourPlans[i];
+                    if (i == 1)
+                    {
+                    <li class="shancon" style="background: #fef8ee; height: 56px; width: 316px; border-left: dashed 1px #7f7f7f;
+                        border-right: dashed 1px #7f7f7f;"><a href="@Url.Action("Index", "Tour", new { id = item.Id })">
+                            <h1>
+                                @(item.PlanTitle)<span>¥@(item.PlanTotalMoney)/全程(@(item.Days)
+                                    天)</span></h1>
+                            <span style="color: #6bc700;">推荐理由：</span>
+                            @(item.TopReason)
+                        </a></li>
+                    }
+                    else
+                    { 
+                    <li class="shancon"><a href="@Url.Action("index", "tour", new { id = item.Id })">
+                        <h1>
+                            @(item.PlanTitle)<span>¥@(item.PlanTotalMoney)/全程(@(item.Days)
+                                天)</span></h1>
+                        <span style="color: #6bc700;">推荐理由：</span>
+                        @(item.TopReason)
+                    </a></li>
+                    }
+                }
+                }
+            </ul>
+            }
+        }
+    </div>
+</div>
+<div class="clear">
+</div>
+<div id="tourist_attraction">
+    <div id="tourist">
+        <ul id="ulListSight">
+            @Html.Partial("CatalogTourListPartial")
+        </ul>
+    </div>
+    <div id="mianright">
+        <ul class="hotlutil">
+            <li class="h-title">热门自助线路</li>
+            @Html.Partial("HotTourPlanPartial")
+        </ul>
+        <div class="h-hotel">
+            <ul class="hot-hotel">
+                <li class="title-hotel">热门酒店</li>
+                @Html.Partial("HotHotelPartial")
+            </ul>
+        </div>
+    </div>
+</div>
+<div id="emad">
+    @Html.Partial("DefaultPartial")
+</div>
+<!----------页面内容结束---------->
+<!----------页面友情链接开始---------->
+<div class="linkContainer">
+    <div class="LinkList">
+        @Html.Partial("LinkPartial")
+        <div class="clear">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<!----------页面友情链接结束---------->

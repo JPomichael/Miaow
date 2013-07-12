@@ -1,0 +1,159 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model Webdiyer.WebControls.Mvc.PagedList<iPow.DataClass.jz.SinglePostDetail>
+<div class="barFun" style="margin-top: 0;">
+    <!-- ENDIF loginArr.group -->
+    <div class="pagecontent ft_r">
+        <!--分页 -->
+        @Html.AjaxPager(Model, new PagerOptions()
+        {
+            SeparatorHtml = "",
+            CssClass = "pg",
+            CurrentPagerItemWrapperFormatString = "<b>{0}</b>",
+            PageIndexParameterName = "pageIndex",
+            ShowNumericPagerItems = true,
+            ShowFirstLast = false,
+            ShowPrevNext = false,
+            NumericPagerItemCount = 10,
+            FirstPageText = "<span class=\"pgpre\">首页</span>",
+            LastPageText = "<span class=\"pgnext\">尾页</span>",
+            PrevPageText = " <span class=\"pgpre\">上一页</span>",
+            NextPageText = "<span class=\"pgnext\">下一页</span>",
+        },
+        new AjaxOptions()
+        {
+            UpdateTargetId = "divFroum",
+            OnBegin = "AjaxStart",
+            OnComplete = "AjaxStop"
+        })
+        <!--分页 -->
+    </div>
+    <div class="k">
+    </div>
+</div>
+<div class="barList" style="border-top: 0;">
+    <!-- BEGIN postArr.Post -->
+    @{
+        for (int i = 0; i < Model.Count; i++)
+        {
+            if (Model[i].replyfloor == 0)
+            {
+        <div class="barFloor1" id="f@(Model[i].replyfloor + 1)">
+            <div class="barFloor_title1">
+                <span class="barFloor_id"><b>@(Model[i].replyfloor + 1)</b>楼</span>
+                <dl>
+                    @{
+                if (Model[i].authorid > 0)
+                {
+                        <dt><a href="./member.php?uid=@(Model[i].authorid)"  target="_blank">
+                            <img src="/images/group_face_1.gif" /></a> </dt>
+                        <dd>
+                            <a href="http://192.168.1.65:211/index.php?s=/space/{authorid}" target="_blank" class="blue">@(Model[i].author)</a>
+                        </dd>
+                }
+                else
+                {
+                        <dt>
+                            <img src="/images/group_face_0.gif" alt="游客" title="游客" /></dt>
+                        <dd>
+                            @{
+                    if (Model[i].guestname == 0)
+                    {
+                                <span class="ip2">@Model[i].author</span>
+                    }
+                    else
+                    {
+                                <span class="anonymity2">@Model[i].author</span>
+                                <span class="icon_guest" title="游客">&nbsp;</span>
+                    }
+                            }
+                        </dd>
+                }
+                    }
+                    <dd>
+                        <span class="bar_info">发表于@(iPow.function.DateHelper.GetMysqlDateTime(Model[i].dateline, DateTimeKind.Local).ToString())
+                        </span>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+            }
+            else
+            {
+        <div class="barFloor1" id="f@(Model[i].replyfloor)">
+            <div class="barFloor_title">
+                <span class="barFloor_id"><b>@(Model[i].replyfloor)</b>楼</span>
+                @{
+                if (Model[i].authorid >= 0)
+                {
+                    <a href="http://192.168.1.65:211/index.php?s=/space/{authorid}" target="_blank" class="blue">@Model[i].author</a>
+                }
+                else
+                {
+                    if (Model[i].guestname == 1)
+                    {
+                    <span class="anonymity">@Model[i].author</span>
+                    <span class="icon_guest" title="游客">&nbsp;</span>
+                    }
+                    else
+                    {
+                        //if (requestgroup<4)
+                        //{
+                        //    <span class="ip">{author}</span>
+                        //}
+                    }
+                }
+                }
+                <span class="bar_info">发表于@(iPow.function.DateHelper.GetMysqlDateTime(Model[i].dateline, DateTimeKind.Local).ToString())
+                </span>
+            </div>
+        </div>
+            }
+        <div class="barFloor_con">
+            @Html.Raw(Model[i].message)
+        </div>
+                
+        <div class="barFloor_bot">
+            <div class="ft_l">
+                <a href="#say" class="btn_reply2" onclick="setReplyTitle({floor});"></a>
+            </div>
+            <div class="barFloor_oper">
+                <a href="./report.php?pid={pid}&height=150&width=296" class="thickbox" title="\"
+                    rel="nofollow"><span>举报</span></a> <a  href='javascript:' onclick="GoUp(@(Model[i].pid),'wave')" class="quiet">
+                        <span id="wave@(Model[i].pid)">飘过@(Model[i].wave)</span></a> <a href='javascript:' onclick="GoUp(@Model[i].pid,'down')"  class="against">
+                            <span  id="down@(Model[i].pid)">砸@(Model[i].down)</span></a> <a  href='javascript:' onclick="GoUp(@Model[i].pid,'up')"  class="support">
+                                <span id="up@(Model[i].pid)">顶@(Model[i].up)</span></a>
+            </div>
+        </div>
+        }
+    }
+    <div class="barPage">
+        <!-- IF loginArr.group>="4" -->
+        <!-- ENDIF loginArr.group -->
+        <div class="pagecontent ft_r">
+            <!--分页 -->
+            @Html.AjaxPager(Model, new PagerOptions()
+            {
+                CssClass = "pg",
+                CurrentPagerItemWrapperFormatString = "<b>{0}</b>",
+                PageIndexParameterName = "pageIndex",
+                ShowNumericPagerItems = true,
+                ShowFirstLast = false,
+                ShowPrevNext = false,
+                NumericPagerItemCount = 10,
+                FirstPageText = "<span class=\"pgpre\">首页</span>",
+                LastPageText = "<span class=\"pgnext\">尾页</span>",
+                PrevPageText = " <span class=\"pgpre\">上一页</span>",
+                NextPageText = "<span class=\"pgnext\">下一页</span>",
+            },
+            new AjaxOptions()
+            {
+                UpdateTargetId = "divFroum",
+                OnBegin = "AjaxStart",
+                OnComplete = "AjaxStop"
+            })
+            <!--分页 -->
+        </div>
+        <div class="k">
+        </div>
+    </div>
+</div>

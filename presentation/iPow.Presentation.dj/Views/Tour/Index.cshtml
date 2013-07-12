@@ -1,0 +1,169 @@
+﻿@model iPow.Application.dj.Dto.TourDetailTopDto
+         
+@{
+    var listService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+        iPow.Application.dj.Service.IListService>();
+    var tourPlanService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+ iPow.Application.dj.Service.ITourPlanService>();
+}
+@{
+    <title>@( Model != null ? Model.PlanTitle : "IPOW")_度假_iPow自助旅行网</title>
+}
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/tour.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/marker.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/dialog.css")" />
+<script src="http://ditu.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAmoR-oBdyeH4Zkn00S2LOLhT09lJOit-TvjZof_ikzcagoSKKKRSeJufdz6VFzpiCOhJBetXkNFhpLw"
+    type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/pkgHotelMarker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/tour.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/weathercity.js")"></script>
+<script type="text/javascript">
+    var iPowEdit = null, iPowDraw = null;
+    jQuery(document).ready(function () {
+        jQuery("#tabDays").doGallery({
+            itemsPerPage: 6,
+            animationSpeed: 'normal'
+        });
+        jQuery("#cpc_type").doTab({
+            itemsPerPage: 5,
+            tabContent: 'cirHotInfo'
+        });
+        iPowEdit = new EditTravel(null);
+        iPowDraw = new DrawTravel(null);
+        iPowEdit.init();
+        iPowDraw.checkuser();
+        $("#search").click(function () {
+            iPowDraw.iSearch("", "gotour");
+        });
+        $("#goLogin").click(function () {
+            iPowDraw.login(this, "login");
+        });
+        $("#goRegister").click(function () {
+            iPowDraw.register(this, "reg");
+        });
+        $("#tripPrint").click(function () {
+            iPowEdit.doprint(this);
+        });
+        $("#tripTranspond").click(function () {
+            iPowEdit.transpond(this);
+        });
+        $("#tripEdit").click(function () {
+            iPowEdit.save(this);
+        });
+    });
+  
+</script>
+@*<!-- JiaThis Button BEGIN -->
+<script type="text/javascript">    var jiathis_config = { data_track_clickback: true };</script>
+<script type="text/javascript" src="http://v2.jiathis.com/code/jiathis_r.js?move=0&amp;btn=r1.gif&amp;uid=1604874" charset="utf-8"></script>
+<!-- JiaThis Button END -->*@
+
+
+
+
+
+
+<!--页面头头部开始-->
+<span id="TravelArea" style="display: none">香港</span>
+<!--页面头部结束-->
+<div class="mainContainer" style="text-align: center; line-height: 25px;">
+    <div class="leftContainer">
+        <div class="tourTitle">
+            <div class="titleLeft">
+                <h1 id="TourTitle">
+                    @(Model != null ? Model.PlanTitle : "")</h1>
+                <h2 id="sightAllInfo">
+                    @{
+                        IQueryable<iPow.Application.dj.Dto.ListTypeMidSightDto> SightList = null;
+                        SightList = listService.GetListTypeMidSightListByTourPlanId(Model != null ? Model.Id : 0);
+                        if (SightList != null && SightList.Count() > 0)
+                        {
+                            int sightTotal = SightList.Count();
+                            int counter = 0;
+                            foreach (var it in SightList)
+                            {
+                                if (counter == sightTotal - 1)
+                                { 
+                        @(it.Name)
+                                }
+                                else
+                                {
+                        @(it.Name)@("+")}
+                                counter++;
+                            }
+                        }
+                    }
+                </h2>
+            </div>
+            <em></em><span>￥<font class="fPrice" id="tourConst">@(Model != null ? Model.PlanTotalMoney : 0)</font>
+            </span>
+        </div>
+        <div class="tourTab">
+            <span class="leftSlide" id="aPrev"></span>
+            <div class="spLeft" id="tabDays">
+                @{
+                    if (Model != null && Model.Days > 0)
+                    {
+                        for (int i = 0; i < Model.Days; i++)
+                        {
+                            if (i == 0)
+                            {
+                    <a href="javascript:;" class="current" rel="@(i + 1)">第@(i + 1)天</a>
+                            }
+                            else
+                            {
+                    <a href="javascript:;" rel="@(i + 1)">第@(i + 1)天</a>
+                            }
+                        }
+                    }
+                }
+            </div>
+            <span class="rightSlide" id="aNext"></span>
+            <div class="spRight">
+                <em class="emLeft"></em><span><a href="javascript:;" id="tripEdit">保存</a>&nbsp;-&nbsp;
+                    <a href="javascript:;" id="tripTranspond">转发</a>&nbsp;-&nbsp; <a href="javascript:;"
+                        id="tripPrint">打印</a> </span><em class="emRight"></em>
+            </div>
+        </div>
+        <div class="iPowContainer" id="EditHodometer">
+            @Html.Partial("TourContentPartial")
+        </div>
+    </div>
+    <div class="rightContainer">
+        <div class="weatherGuid">
+            <h2 id="areaWeather">
+                深圳天气</h2>
+            <a href="javascript:;" id="changeWeatherCity">[切换城市]</a>
+        </div>
+        <div class="weatherPanel" id="weatherPanel">
+            <iframe src="http://m.weather.com.cn/m/pn12/weather.htm?id=101280601T " style="margin-left: 15px;
+                margin-top: -4px;" width="100%" height="100%" marginwidth="0" marginheight="0"
+                hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+        </div>
+        <div class="tour_RightTip">
+            <h3>
+                周边景区</h3>
+        </div>
+        <div class="rightMap">
+            <div id="jxMapTipPanel" style="z-index: 99;">
+            </div>
+            <div id="gMap" style="width: 234px; height: 224px; overflow: hidden;">
+                loading.....
+            </div>
+        </div>
+        <div class="rightmapTab" id="cirTab">
+            <a href="javascript:;" class="current" rel="Sight" id="hrefCirSight">周边景区</a> <a
+                href="javascript:;" id="hrefCirHotel" rel="Hotel" class="cirTab">周边酒店</a> <a href="javascript:;"
+                    id="hrefCirTraffic" rel="Repast" class="cirTab" style="width: 78px;">周边餐饮</a>
+        </div>
+        <div class="rightCirList">
+            <ul id="cirInfoList">
+                <li>Loading……</li>
+            </ul>
+        </div>
+        <div class="cirPaging" id="CirInfoPage">
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>

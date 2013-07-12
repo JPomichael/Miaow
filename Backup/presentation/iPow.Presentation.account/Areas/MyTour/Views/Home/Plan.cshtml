@@ -1,0 +1,78 @@
+﻿@model  iPow.Application.account.Dto.TourPlanDto 
+<div id="js-tab-content" class="inner" style="height: 200px;">
+<ul>
+    <li>
+        <ul class="info">
+            <li>行程名称：<a>@Model.TourPlan.PlanTitle</a></li>
+            <li>目的地： <a>@Model.TourPlan.Destination</a> </li>
+            <li>日期： <a>@Convert.ToDateTime(Model.TourPlan.AddTime).ToString("yyyy-MM-dd") (@Model.TourPlan.Days
+                天)</a> </li>
+@*            <li>预计费用：<a>【$$$$$$$$$】</a></li>*@
+            @*验证该线路是否为当前用户所添加 
+            若是的话 那就Show 修改 不是的话 则  none*@ <span id="undo"><a id="updateTpur" href="javascript:;">
+                <img title="点击修改" src="/images/icn_edit.png" alt=""></a></span>
+        </ul>
+    </li>
+    </ul>
+</div>
+<div id="showClickSight">
+  @*  @{
+        if (Model.sightInfoDto != null)
+        {
+            var sightInfoDto = Model.sightInfoDto;
+            foreach (var item in sightInfoDto)
+            {
+        <div id="sight_@(item.ParkID)" class="getPointsDiv" onclick="ClickShowMap(this.id,@(Model.TourPlan.PlanID))" style="height: 110px;
+            width: 450px; z-index: -1">
+            <div style="height: 20px; width: 20px; background-color: #008000; text-align: center">
+            </div>
+            <ul>
+                <li><a id="titile_@(item.ParkID)" style="height: 15px; width: 400px; text-decoration: none">
+                    @item.Title</a> </li>
+                <br>
+                <li>
+                    <ul>
+                        <li>@(item.Ticket)元/人 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp; <a onclick=" updatesightbyid(@(Model.TourPlan.PlanID),sight_@(item.ParkID))" href="javascript:void()"
+                                style="z-index: 1">
+                                <img src="/images/icn_edit.png" title="点击修改">
+                            </a></li>
+                        <li>
+                            @if (item.GoCount == 0)
+                            {  
+                                <a style="text-decoration: none">木人去过！</a> 
+                            }
+                            else
+                            {
+                                <a style="text-decoration: none">@(item.GoCount)人去过</a> 
+                            }
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp; <a onclick="deletesightbyid(@(Model.TourPlan.PlanID),sight_@(item.ParkID))" href="javascript:void()" style="z-index: 2">
+                                <img src="/images/icn_trash.png" title="点击删除">
+                            </a></li>
+                    </ul>
+                    <br>
+                </li>
+            </ul>
+        </div> <br />         
+                
+            }
+        }
+        else
+        {
+        <!-- 等于空的话那就什么都不做了 让User Add DIY Tour--> 
+        }
+    
+    }*@
+</div>
+<div class="showSight" id="ulListSight">
+    @Html.Partial("_GetTourByPartial", Model)
+</div>
+<script src="@Url.Content("~/Scripts/mytour-ajax.js")" type="text/javascript"></script>
+@*<script type="text/javascript">
+    //window 居中
+    $(function () {
+        var window = $("#Window").data("tWindow");
+        window.center();
+    })
+</script>*@ 

@@ -1,0 +1,57 @@
+﻿@model iPow.Service.SSO.WebService.Models.LogOnModel
+@{
+    ViewBag.Title = "互动旅行网";
+    Layout = "~/Views/Shared/_AuthMaster.cshtml";
+    var returnUri = string.Empty;
+    var returnUrl = Request[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.UrlParaReturnUrl];
+    if (returnUrl != null)
+    {
+        returnUri = "?" + iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.UrlParaReturnUrl + "=" + HttpUtility.UrlEncode(returnUrl);
+    }
+}
+<link type="text/css" rel="stylesheet" href="/Content/newtop.css" />
+<script type="text/javascript">
+    $(function () {
+        var oBtn = $('.ipowRegistRight ul a');
+        var oCon = $('.ipowRegistTab');
+        oBtn.each(function (i) {
+            $(this).click(function () {
+                oBtn.removeClass('ipowRegistACurr');
+                oBtn.eq(i).addClass('ipowRegistACurr');
+            })
+        })
+    });
+</script>
+<div class="ipowRegistRight">
+    <ul>
+        <a href="javascript:;" class="ipowRegistACurr">驴友用户</a> <a href="javascript:;">旅行社</a>
+        <a href="javascript:;">景区景点</a>
+    </ul>
+    <div class="ipowRegistTabMain">
+        <div class="ipowRegistTab" style="display: block;">
+            @using (Html.BeginForm())
+            {
+                <span>帐户名：@Html.TextBoxFor(m => m.UserName)
+                    @Html.ValidationMessageFor(m => m.UserName)
+                </span> 
+                <span>密 &nbsp;&nbsp;码：@Html.PasswordFor(m => m.Password)
+                    @Html.ValidationMessageFor(m => m.Password)
+                </span>
+                <div style="display: none;">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                </div>
+                <span class="ipowRegistEnter">
+                    <input type="submit" value="" style="width: 86px; height: 26px; border: 0px; background: url('/images/ipowRegEnter.jpg')"
+                        class="ipowRegistEnterBtn" />
+                    <a href="javascript:;" style="text-align: center">忘记密码?</a></span>
+                @Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+            }
+        </div>
+    </div>
+    <div class="ipowRegistWB">
+        <a href="/sina/logon/@(returnUri)">
+            <img src="/images/ipowRegSina.jpg" alt="新浪用户"></a> <a href="/tencent/logon@(returnUri)">
+                <img src="/images/ipowRegTx.jpg" alt="腾讯用户"></a>
+    </div>
+</div>

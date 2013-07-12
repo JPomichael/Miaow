@@ -1,0 +1,155 @@
+﻿@model  iPow.Application.jq.Dto.HomeDto
+@{
+    var cityInfoService = iPow.Presentation.jq.iPowPreJqEngine
+        .Current.Resolve<iPow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService>();
+
+    var sightInfoSortService = iPow.Presentation.jq.iPowPreJqEngine
+        .Current.Resolve<iPow.Application.jq.Service.ISightInfoSortService>();
+}
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        $("#ChangeCity").showCity();
+        $("#rightContainer").floatDiv();
+    });
+</script>
+<div class="leftTitle">
+    <div class="leftTitleText" id="cityShow">
+        <h3>@Model.CurrentCityInfo.city</h3>
+        <div class="moreCity" id="ChangeCity">
+            <a class="btnCityInfo" href="javascript:;">周边城市</a>
+            <div id="divCity">
+                <div id="CityTitle">
+                    <h2>
+                        请选择城市</h2>
+                </div>
+                <ul>
+                    @{
+                        var cityList = cityInfoService.GetCityInfoByPinYing(Model.CurrentCityInfo, Model.CurrentCityInfo.ProvincePy, string.Empty);
+                        if (cityList != null && cityList.Count() > 0)
+                        {
+                            foreach (var item in cityList)
+                            {
+                        <li>
+                            @Html.ActionLink(item.city, "Index", "Home",
+                            new
+                            {
+                                city = item.pinyin,
+                                id = 1
+                            }, null)
+                        </li>
+                            }
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="leftTitleTab">
+        <ul>
+            @{
+                if (this.Model.TopClass != null && this.Model.TopClass.Count > 0)
+                {
+                    var totalCount = 0;
+                    for (int i = 0; i < this.Model.TopClass.Count; i++)
+                    {
+                        totalCount += this.Model.TopClass[i].count;
+                    }
+                <li><a title="全部" class=" @((Model.CurrentClassId == 0) ? "current" : "")"
+                 href="@Url.Action("Type", "Home",
+                 new
+                 {
+                     city = Model.CurrentCityInfo.pinyin,
+                     cla = 0,
+                     id = 1
+                 })"><span>全部</span><em>（@(totalCount)）</em> </a></li>      
+                    
+                    for (int i = 0; i < this.Model.TopClass.Count; i++)
+                    {
+                        var strName = this.Model.TopClass[i].name;
+                        strName = strName.Length > 2 ? strName.Substring(0, 2) : strName;
+                <li><a title="@(this.Model.TopClass[i].name)" class="@((Model.CurrentClassId == Model.TopClass[i].Type) ? "current" : "")" 
+                  href="@Url.Action("Type", "Home", new
+                   {
+                       city = Model.CurrentCityInfo.pinyin,
+                       cla = Model.TopClass[i].Type,
+                       id = 1
+                   })"><span>@(strName)</span><em>（@(this.Model.TopClass[i].count.ToString())）</em>
+                </a></li>
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>
+<ul class="ulSights" id="ulListSight">
+    @{
+        if (this.Model.SightInfo != null && this.Model.SightInfo.Count > 0)
+        {
+            int a = 1;
+            foreach (var c in Model.SightInfo)
+            {
+                var liStyle = "";
+                if ((c.SortCity != null && c.SortCity.IndexOf(Model.CurrentCityInfo.city) >= 0) || c.IsSort > 0)
+                {
+                    liStyle = "#f7f7f7";
+                }
+        <li id='lisight@(c.ParkID)'>
+            <div class="imgShadows">
+                @{
+                var pic = iPow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(c.ParkID);
+                    <img src='@(pic.Count == 3 ? pic[0] + "cutdown/126_99_" + pic[1] : "/images/nopic.jpg")' 
+                    width="126" height="99" 
+                    alt="@(pic.Count == 3 ? pic[2] : "暂无图片")" />
+                }
+            </div>
+            <div class="iSightInfo"  style = " background:@(liStyle)">
+                <h2>
+                    <span class="sNum">@(a)</span> <a href="@Url.Action("Index", "SightDetail", new { sight = c.Py, sid = c.ParkID, id = 1 })" title="@(c.Title)" target="_blank">
+                        @(c.Title)</a> 
+                </h2>
+                <h3>
+                    [@(c.Type)]
+                    @{
+                var checkSight = sightInfoSortService.SightIsInSort(c.ParkID);
+                if (checkSight)
+                {
+                        <font style='color: blue;'>
+                            @("【推广】")
+                        </font>
+
+                }
+                else
+                {}
+                }
+                </h3>
+                <h4  title="推荐指数：@(c.VoIndex)" >
+                    <em style="width:@(c.VoIndex * 12)px;"></em>
+                </h4>
+                <span class="sightData"><em>推荐指数：<b>@(c.VoIndex)</b></em> <em>想去的人：<b>@(c.WantCount)</b></em>
+                    <em>去过的人：<b>@(c.GoCount)</b></em>
+                    @(c.Ticket == 0 ? Html.Raw("<b class=\"iFree\">免费开放</b>") : Html.Raw("<b class=\"iPrice\">" + c.Ticket + "</b>"))
+                </span>
+                <p class="info">
+                    @(c.Remark.Length > 80 ? c.Remark.Substring(0, 80) + "..." : c.Remark)
+                </p>
+                <p class="golink">
+                    @{
+                if (c.IsShort == 1)
+                {
+                        <a href="@Url.Action("Index", "SightDetail", new { sight = c.Py, sid = c.ParkID, id = 1 })" title="@(c.Title)" target="_blank">
+                            查看详细 </a>
+                }
+                else
+                {
+                        <a href="@Url.Action("Index", "SightDetail", new { sight = c.Py, sid = c.ParkID, id = 1 })" title="@(c.Title)" target="_blank">
+                            查看详细 </a>
+                }
+                    }
+                </p>
+            </div>
+        </li>
+                a++;
+            }
+        }
+    }
+</ul>

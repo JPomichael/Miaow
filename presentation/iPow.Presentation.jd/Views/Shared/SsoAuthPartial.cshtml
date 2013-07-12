@@ -1,0 +1,59 @@
+﻿@{
+    var tokenModel = Request.Cookies[".ipow.cn"];
+    if (tokenModel != null)
+    {
+        string token = tokenModel.Value;
+        if (!string.IsNullOrEmpty(token))
+        {
+            if (User.Identity != null && !User.Identity.IsAuthenticated)
+            {
+    <script type="text/javascript">
+        $(function () {
+            $.get('http://account.ipow.cn/server/SSOService.svc/user/RequestToken?callback=?', {},
+				function (ssodata) {
+				    // get url to logon page in case this operation fails
+				    var logonPage = '@Url.Action("logon", "account")';
+				    if (ssodata.Status == 'SUCCESS') {
+				        // get target url for successful authentication
+				        var redirect = '@Request["redirectUrl"]';
+				        if (redirect == '')
+				            redirect = '/home/';
+				        // verify the token is genuine
+				        $.post('/account/authenticate',
+							{ token: ssodata.Token, createPersistentCookie: true },
+								function (data) {
+								    // redirect user based on result
+								    if (data.result == 'SUCCESS')
+								        document.location = redirect;
+								    else
+								        document.location = logonPage;
+								    // just regular json here
+								}, 'json');
+				    } else {
+				        // user needs to logon to SSO service
+				        document.location = logonPage;
+				    }
+				    // tell jQuery to use JSONP 
+				}, 'jsonp');
+        });
+    </script>     
+            }
+        }
+    }
+    else
+    {
+        if (User.Identity != null && User.Identity.IsAuthenticated && Request.Cookies[System.Web.Security.FormsAuthentication.FormsCookieName] != null)
+        {
+            HttpCookie localhost = new HttpCookie(FormsAuthentication.FormsCookieName);
+            localhost.Path = "/";
+            localhost.HttpOnly = true;
+            localhost.Expires = DateTime.Now.AddDays(-10000.0);
+            HttpContext.Current.Response.Cookies.Add(localhost);
+            var currentUrl = Request.Url.ToString();
+            
+    <script type="text/javascript">
+        document.location = '@(currentUrl)';
+    </script>
+        }
+    }
+}

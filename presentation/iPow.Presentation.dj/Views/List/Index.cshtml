@@ -1,0 +1,118 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<iPow.Application.dj.Dto.ListTypeMidTourPlanDto>
+@{
+    var listService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+    iPow.Application.dj.Service.IListService>();
+    ViewBag.Title = "Index";
+}
+<div class="mainPanel">
+    <div class="mainInfoList" id="mainTripList" style="width: 670px;">
+        @{
+            if (Model != null && Model.Count > 0)
+            {
+                IQueryable<iPow.Application.dj.Dto.ListTypeMidSightDto> SightList = null;
+                foreach (var item in Model)
+                {
+            <span><a href='@Url.Action("index", "tour", new { id = item.Id })' class='imgLeft'>
+                @{
+                    var tourPicPath = listService.GetTourDefaultPicByPlanId(item.Id);
+                }
+                <img border='0px' 
+                    src='@(tourPicPath.Count == 3 ? tourPicPath[0] + "cutdown/116_103_" + tourPicPath[1] : "/images/nopic116.jpg")'
+                     alt = "@(tourPicPath.Count == 3 ? tourPicPath[2] : "暂无图片")" />
+            </a>
+                <dl>
+                    <dt>
+                        <p>
+                            ¥<font class='fPrice'>@(item.PlanTotalMoney)</font>/全程(@(item.Days)天)</p>
+                        <a href='@Url.Action("index", "tour", new { id = item.Id })' target='_blank' class='aEditTrip'>
+                            查看详细</a> </dt>
+                    <dd>
+                        <h2>
+                            <a target='_blank' href='@Url.Action("index", "tour", new { id = item.Id })'>@(item.PlanTitle)</a></h2>
+                    </dd>
+                    <dd class='intro'>
+                        <strong>途径景点：</strong>
+                        @{
+                    SightList = listService.GetListTypeMidSightListByTourPlanId(item.Id);
+                    if (SightList != null && SightList.Count() > 0)
+                    {
+                        int sightTotal = SightList.Count();
+                        int counter = 0;
+                        foreach (var it in SightList)
+                        {
+                            if (counter == sightTotal - 1)
+                            { 
+                            <a href='http://jq.ipow.cn/sight/@(it.Py)/@(it.Id)/1' target='_blank'>@(it.Name)</a>
+                            }
+                            else
+                            {
+                            <a href='http://jq.ipow.cn/sight/@(it.Py)/@(it.Id)/1' target='_blank'>@(it.Name)</a>@("-")
+                            }
+                            counter++;
+                        }
+                    }
+                        }
+                    </dd>
+                    <dd class='intro'>
+                        <strong>推荐理由：</strong> @(item.TopReason)
+                    </dd>
+                    <dd class='info'>
+                        <a href='javascript:void(0)'>@(item.UserName)</a>@{ if (item.AddTime != null)
+                                                                            {@(item.AddTime.Value.Year.ToString())@("年")@(item.AddTime.Value.Month)@("月")}}
+                    </dd>
+                </dl>
+            </span>
+                }
+            }
+            else
+            {
+            @("哎呀！没有路线了")
+            }              
+        }
+        @{
+            if (Model != null)
+            {
+                @Html.Pager(Model.TotalItemCount,
+                    Model.PageSize,
+                    Model.CurrentPageIndex,
+                    "Index",
+                    "List",
+                    new PagerOptions()
+                    {
+                        PageIndexParameterName = "pi",
+                        LastPageText = "尾页",
+                        FirstPageText = "首页",
+                        PrevPageText = "上一页",
+                        NextPageText = "下一页",
+                        CurrentPagerItemWrapperFormatString = "<a href='javascript:;' class = 'current'>{0}</a>",
+                        CssClass = "Pagecon",
+                        PageIndexOutOfRangeErrorMessage = ""
+                    },
+                    "",
+                        new
+                        {
+                            id = ViewBag.id,
+                            pi = Model.CurrentPageIndex
+                        },
+                    null);
+            }
+        }
+        <div class="clear">
+        </div>
+    </div>
+    <div id="mianright" style="margin-left: 10px; margin-top: 5px; padding: 5px; width: 265px;">
+        <ul class="hotlutil">
+            <li class="h-title">热门自助线路</li>
+            @Html.Partial("HotTourPlanPartial")
+        </ul>
+        <div class="h-hotel">
+            <ul class="hot-hotel">
+                <li class="title-hotel">热门酒店</li>
+                @Html.Partial("HotHotelPartial")
+            </ul>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>

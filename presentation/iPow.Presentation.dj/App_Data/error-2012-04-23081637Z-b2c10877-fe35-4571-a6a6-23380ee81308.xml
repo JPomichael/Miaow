@@ -1,0 +1,171 @@
+﻿<error errorId="b2c10877-fe35-4571-a6a6-23380ee81308" application="/" host="VTYDIADE7F93GSN" type="System.InvalidOperationException" message="未找到视图“Index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: &#xD;&#xA;~/Views/Home/Index.aspx&#xD;&#xA;~/Views/Home/Index.ascx&#xD;&#xA;~/Views/Shared/Index.aspx&#xD;&#xA;~/Views/Shared/Index.ascx&#xD;&#xA;~/Views/Home/Index.cshtml&#xD;&#xA;~/Views/Home/Index.vbhtml&#xD;&#xA;~/Views/Shared/Index.cshtml&#xD;&#xA;~/Views/Shared/Index.vbhtml" source="System.Web.Mvc" detail="System.Web.HttpUnhandledException (0x80004005): 引发类型为“System.Web.HttpUnhandledException”的异常。 ---&gt; System.InvalidOperationException: 未找到视图“Index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: &#xD;&#xA;~/Views/Home/Index.aspx&#xD;&#xA;~/Views/Home/Index.ascx&#xD;&#xA;~/Views/Shared/Index.aspx&#xD;&#xA;~/Views/Shared/Index.ascx&#xD;&#xA;~/Views/Home/Index.cshtml&#xD;&#xA;~/Views/Home/Index.vbhtml&#xD;&#xA;~/Views/Shared/Index.cshtml&#xD;&#xA;~/Views/Shared/Index.vbhtml&#xD;&#xA;   在 System.Web.Mvc.ViewResult.FindView(ControllerContext context)&#xD;&#xA;   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass1c.&lt;InvokeActionResultWithFilters&gt;b__19()&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.&lt;&gt;c__DisplayClass1c.&lt;&gt;c__DisplayClass1e.&lt;InvokeActionResultWithFilters&gt;b__1b()&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)&#xD;&#xA;   在 System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName)&#xD;&#xA;   在 System.Web.Mvc.Controller.ExecuteCore()&#xD;&#xA;   在 System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext)&#xD;&#xA;   在 System.Web.Mvc.ControllerBase.System.Web.Mvc.IController.Execute(RequestContext requestContext)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.&lt;&gt;c__DisplayClass11.&lt;ProcessRequest&gt;b__10()&#xD;&#xA;   在 System.Web.Mvc.SecurityUtil.&lt;GetCallInAppTrustThunk&gt;b__0(Action f)&#xD;&#xA;   在 System.Web.Mvc.SecurityUtil.ProcessInApplicationTrust(Action action)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.ProcessRequest(HttpContextBase httpContext)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.ProcessRequest(HttpContext httpContext)&#xD;&#xA;   在 System.Web.Mvc.MvcHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext httpContext)&#xD;&#xA;   在 System.Web.Mvc.MvcHttpHandler.VerifyAndProcessRequest(IHttpHandler httpHandler, HttpContextBase httpContext)&#xD;&#xA;   在 System.Web.Routing.UrlRoutingHandler.ProcessRequest(HttpContextBase httpContext)&#xD;&#xA;   在 System.Web.Routing.UrlRoutingHandler.ProcessRequest(HttpContext httpContext)&#xD;&#xA;   在 System.Web.Routing.UrlRoutingHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context)&#xD;&#xA;   在 iPow.Presentation.dj._default.Page_Load(Object sender, EventArgs e) 位置 E:\work\IPOW\presentation\iPow.Presentation.dj\default.aspx.cs:行号 15&#xD;&#xA;   在 System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e)&#xD;&#xA;   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)&#xD;&#xA;   在 System.Web.UI.Control.OnLoad(EventArgs e)&#xD;&#xA;   在 System.Web.UI.Control.LoadRecursive()&#xD;&#xA;   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   在 System.Web.UI.Page.HandleError(Exception e)&#xD;&#xA;   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   在 System.Web.UI.Page.ProcessRequest(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)&#xD;&#xA;   在 System.Web.UI.Page.ProcessRequest()&#xD;&#xA;   在 System.Web.UI.Page.ProcessRequestWithNoAssert(HttpContext context)&#xD;&#xA;   在 System.Web.UI.Page.ProcessRequest(HttpContext context)&#xD;&#xA;   在 ASP.default_aspx.ProcessRequest(HttpContext context) 位置 c:\Windows\Microsoft.NET\Framework\v4.0.30319\Temporary ASP.NET Files\root\a926f6b0\39aedcf0\App_Web_kn2ahigj.0.cs:行号 0&#xD;&#xA;   在 System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" time="2012-04-23T08:16:37.4198022Z" statusCode="500" webHostHtmlMessage="&lt;html&gt;&#xD;&#xA;    &lt;head&gt;&#xD;&#xA;        &lt;title&gt;未找到视图“Index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: &lt;br&gt;~/Views/Home/Index.aspx&lt;br&gt;~/Views/Home/Index.ascx&lt;br&gt;~/Views/Shared/Index.aspx&lt;br&gt;~/Views/Shared/Index.ascx&lt;br&gt;~/Views/Home/Index.cshtml&lt;br&gt;~/Views/Home/Index.vbhtml&lt;br&gt;~/Views/Shared/Index.cshtml&lt;br&gt;~/Views/Shared/Index.vbhtml&lt;/title&gt;&#xD;&#xA;        &lt;style&gt;&#xD;&#xA;         body {font-family:&quot;Verdana&quot;;font-weight:normal;font-size: .7em;color:black;} &#xD;&#xA;         p {font-family:&quot;Verdana&quot;;font-weight:normal;color:black;margin-top: -5px}&#xD;&#xA;         b {font-family:&quot;Verdana&quot;;font-weight:bold;color:black;margin-top: -5px}&#xD;&#xA;         H1 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:18pt;color:red }&#xD;&#xA;         H2 { font-family:&quot;Verdana&quot;;font-weight:normal;font-size:14pt;color:maroon }&#xD;&#xA;         pre {font-family:&quot;Lucida Console&quot;;font-size: .9em}&#xD;&#xA;         .marker {font-weight: bold; color: black;text-decoration: none;}&#xD;&#xA;         .version {color: gray;}&#xD;&#xA;         .error {margin-bottom: 10px;}&#xD;&#xA;         .expandable { text-decoration:underline; font-weight:bold; color:navy; cursor:hand; }&#xD;&#xA;        &lt;/style&gt;&#xD;&#xA;    &lt;/head&gt;&#xD;&#xA;&#xD;&#xA;    &lt;body bgcolor=&quot;white&quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;span&gt;&lt;H1&gt;“/”应用程序中的服务器错误。&lt;hr width=100% size=1 color=silver&gt;&lt;/H1&gt;&#xD;&#xA;&#xD;&#xA;            &lt;h2&gt; &lt;i&gt;未找到视图“Index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: &lt;br&gt;~/Views/Home/Index.aspx&lt;br&gt;~/Views/Home/Index.ascx&lt;br&gt;~/Views/Shared/Index.aspx&lt;br&gt;~/Views/Shared/Index.ascx&lt;br&gt;~/Views/Home/Index.cshtml&lt;br&gt;~/Views/Home/Index.vbhtml&lt;br&gt;~/Views/Shared/Index.cshtml&lt;br&gt;~/Views/Shared/Index.vbhtml&lt;/i&gt; &lt;/h2&gt;&lt;/span&gt;&#xD;&#xA;&#xD;&#xA;            &lt;font face=&quot;Arial, Helvetica, Geneva, SunSans-Regular, sans-serif &quot;&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; 说明: &lt;/b&gt;执行当前 Web 请求期间，出现未经处理的异常。请检查堆栈跟踪信息，以了解有关该错误以及代码中导致错误的出处的详细信息。&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; 异常详细信息: &lt;/b&gt;System.InvalidOperationException: 未找到视图“Index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: &lt;br&gt;~/Views/Home/Index.aspx&lt;br&gt;~/Views/Home/Index.ascx&lt;br&gt;~/Views/Shared/Index.aspx&lt;br&gt;~/Views/Shared/Index.ascx&lt;br&gt;~/Views/Home/Index.cshtml&lt;br&gt;~/Views/Home/Index.vbhtml&lt;br&gt;~/Views/Shared/Index.cshtml&lt;br&gt;~/Views/Shared/Index.vbhtml&lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;源错误:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;行 13:             HttpContext.Current.RewritePath(Request.ApplicationPath,false);&#xD;&#xA;行 14:             IHttpHandler handler = new System.Web.Mvc.MvcHttpHandler();&#xD;&#xA;&lt;font color=red&gt;行 15:             handler.ProcessRequest(HttpContext.Current);&#xD;&#xA;&lt;/font&gt;行 16:             HttpContext.Current.RewritePath(path);&#xD;&#xA;行 17:         }&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt; 源文件: &lt;/b&gt; E:\work\IPOW\presentation\iPow.Presentation.dj\default.aspx.cs&lt;b&gt; &amp;nbsp;&amp;nbsp; 行: &lt;/b&gt; 15&#xD;&#xA;            &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;b&gt;堆栈跟踪:&lt;/b&gt; &lt;br&gt;&lt;br&gt;&#xD;&#xA;&#xD;&#xA;            &lt;table width=100% bgcolor=&quot;#ffffcc&quot;&gt;&#xD;&#xA;               &lt;tr&gt;&#xD;&#xA;                  &lt;td&gt;&#xD;&#xA;                      &lt;code&gt;&lt;pre&gt;&#xD;&#xA;&#xD;&#xA;[InvalidOperationException: 未找到视图“Index”或其母版视图，或没有视图引擎支持搜索的位置。搜索了以下位置: &#xD;&#xA;~/Views/Home/Index.aspx&#xD;&#xA;~/Views/Home/Index.ascx&#xD;&#xA;~/Views/Shared/Index.aspx&#xD;&#xA;~/Views/Shared/Index.ascx&#xD;&#xA;~/Views/Home/Index.cshtml&#xD;&#xA;~/Views/Home/Index.vbhtml&#xD;&#xA;~/Views/Shared/Index.cshtml&#xD;&#xA;~/Views/Shared/Index.vbhtml]&#xD;&#xA;   System.Web.Mvc.ViewResult.FindView(ControllerContext context) +316370&#xD;&#xA;   System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context) +129&#xD;&#xA;   System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult) +13&#xD;&#xA;   System.Web.Mvc.&amp;lt;&amp;gt;c__DisplayClass1c.&amp;lt;InvokeActionResultWithFilters&amp;gt;b__19() +23&#xD;&#xA;   System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilter(IResultFilter filter, ResultExecutingContext preContext, Func`1 continuation) +260&#xD;&#xA;   System.Web.Mvc.&amp;lt;&amp;gt;c__DisplayClass1e.&amp;lt;InvokeActionResultWithFilters&amp;gt;b__1b() +19&#xD;&#xA;   System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult) +177&#xD;&#xA;   System.Web.Mvc.ControllerActionInvoker.InvokeAction(ControllerContext controllerContext, String actionName) +343&#xD;&#xA;   System.Web.Mvc.Controller.ExecuteCore() +116&#xD;&#xA;   System.Web.Mvc.ControllerBase.Execute(RequestContext requestContext) +97&#xD;&#xA;   System.Web.Mvc.ControllerBase.System.Web.Mvc.IController.Execute(RequestContext requestContext) +10&#xD;&#xA;   System.Web.Mvc.&amp;lt;&amp;gt;c__DisplayClass11.&amp;lt;ProcessRequest&amp;gt;b__10() +65&#xD;&#xA;   System.Web.Mvc.SecurityUtil.&amp;lt;GetCallInAppTrustThunk&amp;gt;b__0(Action f) +7&#xD;&#xA;   System.Web.Mvc.SecurityUtil.ProcessInApplicationTrust(Action action) +22&#xD;&#xA;   System.Web.Mvc.MvcHandler.ProcessRequest(HttpContextBase httpContext) +71&#xD;&#xA;   System.Web.Mvc.MvcHandler.ProcessRequest(HttpContext httpContext) +44&#xD;&#xA;   System.Web.Mvc.MvcHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext httpContext) +10&#xD;&#xA;   System.Web.Mvc.MvcHttpHandler.VerifyAndProcessRequest(IHttpHandler httpHandler, HttpContextBase httpContext) +46&#xD;&#xA;   System.Web.Routing.UrlRoutingHandler.ProcessRequest(HttpContextBase httpContext) +144&#xD;&#xA;   System.Web.Routing.UrlRoutingHandler.ProcessRequest(HttpContext httpContext) +42&#xD;&#xA;   System.Web.Routing.UrlRoutingHandler.System.Web.IHttpHandler.ProcessRequest(HttpContext context) +10&#xD;&#xA;   iPow.Presentation.dj._default.Page_Load(Object sender, EventArgs e) in E:\work\IPOW\presentation\iPow.Presentation.dj\default.aspx.cs:15&#xD;&#xA;   System.Web.Util.CalliHelper.EventArgFunctionCaller(IntPtr fp, Object o, Object t, EventArgs e) +14&#xD;&#xA;   System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e) +35&#xD;&#xA;   System.Web.UI.Control.OnLoad(EventArgs e) +91&#xD;&#xA;   System.Web.UI.Control.LoadRecursive() +74&#xD;&#xA;   System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint) +2207&#xD;&#xA;&lt;/pre&gt;&lt;/code&gt;&#xD;&#xA;&#xD;&#xA;                  &lt;/td&gt;&#xD;&#xA;               &lt;/tr&gt;&#xD;&#xA;            &lt;/table&gt;&#xD;&#xA;&#xD;&#xA;            &lt;br&gt;&#xD;&#xA;&#xD;&#xA;    &lt;/body&gt;&#xD;&#xA;&lt;/html&gt;&#xD;&#xA;">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3&#xD;&#xA;HTTP_COOKIE:__utma=111872281.1074674361.1335165439.1335165439.1335165439.1; __utmb=111872281.14.10.1335165439; __utmc=111872281; __utmz=111872281.1335165439.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&#xD;&#xA;HTTP_HOST:localhost:15127&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0&#xD;&#xA;HTTP_X_CLICKONCESUPPORT:( .NET CLR 3.5.30729; .NET4.0E)&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate&#xD;&#xA;Accept-Language: zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3&#xD;&#xA;Cookie: __utma=111872281.1074674361.1335165439.1335165439.1335165439.1; __utmb=111872281.14.10.1335165439; __utmc=111872281; __utmz=111872281.1335165439.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)&#xD;&#xA;Host: localhost:15127&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0&#xD;&#xA;X-ClickOnceSupport: ( .NET CLR 3.5.30729; .NET4.0E)&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="E:\work\IPOW\presentation\iPow.Presentation.dj\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="WORK\张军朋" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="" />
+    </item>
+    <item name="HTTPS">
+      <value string="" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="E:\work\IPOW\presentation\iPow.Presentation.dj\" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="15127" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="" />
+    </item>
+    <item name="URL">
+      <value string="/" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="zh-cn,zh;q=0.8,en-us;q=0.5,en;q=0.3" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__utma=111872281.1074674361.1335165439.1335165439.1335165439.1; __utmb=111872281.14.10.1335165439; __utmc=111872281; __utmz=111872281.1335165439.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:15127" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; WOW64; rv:11.0) Gecko/20100101 Firefox/11.0" />
+    </item>
+    <item name="HTTP_X_CLICKONCESUPPORT">
+      <value string="( .NET CLR 3.5.30729; .NET4.0E)" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="__utma">
+      <value string="111872281.1074674361.1335165439.1335165439.1335165439.1" />
+    </item>
+    <item name="__utmb">
+      <value string="111872281.14.10.1335165439" />
+    </item>
+    <item name="__utmc">
+      <value string="111872281" />
+    </item>
+    <item name="__utmz">
+      <value string="111872281.1335165439.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none)" />
+    </item>
+  </cookies>
+</error>

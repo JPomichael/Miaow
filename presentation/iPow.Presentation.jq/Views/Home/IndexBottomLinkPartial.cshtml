@@ -1,0 +1,33 @@
+﻿@model  iPow.Application.jq.Dto.HomeDto
+@{
+    var locationService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+
+    var cityInfoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService>();
+}
+<div class="title">
+    快速链接</div>
+<ul>
+    @{
+         
+        var prov = locationService.GetLocationInfo();
+        var cityList = cityInfoService.GetCityInfoByName(prov, Model.CurrentCityInfo.province, Model.CurrentCityInfo.city);
+        if (cityList != null && cityList.Count() > 0)
+        {
+            foreach (var item in cityList)
+            {
+        <li>
+            @Html.ActionLink(item.city+"景区","Index", "Home",
+            new
+            {
+                city = item.pinyin,
+                id = 1
+            }, null)
+        </li>
+            }
+        }
+    }
+</ul>
+<div class="clear">
+</div>

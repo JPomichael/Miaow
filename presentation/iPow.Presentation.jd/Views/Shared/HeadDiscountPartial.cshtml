@@ -1,0 +1,24 @@
+﻿<!--页面广告开始-->
+<div class="mainContainer">
+    <div class="adLeft">
+        <a href="http://sns.ipow.cn/index.php?s=/Home/index" title="混家族">
+            <img src="http://www.ipow.cn/images/ipowjzn.jpg" border="0" /></a>
+    </div>
+    <div class="adRight">
+        @{
+            var temp = iPow.BllComm.Discount.GetDiscount();
+            if (temp != null && temp.Count > 0)
+            {
+                foreach (var item in temp)
+                {
+            <a href="javascript:;" target="_blank" title="@(item.Title)">
+                @(item.Title.Length > 13 ? item.Title.Substring(0, 12) : item.Title)
+            </a>    
+                }
+            }
+        }
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<!--页面广告结束-->

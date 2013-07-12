@@ -1,0 +1,110 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@model IEnumerable<iPow.Domain.Dto.Sys_MvcControllerClassDto>
+@{
+    ViewBag.subtitle = "控制器分类管理";
+    ViewBag.title = "控制器分类管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{Html.Telerik().Grid(Model)
+    .Name("ControllerClassGrid")
+    .ToolBar(toolBar => toolBar.Template(
+    @<text>
+    <label class="customer-label" for="Customers-input">
+        分类名搜索:
+    </label>
+    <input type="text" id="SearchClass" value="分类名字" data-autocomplete="/controllerclass/searchclass" />
+    <input type='button' value='我要搜索' class='t-button' onclick='searchChange()' />
+    <a href="/myadmin/controllerclass/add/" class="t-button">添加分类</a> <a href='javascript:;'
+        class='t-button ' onclick='mulDelete()'>删除选择项</a>
+    </text>))
+    .Columns(columns =>
+    {
+        columns.Template(@<text><input name="selectRow" type="checkbox" value="@item.Id " title="checkedRecords" /></text>)
+        .HeaderTemplate(@<text><input type="checkbox" title="check all records" id="checkAllRecords" /></text>)
+        .Width(50).HeaderHtmlAttributes(new { style = "text-align:center" }).HtmlAttributes(new { style = "text-align:center" })
+        .ClientTemplate("<input type=\"checkbox\" title=\"check all records\" name = 'selectRow' value = '<#= Id #>'/>");
+        columns.Bound(o => o.Id).Width(50).Title("分类Id").Hidden();
+        columns.Bound(o => o.Name).Width(300).Title("分类名称");
+        columns.Bound(o => o.Remark).Width(500).Title("分类说明");
+        columns.Bound(o => o.AddTime).Width(500).Title("添加时间");
+        columns.Bound(o => o.IpAddress).Width(500).Title("IP地址");
+        columns.Bound(o => o.State).Width(500).Title("状态");
+        //.ClientTemplate("<input type=\"checkbox\" title=\"是否启用\" name = 'State' value = '<#= State #>'/>");
+        columns.Bound(o => o.SortNum).Width(500).Title("排序");
+
+        columns.Command(comm =>
+        {
+            comm.Custom("detailCustom")
+                .Text("编辑详细")
+                .ButtonType(GridButtonType.Text)
+                .Action("edit", "controllerclass").HtmlAttributes(new { target = "" });
+            comm.Delete().ButtonType(GridButtonType.Text);
+        }).Width(300);
+    })
+    .ClientEvents(clientEvents => clientEvents.OnDataBinding("dataBinding"))
+    .DataKeys(key => key.Add("Id"))//添加主键
+    .DataBinding(dataBinding => dataBinding.Ajax().Select("ajaxindex", "controllerclass")
+        .Insert("create", "controllerclass")
+        .Update("edit", "controllerclass")
+        .Delete("deleteclass", "controllerclass"))
+    .Editable(editing => editing.Mode(GridEditMode.InLine))
+    .Pageable(page => page.PageSize(10))
+    .Render();
+}
+<script type="text/javascript">
+    var preSearch = "";
+    var isSearch = false;
+    function searchChange() {
+        var currentSearch = $("#SearchClass").val();
+        if (preSearch != currentSearch) {
+            $("#ControllerClassGrid").data("tGrid").rebind();
+        }
+    }
+
+    function dataBinding(args) {
+        var searchKeyStr = $("#SearchClass").val();
+        preSearch = searchKeyStr;
+        if (searchKeyStr == '分类名字') {
+            searchKeyStr = '';
+        }
+        args.data = $.extend(args.data, { searchKey: searchKeyStr });
+    }
+
+    function mulDelete() {
+        var delStr = $(':checked');
+        if (delStr.length < 1) {
+            alert('Check a few grid rows first.');
+            return;
+        }
+        jQuery.post('/controllerclass/deletemulclass', delStr, function (res) {
+            if (res.success) {
+                setTimeout(function () {
+                    $("#ControllerClassGrid").data("tGrid").rebind();
+                    $("#checkAllRecords").attr("checked", false);
+                }, 1000);
+            } else {
+                alert(res.message);
+            }
+        })
+    }
+
+    $(function () {
+        $('#checkAllRecords').click(function checkAll() { $("#ControllerClassGrid tbody input:checkbox").attr("checked", this.checked); });
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+        $("#SearchClass").focus(function () {
+            if (this.value == "分类名字") {
+                $("#SearchClass").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#SearchClass").val("分类名字");
+            }
+        });
+    });
+</script>

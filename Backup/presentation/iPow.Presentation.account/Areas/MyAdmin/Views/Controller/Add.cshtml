@@ -1,0 +1,50 @@
+﻿@model iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto     
+@{
+    ViewBag.subtitle = "添加控制器";
+    ViewBag.title = "添加控制器";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset class="module width_full">
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ClassName)
+        </div>
+        <div class="editor-label">
+            <select id="ClassId" name="ClassId">
+                <option value="-1">---请选择---</option>
+                @foreach (var item in ViewBag.Controllermodel)
+                {
+                    <option value="@(item.Id)"  @((Model.ClassId != null && Model.ClassId.CompareTo(item.Id) == 0) ? "selected = 'selected'" : "")>@(item.Name)</option>
+                }
+            </select>
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.State)
+        </div>
+        <div class="editor-field" style="float: left;">
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.State)
+        </div>
+        <div class="editor-label" style=" clear:both; display: block;">
+            @Html.LabelFor(model => model.SortNum)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SortNum)
+            @Html.ValidationMessageFor(model => model.SortNum)
+        </div>
+    </fieldset>
+    <p>
+        <input type="submit" value="保存" />
+    </p>
+}

@@ -1,0 +1,152 @@
+﻿@using iPow.jz.Models;
+@using Webdiyer.WebControls.Mvc;
+@model iPow.jz.Models.FroumModels
+@{
+    ViewBag.Title = "SeachFroum";
+    Layout = "~/Views/Shared/_CategoryOut.cshtml";
+}
+<script src="@Url.Content("~/Scripts/jquery.form.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        checkcount(90, "intro", "errfont");
+    });
+    $(document).ready(function () {
+        $("#newForm").submit(function () {
+            var bar = $("#bar").val();
+            var intro = $("#intro").val();
+            if ($.trim(bar) == "") {
+                alert("请输入家族圈的名称!");
+                return false;
+            }
+            if ($.trim(intro) == "") {
+                alert("请输入家族圈的介绍!");
+                return false;
+            }
+            if (intro.length < 10 || intro.length > 90) {
+                alert("家族圈介绍必须介于10到90之间!");
+                return false;
+            }
+            $.ajax({
+                type: 'POST',
+                url: '/addcreate/create',
+                data: { bar: $("#bar").val(), intro: $("#intro").val() },
+                datatype: null,
+                timeout: 6000,
+                success: function (daa) {
+                    alert("创建新家族圈需审核!家族圈成功创建并审核通过后，希望您以后常来这里和其他网友交流，您还可以申请当族长");
+                    window.location.href = "/";
+                }
+            });
+        });
+    });
+</script>
+<div class="guid">
+    <a href="/">@(ViewBag.SiteName)</a>><b>创建 <span style="color: red">@(ViewBag.SearchName)</span>
+        家族圈</b>
+</div>
+<div id="B">
+    <div id="L">
+        <div class="nameleft">
+            家族圈目录</div>
+        <div class="nameleftcont">
+            <ul>
+                <li><a href="/catalog/18/1">@(ViewBag.Message)</a></li>
+            </ul>
+        </div>
+        <div class="k">
+        </div>
+    </div>
+    <div id="R">
+        <div class="nameset">
+            创建<span style="color: red">@(ViewBag.SearchName)</span>家族圈
+        </div>
+        <div class="namecont">
+            @* @using (Html.BeginForm("Create", "Forum"))
+            {*@
+            <form name="newForm" id="newForm" action="">
+            <table width="90%" align="center" cellpadding="4" cellspacing="4" style="padding: 20px 10px;">
+                <tr>
+                    <td>
+                    </td>
+                    <td height="30" valign="top">
+                        @{
+                            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                            var createAllow = "1";
+                            if (createAllow == "1")
+                            {
+                                sb.Append(" 恭喜您发现了新大陆，您是第一个到达“<span style=\"color: red\">" + ViewBag.SearchName + "</span>”家族圈的人！（创建新家族圈需审核）");
+                                sb.Append(" 家族圈成功创建并审核通过后，希望您以后常来这里和其他网友交流，您还可以申请当族长。");
+                            }
+                            else
+                            {
+                                sb.Append("“<span style=\"color: red\">" + ViewBag.SearchName + "</span>”家族圈不存在，<u>系统当前禁止创建新家族圈！</u> <span style=\"color: red\">系统当前禁止创建新家族圈！</span>");
+                            }
+                        }
+                        @Html.Raw(sb.ToString())
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" width="13%">
+                        家 族 名 称：
+                    </td>
+                    <td>
+                        @{
+                            sb.Clear();
+                            if (createAllow != "1")
+                            {
+                                sb.Append("  <input type=\"text\" name=\"bar\" id=\"bar\" class=\"bar_inp\" value='" + ViewBag.SearchName + "' disabled  maxlength=\"15\" />");
+                            }
+                            else
+                            {
+                                sb.Append("  <input type=\"text\" name=\"bar\" id=\"bar\" class=\"bar_inp\" value='" + ViewBag.SearchName + "'  maxlength=\"15\" />");
+                            }
+                        }
+                        @Html.Raw(sb.ToString())
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right" valign="top">
+                        家 族 简 介：
+                    </td>
+                    <td>
+                        不超过90个字,你还能输入<font id="errfont" style="font-family: Arial, Helvetica, sans-serif;
+                            font-size: 14px; color: #F00;">90</font>个字！
+                        <br>
+                        @{
+                            sb.Clear();
+                            if (createAllow != "1")
+                            {
+                                sb.Append(" <textarea name=\"intro\" id=\"intro\" class=\"bar_inp\" rows=\"8\" cols=\"\"  disabled></textarea> ");
+                            }
+                            else
+                            {
+                                sb.Append(" <textarea name=\"intro\" id=\"intro\" class=\"bar_inp\" rows=\"8\" cols=\"\"    ></textarea>");
+                            }
+                        }
+                        @Html.Raw(sb.ToString())
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    </td>
+                    <td>
+                        @{
+                            sb.Clear();
+                            if (createAllow == "1")
+                            {
+                                sb.Append(" <input id='dd' type=\"submit\" value=\"申请创建\"   />");
+                            }
+                            else
+                            {
+                                sb.Append("<input  id='dd' type=\"submit\" value=\"申请创建\" disabled/>");
+                            }
+                        }
+                        @Html.Raw(sb.ToString())
+                    </td>
+                </tr>
+            </table>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

@@ -1,0 +1,50 @@
+﻿<section id="secondary_bar">
+    <div class="user">
+        @Html.Partial("_LogOnPartial")
+    </div>
+    <div class="breadcrumbs_container">
+        <article class="breadcrumbs">
+            <a href="javascript:;">当前页</a>
+            <div class="breadcrumb_divider">
+            </div>
+            <a class="current">@(ViewBag.subtitle)</a>
+        </article>
+    </div>
+</section>
+<!-- end of secondary bar -->
+<aside id="sidebar" class="column">
+    <form class="quick_search" action="">
+    <input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+    </form>
+    <hr />
+    <h3>
+        线路口袋</h3>
+    <ul class="toggle">
+        <li class="icn_categories"><a href="/tour/index">线路表</a> </li>
+        @*<li><a href="/tour/createplan">添加我的线路</a></li>*@ @*<li class="icn_new_article"><a href="#">New Article</a></li>
+			<li class="icn_edit_article"><a href="#">Edit Articles</a></li>
+			<li class="icn_categories"><a href="#">Categories</a></li>
+			<li class="icn_tags"><a href="#">Tags</a></li>*@
+    </ul>
+    <h3>旅行社</h3>
+    <ul class="toggle">
+        <li class="icn_profile"><a href="/user/index/">旅游线路</a></li>
+        <li class="icn_add_user"><a href="/user/adduser/">优惠信息</a></li> 
+        <li class="icn_profile"><a href="/userrole/index/">我的收藏夹</a></li>
+        <li class="icn_add_user"><a href="/userrole/adduserrole/">订单查询</a></li>
+                <li class="icn_add_user"><a href="/userrole/adduserrole/">个人信息</a></li>
+    </ul>
+    <footer>
+        <hr />
+        <p>
+            <strong>Copyright &copy; 2012 iPow</strong></p>
+        <p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </p>
+    </footer>
+</aside>
+<!-- end of sidebar -->

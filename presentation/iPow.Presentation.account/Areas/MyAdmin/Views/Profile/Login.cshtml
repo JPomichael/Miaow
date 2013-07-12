@@ -1,0 +1,155 @@
+﻿@model iPow.Domain.Dto.Sys_AdminUserDto
+
+@{
+    ViewBag.Title = "Login";
+}
+<h2>Login</h2>
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Sys_AdminUserDto</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.username)
+            @Html.ValidationMessageFor(model => model.username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.password)
+            @Html.ValidationMessageFor(model => model.password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lastloginip)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lastloginip)
+            @Html.ValidationMessageFor(model => model.lastloginip)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.lastlogintime)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.lastlogintime)
+            @Html.ValidationMessageFor(model => model.lastlogintime)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.logintimes)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.logintimes)
+            @Html.ValidationMessageFor(model => model.logintimes)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.roleid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.roleid)
+            @Html.ValidationMessageFor(model => model.roleid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.userid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.userid)
+            @Html.ValidationMessageFor(model => model.userid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.truename)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.truename)
+            @Html.ValidationMessageFor(model => model.truename)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.style)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.style)
+            @Html.ValidationMessageFor(model => model.style)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.sex)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.sex)
+            @Html.ValidationMessageFor(model => model.sex)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserType)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserType)
+            @Html.ValidationMessageFor(model => model.UserType)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserGuid)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserGuid)
+            @Html.ValidationMessageFor(model => model.UserGuid)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartmentID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DepartmentID)
+            @Html.ValidationMessageFor(model => model.DepartmentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Activity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Activity)
+            @Html.ValidationMessageFor(model => model.Activity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EmployeeID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EmployeeID)
+            @Html.ValidationMessageFor(model => model.EmployeeID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

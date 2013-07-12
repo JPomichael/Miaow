@@ -1,0 +1,24 @@
+﻿@{
+    if (Model.SightInfo != null)
+    {
+        System.Text.StringBuilder googleSb = new System.Text.StringBuilder();
+        googleSb.AppendLine("<script type=\"text/javascript\">");
+        googleSb.AppendLine("$(function () {");
+        if (Model.SightInfo.Longitude > 0 && Model.SightInfo.Longitude > 0)
+        {
+            googleSb.AppendLine("initialize(" + Model.SightInfo.Latitude + "," + Model.SightInfo.Longitude + ",'" + Model.SightInfo.Title + "');");
+        }
+        else
+        {
+            googleSb.AppendLine("initialize(" + this.Model.CurrentSightCityInfo.Latitude + ",'" + this.Model.CurrentSightCityInfo.Longitude + "');");
+        }
+        googleSb.AppendLine("    });");
+        googleSb.AppendLine("$(window).unload(function () {");
+        googleSb.AppendLine("GUnload();");
+        googleSb.AppendLine("});");
+        googleSb.AppendLine("</script>");
+        //额，现在，还没有换地图的，要换的话，就取消吧
+        //也就只有自驾车的， 没有公交
+    @Html.Raw(googleSb.ToString());
+    }
+}

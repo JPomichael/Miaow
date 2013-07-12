@@ -1,0 +1,46 @@
+﻿<section id="secondary_bar">
+    <div class="user">
+        @Html.Partial("_LogOnPartial")
+    </div>
+    <div class="breadcrumbs_container">
+        <article class="breadcrumbs">
+            <a href="javascript:;">当前页</a>
+            <div class="breadcrumb_divider">
+            </div>
+            <a class="current">@(ViewBag.subtitle)</a>
+        </article>
+    </div>
+</section>
+<!-- end of secondary bar -->
+<aside id="sidebar" class="column">
+    <form class="quick_search" action="">
+    <input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+    </form>
+    <hr />
+    <h3> 景区景点</h3>  
+    <ul class="toggle">
+        <li class="icn_profile"><a href="/controllerclass/index/">景区管理</a></li>
+        <li class="icn_add_user"><a href="/controllerclass/add/">优惠信息</a></li>
+        <li class="icn_profile"><a href="/controller/index/">我的收藏夹</a></li>
+        <li class="icn_add_user"><a href="/controller/add/">景区新闻管理</a></li>
+                <li class="icn_profile"><a href="/controllerclass/index/">景区图片管理</a></li>
+        <li class="icn_add_user"><a href="/controllerclass/add/">景区活动管理</a></li>
+        <li class="icn_profile"><a href="/controller/index/">景区留言管理</a></li>
+        <li class="icn_add_user"><a href="/controller/add/">景区视频管理</a></li>
+                <li class="icn_profile"><a href="/controllerclass/index/">订单管理</a></li>
+        <li class="icn_add_user"><a href="/controllerclass/add/">个人信息</a></li>
+    </ul>
+    <footer>
+        <hr />
+        <p>
+            <strong>Copyright &copy; 2012 iPow</strong></p>
+        <p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </p>
+    </footer>
+</aside>
+<!-- end of sidebar -->

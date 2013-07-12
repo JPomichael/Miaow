@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>@ViewBag.Title@("iPow自助旅行网")</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/top.css")" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/ad.css")" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <!--页面头头部开始-->
+    <div class="topContainer">
+        <div class="topTop">
+            <div id="header">
+                <div class="logo">
+                    <a href="http://hotel.ipow.cn/" class="aBeta"></a>
+                </div>
+                <div id="headerMid">
+                    <div class="topNav">
+                        <ul>
+                            <li><a href="http://www.ipow.cn" title="去度假">去度假</a></li>
+                            <li><a href="http://jq.ipow.cn" title="逛景区">逛景区</a></li>
+                            <li><a class="current" href="http://hotel.ipow.cn" title="住酒店">住酒店</a></li>
+                            <li><a href="http://jz.ipow.cn" title="家族圈">家族圈</a></li>
+                             <li><a href="http://p.ipow.cn" title="互动旅行">互动旅行</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="headerRight">
+                    <span class="login" id="loginUserInfo">
+                        @Html.Partial("_LogOnPartial")
+                    </span><span class="banner"><a href="http://www.ipow.cn/activity/" target="_blank"
+                        title="iPow专题">iPow专题</a> </span>
+                </div>
+            </div>
+        </div>
+        <div class="topBottom">
+            @Html.Partial("SearchPartial")
+        </div>
+    </div>
+    @RenderBody()
+    <div class="linkContainer">
+        <div class="LinkList">
+            @Html.Action("Links", "Home")
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="pageBottom">
+        @Html.Action("Bottom", "Home")
+    </div>
+    <div style="display: none">
+        @Html.Partial("SsoAuthPartial")
+    </div>
+</body>
+</html>

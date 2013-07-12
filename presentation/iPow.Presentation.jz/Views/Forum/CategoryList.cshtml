@@ -1,0 +1,137 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model iPow.DataClass.jz.ForumCatalogList
+@{
+    Layout = "~/Views/Shared/_CategoryOut.cshtml";
+    ViewBag.Title = "家族圈";
+    //分类列表
+}
+<div class="guid">
+    <a href="/">家族圈</a>@(">")<a href="/catalog/18/1">@(Model.TotalTheme)</a>@{
+        if (Model.CurrentCatalog.name.Equals("主题景区"))
+        {
+
+        }
+        else
+        {
+        @(">")<a href="/catalog/@(Model.CurrentCatalog.cid)/1">@(Model.CurrentCatalog.name)</a>
+        }
+    }
+</div>
+<div id="B">
+    <div id="L">
+        <div class="nameleft">
+            @(ViewBag.Message)
+        </div>
+        <div class="nameleftcont">
+            <ul>
+                <!-- BEGIN categoryArr.categoryArr -->
+                <!-- IF id == cid -->
+                <!-- ELSE -->
+                @{
+                    var allCatalogList = iPow.DataClass.jz.Querys.GetForumCatalogList();
+                    foreach (var item in allCatalogList)
+                    {
+                    <li class='@((Model.CurrentCatalog.name == item.name) ? "on" : "")'><a href='@((Model.CurrentCatalog.name == item.name) ? "#" : "/catalog/" + item.cid + "/1")'>@(item.name)</a></li>
+                    }
+                }
+            </ul>
+        </div>
+        <div class="k">
+        </div>
+    </div>
+    <div id="R">
+        @{
+            var currentCatalogDetailList = iPow.DataClass.jz.Querys.GetForumFamilyListByCatalogId(Model.CurrentCatalog.cid, 1, 15);
+        }
+        <div class="nameset">
+            共@(currentCatalogDetailList != null ? currentCatalogDetailList.TotalItemCount : 0)个家族圈</div>
+        <div class="namecont" id="divFroum">
+            <table width="100%" cellspacing="0" cellpadding="0">
+                <tr class="tr1">
+                    <td class="td1" width="28%">
+                        家族名称
+                    </td>
+                    <td width="50%">
+                        家族简介
+                    </td>
+                    <td width="25%">
+                        族长
+                    </td>
+                </tr>
+                @{
+                    if (currentCatalogDetailList != null)
+                    {
+                        foreach (var item in currentCatalogDetailList)
+                        { 
+                    <tr>
+                        <td class="td2">
+                            <a href='/catalog/@(item.fid)/2' target="_blank">@(item.name)</a>
+                        </td>
+                        <td>
+                            @(item.synopsis.Length > 30 ? item.synopsis.Substring(0, 30) : item.synopsis + "...")
+                        </td>
+                        <td>
+                            <a href="http://sns.ipow.cn/index.php?s=/space/{uid}" target="_blank">@(item.moderator)</a>
+                        </td>
+                    </tr>
+                        }
+                    }
+                    else
+                    {
+                    <tr class="td3">
+                        <td colspan="3">
+                        </td>
+                    </tr>
+                    }
+                    
+                }
+                <tr class="td3">
+                    <td colspan="3">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="td4">
+                        <!--分页 -->
+                        @{
+                            if (currentCatalogDetailList != null)
+                            {
+                            @Html.AjaxPager(currentCatalogDetailList.TotalPageCount,
+                        currentCatalogDetailList.CurrentPageIndex,
+                        "categorylist",
+                        "forum",
+                        "",
+                        new PagerOptions()
+                           {
+                               SeparatorHtml = "",
+                               CssClass = "nlpage",
+                               CurrentPagerItemWrapperFormatString = "<b>{0}</b>",
+                               PageIndexParameterName = "pageIndex",
+                               ShowNumericPagerItems = true,
+                               ShowFirstLast = false,
+                               ShowPrevNext = false,
+                               NumericPagerItemCount = 6,
+                               PrevPageText = "上一页",
+                               NextPageText = "下一页",
+                           },
+                           new
+                           {
+                               cid = Model.CurrentCatalog.cid,
+                               t = 1,
+                               pageIndex = 1
+                           },
+                            new AjaxOptions()
+                           {
+                               UpdateTargetId = "divFroum",
+                               OnBegin = "AjaxStart",
+                               OnComplete = "AjaxStop"
+                           },
+                           null)
+                            }
+                        }
+                        <!--分页 -->
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

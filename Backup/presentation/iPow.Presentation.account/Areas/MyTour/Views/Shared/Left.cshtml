@@ -1,0 +1,35 @@
+﻿<section id="secondary_bar">
+    <div class="user">
+        @Html.Partial("_LogOnPartial")
+    </div>
+    <div class="breadcrumbs_container">
+        <article class="breadcrumbs">
+            <a href="javascript:;">当前页</a>
+            <div class="breadcrumb_divider">
+            </div>
+            <a class="current">@(ViewBag.subtitle)</a>
+        </article>
+    </div>
+</section>
+<!-- end of secondary bar -->
+<aside id="sidebar" class="column">
+    <form class="quick_search" action="">
+    <input type="text" value="Quick Search" onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+    </form>
+    <hr />
+    <h3>
+        驴友</h3>
+    <footer>
+        <hr />
+        <p>
+            <strong>Copyright &copy; 2012 iPow</strong></p>
+        <p>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+        </p>
+    </footer>
+</aside>
+<!-- end of sidebar -->

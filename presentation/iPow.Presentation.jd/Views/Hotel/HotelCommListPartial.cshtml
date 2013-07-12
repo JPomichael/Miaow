@@ -1,0 +1,47 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model Webdiyer.WebControls.Mvc.PagedList<iPow.DataSys.Sys_HotelComm>
+<div class="commBody" id="CommonList">
+    @{
+        if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                var userId = "user" + item.UserID.ToString();
+                var ips = item.Ip.Split('.');
+                var ip = ips[0] + "." + ips[1] + ".*.*";
+                var contentId = "commContent" + item.UserID.ToString();
+        <p class="over">
+            <img src="/Content/images/face/face1.jpg" width="45" height="45" class="face" />
+            <span class="spanUser" id='@(userId)'><b>iPow@(item.UserName)</b> ip：@(ip)</span>
+            @* <span class="spanScore">@item.Point</span>*@ <span class="content" id="@(contentId)">@(item.Content)</span>
+            <span class="control">发表于：@(item.AddTime.ToString())&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:;"
+                onclick="showCommReply('')" style="display: none">引用回复</a>&nbsp;</span>
+        </p>
+            }
+        }
+        else
+        {
+        <p>
+            暂时还没有评论的，评论一个吧……
+        </p>
+        }
+   
+    }
+</div>
+<div class="" style="text-align: right;" id="PageList">
+    @{
+        @Html.AjaxPager(Model.TotalPageCount, Model.CurrentPageIndex,
+        "HotelCommList",
+        "Hotel",
+        "hotelcommlist",
+         new PagerOptions() { PageIndexParameterName = "pi", LastPageText = "尾页", FirstPageText = "首页", PrevPageText = "上一页", NextPageText = "下一页", CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>" },
+         new { id = ViewBag.hotelid },
+        new AjaxOptions()
+        {
+            UpdateTargetId = "updateCommList",
+            OnBegin = "",
+            OnComplete = ""
+        },
+            null)
+    }
+</div>

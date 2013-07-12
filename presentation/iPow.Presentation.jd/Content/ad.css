@@ -1,0 +1,32 @@
+﻿@charset "utf-8"; 
+
+.adLeft{float:left; width:769px; height:89px; padding-top:10px}
+.adRight{float:right; width:178px; height:87px; border:1px #cdc9ca solid; margin-top:10px}
+.adRight a{display:block; width:170px; height:21px; padding-left:4px; line-height:21px; color:#000}
+.rightAd{float:left; width:264px; text-align:left}
+
+#addr{position:absolute; z-index:3; width:300px; border:1px solid #930; background-color:#FFF; #margin-top:0px; #margin-left:200px; *margin-left:-150px; *margin-top:20px}
+#addrProvince{position:absolute; z-index:3; width:300px; border:1px solid #930; background-color:#FFF}
+#addr span, #addrProvince span{display:block; width:300px; height:31px; line-height:31px; text-indent:30px}
+#addr span a, #addrProvince span a{display:block; float:right; padding-right:5px; color:#900; cursor:pointer}
+#addr span em, #addrProvince span em{float:left}
+#addr ul, #addrProvince ul{display:block; list-style:none; margin:0px; padding:0px}
+#addr ul li, #addrProvince ul li{cursor:pointer; text-align:center; width:50px; height:25px; line-height:25px; float:left}
+.addrSelet{border:none; width:120px; height:20px; background-image:url(addrSelect.gif); text-align:left; text-indent:3px}
+
+.indexRightTop{float:right; width:360px; height:190px; margin-top:12px}
+.adRightImg{border:0px}
+
+a.adImgHref{display:block; float:left; width:240px; height:95px; margin-left:2px; margin-top:10px; border:0px}
+
+#adPlay *{font-size:12px; font-family:Verdana; margin:0; padding:0}
+#adPlay img{border:0px}
+#adPlay{width:360px; height:190px; overflow:hidden; margin:0; border:1px solid #fff}
+#adPlay_info{position:absolute; margin-top:141px; padding:8px 0 0 20px; height:42px; width:229px; color:#fff; z-index:1001; cursor:pointer}
+#adPlay_info b{font-size:14px; display:block}
+#adPlay_bg{position:absolute; background-color:#000; margin-top:134px; margin-left:0px; height:36px; width:229px; filter:Alpha(Opacity=30); opacity:0.3; z-index:1000}
+#adPlay_text{position:absolute; margin:166px 0 0 268px; height:20px; width:100px; z-index:1002}
+#adPlay_text ul{list-style-type:none; width:100px; height:50px; display:block; padding-top:1px; _padding-top:0px; filter:Alpha(Opacity=80); opacity:0.8}
+#adPlay_text ul li{display:block; float:left; width:16px; height:16px; margin:1px; border:#74A8ED solid 1px; background-color:#fff; color:#74A8ED; text-align:center; line-height:16px; cursor:pointer; font-size:9px}
+#adPlay_list a{display:block; width:360px; height:190px; position:absolute; overflow:hidden}
+

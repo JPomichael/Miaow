@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+ul li{ list-style:none;}
+.ul{ width:379px; height:175px;position:relative; overflow:hidden}
+.ul ul{ height:5000px; width:379px; position:relative; top:0;}
+.ul ul li{ float:left;}
+.ul ul li a{ float:left;}
+.ul ul li a img{ width:379px; height:175px; border:none;}
+.ul .page_g{ background:#000; opacity:0.4; filter:alpha(opacity=40); width:379px; height:20px; position:absolute; bottom:0; left:0;}
+.ul .page_g dl{ float:right;text-align:right; margin-right:5px;}
+.ul .page_g dl dd{ float:left; cursor:pointer;}
+.ul .page_g dl dd a{ color:#fff; padding:0 8px; line-height:18px; border-left:1px solid #ccc;font-size:12px;}
+.ul .page_g dl dd a.abg{ background:red;}
+.ul .page_g dl dd a.bor{border-right:1px solid #ccc}

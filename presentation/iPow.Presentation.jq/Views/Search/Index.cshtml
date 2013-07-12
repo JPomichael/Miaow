@@ -1,0 +1,138 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model  iPow.Application.jq.Dto.SearchInfoDto
+@{
+    ViewBag.Title = "景区搜索_iPow自助旅行网";
+}
+<link href="@Url.Content("~/Content/css/sight_index.css")" rel="stylesheet" type="text/css" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/marker.css")" />
+<script src="http://ditu.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAmoR-oBdyeH4Zkn00S2LOLhRdPH43yFVZ6O0pFnW8m54CGfsV9hSR2QH4wAlox0CoYhgKSKnpURoU3A"
+    type="text/javascript">
+</script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/pkgHotelMarker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/search.js")"></script>
+<script type="text/javascript">
+    function transferEnter() {
+        var keyCode = event.keyCode;
+        if (keyCode == 13)
+            isearch(1, 0);
+    }
+    var iPowDraw;
+    jQuery(document).ready(function () {
+
+    //地图滚动
+    //jQuery("#mapContainer").scrollDiv({
+    //top: 100
+    //});
+
+        //iPowDraw = new DrawTravel(null);
+        //iPowDraw.history();
+        $("#hodometerSave").click(function () {
+            iPowDraw.save(this);
+        });
+        $("#clearHistory").click(function () {
+            iPowDraw.clearHistory();
+        });
+        $("#goLogin").click(function () {
+            iPowDraw.login(this, "login");
+        });
+        $("#goRegister").click(function () {
+            iPowDraw.register(this, "reg");
+        });
+        $("#hodometerHide").click(function () {
+            iPowDraw.hide();
+        });
+        $("#myTrip").click(function () {
+            iPowDraw.show();
+        });
+    })
+
+</script>
+<div class="mainContainer">
+    <div class="sRight">
+        <div class="sCondition">
+            您搜索的目的地： <font class="fontBlue3" id="Termini">@(ViewBag.key)</font>，找到相关目的地约 <font
+                class="fontBlue3" id="ResultCount">@((Model != null && Model.SightInfoList != null && Model.SightInfoList.Count > 0) ? Model.SightInfoList.TotalItemCount : 0)
+            </font>个
+        </div>
+        <div class="sList" id="ResultList">
+            <ul>
+                @{ 
+                    System.Text.StringBuilder sightCirSight = new System.Text.StringBuilder();
+                    sightCirSight.AppendLine(" var sightMap = [ ");
+                    if (this.Model.SightInfoList != null && this.Model.SightInfoList.Count > 0)
+                    {
+                        int sightCount = 1;
+                        foreach (var item in Model.SightInfoList)
+                        {
+                    <li id='lisight@(sightCount)'><a href="@Url.Action("Index", "SightDetail", new { sight = item.Py, sid = item.ParkID, id = 1 })"  target="_blank" class="LR" title = "@(item.Title)">
+                        <dl>
+                            <span class="emNoIco">@(sightCount)</span> <span class="fontBlue3" style="padding-top: 5px;">@(item.Title.Length > 8 ? item.Title.Substring(0, 8) : item.Title)
+                            </span><span style="float: right; padding-right: 25px; padding-top: 5px; width: 120px;">
+                                想去的人：<b>@(item.WantCount)</b></span>
+                            <dd>
+                                @(!string.IsNullOrEmpty(item.Address) ? item.Address : "暂时还没有地址")</dd>
+                        </dl>
+                        <span class="info2"><em class="emImg">@(item.PicCount)</em> <em class="emComm">@(item.CommCount)</em>
+                        </span><font class="fontBlue3" style="display: block; height: 50px; line-height: 50px;">
+                            ￥@(item.Ticket)元/门票</font> </a></li>
+                            if (sightCount >= Model.SightInfoList.Count)
+                            {
+                                sightCirSight.AppendLine("  {Name:'" + item.Title + "',Url:'" + item.Url + "',Type:'Sight',Latitude:" + (string.IsNullOrEmpty(item.Lat.ToString()) ? "0" : item.Lat.ToString()) + ",Longitude:" + (string.IsNullOrEmpty(item.Long.ToString()) ? "0" : item.Long.ToString()) + ",Price:" + item.Ticket + ",ImageSrc:'" + "" + "',Address:'" + item.Address + "',CommCount:" + item.CommCount + ",PicCount:" + item.PicCount + ",SightType:'" + item.Type + "',DomID:'lisight" + sightCount + "'}");
+                            }
+                            else
+                            {
+                                sightCirSight.AppendLine("  {Name:'" + item.Title + "',Url:'" + item.Url + "',Type:'Sight',Latitude:" + (string.IsNullOrEmpty(item.Lat.ToString()) ? "0" : item.Lat.ToString()) + ",Longitude:" + (string.IsNullOrEmpty(item.Long.ToString()) ? "0" : item.Long.ToString()) + ",Price:" + item.Ticket + ",ImageSrc:'" + "" + "',Address:'" + item.Address + "',CommCount:" + item.CommCount + ",PicCount:" + item.PicCount + ",SightType:'" + item.Type + "',DomID:'lisight" + sightCount + "'},");
+                            }
+                            sightCount++;
+                        }
+                    }
+                    sightCirSight.AppendLine("];");
+                }
+            </ul>
+        </div>
+        <div id="RusultPage">
+            <div class="indexPage">
+                <em>
+                    @(Model.SightInfoList.TotalItemCount)条记录@(Model.SightInfoList.CurrentPageIndex)/@(Model.SightInfoList.TotalPageCount)页</em>
+                <div class="Pagecon">
+                    @Html.Pager(Model.SightInfoList.TotalItemCount, Model.SightInfoList.PageSize ,  Model.SightInfoList.CurrentPageIndex,
+                                  "IndexPage",
+                         "Search",
+                         new PagerOptions()
+                            {
+                                PageIndexParameterName = "id",
+                                LastPageText = "尾页",
+                                FirstPageText = "首页",
+                                PrevPageText = "上一页",
+                                NextPageText = "下一页",
+                                 NumericPagerItemCount = 5,
+                                CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>"
+                            },
+                            "SightSearchPage",
+                            new
+                            {
+                                search = ViewBag.key,
+                                id = Model.SightInfoList.CurrentPageIndex
+                            },
+                            null)
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sLeft" style="position: relative; margin-top: 0px; padding-top: 10px;z-index: 0;"
+        id="mapContainer">
+        <div id="jxMapTipPanel">
+        </div>
+        <div id="gMap" style="width: 376px; height: 310px; overflow: hidden; border: 1px solid;">
+            loading.....
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<script type="text/javascript">
+        @(MvcHtmlString.Create(sightCirSight.ToString()))
+            $(function () {
+                mapinitialize(sightMap , 'gMap');
+            });
+</script>

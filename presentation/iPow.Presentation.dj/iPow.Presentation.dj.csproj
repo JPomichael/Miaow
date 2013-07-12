@@ -1,0 +1,682 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C282C053-3154-49F3-A940-1D957594C285}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iPow.Presentation.dj</RootNamespace>
+    <AssemblyName>iPow.Presentation.dj</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=2.6.1.841, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Autofac.2.6.1.841\lib\NET40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Configuration, Version=2.6.1.841, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Autofac.2.6.1.841\lib\NET40\Autofac.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=2.6.1.841, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Autofac.Mvc3.2.6.1.841\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah">
+      <HintPath>..\..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+    </Reference>
+    <Reference Include="EmitMapper">
+      <HintPath>..\..\packages\EmitMapper.1.0.0\lib\EmitMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RouteDebugger">
+      <HintPath>..\..\packages\routedebugger.2.1.3\lib\net40\RouteDebugger.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\CityController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListController.cs" />
+    <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\TourController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="iPowPreDjIoc.cs" />
+    <Compile Include="iPowPreDjEngine.cs" />
+    <Compile Include="iPowPreDjEntityCustomMap.cs" />
+    <Compile Include="iPowPreDjRegisteRoute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="configfiles\CityProvider.txt" />
+    <Content Include="configfiles\DataUrlXmlProvider.xml" />
+    <Content Include="Content\colorbox.css" />
+    <Content Include="Content\dialog.css" />
+    <Content Include="Content\index.css" />
+    <Content Include="Content\indexlayout.css" />
+    <Content Include="Content\index_g.css" />
+    <Content Include="Content\jslider.css" />
+    <Content Include="Content\jslider.ie6.css" />
+    <Content Include="Content\marker.css" />
+    <Content Include="Content\newindex.css" />
+    <Content Include="Content\newtop.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\tour.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="images\2011_bj.jpg" />
+    <Content Include="images\2011_cl.jpg" />
+    <Content Include="images\2011_jss.jpg" />
+    <Content Include="images\2011_tz.jpg" />
+    <Content Include="images\404.jpg" />
+    <Content Include="images\activity_left.jpg" />
+    <Content Include="images\ad.jpg" />
+    <Content Include="images\adicon.jpg" />
+    <Content Include="images\ad\0925.jpg" />
+    <Content Include="images\ad\0927.jpg" />
+    <Content Include="images\ad\09TIANJI.jpg" />
+    <Content Include="images\ad\al_cdhappy01.jpg" />
+    <Content Include="images\ad\bj1051.jpg" />
+    <Content Include="images\ad\bjsdj.jpg" />
+    <Content Include="images\ad\bjwsj.jpg" />
+    <Content Include="images\ad\bjxnhd.jpg" />
+    <Content Include="images\ad\bjyx.jpg" />
+    <Content Include="images\ad\bj_sdj.jpg" />
+    <Content Include="images\ad\cd1051.jpg" />
+    <Content Include="images\ad\cd2010cj-ipow.jpg" />
+    <Content Include="images\ad\cd38j.jpg" />
+    <Content Include="images\ad\cdcyad.jpg" />
+    <Content Include="images\ad\cdsdj-ipow.jpg" />
+    <Content Include="images\ad\cdwsj.jpg" />
+    <Content Include="images\ad\cd_sdj.jpg" />
+    <Content Include="images\ad\chunjieBg.jpg" />
+    <Content Include="images\ad\clbjn.jpg" />
+    <Content Include="images\ad\cnxnhd.jpg" />
+    <Content Include="images\ad\IPOW.jpg" />
+    <Content Include="images\ad\IPOW2.jpg" />
+    <Content Include="images\ad\IPOW3.jpg" />
+    <Content Include="images\ad\IPOWbjwsj.jpg" />
+    <Content Include="images\ad\ipowcdwsj.jpg" />
+    <Content Include="images\ad\ipowg.jpg" />
+    <Content Include="images\ad\ipowjxzh.jpg" />
+    <Content Include="images\ad\ipowjz.jpg" />
+    <Content Include="images\ad\ipowjzn.jpg" />
+    <Content Include="images\ad\ipowsh.jpg" />
+    <Content Include="images\ad\ipowshwsj.jpg" />
+    <Content Include="images\ad\jhw.jpg" />
+    <Content Include="images\ad\jxzhcj.jpg" />
+    <Content Include="images\ad\oct.jpg" />
+    <Content Include="images\ad\sh38j.jpg" />
+    <Content Include="images\ad\sh7xv.jpg" />
+    <Content Include="images\ad\shcyad.jpg" />
+    <Content Include="images\ad\shhappyyyj.jpg" />
+    <Content Include="images\ad\shhlg1.jpg" />
+    <Content Include="images\ad\shjq.jpg" />
+    <Content Include="images\ad\shuqi1.jpg" />
+    <Content Include="images\ad\shwsj.jpg" />
+    <Content Include="images\ad\shxnhd.jpg" />
+    <Content Include="images\ad\sh_sdj.jpg" />
+    <Content Include="images\ad\szxn.jpg" />
+    <Content Include="images\ad\xianlu.jpg" />
+    <Content Include="images\ad\xnhd3.jpg" />
+    <Content Include="images\ad\zhizhi.jpg" />
+    <Content Include="images\ad\zhxn.jpg" />
+    <Content Include="images\ad_img\cn5000bn.jpg" />
+    <Content Include="images\ad_img\shhlg.jpg" />
+    <Content Include="images\autoPlay.jpg" />
+    <Content Include="images\autoStop.jpg" />
+    <Content Include="images\backTip.jpg" />
+    <Content Include="images\backToolBG.gif" />
+    <Content Include="images\backTop.jpg" />
+    <Content Include="images\bg.jpg" />
+    <Content Include="images\bias.jpg" />
+    <Content Include="images\BigLoading.gif" />
+    <Content Include="images\bottomBG.jpg" />
+    <Content Include="images\bottomLeft.jpg" />
+    <Content Include="images\bottomRight.jpg" />
+    <Content Include="images\btnGray.jpg" />
+    <Content Include="images\btnLogin.gif" />
+    <Content Include="images\btnMinimize.jpg" />
+    <Content Include="images\btnRed.jpg" />
+    <Content Include="images\btnRegister.gif" />
+    <Content Include="images\btnRestore.jpg" />
+    <Content Include="images\btnSearchBG.jpg" />
+    <Content Include="images\btn_bg.jpg" />
+    <Content Include="images\btn_makeTrip.jpg" />
+    <Content Include="images\btn_reserver01.jpg" />
+    <Content Include="images\btn_reserver02.jpg" />
+    <Content Include="images\btn_Reset.gif" />
+    <Content Include="images\btn_search01.jpg" />
+    <Content Include="images\btn_search02.jpg" />
+    <Content Include="images\btn_Send.jpg" />
+    <Content Include="images\btn_Submit.gif" />
+    <Content Include="images\btn_trafficSearch.jpg" />
+    <Content Include="images\btn_typBG.jpg" />
+    <Content Include="images\chunjieBg.jpg" />
+    <Content Include="images\chunjieBg111.jpg" />
+    <Content Include="images\chunjieBg元旦.jpg" />
+    <Content Include="images\chunjieBg春节.jpg" />
+    <Content Include="images\close.png" />
+    <Content Include="images\comm_ico.jpg" />
+    <Content Include="images\constInput.jpg" />
+    <Content Include="images\count_banner.gif" />
+    <Content Include="images\count_showBG.jpg" />
+    <Content Include="images\danxuinput.jpg" />
+    <Content Include="images\DatePick.gif" />
+    <Content Include="images\dayInput.jpg" />
+    <Content Include="images\dbhqc_p.jpg" />
+    <Content Include="images\default\icoDown.jpg" />
+    <Content Include="images\default\radio1.jpg" />
+    <Content Include="images\default\radio2.jpg" />
+    <Content Include="images\default\searchBg.jpg" />
+    <Content Include="images\default\searchDdl.gif" />
+    <Content Include="images\default\sRoundB.gif" />
+    <Content Include="images\default\sRoundT.gif" />
+    <Content Include="images\destinationBG.jpg" />
+    <Content Include="images\destinationInput.jpg" />
+    <Content Include="images\dialogClose.jpg" />
+    <Content Include="images\dialog_TopBg.gif" />
+    <Content Include="images\dropdown_2.png" />
+    <Content Include="images\e-mainad.jpg" />
+    <Content Include="images\face\face1.jpg" />
+    <Content Include="images\filterPanel_header_bg.gif" />
+    <Content Include="images\flv_04.gif" />
+    <Content Include="images\focusLeft.jpg" />
+    <Content Include="images\focusRight.jpg" />
+    <Content Include="images\guidinfo_bg.jpg" />
+    <Content Include="images\guid_bg.jpg" />
+    <Content Include="images\guid_tag01.jpg" />
+    <Content Include="images\guid_tag02.jpg" />
+    <Content Include="images\guid_tag03.jpg" />
+    <Content Include="images\guid_tag04.jpg" />
+    <Content Include="images\help.jpg" />
+    <Content Include="images\HotCity.gif" />
+    <Content Include="images\hotelInput.jpg" />
+    <Content Include="images\hotjdbg.jpg" />
+    <Content Include="images\hotlux.jpg" />
+    <Content Include="images\hotTabBg1.jpg" />
+    <Content Include="images\hotTabBg1_1.jpg" />
+    <Content Include="images\hot_tabBg2.jpg" />
+    <Content Include="images\hot_tabBg2_2.jpg" />
+    <Content Include="images\hot_tabBg3.jpg" />
+    <Content Include="images\hot_tabBg3_2.jpg" />
+    <Content Include="images\ico01.gif" />
+    <Content Include="images\icon\htop1.jpg" />
+    <Content Include="images\icon\htop10.jpg" />
+    <Content Include="images\icon\htop2.jpg" />
+    <Content Include="images\icon\htop3.jpg" />
+    <Content Include="images\icon\htop4.jpg" />
+    <Content Include="images\icon\htop5.jpg" />
+    <Content Include="images\icon\htop6.jpg" />
+    <Content Include="images\icon\htop7.jpg" />
+    <Content Include="images\icon\htop8.jpg" />
+    <Content Include="images\icon\htop9.jpg" />
+    <Content Include="images\icon_SelectDown.gif" />
+    <Content Include="images\icon_user.gif" />
+    <Content Include="images\ico\close.gif" />
+    <Content Include="images\ico\htop1.jpg" />
+    <Content Include="images\ico\htop10.jpg" />
+    <Content Include="images\ico\htop2.jpg" />
+    <Content Include="images\ico\htop3.jpg" />
+    <Content Include="images\ico\htop4.jpg" />
+    <Content Include="images\ico\htop5.jpg" />
+    <Content Include="images\ico\htop6.jpg" />
+    <Content Include="images\ico\htop7.jpg" />
+    <Content Include="images\ico\htop8.jpg" />
+    <Content Include="images\ico\htop9.jpg" />
+    <Content Include="images\ico\list_ico.gif" />
+    <Content Include="images\ico\newwindow.gif" />
+    <Content Include="images\ico\portalbox_bg.gif" />
+    <Content Include="images\ico\resize.gif" />
+    <Content Include="images\ico\zoom.gif" />
+    <Content Include="images\ico_And.jpg" />
+    <Content Include="images\ico_delete.gif" />
+    <Content Include="images\ico_x.jpg" />
+    <Content Include="images\img1.jpg" />
+    <Content Include="images\img_bg.jpg" />
+    <Content Include="images\img_ico.jpg" />
+    <Content Include="images\indexright_GuidTitle.gif" />
+    <Content Include="images\index_btnSearch.jpg" />
+    <Content Include="images\index_ImgBg.jpg" />
+    <Content Include="images\index_Tab.jpg" />
+    <Content Include="images\index_tabBG.jpg" />
+    <Content Include="images\index_tabCBGt.jpg" />
+    <Content Include="images\index_tabCLeft.jpg" />
+    <Content Include="images\index_tabCRight.jpg" />
+    <Content Include="images\index_TabCur.jpg" />
+    <Content Include="images\inputBG1.gif" />
+    <Content Include="images\ipow_Title.jpg" />
+    <Content Include="images\jslider.png" />
+    <Content Include="images\keyBottom.jpg" />
+    <Content Include="images\keyTop.jpg" />
+    <Content Include="images\keywordBg.jpg" />
+    <Content Include="images\leftSplit.jpg" />
+    <Content Include="images\left_bar.gif" />
+    <Content Include="images\liveIco.jpg" />
+    <Content Include="images\li_bg.jpg" />
+    <Content Include="images\li_bg1.jpg" />
+    <Content Include="images\li_bg1_2.jpg" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\loading2.gif" />
+    <Content Include="images\loginBg.gif" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\londin.swf" />
+    <Content Include="images\lookIco.jpg" />
+    <Content Include="images\ltouristbg.jpg" />
+    <Content Include="images\mall_list_mode.png" />
+    <Content Include="images\map.jpg" />
+    <Content Include="images\nav_current.gif" />
+    <Content Include="images\nav_current.jpg" />
+    <Content Include="images\nav_noCurrent.gif" />
+    <Content Include="images\nav_noCurrent.jpg" />
+    <Content Include="images\next.jpg" />
+    <Content Include="images\nopic116.jpg" />
+    <Content Include="images\nopic135.jpg" />
+    <Content Include="images\numBG.jpg" />
+    <Content Include="images\oprationLeft.jpg" />
+    <Content Include="images\oprationRight.jpg" />
+    <Content Include="images\overlay.png" />
+    <Content Include="images\panelLeft.jpg" />
+    <Content Include="images\panelRight.jpg" />
+    <Content Include="images\panel_titleBG.gif" />
+    <Content Include="images\panel_titleBG.jpg" />
+    <Content Include="images\playswf.swf" />
+    <Content Include="images\pre.jpg" />
+    <Content Include="images\qlxr.jpg" />
+    <Content Include="images\rightRound1.jpg" />
+    <Content Include="images\rightRound2.jpg" />
+    <Content Include="images\rightSplit.jpg" />
+    <Content Include="images\rightTabBg.jpg" />
+    <Content Include="images\rightTabBG2.jpg" />
+    <Content Include="images\rightTipBg.jpg" />
+    <Content Include="images\rightTopBg.jpg" />
+    <Content Include="images\roundLeft.jpg" />
+    <Content Include="images\roundRight.jpg" />
+    <Content Include="images\scherbgf.jpg" />
+    <Content Include="images\scherbgf1.jpg" />
+    <Content Include="images\scherbgfd.jpg" />
+    <Content Include="images\scherbg_left.gif" />
+    <Content Include="images\scherbg_right.gif" />
+    <Content Include="images\scol.jpg" />
+    <Content Include="images\scoltbtn.jpg" />
+    <Content Include="images\scroll_left.jpg" />
+    <Content Include="images\scroll_right.jpg" />
+    <Content Include="images\sdchunjieBg.jpg" />
+    <Content Include="images\searchBG.jpg" />
+    <Content Include="images\searchkuanbg.jpg" />
+    <Content Include="images\searchLeft.jpg" />
+    <Content Include="images\searchPBg.jpg" />
+    <Content Include="images\searchRight.jpg" />
+    <Content Include="images\searchTip.jpg" />
+    <Content Include="images\search_ad_jss.jpg" />
+    <Content Include="images\search_ad_pipow.jpg" />
+    <Content Include="images\search_ad_tz.jpg" />
+    <Content Include="images\search_ico.gif" />
+    <Content Include="images\search_inputBG.gif" />
+    <Content Include="images\search_InputBG.jpg" />
+    <Content Include="images\search_inputBG1.gif" />
+    <Content Include="images\search_inputBG2.gif" />
+    <Content Include="images\search_inputBG3.gif" />
+    <Content Include="images\search_PanelBottom.gif" />
+    <Content Include="images\search_PanelBottom.jpg" />
+    <Content Include="images\search_PanelTop.gif" />
+    <Content Include="images\search_PanelTop.jpg" />
+    <Content Include="images\secitybg.jpg" />
+    <Content Include="images\secitybgf.jpg" />
+    <Content Include="images\shhappy.jpg" />
+    <Content Include="images\Shopping.gif" />
+    <Content Include="images\ShouIcon.gif" />
+    <Content Include="images\sightIco.jpg" />
+    <Content Include="images\slideLeft.jpg" />
+    <Content Include="images\slider.jpg" />
+    <Content Include="images\sliderBG.jpg" />
+    <Content Include="images\slideRight.jpg" />
+    <Content Include="images\staroff.gif" />
+    <Content Include="images\staron.gif" />
+    <Content Include="images\start.gif" />
+    <Content Include="images\systemName.jpg" />
+    <Content Include="images\Tab01.jpg" />
+    <Content Include="images\Tab02.jpg" />
+    <Content Include="images\tab2_bg1.jpg" />
+    <Content Include="images\tab2_bg22.jpg" />
+    <Content Include="images\tab_bg.jpg" />
+    <Content Include="images\tab_bg1.jpg" />
+    <Content Include="images\tab_bg2.jpg" />
+    <Content Include="images\tanchu.png" />
+    <Content Include="images\TB_TitleBG.jpg" />
+    <Content Include="images\TB_WinClose.jpg" />
+    <Content Include="images\TB_WinClose2.jpg" />
+    <Content Include="images\ticket_btn.gif" />
+    <Content Include="images\tipBG.jpg" />
+    <Content Include="images\tipLeft.jpg" />
+    <Content Include="images\tipRight.jpg" />
+    <Content Include="images\toolBg.jpg" />
+    <Content Include="images\top_bomBG.jpg" />
+    <Content Include="images\top_tabbg.gif" />
+    <Content Include="images\top_topBG.jpg" />
+    <Content Include="images\tourOprationBG.jpg" />
+    <Content Include="images\tourRightBg.jpg" />
+    <Content Include="images\tour_AddInfo.jpg" />
+    <Content Include="images\tour_lookMore.jpg" />
+    <Content Include="images\tour_TabBg1.jpg" />
+    <Content Include="images\tour_TabBg2.jpg" />
+    <Content Include="images\trafficResultBg.jpg" />
+    <Content Include="images\traffic_nav1.jpg" />
+    <Content Include="images\traffic_nav1_2.jpg" />
+    <Content Include="images\traffic_nav2.jpg" />
+    <Content Include="images\traffic_nav2_2.jpg" />
+    <Content Include="images\traffic_rLB.jpg" />
+    <Content Include="images\traffic_rLT.jpg" />
+    <Content Include="images\traffic_searchLeft.jpg" />
+    <Content Include="images\traffic_searchMid.jpg" />
+    <Content Include="images\traffic_searchRight.jpg" />
+    <Content Include="images\traffic_Top.jpg" />
+    <Content Include="images\travelIco.jpg" />
+    <Content Include="images\trouicon.jpg" />
+    <Content Include="images\tuodout.jpg" />
+    <Content Include="images\tuodout_bg.gif" />
+    <Content Include="images\tuodout_point.gif" />
+    <Content Include="images\vouchIco.jpg" />
+    <Content Include="images\wearthTop.jpg" />
+    <Content Include="images\weatherBot.jpg" />
+    <Content Include="images\weatherBot_bottom.gif" />
+    <Content Include="images\weatherBot_head.gif" />
+    <Content Include="images\weatherBot_mid.gif" />
+    <Content Include="images\winBG.jpg" />
+    <Content Include="images\xu.jpg" />
+    <Content Include="images\zhaopin.gif" />
+    <Content Include="Scripts\areacode.js" />
+    <Content Include="Scripts\calendar.js" />
+    <Content Include="Scripts\index.js" />
+    <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.18.js" />
+    <Content Include="Scripts\jquery-ui-1.8.18.min.js" />
+    <Content Include="Scripts\jquery.colorbox.js" />
+    <Content Include="Scripts\jquery.easing.1.3.js" />
+    <Content Include="Scripts\jquery.slider.dependcalss.js" />
+    <Content Include="Scripts\jquery.slider.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\pkgHotelMarker.js" />
+    <Content Include="Scripts\searchpart.js" />
+    <Content Include="Scripts\tour.js" />
+    <Content Include="Scripts\weathercity.js" />
+    <Content Include="Views\index.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Views\Catalog\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\application\iPow.Application.dj.Dto\iPow.Application.dj.Dto.csproj">
+      <Project>{E86BDB9E-9F82-4FCC-86D7-94FB48701849}</Project>
+      <Name>iPow.Application.dj.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\iPow.Application.dj.Service\iPow.Application.dj.Service.csproj">
+      <Project>{982F7706-8CB2-4EC6-BDD4-AE4D2AA38C7C}</Project>
+      <Name>iPow.Application.dj.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\iPow.Application.jq.Dto\iPow.Application.jq.Dto.csproj">
+      <Project>{4F6A4DA9-B5C4-40A0-A702-4BCB992750F7}</Project>
+      <Name>iPow.Application.jq.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\iPow.Application.jq.Service\iPow.Application.jq.Service.csproj">
+      <Project>{BF576A93-AB73-40EC-9CCF-3171E32B8C2F}</Project>
+      <Name>iPow.Application.jq.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\iPow.Application.Union.Dto\iPow.Application.Union.Dto.csproj">
+      <Project>{17626EA1-0F82-4F63-BF71-D28AA9E95E4B}</Project>
+      <Name>iPow.Application.Union.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\distributedservices\iPow.Service.SSO.Client\iPow.Service.SSO.Client.csproj">
+      <Project>{BCD4F576-C42C-4450-8EB3-F4219B19ED52}</Project>
+      <Name>iPow.Service.SSO.Client</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\distributedservices\iPow.Service.Union\iPow.Service.Union.csproj">
+      <Project>{50430C3E-A1D5-4BBF-9E4F-E86D1FB895C8}</Project>
+      <Name>iPow.Service.Union</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Dto\iPow.Domain.Dto.csproj">
+      <Project>{94ECD31C-902A-4734-9265-D6E3385B0490}</Project>
+      <Name>iPow.Domain.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Intrastructure\iPow.Domain.Infrastructure.csproj">
+      <Project>{36E4E2ED-E857-46DE-9CAB-F962AEFC26F3}</Project>
+      <Name>iPow.Domain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Repository\iPow.Domain.Repository.csproj">
+      <Project>{5A44C5B5-A925-487D-B4FA-F7A187BFEF1A}</Project>
+      <Name>iPow.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Authorize\iPow.Infrastructure.Crosscutting.Authorize.csproj">
+      <Project>{F7BCE9A5-A826-410A-849D-D4F5C551B4DC}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.Authorize</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Comm.Dto\iPow.Infrastructure.Crosscutting.Comm.Dto.csproj">
+      <Project>{00B1115B-0DDC-482D-AAF8-13D3C56A65D5}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.Comm.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Comm.Service\iPow.Infrastructure.Crosscutting.Comm.Service.csproj">
+      <Project>{87E6A634-A50D-4277-982B-0B16CFAC5738}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.Comm.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.EntityToDto\iPow.Infrastructure.Crosscutting.EntityToDto.csproj">
+      <Project>{75F909AB-BBC3-44F0-BFC6-FA015E8EACA0}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.EntityToDto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Function\iPow.Infrastructure.Crosscutting.Function.csproj">
+      <Project>{FB1A6D0D-D778-4431-9D3D-9CDC298EDFB0}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.Function</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.NetFramework\iPow.Infrastructure.Crosscutting.NetFramework.csproj">
+      <Project>{8E8BCEF4-5F46-49A2-B36E-B397A8A5F635}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.NetFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting\iPow.Infrastructure.Crosscutting.csproj">
+      <Project>{81DD913F-FD84-44E9-830D-EEB641E09DBD}</Project>
+      <Name>iPow.Infrastructure.Crosscutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.DataSys\iPow.Infrastructure.Data.DataSys.csproj">
+      <Project>{2C911DAF-3B6C-49C7-AF21-6224BFB0FE74}</Project>
+      <Name>iPow.Infrastructure.Data.DataSys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.Repository\iPow.Infrastructure.Data.Repository.csproj">
+      <Project>{B1F38D7C-A9AC-46D8-88F0-9980BEAA4DC3}</Project>
+      <Name>iPow.Infrastructure.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data\iPow.Infrastructure.Data.csproj">
+      <Project>{33D73385-13E6-4BFA-BC76-23AF380E7F3E}</Project>
+      <Name>iPow.Infrastructure.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\MvcPager\MvcPager.csproj">
+      <Project>{23C75583-F15F-4464-BD48-6E5C656D7B78}</Project>
+      <Name>MvcPager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\default\vssver2.scc" />
+    <None Include="images\face\vssver2.scc" />
+    <None Include="images\icon\vssver2.scc" />
+    <None Include="images\ico\vssver2.scc" />
+    <None Include="images\vssver2.scc" />
+    <Content Include="Views\Shared\TopAdPartial.cshtml" />
+    <Content Include="Views\Shared\TourClassePartial.cshtml" />
+    <Content Include="Views\Shared\HotTourPlanPartial.cshtml" />
+    <Content Include="Views\Shared\DefaultPartial.cshtml" />
+    <Content Include="Views\Shared\LinkPartial.cshtml" />
+    <Content Include="Views\Shared\BottomPartial.cshtml" />
+    <Content Include="Views\Shared\SearchPartial.cshtml" />
+    <Content Include="Views\Shared\SearchRightPartial.cshtml" />
+    <Content Include="Views\Shared\TopTourPlanPartial.cshtml" />
+    <Content Include="Views\Shared\HotHotelPartial.cshtml" />
+    <Content Include="Views\Catalog\Tour.cshtml" />
+    <Content Include="Views\Tour\Index.cshtml" />
+    <Content Include="Views\Tour\TourContentPartial.cshtml" />
+    <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\Search\Result.cshtml" />
+    <Content Include="Views\Search\SearchAcvancedRightPartial.cshtml" />
+    <Content Include="Views\Search\SearchAdvanced.cshtml" />
+    <Content Include="Views\Search\SearchAdvanced2Partial.cshtml" />
+    <Content Include="Views\Search\SearchAdvancedPartial.cshtml" />
+    <Content Include="Views\Search\SearchAll.cshtml" />
+    <Content Include="Views\Shared\SSOPartial.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\City\Index.cshtml" />
+    <Content Include="Views\City\Tour.cshtml" />
+    <Content Include="Views\Catalog\CatalogTourListPartial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\List\Index.cshtml" />
+    <Content Include="Views\Shared\CatalogTourListPartial.cshtml" />
+    <Content Include="Views\Shared\_TopPartial.cshtml" />
+    <Content Include="Views\Account\Authenticate.cshtml" />
+    <Content Include="Views\Account\LogOff.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3577</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://djipow.ipow.cn</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

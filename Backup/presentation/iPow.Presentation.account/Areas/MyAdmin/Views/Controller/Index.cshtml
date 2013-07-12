@@ -1,0 +1,111 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@model IEnumerable<iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto>
+@{
+    ViewBag.subtitle = "控制器管理";
+    ViewBag.title = "控制器管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{Html.Telerik().Grid(Model)
+    .Name("ControllerGrid")
+    .ToolBar(toolBar => toolBar.Template(
+    @<text>
+    <label class="customer-label" for="Customers-input">
+        控制器搜索:
+    </label>
+    <input type="text" id="SearchController" value="控制器名称" data-autocomplete="/controller/searchcontroller" />
+    <input type='button' value='我要搜索' class='t-button' onclick='searchChange()' />
+    <a href="/myadmin/controller/add/" class="t-button">添加控制器</a> <a href='javascript:;' class='t-button '
+        onclick='mulDelete()'>删除选择项</a>
+    </text>))
+    .Columns(columns =>
+    {
+        columns.Template(@<text><input name="selectRow" type="checkbox" value="@item.Id " title="checkedRecords" /></text>)
+        .HeaderTemplate(@<text><input type="checkbox" title="check all records" id="checkAllRecords" /></text>)
+        .Width(50).HeaderHtmlAttributes(new { style = "text-align:center" }).HtmlAttributes(new { style = "text-align:center" })
+        .ClientTemplate("<input type=\"checkbox\" title=\"check all records\" name = 'selectRow' value = '<#= Id #>'/>");
+        columns.Bound(o => o.Id).Width(50).Title("控制器Id").Hidden();
+        columns.Bound(o => o.ClassName).Width(100).Title("分类名称");
+        columns.Bound(o => o.AssemblyFullName).Width(300).Title("程序集名称").Hidden();
+        columns.Bound(o => o.Name).Width(500).Title("控制器名称");
+        columns.Bound(o => o.Remark).Width(500).Title("控制器说明");
+        columns.Bound(o => o.AddTime).Width(300).Title("添加时间");
+        columns.Bound(o => o.IpAddress).Width(200).Title("IP地址");
+        columns.Bound(o => o.State).Width(100).Title("状态");
+        columns.Bound(o => o.SortNum).Width(100).Title("排序");
+        columns.Command(comm =>
+        {
+            comm.Custom("detailCustom")
+                .Text("编辑详细")
+                .ButtonType(GridButtonType.Text)
+                .Action("edit", "controller").HtmlAttributes(new { target = "" });
+            comm.Delete().ButtonType(GridButtonType.Text);
+        }).Width(300);
+    })
+    .ClientEvents(clientEvents => clientEvents.OnDataBinding("dataBinding"))
+    .DataKeys(key => key.Add("Id"))//添加主键
+    .DataBinding(dataBinding => dataBinding.Ajax().Select("ajaxindex", "controller")
+        .Insert("create", "controller")
+        .Update("edit", "controller")
+        .Delete("delete", "controller"))
+    .Editable(editing => editing.Mode(GridEditMode.InLine))
+    .Pageable(page => page.PageSize(10))
+    .Render();
+}
+<script type="text/javascript">
+    var preSearch = "";
+    var isSearch = false;
+    function searchChange() {
+        var currentSearch = $("#SearchController").val();
+        if (preSearch != currentSearch) {
+            $("#ControllerGrid").data("tGrid").rebind();
+        }
+    }
+
+    function dataBinding(args) {
+        var searchKeyStr = $("#SearchController").val();
+        preSearch = searchKeyStr;
+        if (searchKeyStr == '控制器名称') {
+            searchKeyStr = '';
+        }
+        args.data = $.extend(args.data, { searchKey: searchKeyStr });
+    }
+
+    function mulDelete() {
+        var delStr = $(':checked');
+        if (delStr.length < 1) {
+            alert('Check a few grid rows first.');
+            return;
+        }
+        jQuery.post('/controller/deletemul', delStr, function (res) {
+            if (res.success) {
+                setTimeout(function () {
+                    $("#ControllerGrid").data("tGrid").rebind();
+                    $("#checkAllRecords").attr("checked", false);
+                }, 1000);
+            }
+            else {
+                alert(res.message);
+            }
+        })
+    }
+
+    $(function () {
+        $('#checkAllRecords').click(function checkAll() { $("#ControllerGrid tbody input:checkbox").attr("checked", this.checked); });
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+        $("#SearchController").focus(function () {
+            if (this.value == "控制器名称") {
+                $("#SearchController").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#SearchController").val("控制器名称");
+            }
+        });
+    });
+</script>

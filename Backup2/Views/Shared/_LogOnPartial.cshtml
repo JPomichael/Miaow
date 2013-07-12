@@ -1,0 +1,22 @@
+﻿@{
+    var returnUri = string.Empty;
+    var returnUrl = Request[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.UrlParaReturnUrl];
+    if (returnUrl != null)
+    {
+        returnUri = "?" + iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.UrlParaReturnUrl + "=" + returnUrl;
+    }
+    if (Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] != null)
+    {
+        var user = Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser]
+            as iPow.Service.SSO.Entity.User;
+    <text>欢迎 <strong>@user.username</strong>! [ @Html.ActionLink("Log Off", "logoff", "auth")]</text>
+    }
+    else
+    {
+    <a href="/tencent/logon@(returnUri)">
+        <img src="/images/tencentlogin.gif" alt="腾讯用户" /></a>  
+    <a href="/sina/logon/@(returnUri)">
+        <img src="/images/sinalogin.png" alt="新浪用户" /></a>
+    @Html.ActionLink("log on", "logon", "auth")
+    }
+}

@@ -1,0 +1,57 @@
+﻿@using Webdiyer.WebControls.Mvc
+@{
+    int total = 0;
+    var sightInfoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Application.jq.Service.ISightInfoService>();
+
+    var sightCommList = sightInfoService.GetSightCommList(ViewBag.parkid, 1, 5, ref total);
+    foreach (var item in sightCommList)
+    {
+        var userId = "user" + item.UserID.ToString();
+        string[] ips = item.Ip.Split('.');
+        string ip = string.Empty;
+        if (ips.Length > 2)
+        {
+            ip = ips[0] + "." + ips[1] + ".*.*";
+        }
+        else
+        {
+            ip = "匿名";
+        }
+        var contentId = "commContent" + item.UserID.ToString();
+    <p class="over">
+        <img src="/images/face/face1.jpg" width="45" height="45" class="face" alt="" />
+        <span class="spanUser" id='@(userId)'><b>iPow @(item.UserName)</b> ip：@(ip)</span>
+        <span class="spanScore"></span><span class="content" id="@contentId">@item.Content</span>
+        <span class="control">发表于：@(item.AddTime.ToString())&nbsp;&nbsp;&nbsp;&nbsp;<a
+href="javascript:;" onclick="showCommReply(@(item.UserID),@(item.SightID))" style = " display: none">引用回复</a>&nbsp;</span>
+    </p>
+    }
+    
+    <div id="Pagination" class="Pagecon">
+    @*(total % 5) == 0 ? (total / 5) : (total / 5) + 1*@
+        @Html.AjaxPager(total,5, 1,
+        "CommList",
+        "SightDetail",
+        "SightComm",
+        new PagerOptions()
+        {
+            PageIndexParameterName = "pi",
+            LastPageText = "尾页",
+            FirstPageText = "首页",
+            PrevPageText = "上一页",
+            NextPageText = "下一页",
+            NumericPagerItemCount = 5,
+            CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>"
+        },
+        new { sid = ViewBag.parkid },
+        new AjaxOptions()
+        {
+            UpdateTargetId = "Searchresult",
+            OnBegin = "",
+            OnComplete = ""
+        },
+        null)
+    </div>
+    
+}

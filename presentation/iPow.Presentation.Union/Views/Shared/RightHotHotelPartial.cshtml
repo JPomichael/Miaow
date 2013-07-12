@@ -1,0 +1,48 @@
+﻿@{
+    
+    List<iPow.Application.Union.Dto.TodayLowPriceDto> data = null;
+    iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService localtionService = iPow.Presentation.Union.iPowPreUnionEngine
+        .Current.Resolve<iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+
+    iPow.Service.Union.Service.ICityService cityService = iPow.Presentation.Union.iPowPreUnionEngine
+.Current.Resolve<iPow.Service.Union.Service.ICityService>();
+
+    iPow.Service.Union.Service.ITodayLowPriceService todayLowPriceService = iPow.Presentation.Union.iPowPreUnionEngine
+.Current.Resolve<iPow.Service.Union.Service.ITodayLowPriceService>();
+
+    var li = localtionService.GetLocationInfo();
+    if (li != null)
+    {
+        var cityId = cityService.GetUnionCityIdByName(string.IsNullOrEmpty(li.City) ? "广州" : li.City);
+        if (cityId > 0)
+        {
+            data = todayLowPriceService.GetUnionTodayLowPriceByCityIdAndType(cityId.ToString(), "1", false, 10);
+        }
+    }
+
+    if (data != null && data.Count > 0)
+    {
+        var i = 1;
+        foreach (var item in data)
+        {
+            if (i <= 10)
+            {
+    <ul>
+        <li><a href="/hotel/@(item.id)" class="aOrderList" title="@item.name"
+            target="_blank"><span class="name">
+                <img src="/images/icon/htop@(i).jpg" />@(item.name.Length > 8 ? item.name.Substring(0, 8) : item.name)</span>
+            <span class="price" style="float: right;">￥@(item.price)</span> @*<span class="visit">@(item.price)/起</span>*@
+        </a></li>
+    </ul>
+            }
+            i++;
+        }
+    }
+    else
+    { 
+    <ul>
+        <li>暂时没有数据</li>
+    </ul>    
+    }
+   
+}

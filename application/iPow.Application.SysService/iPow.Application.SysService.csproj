@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0E815BF6-1EC7-4C7D-A832-1881FFCCFB87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iPow.Application.SysService</RootNamespace>
+    <AssemblyName>iPow.Application.SysService</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Article\ArticleClassService.cs" />
+    <Compile Include="Article\ArticleCommService.cs" />
+    <Compile Include="Article\ArticleInfoService.cs" />
+    <Compile Include="Article\IArticleClassService.cs" />
+    <Compile Include="Article\IArticleCommService.cs" />
+    <Compile Include="Article\IArticleInfoService.cs" />
+    <Compile Include="City\CityAreaCodeService.cs" />
+    <Compile Include="City\CityInfoMoreService.cs" />
+    <Compile Include="City\CityInfoService.cs" />
+    <Compile Include="City\ICityAreaCodeService.cs" />
+    <Compile Include="City\ICityInfoMoreService.cs" />
+    <Compile Include="City\ICityInfoService.cs" />
+    <Compile Include="Discount\DiscountClassService.cs" />
+    <Compile Include="Discount\DiscountCommService.cs" />
+    <Compile Include="Discount\DisCountInfoService.cs" />
+    <Compile Include="Discount\IDiscountClassService.cs" />
+    <Compile Include="Discount\IDiscountCommService.cs" />
+    <Compile Include="Discount\IDisCountInfoService.cs" />
+    <Compile Include="Hotel\HotelCommService.cs" />
+    <Compile Include="Hotel\HotelDailyRates2Service.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Hotel\HotelPicService.cs" />
+    <Compile Include="Hotel\HotelPropertyInfo2Service.cs" />
+    <Compile Include="Hotel\HotelPropertyInfoService.cs" />
+    <Compile Include="Hotel\HotelReservationInfoService.cs" />
+    <Compile Include="Hotel\HotelRoomInfoService.cs" />
+    <Compile Include="Hotel\IHotelCommService.cs" />
+    <Compile Include="Hotel\IHotelDailyRates2Service.cs" />
+    <Compile Include="Hotel\IHotelPicService.cs" />
+    <Compile Include="Hotel\IHotelPropertyInfo2Service.cs" />
+    <Compile Include="Hotel\IHotelPropertyInfoService.cs" />
+    <Compile Include="Hotel\IHotelReservationInfoService.cs" />
+    <Compile Include="Hotel\IHotelRoomInfoService.cs" />
+    <Compile Include="Link\ILinksClassService.cs" />
+    <Compile Include="Link\ILinksInfoService.cs" />
+    <Compile Include="Link\LinksClassService.cs" />
+    <Compile Include="Link\LinksInfoService.cs" />
+    <Compile Include="Pic\IPicClassService.cs" />
+    <Compile Include="Pic\IPicCommService.cs" />
+    <Compile Include="Pic\IPicInfoService.cs" />
+    <Compile Include="Pic\PicClassService.cs" />
+    <Compile Include="Pic\PicCommService.cs" />
+    <Compile Include="Pic\PicInfoService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sight\ISightClassService.cs" />
+    <Compile Include="Sight\ISightCommService.cs" />
+    <Compile Include="Sight\ISightInfoCirHotelService.cs" />
+    <Compile Include="Sight\ISightInfoCirSightService.cs" />
+    <Compile Include="Sight\ISightInfoService.cs" />
+    <Compile Include="Sight\ISightInfoSortService.cs" />
+    <Compile Include="Sight\ISightTicketService.cs" />
+    <Compile Include="Sight\ISightVouchItemService.cs" />
+    <Compile Include="Sight\ISightVouchService.cs" />
+    <Compile Include="Sight\SightClassService.cs" />
+    <Compile Include="Sight\SightCommService.cs" />
+    <Compile Include="Sight\SightInfoCirHotelService.cs" />
+    <Compile Include="Sight\SightInfoCirSightService.cs" />
+    <Compile Include="Sight\SightInfoService.cs" />
+    <Compile Include="Sight\SightInfoSortService.cs" />
+    <Compile Include="Sight\SightTicketService.cs" />
+    <Compile Include="Sight\SightVouchItemService.cs" />
+    <Compile Include="Sight\SightVouchService.cs" />
+    <Compile Include="Tour\ITourClassService.cs" />
+    <Compile Include="Tour\ITourInfoService.cs" />
+    <Compile Include="Tour\ITourPlanDetailService.cs" />
+    <Compile Include="Tour\ITourPlanService.cs" />
+    <Compile Include="Tour\TourClassService.cs" />
+    <Compile Include="Tour\TourInfoService.cs" />
+    <Compile Include="Tour\TourPlanDetailService.cs" />
+    <Compile Include="Tour\TourPlanService.cs" />
+    <Compile Include="Video\IVideoClassService.cs" />
+    <Compile Include="Video\IVideoCommService.cs" />
+    <Compile Include="Video\IVideoInfoService.cs" />
+    <Compile Include="Video\VideoClassService.cs" />
+    <Compile Include="Video\VideoCommService.cs" />
+    <Compile Include="Video\VideoInfoService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Activity\" />
+    <Folder Include="Survey\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Intrastructure\iPow.Domain.Infrastructure.csproj">
+      <Project>{36E4E2ED-E857-46DE-9CAB-F962AEFC26F3}</Project>
+      <Name>iPow.Domain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Repository\iPow.Domain.Repository.csproj">
+      <Project>{5A44C5B5-A925-487D-B4FA-F7A187BFEF1A}</Project>
+      <Name>iPow.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.DataSys\iPow.Infrastructure.Data.DataSys.csproj">
+      <Project>{2C911DAF-3B6C-49C7-AF21-6224BFB0FE74}</Project>
+      <Name>iPow.Infrastructure.Data.DataSys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.Repository\iPow.Infrastructure.Data.Repository.csproj">
+      <Project>{B1F38D7C-A9AC-46D8-88F0-9980BEAA4DC3}</Project>
+      <Name>iPow.Infrastructure.Data.Repository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

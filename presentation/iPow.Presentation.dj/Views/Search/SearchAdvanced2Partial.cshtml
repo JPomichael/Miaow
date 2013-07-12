@@ -1,0 +1,109 @@
+﻿<form id = "SearchAll" method = "post" action = "@Url.Action("searchAll", "search")">
+<table width="100%" border="0" cellspacing="2" cellpadding="2" class="tbFilter">
+    <tr>
+        <td width="160">
+            <h2>
+                排序方式</h2>
+            <p>
+                <b>默认</b> <span class="item">
+                    <input type="radio" title="iPow推荐" name="sorter" class="radio" @((ViewBag.sort != null && ViewBag.sort == "def") ? " checked=\"checked\"" : "")
+                                value="def" id="defaultSorter" />iPow推荐 </span>
+            </p>
+            <p>
+                <b>价格</b> <span class="item">
+                    <input type="radio" title="低-高" onclick="" name="sorter" class="radio" @((ViewBag.sort != null && ViewBag.sort == "priceasc") ? " checked=\"checked\"" : "")
+                             value="priceasc"
+                                id="priceAsc" />低-高 </span><span>
+                                    <input type="radio" title="高-低" onclick="" name="sorter" class="radio"  @((ViewBag.sort != null && ViewBag.sort == "pricedesc") ? " checked=\"checked\"" : "")
+                                     value="pricedesc"
+                                        id="priceDesc" />高-低 </span>
+            </p>
+            <p>
+                <b>天数</b> <span class="item">
+                    <input type="radio" title="低-高" onclick="" name="sorter" class="radio"  @((ViewBag.sort != null && ViewBag.sort == "daysasc") ? " checked=\"checked\"" : "")
+                            value="daysasc" id="daysAsc" />低-高 </span><span>
+                                <input type="radio" title="高-低" onclick="" name="sorter" class="radio"  @((ViewBag.sort != null && ViewBag.sort == "daysdesc") ? " checked=\"checked\"" : "")
+                                    value="daysdesc" id="daysDesc" />高-低 </span>
+            </p>
+        </td>
+        <td width="100px">
+            <h2>
+                线路价格</h2>
+            <ul>
+                <li>
+                    <input type="checkbox" title="¥200以下" name="priceFilter1" value="0-200" id="priceFilter1" @(ViewBag.max != null && ViewBag.max >= 200 ? " checked = \"checked\"" : "")  />¥200以下
+                </li>
+                <li>
+                    <input type="checkbox" title="¥200-¥400" name="priceFilter2" value="201-400" id="priceFilter2"  @(ViewBag.max != null && ViewBag.max >= 400 ? " checked = \"checked\"" : "")   />¥200-¥400
+                </li>
+                <li>
+                    <input type="checkbox" title="¥400-¥600" name="priceFilter3" value="401-600" id="priceFilter3" @(ViewBag.max != null && ViewBag.max >= 600 ? " checked = \"checked\"" : "")   />¥400-¥600
+                </li>
+                <li>
+                    <input type="checkbox" title="¥600以上" name="priceFilter4" value="601-0" id="priceFilter4"  @(ViewBag.max != null && ViewBag.max == 0 ? " checked = \"checked\"" : "")  />¥600以上
+                </li>
+            </ul>
+        </td>
+        <td width="110px">
+            <h2>
+                行程天数</h2>
+            <ul>
+                <li>
+                    <input type="checkbox" title="1-2天" value="1-2" name="daysFilter2" id="daysFilter1"   @(ViewBag.day != null && ViewBag.day >= 2 ? " checked = \"checked\"" : "")   />1-2天
+                </li>
+                <li>
+                    <input type="checkbox" title="3-4天" value="3-4" name="daysFilter4" id="daysFilter2"  @(ViewBag.day != null && ViewBag.day >= 4 ? " checked = \"checked\"" : "")   />3-4天
+                </li>
+                <li>
+                    <input type="checkbox" title="5-6天" value="5-6" name="daysFilter6" id="daysFilter3" @(ViewBag.day != null && ViewBag.day >= 6 ? " checked = \"checked\"" : "")    />5-6天
+                </li>
+                <li>
+                    <input type="checkbox" title="6天以上" value="6-max" name="daysFilter8" id="daysFilter4"   @(ViewBag.day != null && ViewBag.day <= -1 ? " checked = \"checked\"" : "") />6天以上
+                </li>
+            </ul>
+        </td>
+        <td width="240px">
+            @{
+                string typeList = Server.UrlDecode(ViewBag.hotel != null ? ViewBag.hotel : string.Empty);
+            }
+            <h2>
+                住宿标准</h2>
+            <ul class="grid">
+                <li>
+                    <input type="checkbox" title="招待所" value="招待所" id="hotelFilter1" name="hotelFilter1" @(typeList.IndexOf("招待所") >= 0 ? "  checked = \"checked\"" : "")  />招待所
+                </li>
+                <li>
+                    <input type="checkbox" title="度假村" value="度假村" id="hotelFilter2" name="hotelFilter2" @(typeList.IndexOf("度假村") >= 0 ? " checked = \"checked\"" : "")  />度假村
+                </li>
+                <li>
+                    <input type="checkbox" title="农家乐" value="农家乐" id="hotelFilter3" name="hotelFilter3" @(typeList.IndexOf("农家乐") >= 0 ? " checked = \"checked\"" : "")  />农家乐
+                </li>
+                <li>
+                    <input type="checkbox" title="三星级" value="三星级" id="hotelsFilter4" name="hotelsFilter4"  @(typeList.IndexOf("三星级") >= 0 ? " checked = \"checked\"" : "")  />三星级
+                </li>
+                <li>
+                    <input type="checkbox" title="四星级" value="四星级" id="hotelFilter5" name="hotelFilter5"  @(typeList.IndexOf("四星级") >= 0 ? " checked = \"checked\"" : "")  />四星级
+                </li>
+                <li>
+                    <input type="checkbox" title="五星级" value="五星级" id="hotelFilter6" name="hotelFilter6"  @(typeList.IndexOf("五星级") >= 0 ? " checked = \"checked\"" : "")  />五星级
+                </li>
+                <li>
+                    <input type="checkbox" title="经济型酒店" value="经济型酒店" id="hotelFilter7" name="hotelFilter7" @(typeList.IndexOf("经济型酒店") >= 0 ? " checked = \"checked\"" : "")  />经济型酒店
+                </li>
+                <li>
+                    <input type="checkbox" title="酒店式公寓" value="酒店式公寓" id="hotelFilter8" name="hotelFilter8" @(typeList.IndexOf("酒店式公寓") >= 0 ? " checked = \"checked\"" : "") />酒店式公寓
+                </li>
+            </ul>
+        </td>
+        <td>
+            <h2>
+                高级搜索</h2>
+            <p>
+                <input type="submit" value="高级搜索" /></p>
+        </td>
+    </tr>
+</table>
+<div style="display: none;">
+    <input type="hidden" value="@(Server.UrlDecode(ViewBag.para != null ? ViewBag.para.Bide : ""))" name="txtBide" id="txtBide" />
+</div>
+</form>

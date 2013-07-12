@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94ECD31C-902A-4734-9265-D6E3385B0490}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iPow.Domain.Dto</RootNamespace>
+    <AssemblyName>iPow.Domain.Dto</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FluentValidation, Version=3.3.1.0, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentValidation.3.3.1.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation.Mvc, Version=3.3.1.0, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\FluentValidation.MVC3.3.3.1.0\lib\Net40\FluentValidation.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activation" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dto\CityAreaCodeDto.cs" />
+    <Compile Include="Dto\CrawlPicInfoDto.cs" />
+    <Compile Include="Dto\CrawlSightInfoDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dto\Sys_AcDataDto.cs" />
+    <Compile Include="Dto\Sys_AdminUserClassDto.cs" />
+    <Compile Include="Dto\Sys_AdminUserDto.cs" />
+    <Compile Include="Dto\Sys_AdminUserExtensionDto.cs" />
+    <Compile Include="Dto\Sys_AdminUserIndividuationDto.cs" />
+    <Compile Include="Dto\Sys_AdminUserLogDto.cs" />
+    <Compile Include="Dto\Sys_AdWebsiteInfoDto.cs" />
+    <Compile Include="Dto\Sys_ArticleClassDto.cs" />
+    <Compile Include="Dto\Sys_ArticleCommDto.cs" />
+    <Compile Include="Dto\Sys_ArticleInfoDto.cs" />
+    <Compile Include="Dto\Sys_CityInfoDto.cs" />
+    <Compile Include="Dto\Sys_CityInfoMoreDto.cs" />
+    <Compile Include="Dto\Sys_ClientActivityDto.cs" />
+    <Compile Include="Dto\Sys_DemoClassDto.cs" />
+    <Compile Include="Dto\Sys_DemoInfoDto.cs" />
+    <Compile Include="Dto\Sys_DiscountClassDto.cs" />
+    <Compile Include="Dto\Sys_DiscountCommDto.cs" />
+    <Compile Include="Dto\Sys_DisCountInfoDto.cs" />
+    <Compile Include="Dto\Sys_GuestBookDto.cs" />
+    <Compile Include="Dto\Sys_HotelCommDto.cs" />
+    <Compile Include="Dto\Sys_HotelDailyRates2Dto.cs" />
+    <Compile Include="Dto\Sys_HotelPicDto.cs" />
+    <Compile Include="Dto\Sys_HotelPropertyInfoDto.cs" />
+    <Compile Include="Dto\Sys_HotelPropertyInfo2Dto.cs" />
+    <Compile Include="Dto\Sys_HotelReservationInfoDto.cs" />
+    <Compile Include="Dto\Sys_HotelRoomInfoDto.cs" />
+    <Compile Include="Dto\Sys_IpAddressDto.cs" />
+    <Compile Include="Dto\Sys_LinksClassDto.cs" />
+    <Compile Include="Dto\Sys_LinksInfoDto.cs" />
+    <Compile Include="Dto\Sys_LogDto.cs" />
+    <Compile Include="Dto\Sys_MenuTreeDto.cs" />
+    <Compile Include="Dto\Sys_MvcControllerActionClassDto.cs" />
+    <Compile Include="Dto\Sys_MvcControllerDto.cs" />
+    <Compile Include="Dto\Sys_MvcControllerActionDto.cs" />
+    <Compile Include="Dto\Sys_MvcControllerClassDto.cs" />
+    <Compile Include="Dto\Sys_MvcControllerRolePermissionDto.cs" />
+    <Compile Include="Dto\Sys_NewsClassDto.cs" />
+    <Compile Include="Dto\Sys_NewsInfoDto.cs" />
+    <Compile Include="Dto\Sys_PermissionCategoriesDto.cs" />
+    <Compile Include="Dto\Sys_PermissionsDto.cs" />
+    <Compile Include="Dto\Sys_phoneCountDto.cs" />
+    <Compile Include="Dto\sys_phone_lyDto.cs" />
+    <Compile Include="Dto\Sys_PicClassDto.cs" />
+    <Compile Include="Dto\Sys_PicCommDto.cs" />
+    <Compile Include="Dto\Sys_PicInfoDto.cs" />
+    <Compile Include="Dto\Sys_RolePermissionsDto.cs" />
+    <Compile Include="Dto\Sys_RolesDto.cs" />
+    <Compile Include="Dto\Sys_SearchInfoDto.cs" />
+    <Compile Include="Dto\Sys_SightClassDto.cs" />
+    <Compile Include="Dto\Sys_SightCommDto.cs" />
+    <Compile Include="Dto\Sys_SightInfoCirHotelDto.cs" />
+    <Compile Include="Dto\Sys_SightInfoCirSightDto.cs" />
+    <Compile Include="Dto\Sys_SightInfoDto.cs" />
+    <Compile Include="Dto\Sys_SightInfoSortDto.cs" />
+    <Compile Include="Dto\Sys_SightTicketDto.cs" />
+    <Compile Include="Dto\Sys_SightVouchDto.cs" />
+    <Compile Include="Dto\Sys_SightVouchItemDto.cs" />
+    <Compile Include="Dto\Sys_ThemeActivityDto.cs" />
+    <Compile Include="Dto\Sys_ThemeActivityClassDto.cs" />
+    <Compile Include="Dto\Sys_TourClassDto.cs" />
+    <Compile Include="Dto\Sys_TourInfoDto.cs" />
+    <Compile Include="Dto\Sys_TourPlanDto.cs" />
+    <Compile Include="Dto\Sys_TourPlanDetailDto.cs" />
+    <Compile Include="Dto\Sys_UserActionDto.cs" />
+    <Compile Include="Dto\Sys_UserRolesDto.cs" />
+    <Compile Include="Dto\Sys_VideoClassDto.cs" />
+    <Compile Include="Dto\Sys_VideoCommDto.cs" />
+    <Compile Include="Dto\Sys_VideoInfoDto.cs" />
+    <Compile Include="Dto\Sys_VouchHotelInfoDto.cs" />
+    <Compile Include="Dto\Sys_VouchInfoDto.cs" />
+    <Compile Include="Dto\TripIndexInfoDto.cs" />
+    <Compile Include="Dto\TripListDto.cs" />
+    <Compile Include="Dto\T_DailyRatesDto.cs" />
+    <Compile Include="Validate\CityAreaCodeDtoValidate.cs" />
+    <Compile Include="Validate\CrawlPicInfoDtoValidate.cs" />
+    <Compile Include="Validate\CrawlSightInfoDtoValidate.cs" />
+    <Compile Include="Validate\SysTourPlanDtoValidate.cs" />
+    <Compile Include="Validate\Sys_AcDataDtoValidate.cs" />
+    <Compile Include="Validate\Sys_AdminUserClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_AdminUserDtoValidate.cs" />
+    <Compile Include="Validate\Sys_AdminUserExtensionDtoValidate.cs" />
+    <Compile Include="Validate\Sys_AdminUserIndividuationDtoValidate.cs" />
+    <Compile Include="Validate\Sys_AdminUserLogDtoValidate.cs" />
+    <Compile Include="Validate\Sys_AdWebsiteInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_ArticleClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_ArticleCommDtoValidate.cs" />
+    <Compile Include="Validate\Sys_ArticleInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_CityInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_CityInfoMoreDtoValidate.cs" />
+    <Compile Include="Validate\Sys_ClientActivityDtoValidate.cs" />
+    <Compile Include="Validate\Sys_DemoClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_DemoInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_DiscountClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_DiscountCommDtoValidate.cs" />
+    <Compile Include="Validate\Sys_DisCountInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_GuestBookDtoValidate.cs" />
+    <Compile Include="Validate\Sys_HotelCommDtoValidate.cs" />
+    <Compile Include="Validate\Sys_HotelDailyRates2DtoValidate.cs" />
+    <Compile Include="Validate\Sys_HotelPicDtoValidate.cs" />
+    <Compile Include="Validate\Sys_HotelPropertyInfo2DtoValidate.cs" />
+    <Compile Include="Validate\Sys_HotelPropertyInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_HotelReservationInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_HotelRoomInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_IpAddressDtoValidate.cs" />
+    <Compile Include="Validate\Sys_LinksClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_LinksInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_LogDtoValidate.cs" />
+    <Compile Include="Validate\Sys_MenuTreeDtoValidate.cs" />
+    <Compile Include="Validate\Sys_MvcControllerActionClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_MvcControllerActionDtoValidate.cs" />
+    <Compile Include="Validate\Sys_MvcControllerClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_MvcControllerDtoValidate.cs" />
+    <Compile Include="Validate\Sys_MvcControllerRolePermissionDtoValidate.cs" />
+    <Compile Include="Validate\Sys_NewsClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_NewsInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_PermissionCategoriesDtoValidate.cs" />
+    <Compile Include="Validate\Sys_PermissionsDtoValidate.cs" />
+    <Compile Include="Validate\Sys_phoneCountDtoValidate.cs" />
+    <Compile Include="Validate\sys_phone_lyDtoValidate.cs" />
+    <Compile Include="Validate\Sys_PicClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_PicCommDtoValidate.cs" />
+    <Compile Include="Validate\Sys_PicInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_RolePermissionsDtoValidate.cs" />
+    <Compile Include="Validate\Sys_RolesDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SearchInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightCommDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightInfoCirHotelDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightInfoCirSightDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightInfoSortDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightTicketDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightVouchDtoValidate.cs" />
+    <Compile Include="Validate\Sys_SightVouchItemDtoValidate.cs" />
+    <Compile Include="Validate\Sys_ThemeActivityClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_ThemeActivityDtoValidate.cs" />
+    <Compile Include="Validate\Sys_TourClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_TourInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_TourPlanDetailDtoValidate.cs" />
+    <Compile Include="Validate\Sys_TourPlanDtoValidate.cs" />
+    <Compile Include="Validate\Sys_UserActionDtoValidate.cs" />
+    <Compile Include="Validate\Sys_UserRolesDtoValidate.cs" />
+    <Compile Include="Validate\Sys_VideoClassDtoValidate.cs" />
+    <Compile Include="Validate\Sys_VideoCommDtoValidate.cs" />
+    <Compile Include="Validate\Sys_VideoInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_VouchHotelInfoDtoValidate.cs" />
+    <Compile Include="Validate\Sys_VouchInfoDtoValidate.cs" />
+    <Compile Include="Validate\TripIndexInfoDtoValidate.cs" />
+    <Compile Include="Validate\TripListDtoValidate.cs" />
+    <Compile Include="Validate\T_DailyRatesDtoValidate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting\iPow.Infrastructure.Crosscutting.csproj">
+      <Project>{81DD913F-FD84-44E9-830D-EEB641E09DBD}</Project>
+      <Name>iPow.Infrastructure.Crosscutting</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

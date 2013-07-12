@@ -1,0 +1,137 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@{ Html.Telerik().Window()
+        .Name("Window")
+        .Title("创建线路")
+        .Draggable((bool)ViewData["movable"])
+        .Resizable(resizing => resizing
+            .Enabled((bool)ViewData["resizable"])
+            .MinHeight(200)
+            .MinWidth(500)
+            .MaxHeight(200)
+            .MaxWidth(500)
+        )
+        .Modal((bool)ViewData["modal"])
+        .Content(@<text>
+    @Html.Partial("_CreateTourName")
+    </text>)
+        .Width(500)
+        .Height(200)
+        .Render();
+}
+@{ Html.Telerik().ScriptRegistrar()
+        .OnDocumentReady(@<text> 
+        var windowElement = $('#Window'); 
+        var undoButton =$('#undo'); undoButton .bind('click', function(e) {
+            windowElement.data('tWindow').open(); 
+            undoButton.hide(); }) .toggle(!windowElement.is(':visible')); windowElement.bind('close',
+    function() { undoButton.show(); });
+    </text>);
+}
+@*<script type="text/javascript">
+    $(function () {
+        var window = $("#Window").data("tWindow");
+        window.center(); 
+    })
+</script>
+*@
+
+<script type="text/javascript">
+
+    $(function () {
+        var window = $("#Window").data("tWindow");
+        window.center();
+    })
+    
+    $(function () {
+        var days = $("#days").val();
+        var city = $("#city").val();
+        var tourTitle = $("#tourTitle").val();
+
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            });
+        });
+
+        $("#tourTitle").focus(function () {
+            if (this.value == "输入行程名称") {
+                $("#tourTitle").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#tourTitle").val("输入行程名称");
+            }
+        });
+
+        $("#city").focus(function () {
+            if (this.value == "输入目的地") {
+                $("#city").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#city").val("输入目的地");
+            }
+        });
+    });
+
+    //检验City 是否存在
+    function checkcity() {
+        var des = $("#city").val();
+        var res = false;
+        var obj =
+            {
+                City: des
+            }
+        $.ajax({
+            url: "/MyTour/Home/GetDestinationIsEtist",
+            Type: "GET",
+            dataType: "text",
+            data: obj,
+            success: function (data) {
+                //return  1 or 0  (存在/不存在)
+                if (data == "0") {
+                    res = true;
+                    return res;
+                }
+                else {
+                    res = false;
+                    return res;
+                }
+            },
+            error: function () {
+                alert("JS checkCity() is error! please find admin");
+            }
+        });
+        var close = setTimeout(function () {
+            var temp = "1";
+        }, 2000);
+        clearTimeout(close);
+        return res;
+    }
+
+    function searchCheckedForm() {
+        var days = $("#days").val();
+        var des = $("#city").val();
+
+        if (des == "" || des == "输入目的地" || checkcity() == true) {
+            alert("目的地不合法！");
+            return false;
+        }
+        if ($("#tourTitle").val() == "" || $("#tourTitle").val() == "输入行程名称") {
+            alert("行程不能为空或不能为提示语！");
+            return false;
+        }
+        if ($("#txtComeTime").val() == "" || $("#txtComeTime").val() == "输入行程日期") {
+            alert("时间不能为空或不能为提示语！");
+            return false;
+        }
+        if (days == "" || isNaN(days) == true) {
+            alert("天数不能为空或不为天数！");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+</script>

@@ -1,0 +1,31 @@
+﻿@{
+    try
+    {
+        iPow.function.LocationInfo li = iPow.function.LocationFucntion.LocationInfo();
+        if (li != null)
+        {
+            IQueryable<iPow.jd.Models.RightTodayLowerPriceAndHoteHotel> hp = iPow.jd.Bll.RightTodayLowPrice.GetRihtTodayLowPrice(li.City, 5);
+            if (hp != null)
+            {
+                foreach (var item in hp)
+                {
+    <ul>
+        <li><a href="/hotel/@(item.IdentityId)" class="aRightList" target="_blank"
+            title="@item.HotelName"><span>@(item.HotelName.Length > 12 ? item.HotelName.Substring(0, 12) : item.HotelName)</span>
+            <em><font class="font16">￥@(item.MinPrice)/</font><font class="font12">起</font></em>
+        </a></li>
+    </ul>         
+                }
+            }
+            else
+            {
+    <ul>
+    </ul>
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+    @ex.Message
+    }
+}

@@ -1,0 +1,128 @@
+﻿@using iPow.jz.Models;
+@using Webdiyer.WebControls.Mvc;
+@model iPow.jz.Models.FroumModels
+@{
+    ViewBag.Title = "SeachFroum";
+    //Layout = "~/Views/Shared/_CategoryOut.cshtml";
+}
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/w3c.css")" />
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bar.css")" />
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/thickbox.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/thickbox.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/ipowring.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/jquery.blockUI.js")" ></script>
+<script language="javascript" type="text/javascript">
+    function AjaxStart() {
+        $.blockUI({ message: '<img  src="/images/loadingAnimation.gif" width="16"  height="16"/><font color="#2E6092" size="2">正在加载，稍候更精彩...</font>' });
+    }
+
+    function AjaxStop() {
+        $.unblockUI();
+    }
+</script>
+@* 
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="帖子搜索, {siteName}, 家族圈,圈子" />
+    <meta name="description" content="帖子搜索, 分类目录, {siteName}, 家族圈,圈子" />*@
+<!-- INCLUDE header.html -->
+<div class="guid">
+    <a href="/">@(ViewBag.SiteName)</a> &gt; <b>站内搜索</b></div>
+<div id="B">
+    <div class="nameset">
+        找到相关数据@(Model.topicNum)条，用时{searchTime}秒</div>
+    <div class="namecont" id="divFroum">
+        <table width="100%" align="center" cellpadding="0" cellspacing="1">
+            <tr class="tr1">
+                <td class="td1" width="*">
+                    标题
+                </td>
+                <td class="td1" width="14%">
+                    家族圈
+                </td>
+                <td class="td1" width="13%">
+                    作者
+                </td>
+                <td class="td1" width="10%" align="center">
+                    回复/查看
+                </td>
+                <td class="td1" width="13%" align="right">
+                    最后发表
+                </td>
+            </tr>
+            <!-- BEGIN searchArr.Topic -->
+            @{
+                System.Text.StringBuilder str = new System.Text.StringBuilder();
+                for (int i = 0; i < Model.forumTopicList.Count; i++)
+                {
+                    str.Append("<tr>");
+                    str.Append("<td class=\"td2\"> <a href=\"/Topic/" + Model.forumTopicList[i].tid + "/x\" target=\"_blank\">" + Model.forumTopicList[i].subject + "</a></td>");
+                    int fid = Convert.ToInt32(Model.forumTopicList[i].fid);
+                    //      str.Append("<td class=\"td2\"> <a href=\"./topic.php?tid={tid}\" target=\"_blank\">dfgd</a></td>");
+                    str.Append("<td class=\"td2\"> <a href='/catalog/" + Model.forumTopicList[i].fid + "/2' target=\"_blank\">" + Model.irainbow1.sns_forum.Where(o => o.fid == fid).SingleOrDefault().name + "</a></td>");
+                    str.Append(" <td class=\td2\">");
+                    if (Model.forumTopicList[i].authorid > 0)
+                    {
+                        str.Append(" <a href=\"./member.php?uid={authorid}\" target=\"_blank\">" + Model.forumTopicList[i].author + "</a>");
+                    }
+                    else
+                    {
+                        str.Append(Model.forumTopicList[i].author);
+                        str.Append("  <br>" + Model.GetGMTDateTime(Convert.ToInt32(Model.forumTopicList[i].dateline)));
+                    }
+                    str.Append(" <td class=\"td2\" align=\"center\">");
+                    str.Append(Model.forumTopicList[i].replies + "/" + Model.forumTopicList[i].views + "</td>");
+                    str.Append("  <td class=\"td2\" align=\"right\">");
+                    str.Append(Model.GetGMTDateTime(Convert.ToInt32(Model.forumTopicList[i].lasttime)) + "<br/>");
+                    if (Model.forumTopicList[i].lastauthorid > 0)
+                    {
+                        str.Append(" by <a href=\"./member.php?uid={lastauthorid}\" target=\"_blank\">" + Model.forumTopicList[i].lastauthor + "</a>");
+                    }
+                    else
+                    {
+                        //  str.Append(Model.forumTopicList[i].author);
+                        str.Append("by " + Model.forumTopicList[i].lastauthor);
+                    }
+                    str.Append("</td>");
+                    str.Append("</tr>");
+                }
+            }
+            @Html.Raw(str.ToString())
+            <tr class="td3">
+                <td colspan="5">
+                </td>
+            </tr>
+            <!-- END searchArr.Topic -->
+            <tr>
+                <td colspan="5" class="td4">
+                    <!-- IF searchArr.Page.pageList -->
+                    <!-- IF forumArr.Page.pageList -->
+                    <!--分页 -->
+                    @Html.AjaxPager(Model.forumTopicList, new PagerOptions()
+                   {
+                       SeparatorHtml = "",
+                       CssClass = "nlpage",
+                       CurrentPagerItemWrapperFormatString = "<span>{0}</span>",
+                       PageIndexParameterName = "pageIndex",
+                       ShowNumericPagerItems = true,
+                       ShowFirstLast = false,
+                       ShowPrevNext = false,
+                       NumericPagerItemCount = 6,
+                       PrevPageText = "上一页",
+                       NextPageText = "下一页",
+                   },
+       new AjaxOptions()
+       {
+           UpdateTargetId = "divFroum",
+           OnBegin = "AjaxStart",
+           OnComplete = "AjaxStop"
+       })
+                    <!--分页 -->
+                    <!-- ELSE -->
+                    @*    <b>1</b>*@
+                    <!-- ENDIF searchArr.Page.pageList -->
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- INCLUDE footer.html -->

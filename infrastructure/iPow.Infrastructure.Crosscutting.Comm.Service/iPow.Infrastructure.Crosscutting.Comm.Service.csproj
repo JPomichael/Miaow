@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{87E6A634-A50D-4277-982B-0B16CFAC5738}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iPow.Infrastructure.Crosscutting.Comm.Service</RootNamespace>
+    <AssemblyName>iPow.Infrastructure.Crosscutting.Comm.Service</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CityInfoService.cs" />
+    <Compile Include="ConstService.cs" />
+    <Compile Include="FormsAuthService.cs" />
+    <Compile Include="ICityInfoService.cs" />
+    <Compile Include="ICryptographyService.cs" />
+    <Compile Include="IDiscountService.cs" />
+    <Compile Include="IFormsAuthService.cs" />
+    <Compile Include="ILocationService.cs" />
+    <Compile Include="iPowCommServiceEntityMap.cs" />
+    <Compile Include="ISightInfoSearchService.cs" />
+    <Compile Include="LocationService.cs" />
+    <Compile Include="DiscountService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProcedureService.cs" />
+    <Compile Include="RijndaelMD5Service.cs" />
+    <Compile Include="RijndaelSHAService.cs" />
+    <Compile Include="SightInfoSearchService.cs" />
+    <Compile Include="SsoService.cs" />
+    <Compile Include="TripleDESService.cs" />
+    <Compile Include="UserGuidService.cs" />
+    <Compile Include="UtilityService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Dto\iPow.Domain.Dto.csproj">
+      <Project>{94ECD31C-902A-4734-9265-D6E3385B0490}</Project>
+      <Name>iPow.Domain.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Intrastructure\iPow.Domain.Infrastructure.csproj">
+      <Project>{36E4E2ED-E857-46DE-9CAB-F962AEFC26F3}</Project>
+      <Name>iPow.Domain.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\domain\iPow.Domain.Repository\iPow.Domain.Repository.csproj">
+      <Project>{5A44C5B5-A925-487D-B4FA-F7A187BFEF1A}</Project>
+      <Name>iPow.Domain.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Crosscutting.Comm.Dto\iPow.Infrastructure.Crosscutting.Comm.Dto.csproj">
+      <Project>{00B1115B-0DDC-482D-AAF8-13D3C56A65D5}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.Comm.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Crosscutting.EntityToDto\iPow.Infrastructure.Crosscutting.EntityToDto.csproj">
+      <Project>{75F909AB-BBC3-44F0-BFC6-FA015E8EACA0}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.EntityToDto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Crosscutting.Function\iPow.Infrastructure.Crosscutting.Function.csproj">
+      <Project>{FB1A6D0D-D778-4431-9D3D-9CDC298EDFB0}</Project>
+      <Name>iPow.Infrastructure.Crosscutting.Function</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Crosscutting\iPow.Infrastructure.Crosscutting.csproj">
+      <Project>{81DD913F-FD84-44E9-830D-EEB641E09DBD}</Project>
+      <Name>iPow.Infrastructure.Crosscutting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Data.DataSys\iPow.Infrastructure.Data.DataSys.csproj">
+      <Project>{2C911DAF-3B6C-49C7-AF21-6224BFB0FE74}</Project>
+      <Name>iPow.Infrastructure.Data.DataSys</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Data.Repository\iPow.Infrastructure.Data.Repository.csproj">
+      <Project>{B1F38D7C-A9AC-46D8-88F0-9980BEAA4DC3}</Project>
+      <Name>iPow.Infrastructure.Data.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iPow.Infrastructure.Data\iPow.Infrastructure.Data.csproj">
+      <Project>{33D73385-13E6-4BFA-BC76-23AF380E7F3E}</Project>
+      <Name>iPow.Infrastructure.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

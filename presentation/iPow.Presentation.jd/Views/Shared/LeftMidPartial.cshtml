@@ -1,0 +1,110 @@
+﻿@{
+    try
+    {
+        iPow.function.LocationInfo li = iPow.function.LocationFucntion.LocationInfo();
+        if (li != null)
+        {
+    <div class="leftTitle">
+        <div class="leftTitleText">
+            <h3>
+                @(li.Province)热门景区周边酒店推荐</h3>
+        </div>
+        <div class="leftTitleTab">
+            <ul>
+                <li id="lowtwoth" title="￥200以内">￥200以内</li>
+                <li id="twotothr" title="￥200-￥300">￥200-￥300</li>
+                <li id="thrtofive" title="￥300-￥500">￥300-￥500</li>
+                <li id="fivetomax" title="￥500以上">￥500以上</li>
+            </ul>
+        </div>
+    </div>
+    <div class="leftContent">
+        <span style="width: 158px;">区域</span> <span style="width: 90px;">价格</span> <span
+            style="width: 120px;">类型</span> <span style="width: 230px;">酒店名称</span> <span style="width: 80px;">
+                人气</span>
+    </div>
+    <div class="hotelContainer" id="HotelInfo">
+        @{
+            IQueryable<iPow.jd.Models.LeftSightInfo> si = iPow.jd.Bll.LeftMidHotHotel.GetLeftHotSightInfoByProvince(li.Province, 3);
+            if (si != null)
+            {
+                string sightIds = string.Empty;
+                foreach (var item in si)
+                {
+            <div class="areaHotelInfo">
+                <div class="area">
+                    <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.Id)/1" target="_blank" title="查看@(item.Name)周边所有酒店">
+                        @{
+                    sightIds += item.Id.ToString() + ",";
+                    List<string> list = iPow.BllComm.Utility.GetSightDefaultPic(item.Id);
+                        }
+                        <img src="@(list.Count == 3 ? list[0] + "CutDown/116_103_" + list[1] : "#")" alt = "@(list.Count == 3 ? list[2] : "暂无图片")" />
+                        <span class="hotelname">@item.Name</span>更多酒店 </a>
+                </div>
+                <div id="Sight@(item.Id)" class="showHotelList">
+                    @{
+                    IQueryable<iPow.jd.Models.MidHotHotelInfo> hi =  iPow.jd.Bll.LeftMidHotHotel.GetMidHotHotelListbySightId(item.Id, 3);
+                    if (hi != null)
+                    {
+                        foreach (var it in hi)
+                        {
+                        <a href="/hotel/@(it.IdentityId)" target="_blank" class="aLeftList">
+                            <ul>
+                                <li><span class="spanPrice">￥@(it.MinPrice)</span> <span class="spanStat">@(it.ClassName)</span>
+                                    <span class="spanName">@(it.HotelName)</span> <span class="spanHot">@(it.ViCount)</span>
+                                </li>
+                            </ul>
+                        </a>    
+                        }
+                    }
+                    }
+                </div>
+            </div>
+                }
+
+            <script type="text/javascript">
+                $(function () {
+                    var ids = '@(sightIds)';
+                    var array = ids.split(',');
+                    $('#lowtwoth').click(function () {
+                        for (var i = 0; i < array.length - 1; i++) {
+                            GetLeftMidHotHotelInfo(array[i], '/leftmidhothotel/', 'Sight' + array[i], 0, 200);
+                            // setTimeout("GetLeftMidHotHotelInfo(" + array[i] + ", '/leftmidhothotel/', 'Sight" + array[i] + "', 0, 200)", 3000);
+                        }
+                    });
+
+                    $('#twotothr').click(function () {
+                        for (var i = 0; i < array.length - 1; i++) {
+                            GetLeftMidHotHotelInfo(array[i], '/leftmidhothotel/', 'Sight' + array[i], 201, 300);
+                            //setTimeout("GetLeftMidHotHotelInfo(" + array[i] + ", '/leftmidhothotel/', 'Sight" + array[i] + "', 201, 300)", 3000);
+                        }
+                    });
+
+                    $('#thrtofive').click(function () {
+                        for (var i = 0; i < array.length - 1; i++) {
+                            GetLeftMidHotHotelInfo(array[i], '/leftmidhothotel/', 'Sight' + array[i], 301, 500);
+                            //setTimeout("GetLeftMidHotHotelInfo(" + array[i] + ", '/leftmidhothotel/', 'Sight" + array[i] + "', 301, 500)", 3000);
+                        }
+                    });
+
+                    $('#fivetomax').click(function () {
+                        for (var i = 0; i < array.length - 1; i++) {
+                            GetLeftMidHotHotelInfo(array[i], '/leftmidhothotel/', 'Sight' + array[i], 501, 0);
+                            //setTimeout("GetLeftMidHotHotelInfo(" + array[i] + ", '/leftmidhothotel/', 'Sight" + array[i] + "', 501, 0)", 3000);
+                        }
+                    });
+                });
+            </script>
+            }
+        }
+    </div>
+        }
+        else
+        {
+
+        }
+    }
+    catch
+    {
+    }
+}

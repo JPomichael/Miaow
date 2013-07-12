@@ -1,0 +1,395 @@
+@charset "utf-8";
+.fontOrange
+{
+	color:#FF9D03;
+}
+.mainContainer
+{
+	width:960px;
+	padding:0 20px;
+	margin:0 auto;
+	background:#fff;
+	color:#676767;
+}
+.searchPanel
+{
+	float:left;
+	width:582px;
+	margin-top:10px;
+}
+.panelTop
+{
+	float:left;
+	height:7px;
+	width:100%;
+	background:url(../images/search_PanelTop.gif) no-repeat;
+	font-size:1px;
+}
+.pannelBottom
+{
+	float:left;
+	height:12px;
+	width:100%;
+	background:url(../images/search_PanelBottom.gif) no-repeat;
+}
+.pannelMid
+{
+	float:left;
+	width:579px;
+	margin-left:1px;
+	border:solid #E0DDF2;
+	border-width:0px 1px;
+}
+.pannelTitle
+{
+	float:left;
+	width:570px;
+	height:35px;
+	background:url(../images/panel_titleBG.gif) no-repeat;
+	padding-bottom:5px;
+	margin-left:4px;
+	color:#676767;
+}
+.pannelTitle h2,.hotAreaTitle h2
+{
+	display:block;
+	float:left;
+	width:150px;
+	height:35px;
+	padding-left:10px;
+	font-size:14px;
+	line-height:35px;
+	
+}
+.pannelTitle span
+{
+	display:block;
+	float:left;
+	height:20px;
+	padding-top:10px;
+	line-height:20px;
+}
+.pannelContainer
+{
+	float:left;
+	width:576px;
+	line-height:28px;
+}
+.pannelContainer label
+{
+	display:block;
+	float:left;
+	width:80px;
+	height:28px;
+	margin-top:10px;
+	text-align:right;
+	color:#0061FC;
+	font-weight:700;
+}
+.pannelContainer span.lineText
+{
+	float:left;
+	width:470px;
+	height:28px;
+	margin-top:10px;
+}
+.pannelContainer span.lineText1
+{
+	float:left;
+	width:180px;
+	margin-top:10px;
+}
+.pannelContainer a.day
+{
+	display:block;
+	float:left;
+	width:18px;
+	height:18px;
+	margin-right:10px;
+	margin-top:3px;
+	border:#BBBBBB 1px solid;
+	text-decoration:none;
+	line-height:20px;
+	text-align:center;
+	color:#676767;
+}
+.pannelContainer a.day:hover
+{
+	color:#fff;
+	background-color:#36FF00;
+}
+.pannelContainer span.lineText2
+{
+	float:left;
+	width:280px;
+	padding-bottom:5px;
+}
+.pannelContainer a.search
+{
+	display:block;
+	float:right;
+	width:125px;
+	height:36px;
+	background:url(../images/search_ico.gif) no-repeat;
+	margin-top:18px;
+}
+.inputText5,.inputText4
+{
+	float:left;
+	height:26px;
+	padding-left:3px;
+	border:0px;
+	line-height:24px;
+	color:#676767;
+}
+.inputText5
+{
+	width:363px;
+	background:url(../images/search_inputBG2.gif) no-repeat;
+}
+.inputText4
+{
+	width:119px;
+	background:url(../images/search_inputBG3.gif) no-repeat;
+}
+
+.hotAreaTitle,.hotAreaInfo
+{
+	float:left;
+	width:100%;
+}
+.hotAreaInfo 
+{
+	background-color:#EBEBEB;
+	padding:10px 0px;
+}
+.hotAreaInfo a
+{
+	display:block;
+	float:left;
+	width:150px;
+	height:34px;
+	margin-left:40px!important;
+	margin-left:20px;
+	padding-bottom:10px;
+	text-decoration:none;
+}
+.hotAreaInfo dl 
+{ 
+	float:left; 
+	padding:5px 0; 
+	width:148px; 
+	height:34px; 
+	overflow:hidden; 
+	cursor:pointer; 
+}
+.hotAreaInfo dl:after 
+{ 
+	display:block; 
+	visibility:hidden; 
+	clear:both; 
+	height:0; 
+	content:"."; 
+}
+.hotAreaInfo dl img 
+{ 
+	padding:1px; 
+	border:1px solid #555; 
+	width:30px; 
+	height:30px; 
+}
+.hotAreaInfo dt 
+{ 
+	float:right; 
+	width:114px; 
+	height:18px; 
+	text-indent:5px; 
+	font-size:14px; 
+	font-weight:700; 
+}
+.hotAreaInfo dt a 
+{ 
+	font-size:14px; 
+	font-weight:700; 
+}
+.hotAreaInfo dd.img 
+{ 
+	float:left; 
+}
+.hotAreaInfo dd.info 
+{ 
+	float:right; 
+	width:114px; 
+	height:16px; 
+	line-height:16px; 
+	text-indent:5px; 
+	color:#555; 
+}
+.leftContainer
+{
+	float:left;
+	width:675px;
+}
+.area
+{
+	float:left;
+	width:138px;
+	padding-left:20px;
+	text-align:center;
+}
+.area img
+{
+	display:block;
+	width:119px;
+	height:105px;
+	padding:3px; 
+	border:1px solid #555;
+}
+.area a
+{
+	color:#717171;
+	font-weight:600;
+}
+.area a span
+{
+	text-decoration:none;
+}
+.areaSightInfo
+{
+	float:left;
+	width:664px;
+	margin-top:20px;
+	padding-bottom:20px;
+	background:url(../images/guidinfo_bg.jpg) bottom repeat-x;
+}
+.area .areaname 
+{ 
+	display:block;
+	width:100%;
+	margin:4px 0; 
+	font-size:14px; 
+	font-weight:700; 
+	color:#555555;
+	cursor:pointer;
+}
+.areaSightInfo a.sightList
+{
+	display:block;
+	float:left;
+	width:480px;
+	margin-left:20px;
+	margin-bottom:20px;
+	text-decoration:none;
+}
+.areaSightInfo dl
+{
+	float:left;
+	width:380px;
+	cursor:pointer;
+}
+.areaSightInfo dl img 
+{ 
+	padding:1px; 
+	border:1px solid #555; 
+	width:30px; 
+	height:30px; 
+}
+.areaSightInfo dt
+{
+	float:right;
+	width:340px;
+	height:18px;
+	font-size:14px;
+	color:#007EFF;
+	font-weight:700;
+}
+.areaSightInfo dd
+{
+	float:left;
+}
+.areaSightInfo dd.address
+{
+	width:330px;
+	padding:0px 5px;
+	line-height:18px;
+	color:#707070;
+}
+.areaSightInfo span.price
+{
+	float:right;
+	width:100px;
+	line-height:18px;
+	cursor:pointer;
+	color:#575757;
+}
+.areaSightInfo span.price label
+{
+	color:#0060FF;
+	font-weight:700;
+}
+.areaSightInfo span.price em
+{
+	background-color:#4bdd00;
+	color:#fff;
+	font-weight:700;
+	font-family:"Arial";
+}
+.rightContainer
+{
+	float:right;
+	width:244px;
+}
+.rightGuid
+{
+	float:left;
+	height:26px;
+	width:100%;
+	background:url(../images/indexright_GuidTitle.gif) right no-repeat;
+}
+
+.rightContent a
+{
+	float:left;
+	width:240px;
+	margin-left:2px;
+	display:block;
+	text-decoration:none;
+	margin-top:10px;
+}
+.rightContent dl
+{
+	float:left;
+	display:block;
+	width:188px;
+	cursor:pointer;
+}
+.rightContent dt
+{
+	font-size:14px;
+	color:#373737;
+	font-weight:700;
+	line-height:24px;
+}
+.rightContent dd
+{
+	float:left;
+	color:#848484;
+	line-height:16px;
+}
+.rightContent span.price
+{
+	float:left;
+	width:50px;
+	line-height:24px;
+	cursor:pointer;
+}
+.rightContainer h3
+{
+	text-indent:20px;
+	font-size:14px;
+}
+/*================首页弹出广告=================*/
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+#simplemodal-container {height:500px; width:700px; background-color:#fff; border:3px solid #ccc; padding:0px; margin:0px;}
+#simplemodal-container a.modalCloseImg {background:url(../images/close.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-18px; cursor:pointer;}
+#simplemodal-container #basicModalContent {padding:0px;}

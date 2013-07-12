@@ -1,0 +1,27 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    if (ViewBag.Title == null)
+    {
+        ViewBag.Title = "系统提示";
+    }
+}
+<h2>
+    @{
+        if (ViewBag.message != null)
+        {
+        @(ViewBag.message)
+        }
+        else
+        {
+            if (Model != null)
+            {
+@*<br />
+                @("执行方法名：" + Model.ActionName)
+                <br />
+                @("类名：" + Model.ControllerName)
+                <br />*@
+        @("错误信息：" + Model.Exception.Message)
+            }
+        } 
+    }
+</h2>

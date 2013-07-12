@@ -1,0 +1,109 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@model IEnumerable<iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto>
+@{
+    ViewBag.subtitle = "用户角色管理";
+    ViewBag.title = "用户角色管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{Html.Telerik().Grid(Model)
+    .Name("UserRoleGrid")
+    .ToolBar(toolBar => toolBar.Template(
+    @<text>
+    <label class="customer-label" for="Customers-input">
+        角色名搜索:
+    </label>
+    <input type="text" id="searchUser" value="用户名字" data-autocomplete="/userrole/searchuserrole" />
+    <input type='button' value='我要搜索' class='t-button' onclick='searchChange()' />
+    <a href="/myadmin/userrole/adduserrole/" class='t-button'>添加用户角色 </a><a href='javascript:;'
+        class='t-button ' onclick='mulDelete()'>删除选择项</a>
+    </text>))
+    .Columns(columns =>
+    {
+        columns.Template(@<text><input name="selectRow" type="checkbox" value="@item.Id " title="checkedRecords" /></text>)
+        .HeaderTemplate(@<text><input type="checkbox" title="check all records" id="checkAllRecords" /></text>)
+        .Width(50).HeaderHtmlAttributes(new { style = "text-align:center" }).HtmlAttributes(new { style = "text-align:center" })
+        .ClientTemplate("<input type=\"checkbox\" title=\"check all records\" name = 'selectRow' value = '<#= Id #>'/>");
+        columns.Bound(o => o.Id).Width(500).Title("角色标识Id").Hidden();
+        columns.Bound(o => o.UserName).Width(500).Title("用户名");
+        columns.Bound(o => o.RoleName).Width(500).Title("角色名");
+        columns.Bound(o => o.UserID).Width(500).Title("用户ID").Hidden(true);
+        columns.Bound(o => o.RoleID).Width(500).Title("角色ID").Hidden(true);
+        columns.Command(comm =>
+        {
+            comm.Custom("detailCustom")
+                .Text("编辑详细")
+                .ButtonType(GridButtonType.Text)
+                .Action("edituserrole", "userrole").HtmlAttributes(new { target = "" });
+            comm.Delete().ButtonType(GridButtonType.Text);
+        }).Width(300);
+    })
+    .ClientEvents(clientEvents => clientEvents.OnDataBinding("dataBinding"))
+    .DataKeys(key => key.Add("Id")) //添加主键
+    .DataBinding(dataBinding => dataBinding.Ajax().Select("ajaxindex", "userrole")
+        .Insert("createuserrole", "userrole")
+        .Update("edituserrole", "userrole")
+        .Delete("deleteuserrole", "userrole"))
+    .Editable(editing => editing.Mode(GridEditMode.InLine))
+    .Pageable(page => page.PageSize(10))
+    .Render();
+}
+<script type="text/javascript">
+    var preSearch = "";
+    var isSearch = false;
+    function searchChange() {
+        var currentSearch = $("#searchUser").val();
+        if (preSearch != currentSearch) {
+            $("#UserRoleGrid").data("tGrid").rebind();
+        }
+    }
+
+    function dataBinding(args) {
+        var searchKeyStr = $("#searchUser").val();
+        preSearch = searchKeyStr;
+        if (searchKeyStr == '用户名字') {
+            searchKeyStr = '';
+        }
+        args.data = $.extend(args.data, { searchKey: searchKeyStr });
+    }
+
+    function mulDelete() {
+        var delStr = $(':checked');
+        if (delStr.length < 1) {
+            alert('Check a few grid rows first .');
+            return;
+        }
+        jQuery.post('/userrole/deletemuluserrole', delStr, function (res) {
+            if (res.success) {
+                setTimeout(function () {
+                    $("#UserRoleGrid").data("tGrid").rebind();
+                    $("#checkAllRecords").attr("checked", false);
+                }, 1000);
+            }
+            else {
+                alert(res.message);
+            }
+        })
+    }
+
+    $(function () {
+        $('#checkAllRecords').click(function checkAll() { $("#UserRoleGrid tbody input:checkbox").attr("checked", this.checked); });
+
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+
+        $("#searchUser").focus(function () {
+            if (this.value == "用户名字") {
+                $("#searchUser").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#searchUser").val("用户名字");
+            }
+        });
+    });
+</script>

@@ -1,0 +1,19 @@
+﻿@{
+    var sightInfoVouchService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Application.jq.Service.ISightInfoService>();
+
+    var vouchList = sightInfoVouchService.GetSightVouchItem(ViewBag.parkid);
+    System.Text.StringBuilder sb = new System.Text.StringBuilder();
+    foreach (var item in vouchList)
+    {
+        if (string.IsNullOrEmpty(item.ItemUrl))
+        {
+            sb.Append(item.ItemTitle + "&nbsp;&nbsp;");
+        }
+        else
+        {
+            sb.Append("<a href =\"" + item.ItemUrl + "\">" + item.ItemTitle + "</a>&nbsp;&nbsp;");
+        }
+    }
+    @Html.Raw(sb.ToString());
+}

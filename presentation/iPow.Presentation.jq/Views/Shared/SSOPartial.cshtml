@@ -1,0 +1,65 @@
+﻿@{
+    iPow.Service.SSO.Client.AuthService.AuthenticationServiceClient client = new iPow.Service.SSO.Client
+            .AuthService.AuthenticationServiceClient();
+
+    var token = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetUrlPara(iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.UrlParaToken);
+    //整个if是用于请除url上的token
+    if (token != null)
+    {
+        var requestToken = new iPow.Service.SSO.Client.AuthService.TokenRequest();
+        requestToken.Token = new iPow.Service.SSO.Client.AuthService.Token();
+        requestToken.Token.TokenId = token;
+        var tokenResponse = client.ValidateToken(requestToken);
+        if (tokenResponse.Fault == null && tokenResponse.User != null && tokenResponse.User.id > 0)
+        {
+            iPow.Infrastructure.Crosscutting.Function.SessionHelper.Add(
+                iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser,
+                tokenResponse.User, iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionExpires);
+        }
+        //Response.Redirect(Request.Path);
+        //Response.End();
+    }
+    else
+    {
+        if (HttpContext.Current != null && HttpContext.Current.Session != null)
+        {
+            var userLogined = Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] as
+                iPow.Service.SSO.Client.AuthService.User;
+            //当存在一个用户已登陆的标识的时候，且值为1，则跳转到用户登陆Url，去验证sso上的session是否存在，
+            //所以如果存在，则返回带token的当前Url
+            //也就是说，还是会跳到本身
+            if (userLogined == null || string.IsNullOrEmpty(userLogined.username))
+            {
+                var cookieNameIndexList = iPow.Infrastructure.Crosscutting.Comm.Service.SsoService.GetUserLoginedCookieNameIndexList(Request.Cookies);
+                for (int i = 0; i < cookieNameIndexList.Count; i++)
+                {
+                    var userLoginedCookie = Request.Cookies.Get(cookieNameIndexList[i]);
+                    //当存在一个用户已登陆的标识的时候，且值为1
+                    if (userLoginedCookie != null && !string.IsNullOrEmpty(userLoginedCookie.Value))
+                    {
+                        var target = userLoginedCookie.Value;
+                        if (string.Compare(target, "1", false) == 0)
+                        {
+                            //跳转到这个Url
+                            var tokenUrl = iPow.Infrastructure.Crosscutting.Comm.Service.SsoService.GetSsoTokenAndReturnUrl();
+                            Response.Redirect(tokenUrl);
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                var validateRequest = new iPow.Service.SSO.Client.AuthService.ValidateRequest();
+                validateRequest.User = userLogined;
+                var validateResponse = client.IsOnline(validateRequest);
+                //这是不在线的时候
+                if (validateResponse.Fault == null && validateResponse.User == null)
+                {
+                    Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] = null;
+                    Response.Redirect(iPow.Infrastructure.Crosscutting.Function.StringHelper.GetDomainName());
+                }
+            }
+        }
+    }
+}

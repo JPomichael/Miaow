@@ -1,0 +1,106 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@model IEnumerable<iPow.Domain.Dto.Sys_RolesDto>
+@{
+    ViewBag.subtitle = "角色管理";
+    ViewBag.title = "角色管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{Html.Telerik().Grid(Model)
+    .Name("RoleGrid")
+    .ToolBar(toolBar => toolBar.Template(
+    @<text>
+    <label class="customer-label" for="Customers-input">
+        角色搜索:
+    </label>
+    <input type="text" id="searchRole" value="角色名字" data-autocomplete="/role/searchRole" />
+    <input type='button' value='我要搜索' class='t-button t-grid-add' onclick='searchChange()' />
+    <a href="/role?mode=insert" class="t-button t-grid-add">添加角色</a> <a href='javascript:;'
+        class='t-button t-grid-add' onclick='mulDelete()'>删除选择项</a>
+    </text>))
+    .Columns(columns =>
+    {
+        columns.Template(@<text><input name="selectRow" type="checkbox" value="@item.Id " title="checkedRecords" /></text>)
+        .HeaderTemplate(@<text><input type="checkbox" title="check all records" id="checkAllRecords" /></text>)
+        .Width(50).HeaderHtmlAttributes(new { style = "text-align:center" }).HtmlAttributes(new { style = "text-align:center" })
+        .ClientTemplate("<input type=\"checkbox\" title=\"check all records\" name = 'selectRow' value = '<#= Id #>'/>");
+        columns.Bound(o => o.Id).Width(50).Title("系统角色Id").Hidden();
+        columns.Bound(o => o.RoleID).Width(50).Title("角色Id").ReadOnly();
+        columns.Bound(o => o.Description).Width(300).Title("角色名");
+        columns.Command(comm =>
+        {
+            comm.Edit().ButtonType(GridButtonType.Text);
+            comm.Custom("permission")
+                .Text("编辑权限")
+                .ButtonType(GridButtonType.Text)
+                .Action("index", "rolepermission").HtmlAttributes(new { target = "" });
+            comm.Delete().ButtonType(GridButtonType.Text);
+        }).Width(300);
+    })
+    .ClientEvents(clientEvents => clientEvents.OnDataBinding("dataBinding"))
+    .DataKeys(key => key.Add("Id"))//添加主键
+    .DataBinding(dataBinding => dataBinding.Ajax().Select("ajaxindex", "role")
+        .Insert("add", "role")
+        .Update("edit", "role")
+        .Delete("delete", "role"))
+    .Editable(editing => editing.Mode(GridEditMode.InLine))
+    .Pageable(page => page.PageSize(10))
+    .Render();
+}
+<script type="text/javascript">
+    var preSearch = "";
+    var isSearch = false;
+    function searchChange() {
+        var currentSearch = $("#searchRole").val();
+        if (preSearch != currentSearch) {
+            $("#RoleGrid").data("tGrid").rebind();
+        }
+    }
+
+    function dataBinding(args) {
+        var searchKeyStr = $("#searchRole").val();
+        preSearch = searchKeyStr;
+        if (searchKeyStr == '角色名字') {
+            searchKeyStr = '';
+        }
+        args.data = $.extend(args.data, { searchKey: searchKeyStr });
+    }
+
+    function mulDelete() {
+        var delStr = $(':checked');
+        if (delStr.length < 1) {
+            alert('Check a few grid rows first.');
+            return;
+        }
+        jQuery.post('/role/muldelete', delStr, function (res) {
+            if (res.success) {
+                setTimeout(function () {
+                    $("#RoleGrid").data("tGrid").rebind();
+                    $("#checkAllRecords").attr("checked", false);
+                }, 1000);
+            }
+            else {
+                alert(res.message);
+            }
+        })
+    }
+
+    $(function () {
+        $('#checkAllRecords').click(function checkAll() { $("#RoleGrid tbody input:checkbox").attr("checked", this.checked); });
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+        $("#searchRole").focus(function () {
+            if (this.value == "角色名字") {
+                $("#searchRole").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#searchRole").val("角色名字");
+            }
+        });
+    });
+</script>

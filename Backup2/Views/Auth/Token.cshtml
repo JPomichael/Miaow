@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Token";
+}
+<script type="text/javascript">
+    window.opener = null;
+    //window.close();
+</script>
+@{
+    var user = Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser]
+        as iPow.Service.SSO.Entity.User;
+    if (user == null)
+    {
+    <text>
+    <h2>
+        Token</h2>
+    <p>
+        你登陆时间过期了，<a href="/auth/logon">再重新登陆一次</a>
+    </p>
+    </text>
+    }
+}

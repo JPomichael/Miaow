@@ -1,0 +1,80 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+@{
+    if (ViewData["Heading"] != null)
+    {
+        ViewBag.Title = ViewData["Heading"];
+    }
+    else
+    {
+        ViewBag.Title = "系统提示";
+    }
+}
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/main.css")" />
+<div class="mainContainer">
+    <br />
+    <br />
+    <br />
+    <h2>
+        @{
+            if (ViewData["Message"] != null)
+            { 
+            @ViewData["Message"]
+            }
+            else
+            {
+                if (Model.Exception != null)
+                {
+                    
+@*    @("错误: ")@Model.Exception.Message*@
+
+                    string mess = Model.Exception.Message;
+                    int tar = mess.IndexOf("Parameter");
+                    if (tar >= 0)
+                    {
+            @("请不要非法更改地址")
+                    }
+                    else
+                    {
+                        tar = mess.IndexOf("引用设置到对象的实例");
+                        if (tar >= 0)
+                        {
+            @("系统没有找到相关信息")
+                        }
+                        else
+                        {
+                            tar = mess.IndexOf("对象必须具有一个值");
+                            if (tar >= 0)
+                            {
+@*  @mess*@
+            <br />
+            @("请不要非法更改地址")
+                            }
+                            else
+                            {
+                                tar = mess.IndexOf("Object reference not set to an instance of an object");
+                                if (tar >= 0)
+                                {
+            @("系统没有找到相关信息")
+                                }
+                                else
+                                {
+            @("错误: ")@mess
+                                    if (Model.Exception.InnerException != null)
+                                    {
+            @(Model.Exception.InnerException.Message)
+                                    }
+                                }
+                            }
+                        }
+                    }
+            <br />
+                }
+            }
+        }
+    </h2>
+    <br />
+    <h2>
+    </h2>
+    <br />
+    <br />
+</div>

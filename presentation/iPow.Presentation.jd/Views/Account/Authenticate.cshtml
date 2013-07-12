@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Authenticate";
+}
+@{
+    var tempUrl = Request["redirectUrl"];
+    string redirectUrl = string.Empty;
+    if (tempUrl != null)
+    {
+        redirectUrl = Server.UrlDecode(tempUrl);
+    }
+    else
+    {
+        redirectUrl = "/";
+    }
+}
+
+<script type="text/javascript">
+    $(function () {
+        $.get('http://account.ipow.cn/server/SSOService.svc/user/RequestToken?callback=?', {},
+				function (ssodata) {
+				    // get url to logon page in case this operation fails
+				    var logonPage = '@Url.Action("logon", "account")' + '?redirectUrl=' + encodeURI('@(Request.UrlReferrer == null ? "" : Request.UrlReferrer.ToString())');
+				    if (ssodata.Status == 'SUCCESS') {
+				        // get target url for successful authentication
+				        var redirect = '@(new MvcHtmlString(redirectUrl))';
+				        if (redirect == '' || redirect == undefined)
+				            redirect = '@Url.Action("index", "home")';
+				        // verify the token is genuine
+				        $.post('@Url.Action("authenticate", "account")',
+							{ token: ssodata.Token, createPersistentCookie: true },
+								function (data) {
+								    // redirect user based on result
+								    if (data.result == 'SUCCESS') {
+								        document.location = redirect;
+								    }
+								    else {
+								        document.location = logonPage;
+								    }
+								    // just regular json here
+								}, 'json');
+				    } else {
+				        // user needs to logon to SSO service
+				        document.location = logonPage;
+				    }
+				    // tell jQuery to use JSONP 
+				}, 'jsonp');
+    });
+</script>

@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="iPow.Service.SSO.WebService.AuthenticationService" CodeBehind="AuthenticationService.svc.cs" %>

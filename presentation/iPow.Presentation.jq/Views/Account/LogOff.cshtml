@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "LogOff";
+}
+<script type="text/javascript">
+    $(function () {
+        $.get('http://account.ipow.cn/server/SSOService.svc/user/Logout?callback=?', {},
+				function (ssodata) {
+				    document.location = '@Url.Action("Index", "Home")';
+				}, 'jsonp');
+    });
+</script>

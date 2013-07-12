@@ -1,0 +1,114 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@model IEnumerable<iPow.Domain.Dto.Sys_AdminUserDto>
+@{
+    ViewBag.subtitle = "用户管理";
+    ViewBag.title = "用户管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{Html.Telerik().Grid(Model)
+    .Name("UserGrid")
+    .ToolBar(toolBar => toolBar.Template(
+    @<text>
+    <label class="customer-label" for="Customers-input">
+        用户名搜索:
+    </label>
+    <input type="text" id="searchUser" value="用户名字" data-autocomplete="/user/searchuser" />
+    <input type='button' value='我要搜索' class='t-button' onclick='searchChange()' />
+    <a href="/myadmin/user/adduser/" class="t-button">添加用户</a> <a href='javascript:;' class='t-button '
+        onclick='mulDelete()'>删除选择项</a>
+    </text>))
+    .Columns(columns =>
+    {
+        columns.Template(@<text><input name="selectRow" type="checkbox" value="@item.id " title="checkedRecords" /></text>)
+        .HeaderTemplate(@<text><input type="checkbox" title="check all records" id="checkAllRecords" /></text>)
+        .Width(50).HeaderHtmlAttributes(new { style = "text-align:center" }).HtmlAttributes(new { style = "text-align:center" })
+        .ClientTemplate("<input type=\"checkbox\" title=\"check all records\" name = 'selectRow' value = '<#= id #>'/>");
+        columns.Bound(o => o.id).Width(50).Title("用户Id").Hidden();
+        columns.Bound(o => o.username).Width(300).Title("用户名");
+        columns.Bound(o => o.lastloginip).Width(500).Title("登陆IP");
+        columns.Bound(o => o.lastlogintime).Width(500).Title("注册时间");
+        columns.Bound(o => o.roleid).Width(500).Title("角色ID");
+        columns.Bound(o => o.userid).Width(500).Title("用户ID").Hidden();
+        columns.Bound(o => o.truename).Width(500).Title("真实姓名");
+        columns.Bound(o => o.style).Width(500).Title("样式").Hidden();
+        columns.Bound(o => o.sex).Width(500).Title("性别");
+        columns.Bound(o => o.Phone).Width(500).Title("电话");
+        columns.Bound(o => o.UserType).Width(20).Title("用户类型");
+        columns.Bound(o => o.DepartmentID).Width(100).Title("部门ID").Hidden();
+        columns.Command(comm =>
+        {
+            comm.Custom("detailCustom")
+                .Text("编辑详细")
+                .ButtonType(GridButtonType.Text)
+                .Action("edituser", "user").HtmlAttributes(new { target = "" });
+            comm.Delete().ButtonType(GridButtonType.Text);
+        }).Width(300);
+    })
+    .ClientEvents(clientEvents => clientEvents.OnDataBinding("dataBinding"))
+    .DataKeys(key => key.Add("id"))//添加主键
+    .DataBinding(dataBinding => dataBinding.Ajax().Select("ajaxindex", "user")
+        .Insert("createplan", "user")
+        .Update("edituser", "user")
+        .Delete("deleteuser", "user"))
+    .Editable(editing => editing.Mode(GridEditMode.InLine))
+    .Pageable(page => page.PageSize(10))
+    .Render();
+}
+<script type="text/javascript">
+    var preSearch = "";
+    var isSearch = false;
+    function searchChange() {
+        var currentSearch = $("#searchUser").val();
+        if (preSearch != currentSearch) {
+            $("#UserGrid").data("tGrid").rebind();
+        }
+    }
+
+    function dataBinding(args) {
+        var searchKeyStr = $("#searchUser").val();
+        preSearch = searchKeyStr;
+        if (searchKeyStr == '用户名字') {
+            searchKeyStr = '';
+        }
+        args.data = $.extend(args.data, { searchKey: searchKeyStr });
+    }
+
+    function mulDelete() {
+        var delStr = $(':checked');
+        if (delStr.length < 1) {
+            alert('Check a few grid rows first.');
+            return;
+        }
+        jQuery.post('/user/deletemuluser', delStr, function (res) {
+            if (res.success) {
+                setTimeout(function () {
+                    $("#UserGrid").data("tGrid").rebind();
+                    $("#checkAllRecords").attr("checked", false);
+                }, 1000);
+            }
+            else {
+                alert(res.message);
+            }
+        })
+    }
+
+    $(function () {
+        $('#checkAllRecords').click(function checkAll() { $("#UserGrid tbody input:checkbox").attr("checked", this.checked); });
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+        $("#searchUser").focus(function () {
+            if (this.value == "用户名字") {
+                $("#searchUser").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#searchUser").val("用户名字");
+            }
+        });
+    });
+</script>

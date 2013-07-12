@@ -1,0 +1,155 @@
+﻿@model   List<iPow.Application.Union.Dto.HotelEbookDto>
+@{
+    ViewBag.Title = "订单查询-";
+}
+<link type="text/css" rel="stylesheet" href=" @Url.Content("~/Content/ad.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/top.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/hotel.css")" />
+<style type="text/css">
+    *
+    {
+        font-family: "宋体";
+        padding: 0;
+        margin: 0;
+    }
+    .mainContainer
+    {
+        width: 960px;
+        margin: 0px auto;
+        padding: 7px 20px;
+        background: white;
+    }
+    .mainContainer h1
+    {
+        display: block;
+        font-size: 2em;
+        font-weight: bold;
+    }
+    #orderform
+    {
+        text-align: center;
+    }
+    #orderform h1
+    {
+        color: #855224;
+        margin-bottom: 15px;
+        font-size: 24px;
+    }
+    .order-status-form label, .order-status-form span
+    {
+        font-size: 12px;
+    }
+    .order-status-form span
+    {
+        margin-left: 15px;
+    }
+    .order_table
+    {
+        width: 950px;
+        margin-top: 25px;
+    }
+    table
+    {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .order_table tr td
+    {
+        font-size: 12px;
+        color: #2f2f2f;
+        text-align: center;
+        border: solid 1px #c3c3c3;
+        padding: 9px 3px;
+    }
+    .order_bg
+    {
+        background: #f0f0f0;
+        font-weight: bold;
+    }
+    .order_table .order_red
+    {
+        color: #F00;
+        font-weight: bold;
+    }
+</style>
+<div class="mainContainer">
+    <form action = "@Url.Action("Query", "Ebook")" method = "post"  id = "orderform">
+    <h1>
+        订单状态查询</h1>
+    <div class="order-status-form">
+        <label>
+            手机号:</label>
+        <input type="text" value="@(ViewBag.phone == null ? "" : ViewBag.phone)" name="phone" id = "phone" 
+        onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" 
+         maxlength = "11"/>
+        <input type="submit" name="ordersub" value="提交" id="ordersub" />
+        <span>输入预订时填写的联系手机即可查询</span>
+    </div>
+    @{
+        if (ViewBag.query != null && ViewBag.query && Model != null && Model.Count > 0)
+        {
+        <div class="order_table">
+            <table>
+                <tr class="order_bg">
+                    <td>
+                        订单号
+                    </td>
+                    <td>
+                        预订酒店
+                    </td>
+                    <td>
+                        房型
+                    </td>
+                    <td>
+                        间数
+                    </td>
+                    <td>
+                        入住日期
+                    </td>
+                    <td>
+                        退房日期
+                    </td>
+                    <td>
+                        房费总计
+                    </td>
+                    <td>
+                        订单状态
+                    </td>
+                </tr>
+                @{
+            foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @(item.dn)
+                        </td>
+                        <td>
+                            @(item.hn)
+                        </td>
+                        <td>
+                            @(item.rm)
+                        </td>
+                        <td>
+                            @(item.nm)
+                        </td>
+                        <td>
+                            @(item.bd)
+                        </td>
+                        <td>
+                            @(item.ed)
+                        </td>
+                        <td>
+                            @(item.total)
+                        </td>
+                        <td class="order_red">
+                            @(item.sm)
+                        </td>
+                    </tr>
+            }                        
+                }
+            </table>
+        </div>  
+        }
+    }
+    </form>
+</div>

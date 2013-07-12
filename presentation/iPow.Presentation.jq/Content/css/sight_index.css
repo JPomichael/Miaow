@@ -1,0 +1,1294 @@
+@charset "utf-8";
+li
+{
+	list-style:none;
+	margin:0px;
+}
+del, ins {
+text-decoration:none;
+}
+.fontOrange
+{
+	color:#FF9D03;
+}
+.mainContainer,.imgContainer,.foot_cir
+{
+	width:960px;
+	padding:0px 20px;
+	margin:0 auto;
+	background:#fff;
+}
+.areaList
+{
+	float:left;
+	width:954px;
+	margin-top:5px;
+	padding:2px;
+	border:#DEDEEB solid;
+	border-width:0px 1px 1px 1px;
+	line-height:22px;
+}
+.areaList ul,.areaList ul li
+{
+	display:inline;
+	float:left;
+	margin:0px;
+	padding:0px;
+}
+.areaList ul li a,.areaList ul li strong
+{
+	display:inline;
+	float:left;
+	height:16px;
+	width:42px;
+	text-decoration:none;
+	color:#555555;
+	margin:4px 0px;
+	line-height:16px;
+	text-align:center;
+	border-right:1px solid #000;
+}
+.areaList ul li a
+{
+	
+}
+
+.leftContainer
+{
+	float:left;
+	width:702px;
+	margin-top:10px;
+}
+.leftTitle
+{
+	float:left;
+	width:690px;
+	height:25px;
+}
+.leftTitleText
+{
+	float:left;
+	width:200px;
+	line-height:25px;
+}
+.leftTitleText h3 
+{
+	display:block;
+	float:left;
+	width:50px;
+	height:22px;
+	padding-left:23px;
+	margin:0px 14px;
+	font-size:12px; 
+	font-weight:700;
+	color:#848484;
+	background:url(/images/sprite.jpg) left -78px no-repeat;
+	text-align:center;
+	line-height:22px;
+}
+.leftTitleTab
+{
+	float:left;
+	width:460px;
+	line-height:24px;
+	font-weight:600;
+}
+.leftTitleTab a.aSMore
+{
+	float:right;
+	display:block;
+	width:50px;
+	text-align:center;
+}
+.leftTitleTab  ul
+{
+	float:left;
+	margin-top:1px;
+	border-left:1px solid #D0D0D0;
+}
+.leftTitleTab li
+{
+	float:left;
+	height:24px;
+	margin-top:0px;
+	padding:0px;
+	line-height:22px;
+	text-align:center;
+	list-style:none;
+}
+.leftTitleTab li a
+{
+	display:block;
+	width:74px;
+	height:23px;
+	background-color:#F7F7F7;
+	line-height:24px;
+	text-align:center;
+	color:#555555;
+	text-decoration:none;
+	border:solid #D0D0D0;
+	border-width:1px 1px 0px 0px;
+}
+.leftTitleTab li a em
+{
+	font-size:10px;
+	font-family:Tahoma,Helvetica,Arial,sans-serif;
+}
+.leftTitleTab li a:hover,.leftTitleTab li a.current
+{
+	background-color:#FFA200;
+	color:#FFF;
+}
+.areaHotelInfo
+{
+	float:left;
+	width:688px;
+	margin-bottom:30px;
+}
+.area
+{
+	float:left;
+	width:138px;
+	padding-left:20px;
+	text-align:center;
+}
+.area img
+{
+	display:block;
+	width:119px;
+	height:105px;
+	padding:3px; 
+	border:1px solid #555;
+}
+.area a
+{
+	color:#717171;
+	font-weight:600;
+}
+.area a span
+{
+	text-decoration:none;
+}
+.ulSights
+{
+	float:left;
+	width:688px;
+	border:1px solid #d0d0d0;
+}
+.ulSights li
+{
+	float:left;
+	width:668px;
+	padding:20px 10px;
+	background:#fff url(/images/guidinfo_bg.jpg) bottom repeat-x;
+}
+.imgShadows{
+	float:left;
+	width:128px;
+	height:101px;
+	padding:10px 8px;
+	border:1px solid #ccc;
+	
+}
+.imgShadows img
+{
+	display:block;
+	border:1px solid #888888;
+}
+.iSightInfo
+{
+	float:right;
+	width:508px;
+}
+.iSightInfo h2,.iSightInfo h3
+{
+	display:inline;
+	float:left;
+	padding-right:5px;
+	font-size:14px;
+	line-height:25px;
+	color:#145ca3;
+}
+.iSightInfo h2 a
+{
+	text-decoration:none;
+	color:#ff6c00;
+}
+.iSightInfo h2 a:hover
+{
+	text-decoration:underline;
+}
+.sNum
+{
+	display:inline;
+	float:left;
+	width:20px;
+	height:13px;
+	margin-right:6px;
+	padding:4px 2px 10px 4px;
+	background:url(/images/sprite.png) left top no-repeat;
+	_background:url(/images/sprite1.png) left top no-repeat;
+	text-align:center;
+	line-height:13px;
+	color:#fff;
+	font-size:12px;
+}
+.iSightInfo h3
+{
+	font-size:12px;
+	line-height:27px;
+	color:#b3b3b3;
+}
+.iSightInfo h4
+{
+	display:inline;
+	float:right;
+	width:60px;
+	height:12px;
+	margin:6px 5px 0px 0px;
+	background:url(/images/stars.png) left -12px repeat-x;
+	_background:url(/images/stars1.png) left -12px repeat-x;
+	font-size:1px;
+}
+.iSightInfo h4 em
+{
+	float:left;
+	height:12px;
+	background:url(/images/stars.png) left top repeat-x;
+	_background:url(/images/stars1.png) left top repeat-x;
+}
+span.sightData
+{
+	float:left;
+	width:502px;
+	height:24px;
+	background-color:#f7f7f7;
+	line-height:24px;
+	margin-top:5px;
+	border:1px solid #d0d0d0;
+	color:#555555;
+}
+.sightData em
+{
+	display:inline;
+	float:left;
+	padding:0px 5px;
+}
+.sightData em b{
+	font-size:14px;
+	font-family:Tahoma,Helvetica,Arial,sans-serif;
+	color:#52557c;
+}
+.sightData em strong{
+	font-size:20px;
+}
+.iSightInfo p
+{
+	float:left;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+.iSightInfo p.info
+{
+	padding-top:5px;
+	text-indent:20px;
+	line-height:20px;
+	color:#666;
+}
+.iSightInfo p.golink a
+{
+	display:inline;
+	float:left;
+	margin-top:4px;
+	font-weight:700;
+	text-decoration:none;
+	color:#0067bf;
+}
+.iPrice{
+	float:right;
+	height:25px;
+	background:url(/images/yuan.gif) left no-repeat;
+	color:#99172D;
+	font-size:16px;
+	font-weight:700;
+	padding-left:18px;
+	margin-right:10px;
+	line-height:25px;
+	font-family:Tahoma,Helvetica,Arial,sans-serif;
+}
+.iFree
+{
+	float:right;
+	height:25px;
+	margin-right:10px;
+	color:#99172D;
+	font-size:16px;
+	font-weight:700;
+}
+/*right content*/
+.rightContainer
+{
+	float:right;
+	width:245px;
+	margin-top:10px;
+}
+.rightTitle1,.rightTitle2
+{
+	float:left;
+	width:245px;
+	height:29px;
+	line-height:28px;
+	color:#fff;
+}
+.rightTitle1
+{
+	background:url(/images/guid_tag01.jpg) no-repeat;
+}
+.rightTitle2
+{
+	margin-top:10px;
+	background:url(/images/guid_tag02.jpg) no-repeat;
+}
+.rightContainer h3
+{
+	text-indent:20px;
+	font-size:14px;
+}
+.rightContent,.travelList
+{
+	float:left;
+	width:100%;
+	margin-bottom:10px;
+}
+.rightContent a
+{
+	float:left;
+	width:100%;
+	display:block;
+	text-decoration:none;
+	margin-top:10px;
+}
+.rightContent dl
+{
+	float:left;
+	display:block;
+	width:188px;
+	cursor:pointer;
+}
+.rightContent dt
+{
+	font-size:14px;
+	color:#373737;
+	font-weight:700;
+	line-height:24px;
+}
+.rightContent dd
+{
+	float:left;
+	color:#848484;
+	line-height:16px;
+}
+.rightContent span.price
+{
+	float:left;
+	width:50px;
+	line-height:24px;
+	cursor:pointer;
+}
+.travelList a
+{
+	display:block;
+	float:left;
+	width:100%;
+	line-height:24px;
+	color:#2F2F2F;
+	text-decoration:none;
+}
+.imgContainer a
+{
+	display:inline;
+	float:left;
+	width:138px;
+	height:141px;
+	margin-top:15px;
+	margin-left:18px;
+	background:url(/images/index_ImgBg.jpg) no-repeat;
+	text-align:center;
+	line-height:30px;
+	color:#373737;
+	text-decoration:none;
+}
+.imgContainer a img
+{
+	display:block;
+	width:126px;
+	height:99px;
+	padding:6px;
+	border:0px;
+}
+/*搜索列表*/
+.sLeft
+{
+	position:absolute;
+	width:376px;
+	height:310px;
+	left:0px;
+	margin-top:20px;
+	z-index:9999;
+}
+.sRight
+{
+	float:right;
+	width:578px;
+}
+.sCondition
+{
+	float:left;
+	width:100%;
+	height:38px;
+	line-height:42px;
+	background:url(/images/guidinfo_bg.jpg) bottom repeat-x;
+	color:#4C4C4C;
+}
+.sList
+{
+	float:left;
+	width:100%;
+	min-height:200px;
+}
+.sList ul li
+{
+	float:left;
+	width:100%;
+	height:50px;
+	background:url(/images/guidinfo_bg.jpg) bottom repeat-x;
+}
+.sList a.LR
+{
+	display:block;
+	float:left;
+	height:50px;
+	text-decoration:none;
+	width:100%;
+}
+.sList a.LR span
+{
+	cursor:pointer;
+}
+.sList ul li:hover
+{
+	background-color:#EDEDED;
+}
+.sList ul li span.addTrip
+{
+	display:block;
+	float:right;
+	width:84px;
+	height:23px;
+	margin-right:4px;
+	background:url(/images/btnRed.jpg) center center no-repeat;
+	color:#fff;
+	text-align:center;
+	line-height:23px;
+	margin-top:13px;
+	cursor:pointer;
+}
+.sList a.LR span.ico
+{
+	float:left;
+	display:block;
+	width:36px;
+	height:50px;
+	background:url(/images/ico/list_ico.gif) center center no-repeat;
+	line-height:47px;
+	text-align:center;
+	color:#fff;
+}
+.emNoIco
+{
+	float:left;
+	display:block;
+	width:36px;
+	height:30px;
+	background:url(/images/ico/list_ico.gif) center center no-repeat;
+	line-height:27px;
+	text-align:center;
+	color:#fff;
+}
+.sList a.LR span.img1
+{
+	float:left;
+	display:block;
+	width:32px;
+	height:32px;
+	margin-top:6px;
+	padding:1px;
+	background-color:#EBEBEB;
+	border:#555555 1px solid;
+}
+.sList a.LR span.img1 img
+{
+	border:0px;
+}
+.sList a.LR dl
+{
+	display:block;
+	float:left;
+	width:350px;
+	margin-left:10px;
+	cursor:pointer;
+}
+.sList a.LR dl span
+{
+	display:block;
+	float:left;
+}
+.sList a.LR dl dt
+{
+	padding-top:4px;
+	line-height:22px;
+	color:#555555;
+}
+.sList a.LR dl dd
+{
+	width:100%;
+	float:left;
+	color:#A5A5A5;
+	line-height:18px;
+}
+.sList a.LR:hover span.sightTitle
+{
+	color:#0367C9;
+}
+.sList a.LR dl em
+{
+	display:block;
+	float:left;
+	max-width:45px;
+	height:16px;
+	margin-top:2px;
+	line-height:16px;
+	background-color:#DC5F00;
+	color:#fff;
+	font-weight:700;
+	font-family:"Arial";
+	
+}
+.sList a.LR span.info2
+{
+	float:left;
+	display:block;
+	height:50px;
+	width:110px;
+	line-height:50px;
+	color:#A5A5A5;
+}
+.sList a.LR span.info2 em
+{
+	float:left;
+	display:block;
+	width:32px;
+	padding-left:22px;
+}
+.sList a.LR span.info2 em.emImg
+{
+	background:url(/images/img_ico.jpg) left center no-repeat;
+}
+.sList a.LR span.info2 em.emComm
+{
+	background:url(/images/comm_ico.jpg) left center no-repeat;
+}
+.sList a.LR span.price2
+{
+	display:block;
+	float:right;
+	width:80px;
+	height:50px;
+	padding-right:5px;
+	color:#076AC8;
+	line-height:50px;
+	text-align:right;
+}
+.fontBlue2
+{
+	font-size:20px;
+	font-family:Helvetica,Georgia,Arial;
+	font-weight:700;
+}
+.fontBlue3
+{
+	font-size:16px;
+	color:#0060FF;
+	font-weight:700;
+	font-family:Helvetica,Georgia,Arial,sans-serif,"宋体","微软雅黑";
+}
+span.sightTitle
+{
+	width:150px;
+	font-size:14px;
+	color:#545454;
+	font-weight:700;
+}
+span.sightIco
+{
+	width:40px;
+}
+.loading
+{
+	display:block;
+	width:68px;
+	height:18px;
+	margin:50px auto;
+}
+/*分页*/
+#RusultPage
+{
+	float:left;
+	width:100%;
+	height:50px;
+	padding-top:10px;
+}
+.pageContainer span
+{
+	float:right;
+	width:20px;
+	margin-left:8px;
+	font-family:Helvetica,Georgia,Arial,sans-serif;
+	font-size:16px;
+}
+.pageContainer
+{
+	float:right;
+	display:block;
+	width:500px;
+}
+.pageContainer a
+{
+	float:right;
+	display:block;
+	width:20px;
+	height:16px;
+	margin:5px;
+	border:1px solid #d5d5d5;
+	line-height:16px;
+	text-align:center;
+	color:#999;
+	text-decoration:none;
+}
+.pageContainer a:hover
+{
+	background-color:#4bdd00;
+	color:#fff;
+}
+.pageContainer span
+{
+	float:right;
+	display:block;
+	width:20px;
+	height:16px;
+}
+.noresult
+{
+	float:left;
+	width:100%;
+	min-height:200px;
+	margin-top:20px;
+	background:url(/images/404.jpg) left top no-repeat;
+}
+.noresult h1
+{
+	float:left;
+	display:block;
+	width:400px;
+	font-size:16px;
+	margin-left:100px;
+	line-height:25px;
+	color:#F00;
+}
+.noresult h3
+{
+	float:left;
+	display:block;
+	width:420px;
+	margin-top:15px;
+	line-height:18px;
+	font-size:14px;
+	padding-left:120px;
+}
+.noresult p
+{
+	float:left;
+	display:block;
+	width:420px;
+	line-height:25px;
+	font-size:12px;
+	padding-left:120px;
+	
+}
+
+.search_guidTitle
+{
+	float:left;
+	width:100%;
+	margin-top:10px;
+	border-bottom:#E4E4E4 solid 3px;
+}
+.search_guidTitle span
+{
+	display:block;
+	float:left;
+	width:512px;
+	line-height:26px;
+	color:#4C4C4C;
+}
+.search_guidTitle ul
+{
+	float:right;
+	width:417px;
+	height:24px;
+	margin-top:6px;
+	list-style:none;
+	background:url(/images/tab_bg.jpg) no-repeat;
+	color:#fff;
+}
+.search_guidTitle li
+{
+	float:left;
+	width:104px;
+	height:24px;
+	text-align:center;
+	line-height:24px;
+}
+.search_guidTitle li a
+{
+	display:block;
+	width:104px;
+	height:24px;
+	text-decoration:none;
+	color:#fff;
+}
+.search_guidTitle li a:hover
+{
+	font-weight:700;
+}
+/*List*/
+.gridColumn
+{
+	float:left;
+	width:566px;
+	line-height:25px;
+	padding:5px;
+	padding-bottom:0px;
+	background-color:#f8f8f8;
+	border:#DADBD8 1px solid;
+}
+.gridColumn .gridLeft
+{
+	margin-bottom:5px;
+	position:relative;
+	z-index:9;
+}
+.gridColumn .gridLeft li
+{
+	float:left;
+	height:20px;
+	margin-right:5px;
+	background-color:#F6FCFF; 
+	border:1px dotted #B6E0F8;
+	line-height:20px;
+}
+.gridColumn .gridLeft li.onClick
+{
+	border:#DADBD8 1px solid;
+	border-bottom:0px;
+	background-color:#fff;
+	height:25px;
+	z-index:2;
+}
+.gridColumn .gridLeft li.selected
+{
+	background-color:#FFFFD8;
+	margin-bottom:5px;
+}
+.gridColumn .gridLeft li em
+{
+	float:left;
+	padding-left:3px;
+	color:#999;
+}
+.gridColumn .gridLeft li a
+{
+	display:block;
+	float:left;
+	width:60px;
+	background:transparent url(/images/dropdown_2.png) 44px 4px no-repeat;
+}
+.displayMode
+{
+	float:left;
+}
+.displayMode span,.sortMode span
+{
+	float:left;
+	width:60px;
+	height:20px;
+	line-height:20px;
+	color:#999999;
+}
+.displayMode a
+{
+	display:block;
+	float:left;
+	width:79px;
+	height:31px;
+	background:url(/images/tour_TabBg2.jpg) no-repeat;
+	margin-right:5px;
+	line-height:31px;
+	text-align:center;
+	text-decoration:none;
+	color:#000;
+}
+.sortMode
+{
+	float:left;
+	width:130px;
+	height:20px;
+	padding-top:3px;
+	margin-left:20px;
+}
+.sortMode a
+{
+	float:left;
+	display:block;
+	width:16px;
+	height:16px;
+	margin-left:6px;
+	text-decoration:none;
+}
+.sortMode a.s1
+{
+	background:url(/images/mall_list_mode.png) 0px 40px;
+}
+.sortMode a.s2
+{
+	background:url(/images/mall_list_mode.png) 17px 40px;
+}
+.sortMode a.s2
+{
+	background:url(/images/mall_list_mode.png) 17px 40px;
+}
+.sortMode a.s3
+{
+	background:url(/images/mall_list_mode.png) 117px 40px;
+}
+.listContainer
+{
+	float:left;
+	width:100%;
+}
+.listHotelInfo
+{
+	display:block;
+	float:left;
+	width:100%;
+	padding-bottom:20px;
+	padding-top:10px;
+	background:url(/images/guidinfo_bg.jpg) repeat-x bottom;
+} 
+.listHotelInfo h1
+{
+	float:left;
+	width:395px;
+	height:30px;
+	padding-left:5px;
+	font-size:14px;
+	line-height:28px;
+}
+.listHotelInfo h2
+{
+	font-size:12px;
+	line-height:22px;
+	color:#666;
+}
+.listHotelInfo h3
+{
+	float:left;
+	height:30px;
+	width:150px;
+	line-height:28px;
+	color:#0060FF;
+	text-align:right;
+	font-size:14px;
+}
+.listHotelInfo a.aImg img
+{
+	display:block;
+	float:left;
+	width:125px;
+	height:111px;
+	padding:6px;
+	border:#6D6D6D 1px solid;
+}
+.listHotelModel
+{
+	display:block;
+	float:left;
+	width:430px;
+	margin-left:5px;
+}
+.listHotelModel dl
+{
+	float:left;
+	width:100%;
+}
+.listHotelModel dl dt
+{
+	float:right;
+	width:120px!important;
+	width:110px;
+	height:90px;
+	padding-left:10px;
+}
+.listHotelModel dl dt span
+{
+	float:left;
+	width:100%;
+	height:40px;
+	text-align:center;
+	color:#0069CA;
+}
+.listHotelModel dl dd
+{
+	float:left;
+	width:300px;
+}
+.listHotelModel dl dd.dTitle
+{
+	height:22px;
+	line-height:22px;
+	color:#000;
+}
+.listHotelModel dl dd.dTitle a
+{
+	text-decoration:none;
+}
+.listHotelModel dl dd.dTitle a:Link
+{
+	color:#0069CA;
+}
+.listHotelModel dl dd.dTitle a:Hover
+{
+	color:#09F;
+}
+.listHotelModel dl dd.dContent
+{
+	padding-top:3px;
+	line-height:25px;
+}
+.listHotelModel dl dd.dSpecial
+{
+	padding-top:3px;
+	line-height:20px;
+}
+.listHotelPrice
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:26px;
+	font-weight:700;
+	line-height:40px;
+}
+.listRates
+{
+	display:block;
+	float:left;
+	width:65px;
+	height:21px;
+	margin-left:24px;
+	background:url(/images/tour_lookMore.jpg) no-repeat;
+}
+.selectContainer
+{ 
+	position:relative; 
+	margin:0; 
+	border:1px dotted #B6E0F8; 
+	width:131px; 
+	height:19px; 
+	line-height:19px; 
+	background:#fff; 
+	cursor:pointer; 
+	z-index:3; 
+}
+.selectContainer:after { display:block; visibility:hidden; clear:both; height:0; content:"."; }
+.selectTitleText span
+{
+	clear:both;
+	float:left;
+}
+.selectTitleText,.selectTitleTextHover 
+{ 
+	float:left; 
+	margin:0; 
+	padding:0; 
+	text-indent:2px; 
+	overflow:hidden; 
+}
+.selectTitleTextHover { color:#fff; background-color:blue; }
+.selectTitleText { width:106px; height:18px; overflow:hidden; background-color:#fff; color:#666666; }
+.selectTitleLine{ overflow:hidden; }
+.selectButton { float:right; margin:0px; text-align:center; }
+.selectButton img{ vertical-align:bottom; }
+.selectList { clear:both; display:none;position:absolute; left:-1px; border:1px dotted #B6E0F8; width:100%; background-color:#fff; color:#666; z-index:9; }
+selectList li { background-color:white; color:black; }
+.selectList li.onhover { background-color:blue; color:white; }
+.selectContainerRedDot { position:relative; padding:2px 0; border:1px dashed #f90; z-index:10; }
+.conditionList
+{
+	display:none;
+	float:left;
+	width:554px!important;
+	width:552px;
+	padding:5px;
+	padding-top:0px;
+	margin-top:0px;
+	_margin-top:-1px;
+	*margin-top:-1px;
+	margin-bottom:5px;
+	border:#DADBD8 1px solid;
+	background-color:#fff;
+	z-index:1;
+}
+.conditionList a
+{
+	display:block;
+	float:left;
+	width:92px;
+	height:20px;
+	line-height:20px;
+	text-decoration:none;
+	text-align:center;
+}
+.searchInfo
+{
+	float:left;
+	width:100%;
+	height:25px;
+	margin-bottom:10px;
+	background:url(/images/guidinfo_bg.jpg) bottom repeat-x;
+}
+.searchInfo em
+{
+	float:left;
+	width:300px;
+	font-size:14px;
+	color:#009;
+}
+.searchInfo span
+{
+	float:right;
+	width:200px;
+	text-align:right;
+}
+.moreCity
+{
+	float:left;
+}
+.moreCity a.btnCityInfo
+{
+	float:left;
+	display:inline;
+	width:60px;
+	height:22px;
+	padding-left:6px;
+	color:#c60000;
+	line-height:22px;
+	background:url(/images/sprite.jpg) 52px 3px no-repeat;
+	text-decoration:none;
+	text-align:left;
+	font-weight:700;
+}
+.foot_cir
+{
+	padding-top:10px;
+}
+.foot_cir .title
+{
+	display:inline;
+	float:left;
+	position:relative;
+	width:91px;
+	height:21px;
+	padding-left:20px;
+	background:url(/images/itsbg.gif.jpg) left top no-repeat;
+	color:#ff6c00;
+	font:bold 12px Arial,Helvetica,sans-serif;
+	line-height:21px;
+}
+.foot_cir ul
+{
+	clear:left;
+	float:left;
+	width:948px;
+	padding:6px 0 6px 10px;
+	background-color:#fff;
+	border:1px solid #d9d9d9;
+	margin-top:-1px;
+}
+.foot_cir ul li
+{
+	float:left;
+	line-height:20px;
+	width:105px;
+}
+.foot_cir ul li a
+{
+	color:#555555;
+	text-decoration:none;
+}
+
+
+/*分页控件样式2*/
+.indexPage
+{
+	display:inline;
+	width:668px;
+}
+.indexPage em 
+{
+    float:left;
+    margin-top:2px;
+}
+
+.Pagecon
+{
+     float:right;
+          padding:5px 0;
+          margin-right:10px;
+}
+
+.Pagecon a,.Pagecon span
+{
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+.Pagecon a
+{
+    border:1px solid #CCDBE4;
+	color:#0061DE;
+	font-family:Arial,Helvetica,sans-serif;
+	line-height:16px;
+	margin-right:2px;
+	padding:3px 8px;
+	text-decoration:none;
+     }
+     .Pagecon a:hover
+{
+	background-color:#3666D4;
+	border:1px solid #2B55AF;
+	color:#FFFFFF;	
+}
+.Pagecon span {
+	color:#000000;
+	font-weight:bold;
+	margin-right:3px;
+	padding:3px 8px;
+
+}
+
+/*分页控件样式2*/
+/*
+.indexPage
+{
+	display:inline;
+	float:left;
+	width:668px;
+	margin-top:10px;
+	padding-left:10px;
+}
+.indexPage em,.indexPage a,.indexPage span
+{
+	display:inline;
+	float:right;
+	padding:4px 0px;
+}
+.indexPage em
+{
+	float:left;
+}
+.indexPage a,.indexPage span
+{
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.indexPage span {
+	color:#000000;
+	font-weight:bold;
+	margin-right:3px;
+	padding:3px 8px;
+}
+.indexPage a
+{
+	border:1px solid #CCDBE4;
+	color:#0061DE;
+	font-family:Arial,Helvetica,sans-serif;
+	line-height:16px;
+	margin-right:3px;
+	padding:3px 8px;
+	text-decoration:none;
+}
+.indexPage a:hover
+{
+	background-color:#3666D4;
+	border:1px solid #2B55AF;
+	color:#FFFFFF;	
+}
+*/
+
+
+
+
+
+.sight_ditu_con
+{
+	float:left;
+	width:100%;
+}
+.sight_ditu
+{
+	height:329px;
+	border:1px solid #E5E5E5;
+	overflow:hidden;
+}
+.sight_ditu_top
+{
+	height:24px;
+	border-bottom:1px solid #E5E5E5;
+	color:#666666;
+	line-height:24px;
+	padding-left:5px;
+}
+.sight_ditu_top label {
+	float:left;
+}
+.sight_ditu_top a {
+	float:right;
+	cursor:pointer;
+	padding-right:5px;
+}
+.sight_ditu_top input {
+	margin:0 3px;
+	vertical-align:middle;
+}
+.sightMap
+{
+	position:relative;
+	float:left;
+	width:244px;
+	height:305px;
+	overflow:hidden;
+}
+#mapContainer
+{
+	float:left;
+	height:305px;
+	position:relative;
+}

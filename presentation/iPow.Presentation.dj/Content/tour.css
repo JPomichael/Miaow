@@ -1,0 +1,1633 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.mainContainer
+{
+	width:960px;
+	padding:0 20px;
+	margin-right:auto;
+	margin-left:auto;
+	background:#fff;
+}
+em{
+	font-style:normal;
+}
+.trip_LeftContainer
+{
+	float:left;
+	width:680px;
+	margin-top:10px;
+}
+.trip_RightContainer
+{
+	float:right;
+	width:265px;
+	margin-top:10px;
+}
+.tourTitle
+{
+	float:left;
+	width:100%;
+	background-color:#f8f8f8;
+	border:#DADBD8 1px solid;
+}
+.titleLeft
+{
+	float:left;
+	width:524px;
+	color:#0069CA;
+	font-size:14px;
+	text-align:left;
+}
+.titleLeft h1,.titleLeft h2
+{
+	display:block;
+	padding:4px 5px;
+}
+.titleLeft h1
+{
+	font-size:14px;
+	height:25px;
+}
+.titleLeft h2
+{
+	font-size:12px;
+	padding-top:0px;
+	color:#595959;
+}
+.tourTitle em
+{
+	display:block;
+	float:left;
+	width:34px;
+	height:60px;
+	background:url(../images/ico_x.jpg) no-repeat center;
+}
+.tourTitle span
+{
+	float:left;
+	width:120px;
+	height:40px;
+	padding-top:20px;
+	line-height:40px;
+	color:#0069CA;
+}
+.tourTab
+{
+	float:left;
+	width:100%;
+	height:33px;
+	padding-top:10px;
+	border-bottom:#807F7F 1px solid;
+	font-size:14px;
+}
+.tourTip
+{
+	float:left;
+	width:100%;
+	height:27px;
+	margin-top:20px;
+	background:url(../images/tipBG.jpg) repeat-x;
+}
+.tourTip h2
+{
+	display:block;
+	float:left;
+	width:100px;
+	height:27px;
+	background:#fff url(../images/tipLeft.jpg) no-repeat;
+	padding-left:20px;
+	font-size:14px;
+	color:#C9CFD2;
+	line-height:27px;
+}
+.tourTip em
+{
+	display:block;
+	float:right;
+	width:55px;
+	height:27px;
+	color:#fff;
+	background:url(../images/tipRight.jpg) right no-repeat;
+}
+.tourTab div.spLeft
+{
+	float:left;
+	width:505px;
+	height:31px;
+	margin-top:2px;
+	margin-left:5px;
+	overflow:hidden;
+}
+.tourTab span.leftSlide
+{
+	float:left;
+	width:21px;
+	height:23px;
+	margin-top:3px;
+	background:url(../images/leftSplit.jpg) no-repeat;
+	display:none;
+	cursor:pointer;
+}
+.tourTab span.rightSlide
+{
+	float:left;
+	width:21px;
+	height:23px;
+	margin-top:3px;
+	background:url(../images/rightSplit.jpg) no-repeat;
+	display:none;
+	cursor:pointer;
+}
+.tourTab div.spLeft a
+{
+	display:block;
+	float:left;
+	width:79px;
+	height:28px;
+	padding-top:4px;
+	background:url(../images/tour_TabBg2.jpg) no-repeat;
+	margin-right:5px;
+	line-height:28px;
+	text-align:center;
+	text-decoration:none;
+	color:#fff;
+}
+.tourTab div.spLeft a:hover
+{
+	background:url(../images/tour_TabBg1.jpg) no-repeat;
+	color:#fff;
+}
+.tourTab div.spLeft a.current
+{
+	background:url(../images/tour_TabBg1.jpg) no-repeat;
+	color:#fff;
+}
+.tourTab div.spRight
+{
+	float:right;
+	display:block;
+	width:150px;
+	height:31px;
+	margin-top:2px;
+	margin-right:5px;
+	text-align:right;
+	background:url(/images/tourOprationBG.jpg) bottom repeat-x;
+}
+.tourTab div.spRight em
+{
+	display:block;
+}
+.tourTab div.spRight span
+{
+	float:left;
+	width:144px;
+	height:28px;
+	padding-top:3px;
+	text-align:center;
+	color:#B9B9B9;
+	font-weight:normal;
+}
+.tourTab div.spRight span a
+{
+	color:#B9B9B9;
+	text-decoration:none;
+	font-weight:normal;
+}
+.tourTab div.spRight span a:hover
+{
+	color:#fff;
+}
+.tourTab div.spRight em.emLeft
+{
+	float:left;
+	width:3px;
+	background:#fff url(../images/oprationLeft.jpg) no-repeat;
+}
+.tourTab div.spRight em.emRight
+{
+	float:right;
+	width:3px;
+	background:#fff url(../images/oprationRight.jpg) no-repeat;
+}
+.tourContainer,.insetContainer,.iPowContainer
+{
+	float:left;
+	width:100%;
+	text-align:left;
+}
+.tourContainer
+{
+	display:none;
+}
+.insetContainer
+{
+	width:688px;
+	border:1px solid #696969;
+	padding:10px 5px 0px 5px;
+	border-top:0px;
+	background-color:#E3EDF2;
+}
+.infoContent
+{
+	float:left;
+	width:668px;
+	padding:10px;
+	border-bottom:5px solid #E3EDF2;
+	background-color:#fff;
+} 
+.infoContent a.aImg
+{
+	float:left;
+	width:137px;
+	height:123px;
+	background-color:#E5E5E5;
+	border:#C3C3C3 1px solid;
+	text-decoration:none;
+}
+.infoContent a.aImg img
+{
+	display:block;
+	float:left;
+	width:125px;
+	height:111px;
+	padding:6px;
+	border:0px;
+}
+.tourInfo
+{
+	display:block;
+	float:left;
+	width:516px;
+	margin-left:10px;
+}
+.tourInfo h3
+{
+	float:left;
+	width:380px;
+	height:25px;
+	color:#0060FF;
+	font-size:14px;
+	line-height:25px;
+}
+.tourInfo h3 a
+{
+	text-decoration:none;
+	color:#0060FF;
+}
+.tourInfo dl
+{
+	float:left;
+	width:100%;
+}
+.tourInfo dl dt
+{
+	float:right;
+	width:120px!important;
+	width:110px;
+	height:90px;
+	padding-left:10px;
+}
+.tourInfo dl dt span
+{
+	float:left;
+	width:100%;
+	height:40px;
+	text-align:center;
+	color:#0069CA;
+}
+.tourInfo dl dd
+{
+	float:left;
+	width:385px;
+}
+.tourInfo dl dd.dTitle
+{
+	height:22px;
+	line-height:22px;
+	color:#000;
+}
+.tourInfo dl dd.dTitle a
+{
+	text-decoration:none;
+}
+.tourInfo dl dd.dTitle a:Link
+{
+	color:#0069CA;
+}
+.tourInfo dl dd.dTitle a:Hover
+{
+	color:#09F;
+}
+.tourInfo dl dd.dContent
+{
+	padding-top:3px;
+	line-height:25px;
+}
+.tourInfo dl dd.dSpecial
+{
+	padding-top:3px;
+	line-height:20px;
+}
+.aLookMore
+{
+	display:block;
+	float:left;
+	width:84px;
+	height:23px;
+	margin-left:16px!important;
+	_margin-left:8px;
+	text-decoration:none;
+	color:#000;
+	line-height:23px;
+	text-align:center;
+	background:url(../images/btnGray.jpg) no-repeat;
+}
+.aDeleteSight,.aDeleteHotel
+{
+	display:block;
+	float:left;
+	width:84px;
+	height:23px;
+	margin-left:16px!important;
+	_margin-left:8px;
+	text-decoration:none;
+	color:#fff;
+	line-height:23px;
+	text-align:center;
+	margin-top:4px;
+	background:url(../images/btnRed.jpg) no-repeat;
+}
+.fPrice
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:26px;
+	font-weight:700;
+}
+.infoContent p
+{
+	margin:0px;
+	padding:0px;
+	width:100%;
+	line-height:25px;
+	text-indent:20px;
+}
+
+.rightMap
+{
+	position:relative;
+	float:left;
+	width:234px;
+	height:224px;
+	margin-left:7px;
+	border:1px solid #A2A0A0;
+	border-top:0px;
+}
+.rightGuid,.weatherGuid
+{
+	float:left;
+	width:236px;
+	height:55px;
+	margin-left:7px;
+	margin-top:10px;
+	background:url(../images/wearthTop.jpg) no-repeat;
+	color:#595959;
+	font-size:14px;
+	text-align:left;
+}
+.weatherGuid
+{
+	height:30px;
+}
+.rightGuid h2,.weatherGuid h2
+{
+	float:left;
+	width:232px;
+	padding-left:10px;
+	font-size:14px;
+	line-height:30px;
+}
+.weatherGuid h2
+{
+	width:100px;
+}
+.weatherGuid a
+{
+	display:block;
+	float:right;
+	width:80px;
+	height:30px;
+	padding-right:5px;
+	text-decoration:none;
+	text-align:right;
+	font-size:12px;
+	line-height:30px;
+	
+}
+.tour_RightTip
+{
+	float:left;
+	width:236px;
+	height:24px;
+	margin-left:7px;
+	margin-top:10px;
+	background:url(../images/rightTipBg.jpg) no-repeat;
+}
+.tour_RightTip h3
+{
+	display:block;
+	float:left;
+	width:200px;
+	height:16px;
+	padding:0px;
+	margin:0px;
+	margin-top:6px;
+	font-size:12px;
+	color:#fff;
+	text-align:left;
+	padding-left:10px;
+	font-weight:normal;
+	line-height:16px;
+}
+.rightmapTab
+{
+	float:left;
+	width:234;
+	border-left:1px solid #A2A0A0;
+	margin-left:7px;
+	line-height:23px;
+}
+.rightmapTab p
+{
+	margin:0px;
+	padding:10px;
+	text-align:left;
+}
+.rightmapTab a,.rightmapTab a.current
+{
+	float:left;
+	display:block;
+	width:77px;
+	height:23px;
+	text-align:center;
+	border:solid #A2A0A0;
+	border-width:0px 1px 1px 0px;
+	text-decoration:none;
+	color:#848484;
+}
+.rightmapTab a.cirTab:hover,.rightmapTab a.current
+{
+	background-color:#4bdd00;
+	color:#fff;
+}
+.rightCirList
+{
+	float:left;
+	width:234px;
+	border:solid #A2A0A0;
+	margin-left:7px;
+	border-width:0px 1px;
+	color:#848484;
+	text-align:left;
+}
+.cirPaging
+{
+	float:left;
+	width:234px;
+	border:solid #A2A0A0;
+	margin-left:7px;
+	border-width:0px 1px 1px 1px;
+	color:#848484;
+	text-align:right;
+	display:none;
+}
+.rightCirList ul
+{
+	margin:0px;
+	padding:0px;
+}
+.rightCirList ul li
+{
+	float:left;
+	width:100%;
+	height:24px;
+	border-bottom:1px solid #A2A0A0;
+}
+.rightCirList ul li a
+{
+	display:block;
+	float:left;
+	width:199px;
+	height:24px;
+	line-height:24px;
+	color:#848484;
+	text-decoration:none;
+}
+.rightCirList ul li a img
+{
+	float:left;
+	display:block;
+	width:13px;
+	height:13px;
+	padding:5px 4px;
+}
+.rightCirList ul li a span.title
+{
+	float:left;
+	display:block;
+	width:122px;
+	height:24px;
+	overflow:hidden;
+	text-align:left;
+	cursor:pointer;
+}
+.rightCirList ul li a em
+{
+	float:right;
+	width:56px;
+	text-align:left;
+	color:#0060ff;
+	font-family:Arial;
+	cursor:pointer;
+}
+.rightCirList ul li span.tourAddInfo
+{
+	display:block;
+	float:left;
+	width:33px;
+	height:15px;
+	margin-top:4px;
+	background:url(../images/tour_AddInfo.jpg) no-repeat;
+	cursor:pointer;
+}
+.rightCirList p
+{
+	padding:0px 2px;
+	line-height:24px;
+	margin:0px;
+}
+.rightGuid ul
+{
+	width:242px;
+	height:25px;
+	margin:0px;
+	padding:0px;
+	z-index:3;
+	
+}
+.rightGuid ul li
+{
+	float:left;
+	width:55px;
+	margin-left:5px;
+	text-align:center;
+	font-size:12px;
+}
+.rightGuid ul li.current
+{
+	background-color:#F8F6E7;
+	border:1px solid #DADADA;
+	border-bottom:none;
+}
+.rightGuid ul li a
+{
+	text-decoration:none;
+}
+.rightToolPanel,.weatherPanel
+{
+	float:left;
+	width:236px;
+	height:79px;
+	margin-top:-1px;
+	margin-left:7px;
+	background-color:#F8F6E7;
+	background:url(../images/weatherBot.jpg) left no-repeat;
+	border-top:none;
+	overflow:hidden;
+}
+.weatherPanel
+{
+	height:75px;
+	padding-top:4px;
+}
+/*added by yjihrp 2011.7.29.13.47*/
+.searchRightAll
+{
+    margin-left:7px;  width: 236px; overflow:hidden; float:left;
+    }
+.searchRightAll .head
+{
+    background: url('/images/weatherBot_head.gif') no-repeat; float: left;
+        width: 236px; height: 3px; border: none;
+}
+    
+.searchRightAll .mid
+{
+    background: url('/images/weatherBot_mid.gif') repeat-y; width: 100%;
+        float: left; height: 180px;  
+}  
+ 
+.searchRightAll .mid a
+{
+   padding-left:7px;
+   line-height:20px;
+}  
+
+.searchRightAll .bottom
+  {
+      background: url('/images/weatherBot_bottom.gif') no-repeat; float: left;
+        width: 100%; height: 6px;
+}
+/*end added by yjihrp 2011.7.29.13.47*/
+
+.rightToolPanel
+{
+	height:125px;
+	border:none;
+	border-left:1px solid #DADADA;
+	border-right:1px solid #DADADA;
+}
+.rightToolPanel a
+{
+	display:block;
+	width:100%;
+	height:24px;
+	border-bottom:1px solid #d5d5d5;
+	line-height:24px;
+	color:#848484;
+	text-decoration:none;
+}
+.rightToolPanel a:hover
+{
+	background-color:#f0f0f0;
+}
+.rightToolPanel a img
+{
+	float:left;
+	display:block;
+	width:13px;
+	height:13px;
+	padding:5px 4px;
+}
+.rightToolPanel a span
+{
+	float:left;
+	display:block;
+	width:164px;
+	text-align:left;
+	cursor:pointer;
+}
+.rightToolPanel a em
+{
+	float:right;
+	width:50px;
+	text-align:left;
+	color:#0060ff;
+	font-family:Arial;
+	cursor:pointer;
+}
+.cirPage
+{
+	float:left;
+	width:240px;
+	height:25px;
+	background-color:#F8F6E7;
+	border:1px solid #DADADA;
+	border-top:none;
+}
+
+.searchPanel
+{
+	float:left;
+	width:680px;
+}
+.panelTop
+{
+	float:left;
+	height:6px;
+	width:100%;
+	background:url(../images/search_PanelTop.jpg) 0px top no-repeat;
+	font-size:1px;
+}
+.pannelBottom
+{
+	float:left;
+	height:12px;
+	width:100%;
+	background:url(../images/search_PanelBottom.jpg) 0px top no-repeat;
+}
+.pannelMid
+{
+	float:left;
+	width:678px;
+	border:solid #E0DDF2;
+	border-width:0px 1px;
+}
+.pannelTitle
+{
+	float:left;
+	width:100%;
+	height:34px;
+	background:url(../images/panel_titleBG.jpg) center no-repeat;
+	color:#676767;
+	line-height:34px;
+}
+.pannelTitle h2,.hotAreaTitle h2
+{
+	display:block;
+	float:left;
+	width:150px;
+	height:34px;
+	padding-left:10px;
+	font-size:14px;
+	line-height:34px;
+	
+}
+.pannelTitle span
+{
+	display:block;
+	float:right;
+	padding-right:10px;
+	line-height:34px;
+}
+.pannelContainer
+{
+	float:left;
+	width:633px;
+	padding-left:16px;
+	padding-bottom:10px;
+	line-height:28px;
+}
+.pannelContainer span.lineText p
+{
+	display:block;
+	float:left;
+	width:100%;
+	height:25px;
+	line-height:25px;
+	margin:0px;
+	padding:0px;
+	color:#F00;
+}
+.pannelContainer label
+{
+	display:block;
+	float:left;
+	width:80px;
+	height:28px;
+	margin-top:13px;
+	text-align:right;
+	color:#0061FC;
+	font-weight:700;
+}
+.pannelContainer span.lineText
+{
+	float:left;
+	width:520px;
+	margin-top:10px;
+}
+.pannelContainer span.lineText1
+{
+	float:left;
+	width:180px;
+	margin-top:10px;
+}
+.inputText5
+{
+	float:left;
+	height:26px;
+	width:366px;
+	padding-left:3px;
+	border:0px;
+	line-height:24px;
+	color:#676767;
+	margin-top:5px;
+	background:url(../images/search_inputBG2.gif) no-repeat;
+}
+.pannelContainer a.trip_search
+{
+	display:block;
+	float:right;
+	width:125px;
+	height:36px;
+	background:url(../images/search_ico.gif) no-repeat;
+}
+.help_Tools
+{
+	float:left;
+	width:235px;
+	height:25px;
+	padding-left:25px;
+	background:url(../images/help.jpg) 0px 2px no-repeat;
+	line-height:25px;
+}
+.containerTitle
+{
+	float:left;
+	width:100%;
+}
+.rightBtnList
+{
+	float:left;
+	width:100%;
+	height:80px;
+}
+.containerTitle span,.hotSight span
+{
+	float:left;
+	width:100%;
+	background-color:#DBDBDB;
+	font-size:14px;
+	color:#595959;
+	line-height:28px;
+	font-weight:700;
+	text-indent:5px;
+}
+.hotSight span
+{
+	background-color:#008398;
+	color:#fff;
+}
+.hotSight
+{
+	float:left;
+	width:100%;
+	margin-top:10px;
+}
+
+/*行程表*/
+#hodometerContainer
+{
+	position:relative;
+	width:958px;
+	top:10px;
+	background-color:#FFF;
+	border:#D5D5D5 1px solid;
+	margin-bottom:5px;
+	z-index:999;
+	display:none;
+	behavior:url(#default#userdata);
+}
+.hodometerInfo
+{
+	float:left;
+	width:100%;
+	height:88px;
+	border-bottom:#D5D5D5 1px solid;
+}
+.hodometerDay
+{
+	float:left;
+	width:164px;
+	height:88px;
+	overflow:hidden;
+	border-right:1px dotted #777777;
+}
+.hodometerDay h2
+{
+	display:block;
+	float:left;
+	width:100%;
+	height:32px;
+	line-height:32px;
+	color:#17A500;
+	font-size:14px;
+	text-align:center;
+}
+.hodometerDay span
+{
+	float:left;
+	width:100%;
+	height:56px;
+}
+.hodometerDay span a
+{
+	display:block;
+	float:left;
+	height:18px;
+	width:18px;
+	border:1px solid #17A500;
+	text-decoration:none;
+	color:#17A500;
+	margin-left:6px;
+	margin-top:5px;
+	line-height:18px;
+	text-align:center;
+}
+.hodometerDay span a.current,.hodometerDay span a:hover
+{
+	background-color:#17A500;
+	color:#fff;
+}
+.hodometerSight,.hodometerHotels
+{
+	float:left;
+	width:276px;
+	height:88px;
+	overflow:hidden;
+	border-right:1px dotted #777777;
+}
+.hodometerSightTop,.hodometerHotelsTop
+{
+	float:left;
+	width:100%;
+	height:32px;
+}
+.hodometerSightTop h2,.hodometerHotelsTop h2
+{
+	display:block;
+	float:left;
+	width:60px;
+	height:32px;
+	line-height:32px;
+	font-size:12px;
+	color:#17A500;
+	padding-left:5px;
+}
+.hodometerSightTop em
+{
+	display:block;
+	float:right;
+	width:210px;
+	height:32px;
+	line-height:32px;
+
+}
+.hodometerSightTop em a
+{
+	display:block;
+	float:left;
+	width:16px;
+	height:16px;
+	margin-top:8px;
+	margin-right:2px!important;
+	margin-right:1px;
+	color:#575757;
+	text-decoration:none;
+	text-align:center;
+	line-height:16px;
+}
+.hodometerSightTop em a.current1
+{
+	background-color:#4BDD00;
+	color:#fff;
+}
+.hodometerSightBot,.hodometerHotelsBot
+{
+	float:left;
+	width:266px;
+	height:46px;
+	padding:5px 5px;
+
+}
+.hodometerSightBot span
+{
+	display:block;
+	float:left;
+	width:100%;
+	height:36px;
+	overflow:hidden;
+}
+.hodometerSightBot span a
+{
+	display:block;
+	float:left;
+	width:133px;
+	height:36px;
+	text-decoration:none;
+	outline:none;
+}
+.hodometerSightBot span a:hover
+{
+	background-color:#efefef;
+}
+.hodometerSightBot a img
+{
+	display:block;
+	float:left;
+	width:32px;
+	height:32px;
+	padding:1px;
+	border:#555555 1px solid;
+}
+.hodometerSightBot a em,.hodometerSightBot a h3
+{
+	display:block;
+	float:right;
+	width:94px;
+	height:18px;
+	line-height:18px;
+	color:#575757;
+	overflow:hidden;
+}
+.hodometerSightBot a h3
+{
+	float:left;
+	width:76px;
+	color:#17A500;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+.hodometerSightBot a h4
+{
+	display:none;
+	float:right;
+	width:18px;
+	height:18px;
+	background:url(../images/ico_delete.gif) center center no-repeat;
+}
+.hodometerHotelsBot span
+{
+	display:block;
+	float:left;
+	width:100%;
+	height:50px;
+}
+.hodometerHotelsBot span h3
+{
+	display:block;
+	float:left;
+	width:180px;
+	height:20px;
+	line-height:20px;
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+}
+.hodometerHotelsBot span em
+{
+	float:right;
+	width:80px;
+	line-height:20px;
+	text-align:center;
+	color:#17A500;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:700;
+}
+.hodometerHotelsBot span p
+{
+	float:left;
+	width:100%;
+	height:25px;
+	padding:0px;
+	margin:0px;
+	color:#A7A7A7;
+	line-height:25px;
+}
+.hodometerBottom
+{
+	float:left;
+	width:100%;
+	height:25px;
+}
+.hodometerBottom span
+{
+	float:left;
+	margin-left:5px;
+	width:500px;
+	line-height:25px;
+}
+.hodometerMap
+{
+	float:left;
+	width:100%;
+	border-top:#D5D5D5 1px solid;
+}
+.hodometerHotel
+{
+	float:left;
+	width:270px;
+	height:180px;
+	border-right:#D5D5D5 1px solid;
+}
+.hodometerHotel h3
+{
+	float:left;
+	display:block;
+	height:22px;
+	width:100%;
+	background-color:#D5D5D5;
+	font-size:12px;
+	color:#fff;
+	line-height:22px;
+	text-indent:5px;
+}
+.hodometerHotelList
+{
+	float:left;
+	width:100%;
+	height:150px;
+	overflow:hidden;
+}
+.hodometerMapShow
+{
+	float:right;
+	width:686px;
+	height:180px;
+}
+.hodometerMapC
+{
+	float:left;
+	width:686px; 
+	height:180px;
+}
+.hodometerHotelList span.addHotel
+{
+	float:left;
+	width:50px;
+	text-align:center;
+	line-height:22px;
+	cursor:pointer;
+}
+.hodometerHotelList a
+{
+	display:block;
+	float:left;
+	width:220px;
+	height:22px;
+	line-height:22px;
+	text-decoration:none;
+	overflow:hidden;
+}
+.hodometerHotelList a img
+{
+	float:left;
+	display:block;
+	width:13px;
+	height:13px;
+	margin-top:3px;
+	margin-left:3px;
+}
+.hodometerHotelList a span
+{
+	display:block;
+	float:left;
+	width:150px;
+	line-height:22px;
+	margin-left:3px;
+	color:#848484;
+	overflow:hidden;
+}
+.hodometerHotelList a em
+{
+	display:block;
+	float:right;
+	width:50px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.hodometerMapTool
+{
+	float:left;
+	width:100%;
+	height:20px;
+	background-color:#D5D5D5;
+}
+.hodometerMapTool span.left
+{
+	display:block;
+	float:left;
+	width:270px;
+	height:20px;
+}
+.hodometerMapTool span.left a
+{
+	display:block;
+	float:right;
+	width:50px;
+	margin-left:10px;
+	height:20px;
+	line-height:20px;
+	text-align:center;
+	text-decoration:none;
+}
+.hodometerMapTool span.right
+{
+	display:block;
+	float:right;
+	width:120px;
+}
+.hodometerMapTool span.right a
+{
+	display:block;
+	float:right;
+	width:30px;
+	height:20px;
+	margin-right:5px;
+	text-decoration:none;
+	line-height:20px;
+}
+.hodometerMapTool span.right a.toHide
+{
+
+}
+.fontBlue
+{
+	color:#0060FF;
+	font-weight:700;
+}
+.hodometerBottom a
+{
+	display:block;
+	float:right;
+	height:20px;
+	margin-right:5px;
+	margin-top:3px;
+	color:#fff;
+	text-align:center;
+	line-height:20px;
+	text-decoration:none;
+}
+.hodometerBottom a.hodometerSave
+{
+	width:44px;
+	background:url(../images/btn_bg.jpg) -101px center no-repeat;
+}
+.hodometerBottom a.hodometerLook
+{
+	width:94px;
+	background:url(../images/btn_bg.jpg) 0px center no-repeat;
+}
+.hodometeAmount
+{
+	float:right;
+	width:140px;
+	height:88px;
+}
+.hodometeAmount h2
+{
+	display:block;
+	float:left;
+	width:100%;
+	height:25px;
+	margin-top:10px;
+	font-size:12px;
+	color:#17A500;
+	text-align:center;
+	line-height:25px;
+}
+.hodometeAmount em
+{
+	display:block;
+	float:left;
+	width:100%;
+	height:45px;
+	text-align:center;
+	color:#17A500;
+	font-size:22px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:700;
+	line-height:45px;
+	
+}
+
+
+
+
+.leftContainer
+{
+	float:left;
+	width:700px;
+	margin-top:10px;
+}
+.rightContainer
+{
+	float:right;
+	width:252px;
+	margin-top:10px;
+	background:url(../images/tourRightBg.jpg) left top no-repeat;
+}
+
+/*打印样式*/
+.printTitle
+{
+	width:860px;
+	height:72px;
+	margin:0px auto;
+	border:1px solid #D9D9D9;
+	background-color:#FFCC00;
+}
+.printTitle h1
+{
+	display:block;
+	float:left;
+	width:470px;
+	height:72px;
+	padding-left:12px;
+	line-height:72px;
+	color:#616161;
+	font-size:20px;
+}
+.printTitle em
+{
+	display:block;
+	float:left;
+	width:32px;
+	height:72px;
+	background:url(../images/bias.jpg) center center no-repeat;
+}
+.printTitle span
+{
+	display:block;
+	float:left;
+	height:72px;
+	text-align:center;
+	line-height:72px;
+	font-size:26px;
+	color:#616161;
+}
+.printTitle span.daynum
+{
+	width:88px;
+}
+.printTitle span.cost
+{
+	width:220px;
+}
+.printTitle span.cost b
+{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#0069CA;
+}
+.printContent
+{
+	width:860px;
+	margin:20px auto;
+}
+.printContentL
+{
+	float:left;
+	width:120px;
+}
+.printContentL span
+{
+	float:left;
+	width:106px;
+	height:101px;
+	text-align:center;
+	line-height:101px;
+	background-color:#616161;
+	color:#fff;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:30px;
+	font-weight:700;
+}
+.printContentR
+{
+	float:right;
+	width:728px;
+	border:1px solid #D9D9D9;
+	background-color:#FFFABE;
+}
+.printRTitle
+{
+	float:left;
+	width:100%;
+}
+.printRTitle h2
+{
+	display:block;
+	width:118px;
+	height:29px;
+	padding-left:10px;
+	background-color:#616161;
+	line-height:29px;
+	color:#FAF5BD;
+	font-size:18px;
+}
+.printInfos
+{
+	float:left;
+	width:355px;
+	height:50px;
+	margin:10px 0px 10px 9px;
+}
+.printInfos span.number
+{
+	float:left;
+	height:24px;
+	width:20px;
+	padding-right:2px;
+	margin-top:4px;
+	margin-right:6px;
+	background:url(../images/numBG.jpg) left top no-repeat;
+	text-align:center;
+	line-height:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#fff;
+}
+.printInfos span.sight,.printInfos span.hotel
+{
+	float:left;
+	width:327px;
+	height:50px;
+}
+.printInfos span.sight h3,.printInfos span.hotel h3
+{
+	display:block;
+	float:left;
+	width:261px;
+	height:28px;
+	line-height:28px;
+	color:#0060FF;
+	font-size:14px;
+}
+.printInfos span em
+{
+	float:left;
+	width:54px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+	color:#0069CA;
+	font-size:18x;
+	font-weight:700;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.printInfos h4
+{
+	float:left;
+	display:block;
+	width:100%;
+	height:22px;
+	line-height:22px;
+	font-size:12px;
+	color:#616161;
+	margin:0px;
+	padding:0px;
+}
+.printInfos span.hotel
+{
+	margin-left:28px;
+}
+.printInfos span.hotel h3
+{
+	color:#D5B817;
+}
+
+
+.tourSearchLeft
+{
+	float:left;
+	width:700px;
+}
+.tourSearchRight
+{
+	float:right;
+	width:242px;
+	height:400px;
+}
+.tourSearchTip
+{
+	width:680px;
+	padding:10px;
+	padding-bottom:0px;
+	border-bottom:1px solid #E8E8E8;
+	line-height:28px;
+}
+
+/*added by vivi */
+.tourSearchTip span{ float:left; }
+.tourSearchTip a{ float:right; margin-right:-10px; }
+/*end added by vivi */
+
+.tourSearchList
+{
+	float:left;
+	width:100%;
+}
+.tourSearchList a.tripList
+{
+	display:block;
+	float:left;
+	width:680px;
+	padding:10px;
+	outline:none;
+	text-decoration:none;
+	background:url(../images/xu.jpg) bottom repeat-x;
+}
+.tourSearchList a.tripList:hover
+{
+	background-color:#F3F3F3;
+}
+.tourSearchList a.tripList img
+{
+	display:block;
+	float:left;
+	width:128px;
+	height:114px;
+	padding:5px;
+	margin-right:10px;
+	border:1px solid #C3C3C3;
+	background-color:#E5E5E5;
+}
+.tourSearchList a.tripList h3
+{
+	display:block;
+	float:left;
+	color:#0060FF;
+	line-height:30px;
+	font-size:14px;
+}
+.tourSearchList a.tripList dl
+{
+	float:left;
+	width:530px;
+}
+.tourSearchList a.tripList dl dt
+{
+	float:right;
+	width:120px!important;
+	width:110px;
+	height:90px;
+	padding-left:10px;
+}
+.tourSearchList a.tripList dl dt span
+{
+	float:left;
+	width:100%;
+	height:40px;
+	text-align:center;
+	color:#0069CA;
+}
+.tourSearchList a.tripList dl dt em
+{
+	float:left;
+	width:100%;
+	height:28px;
+	background:url(../images/tour_lookMore.jpg) center center no-repeat;
+}
+.tourSearchList a.tripList dl dd
+{
+	float:left;
+	width:400px;
+	line-height:24px;
+	color:#393939;
+}
+.tourSearchList p
+{
+	padding:30px;
+	width:400px;
+	line-height:25px;
+}
+.filterPane
+{
+	float:left;
+	width:958px;
+	margin-top:10px;
+	background-color:#FFF;
+	border:1px solid #D5D5D5;
+}
+.tbFilter h2
+{
+	height:25px;
+	padding:0px;
+	padding-left:10px;
+	margin-bottom:4px;
+	background:#E5E5E5 url(../images/filterPanel_header_bg.gif) 4px center no-repeat;
+	font-size:12px;
+	line-height:26px;
+	color:#666;
+}
+.tbFilter p
+{
+	display:block;
+	float:left;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	line-height:20px;
+}
+.tbFilter p b
+{
+	display:block;
+	width:31px;
+	float:left;
+	text-align:right;
+	font-weight:normal;
+	line-height:20px;
+}
+.tbFilter td
+{
+	vertical-align:top;
+}
+.tbFilter p span.item
+{
+	display:inline;
+	float:left;
+	margin:0px 5px;
+}
+.tbFilter ul.grid
+{
+	float:left;
+	width:100%;
+}
+.tbFilter ul.grid li
+{
+	float:left;
+	width:120px;
+}
+
+.tresultInfo
+{
+	color:#0060FF;
+}
