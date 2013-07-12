@@ -1,0 +1,7 @@
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Function\bin\Debug\iPow.Crosscutting.Function.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Function\bin\Debug\iPow.Crosscutting.Function.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Function\bin\Debug\Dimac.JMail.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Function\bin\Debug\Dimac.JMail.Smtp.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Function\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Function\obj\Debug\iPow.Crosscutting.Function.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Function\obj\Debug\iPow.Crosscutting.Function.pdb

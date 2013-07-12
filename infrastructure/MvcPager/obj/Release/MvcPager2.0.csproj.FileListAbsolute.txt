@@ -1,0 +1,15 @@
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\MvcPager.dll
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\MvcPager.dll
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\MvcPager.dll
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\MvcPager.dll
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\MvcPager.pdb
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\MvcPager.dll
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\MvcPager.pdb
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\MvcPager.dll
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Release\MvcPager.pdb

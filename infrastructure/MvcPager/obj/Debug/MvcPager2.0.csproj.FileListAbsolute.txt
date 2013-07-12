@@ -1,0 +1,35 @@
+E:\Dev\WorkWeb\ipow\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.dll
+E:\Dev\WorkWeb\ipow\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.pdb
+E:\Dev\WorkWeb\ipow\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb\ipow\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.dll
+E:\Dev\WorkWeb\ipow\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.dll
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.dll
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.pdb
+D:\sso\SSO\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.dll
+D:\sso\SSO\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.pdb
+D:\sso\SSO\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\ResolveAssemblyReference.cache
+D:\sso\SSO\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.dll
+D:\sso\SSO\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.pdb
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.dll
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.pdb
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.dll
+C:\Users\Administrator\Desktop\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.dll
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\bin\Debug\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.dll
+E:\Dev\WorkWeb2\Project\IPOW\mvcpager-a9f10f46d354\mvcpager_a9f10f46d354\obj\Debug\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\IPOW\MvcPager\bin\Debug\MvcPager.dll
+E:\Dev\WorkWeb2\Project\IPOW\MvcPager\bin\Debug\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\IPOW\MvcPager\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\MvcPager\obj\Debug\MvcPager.dll
+E:\Dev\WorkWeb2\Project\IPOW\MvcPager\obj\Debug\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\IPOW\libs\MvcPager\bin\Debug\MvcPager.dll
+E:\Dev\WorkWeb2\Project\IPOW\libs\MvcPager\bin\Debug\MvcPager.pdb
+E:\Dev\WorkWeb2\Project\IPOW\libs\MvcPager\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\libs\MvcPager\obj\Debug\MvcPager.dll
+E:\Dev\WorkWeb2\Project\IPOW\libs\MvcPager\obj\Debug\MvcPager.pdb

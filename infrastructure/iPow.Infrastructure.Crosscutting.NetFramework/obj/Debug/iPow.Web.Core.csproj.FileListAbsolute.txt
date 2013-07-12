@@ -1,0 +1,5 @@
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Core\bin\Debug\iPow.Web.Core.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Core\bin\Debug\iPow.Web.Core.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Core\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Core\obj\Debug\iPow.Web.Core.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Core\obj\Debug\iPow.Web.Core.pdb

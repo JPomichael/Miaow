@@ -1,0 +1,17 @@
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.Crosscutting.NetFramework.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.Crosscutting.NetFramework.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.infrastructure.Data.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.Domain.Infrastructure.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.Crosscutting.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\EntityFramework.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.infrastructure.Data.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.Domain.Infrastructure.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.Crosscutting.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\EntityFramework.xml
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\bin\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\obj\Debug\iPow.Crosscutting.NetFramework.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.Framework\obj\Debug\iPow.Crosscutting.NetFramework.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.Crosscutting.Framework\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.Infrastructure.Crosscutting.Framework\obj\Debug\ResolveAssemblyReference.cache

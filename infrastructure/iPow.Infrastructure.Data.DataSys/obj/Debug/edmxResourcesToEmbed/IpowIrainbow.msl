@@ -1,0 +1,1484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="irainbowModelStoreContainer" CdmEntityContainer="irainbowEntities">
+    <EntitySetMapping Name="sns_ad">
+      <EntityTypeMapping TypeName="irainbowModel.sns_ad">
+        <MappingFragment StoreEntitySet="sns_ad">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="use" ColumnName="use" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_app">
+      <EntityTypeMapping TypeName="irainbowModel.sns_app">
+        <MappingFragment StoreEntitySet="sns_app">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="enname" ColumnName="enname" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="url_exp" ColumnName="url_exp" />
+          <ScalarProperty Name="url_admin" ColumnName="url_admin" />
+          <ScalarProperty Name="uid_url" ColumnName="uid_url" />
+          <ScalarProperty Name="add_url" ColumnName="add_url" />
+          <ScalarProperty Name="add_name" ColumnName="add_name" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="order2" ColumnName="order2" />
+          <ScalarProperty Name="place" ColumnName="place" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="canvas_url" ColumnName="canvas_url" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_app_user">
+      <EntityTypeMapping TypeName="irainbowModel.sns_app_user">
+        <MappingFragment StoreEntitySet="sns_app_user">
+          <ScalarProperty Name="appid" ColumnName="appid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="open" ColumnName="open" />
+          <ScalarProperty Name="publish_to_profile" ColumnName="publish_to_profile" />
+          <ScalarProperty Name="activited" ColumnName="activited" />
+          <ScalarProperty Name="login_times" ColumnName="login_times" />
+          <ScalarProperty Name="last_login_time" ColumnName="last_login_time" />
+          <ScalarProperty Name="invitor" ColumnName="invitor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_apply">
+      <EntityTypeMapping TypeName="irainbowModel.sns_apply">
+        <MappingFragment StoreEntitySet="sns_apply">
+          <ScalarProperty Name="aid" ColumnName="aid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+          <ScalarProperty Name="dispose" ColumnName="dispose" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_attach">
+      <EntityTypeMapping TypeName="irainbowModel.sns_attach">
+        <MappingFragment StoreEntitySet="sns_attach">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="attach_type" ColumnName="attach_type" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="uploadTime" ColumnName="uploadTime" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="hash" ColumnName="hash" />
+          <ScalarProperty Name="private" ColumnName="private" />
+          <ScalarProperty Name="isDel" ColumnName="isDel" />
+          <ScalarProperty Name="savepath" ColumnName="savepath" />
+          <ScalarProperty Name="savename" ColumnName="savename" />
+          <ScalarProperty Name="savedomain" ColumnName="savedomain" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blacklist">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blacklist">
+        <MappingFragment StoreEntitySet="sns_blacklist">
+          <ScalarProperty Name="bid" ColumnName="bid" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+          <ScalarProperty Name="adminid" ColumnName="adminid" />
+          <ScalarProperty Name="adminname" ColumnName="adminname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blog">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blog">
+        <MappingFragment StoreEntitySet="sns_blog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="readCount" ColumnName="readCount" />
+          <ScalarProperty Name="commentCount" ColumnName="commentCount" />
+          <ScalarProperty Name="recommendCount" ColumnName="recommendCount" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="mTime" ColumnName="mTime" />
+          <ScalarProperty Name="rTime" ColumnName="rTime" />
+          <ScalarProperty Name="isHot" ColumnName="isHot" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="private" ColumnName="private" />
+          <ScalarProperty Name="private_data" ColumnName="private_data" />
+          <ScalarProperty Name="hot" ColumnName="hot" />
+          <ScalarProperty Name="canableComment" ColumnName="canableComment" />
+          <ScalarProperty Name="attach" ColumnName="attach" />
+          <ScalarProperty Name="ring_groupid" ColumnName="ring_groupid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blog_category">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blog_category">
+        <MappingFragment StoreEntitySet="sns_blog_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blog_config">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blog_config">
+        <MappingFragment StoreEntitySet="sns_blog_config">
+          <ScalarProperty Name="variable" ColumnName="variable" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blog_item">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blog_item">
+        <MappingFragment StoreEntitySet="sns_blog_item">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sourceId" ColumnName="sourceId" />
+          <ScalarProperty Name="snapday" ColumnName="snapday" />
+          <ScalarProperty Name="pubdate" ColumnName="pubdate" />
+          <ScalarProperty Name="boot" ColumnName="boot" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="summary" ColumnName="summary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blog_mention">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blog_mention">
+        <MappingFragment StoreEntitySet="sns_blog_mention">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="blogid" ColumnName="blogid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blog_outline">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blog_outline">
+        <MappingFragment StoreEntitySet="sns_blog_outline">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="cover" ColumnName="cover" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="readCount" ColumnName="readCount" />
+          <ScalarProperty Name="commentCount" ColumnName="commentCount" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="mTime" ColumnName="mTime" />
+          <ScalarProperty Name="isHot" ColumnName="isHot" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="private" ColumnName="private" />
+          <ScalarProperty Name="hot" ColumnName="hot" />
+          <ScalarProperty Name="friendId" ColumnName="friendId" />
+          <ScalarProperty Name="canableComment" ColumnName="canableComment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blog_source">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blog_source">
+        <MappingFragment StoreEntitySet="sns_blog_source">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="service" ColumnName="service" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="lastSnap" ColumnName="lastSnap" />
+          <ScalarProperty Name="isNew" ColumnName="isNew" />
+          <ScalarProperty Name="changes" ColumnName="changes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_blog_subscribe">
+      <EntityTypeMapping TypeName="irainbowModel.sns_blog_subscribe">
+        <MappingFragment StoreEntitySet="sns_blog_subscribe">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sourceId" ColumnName="sourceId" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="newNum" ColumnName="newNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_catalog">
+      <EntityTypeMapping TypeName="irainbowModel.sns_catalog">
+        <MappingFragment StoreEntitySet="sns_catalog">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_chat">
+      <EntityTypeMapping TypeName="irainbowModel.sns_chat">
+        <MappingFragment StoreEntitySet="sns_chat">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fromUserId" ColumnName="fromUserId" />
+          <ScalarProperty Name="toUserId" ColumnName="toUserId" />
+          <ScalarProperty Name="msg" ColumnName="msg" />
+          <ScalarProperty Name="disTime" ColumnName="disTime" />
+          <ScalarProperty Name="flagNew" ColumnName="flagNew" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_comment">
+      <EntityTypeMapping TypeName="irainbowModel.sns_comment">
+        <MappingFragment StoreEntitySet="sns_comment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="appid" ColumnName="appid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="toId" ColumnName="toId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="quietly" ColumnName="quietly" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_credit_setting">
+      <EntityTypeMapping TypeName="irainbowModel.sns_credit_setting">
+        <MappingFragment StoreEntitySet="sns_credit_setting">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="actioncn" ColumnName="actioncn" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="experience" ColumnName="experience" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_credit_type">
+      <EntityTypeMapping TypeName="irainbowModel.sns_credit_type">
+        <MappingFragment StoreEntitySet="sns_credit_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_edu_search">
+      <EntityTypeMapping TypeName="irainbowModel.sns_edu_search">
+        <MappingFragment StoreEntitySet="sns_edu_search">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="school" ColumnName="school" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="extra1" ColumnName="extra1" />
+          <ScalarProperty Name="extra2" ColumnName="extra2" />
+          <ScalarProperty Name="privacy" ColumnName="privacy" />
+          <ScalarProperty Name="home" ColumnName="home" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_event">
+      <EntityTypeMapping TypeName="irainbowModel.sns_event">
+        <MappingFragment StoreEntitySet="sns_event">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="explain" ColumnName="explain" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="sTime" ColumnName="sTime" />
+          <ScalarProperty Name="eTime" ColumnName="eTime" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="joinCount" ColumnName="joinCount" />
+          <ScalarProperty Name="attentionCount" ColumnName="attentionCount" />
+          <ScalarProperty Name="limitCount" ColumnName="limitCount" />
+          <ScalarProperty Name="commentCount" ColumnName="commentCount" />
+          <ScalarProperty Name="coverId" ColumnName="coverId" />
+          <ScalarProperty Name="optsId" ColumnName="optsId" />
+          <ScalarProperty Name="feedId" ColumnName="feedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_event_config">
+      <EntityTypeMapping TypeName="irainbowModel.sns_event_config">
+        <MappingFragment StoreEntitySet="sns_event_config">
+          <ScalarProperty Name="variable" ColumnName="variable" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_event_opts">
+      <EntityTypeMapping TypeName="irainbowModel.sns_event_opts">
+        <MappingFragment StoreEntitySet="sns_event_opts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cost" ColumnName="cost" />
+          <ScalarProperty Name="costExplain" ColumnName="costExplain" />
+          <ScalarProperty Name="province" ColumnName="province" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="opts" ColumnName="opts" />
+          <ScalarProperty Name="isHot" ColumnName="isHot" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_event_photo">
+      <EntityTypeMapping TypeName="irainbowModel.sns_event_photo">
+        <MappingFragment StoreEntitySet="sns_event_photo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="filepath" ColumnName="filepath" />
+          <ScalarProperty Name="savename" ColumnName="savename" />
+          <ScalarProperty Name="aid" ColumnName="aid" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="commentCount" ColumnName="commentCount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_event_type">
+      <EntityTypeMapping TypeName="irainbowModel.sns_event_type">
+        <MappingFragment StoreEntitySet="sns_event_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_event_user">
+      <EntityTypeMapping TypeName="irainbowModel.sns_event_user">
+        <MappingFragment StoreEntitySet="sns_event_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="feedId" ColumnName="feedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_feed">
+      <EntityTypeMapping TypeName="irainbowModel.sns_feed">
+        <MappingFragment StoreEntitySet="sns_feed">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="title_data" ColumnName="title_data" />
+          <ScalarProperty Name="body_data" ColumnName="body_data" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="appid" ColumnName="appid" />
+          <ScalarProperty Name="feedtype" ColumnName="feedtype" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_feed_del">
+      <EntityTypeMapping TypeName="irainbowModel.sns_feed_del">
+        <MappingFragment StoreEntitySet="sns_feed_del">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="feedId" ColumnName="feedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_feed_template">
+      <EntityTypeMapping TypeName="irainbowModel.sns_feed_template">
+        <MappingFragment StoreEntitySet="sns_feed_template">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="body" ColumnName="body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_fg">
+      <EntityTypeMapping TypeName="irainbowModel.sns_fg">
+        <MappingFragment StoreEntitySet="sns_fg">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fuid" ColumnName="fuid" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_fgame_user">
+      <EntityTypeMapping TypeName="irainbowModel.sns_fgame_user">
+        <MappingFragment StoreEntitySet="sns_fgame_user">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_fgamelist">
+      <EntityTypeMapping TypeName="irainbowModel.sns_fgamelist">
+        <MappingFragment StoreEntitySet="sns_fgamelist">
+          <ScalarProperty Name="fgid" ColumnName="fgid" />
+          <ScalarProperty Name="fgname" ColumnName="fgname" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="fglev" ColumnName="fglev" />
+          <ScalarProperty Name="fginstruction" ColumnName="fginstruction" />
+          <ScalarProperty Name="reply_count" ColumnName="reply_count" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_fgscore">
+      <EntityTypeMapping TypeName="irainbowModel.sns_fgscore">
+        <MappingFragment StoreEntitySet="sns_fgscore">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="gtime" ColumnName="gtime" />
+          <ScalarProperty Name="fgid" ColumnName="fgid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_field_name">
+      <EntityTypeMapping TypeName="irainbowModel.sns_field_name">
+        <MappingFragment StoreEntitySet="sns_field_name">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="field" ColumnName="field" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_forum">
+      <EntityTypeMapping TypeName="irainbowModel.sns_forum">
+        <MappingFragment StoreEntitySet="sns_forum">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="synopsis" ColumnName="synopsis" />
+          <ScalarProperty Name="moderator" ColumnName="moderator" />
+          <ScalarProperty Name="friend" ColumnName="friend" />
+          <ScalarProperty Name="commend" ColumnName="commend" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_forum_catalog">
+      <EntityTypeMapping TypeName="irainbowModel.sns_forum_catalog">
+        <MappingFragment StoreEntitySet="sns_forum_catalog">
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="fatherid" ColumnName="fatherid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_forum_temp">
+      <EntityTypeMapping TypeName="irainbowModel.sns_forum_temp">
+        <MappingFragment StoreEntitySet="sns_forum_temp">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="synopsis" ColumnName="synopsis" />
+          <ScalarProperty Name="founder" ColumnName="founder" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+          <ScalarProperty Name="ipaddress" ColumnName="ipaddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_friend">
+      <EntityTypeMapping TypeName="irainbowModel.sns_friend">
+        <MappingFragment StoreEntitySet="sns_friend">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fuid" ColumnName="fuid" />
+          <ScalarProperty Name="fusername" ColumnName="fusername" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_friend_black">
+      <EntityTypeMapping TypeName="irainbowModel.sns_friend_black">
+        <MappingFragment StoreEntitySet="sns_friend_black">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fuid" ColumnName="fuid" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_friend_group">
+      <EntityTypeMapping TypeName="irainbowModel.sns_friend_group">
+        <MappingFragment StoreEntitySet="sns_friend_group">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_friend_hide">
+      <EntityTypeMapping TypeName="irainbowModel.sns_friend_hide">
+        <MappingFragment StoreEntitySet="sns_friend_hide">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fuid" ColumnName="fuid" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_friend_ping">
+      <EntityTypeMapping TypeName="irainbowModel.sns_friend_ping">
+        <MappingFragment StoreEntitySet="sns_friend_ping">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fuid" ColumnName="fuid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_friend_tip">
+      <EntityTypeMapping TypeName="irainbowModel.sns_friend_tip">
+        <MappingFragment StoreEntitySet="sns_friend_tip">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_gift">
+      <EntityTypeMapping TypeName="irainbowModel.sns_gift">
+        <MappingFragment StoreEntitySet="sns_gift">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="categoryId" ColumnName="categoryId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="num" ColumnName="num" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_gift_category">
+      <EntityTypeMapping TypeName="irainbowModel.sns_gift_category">
+        <MappingFragment StoreEntitySet="sns_gift_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group">
+        <MappingFragment StoreEntitySet="sns_group">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="intro" ColumnName="intro" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="announce" ColumnName="announce" />
+          <ScalarProperty Name="cid0" ColumnName="cid0" />
+          <ScalarProperty Name="cid1" ColumnName="cid1" />
+          <ScalarProperty Name="membercount" ColumnName="membercount" />
+          <ScalarProperty Name="threadcount" ColumnName="threadcount" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="need_invite" ColumnName="need_invite" />
+          <ScalarProperty Name="need_verify" ColumnName="need_verify" />
+          <ScalarProperty Name="actor_level" ColumnName="actor_level" />
+          <ScalarProperty Name="brower_level" ColumnName="brower_level" />
+          <ScalarProperty Name="openUploadFile" ColumnName="openUploadFile" />
+          <ScalarProperty Name="whoUploadFile" ColumnName="whoUploadFile" />
+          <ScalarProperty Name="openAlbum" ColumnName="openAlbum" />
+          <ScalarProperty Name="whoCreateAlbum" ColumnName="whoCreateAlbum" />
+          <ScalarProperty Name="whoUploadPic" ColumnName="whoUploadPic" />
+          <ScalarProperty Name="anno" ColumnName="anno" />
+          <ScalarProperty Name="ipshow" ColumnName="ipshow" />
+          <ScalarProperty Name="invitepriv" ColumnName="invitepriv" />
+          <ScalarProperty Name="createalbumpriv" ColumnName="createalbumpriv" />
+          <ScalarProperty Name="uploadpicpriv" ColumnName="uploadpicpriv" />
+          <ScalarProperty Name="ctime" ColumnName="ctime" />
+          <ScalarProperty Name="mtime" ColumnName="mtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="isrecom" ColumnName="isrecom" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_album">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_album">
+        <MappingFragment StoreEntitySet="sns_group_album">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="mTime" ColumnName="mTime" />
+          <ScalarProperty Name="coverImageId" ColumnName="coverImageId" />
+          <ScalarProperty Name="coverImagePath" ColumnName="coverImagePath" />
+          <ScalarProperty Name="photoCount" ColumnName="photoCount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="share" ColumnName="share" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_attachement">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_attachement">
+        <MappingFragment StoreEntitySet="sns_group_attachement">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="attachId" ColumnName="attachId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="filesize" ColumnName="filesize" />
+          <ScalarProperty Name="filetype" ColumnName="filetype" />
+          <ScalarProperty Name="fileurl" ColumnName="fileurl" />
+          <ScalarProperty Name="totaldowns" ColumnName="totaldowns" />
+          <ScalarProperty Name="ctime" ColumnName="ctime" />
+          <ScalarProperty Name="mtime" ColumnName="mtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_category">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_category">
+        <MappingFragment StoreEntitySet="sns_group_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="module" ColumnName="module" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_log">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_log">
+        <MappingFragment StoreEntitySet="sns_group_log">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="ctime" ColumnName="ctime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_member">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_member">
+        <MappingFragment StoreEntitySet="sns_group_member">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="ctime" ColumnName="ctime" />
+          <ScalarProperty Name="mtime" ColumnName="mtime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_photo">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_photo">
+        <MappingFragment StoreEntitySet="sns_group_photo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="attachId" ColumnName="attachId" />
+          <ScalarProperty Name="albumId" ColumnName="albumId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="mTime" ColumnName="mTime" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="commentCount" ColumnName="commentCount" />
+          <ScalarProperty Name="readCount" ColumnName="readCount" />
+          <ScalarProperty Name="savepath" ColumnName="savepath" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_post">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_post">
+        <MappingFragment StoreEntitySet="sns_group_post">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+          <ScalarProperty Name="istopic" ColumnName="istopic" />
+          <ScalarProperty Name="ctime" ColumnName="ctime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="quote" ColumnName="quote" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="attach" ColumnName="attach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_setting">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_setting">
+        <MappingFragment StoreEntitySet="sns_group_setting">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_topic">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_topic">
+        <MappingFragment StoreEntitySet="sns_group_topic">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="gid" ColumnName="gid" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="viewcount" ColumnName="viewcount" />
+          <ScalarProperty Name="replycount" ColumnName="replycount" />
+          <ScalarProperty Name="dist" ColumnName="dist" />
+          <ScalarProperty Name="top" ColumnName="top" />
+          <ScalarProperty Name="lock" ColumnName="lock" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="replytime" ColumnName="replytime" />
+          <ScalarProperty Name="mtime" ColumnName="mtime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="isrecom" ColumnName="isrecom" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+          <ScalarProperty Name="attach" ColumnName="attach" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_group_topic_collect">
+      <EntityTypeMapping TypeName="irainbowModel.sns_group_topic_collect">
+        <MappingFragment StoreEntitySet="sns_group_topic_collect">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="mid" ColumnName="mid" />
+          <ScalarProperty Name="addtime" ColumnName="addtime" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_info_category">
+      <EntityTypeMapping TypeName="irainbowModel.sns_info_category">
+        <MappingFragment StoreEntitySet="sns_info_category">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="addcontent_tpl" ColumnName="addcontent_tpl" />
+          <ScalarProperty Name="content_tpl" ColumnName="content_tpl" />
+          <ScalarProperty Name="category_tpl" ColumnName="category_tpl" />
+          <ScalarProperty Name="data_source" ColumnName="data_source" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_info_content">
+      <EntityTypeMapping TypeName="irainbowModel.sns_info_content">
+        <MappingFragment StoreEntitySet="sns_info_content">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="publish_time" ColumnName="publish_time" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="cate_tree" ColumnName="cate_tree" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="hits" ColumnName="hits" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="param_1" ColumnName="param_1" />
+          <ScalarProperty Name="param_2" ColumnName="param_2" />
+          <ScalarProperty Name="param_3" ColumnName="param_3" />
+          <ScalarProperty Name="param_4" ColumnName="param_4" />
+          <ScalarProperty Name="param_5" ColumnName="param_5" />
+          <ScalarProperty Name="newicon" ColumnName="newicon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_jzreport">
+      <EntityTypeMapping TypeName="irainbowModel.sns_jzreport">
+        <MappingFragment StoreEntitySet="sns_jzreport">
+          <ScalarProperty Name="rid" ColumnName="rid" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="authorid" ColumnName="authorid" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_links">
+      <EntityTypeMapping TypeName="irainbowModel.sns_links">
+        <MappingFragment StoreEntitySet="sns_links">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="intro" ColumnName="intro" />
+          <ScalarProperty Name="logo" ColumnName="logo" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_login_record">
+      <EntityTypeMapping TypeName="irainbowModel.sns_login_record">
+        <MappingFragment StoreEntitySet="sns_login_record">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="login_ip" ColumnName="login_ip" />
+          <ScalarProperty Name="login_time" ColumnName="login_time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_member">
+      <EntityTypeMapping TypeName="irainbowModel.sns_member">
+        <MappingFragment StoreEntitySet="sns_member">
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="securekey" ColumnName="securekey" />
+          <ScalarProperty Name="regdate" ColumnName="regdate" />
+          <ScalarProperty Name="regip" ColumnName="regip" />
+          <ScalarProperty Name="lastdate" ColumnName="lastdate" />
+          <ScalarProperty Name="lastip" ColumnName="lastip" />
+          <ScalarProperty Name="groupid" ColumnName="groupid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_mini">
+      <EntityTypeMapping TypeName="irainbowModel.sns_mini">
+        <MappingFragment StoreEntitySet="sns_mini">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="tagId" ColumnName="tagId" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="replay_numbel" ColumnName="replay_numbel" />
+          <ScalarProperty Name="feedId" ColumnName="feedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_mini_config">
+      <EntityTypeMapping TypeName="irainbowModel.sns_mini_config">
+        <MappingFragment StoreEntitySet="sns_mini_config">
+          <ScalarProperty Name="variable" ColumnName="variable" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_msg">
+      <EntityTypeMapping TypeName="irainbowModel.sns_msg">
+        <MappingFragment StoreEntitySet="sns_msg">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fromUserId" ColumnName="fromUserId" />
+          <ScalarProperty Name="toUserId" ColumnName="toUserId" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="is_read" ColumnName="is_read" />
+          <ScalarProperty Name="replyMsgId" ColumnName="replyMsgId" />
+          <ScalarProperty Name="is_new" ColumnName="is_new" />
+          <ScalarProperty Name="is_del" ColumnName="is_del" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_network">
+      <EntityTypeMapping TypeName="irainbowModel.sns_network">
+        <MappingFragment StoreEntitySet="sns_network">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_notify">
+      <EntityTypeMapping TypeName="irainbowModel.sns_notify">
+        <MappingFragment StoreEntitySet="sns_notify">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="new" ColumnName="new" />
+          <ScalarProperty Name="authorid" ColumnName="authorid" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="body" ColumnName="body" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="cate" ColumnName="cate" />
+          <ScalarProperty Name="appid" ColumnName="appid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_notify_template">
+      <EntityTypeMapping TypeName="irainbowModel.sns_notify_template">
+        <MappingFragment StoreEntitySet="sns_notify_template">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="type_cn" ColumnName="type_cn" />
+          <ScalarProperty Name="deal" ColumnName="deal" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="body" ColumnName="body" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_option">
+      <EntityTypeMapping TypeName="irainbowModel.sns_option">
+        <MappingFragment StoreEntitySet="sns_option">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="appname" ColumnName="appname" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_photo">
+      <EntityTypeMapping TypeName="irainbowModel.sns_photo">
+        <MappingFragment StoreEntitySet="sns_photo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="attachId" ColumnName="attachId" />
+          <ScalarProperty Name="albumId" ColumnName="albumId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="mTime" ColumnName="mTime" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="commentCount" ColumnName="commentCount" />
+          <ScalarProperty Name="readCount" ColumnName="readCount" />
+          <ScalarProperty Name="savepath" ColumnName="savepath" />
+          <ScalarProperty Name="size" ColumnName="size" />
+          <ScalarProperty Name="privacy" ColumnName="privacy" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="isDel" ColumnName="isDel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_photo_album">
+      <EntityTypeMapping TypeName="irainbowModel.sns_photo_album">
+        <MappingFragment StoreEntitySet="sns_photo_album">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="mTime" ColumnName="mTime" />
+          <ScalarProperty Name="coverImageId" ColumnName="coverImageId" />
+          <ScalarProperty Name="coverImagePath" ColumnName="coverImagePath" />
+          <ScalarProperty Name="photoCount" ColumnName="photoCount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="share" ColumnName="share" />
+          <ScalarProperty Name="privacy" ColumnName="privacy" />
+          <ScalarProperty Name="privacy_data" ColumnName="privacy_data" />
+          <ScalarProperty Name="isDel" ColumnName="isDel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_photo_index">
+      <EntityTypeMapping TypeName="irainbowModel.sns_photo_index">
+        <MappingFragment StoreEntitySet="sns_photo_index">
+          <ScalarProperty Name="albumId" ColumnName="albumId" />
+          <ScalarProperty Name="photoId" ColumnName="photoId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="privacy" ColumnName="privacy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_photo_mark">
+      <EntityTypeMapping TypeName="irainbowModel.sns_photo_mark">
+        <MappingFragment StoreEntitySet="sns_photo_mark">
+          <ScalarProperty Name="photoId" ColumnName="photoId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="markedUserId" ColumnName="markedUserId" />
+          <ScalarProperty Name="x" ColumnName="x" />
+          <ScalarProperty Name="y" ColumnName="y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_Post">
+      <EntityTypeMapping TypeName="irainbowModel.sns_Post">
+        <MappingFragment StoreEntitySet="sns_Post">
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="replyfloor" ColumnName="replyfloor" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="authorid" ColumnName="authorid" />
+          <ScalarProperty Name="authorico" ColumnName="authorico" />
+          <ScalarProperty Name="guestname" ColumnName="guestname" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+          <ScalarProperty Name="postip" ColumnName="postip" />
+          <ScalarProperty Name="up" ColumnName="up" />
+          <ScalarProperty Name="down" ColumnName="down" />
+          <ScalarProperty Name="wave" ColumnName="wave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_PostContent">
+      <EntityTypeMapping TypeName="irainbowModel.sns_PostContent">
+        <MappingFragment StoreEntitySet="sns_PostContent">
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="isHtml" ColumnName="isHtml" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_privacy">
+      <EntityTypeMapping TypeName="irainbowModel.sns_privacy">
+        <MappingFragment StoreEntitySet="sns_privacy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="privacy" ColumnName="privacy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_privacy_index">
+      <EntityTypeMapping TypeName="irainbowModel.sns_privacy_index">
+        <MappingFragment StoreEntitySet="sns_privacy_index">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="owner" ColumnName="owner" />
+          <ScalarProperty Name="visitor" ColumnName="visitor" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="black" ColumnName="black" />
+          <ScalarProperty Name="white" ColumnName="white" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_report">
+      <EntityTypeMapping TypeName="irainbowModel.sns_report">
+        <MappingFragment StoreEntitySet="sns_report">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="con" ColumnName="con" />
+          <ScalarProperty Name="appid" ColumnName="appid" />
+          <ScalarProperty Name="recordId" ColumnName="recordId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_saveemail">
+      <EntityTypeMapping TypeName="irainbowModel.sns_saveemail">
+        <MappingFragment StoreEntitySet="sns_saveemail">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="toemail" ColumnName="toemail" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="senderemail" ColumnName="senderemail" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_share">
+      <EntityTypeMapping TypeName="irainbowModel.sns_share">
+        <MappingFragment StoreEntitySet="sns_share">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="typeId" ColumnName="typeId" />
+          <ScalarProperty Name="toUid" ColumnName="toUid" />
+          <ScalarProperty Name="toUserName" ColumnName="toUserName" />
+          <ScalarProperty Name="fromUid" ColumnName="fromUid" />
+          <ScalarProperty Name="fromUserName" ColumnName="fromUserName" />
+          <ScalarProperty Name="aimId" ColumnName="aimId" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="data" ColumnName="data" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="purview" ColumnName="purview" />
+          <ScalarProperty Name="viewNum" ColumnName="viewNum" />
+          <ScalarProperty Name="comNum" ColumnName="comNum" />
+          <ScalarProperty Name="isDel" ColumnName="isDel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_share_set">
+      <EntityTypeMapping TypeName="irainbowModel.sns_share_set">
+        <MappingFragment StoreEntitySet="sns_share_set">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="typeIds" ColumnName="typeIds" />
+          <ScalarProperty Name="uids" ColumnName="uids" />
+          <ScalarProperty Name="passive" ColumnName="passive" />
+          <ScalarProperty Name="uid_type" ColumnName="uid_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_share_type">
+      <EntityTypeMapping TypeName="irainbowModel.sns_share_type">
+        <MappingFragment StoreEntitySet="sns_share_type">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="alias" ColumnName="alias" />
+          <ScalarProperty Name="sort" ColumnName="sort" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="temp_list" ColumnName="temp_list" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_smile">
+      <EntityTypeMapping TypeName="irainbowModel.sns_smile">
+        <MappingFragment StoreEntitySet="sns_smile">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="emotion" ColumnName="emotion" />
+          <ScalarProperty Name="filename" ColumnName="filename" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_system_group">
+      <EntityTypeMapping TypeName="irainbowModel.sns_system_group">
+        <MappingFragment StoreEntitySet="sns_system_group">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="showname" ColumnName="showname" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_system_node">
+      <EntityTypeMapping TypeName="irainbowModel.sns_system_node">
+        <MappingFragment StoreEntitySet="sns_system_node">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="containaction" ColumnName="containaction" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="ordernum" ColumnName="ordernum" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="selected" ColumnName="selected" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_system_popedom">
+      <EntityTypeMapping TypeName="irainbowModel.sns_system_popedom">
+        <MappingFragment StoreEntitySet="sns_system_popedom">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="groupid" ColumnName="groupid" />
+          <ScalarProperty Name="menuid" ColumnName="menuid" />
+          <ScalarProperty Name="modelid" ColumnName="modelid" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="arraction" ColumnName="arraction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_system_user_rank">
+      <EntityTypeMapping TypeName="irainbowModel.sns_system_user_rank">
+        <MappingFragment StoreEntitySet="sns_system_user_rank">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="icon" ColumnName="icon" />
+          <ScalarProperty Name="rulemin" ColumnName="rulemin" />
+          <ScalarProperty Name="rulemax" ColumnName="rulemax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_topic">
+      <EntityTypeMapping TypeName="irainbowModel.sns_topic">
+        <MappingFragment StoreEntitySet="sns_topic">
+          <ScalarProperty Name="tid" ColumnName="tid" />
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="author" ColumnName="author" />
+          <ScalarProperty Name="authorid" ColumnName="authorid" />
+          <ScalarProperty Name="authorico" ColumnName="authorico" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="dateline" ColumnName="dateline" />
+          <ScalarProperty Name="lasttime" ColumnName="lasttime" />
+          <ScalarProperty Name="lastauthor" ColumnName="lastauthor" />
+          <ScalarProperty Name="lastauthorid" ColumnName="lastauthorid" />
+          <ScalarProperty Name="lastauthorico" ColumnName="lastauthorico" />
+          <ScalarProperty Name="views" ColumnName="views" />
+          <ScalarProperty Name="replies" ColumnName="replies" />
+          <ScalarProperty Name="stick" ColumnName="stick" />
+          <ScalarProperty Name="digest" ColumnName="digest" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user">
+        <MappingFragment StoreEntitySet="sns_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="passwd" ColumnName="passwd" />
+          <ScalarProperty Name="securekey" ColumnName="securekey" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="handle" ColumnName="handle" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="blood_type" ColumnName="blood_type" />
+          <ScalarProperty Name="current_province" ColumnName="current_province" />
+          <ScalarProperty Name="current_city" ColumnName="current_city" />
+          <ScalarProperty Name="current_area" ColumnName="current_area" />
+          <ScalarProperty Name="admin_level" ColumnName="admin_level" />
+          <ScalarProperty Name="commend" ColumnName="commend" />
+          <ScalarProperty Name="active" ColumnName="active" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="identity" ColumnName="identity" />
+          <ScalarProperty Name="score" ColumnName="score" />
+          <ScalarProperty Name="ring_groupid" ColumnName="ring_groupid" />
+          <ScalarProperty Name="regip" ColumnName="regip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user_app">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user_app">
+        <MappingFragment StoreEntitySet="sns_user_app">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="appid" ColumnName="appid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user_attach">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user_attach">
+        <MappingFragment StoreEntitySet="sns_user_attach">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="appId" ColumnName="appId" />
+          <ScalarProperty Name="attachId" ColumnName="attachId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="mTime" ColumnName="mTime" />
+          <ScalarProperty Name="tags" ColumnName="tags" />
+          <ScalarProperty Name="commentCount" ColumnName="commentCount" />
+          <ScalarProperty Name="readCount" ColumnName="readCount" />
+          <ScalarProperty Name="digCount" ColumnName="digCount" />
+          <ScalarProperty Name="attachPath" ColumnName="attachPath" />
+          <ScalarProperty Name="attachSize" ColumnName="attachSize" />
+          <ScalarProperty Name="attachType" ColumnName="attachType" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="private" ColumnName="private" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user_gift">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user_gift">
+        <MappingFragment StoreEntitySet="sns_user_gift">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fromUserId" ColumnName="fromUserId" />
+          <ScalarProperty Name="fromUserName" ColumnName="fromUserName" />
+          <ScalarProperty Name="toUserId" ColumnName="toUserId" />
+          <ScalarProperty Name="giftPrice" ColumnName="giftPrice" />
+          <ScalarProperty Name="giftImg" ColumnName="giftImg" />
+          <ScalarProperty Name="sendInfo" ColumnName="sendInfo" />
+          <ScalarProperty Name="sendWay" ColumnName="sendWay" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user_info">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user_info">
+        <MappingFragment StoreEntitySet="sns_user_info">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="intro" ColumnName="intro" />
+          <ScalarProperty Name="contact" ColumnName="contact" />
+          <ScalarProperty Name="education" ColumnName="education" />
+          <ScalarProperty Name="career" ColumnName="career" />
+          <ScalarProperty Name="credit" ColumnName="credit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user_online">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user_online">
+        <MappingFragment StoreEntitySet="sns_user_online">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="uname" ColumnName="uname" />
+          <ScalarProperty Name="mini" ColumnName="mini" />
+          <ScalarProperty Name="activeTime" ColumnName="activeTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user_score">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user_score">
+        <MappingFragment StoreEntitySet="sns_user_score">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="info" ColumnName="info" />
+          <ScalarProperty Name="action" ColumnName="action" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="number" ColumnName="number" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user_search">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user_search">
+        <MappingFragment StoreEntitySet="sns_user_search">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="extra1" ColumnName="extra1" />
+          <ScalarProperty Name="extra2" ColumnName="extra2" />
+          <ScalarProperty Name="extra3" ColumnName="extra3" />
+          <ScalarProperty Name="extra4" ColumnName="extra4" />
+          <ScalarProperty Name="extra5" ColumnName="extra5" />
+          <ScalarProperty Name="privacy" ColumnName="privacy" />
+          <ScalarProperty Name="home" ColumnName="home" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_user_session">
+      <EntityTypeMapping TypeName="irainbowModel.sns_user_session">
+        <MappingFragment StoreEntitySet="sns_user_session">
+          <ScalarProperty Name="sesskey" ColumnName="sesskey" />
+          <ScalarProperty Name="expiry" ColumnName="expiry" />
+          <ScalarProperty Name="data" ColumnName="data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_visitor">
+      <EntityTypeMapping TypeName="irainbowModel.sns_visitor">
+        <MappingFragment StoreEntitySet="sns_visitor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="visitId" ColumnName="visitId" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_vote">
+      <EntityTypeMapping TypeName="irainbowModel.sns_vote">
+        <MappingFragment StoreEntitySet="sns_vote">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="explain" ColumnName="explain" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="glimit" ColumnName="glimit" />
+          <ScalarProperty Name="deadline" ColumnName="deadline" />
+          <ScalarProperty Name="onlyfriend" ColumnName="onlyfriend" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="vote_num" ColumnName="vote_num" />
+          <ScalarProperty Name="commentCount" ColumnName="commentCount" />
+          <ScalarProperty Name="feedId" ColumnName="feedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_vote_comment">
+      <EntityTypeMapping TypeName="irainbowModel.sns_vote_comment">
+        <MappingFragment StoreEntitySet="sns_vote_comment">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vote_id" ColumnName="vote_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_vote_config">
+      <EntityTypeMapping TypeName="irainbowModel.sns_vote_config">
+        <MappingFragment StoreEntitySet="sns_vote_config">
+          <ScalarProperty Name="variable" ColumnName="variable" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_vote_opt">
+      <EntityTypeMapping TypeName="irainbowModel.sns_vote_opt">
+        <MappingFragment StoreEntitySet="sns_vote_opt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vote_id" ColumnName="vote_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="num" ColumnName="num" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_vote_user">
+      <EntityTypeMapping TypeName="irainbowModel.sns_vote_user">
+        <MappingFragment StoreEntitySet="sns_vote_user">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="vote_id" ColumnName="vote_id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="opts" ColumnName="opts" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="feedId" ColumnName="feedId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_wall">
+      <EntityTypeMapping TypeName="irainbowModel.sns_wall">
+        <MappingFragment StoreEntitySet="sns_wall">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="fromUserId" ColumnName="fromUserId" />
+          <ScalarProperty Name="fromUserName" ColumnName="fromUserName" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="cTime" ColumnName="cTime" />
+          <ScalarProperty Name="replyWallId" ColumnName="replyWallId" />
+          <ScalarProperty Name="privacy" ColumnName="privacy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sns_work_search">
+      <EntityTypeMapping TypeName="irainbowModel.sns_work_search">
+        <MappingFragment StoreEntitySet="sns_work_search">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="uid" ColumnName="uid" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="company" ColumnName="company" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="begin" ColumnName="begin" />
+          <ScalarProperty Name="end" ColumnName="end" />
+          <ScalarProperty Name="privacy" ColumnName="privacy" />
+          <ScalarProperty Name="home" ColumnName="home" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

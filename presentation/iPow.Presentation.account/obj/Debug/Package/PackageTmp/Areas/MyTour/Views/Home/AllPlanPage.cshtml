@@ -1,0 +1,24 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model iPow.Application.account.Dto.TourPlanDto
+<div class="indexPage">
+    <em>@(Model.TourPlanList.TotalItemCount)条记录@(Model.TourPlanList.CurrentPageIndex)@("/")@(Model.TourPlanList.TotalPageCount)页</em>
+    <br />
+    <div class="Pagecon">
+        @Html.Pager(Model.TourPlanList.TotalItemCount, 15, Model.TourPlanList.CurrentPageIndex, "allplan", "home", new PagerOptions
+{
+    PageIndexParameterName = "id",
+}, null, new
+{
+    id = Model.SightInfo.CurrentPageIndex
+}, null)
+    </div>
+</div>
+<style type="text/css">
+    .indexPage
+    {
+        float: left;
+        text-align: center;
+        padding: 10px auto 20px auto;
+        font-size: 14px;
+    }
+</style>

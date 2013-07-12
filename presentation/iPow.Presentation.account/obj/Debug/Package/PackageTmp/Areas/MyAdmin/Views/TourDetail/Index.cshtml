@@ -1,0 +1,190 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@model iPow.Presentation.account.Models.UiTourPlanDetailDto
+@{
+    ViewBag.subtitle = "线路详细";
+    ViewBag.title = "线路详细";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    if (Model != null)
+    { 
+    <input id = "parentTourPlanId" name = "parentTourPlanId" type ="hidden" value = "@(ViewBag.id)"/>
+    
+        Html.Telerik().Grid(Model.DetailList)
+        .Name("TourPlanDetailGrid")
+        .ToolBar(toolBar => toolBar.Template(
+    @<text>
+    <label class="customer-label" for="Customers-input">
+        目的地搜索:
+    </label>
+    <input type="text" id="searchTourDetailPlan" value="线路名字" data-autocomplete="/myadmin/tourdetail/searchtourdetail" />
+    <input type='button' value='我要搜索' class='t-button' onclick='searchChange()' />
+    <a href="/myadmin/tourdetail/create/@(ViewBag.id)" class="t-button">添加玩点</a> <a href='javascript:;'
+        class='t-button t-grid-add' onclick='mulDelete()'>删除选择项</a>
+    </text>))
+        .Columns(columns =>
+        {
+            columns.Template(@<text><input name="selectRow" type="checkbox" value="@(item.PlanDetailID)" title="checkedRecords" /></text>)
+            .HeaderTemplate(@<text><input type="checkbox" title="check all records" id="checkAllRecords" /></text>)
+            .Width(50).HeaderHtmlAttributes(new { style = "text-align:center" }).HtmlAttributes(new { style = "text-align:center" })
+            .ClientTemplate("<input type=\"checkbox\" title=\"check all records\" name = 'selectRow'  value = '<#= PlanDetailID #>'/>");
+
+            columns.Bound(o => o.TargetName)
+            .Template(@<text><a href='@(item.TargetUrl)'>@(item.TargetName)</a></text>)
+            .ClientTemplate("<a href='<#= TargetUrl #>'><#= TargetName #></a>").Width(50).Title("目的地名")
+            .ReadOnly(true);
+            //columns.Bound(o => o.TargetUrl).Width(300).Title("目的地网址");
+
+            columns.Bound(o => o.DayID).Width(20).Title("第X天");
+            columns.Bound(o => o.CurrentPrice).Width(50).Title("此天费用");
+            columns.Bound(o => o.Remark).Width(300).Title("玩点提示");
+
+            //columns.Bound(o => o.DetailType).Width(100).Title("目的地类型系统名");
+            columns.Bound(o => o.DetailTypeName).Width(60).Title("目的地类型").ReadOnly(true);
+            columns.Bound(o => o.VisitCount).Width(50).Title("访问量").ReadOnly(true);
+            columns.Bound(o => o.AddTime).Width(150).Title("添加时间").ReadOnly(true).Format("{0:yyyy-MM-dd HH:mm:ss}");
+            columns.Bound(o => o.PlanDetailID).Width(50).Title("线路详细Id").Hidden();
+            columns.Bound(o => o.PlanID).Width(50).Title("线路父Id").Hidden();
+            columns.Bound(o => o.SightIDOrHotelID).Width(50).Title("景区或酒店Id").Hidden();
+            columns.Command(comm =>
+            {
+                comm.Edit().ButtonType(GridButtonType.Text);
+                comm.Delete().ButtonType(GridButtonType.Text);
+            }).Width(300);
+        })
+        .ClientEvents(clientEvents => clientEvents.OnDataBinding("dataBinding"))
+        .DataKeys(key => key.Add("PlanDetailID"))//添加主键
+        .DataBinding(dataBinding => dataBinding.Ajax().Select("ajaxtourdetailplanindex", "tourdetail")
+            .Update("edittourdetailplan", "tourdetail")
+            .Delete("deletetourdetailplan", "tourdetail")
+        )
+        .Editable(editing => editing.Mode(GridEditMode.InLine))
+        .Pageable(page => page.PageSize(10))
+        .Render();
+   
+    <fieldset>
+        <legend>所属线路详情</legend>
+        <p>
+            @Html.LabelFor(e => e.Parent.PlanID)：
+            @Html.DisplayFor(model => model.Parent.PlanID)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.PlanTitle)：
+            @Html.DisplayFor(model => model.Parent.PlanTitle)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.AddTime)：
+            @Html.DisplayFor(model => model.Parent.AddTime)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.UserId)：
+            @Html.DisplayFor(model => model.Parent.UserId)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.UserName)：
+            @Html.DisplayFor(model => model.Parent.UserName)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.Destination)：
+            @Html.DisplayFor(model => model.Parent.Destination)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.VisitCount)：
+            @Html.DisplayFor(model => model.Parent.VisitCount)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.Remark)：
+            @Html.DisplayFor(model => model.Parent.Remark)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.TempDataCreateHtml)：
+            @Html.DisplayFor(model => model.Parent.TempDataCreateHtml)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.Days)
+            @Html.DisplayFor(model => model.Parent.Days)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.PlanClass)
+            @Html.DisplayFor(model => model.Parent.PlanClass)
+        </p>
+        @*<p>
+            @Html.LabelFor(e => e.Parent.IsTop)：
+            @Html.DisplayFor(model => model.Parent.IsTop)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.TopReason)：
+            @Html.DisplayFor(model => model.Parent.TopReason)
+        </p>
+        <p>
+            @Html.LabelFor(e => e.Parent.TopTime)
+            @Html.DisplayFor(model => model.Parent.TopTime)
+        </p>
+         <p>
+            @Html.LabelFor(e => e.Parent.IsDelete)：
+            @Html.DisplayFor(model => model.Parent.IsDelete)
+        </p>*@
+    </fieldset>
+    }
+}
+<script type="text/javascript">
+    var preSearch = "";
+    var isSearch = false;
+    function searchChange() {
+        var currentSearch = $("#searchTourDetailPlan").val();
+        if (preSearch != currentSearch) {
+            $("#TourPlanDetailGrid").data("tGrid").rebind();
+        }
+    }
+
+    function dataBinding(args) {
+        var searchKeyStr = $("#searchTourDetailPlan").val();
+        preSearch = searchKeyStr;
+        if (searchKeyStr == '线路名字') {
+            searchKeyStr = '';
+        }
+        var parentIdStr = $('#parentTourPlanId').val();
+        args.data = $.extend(args.data, { id: searchKeyStr, parentId: parentIdStr });
+    }
+
+    function mulDelete() {
+        var delStr = $(':checked');
+        if (delStr.length < 1) {
+            alert('Check a few grid rows first.');
+            return;
+        }
+        jQuery.post('/tourdetail/deletemultourdetailplan', delStr)
+        setTimeout(function () {
+            $("#TourPlanDetailGrid").data("tGrid").rebind();
+        }, 2000);
+    }
+
+    $(function () {
+
+        $('#checkAllRecords').click(function checkAll() { $("#TourPlanDetailGrid tbody input:checkbox").attr("checked", this.checked); });
+
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: function (request, response) {
+                    var url = '/tourdetail/searchtourdetail/';
+                    $.getJSON(url, {
+                        term: $.trim(request.term),
+                        parentId: $('#parentTourPlanId').val()
+                    }, response);
+                }
+                //$(this).attr("data-autocomplete")
+            });
+        });
+
+        $("#searchTourDetailPlan").focus(function () {
+            if (this.value == "线路名字") {
+                $("#searchTourDetailPlan").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#searchTourDetailPlan").val("线路名字");
+            }
+        });
+    });
+</script>

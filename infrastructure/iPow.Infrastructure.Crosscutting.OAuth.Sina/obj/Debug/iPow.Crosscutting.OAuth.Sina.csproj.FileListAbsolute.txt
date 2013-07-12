@@ -1,0 +1,5 @@
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.OAuth.Sina\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.OAuth.Sina\bin\Debug\iPow.Crosscutting.OAuth.Sina.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.OAuth.Sina\bin\Debug\iPow.Crosscutting.OAuth.Sina.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.OAuth.Sina\obj\Debug\iPow.Crosscutting.OAuth.Sina.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting.OAuth.Sina\obj\Debug\iPow.Crosscutting.OAuth.Sina.pdb

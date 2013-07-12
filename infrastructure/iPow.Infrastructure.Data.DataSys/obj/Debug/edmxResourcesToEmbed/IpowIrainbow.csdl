@@ -1,0 +1,1489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="irainbowModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="irainbowEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sns_ad" EntityType="irainbowModel.sns_ad" />
+    <EntitySet Name="sns_app" EntityType="irainbowModel.sns_app" />
+    <EntitySet Name="sns_app_user" EntityType="irainbowModel.sns_app_user" />
+    <EntitySet Name="sns_apply" EntityType="irainbowModel.sns_apply" />
+    <EntitySet Name="sns_attach" EntityType="irainbowModel.sns_attach" />
+    <EntitySet Name="sns_blacklist" EntityType="irainbowModel.sns_blacklist" />
+    <EntitySet Name="sns_blog" EntityType="irainbowModel.sns_blog" />
+    <EntitySet Name="sns_blog_category" EntityType="irainbowModel.sns_blog_category" />
+    <EntitySet Name="sns_blog_config" EntityType="irainbowModel.sns_blog_config" />
+    <EntitySet Name="sns_blog_item" EntityType="irainbowModel.sns_blog_item" />
+    <EntitySet Name="sns_blog_mention" EntityType="irainbowModel.sns_blog_mention" />
+    <EntitySet Name="sns_blog_outline" EntityType="irainbowModel.sns_blog_outline" />
+    <EntitySet Name="sns_blog_source" EntityType="irainbowModel.sns_blog_source" />
+    <EntitySet Name="sns_blog_subscribe" EntityType="irainbowModel.sns_blog_subscribe" />
+    <EntitySet Name="sns_catalog" EntityType="irainbowModel.sns_catalog" />
+    <EntitySet Name="sns_chat" EntityType="irainbowModel.sns_chat" />
+    <EntitySet Name="sns_comment" EntityType="irainbowModel.sns_comment" />
+    <EntitySet Name="sns_credit_setting" EntityType="irainbowModel.sns_credit_setting" />
+    <EntitySet Name="sns_credit_type" EntityType="irainbowModel.sns_credit_type" />
+    <EntitySet Name="sns_edu_search" EntityType="irainbowModel.sns_edu_search" />
+    <EntitySet Name="sns_event" EntityType="irainbowModel.sns_event" />
+    <EntitySet Name="sns_event_config" EntityType="irainbowModel.sns_event_config" />
+    <EntitySet Name="sns_event_opts" EntityType="irainbowModel.sns_event_opts" />
+    <EntitySet Name="sns_event_photo" EntityType="irainbowModel.sns_event_photo" />
+    <EntitySet Name="sns_event_type" EntityType="irainbowModel.sns_event_type" />
+    <EntitySet Name="sns_event_user" EntityType="irainbowModel.sns_event_user" />
+    <EntitySet Name="sns_feed" EntityType="irainbowModel.sns_feed" />
+    <EntitySet Name="sns_feed_del" EntityType="irainbowModel.sns_feed_del" />
+    <EntitySet Name="sns_feed_template" EntityType="irainbowModel.sns_feed_template" />
+    <EntitySet Name="sns_fg" EntityType="irainbowModel.sns_fg" />
+    <EntitySet Name="sns_fgame_user" EntityType="irainbowModel.sns_fgame_user" />
+    <EntitySet Name="sns_fgamelist" EntityType="irainbowModel.sns_fgamelist" />
+    <EntitySet Name="sns_fgscore" EntityType="irainbowModel.sns_fgscore" />
+    <EntitySet Name="sns_field_name" EntityType="irainbowModel.sns_field_name" />
+    <EntitySet Name="sns_forum" EntityType="irainbowModel.sns_forum" />
+    <EntitySet Name="sns_forum_catalog" EntityType="irainbowModel.sns_forum_catalog" />
+    <EntitySet Name="sns_forum_temp" EntityType="irainbowModel.sns_forum_temp" />
+    <EntitySet Name="sns_friend" EntityType="irainbowModel.sns_friend" />
+    <EntitySet Name="sns_friend_black" EntityType="irainbowModel.sns_friend_black" />
+    <EntitySet Name="sns_friend_group" EntityType="irainbowModel.sns_friend_group" />
+    <EntitySet Name="sns_friend_hide" EntityType="irainbowModel.sns_friend_hide" />
+    <EntitySet Name="sns_friend_ping" EntityType="irainbowModel.sns_friend_ping" />
+    <EntitySet Name="sns_friend_tip" EntityType="irainbowModel.sns_friend_tip" />
+    <EntitySet Name="sns_gift" EntityType="irainbowModel.sns_gift" />
+    <EntitySet Name="sns_gift_category" EntityType="irainbowModel.sns_gift_category" />
+    <EntitySet Name="sns_group" EntityType="irainbowModel.sns_group" />
+    <EntitySet Name="sns_group_album" EntityType="irainbowModel.sns_group_album" />
+    <EntitySet Name="sns_group_attachement" EntityType="irainbowModel.sns_group_attachement" />
+    <EntitySet Name="sns_group_category" EntityType="irainbowModel.sns_group_category" />
+    <EntitySet Name="sns_group_log" EntityType="irainbowModel.sns_group_log" />
+    <EntitySet Name="sns_group_member" EntityType="irainbowModel.sns_group_member" />
+    <EntitySet Name="sns_group_photo" EntityType="irainbowModel.sns_group_photo" />
+    <EntitySet Name="sns_group_post" EntityType="irainbowModel.sns_group_post" />
+    <EntitySet Name="sns_group_setting" EntityType="irainbowModel.sns_group_setting" />
+    <EntitySet Name="sns_group_topic" EntityType="irainbowModel.sns_group_topic" />
+    <EntitySet Name="sns_group_topic_collect" EntityType="irainbowModel.sns_group_topic_collect" />
+    <EntitySet Name="sns_info_category" EntityType="irainbowModel.sns_info_category" />
+    <EntitySet Name="sns_info_content" EntityType="irainbowModel.sns_info_content" />
+    <EntitySet Name="sns_jzreport" EntityType="irainbowModel.sns_jzreport" />
+    <EntitySet Name="sns_links" EntityType="irainbowModel.sns_links" />
+    <EntitySet Name="sns_login_record" EntityType="irainbowModel.sns_login_record" />
+    <EntitySet Name="sns_member" EntityType="irainbowModel.sns_member" />
+    <EntitySet Name="sns_mini" EntityType="irainbowModel.sns_mini" />
+    <EntitySet Name="sns_mini_config" EntityType="irainbowModel.sns_mini_config" />
+    <EntitySet Name="sns_msg" EntityType="irainbowModel.sns_msg" />
+    <EntitySet Name="sns_network" EntityType="irainbowModel.sns_network" />
+    <EntitySet Name="sns_notify" EntityType="irainbowModel.sns_notify" />
+    <EntitySet Name="sns_notify_template" EntityType="irainbowModel.sns_notify_template" />
+    <EntitySet Name="sns_option" EntityType="irainbowModel.sns_option" />
+    <EntitySet Name="sns_photo" EntityType="irainbowModel.sns_photo" />
+    <EntitySet Name="sns_photo_album" EntityType="irainbowModel.sns_photo_album" />
+    <EntitySet Name="sns_photo_index" EntityType="irainbowModel.sns_photo_index" />
+    <EntitySet Name="sns_photo_mark" EntityType="irainbowModel.sns_photo_mark" />
+    <EntitySet Name="sns_Post" EntityType="irainbowModel.sns_Post" />
+    <EntitySet Name="sns_PostContent" EntityType="irainbowModel.sns_PostContent" />
+    <EntitySet Name="sns_privacy" EntityType="irainbowModel.sns_privacy" />
+    <EntitySet Name="sns_privacy_index" EntityType="irainbowModel.sns_privacy_index" />
+    <EntitySet Name="sns_report" EntityType="irainbowModel.sns_report" />
+    <EntitySet Name="sns_saveemail" EntityType="irainbowModel.sns_saveemail" />
+    <EntitySet Name="sns_share" EntityType="irainbowModel.sns_share" />
+    <EntitySet Name="sns_share_set" EntityType="irainbowModel.sns_share_set" />
+    <EntitySet Name="sns_share_type" EntityType="irainbowModel.sns_share_type" />
+    <EntitySet Name="sns_smile" EntityType="irainbowModel.sns_smile" />
+    <EntitySet Name="sns_system_group" EntityType="irainbowModel.sns_system_group" />
+    <EntitySet Name="sns_system_node" EntityType="irainbowModel.sns_system_node" />
+    <EntitySet Name="sns_system_popedom" EntityType="irainbowModel.sns_system_popedom" />
+    <EntitySet Name="sns_system_user_rank" EntityType="irainbowModel.sns_system_user_rank" />
+    <EntitySet Name="sns_topic" EntityType="irainbowModel.sns_topic" />
+    <EntitySet Name="sns_user" EntityType="irainbowModel.sns_user" />
+    <EntitySet Name="sns_user_app" EntityType="irainbowModel.sns_user_app" />
+    <EntitySet Name="sns_user_attach" EntityType="irainbowModel.sns_user_attach" />
+    <EntitySet Name="sns_user_gift" EntityType="irainbowModel.sns_user_gift" />
+    <EntitySet Name="sns_user_info" EntityType="irainbowModel.sns_user_info" />
+    <EntitySet Name="sns_user_online" EntityType="irainbowModel.sns_user_online" />
+    <EntitySet Name="sns_user_score" EntityType="irainbowModel.sns_user_score" />
+    <EntitySet Name="sns_user_search" EntityType="irainbowModel.sns_user_search" />
+    <EntitySet Name="sns_user_session" EntityType="irainbowModel.sns_user_session" />
+    <EntitySet Name="sns_visitor" EntityType="irainbowModel.sns_visitor" />
+    <EntitySet Name="sns_vote" EntityType="irainbowModel.sns_vote" />
+    <EntitySet Name="sns_vote_comment" EntityType="irainbowModel.sns_vote_comment" />
+    <EntitySet Name="sns_vote_config" EntityType="irainbowModel.sns_vote_config" />
+    <EntitySet Name="sns_vote_opt" EntityType="irainbowModel.sns_vote_opt" />
+    <EntitySet Name="sns_vote_user" EntityType="irainbowModel.sns_vote_user" />
+    <EntitySet Name="sns_wall" EntityType="irainbowModel.sns_wall" />
+    <EntitySet Name="sns_work_search" EntityType="irainbowModel.sns_work_search" />
+  </EntityContainer>
+  <EntityType Name="sns_ad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="place" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="use" Type="Int16" />
+    <Property Name="ad" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_app">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="enname" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="icon" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="url" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="url_exp" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="url_admin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="uid_url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="add_url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="add_name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="author" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="order2" Type="Int32" Nullable="false" />
+    <Property Name="place" Type="Int16" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="canvas_url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int16" />
+  </EntityType>
+  <EntityType Name="sns_app_user">
+    <Key>
+      <PropertyRef Name="appid" />
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="appid" Type="Int32" Nullable="false" />
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="open" Type="Int16" Nullable="false" />
+    <Property Name="publish_to_profile" Type="Int16" Nullable="false" />
+    <Property Name="activited" Type="Int16" Nullable="false" />
+    <Property Name="login_times" Type="Int32" />
+    <Property Name="last_login_time" Type="Int32" />
+    <Property Name="invitor" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_apply">
+    <Key>
+      <PropertyRef Name="aid" />
+    </Key>
+    <Property Name="aid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="Int16" Nullable="false" />
+    <Property Name="uname" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="fid" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="95" Unicode="true" FixedLength="true" />
+    <Property Name="dateline" Type="Int64" Nullable="false" />
+    <Property Name="dispose" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_attach">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="attach_type" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="userId" Type="Int64" />
+    <Property Name="uploadTime" Type="Int64" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="size" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="extension" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="hash" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="private" Type="Int16" />
+    <Property Name="isDel" Type="Int16" />
+    <Property Name="savepath" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="savename" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="savedomain" Type="Int16" />
+  </EntityType>
+  <EntityType Name="sns_blacklist">
+    <Key>
+      <PropertyRef Name="bid" />
+    </Key>
+    <Property Name="bid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fid" Type="Int32" Nullable="false" />
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="uname" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="dateline" Type="Int64" Nullable="false" />
+    <Property Name="adminid" Type="Int32" Nullable="false" />
+    <Property Name="adminname" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="sns_blog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="category" Type="Int32" />
+    <Property Name="cover" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="readCount" Type="Int32" Nullable="false" />
+    <Property Name="commentCount" Type="Int32" Nullable="false" />
+    <Property Name="recommendCount" Type="Int32" Nullable="false" />
+    <Property Name="tags" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="mTime" Type="Int32" />
+    <Property Name="rTime" Type="Int32" Nullable="false" />
+    <Property Name="isHot" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="private" Type="Int16" Nullable="false" />
+    <Property Name="private_data" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="hot" Type="Int32" Nullable="false" />
+    <Property Name="canableComment" Type="Int16" Nullable="false" />
+    <Property Name="attach" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ring_groupid" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_blog_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="pid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_blog_config">
+    <Key>
+      <PropertyRef Name="variable" />
+    </Key>
+    <Property Name="variable" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+    <Property Name="value" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_blog_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sourceId" Type="Int32" />
+    <Property Name="snapday" Type="Int32" />
+    <Property Name="pubdate" Type="Int32" />
+    <Property Name="boot" Type="Int16" Nullable="false" />
+    <Property Name="title" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="summary" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_blog_mention">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="blogid" Type="Int32" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_blog_outline">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="category" Type="Int32" />
+    <Property Name="cover" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="readCount" Type="Int32" Nullable="false" />
+    <Property Name="commentCount" Type="Int32" Nullable="false" />
+    <Property Name="tags" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="mTime" Type="Int32" />
+    <Property Name="isHot" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int32" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="private" Type="Int16" Nullable="false" />
+    <Property Name="hot" Type="Int32" Nullable="false" />
+    <Property Name="friendId" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="canableComment" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_blog_source">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="service" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="username" Type="String" MaxLength="30" Unicode="true" FixedLength="true" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="lastSnap" Type="Int32" />
+    <Property Name="isNew" Type="Int16" />
+    <Property Name="changes" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_blog_subscribe">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sourceId" Type="Int32" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="type" Type="Int16" />
+    <Property Name="newNum" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_catalog">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int16" Nullable="false" />
+    <Property Name="fname" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="cid" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_chat">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fromUserId" Type="Int32" />
+    <Property Name="toUserId" Type="Int32" />
+    <Property Name="msg" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="disTime" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="flagNew" Type="Int16" />
+  </EntityType>
+  <EntityType Name="sns_comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="appid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="toId" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int32" />
+    <Property Name="quietly" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_credit_setting">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="action" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="actioncn" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="score" Type="Int32" Nullable="false" />
+    <Property Name="experience" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_credit_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="alias" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_edu_search">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="school" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="class" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="year" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="extra1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="extra2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="privacy" Type="Int32" />
+    <Property Name="home" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_event">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="explain" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="contact" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int16" />
+    <Property Name="sTime" Type="Int32" />
+    <Property Name="eTime" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="deadline" Type="Int32" />
+    <Property Name="joinCount" Type="Int32" Nullable="false" />
+    <Property Name="attentionCount" Type="Int32" Nullable="false" />
+    <Property Name="limitCount" Type="Int32" Nullable="false" />
+    <Property Name="commentCount" Type="Int32" Nullable="false" />
+    <Property Name="coverId" Type="Int32" Nullable="false" />
+    <Property Name="optsId" Type="Int32" Nullable="false" />
+    <Property Name="feedId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_event_config">
+    <Key>
+      <PropertyRef Name="variable" />
+    </Key>
+    <Property Name="variable" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="true" />
+    <Property Name="value" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_event_opts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cost" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="costExplain" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="province" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="city" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="area" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="opts" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isHot" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_event_photo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eventId" Type="Int32" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="filename" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="filepath" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="savename" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="aid" Type="Int32" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="commentCount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_event_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_event_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eventId" Type="Int32" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="contact" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="action" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="feedId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_feed">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="title_data" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body_data" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="appid" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="feedtype" Type="Int16" Nullable="false" />
+    <Property Name="fid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_feed_del">
+    <Key>
+      <PropertyRef Name="feedId" />
+    </Key>
+    <Property Name="uid" Type="Int32" />
+    <Property Name="feedId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_feed_template">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_fg">
+    <Key>
+      <PropertyRef Name="gid" />
+    </Key>
+    <Property Name="uid" Type="Int32" />
+    <Property Name="fuid" Type="Int32" />
+    <Property Name="gid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_fgame_user">
+    <Key>
+      <PropertyRef Name="uid" />
+      <PropertyRef Name="gid" />
+      <PropertyRef Name="dateline" />
+    </Key>
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="gid" Type="Int32" Nullable="false" />
+    <Property Name="dateline" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_fgamelist">
+    <Key>
+      <PropertyRef Name="fgid" />
+    </Key>
+    <Property Name="fgid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fgname" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="icon" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="fglev" Type="Int16" Nullable="false" />
+    <Property Name="fginstruction" Type="String" Nullable="false" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="reply_count" Type="Int32" Nullable="false" />
+    <Property Name="typeid" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_fgscore">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="score" Type="Int32" Nullable="false" />
+    <Property Name="gtime" Type="Int32" Nullable="false" />
+    <Property Name="fgid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_field_name">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="field" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_forum">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cid" Type="Int16" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="true" />
+    <Property Name="synopsis" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="moderator" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="friend" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="commend" Type="Int32" Nullable="false" />
+    <Property Name="dateline" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_forum_catalog">
+    <Key>
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="cid" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fatherid" Type="Int16" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="sns_forum_temp">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="synopsis" Type="String" Nullable="false" MaxLength="95" Unicode="true" FixedLength="true" />
+    <Property Name="founder" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="dateline" Type="Int32" Nullable="false" />
+    <Property Name="ipaddress" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="sns_friend">
+    <Key>
+      <PropertyRef Name="uid" />
+      <PropertyRef Name="fuid" />
+    </Key>
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="fuid" Type="Int32" Nullable="false" />
+    <Property Name="fusername" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="note" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <Property Name="dateline" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_friend_black">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="fuid" Type="Int32" />
+    <Property Name="fname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_friend_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_friend_hide">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="fuid" Type="Int32" />
+    <Property Name="fname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_friend_ping">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="fuid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_friend_tip">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="content" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_gift">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoryId" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="num" Type="Int32" />
+    <Property Name="price" Type="Int32" />
+    <Property Name="img" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="cTime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_gift_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="cTime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="intro" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="logo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="announce" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cid0" Type="Int32" />
+    <Property Name="cid1" Type="Int32" />
+    <Property Name="membercount" Type="Int32" Nullable="false" />
+    <Property Name="threadcount" Type="Int32" Nullable="false" />
+    <Property Name="type" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="need_invite" Type="Int16" Nullable="false" />
+    <Property Name="need_verify" Type="Int16" />
+    <Property Name="actor_level" Type="Int16" />
+    <Property Name="brower_level" Type="Int16" />
+    <Property Name="openUploadFile" Type="Int16" Nullable="false" />
+    <Property Name="whoUploadFile" Type="Int16" Nullable="false" />
+    <Property Name="openAlbum" Type="Int16" Nullable="false" />
+    <Property Name="whoCreateAlbum" Type="Int16" Nullable="false" />
+    <Property Name="whoUploadPic" Type="Int16" Nullable="false" />
+    <Property Name="anno" Type="Int16" Nullable="false" />
+    <Property Name="ipshow" Type="Int16" Nullable="false" />
+    <Property Name="invitepriv" Type="Int16" Nullable="false" />
+    <Property Name="createalbumpriv" Type="Int16" Nullable="false" />
+    <Property Name="uploadpicpriv" Type="Int16" Nullable="false" />
+    <Property Name="ctime" Type="Int32" Nullable="false" />
+    <Property Name="mtime" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="isrecom" Type="Int16" Nullable="false" />
+    <Property Name="is_del" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_group_album">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gid" Type="Int32" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int64" />
+    <Property Name="mTime" Type="Int64" />
+    <Property Name="coverImageId" Type="Int32" />
+    <Property Name="coverImagePath" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="photoCount" Type="Int32" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+    <Property Name="share" Type="Int16" Nullable="false" />
+    <Property Name="is_del" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_group_attachement">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gid" Type="Int64" />
+    <Property Name="uid" Type="Int64" />
+    <Property Name="attachId" Type="Int64" />
+    <Property Name="name" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="note" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="filesize" Type="Int32" Nullable="false" />
+    <Property Name="filetype" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="fileurl" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="totaldowns" Type="Int32" Nullable="false" />
+    <Property Name="ctime" Type="Int32" />
+    <Property Name="mtime" Type="String" Nullable="false" MaxLength="11" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="is_del" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_group_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int16" Nullable="false" />
+    <Property Name="pid" Type="Int16" Nullable="false" />
+    <Property Name="module" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_group_log">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gid" Type="Int64" />
+    <Property Name="uid" Type="Int64" />
+    <Property Name="type" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ctime" Type="Int64" />
+  </EntityType>
+  <EntityType Name="sns_group_member">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gid" Type="Int64" />
+    <Property Name="uid" Type="Int64" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="reason" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int16" />
+    <Property Name="level" Type="Byte" />
+    <Property Name="ctime" Type="Int32" Nullable="false" />
+    <Property Name="mtime" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_group_photo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gid" Type="Int32" />
+    <Property Name="attachId" Type="Int32" />
+    <Property Name="albumId" Type="Int32" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int64" />
+    <Property Name="mTime" Type="Int64" />
+    <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="commentCount" Type="Int64" />
+    <Property Name="readCount" Type="Int64" />
+    <Property Name="savepath" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="size" Type="Int32" Nullable="false" />
+    <Property Name="tags" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="is_del" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_group_post">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gid" Type="Int64" />
+    <Property Name="uid" Type="Int64" />
+    <Property Name="tid" Type="Int64" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ip" Type="String" MaxLength="16" Unicode="true" FixedLength="true" />
+    <Property Name="istopic" Type="Int16" Nullable="false" />
+    <Property Name="ctime" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="quote" Type="Int64" Nullable="false" />
+    <Property Name="is_del" Type="String" Nullable="false" MaxLength="1" Unicode="true" FixedLength="false" />
+    <Property Name="attach" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_group_setting">
+    <Key>
+      <PropertyRef Name="value" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="36" Unicode="true" FixedLength="false" />
+    <Property Name="value" Type="String" Nullable="false" MaxLength="36" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_group_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gid" Type="Int64" />
+    <Property Name="uid" Type="Int64" />
+    <Property Name="name" Type="String" MaxLength="36" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="viewcount" Type="Int32" Nullable="false" />
+    <Property Name="replycount" Type="Int32" Nullable="false" />
+    <Property Name="dist" Type="Int16" Nullable="false" />
+    <Property Name="top" Type="Int16" Nullable="false" />
+    <Property Name="lock" Type="Int16" Nullable="false" />
+    <Property Name="addtime" Type="Int32" Nullable="false" />
+    <Property Name="replytime" Type="Int32" Nullable="false" />
+    <Property Name="mtime" Type="Int64" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="isrecom" Type="Int16" Nullable="false" />
+    <Property Name="is_del" Type="Int16" Nullable="false" />
+    <Property Name="attach" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_group_topic_collect">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tid" Type="Int64" Nullable="false" />
+    <Property Name="mid" Type="Int64" Nullable="false" />
+    <Property Name="addtime" Type="Int64" Nullable="false" />
+    <Property Name="is_del" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_info_category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="pid" Type="Int32" />
+    <Property Name="addcontent_tpl" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="content_tpl" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="category_tpl" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="data_source" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_info_content">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="publish_time" Type="Int32" />
+    <Property Name="category" Type="Int32" Nullable="false" />
+    <Property Name="cate_tree" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="author" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="hits" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="img" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="param_1" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="param_2" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="param_3" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="param_4" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="param_5" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+    <Property Name="newicon" Type="Int16" />
+  </EntityType>
+  <EntityType Name="sns_jzreport">
+    <Key>
+      <PropertyRef Name="rid" />
+    </Key>
+    <Property Name="rid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uname" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="uid" Type="Int32" Nullable="false" />
+    <Property Name="fid" Type="Int32" Nullable="false" />
+    <Property Name="tid" Type="Int32" Nullable="false" />
+    <Property Name="pid" Type="Int64" Nullable="false" />
+    <Property Name="author" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="authorid" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="90" Unicode="true" FixedLength="true" />
+    <Property Name="dateline" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_links">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="intro" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="logo" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="sort" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_login_record">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="login_ip" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="login_time" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_member">
+    <Key>
+      <PropertyRef Name="uid" />
+    </Key>
+    <Property Name="uid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="45" Unicode="true" FixedLength="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="true" />
+    <Property Name="securekey" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="regdate" Type="Int32" Nullable="false" />
+    <Property Name="regip" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="lastdate" Type="Int32" Nullable="false" />
+    <Property Name="lastip" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="groupid" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_mini">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="type" Type="Int32" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="tagId" Type="Int32" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="replay_numbel" Type="Int32" Nullable="false" />
+    <Property Name="feedId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_mini_config">
+    <Key>
+      <PropertyRef Name="value" />
+    </Key>
+    <Property Name="variable" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_msg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fromUserId" Type="Int32" />
+    <Property Name="toUserId" Type="Int32" />
+    <Property Name="subject" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="is_read" Type="Int16" Nullable="false" />
+    <Property Name="replyMsgId" Type="Int32" />
+    <Property Name="is_new" Type="Int16" Nullable="false" />
+    <Property Name="is_del" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_network">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="pid" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_notify">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="new" Type="Int16" />
+    <Property Name="authorid" Type="Int32" />
+    <Property Name="author" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="url" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="cate" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="appid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_notify_template">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="type_cn" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="deal" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="body" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_option">
+    <Key>
+      <PropertyRef Name="appname" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="64" Unicode="true" FixedLength="false" />
+    <Property Name="value" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="appname" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_photo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="attachId" Type="Int32" />
+    <Property Name="albumId" Type="Int32" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int64" />
+    <Property Name="mTime" Type="Int64" />
+    <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="commentCount" Type="Int64" />
+    <Property Name="readCount" Type="Int64" />
+    <Property Name="savepath" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="size" Type="Int32" Nullable="false" />
+    <Property Name="privacy" Type="Int32" Nullable="false" />
+    <Property Name="tags" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="order" Type="Int32" Nullable="false" />
+    <Property Name="isDel" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_photo_album">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int64" />
+    <Property Name="mTime" Type="Int64" />
+    <Property Name="coverImageId" Type="Int32" />
+    <Property Name="coverImagePath" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="photoCount" Type="Int32" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+    <Property Name="share" Type="Int16" Nullable="false" />
+    <Property Name="privacy" Type="Int16" />
+    <Property Name="privacy_data" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="isDel" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_photo_index">
+    <Key>
+      <PropertyRef Name="albumId" />
+      <PropertyRef Name="photoId" />
+    </Key>
+    <Property Name="albumId" Type="Int32" Nullable="false" />
+    <Property Name="photoId" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="order" Type="Int32" />
+    <Property Name="privacy" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_photo_mark">
+    <Key>
+      <PropertyRef Name="y" />
+    </Key>
+    <Property Name="photoId" Type="Int32" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="userName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="markedUserId" Type="Int32" />
+    <Property Name="x" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="y" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_Post">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fid" Type="Int32" Nullable="false" />
+    <Property Name="tid" Type="Int32" Nullable="false" />
+    <Property Name="replyfloor" Type="Int16" Nullable="false" />
+    <Property Name="author" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="authorid" Type="Int32" Nullable="false" />
+    <Property Name="authorico" Type="Int16" Nullable="false" />
+    <Property Name="guestname" Type="Int16" Nullable="false" />
+    <Property Name="subject" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="true" />
+    <Property Name="dateline" Type="Int64" Nullable="false" />
+    <Property Name="postip" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="up" Type="Int32" Nullable="false" />
+    <Property Name="down" Type="Int32" Nullable="false" />
+    <Property Name="wave" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_PostContent">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pid" Type="Int32" Nullable="false" />
+    <Property Name="tid" Type="Int32" Nullable="false" />
+    <Property Name="message" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="picture" Type="String" Nullable="false" MaxLength="180" Unicode="true" FixedLength="true" />
+    <Property Name="isHtml" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_privacy">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="privacy" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_privacy_index">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="owner" Type="Int32" />
+    <Property Name="visitor" Type="Int32" />
+    <Property Name="level" Type="Int16" Nullable="false" />
+    <Property Name="black" Type="Int16" Nullable="false" />
+    <Property Name="white" Type="Int16" Nullable="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_report">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="info" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="reason" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="con" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="appid" Type="Int32" />
+    <Property Name="recordId" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_saveemail">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="toemail" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="36" Unicode="true" FixedLength="false" />
+    <Property Name="senderemail" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_share">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="typeId" Type="Int32" />
+    <Property Name="toUid" Type="Int32" />
+    <Property Name="toUserName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="fromUid" Type="Int32" />
+    <Property Name="fromUserName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="aimId" Type="Int32" />
+    <Property Name="url" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="data" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="purview" Type="Int16" />
+    <Property Name="viewNum" Type="Int32" />
+    <Property Name="comNum" Type="Int32" />
+    <Property Name="isDel" Type="Int16" />
+  </EntityType>
+  <EntityType Name="sns_share_set">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="typeIds" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="uids" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="passive" Type="Int16" />
+    <Property Name="uid_type" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_share_type">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="alias" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="sort" Type="Int16" />
+    <Property Name="state" Type="Int16" />
+    <Property Name="temp_list" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_smile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="type" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="emotion" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="filename" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_system_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="showname" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="icon" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_system_node">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pid" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="containaction" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="ordernum" Type="Int32" Nullable="false" />
+    <Property Name="level" Type="Int32" Nullable="false" />
+    <Property Name="state" Type="Int16" Nullable="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="selected" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_system_popedom">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupid" Type="Int32" />
+    <Property Name="menuid" Type="Int32" />
+    <Property Name="modelid" Type="Int32" />
+    <Property Name="type" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="arraction" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_system_user_rank">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="icon" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="rulemin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="rulemax" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_topic">
+    <Key>
+      <PropertyRef Name="tid" />
+    </Key>
+    <Property Name="tid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fid" Type="Int32" Nullable="false" />
+    <Property Name="author" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="authorid" Type="Int32" Nullable="false" />
+    <Property Name="authorico" Type="Int16" Nullable="false" />
+    <Property Name="subject" Type="String" Nullable="false" MaxLength="60" Unicode="true" FixedLength="true" />
+    <Property Name="dateline" Type="Int32" Nullable="false" />
+    <Property Name="lasttime" Type="Int64" Nullable="false" />
+    <Property Name="lastauthor" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+    <Property Name="lastauthorid" Type="Int32" Nullable="false" />
+    <Property Name="lastauthorico" Type="Int16" Nullable="false" />
+    <Property Name="views" Type="Int64" Nullable="false" />
+    <Property Name="replies" Type="Int32" Nullable="false" />
+    <Property Name="stick" Type="Int16" Nullable="false" />
+    <Property Name="digest" Type="Int16" Nullable="false" />
+    <Property Name="picture" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="passwd" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="securekey" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="handle" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="sex" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+    <Property Name="birthday" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="blood_type" Type="String" MaxLength="5" Unicode="true" FixedLength="false" />
+    <Property Name="current_province" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="current_city" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="current_area" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="admin_level" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="commend" Type="Int16" />
+    <Property Name="active" Type="Int16" Nullable="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="identity" Type="Int16" Nullable="false" />
+    <Property Name="score" Type="Int32" Nullable="false" />
+    <Property Name="ring_groupid" Type="Int16" Nullable="false" />
+    <Property Name="regip" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <EntityType Name="sns_user_app">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="appid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_user_attach">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" />
+    <Property Name="appId" Type="Int32" />
+    <Property Name="attachId" Type="Int32" />
+    <Property Name="title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int64" />
+    <Property Name="mTime" Type="Int64" />
+    <Property Name="tags" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="commentCount" Type="Int64" />
+    <Property Name="readCount" Type="Int64" />
+    <Property Name="digCount" Type="Int64" />
+    <Property Name="attachPath" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="attachSize" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="attachType" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="Byte" Nullable="false" />
+    <Property Name="private" Type="Int16" />
+  </EntityType>
+  <EntityType Name="sns_user_gift">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fromUserId" Type="Int32" />
+    <Property Name="fromUserName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="toUserId" Type="Int32" />
+    <Property Name="giftPrice" Type="Int32" />
+    <Property Name="giftImg" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="sendInfo" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="sendWay" Type="Int16" />
+    <Property Name="cTime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_user_info">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="info" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="intro" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="contact" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="education" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="career" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="credit" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_user_online">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="uname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="mini" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="activeTime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_user_score">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="info" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="action" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="number" Type="Int32" />
+    <Property Name="cTime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_user_search">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="value" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="extra1" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="extra2" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="extra3" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="extra4" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="extra5" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="privacy" Type="Int32" />
+    <Property Name="home" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_user_session">
+    <Key>
+      <PropertyRef Name="sesskey" />
+    </Key>
+    <Property Name="sesskey" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="expiry" Type="Int64" Nullable="false" />
+    <Property Name="data" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_visitor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="visitId" Type="Int32" />
+    <Property Name="cTime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_vote">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="explain" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="type" Type="Int16" />
+    <Property Name="glimit" Type="Int16" Nullable="false" />
+    <Property Name="deadline" Type="Int32" />
+    <Property Name="onlyfriend" Type="Int16" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="vote_num" Type="Int32" Nullable="false" />
+    <Property Name="commentCount" Type="Int32" Nullable="false" />
+    <Property Name="feedId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_vote_comment">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vote_id" Type="Int32" />
+    <Property Name="user_id" Type="Int32" />
+    <Property Name="comment" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_vote_config">
+    <Key>
+      <PropertyRef Name="value" />
+    </Key>
+    <Property Name="variable" Type="String" MaxLength="20" Unicode="true" FixedLength="true" />
+    <Property Name="value" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sns_vote_opt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vote_id" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="num" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_vote_user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="vote_id" Type="Int32" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="32" Unicode="true" FixedLength="false" />
+    <Property Name="opts" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="feedId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sns_wall">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="fromUserId" Type="Int32" />
+    <Property Name="fromUserName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="cTime" Type="Int32" />
+    <Property Name="replyWallId" Type="Int32" Nullable="false" />
+    <Property Name="privacy" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sns_work_search">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uid" Type="Int32" />
+    <Property Name="name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="company" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="position" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+    <Property Name="begin" Type="Int32" />
+    <Property Name="end" Type="Int32" />
+    <Property Name="privacy" Type="Int16" Nullable="false" />
+    <Property Name="home" Type="Int16" Nullable="false" />
+  </EntityType>
+</Schema>

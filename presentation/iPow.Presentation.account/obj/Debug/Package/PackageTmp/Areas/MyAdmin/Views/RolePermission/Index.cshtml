@@ -1,0 +1,112 @@
+﻿@model iPow.Infrastructure.Crosscutting.Authorize.Dto.RolePermissionDto
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    Index</h2>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>RolePermissionDto</legend>
+        @Html.HiddenFor(model => model.Id)
+        @Html.HiddenFor(model => model.RoleID)
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @(Model.Description)
+        </div>
+        <div class="editor-label">
+            <label>
+                权限列表</label>
+        </div>
+        <div id="userPermissionList">
+            @{
+    foreach (var item in Model.PermissionList)
+    {
+                <div>
+                    Action权限Id: @(item.ActionId)<br />
+                    Action权限名 :@(item.ActionName)<br />
+                    Action权限描述:@(item.ActionRemark)<br />
+                    权限所属控制器:@(item.ControllerClassId)<br />
+                    控制器名 :@(item.ControllerClassName)<br />
+                    控制器描述 :@(item.ControllerId)<br />
+                    控制器分类Id :@(item.ControllerName)<br />
+                    控制器分类名 :@(item.ControllerRemark)<br />
+                    <a href = "javascript:;" onclick = "del(@(item.ActionId))">删除此权限</a>
+                </div>
+    }
+            }
+        </div>
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+    <div class="editor-label">
+        添加权限
+    </div>
+    <div id="permissionlist" style="margin-left: 5px;">
+        <ul>
+            @{
+    var allPermissionService = iPow.Presentation.account.iPowPreAccountEngine.Current
+        .Resolve<iPow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService>();
+    var permissionList = allPermissionService.GetAllPermissionFromDb().OrderBy(e => e.ControllerName).ThenBy(e => e.ActionId);
+
+    foreach (var item in permissionList)
+    {
+        
+                <li style="line-height: 180%"><span style=""><a href="javascrit:;" style="float: left;
+                    width: 900px;">
+                    <label style="width: 80px; float: left;">
+                        权限Id:@(item.ActionId)</label>
+                    @*权限系统名:@(item.ActionName)*@
+                    <label style="width: 200px; float: left;">
+                        权限名:@(item.ActionRemark)</label>
+                    @*所属控制器分类Id:@(item.ControllerClassId)
+                控制器分类名:@(item.ControllerClassName)
+                所属控制器Id:@(item.ControllerId)*@ @*所属控制器系统名:@(item.ControllerName)*@
+                    <label style="width: 520px; float: left;">
+                        所属控制器名:@(item.ControllerRemark)</label>
+                </a><a href="javascript:;" style="width: 100px; float: left;" onclick ="add(@(item.ActionId))">添加此权限</a> </span></li>
+
+    }
+            }
+        </ul>
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+<script type="text/javascript">
+    function add(actionid) {
+        var strId = $('#Id').val();
+        var strRoleId = $('#RoleID').val();
+        var data = { id: strId, roleID: strRoleId, actionId: actionid };
+        $.post('/rolepermission/add', data, function (res) {
+            if (res.success) {
+                location.reload();
+            }
+            else {
+                alert(res.message);
+            }
+        });
+    }
+
+    function del(actionid) {
+        var strId = $('#Id').val();
+        var strRoleId = $('#RoleID').val();
+        var data = { id: strId, roleID: strRoleId, actionId: actionid };
+        $.post('/rolepermission/delete', data, function (res) {
+            if (res.success) {
+                location.reload();
+            }
+            else {
+                alert(res.message);
+            }
+        })
+    }
+</script>

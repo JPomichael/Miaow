@@ -1,0 +1,15 @@
+E:\work\IPOW\domain\iPow.Domain.Intrastructure\bin\Debug\iPow.Domain.Infrastructure.dll
+E:\work\IPOW\domain\iPow.Domain.Intrastructure\bin\Debug\iPow.Domain.Infrastructure.pdb
+E:\work\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\ResolveAssemblyReference.cache
+E:\work\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\iPow.Domain.Infrastructure.dll
+E:\work\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\iPow.Domain.Infrastructure.pdb
+C:\Users\JPomichael\Desktop\IPOW\domain\iPow.Domain.Intrastructure\bin\Debug\iPow.Domain.Infrastructure.dll
+C:\Users\JPomichael\Desktop\IPOW\domain\iPow.Domain.Intrastructure\bin\Debug\iPow.Domain.Infrastructure.pdb
+C:\Users\JPomichael\Desktop\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\iPow.Domain.Infrastructure.csprojResolveAssemblyReference.cache
+C:\Users\JPomichael\Desktop\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\iPow.Domain.Infrastructure.dll
+C:\Users\JPomichael\Desktop\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\iPow.Domain.Infrastructure.pdb
+D:\Programmer_程序员\Wrok\IPOW\domain\iPow.Domain.Intrastructure\bin\Debug\iPow.Domain.Infrastructure.dll
+D:\Programmer_程序员\Wrok\IPOW\domain\iPow.Domain.Intrastructure\bin\Debug\iPow.Domain.Infrastructure.pdb
+D:\Programmer_程序员\Wrok\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\iPow.Domain.Infrastructure.csprojResolveAssemblyReference.cache
+D:\Programmer_程序员\Wrok\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\iPow.Domain.Infrastructure.dll
+D:\Programmer_程序员\Wrok\IPOW\domain\iPow.Domain.Intrastructure\obj\Debug\iPow.Domain.Infrastructure.pdb

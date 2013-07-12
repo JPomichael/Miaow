@@ -1,0 +1,88 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model  iPow.Application.account.Dto.TourPlanDto
+<div class="container">
+    <div class="panel-action" style="height: 30px; width: 300px; text-align: right; color: #4545">
+        <a class="js-dialog btn-grey fi-150 " href="/mytour/home/index/"><span class="add"></span>
+            创建行程 </a>
+    </div>
+    <div class="hd" style="height: 30px; width: 300px;">
+        <h2>
+            我的行程</h2>
+    </div>
+    <div id="info">
+        @{
+            if (Model.TourPlanList != null)
+            {
+                foreach (var item in Model.TourPlanList)
+                {
+            <!-------------显示线路列表页---------------->
+            <br />
+            <div class="tl-ctn tl-l js-delete-ctn" id="info_@(item.PlanID)">
+                <div class="tl-img">
+                    <a href="">
+                        <img alt="" src="">
+                    </a>
+                </div>
+                <ul class="tl-info">
+                    <li class="tl-tit"><a href="/mytour/home/plan/1?planid=@item.PlanID" title="点击查看详情">@item.PlanTitle</a></li>
+                    @* MyTour/Home/plan/1?PlanID=1078*@
+                    <li><span class="comment">目的地：</span> <a href="">@item.Destination</a> </li>
+                    <li><span class="comment">天数：</span> @item.Days</li>
+                    <li><b></b><em>@Convert.ToDateTime(item.AddTime).ToString("yyyy-MM-dd")</em> </li>
+                </ul>
+            </div>
+            <!----------显示线路列表结束---------->
+                }
+            @Html.Pager(Model.TourPlanList.TotalItemCount, 15, Model.TourPlanList.CurrentPageIndex, "planlist", "home",
+                  new PagerOptions { PageIndexParameterName = "Id" },
+             null, null, null)
+            }
+        }
+    </div>
+</div>
+<style type="text/css">
+    a
+    {
+        color: #0082CB;
+        text-decoration: none;
+    }
+    li
+    {
+        list-style: none outside none;
+    }
+    .tl-img
+    {
+        float: left;
+        height: 108px;
+        width: 154px;
+    }
+    .btn-grey, .btn-onclick
+    {
+        background: url("/sites/all/themes/iyoyo/img/bg-button.png") repeat scroll 0 0 transparent;
+        border-color: #CCCCCC #999999 #999999 #CCCCCC;
+        border-style: solid;
+        border-width: 1px;
+        color: #333333 !important;
+        font-size: 13px;
+        text-shadow: 1px 1px 0 #FFFFFF;
+    }
+    .btn-grey, .btn-orange, .btn-green, .btn-onclick
+    {
+        border-radius: 5px 5px 5px 5px;
+        color: #FFFFFF;
+        display: inline-block;
+        font-size: 14px;
+        height: 25px;
+        line-height: 25px;
+        outline: medium none;
+        text-align: center;
+        vertical-align: middle;
+        width: 88px;
+    }
+    .tl-ctn
+    {
+        height: 100px;
+        width: 600px;
+        border: 1px dashed #DDDDDD;
+    }
+</style>

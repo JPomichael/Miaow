@@ -1,0 +1,10 @@
+E:\work\IPOW\infrastructure\QConnectSDK\bin\Debug\QConnectSDK.dll
+E:\work\IPOW\infrastructure\QConnectSDK\bin\Debug\QConnectSDK.pdb
+E:\work\IPOW\infrastructure\QConnectSDK\bin\Debug\Newtonsoft.Json.dll
+E:\work\IPOW\infrastructure\QConnectSDK\bin\Debug\RestSharp.dll
+E:\work\IPOW\infrastructure\QConnectSDK\bin\Debug\Newtonsoft.Json.pdb
+E:\work\IPOW\infrastructure\QConnectSDK\bin\Debug\Newtonsoft.Json.xml
+E:\work\IPOW\infrastructure\QConnectSDK\bin\Debug\RestSharp.xml
+E:\work\IPOW\infrastructure\QConnectSDK\obj\Debug\ResolveAssemblyReference.cache
+E:\work\IPOW\infrastructure\QConnectSDK\obj\Debug\QConnectSDK.dll
+E:\work\IPOW\infrastructure\QConnectSDK\obj\Debug\QConnectSDK.pdb

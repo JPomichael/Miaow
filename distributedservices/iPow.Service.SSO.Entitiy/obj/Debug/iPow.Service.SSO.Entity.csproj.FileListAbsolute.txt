@@ -1,0 +1,17 @@
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.dll
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.pdb
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.dll
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.pdb
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.dll.config
+F:\Dev\WorkWeb\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.dll.config
+F:\Dev\WorkWeb\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.dll
+F:\Dev\WorkWeb\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.pdb
+F:\Dev\WorkWeb\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.dll
+F:\Dev\WorkWeb\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.pdb
+E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.dll.config
+E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.dll
+E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.pdb
+E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\ResolveAssemblyReference.cache
+E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.dll
+E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.pdb

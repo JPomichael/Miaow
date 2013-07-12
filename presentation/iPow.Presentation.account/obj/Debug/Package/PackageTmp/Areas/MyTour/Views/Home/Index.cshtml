@@ -1,0 +1,36 @@
+﻿@using Telerik.Web.Mvc
+@using Telerik.Web.Mvc.UI
+@{ Html.Telerik().Window()
+        .Name("Window")
+        .Title("创建线路")
+        .Draggable((bool)ViewData["movable"])
+        .Resizable(resizing => resizing
+            .Enabled((bool)ViewData["resizable"])
+            .MinHeight(200)
+            .MinWidth(500)
+            .MaxHeight(200)
+            .MaxWidth(500)
+        )
+        .Modal((bool)ViewData["modal"])
+        .Content(@<text>
+    @Html.Partial("_CreateTourName")
+    </text>)
+        .Width(500)
+        .Height(200)
+        .Render();
+}
+@{ Html.Telerik().ScriptRegistrar()
+        .OnDocumentReady(@<text> 
+        var windowElement = $('#Window'); 
+        var undoButton =$('#undo'); undoButton .bind('click', function(e) {
+            windowElement.data('tWindow').open(); 
+            undoButton.hide(); }) .toggle(!windowElement.is(':visible')); windowElement.bind('close',
+    function() { undoButton.show(); });
+    </text>);
+}
+<script type="text/javascript">
+    $(function () {
+        var window = $("#Window").data("tWindow");
+        window.center(); 
+    })
+</script>

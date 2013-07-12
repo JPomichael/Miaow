@@ -1,0 +1,1977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ipowsysModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ipowsysEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BBS_Activities" EntityType="ipowsysModel.BBS_Activities" />
+    <EntitySet Name="BBS_Activityapplies" EntityType="ipowsysModel.BBS_Activityapplies" />
+    <EntitySet Name="BBS_ad" EntityType="ipowsysModel.BBS_ad" />
+    <EntitySet Name="BBS_admin" EntityType="ipowsysModel.BBS_admin" />
+    <EntitySet Name="BBS_AdminNote" EntityType="ipowsysModel.BBS_AdminNote" />
+    <EntitySet Name="BBS_affiche" EntityType="ipowsysModel.BBS_affiche" />
+    <EntitySet Name="BBS_alltop" EntityType="ipowsysModel.BBS_alltop" />
+    <EntitySet Name="BBS_attention" EntityType="ipowsysModel.BBS_attention" />
+    <EntitySet Name="BBS_badip" EntityType="ipowsysModel.BBS_badip" />
+    <EntitySet Name="BBS_board" EntityType="ipowsysModel.BBS_board" />
+    <EntitySet Name="BBS_board_master" EntityType="ipowsysModel.BBS_board_master" />
+    <EntitySet Name="BBS_CoinLink" EntityType="ipowsysModel.BBS_CoinLink" />
+    <EntitySet Name="BBS_Debate_Poll" EntityType="ipowsysModel.BBS_Debate_Poll" />
+    <EntitySet Name="BBS_Debate_Posts" EntityType="ipowsysModel.BBS_Debate_Posts" />
+    <EntitySet Name="BBS_Debates" EntityType="ipowsysModel.BBS_Debates" />
+    <EntitySet Name="BBS_grade" EntityType="ipowsysModel.BBS_grade" />
+    <EntitySet Name="BBS_hot" EntityType="ipowsysModel.BBS_hot" />
+    <EntitySet Name="BBS_Link" EntityType="ipowsysModel.BBS_Link" />
+    <EntitySet Name="BBS_Log" EntityType="ipowsysModel.BBS_Log" />
+    <EntitySet Name="BBS_msg" EntityType="ipowsysModel.BBS_msg" />
+    <EntitySet Name="BBS_pet" EntityType="ipowsysModel.BBS_pet" />
+    <EntitySet Name="BBS_pet_lev" EntityType="ipowsysModel.BBS_pet_lev" />
+    <EntitySet Name="BBS_poll_options" EntityType="ipowsysModel.BBS_poll_options" />
+    <EntitySet Name="BBS_poll_voter" EntityType="ipowsysModel.BBS_poll_voter" />
+    <EntitySet Name="BBS_prop" EntityType="ipowsysModel.BBS_prop" />
+    <EntitySet Name="BBS_report" EntityType="ipowsysModel.BBS_report" />
+    <EntitySet Name="BBS_task" EntityType="ipowsysModel.BBS_task" />
+    <EntitySet Name="BBS_task_result" EntityType="ipowsysModel.BBS_task_result" />
+    <EntitySet Name="BBS_TextAD" EntityType="ipowsysModel.BBS_TextAD" />
+    <EntitySet Name="BBS_topic" EntityType="ipowsysModel.BBS_topic" />
+    <EntitySet Name="BBS_TopicHeart" EntityType="ipowsysModel.BBS_TopicHeart" />
+    <EntitySet Name="BBS_topictype" EntityType="ipowsysModel.BBS_topictype" />
+    <EntitySet Name="BBS_upfile" EntityType="ipowsysModel.BBS_upfile" />
+    <EntitySet Name="BBS_User" EntityType="ipowsysModel.BBS_User" />
+    <EntitySet Name="BBS_user_group" EntityType="ipowsysModel.BBS_user_group" />
+    <EntitySet Name="BBS_user_passfind" EntityType="ipowsysModel.BBS_user_passfind" />
+    <EntitySet Name="BBS_user_topic" EntityType="ipowsysModel.BBS_user_topic" />
+    <EntitySet Name="BBS_UserCoinChange" EntityType="ipowsysModel.BBS_UserCoinChange" />
+    <EntitySet Name="BBS_userpet" EntityType="ipowsysModel.BBS_userpet" />
+    <EntitySet Name="BBS_UserProp" EntityType="ipowsysModel.BBS_UserProp" />
+    <EntitySet Name="CrawlPicInfo" EntityType="ipowsysModel.CrawlPicInfo" />
+    <EntitySet Name="CrawlSightInfo" EntityType="ipowsysModel.CrawlSightInfo" />
+    <EntitySet Name="Sys_AcData" EntityType="ipowsysModel.Sys_AcData" />
+    <EntitySet Name="Sys_AdminUser" EntityType="ipowsysModel.Sys_AdminUser" />
+    <EntitySet Name="Sys_AdWebsiteInfo" EntityType="ipowsysModel.Sys_AdWebsiteInfo" />
+    <EntitySet Name="Sys_CityInfo" EntityType="ipowsysModel.Sys_CityInfo" />
+    <EntitySet Name="Sys_ClientActivity" EntityType="ipowsysModel.Sys_ClientActivity" />
+    <EntitySet Name="Sys_DemoClass" EntityType="ipowsysModel.Sys_DemoClass" />
+    <EntitySet Name="Sys_DemoInfo" EntityType="ipowsysModel.Sys_DemoInfo" />
+    <EntitySet Name="Sys_GuestBook" EntityType="ipowsysModel.Sys_GuestBook" />
+    <EntitySet Name="Sys_HotelPic" EntityType="ipowsysModel.Sys_HotelPic" />
+    <EntitySet Name="Sys_HotelPropertyInfo2" EntityType="ipowsysModel.Sys_HotelPropertyInfo2" />
+    <EntitySet Name="Sys_HotelReservationInfo" EntityType="ipowsysModel.Sys_HotelReservationInfo" />
+    <EntitySet Name="Sys_HotelRoomInfo" EntityType="ipowsysModel.Sys_HotelRoomInfo" />
+    <EntitySet Name="Sys_IpAddress" EntityType="ipowsysModel.Sys_IpAddress" />
+    <EntitySet Name="Sys_IpAddress11" EntityType="ipowsysModel.Sys_IpAddress11" />
+    <EntitySet Name="Sys_LinksClass" EntityType="ipowsysModel.Sys_LinksClass" />
+    <EntitySet Name="Sys_LinksInfo" EntityType="ipowsysModel.Sys_LinksInfo" />
+    <EntitySet Name="Sys_MenuTree" EntityType="ipowsysModel.Sys_MenuTree" />
+    <EntitySet Name="Sys_NewsClass" EntityType="ipowsysModel.Sys_NewsClass" />
+    <EntitySet Name="Sys_NewsInfo" EntityType="ipowsysModel.Sys_NewsInfo" />
+    <EntitySet Name="Sys_PermissionCategories" EntityType="ipowsysModel.Sys_PermissionCategories" />
+    <EntitySet Name="Sys_Permissions" EntityType="ipowsysModel.Sys_Permissions" />
+    <EntitySet Name="Sys_RolePermissions" EntityType="ipowsysModel.Sys_RolePermissions" />
+    <EntitySet Name="Sys_Roles" EntityType="ipowsysModel.Sys_Roles" />
+    <EntitySet Name="Sys_SearchInfo" EntityType="ipowsysModel.Sys_SearchInfo" />
+    <EntitySet Name="Sys_SightClass" EntityType="ipowsysModel.Sys_SightClass" />
+    <EntitySet Name="Sys_SightTicket" EntityType="ipowsysModel.Sys_SightTicket" />
+    <EntitySet Name="Sys_SightVouch" EntityType="ipowsysModel.Sys_SightVouch" />
+    <EntitySet Name="Sys_SightVouchItem" EntityType="ipowsysModel.Sys_SightVouchItem" />
+    <EntitySet Name="Sys_ThemeActivity" EntityType="ipowsysModel.Sys_ThemeActivity" />
+    <EntitySet Name="Sys_ThemeActivityClass" EntityType="ipowsysModel.Sys_ThemeActivityClass" />
+    <EntitySet Name="Sys_TourInfo" EntityType="ipowsysModel.Sys_TourInfo" />
+    <EntitySet Name="Sys_TourPlan" EntityType="ipowsysModel.Sys_TourPlan" />
+    <EntitySet Name="Sys_TourPlanDetail" EntityType="ipowsysModel.Sys_TourPlanDetail" />
+    <EntitySet Name="Sys_UserAction" EntityType="ipowsysModel.Sys_UserAction" />
+    <EntitySet Name="Sys_UserRoles" EntityType="ipowsysModel.Sys_UserRoles" />
+    <EntitySet Name="Sys_VouchHotelInfo" EntityType="ipowsysModel.Sys_VouchHotelInfo" />
+    <EntitySet Name="Sys_VouchInfo" EntityType="ipowsysModel.Sys_VouchInfo" />
+    <EntitySet Name="sysdiagrams" EntityType="ipowsysModel.sysdiagrams" />
+    <EntitySet Name="T_DailyRates" EntityType="ipowsysModel.T_DailyRates" />
+    <EntitySet Name="TripIndexInfo" EntityType="ipowsysModel.TripIndexInfo" />
+    <EntitySet Name="TripList" EntityType="ipowsysModel.TripList" />
+    <EntitySet Name="Sys_SightComm" EntityType="ipowsysModel.Sys_SightComm" />
+    <EntitySet Name="Sys_DiscountClass" EntityType="ipowsysModel.Sys_DiscountClass" />
+    <EntitySet Name="Sys_DiscountComm" EntityType="ipowsysModel.Sys_DiscountComm" />
+    <EntitySet Name="Sys_DisCountInfo" EntityType="ipowsysModel.Sys_DisCountInfo" />
+    <EntitySet Name="Sys_ArticleClass" EntityType="ipowsysModel.Sys_ArticleClass" />
+    <EntitySet Name="Sys_ArticleComm" EntityType="ipowsysModel.Sys_ArticleComm" />
+    <EntitySet Name="Sys_ArticleInfo" EntityType="ipowsysModel.Sys_ArticleInfo" />
+    <EntitySet Name="Sys_VideoClass" EntityType="ipowsysModel.Sys_VideoClass" />
+    <EntitySet Name="Sys_VideoComm" EntityType="ipowsysModel.Sys_VideoComm" />
+    <EntitySet Name="Sys_VideoInfo" EntityType="ipowsysModel.Sys_VideoInfo" />
+    <EntitySet Name="Sys_PicClass" EntityType="ipowsysModel.Sys_PicClass" />
+    <EntitySet Name="Sys_PicComm" EntityType="ipowsysModel.Sys_PicComm" />
+    <EntitySet Name="Sys_PicInfo" EntityType="ipowsysModel.Sys_PicInfo" />
+    <EntitySet Name="Sys_SightInfo" EntityType="ipowsysModel.Sys_SightInfo" />
+    <AssociationSet Name="FK_Sys_SightInfo_Sys_SightClass" Association="ipowsysModel.FK_Sys_SightInfo_Sys_SightClass">
+      <End Role="Sys_SightClass" EntitySet="Sys_SightClass" />
+      <End Role="Sys_SightInfo" EntitySet="Sys_SightInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sys_SightTicket_Sys_SightInfo" Association="ipowsysModel.FK_Sys_SightTicket_Sys_SightInfo">
+      <End Role="Sys_SightInfo" EntitySet="Sys_SightInfo" />
+      <End Role="Sys_SightTicket" EntitySet="Sys_SightTicket" />
+    </AssociationSet>
+    <FunctionImport Name="Sys_SightInfoSearch" EntitySet="Sys_SightInfo" ReturnType="Collection(ipowsysModel.Sys_SightInfo)">
+      <Parameter Name="Search" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="sys_phone_ly" EntityType="ipowsysModel.sys_phone_ly" />
+    <EntitySet Name="Sys_phoneCount" EntityType="ipowsysModel.Sys_phoneCount" />
+    <EntitySet Name="Sys_TourClass" EntityType="ipowsysModel.Sys_TourClass" />
+    <FunctionImport Name="Sys_ExistsByUserID" ReturnType="Collection(Boolean)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sys_CreateUser" EntitySet="Sys_AdminUser" ReturnType="Collection(ipowsysModel.Sys_AdminUser)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="TrueName" Mode="In" Type="String" />
+      <Parameter Name="Sex" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+      <Parameter Name="DepartmentID" Mode="In" Type="String" />
+      <Parameter Name="Activity" Mode="In" Type="Boolean" />
+      <Parameter Name="UserType" Mode="In" Type="String" />
+      <Parameter Name="ID" Mode="InOut" Type="Int32" />
+      <Parameter Name="Style" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sys_AddUserToRole">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="RoleID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sys_DeleteByUserID">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sys_PermissionByUserId">
+      <Parameter Name="UserId" Mode="In" Type="String" />
+      <Parameter Name="PermissionId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sys_UpdatePassword">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Sys_UpdateUser">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+      <Parameter Name="TrueName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Sex" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+      <Parameter Name="DepartmentID" Mode="In" Type="String" />
+      <Parameter Name="Activity" Mode="In" Type="Boolean" />
+      <Parameter Name="UserType" Mode="In" Type="String" />
+      <Parameter Name="Style" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Sys_ExistsByUserName">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="Sys_HotelPropertyInfo" EntityType="ipowsysModel.Sys_HotelPropertyInfo" />
+    <EntitySet Name="Sys_Log" EntityType="ipowsysModel.Sys_Log" />
+    <EntitySet Name="Sys_HotelDailyRates2" EntityType="ipowsysModel.Sys_HotelDailyRates2" />
+    <EntitySet Name="Sys_HotelComm" EntityType="ipowsysModel.Sys_HotelComm" />
+  </EntityContainer>
+  <EntityType Name="BBS_Activities">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fid" Type="Int32" />
+    <Property Name="cost" Type="Int32" />
+    <Property Name="starttime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="endtime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="place" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="class" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="gender" Type="Int32" />
+    <Property Name="number" Type="Int32" />
+    <Property Name="expiration" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="city" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="isindex" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_Activityapplies">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="applyid" Type="Int32" />
+    <Property Name="fid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="message" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="verified" Type="Int32" />
+    <Property Name="dateline" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="payment" Type="Int32" />
+    <Property Name="contact" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="userid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_ad">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="place_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="place_type" Type="Int32" />
+    <Property Name="place_price" Type="Int32" />
+    <Property Name="img_width" Type="Int32" />
+    <Property Name="img_height" Type="Int32" />
+    <Property Name="place_default" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="place_explain" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_admin">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="admin_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="admin_realname" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="admin_pass" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+    <Property Name="login_time" Type="DateTime" />
+    <Property Name="login_ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_AdminNote">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="admin_username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="admin_time" Type="DateTime" />
+    <Property Name="admin_work" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="admin_boardid" Type="Int32" />
+    <Property Name="admin_bbs_title" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="admin_bbscontent" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+    <Property Name="admin_bbsauthor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="admin_addCoin" Type="Int32" />
+    <Property Name="admin_reduceCoin" Type="Int32" />
+    <Property Name="admin_noPostTime" Type="Int32" />
+    <Property Name="admin_info" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_affiche">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="link" Type="String" MaxLength="320" Unicode="false" FixedLength="false" />
+    <Property Name="addtime" Type="DateTime" />
+    <Property Name="addmaster" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="hits" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_alltop">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="addmaster" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="addtime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="BBS_attention">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_badip">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_board">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="board_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="board_root" Type="Int32" />
+    <Property Name="board_explain" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="board_explain_master" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="board_img" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="board_px" Type="Int32" />
+    <Property Name="board_topictype" Type="Int32" />
+    <Property Name="board_topic_count" Type="Int32" />
+    <Property Name="board_rebbs_count" Type="Int32" />
+    <Property Name="today_post_count" Type="Int32" />
+    <Property Name="last_update_time" Type="DateTime" />
+    <Property Name="last_update_username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="board_open" Type="Int32" />
+    <Property Name="board_usergroup" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="board_list" Type="Int32" />
+    <Property Name="board_show_explain" Type="Int32" />
+    <Property Name="today_topic_count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_board_master">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="px" Type="Int32" />
+    <Property Name="masterlev" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_CoinLink">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="CoinLink_url" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="CoinLink_type" Type="Int32" />
+    <Property Name="CoinLink_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CoinLink_url" Type="String" Nullable="false" MaxLength="1500" Unicode="false" FixedLength="false" />
+    <Property Name="CoinLink_num" Type="Int32" />
+    <Property Name="downcount" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="BBS_Debate_Poll">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="debateid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="stand" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_Debate_Posts">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="voterids" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="stand" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="voters" Type="Int32" />
+    <Property Name="voterids" Type="Int32" Nullable="false" />
+    <Property Name="tid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_Debates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="starttime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="endtime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="affirmdebaters" Type="Int32" />
+    <Property Name="negadebaters" Type="Int32" />
+    <Property Name="affirmvotes" Type="Int32" />
+    <Property Name="negavotes" Type="Int32" />
+    <Property Name="affirmpoint" Type="String" MaxLength="800" Unicode="false" FixedLength="false" />
+    <Property Name="negapoint" Type="String" MaxLength="800" Unicode="false" FixedLength="false" />
+    <Property Name="winner" Type="Int32" />
+    <Property Name="umpire" Type="Int32" />
+    <Property Name="bestdebater" Type="Int32" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="boardid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_grade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="grade" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="grade_bbscount" Type="Int32" />
+    <Property Name="grade_img" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_hot">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="hot_type" Type="Int32" />
+    <Property Name="hot_color" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="hot_title" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="hot_link" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="hot_img" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="adduser" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="addtime" Type="DateTime" />
+    <Property Name="addip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_Link">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="link_type" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="link_sitename" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="link_site_url" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="link_siter" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="link_logo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="link_px" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_Log">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" />
+    <Property Name="LogDate" Type="DateTime" />
+    <Property Name="Thread" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="Level" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Logger" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="Message" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_msg">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="touser" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fromuser" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="msg_title" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="msg_content" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="addtime" Type="DateTime" />
+    <Property Name="addip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isread" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_pet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="pet_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pet_HP" Type="Int32" />
+    <Property Name="pet_MP" Type="Int32" />
+    <Property Name="pet_CP" Type="Int32" />
+    <Property Name="pet_img" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="pet_happy_img" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="pet_blue_img" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="pet_info" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="pet_buys" Type="Int32" />
+    <Property Name="pet_price" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_pet_lev">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="pet_lev_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pet_lev_exp" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_poll_options">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="poll_option" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="votes" Type="Int32" />
+    <Property Name="px" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_poll_voter">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="potnid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_prop">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="prop_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="prop_explain" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="prop_price" Type="Int32" />
+    <Property Name="prop_num" Type="Int32" />
+    <Property Name="prop_start" Type="Int32" />
+    <Property Name="prop_effect" Type="Int32" />
+    <Property Name="prop_use" Type="Int32" />
+    <Property Name="prop_group" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_report">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="rootid" Type="Int32" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="report_url" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="report_content" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="addtime" Type="DateTime" />
+    <Property Name="addip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isok" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_task">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="task_key" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="task_title" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="task_content" Type="String" MaxLength="5000" Unicode="false" FixedLength="false" />
+    <Property Name="task_link" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="task_key" Type="String" Nullable="false" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="task_lev" Type="Int32" />
+    <Property Name="task_money" Type="Int32" />
+    <Property Name="task_win_count" Type="Int32" />
+    <Property Name="task_lost_count" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_task_result">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="taskid" Type="Int32" />
+    <Property Name="addtime" Type="DateTime" />
+    <Property Name="addip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_TextAD">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="placeid" Type="Int32" />
+    <Property Name="placename" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ad_text" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ad_color" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ad_bold" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ad_link" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ad_client" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ad_client_info" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ad_stoptime" Type="DateTime" />
+    <Property Name="px" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TopicType" Type="Int32" />
+    <Property Name="TopicHeart" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="title" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="rootid" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="AddIP" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Hits" Type="Int32" />
+    <Property Name="RepostCount" Type="Int32" />
+    <Property Name="RepostUserid" Type="Int32" />
+    <Property Name="RepostUsername" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RepostTime" Type="DateTime" />
+    <Property Name="assess_good" Type="Int32" />
+    <Property Name="assess_bad" Type="Int32" />
+    <Property Name="to_coin" Type="Int32" />
+    <Property Name="to_coin_ed" Type="Int32" />
+    <Property Name="task_state" Type="Int32" />
+    <Property Name="get_coin" Type="Int32" />
+    <Property Name="bbs_lock" Type="Int32" />
+    <Property Name="bbs_lock_info" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="bbs_edit_info" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="title_color" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="title_bgcolor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="title_bold" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="bbs_lock_time" Type="DateTime" />
+    <Property Name="bbs_notshow_time" Type="DateTime" />
+    <Property Name="bbs_istop_time" Type="DateTime" />
+    <Property Name="coin_link" Type="Int32" />
+    <Property Name="bbsgood" Type="Int32" />
+    <Property Name="bbstop" Type="Int32" />
+    <Property Name="ispoll" Type="Int32" />
+    <Property Name="poll_days" Type="Int32" />
+    <Property Name="poll_type" Type="Int32" />
+    <Property Name="poll_maxvote" Type="Int32" />
+    <Property Name="poll_open" Type="Int32" />
+    <Property Name="stand" Type="Int32" />
+    <Property Name="goodkey" Type="Int32" />
+    <Property Name="fid" Type="Int32" />
+    <Property Name="blogurl" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ArticleID" Type="Int32" />
+    <Property Name="ParkID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_TopicHeart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="heart_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="heart_img" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="heart_ubb" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_topictype">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="BBSTopic" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BBSTopicColor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="px" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_upfile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="username" Type="String" MaxLength="20" Unicode="false" FixedLength="true" />
+    <Property Name="file_path" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="file_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="file_ext" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="file_size" Type="Int32" />
+    <Property Name="addtime" Type="DateTime" />
+    <Property Name="addip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="bbstitle" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="attachdesc" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="isipow" Type="Int32" />
+    <Property Name="parkid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="cwpass" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="pass_safe_question" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="pass_safe_key" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="useremail" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="useremail_open" Type="Int32" />
+    <Property Name="user_coin" Type="Int32" />
+    <Property Name="user_credit" Type="Int32" />
+    <Property Name="regtime" Type="DateTime" />
+    <Property Name="regip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="last_logintime" Type="DateTime" />
+    <Property Name="last_loginip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="login_count" Type="Int32" />
+    <Property Name="usercommend" Type="Int32" />
+    <Property Name="upfile_sizecount" Type="Int32" />
+    <Property Name="update_today" Type="DateTime" />
+    <Property Name="bbscount" Type="Int32" />
+    <Property Name="user_group" Type="Int32" />
+    <Property Name="user_sex" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="user_from" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="user_qq" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="user_msn" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="user_homepage" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="user_write" Type="String" MaxLength="800" Unicode="false" FixedLength="false" />
+    <Property Name="user_imgwrite" Type="Int32" />
+    <Property Name="user_imgwrite_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="user_imgwrite_url" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="user_sys_face" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="user_up_face" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+    <Property Name="user_up_face_width" Type="Int32" />
+    <Property Name="user_up_face_height" Type="Int32" />
+    <Property Name="user_face_select" Type="Int32" />
+    <Property Name="master_lev" Type="Int32" />
+    <Property Name="noPostTime" Type="DateTime" />
+    <Property Name="email_check" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="regcheck_ok" Type="Int32" />
+    <Property Name="user_get_rancoin" Type="Int32" />
+    <Property Name="user_noget_rancoin" Type="Int32" />
+    <Property Name="assess_good" Type="Int32" />
+    <Property Name="assess_bad" Type="Int32" />
+    <Property Name="is_lock" Type="Int32" />
+    <Property Name="user_nickname" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BBS_user_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="group_name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="isdefault" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_user_passfind">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pass_code" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="addtime" Type="DateTime" />
+    <Property Name="isfind" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_user_topic">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="boardid" Type="Int32" />
+    <Property Name="bbsid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="addtime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="BBS_UserCoinChange">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="changetype" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="fromUsername" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="toUsername" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="coin_num" Type="Int32" />
+    <Property Name="explain" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="addtime" Type="DateTime" />
+    <Property Name="addip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="userid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_userpet">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="petid" Type="Int32" />
+    <Property Name="pet_user_name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pet_HP" Type="Int32" />
+    <Property Name="pet_MP" Type="Int32" />
+    <Property Name="pet_CP" Type="Int32" />
+    <Property Name="pet_img" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pet_happy_img" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pet_blue_img" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="pet_exp" Type="Int32" />
+    <Property Name="pet_lev" Type="Int32" />
+    <Property Name="pet_heart" Type="Int32" />
+    <Property Name="pet_point" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BBS_UserProp">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="propid" Type="Int32" />
+    <Property Name="prop_num" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CrawlPicInfo">
+    <Key>
+      <PropertyRef Name="PicID" />
+    </Key>
+    <Property Name="PicID" Type="Int32" Nullable="false" />
+    <Property Name="PicName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ClassID" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="ViewCount" Type="Int32" />
+    <Property Name="PicPath" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="FileName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ParkID" Type="Int32" />
+    <Property Name="Tag" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="InSource" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="IsAud" Type="Int32" />
+    <Property Name="AudTime" Type="DateTime" />
+    <Property Name="Auditor" Type="Int32" />
+    <Property Name="IsVouch" Type="Int32" />
+    <Property Name="VouchTime" Type="DateTime" />
+    <Property Name="IsDelete" Type="Int32" />
+    <Property Name="DeTime" Type="DateTime" />
+    <Property Name="CommCount" Type="Int32" />
+    <Property Name="VisitTime" Type="DateTime" />
+    <Property Name="TodayCount" Type="Int32" />
+    <Property Name="IsArticle" Type="Int32" />
+  </EntityType>
+  <EntityType Name="CrawlSightInfo">
+    <Key>
+      <PropertyRef Name="ParkID" />
+    </Key>
+    <Property Name="ParkID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="FitCrowd" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Url" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="FileUrl" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="VoIndex" Type="Double" Nullable="false" />
+    <Property Name="AdIndex" Type="Double" Nullable="false" />
+    <Property Name="ViCount" Type="Int32" Nullable="false" />
+    <Property Name="Tag" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="OpToTime" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="PicID" Type="Int32" />
+    <Property Name="PicPath" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="VideoID" Type="Int32" />
+    <Property Name="VideoPath" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="CommCount" Type="Int32" />
+    <Property Name="Blemish" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Province" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="InSource" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="InAuthor" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="AddTime" Type="DateTime" Nullable="false" />
+    <Property Name="Aud" Type="Int32" Nullable="false" />
+    <Property Name="Generalize" Type="Int32" Nullable="false" />
+    <Property Name="GeBeTime" Type="DateTime" />
+    <Property Name="GeEnTime" Type="DateTime" />
+    <Property Name="MeIndex" Type="Double" Nullable="false" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="DeTime" Type="DateTime" />
+    <Property Name="OneSentence" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="TrafficClew" Type="String" MaxLength="2000" Unicode="true" FixedLength="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="VideoImg" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="AudTime" Type="DateTime" />
+    <Property Name="Boost" Type="Double" />
+    <Property Name="ShopHours" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="GoCount" Type="Int32" />
+    <Property Name="WantCount" Type="Int32" />
+    <Property Name="IsRegister" Type="Int32" />
+    <Property Name="ParkMap" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ParkingSpace" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="YesWantCount" Type="Int32" />
+    <Property Name="YesGoCount" Type="Int32" />
+    <Property Name="YesViCount" Type="Int32" />
+    <Property Name="SiteUrl" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+    <Property Name="Popularity" Type="Int32" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <Property Name="PY" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CirHotelID" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="CirParkID" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="CommHtml" Type="Boolean" />
+    <Property Name="Ticket" Type="Int32" />
+    <Property Name="VouchCount" Type="Int32" />
+    <Property Name="VouchValue" Type="Int32" />
+    <Property Name="AreaCode" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="IsProcess" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_AcData">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="DType" Type="Int32" />
+    <Property Name="ActivityID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_AdminUser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="lastloginip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="lastlogintime" Type="DateTime" />
+    <Property Name="logintimes" Type="Int32" />
+    <Property Name="roleid" Type="Int32" />
+    <Property Name="userid" Type="Int32" />
+    <Property Name="truename" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="style" Type="Int32" />
+    <Property Name="sex" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="UserType" Type="String" MaxLength="8" Unicode="false" FixedLength="false" />
+    <Property Name="DepartmentID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Activity" Type="Boolean" />
+    <Property Name="EmployeeID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_AdWebsiteInfo">
+    <Key>
+      <PropertyRef Name="WebID" />
+    </Key>
+    <Property Name="WebID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Url" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="LinkMan" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_CityInfo">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="province" />
+      <PropertyRef Name="city" />
+      <PropertyRef Name="pinyin" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="province" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="city" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+    <Property Name="pinyin" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Latitude" Type="Double" />
+    <Property Name="Longitude" Type="Double" />
+    <Property Name="py" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ProvincePy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_ClientActivity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ac_Name" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Ac_Url" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="Ac_Visits" Type="Int32" />
+    <Property Name="Ac_Wants" Type="Int32" />
+    <Property Name="SightID" Type="Int32" />
+    <Property Name="Ac_Remak" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="Sys_DemoClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+      <PropertyRef Name="ParentID" />
+      <PropertyRef Name="ClassDepth" />
+      <PropertyRef Name="ClassOrder" />
+      <PropertyRef Name="IsDelete" />
+    </Key>
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="ClassName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ParentID" Type="Int32" Nullable="false" />
+    <Property Name="ClassPath" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="ClassDepth" Type="Int32" Nullable="false" />
+    <Property Name="ClassOrder" Type="Int32" Nullable="false" />
+    <Property Name="ClassIntro" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="DeleteTime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="Sys_DemoInfo">
+    <Key>
+      <PropertyRef Name="DemoID" />
+      <PropertyRef Name="Sort" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="Content" />
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="DemoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sort" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_GuestBook">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_HotelPic">
+    <Key>
+      <PropertyRef Name="PicID" />
+    </Key>
+    <Property Name="PicID" Type="Int32" Nullable="false" />
+    <Property Name="HotelID" Type="Int32" Nullable="false" />
+    <Property Name="PicPath" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="PicName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IsLarge" Type="Int32" />
+    <Property Name="Source" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_HotelPropertyInfo2">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HotelID" Type="Int32" />
+    <Property Name="HotelName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="ContactName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="latitude" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="longitude" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Starrating" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Fax" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Transportation" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="Property" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="Attractions" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="Dateopened" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+    <Property Name="Recreation" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="Dining" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="Meetings" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="LiveInCount" Type="Int32" />
+    <Property Name="CommCount" Type="Int32" />
+    <Property Name="Score" Type="Int32" />
+    <Property Name="VisitCount" Type="Int32" />
+    <Property Name="CirHotelID" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="Facilities" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="MinPrice" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MaxPrice" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Location" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="ResideTime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="LateResideTime" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="bookurl" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="MapUrl" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="HotelClass" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="photo" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="Source" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Area" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Accuracy" Type="Int32" />
+    <Property Name="HaveCoordinate" Type="Boolean" />
+    <Property Name="Province" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ProvincePY" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CirSightID" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="PicCount" Type="Int32" />
+    <Property Name="AreaCode" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_HotelReservationInfo">
+    <Key>
+      <PropertyRef Name="confnum" />
+    </Key>
+    <Property Name="confnum" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="bookdate" Type="DateTime" />
+    <Property Name="status" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="cxlnum" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="arrival" Type="DateTime" />
+    <Property Name="departure" Type="DateTime" />
+    <Property Name="planid" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="firstname" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PropID" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="ningts" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+    <Property Name="roomtype" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="rateclass" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="rooms" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="adults" Type="String" MaxLength="2" Unicode="false" FixedLength="false" />
+    <Property Name="phone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="remark" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="cellphone" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="isSendEmail" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_HotelRoomInfo">
+    <Key>
+      <PropertyRef Name="HotelID" />
+    </Key>
+    <Property Name="HotelID" Type="Int32" Nullable="false" />
+    <Property Name="RoomType" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="HotelDescription" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="PlanID" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PlanDescription" Type="String" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="RoomName" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="MaxOccupancy" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_IpAddress">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="IP1" Type="Double" />
+    <Property Name="IP2" Type="Double" />
+    <Property Name="Province" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_IpAddress11">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IP1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IP2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Province" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_LinksClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="ClassName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="ClassPath" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="ClassDepth" Type="Int32" />
+    <Property Name="ClassOrder" Type="Int32" />
+    <Property Name="ClassIntro" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="DemoID" Type="Int32" />
+    <Property Name="IsDelete" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_LinksInfo">
+    <Key>
+      <PropertyRef Name="LinksID" />
+      <PropertyRef Name="ClassID" />
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="Title" />
+      <PropertyRef Name="WebUrl" />
+      <PropertyRef Name="Remark" />
+      <PropertyRef Name="CommFlag" />
+      <PropertyRef Name="AddTime" />
+      <PropertyRef Name="VisitCount" />
+      <PropertyRef Name="IsTop" />
+      <PropertyRef Name="IsVouch" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="Aud" />
+    </Key>
+    <Property Name="LinksID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="25" Unicode="false" FixedLength="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="WebUrl" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Remark" Type="String" Nullable="false" MaxLength="4000" Unicode="false" FixedLength="false" />
+    <Property Name="LinksPath" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LinksName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CommFlag" Type="Int32" Nullable="false" />
+    <Property Name="AddTime" Type="DateTime" Nullable="false" />
+    <Property Name="VisitCount" Type="Int32" Nullable="false" />
+    <Property Name="IsTop" Type="Int32" Nullable="false" />
+    <Property Name="TopTime" Type="DateTime" />
+    <Property Name="IsVouch" Type="Int32" Nullable="false" />
+    <Property Name="VouchTime" Type="DateTime" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="Aud" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_MenuTree">
+    <Key>
+      <PropertyRef Name="NodeID" />
+      <PropertyRef Name="Text" />
+      <PropertyRef Name="ParentID" />
+    </Key>
+    <Property Name="NodeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Text" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ParentID" Type="Int32" Nullable="false" />
+    <Property Name="ParentPath" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Location" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="OrderID" Type="Int32" />
+    <Property Name="comment" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Url" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PermissionID" Type="Int32" />
+    <Property Name="ImageUrl" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ModuleID" Type="Int32" />
+    <Property Name="KeShiDM" Type="Int32" />
+    <Property Name="KeshiPublic" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="ManageOption" Type="String" MaxLength="5" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_NewsClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+      <PropertyRef Name="ParentID" />
+      <PropertyRef Name="ClassDepth" />
+      <PropertyRef Name="ClassOrder" />
+      <PropertyRef Name="IsDelete" />
+    </Key>
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="ClassName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ParentID" Type="Int32" Nullable="false" />
+    <Property Name="ClassPath" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="ClassDepth" Type="Int32" Nullable="false" />
+    <Property Name="ClassOrder" Type="Int32" Nullable="false" />
+    <Property Name="ClassIntro" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="DemoID" Type="Int32" />
+    <Property Name="DeleteTime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="Sys_NewsInfo">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Source" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Hits" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="IsDelete" Type="Int32" />
+    <Property Name="DeleteTime" Type="DateTime" />
+    <Property Name="SightID" Type="Int32" />
+    <Property Name="ClassID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_PermissionCategories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_Permissions">
+    <Key>
+      <PropertyRef Name="PermissionID" />
+    </Key>
+    <Property Name="PermissionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+    <Property Name="CategoryID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_RolePermissions">
+    <Key>
+      <PropertyRef Name="RoleID" />
+      <PropertyRef Name="PermissionID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="PermissionID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Roles">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_SearchInfo">
+    <Key>
+      <PropertyRef Name="SearchID" />
+    </Key>
+    <Property Name="SearchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KeyWord" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="City" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_SightClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="ClassName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ParentID" Type="Int32" Nullable="false" />
+    <Property Name="ClassPath" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="ClassDepth" Type="Int32" Nullable="false" />
+    <Property Name="ClassOrder" Type="Int32" Nullable="false" />
+    <Property Name="ClassIntro" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="DemoID" Type="Int32" />
+    <Property Name="DeleteTime" Type="DateTime" />
+    <NavigationProperty Name="Sys_SightInfo" Relationship="ipowsysModel.FK_Sys_SightInfo_Sys_SightClass" FromRole="Sys_SightClass" ToRole="Sys_SightInfo" />
+  </EntityType>
+  <EntityType Name="Sys_SightTicket">
+    <Key>
+      <PropertyRef Name="TicketID" />
+    </Key>
+    <Property Name="TicketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParkID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="AllPrice" Type="Int32" />
+    <Property Name="HalfPrice" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="IsDelete" Type="Int32" />
+    <NavigationProperty Name="Sys_SightInfo" Relationship="ipowsysModel.FK_Sys_SightTicket_Sys_SightInfo" FromRole="Sys_SightTicket" ToRole="Sys_SightInfo" />
+  </EntityType>
+  <EntityType Name="Sys_SightVouch">
+    <Key>
+      <PropertyRef Name="VouchID" />
+    </Key>
+    <Property Name="VouchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClassName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="SightIds" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="City" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="CirCity" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CityPy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SightNames" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="Province" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_SightVouchItem">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ItemTitle" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ItemUrl" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="IsDelete" Type="Int32" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="SightID" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_ThemeActivity">
+    <Key>
+      <PropertyRef Name="ActivityID" />
+    </Key>
+    <Property Name="ActivityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParkID" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SubTitle" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Url" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="ParkTitle" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Tag" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ActivityTime" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="IsDelete" Type="Int32" />
+    <Property Name="DeleteTime" Type="DateTime" />
+    <Property Name="IsTop" Type="Int32" />
+    <Property Name="TopTime" Type="DateTime" />
+    <Property Name="IsVouch" Type="Int32" />
+    <Property Name="VouchTime" Type="DateTime" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="ViCount" Type="Int32" />
+    <Property Name="Editor" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ClassID" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" />
+    <Property Name="EndDate" Type="DateTime" />
+    <Property Name="PicUrl" Type="String" MaxLength="300" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_ThemeActivityClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Name="ClassID" Type="Int32" Nullable="false" />
+    <Property Name="ClassName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ParentID" Type="Int32" />
+    <Property Name="ClassPath" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="ClassDepth" Type="Int32" />
+    <Property Name="ClassOrder" Type="Int32" />
+    <Property Name="ClassIntro" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="DemoID" Type="Int32" />
+    <Property Name="IsDelete" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_TourInfo">
+    <Key>
+      <PropertyRef Name="TourID" />
+    </Key>
+    <Property Name="TourID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TourTitle" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="ClassID" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="800" Unicode="false" FixedLength="false" />
+    <Property Name="VisitCount" Type="Int32" />
+    <Property Name="Author" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="IsDelete" Type="Int32" />
+    <Property Name="IsVouch" Type="Int32" />
+    <Property Name="VouchTime" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="Sys_TourPlan">
+    <Key>
+      <PropertyRef Name="PlanID" />
+    </Key>
+    <Property Name="PlanID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlanTitle" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="IsDelete" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Destination" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="VisitCount" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="TempDataCreateHtml" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="IsTop" Type="Int32" />
+    <Property Name="TopReason" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="TopTime" Type="DateTime" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="PlanClass" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_TourPlanDetail">
+    <Key>
+      <PropertyRef Name="PlanDetailID" />
+    </Key>
+    <Property Name="PlanDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SightIDOrHotelID" Type="Int32" />
+    <Property Name="CurrentPrice" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="800" Unicode="false" FixedLength="false" />
+    <Property Name="VisitCount" Type="Int32" />
+    <Property Name="DayID" Type="Int32" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="IsDelete" Type="Int32" />
+    <Property Name="DetailType" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PlanID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_UserAction">
+    <Key>
+      <PropertyRef Name="ActionID" />
+    </Key>
+    <Property Name="ActionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ChannelName" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_UserRoles">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_VouchHotelInfo">
+    <Key>
+      <PropertyRef Name="VouchID" />
+    </Key>
+    <Property Name="VouchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SightIDs" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="SightNames" Type="String" MaxLength="2000" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="VouchTime" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CityPy" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CityQuanP" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_VouchInfo">
+    <Key>
+      <PropertyRef Name="VouchID" />
+    </Key>
+    <Property Name="VouchID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataType" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CityS" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="T_DailyRates">
+    <Key>
+      <PropertyRef Name="DailyRatesID" />
+    </Key>
+    <Property Name="DailyRatesID" Type="String" Nullable="false" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="HotelCode" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="RoomType" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="RateCode" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="RatePlan" Type="String" MaxLength="32" Unicode="false" FixedLength="false" />
+    <Property Name="PeriodDate" Type="DateTime" />
+    <Property Name="AvailDate" Type="DateTime" />
+    <Property Name="AvStat" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="Allotment" Type="Int32" />
+    <Property Name="LeadTime" Type="Int32" />
+    <Property Name="MinLOS" Type="Int32" />
+    <Property Name="MaxLOS" Type="Int32" />
+    <Property Name="SingleRates" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="DoubleRates" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="TripleRates" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="QuadRates" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ExtraPersonRates" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="ExtraChildRates" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="Currency" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="RefType" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="RefID" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="BreakfastAmount" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="BreakfastNumber" Type="Int32" />
+    <Property Name="GUA" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="CXL" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Status" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="Sign" Type="String" MaxLength="16" Unicode="false" FixedLength="false" />
+    <Property Name="LastModifierID" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="LastModifyDate" Type="DateTime" />
+    <Property Name="CreatorID" Type="String" MaxLength="64" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+  </EntityType>
+  <EntityType Name="TripIndexInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="TripTitle" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="Sights" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="Hotels" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="CreateDate" Type="DateTime" />
+    <Property Name="ParkIDs" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+    <Property Name="HotelIDs" Type="String" MaxLength="400" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TripList">
+    <Key>
+      <PropertyRef Name="TripID" />
+    </Key>
+    <Property Name="TripID" Type="Int32" Nullable="false" />
+    <Property Name="TripTitle" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Termini" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Spring" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Price" Type="Int32" />
+    <Property Name="SpringDate" Type="DateTime" />
+    <Property Name="TripFile" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="AddTime" Type="DateTime" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Days" Type="Int32" />
+    <Property Name="Ip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Sys_SightComm">
+    <Key>
+      <PropertyRef Name="CommID" />
+    </Key>
+    <Property Type="Int32" Name="CommID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="SightID" Nullable="false" />
+    <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="Int32" Name="Fen" Nullable="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_DiscountClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Type="Int32" Name="ClassID" Nullable="false" />
+    <Property Type="String" Name="ClassName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="String" Name="ClassPath" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ClassDepth" Nullable="false" />
+    <Property Type="Int32" Name="ClassOrder" Nullable="false" />
+    <Property Type="String" Name="ClassIntro" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DemoID" Nullable="false" />
+    <Property Type="Int32" Name="IsDelete" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_DiscountComm">
+    <Key>
+      <PropertyRef Name="CommID" />
+    </Key>
+    <Property Type="Int32" Name="CommID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="DiscountID" Nullable="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="UserType" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Content" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ClientType" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Ip" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="Int32" Name="IsDelete" Nullable="false" />
+    <Property Type="Int32" Name="Fen" Nullable="false" />
+    <Property Type="Int32" Name="State" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_DisCountInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ClassId" Nullable="false" />
+    <Property Type="Int32" Name="FkId" Nullable="false" />
+    <Property Type="String" Name="FkTitle" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Title" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SubTitle" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Content" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Url" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PicUrl" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Tag" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="SourcePrice" />
+    <Property Type="Double" Name="CurrentPrice" />
+    <Property Type="Double" Name="DiscountRate" />
+    <Property Type="DateTime" Name="DiscountTime" />
+    <Property Type="DateTime" Name="StartDate" />
+    <Property Type="DateTime" Name="EndDate" />
+    <Property Type="String" Name="DisDateTime" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remark" MaxLength="3000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ViCount" />
+    <Property Type="Int32" Name="UserId" />
+    <Property Type="Int32" Name="EditorId" />
+    <Property Type="Int32" Name="IsTop" Nullable="false" />
+    <Property Type="DateTime" Name="TopTime" />
+    <Property Type="Int32" Name="IsVouch" Nullable="false" />
+    <Property Type="DateTime" Name="VouchTime" />
+    <Property Type="Int32" Name="IsDelete" Nullable="false" />
+    <Property Type="DateTime" Name="DeleteTime" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="String" Name="Province" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="City" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="State" Nullable="false" />
+    <Property Type="Int32" Name="IsSort" Nullable="false" />
+    <Property Type="Int32" Name="SortNum" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_ArticleClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Type="Int32" Name="ClassID" Nullable="false" />
+    <Property Type="String" Name="ClassName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ParentID" />
+    <Property Type="String" Name="ClassPath" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ClassDepth" />
+    <Property Type="Int32" Name="ClassOrder" />
+    <Property Type="String" Name="ClassIntro" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DemoID" />
+    <Property Type="Int32" Name="IsDelete" />
+  </EntityType>
+  <EntityType Name="Sys_ArticleComm">
+    <Key>
+      <PropertyRef Name="CommID" />
+    </Key>
+    <Property Type="Int32" Name="CommID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ArticleID" Nullable="false" />
+    <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="Int32" Name="Fen" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_ArticleInfo">
+    <Key>
+      <PropertyRef Name="ArticleID" />
+    </Key>
+    <Property Type="Int32" Name="ArticleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ClassID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="Int32" Name="PicID" Nullable="false" />
+    <Property Type="String" Name="PicUrl" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SubTitle" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Tag" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="CommFlag" Nullable="false" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="Int32" Name="VisitCount" Nullable="false" />
+    <Property Type="Int32" Name="IsTop" Nullable="false" />
+    <Property Type="DateTime" Name="TopTime" />
+    <Property Type="Int32" Name="IsVouch" Nullable="false" />
+    <Property Type="DateTime" Name="VouchTime" />
+    <Property Type="Int32" Name="IsDelete" Nullable="false" />
+    <Property Type="Int32" Name="IsAud" />
+    <Property Type="DateTime" Name="AudTime" />
+    <Property Type="DateTime" Name="DeleteTime" />
+    <Property Type="Int32" Name="SightID" />
+    <Property Type="String" Name="ArticleUrl" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Source" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sys_VideoClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Type="Int32" Name="ClassID" Nullable="false" />
+    <Property Type="String" Name="ClassName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="String" Name="ClassPath" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ClassDepth" Nullable="false" />
+    <Property Type="Int32" Name="ClassOrder" Nullable="false" />
+    <Property Type="String" Name="ClassIntro" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDelete" Nullable="false" />
+    <Property Type="Int32" Name="DemoID" />
+    <Property Type="DateTime" Name="DeleteTime" />
+  </EntityType>
+  <EntityType Name="Sys_VideoComm">
+    <Key>
+      <PropertyRef Name="CommID" />
+    </Key>
+    <Property Type="Int32" Name="CommID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="VideoID" Nullable="false" />
+    <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="Int32" Name="Fen" Nullable="false" />
+    <Property Type="String" Name="VideoTime" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sys_VideoInfo">
+    <Key>
+      <PropertyRef Name="VideoID" />
+    </Key>
+    <Property Type="Int32" Name="VideoID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="SightID" />
+    <Property Type="String" Name="VideoName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ClassID" Nullable="false" />
+    <Property Type="String" Name="Remark" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PlayCount" />
+    <Property Type="String" Name="Tag" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VideoFile" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VideoPath" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VideoUrl" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PicPath" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="PicFile" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="String" Name="InSource" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Aud" />
+    <Property Type="DateTime" Name="AudTime" />
+    <Property Type="Int32" Name="Auditor" />
+    <Property Type="Int32" Name="IsVouch" />
+    <Property Type="DateTime" Name="VouchTime" />
+    <Property Type="Int32" Name="IsDelete" Nullable="false" />
+    <Property Type="DateTime" Name="DeTime" />
+    <Property Type="Int32" Name="IsTop" />
+    <Property Type="Int32" Name="EquipmentID" />
+    <Property Type="Int32" Name="CommCount" />
+    <Property Type="DateTime" Name="TopTime" />
+    <Property Type="Int32" Name="IsSuccess" />
+    <Property Type="Int32" Name="StoreCount" />
+    <Property Type="Int32" Name="TopCount" />
+    <Property Type="Int32" Name="Score" />
+  </EntityType>
+  <EntityType Name="Sys_PicClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Type="Int32" Name="ClassID" Nullable="false" />
+    <Property Type="String" Name="ClassName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ParentID" Nullable="false" />
+    <Property Type="String" Name="ClassPath" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ClassDepth" Nullable="false" />
+    <Property Type="Int32" Name="ClassOrder" Nullable="false" />
+    <Property Type="String" Name="ClassIntro" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsDelete" Nullable="false" />
+    <Property Type="Int32" Name="DemoID" />
+    <Property Type="DateTime" Name="DeleteTime" />
+  </EntityType>
+  <EntityType Name="Sys_PicComm">
+    <Key>
+      <PropertyRef Name="CommID" />
+    </Key>
+    <Property Type="Int32" Name="CommID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PicID" Nullable="false" />
+    <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="Int32" Name="Fen" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_PicInfo">
+    <Key>
+      <PropertyRef Name="PicID" />
+    </Key>
+    <Property Type="Int32" Name="PicID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="PicName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ClassID" />
+    <Property Type="String" Name="Remark" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ViewCount" />
+    <Property Type="String" Name="PicPath" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FileName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ParkID" />
+    <Property Type="String" Name="Tag" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="UserID" />
+    <Property Type="String" Name="InSource" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="AddTime" />
+    <Property Type="Int32" Name="IsAud" />
+    <Property Type="DateTime" Name="AudTime" />
+    <Property Type="Int32" Name="Auditor" />
+    <Property Type="Int32" Name="IsVouch" />
+    <Property Type="DateTime" Name="VouchTime" />
+    <Property Type="Int32" Name="IsDelete" />
+    <Property Type="DateTime" Name="DeTime" />
+    <Property Type="Int32" Name="CommCount" />
+    <Property Type="DateTime" Name="VisitTime" />
+    <Property Type="Int32" Name="TodayCount" />
+    <Property Type="Int32" Name="IsArticle" />
+  </EntityType>
+  <EntityType Name="Sys_SightInfo">
+    <Key>
+      <PropertyRef Name="ParkID" />
+    </Key>
+    <Property Type="Int32" Name="ParkID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ClassID" Nullable="false" />
+    <Property Type="String" Name="FitCrowd" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Remark" MaxLength="8000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Url" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FileUrl" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="VoIndex" Nullable="false" />
+    <Property Type="Double" Name="AdIndex" Nullable="false" />
+    <Property Type="Int32" Name="ViCount" Nullable="false" />
+    <Property Type="String" Name="Tag" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="OpToTime" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PicID" />
+    <Property Type="String" Name="PicPath" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="VideoID" />
+    <Property Type="String" Name="VideoPath" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CommCount" />
+    <Property Type="String" Name="Blemish" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Province" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="InSource" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="InAuthor" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="Int32" Name="Aud" Nullable="false" />
+    <Property Type="Int32" Name="Generalize" Nullable="false" />
+    <Property Type="DateTime" Name="GeBeTime" />
+    <Property Type="DateTime" Name="GeEnTime" />
+    <Property Type="Double" Name="MeIndex" Nullable="false" />
+    <Property Type="Int32" Name="IsDelete" Nullable="false" />
+    <Property Type="DateTime" Name="DeTime" />
+    <Property Type="String" Name="OneSentence" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="TrafficClew" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Telephone" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Email" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Fax" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VideoImg" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="AudTime" />
+    <Property Type="Double" Name="Boost" />
+    <Property Type="String" Name="ShopHours" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="GoCount" />
+    <Property Type="Int32" Name="WantCount" />
+    <Property Type="Int32" Name="IsRegister" />
+    <Property Type="String" Name="ParkMap" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ParkingSpace" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="YesWantCount" />
+    <Property Type="Int32" Name="YesGoCount" />
+    <Property Type="Int32" Name="YesViCount" />
+    <Property Type="String" Name="SiteUrl" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="Popularity" />
+    <Property Type="Double" Name="Latitude" />
+    <Property Type="Double" Name="Longitude" />
+    <Property Type="String" Name="PY" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CirHotelID" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CirParkID" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="CommHtml" />
+    <Property Type="Int32" Name="Ticket" />
+    <Property Type="Int32" Name="VouchCount" />
+    <Property Type="Int32" Name="VouchValue" />
+    <Property Type="String" Name="AreaCode" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="IsShort" />
+    <Property Type="Int32" Name="IsSort" Nullable="false" />
+    <Property Type="String" Name="SortProv" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="SortCity" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Sys_SightClass" Relationship="ipowsysModel.FK_Sys_SightInfo_Sys_SightClass" FromRole="Sys_SightInfo" ToRole="Sys_SightClass" />
+    <NavigationProperty Name="Sys_SightTicket" Relationship="ipowsysModel.FK_Sys_SightTicket_Sys_SightInfo" FromRole="Sys_SightInfo" ToRole="Sys_SightTicket" />
+  </EntityType>
+  <Association Name="FK_Sys_SightInfo_Sys_SightClass">
+    <End Type="ipowsysModel.Sys_SightClass" Role="Sys_SightClass" Multiplicity="1" />
+    <End Type="ipowsysModel.Sys_SightInfo" Role="Sys_SightInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_SightClass">
+        <PropertyRef Name="ClassID" />
+      </Principal>
+      <Dependent Role="Sys_SightInfo">
+        <PropertyRef Name="ClassID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sys_SightTicket_Sys_SightInfo">
+    <End Type="ipowsysModel.Sys_SightInfo" Role="Sys_SightInfo" Multiplicity="1" />
+    <End Type="ipowsysModel.Sys_SightTicket" Role="Sys_SightTicket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_SightInfo">
+        <PropertyRef Name="ParkID" />
+      </Principal>
+      <Dependent Role="Sys_SightTicket">
+        <PropertyRef Name="ParkID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sys_phone_ly">
+    <Key>
+      <PropertyRef Name="Mid" />
+    </Key>
+    <Property Type="Int32" Name="Mid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="username" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="title" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="content" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="addtime" />
+    <Property Type="String" Name="ip" MaxLength="12" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sys_phoneCount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="num" />
+    <Property Type="String" Name="keyword" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sys_TourClass">
+    <Key>
+      <PropertyRef Name="ClassID" />
+    </Key>
+    <Property Type="Int32" Name="ClassID" Nullable="false" />
+    <Property Type="String" Name="ClassName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ParentID" />
+    <Property Type="String" Name="ClassPath" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="ClassDepth" />
+    <Property Type="Int32" Name="ClassOrder" />
+    <Property Type="String" Name="ClassIntro" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="DemoID" />
+    <Property Type="Int32" Name="IsDelete" />
+  </EntityType>
+  <EntityType Name="Sys_HotelPropertyInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="HotelID" />
+    <Property Type="String" Name="HotelName" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="City" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Address" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ContactName" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="latitude" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="longitude" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Starrating" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Fax" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Transportation" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Property" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Attractions" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Dateopened" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="Recreation" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Dining" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Meetings" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="LiveInCount" />
+    <Property Type="Int32" Name="CommCount" />
+    <Property Type="Int32" Name="Score" />
+    <Property Type="Int32" Name="VisitCount" />
+    <Property Type="String" Name="CirHotelID" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Facilities" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="MinPrice" />
+    <Property Type="Double" Name="MaxPrice" />
+    <Property Type="String" Name="Location" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ResideTime" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LateResideTime" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="bookurl" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="MapUrl" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="HotelClass" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="photo" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Source" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Area" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Accuracy" />
+    <Property Type="Boolean" Name="HaveCoordinate" />
+    <Property Type="String" Name="Province" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ProvincePY" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CirSightID" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="PicCount" />
+    <Property Type="String" Name="AreaCode" MaxLength="5" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sys_Log">
+    <Key>
+      <PropertyRef Name="logID" />
+      <PropertyRef Name="LogDate" />
+      <PropertyRef Name="LogThread" />
+    </Key>
+    <Property Type="Int32" Name="logID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="LogDate" Nullable="false" />
+    <Property Type="String" Name="LogThread" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LogLevel" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Messages" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LogException" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sys_HotelDailyRates2">
+    <Key>
+      <PropertyRef Name="DailyRatesID" />
+    </Key>
+    <Property Type="Int32" Name="DailyRatesID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="HotelID" />
+    <Property Type="String" Name="RoomType" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RoomName" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RoomDescription" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Allotment" />
+    <Property Type="Int32" Name="LeadTime" />
+    <Property Type="Int32" Name="MinLos" />
+    <Property Type="Int32" Name="MaxLos" />
+    <Property Type="String" Name="DoubleRates" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="GUA" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="CXL" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RateCode" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="MaxOccupancy" />
+    <Property Type="String" Name="Source" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="RoomAmountAdvice" MaxLength="2000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sys_HotelComm">
+    <Key>
+      <PropertyRef Name="CommID" />
+    </Key>
+    <Property Type="Int32" Name="CommID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="HotelID" Nullable="false" />
+    <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Ip" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="AddTime" Nullable="false" />
+    <Property Type="Int32" Name="Point" Nullable="false" />
+  </EntityType>
+</Schema>

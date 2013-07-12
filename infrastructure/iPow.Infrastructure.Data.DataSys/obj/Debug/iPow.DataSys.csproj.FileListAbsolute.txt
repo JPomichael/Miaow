@@ -1,0 +1,54 @@
+E:\Dev\WorkWeb\ipow\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+E:\Dev\WorkWeb\ipow\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb\ipow\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb\ipow\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb\ipow\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb\ipow\iPow.DataSys\obj\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\ipow - 副本 (2)\iPow.DataSys\obj\Debug\iPow.DataSys.pdb
+D:\sso\SSO\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+D:\sso\SSO\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+D:\sso\SSO\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+D:\sso\SSO\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+D:\sso\SSO\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+D:\sso\SSO\iPow.DataSys\obj\Debug\iPow.DataSys.pdb
+C:\Users\Administrator\Desktop\IPOW\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+C:\Users\Administrator\Desktop\IPOW\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+C:\Users\Administrator\Desktop\IPOW\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+C:\Users\Administrator\Desktop\IPOW\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\IPOW\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+C:\Users\Administrator\Desktop\IPOW\iPow.DataSys\obj\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+E:\Dev\WorkWeb2\Project\IPOW\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\iPow.DataSys\obj\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\data\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+E:\Dev\WorkWeb2\Project\IPOW\data\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\data\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\data\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\data\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\data\iPow.DataSys\obj\Debug\iPow.DataSys.pdb
+C:\Users\Administrator\Desktop\IPOW\infrastructure\data\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+C:\Users\Administrator\Desktop\IPOW\infrastructure\data\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+C:\Users\Administrator\Desktop\IPOW\infrastructure\data\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+C:\Users\Administrator\Desktop\IPOW\infrastructure\data\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\IPOW\infrastructure\data\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+C:\Users\Administrator\Desktop\IPOW\infrastructure\data\iPow.DataSys\obj\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\data\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\data\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\data\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\data\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\data\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\data\iPow.DataSys\obj\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.DataSys\bin\Debug\iPow.DataSys.dll.config
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.DataSys\bin\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.DataSys\bin\Debug\iPow.DataSys.pdb
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.DataSys\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.DataSys\obj\Debug\iPow.DataSys.dll
+E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.DataSys\obj\Debug\iPow.DataSys.pdb

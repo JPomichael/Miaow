@@ -1,0 +1,10 @@
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\bin\Debug\iPow.Service.Open.Contract.dll
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\bin\Debug\iPow.Service.Open.Contract.pdb
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\obj\Debug\ResolveAssemblyReference.cache
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\obj\Debug\iPow.Service.Open.Contract.dll
+E:\Dev\WorkWeb2\Project\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\obj\Debug\iPow.Service.Open.Contract.pdb
+E:\work\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\bin\Debug\iPow.Service.Open.Contract.dll
+E:\work\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\bin\Debug\iPow.Service.Open.Contract.pdb
+E:\work\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\obj\Debug\ResolveAssemblyReference.cache
+E:\work\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\obj\Debug\iPow.Service.Open.Contract.dll
+E:\work\IPOW\distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\obj\Debug\iPow.Service.Open.Contract.pdb

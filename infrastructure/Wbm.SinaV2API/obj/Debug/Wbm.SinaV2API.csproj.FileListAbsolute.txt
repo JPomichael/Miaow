@@ -1,0 +1,5 @@
+E:\work\IPOW\infrastructure\Wbm.SinaV2API\bin\Debug\Wbm.SinaV2API.dll
+E:\work\IPOW\infrastructure\Wbm.SinaV2API\bin\Debug\Wbm.SinaV2API.pdb
+E:\work\IPOW\infrastructure\Wbm.SinaV2API\obj\Debug\ResolveAssemblyReference.cache
+E:\work\IPOW\infrastructure\Wbm.SinaV2API\obj\Debug\Wbm.SinaV2API.dll
+E:\work\IPOW\infrastructure\Wbm.SinaV2API\obj\Debug\Wbm.SinaV2API.pdb
