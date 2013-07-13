@@ -6,6 +6,9 @@ Thumbs.db
 /Backup
 /Backup%d 
 
+Backup*/
+Backup*/ 
+
 *.obj
 *.exe
 *.pdb
