@@ -1,0 +1,145 @@
+@charset "utf-8";
+/* CSS Document */
+#logocontrol,.terms-of-use-link
+{
+	display:none;
+}
+.mapLayerIco
+{
+	position:absolute;
+	background:url(/images/icons/sprite.png) left top no-repeat;
+	_background:url(/images/icons/sprite1.png) left top no-repeat;
+	text-align:center;
+	width:27px;
+	height:27px;
+	font-size:9px!important;
+	color:#fff;
+	cursor:pointer;
+	font-weight:700;
+}
+.mapLayerIco span
+{
+	float:right;
+	width:27px;
+	height:27px;
+}
+.mapLayerIco span a
+{
+	display:inline;
+	float:left;
+	width:17px;
+	height:13px;
+	text-align:center;
+	line-height:13px;
+	padding:4px 2px 9px 6px;
+	color:#fff;
+	font-weight:700;
+	text-decoration:none;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.mapLayerCon
+{
+	float:left;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+.mapLayerContent
+{
+	float:left;
+	width:100%;
+	padding:5px 0px;
+	border-top:1px solid #000;
+}
+.mapLayerContent p
+{
+	float:left;
+	width:100%;
+	margin:0px;
+	padding:0px;
+	line-height:22px;
+}
+.mapLayerContent ul
+{
+	float:left;
+	width:100%;
+	margin:0px;
+	padding:0px;
+}
+.mapLayerContent ul li
+{
+	float:left;
+	height:22px;
+	width:100%;
+	line-height:22px;
+	list-style:none;
+}
+.mapLayerCon h4
+{
+	line-height:24px;
+	color:#000;
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+}
+.mapLayerCon h4 em
+{
+	float:left;
+	line-height:24px;
+	font-weight:700;
+}
+.mapLayerCon h4 ins
+{
+	float:right;
+	line-height:24px;
+	color:#F00;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+.icon_right1 {
+	float:left;
+	padding:0px;
+	position:absolute;
+	background-color:#FFFFFF;
+	width:205px;
+	font-size:12px;
+	font-family:Arial,sans-serif,"宋体","微软雅黑";
+}
+.icon_right1 .top {
+	float:left;
+	padding:0px;
+	border-right:1px solid #000;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	width:100%
+}
+.ero
+{
+	border:0px;
+	display:block;
+	color:#676767;
+	z-index:5000;
+	float:left;
+}
+.ero-noBeak .ero-beak
+{
+	display:none;
+}
+.ero .ero-shadow
+{
+	position:relative;
+	background-color:#bfbfbf;
+}
+.ero .ero-body
+{
+	position:relative;
+	margin:0px;
+	padding:0px;
+	border:1px solid #888;
+}
+.ero-body,.ero .ero-previewArea p,.ero .ero-previewArea div.firstChild
+{
+	margin:0px;
+	padding:0px;
+}
+.ero-previewArea .firstChild br{display:none;}
+

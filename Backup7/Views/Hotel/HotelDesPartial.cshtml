@@ -1,0 +1,80 @@
+﻿@model iPow.Application.Union.Dto.HotelInfoDto
+
+<!--酒店简介开始-->
+<div class="infoGuid">
+    <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />酒店简介 ///
+</div>
+<div class="infoContainer">
+    <p>
+        @{
+            if (Model != null)
+            { 
+            <span class="font14">@(Model.hotelname)简介：</span> 
+            <span id="desc1">
+                @(Model.content)
+            </span>    
+            }
+        }
+    </p>
+</div>
+<!--酒店简介结束-->
+<!--地理位置开始-->
+<div class="infoGuid">
+    <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />地理位置 ///
+</div>
+<div class="infoContainer">
+    <p>
+        @{
+            if (Model != null)
+            {
+            @(Model.address)
+            }
+        }
+    </p>
+</div>
+<!--地理位置结束-->
+<!--服务设施开始-->
+<div class="infoGuid">
+    <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />服务设施 ///
+</div>
+<div class="infoContainer">
+    <p>
+        @{
+            if (Model != null)
+            {
+            @(Model.Service )
+            }
+        }
+    </p>
+</div>
+<!--服务设施结束-->
+<!--餐饮设施开始-->
+<div class="infoGuid">
+    <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />餐饮设施 ///
+</div>
+<div class="infoContainer">
+    <p>
+        @{
+            if (Model != null)
+            {
+            @(Model.canyin)
+            }
+        }
+    </p>
+</div>
+<!--餐饮设施结束-->
+<!--娱乐设施开始-->
+<div class="infoGuid">
+    <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />娱乐设施 ///
+</div>
+<div class="infoContainer">
+    <p>
+        @{
+            if (Model != null)
+            {
+            @(Model.yule)
+            }
+        }
+    </p>
+</div>
+<!--娱乐设施结束-->

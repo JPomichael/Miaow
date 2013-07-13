@@ -1,0 +1,81 @@
+﻿<script src="@Url.Content("~/Scripts/areacode.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/calendar.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        // jQuery("#topSelectCity").click(showAreaCode);
+        jQuery("#txtBide").click(showAreaCode);
+
+        $("#txtKeyword").focus(function () {
+            if (this.value == "可输入酒店名、品牌、地址、著名地标") {
+                $("#txtKeyword").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#txtKeyword").val("可输入酒店名、品牌、地址、著名地标");
+            }
+        });
+        return false;
+    });
+
+    function searchCheckedForm() {
+        if ($('#txtBide').val() == '') {
+            $('#txtBide').focus();
+            alert('入住地不能为空');
+            return false;
+        }
+        if ($('#txtComeTime').val() == '') {
+            $('#txtComeTime').click();
+            return false;
+        }
+
+        if ($('#txtLeaveTime').val() == '') {
+            $('#txtLeaveTime').click();
+            return false;
+        }
+
+        if ($('#txtKeyword').val() == '') {
+            $('#txtKeyword').focus();
+            alert('关键字不能为空');
+            return false;
+        }
+
+        if ($('#txtKeyword').val() == '可输入酒店名、品牌、地址、著名地标') {
+            $('#txtKeyword').focus();
+            alert('请输入关键字');
+            return false;
+        }
+        return true;
+    }
+
+</script>
+<!--搜索工具条开始-->
+<div class="headerSearch" style="width: 830px; padding-left: 5px!important; padding-right: 80px!important;">
+    @using (Html.BeginForm("Index", "Search", FormMethod.Post))
+    {   
+        <span class="hotel_spanText" style="width: 60px;">入住地：</span> 
+        <span class="spanInput1" style="width: 98px;">
+            <input class="HinputText" id="txtBide" name="txtBide" value="" size="20" readonly="readonly" />
+            <span class="buttonCity" id="topSelectCity"></span></span><span class="hotel_spanText"
+                style="width: 70px;">入住时间：</span> 
+        <span class="spanInput1" style="width: 98px;">
+            <input class="HinputText" id="txtComeTime" name="txtComeTime" onkeypress="javascript:return onlyDate();"
+                value="" size="20" onclick="ShowTwoMonthList('txtComeTime',0,'thisDay'); return false;" />
+            <span class="buttonTime" onclick="ShowTwoMonthList('txtComeTime',0,'thisDay');return false;">
+            </span></span><span class="hotel_spanText" style="width: 70px;">离店时间：</span>
+        <span class="spanInput1" style="width: 98px;">
+            <input class="HinputText" onkeypress="javascript:return onlyDate();" id="txtLeaveTime"
+                name="txtLeaveTime" onclick="ShowTwoMonthList('txtLeaveTime',0,'thisDay'); return false;"
+                value="" size="20" />
+            <span class="buttonTime" onclick="ShowTwoMonthList('txtLeaveTime',0,'thisDay');return false;">
+            </span></span>
+        <span class="hotel_spanText" style="width: 60px;">关键词：</span> <span class="spanInput1"
+            style="width: 74px;">
+            <input class="HinputText" id="txtKeyword" name="txtKeyword" value="可输入酒店名、品牌、地址、著名地标" size="20" />
+        </span>
+        <span class="spanSearch">
+            <input id="subSearch" name="subSearch" type="submit" value="" style="margin-top: 0px;
+                border: 0px;" class="aSearch" onclick="return searchCheckedForm();" />
+        </span>
+    }
+</div>
+<!--搜索工具条结束-->

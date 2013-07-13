@@ -1,0 +1,41 @@
+﻿@{
+    var articleService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Application.jq.Service.IArticleService>();
+
+    int total = 0;
+    var articleList = articleService.GetSightArticleByHot(ViewBag.parkid, 1, 5, ref total);
+    foreach (var item in articleList)
+    {
+        if (!string.IsNullOrEmpty(item.ArticleUrl))
+        {
+    <a class="travel" href="/sight/articledetail/@(ViewBag.parkid)/@(item.ArticleID)" target="_blank" title="@(item.Title)">
+        <img width="135px" height="125px" src="@(item.ArticleUrl)" alt = "@(item.Title)"/>
+        <div>
+            <h4>
+                @(item.Title)</h4>
+            <p>
+                @{ var sub = item.Content.Length > 80 ? item.Content.Substring(0, 80) : item.Content;}
+                @Html.Raw(iPow.Infrastructure.Crosscutting.Function.StringHelper.ParseHtml(sub))
+                ...
+            </p>
+        </div>
+    </a>
+                   break;
+        }
+        else
+        { 
+    <a class="travel" href="" target="_blank">
+        <img width="135px" height="125px;" src="/images/nopic135.jpg" alt="暂无图片文章" /></a>
+            break;
+        }
+    }
+    <span class="rightCopy">
+        @{
+            foreach (var item in articleList)
+            {
+            <a href="/sight/articledetail/@(ViewBag.parkid)/@(item.ArticleID)" target="_blank" title="@(item.Title)">
+                ◆@(item.Title)</a>     
+            }
+        }
+    </span> 
+}

@@ -1,0 +1,77 @@
+﻿<div class="infoContainer" id="Transports">
+    <div class="trafficSearch">
+        <div class="trafficSearchLeft">
+        </div>
+        <!--下面这里，本来是公交的，可没有公交这边的方法 就隐藏了-->
+        <div class="trafficSearchMid" id="Transport1" style="display: none;">
+            <div class="divInput">
+                <span class="spanText" style="width: 50px;">起点：</span> <span class="spanInput" style="width: 120px;">
+                    <input class="trafficInput" id="startName_bus" onclick="this.value=''" onkeydown="if(this.value == '请输入出发地点') {this.value=''; $(this).css('color','#000');}"
+                        value="请输入出发地点" style="color: #CCC;" size="20" /></span><span class="spanText" style="width: 50px;">终点：</span>
+                <span class="spanInput" style="width: 120px;">
+                    <input class="trafficInput" style="width: 110px;" id="endName_bus" value="@Model.SightInfo.Title"
+                                        readonly="readonly" size="20" /></span><span class="spanText" style="width: 70px;">线路类型：</span>
+                <span class="spanInput" style="width: 130px;">
+                    <select name="select" id="routeType">
+                        <option value="0" selected="selected">最快捷模式</option>
+                        <option value="1">最经济模式</option>
+                        <option value="2">最少换乘模式 </option>
+                        <option value="3">最少步行模式</option>
+                        <option value="4">最舒适模式</option>
+                    </select>
+                </span><a href="javascript:;" id="btnTrafficQuery" class="aFindT"></a>
+            </div>
+        </div>
+        <div class="trafficSearchMid" id="Transport2">
+            <div class="divInput">
+                <span class="spanText" style="width: 50px;">起点：</span>
+                <!--把选城市给注释掉了-->
+                <span class="spanInput" style="width: 85px; background: #fff; border: 1px #ffad49 solid;
+                    height: 20px; margin-top: 3px; padding: 0px; display: none;">
+                    <input class="trafficInput" id="startCity_driver" value="选择城市" style="width: 60px;
+                        color: #CCC; border: 0px; margin: 0px; padding: 0px;" readonly="readonly" size="30" />
+                    <button class="buttonCity" id="chooseCity">
+                    </button>
+                </span><span class="spanInput" style="width: 101px; background: #fff; border: 1px #ffad49 solid;
+                    height: 20px; margin-top: 3px; padding: 0px;">
+                    <input class="trafficInput" id="startName_driver" onclick="if(this.value == '请输入街道地址'){this.select();}"
+                        onkeydown="if(this.value == '请输入街道地址') {this.value='';this.style.color='#000'}"
+                        value="请输入街道地址" style="width: 92px; color: #CCC; border: 0px; margin: 0px; padding: 0px;"
+                        size="30" /></span> <span class="spanText" style="width: 50px;">终点：</span>
+                <span class="spanInput" style="width: 100px;">
+                    <input class="trafficInput" style="width: 90px;" id="endName_driver" readonly="readonly"
+                                        value="@Model.SightInfo.Title" title="@Model.SightInfo.Title" size="20" /></span><span
+                                            class="spanText" style="width: 70px;">线路类型：</span> <span class="spanInput" style="width: 100px!important;
+                                                width: 90px;">
+                                                <select name="route_way" style="width: 85px;" id="route_way">
+                                                    <option value="0" selected="selected">速度优先</option>
+                                                    <option value="1">费用优先</option>
+                                                    <option value="2">距离优先</option>
+                                                </select>
+                                            </span><a href="javascript:;" id="mybtnquery" onclick="luxian()" class="aFindT" style="display: none;">
+                                            </a><a href="javascript:;" id="btnDriveQuery" onclick="luxian('@{if (Model.SightInfo != null)
+                                                                                                             {@Model.SightInfo.Address}}')" class="aFindT">
+                                            </a>
+            </div>
+        </div>
+        <div class="trafficSearchRight">
+        </div>
+    </div>
+</div>
+<div class="infoContainer">
+    <div class="trafficResultL">
+        <div class="trafficResultLT">
+        </div>
+        <div class="trafficResultLM" style="overflow-y: auto; overflow-x: hidden;" id="sHowList">
+            <a href="http://p.ipow.cn">
+                <img src="/images/ipowadvertise.jpg" height="320px" /></a>
+        </div>
+        <div class="trafficResultLB">
+        </div>
+    </div>
+    <div class="trafficResultR">
+        <div style="height: 355px; width: 100%;" id="map_right">
+            <img src="/images/loading2.gif" class="maploading" style="display: none" />
+        </div>
+    </div>
+</div>

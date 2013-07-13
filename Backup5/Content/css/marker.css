@@ -1,0 +1,38 @@
+﻿@charset "utf-8"; 
+
+em{font-style:normal; font-weight:normal}
+.link_icon{height:24px; position:absolute; min-width:200px; width:200px; font-family:Arial,sans-serif,"&#23435; &#20307; ","&#24494; &#36719; &#38597; &#40657; "}
+.link_icon a{color:#FFF; font-size:12px; text-decoration:none; font-family:Arial,sans-serif,"&#23435; &#20307; ","&#24494; &#36719; &#38597; &#40657; "}
+.link_icon a:hover{color:#FFF; text-decoration:none}
+.link_icon .left{float:left; width:18px; height:13px; padding-top:1px; padding-bottom:10px; color:#FFF; font-size:12px; text-decoration:none; line-height:15px; text-align:center; background:url(/images/left_bar.gif) no-repeat}
+.link_icon .right{float:left; height:14px; padding:1px 1px 1px 0px; border-bottom:1px solid #000; border-right:1px solid #000; border-top:1px solid #000; background-color:#FFF}
+.bar_bg1{float:left; height:14px; padding:0px 5px; font-size:12px; color:#fff; text-decoration:none; background-color:#9F0; line-height:15px}
+.bar_bg2{float:left; height:14px; padding:0px 5px; font-size:12px; color:#fff; text-decoration:none; background-color:#9F0; line-height:15px}
+.bar_bg3{float:left; height:14px; padding:0px 5px; font-size:12px; color:#fff; text-decoration:none; background-color:#FC6}
+.bar_bg4{float:left; height:15px; padding:0px 0px; font-size:12px; color:#fff; text-decoration:none; background-color:#F60; line-height:15px}
+.bar_bg5{float:right; height:14px; padding:0px 1px; margin-right:5px; font-size:12px; color:#fff; text-decoration:none; background-color:#55e20c}
+.icon_right1{float:left; padding:0px; position:absolute; background-color:#FFF; width:205px; font-size:12px; font-family:Arial,sans-serif,"&#23435; &#20307; ","&#24494; &#36719; &#38597; &#40657; "}
+.icon_right1 .top{float:left; padding:0px; border-right:1px solid #000; border-top:1px solid #000; border-bottom:1px solid #000; width:100%}
+.icon_right1 .bottom{float:left; padding:4px 10px 0px 10px; border-left:1px solid #000}
+.icon_right1 .bottom span{float:left; width:180px; height:16px; line-height:16px; font-size:12px; text-align:left}
+.icon_right1 .bottom span.spanIco{width:32px; height:70px; margin-top:3px; padding:0px 10px}
+.icon_right1 .bottom em{display:block; float:left; width:40px; height:20px; margin-top:6px; padding-left:22px; line-height:20px}
+a.mapLook{float:right; display:block; width:30px; height:20px; margin-top:38px; margin-right:5px!important; margin-right:0px; text-align:center; line-height:20px; text-decoration:none}
+.icon_right1 .bottom em.emImg{background:url(/images/img_ico.jpg) left center no-repeat}
+.icon_right1 .bottom em.emComm{background:url(/images/comm_ico.jpg) left center no-repeat}
+.icon_right1 .bottom img.ico{float:left; display:block; width:64px; height:50px; margin-top:8px; border:0px}
+.font1{color:#008cce}
+.font2{color:#a7a7a7}
+.icon_ticket{float:right; height:50px; margin-top:10px}
+.icon_ticket .txt{float:right; line-height:14px; margin-top:8px}
+.icon_ticket .btn{float:right; width:65px; height:21px; margin-top:8px}
+.mapContainer1{position:relative; z-index:5; _margin-left:-264px}
+.colorS{background-color:#06F}
+.colorM{background-color:#9F0}
+.colorL{background-color:#FC6}
+.colorXL{background-color:#F60}
+
+ul#mainnav{-x-system-font:none; color:#00004D; font-family:normal,"&#23435; &#20307; ",Arial; font-size:12px; font-size-adjust:none; font-stretch:normal; font-style:normal; font-variant:normal; font-weight:normal; line-height:normal; list-style-type:none; margin:0; padding-bottom:5px; padding-left:0}
+ul#mainnav li{border-bottom:1px dashed #9EB7BA; height:auto; line-height:26px; text-align:left; color:#000; display:block; float:left; margin:0 5px; padding:0 5px; width:213px}
+div.hide{display:none}
+div.current{display:block}

@@ -1,0 +1,130 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model  iPow.Application.jq.Dto.HomeDto
+<div class="guidTitle">
+    <span>您选择的目的地：<font class="fontBlue">@Model.CurrentCityInfo.province</font>&nbsp;&nbsp;&nbsp;&nbsp;景点：<font
+        class="fontBlue" id="SightCount">
+        @((Model != null && Model.SightInfo != null && Model.SightInfo.TotalItemCount > 0) ? Model.SightInfo.TotalItemCount : 0)
+    </font>个&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;" id="perNative"
+        title="切换其他旅游目的地" onclick="javascript:$('#addrProvince').css('display','inline');">切换其他旅游目的地</a></span>
+    <ul>
+        <li><a href="javascript:;" onclick="updateSightInfo('/@(Model.CurrentCityInfo.ProvincePy)/0/1/50/1','updateContianer');">
+            ￥50以内</a></li>
+        <li><a href="javascript:;" onclick="updateSightInfo('/@(Model.CurrentCityInfo.ProvincePy)/0/51/100/1','updateContianer');">
+            ￥50-100</a></li>
+        <li><a href="javascript:;" onclick="updateSightInfo('/@(Model.CurrentCityInfo.ProvincePy)/0/101/500/1','updateContianer');">
+            ￥100-500</a></li>
+        <li><a href="javascript:;" onclick="updateSightInfo('/@(Model.CurrentCityInfo.ProvincePy)/0/0/0/1','updateContianer');">
+            免费</a></li>
+    </ul>
+</div>
+<div class="classContainer">
+    @{
+        <a title="全部" class="current"  onclick="updateSightInfo('/@(Model.CurrentCityInfo.ProvincePy)/all/0/1','updateContianer')"   href="javascript:;">
+            <b>全部</b></a>
+        if (this.Model.TopClass != null && this.Model.TopClass.Count > 0)
+        {
+            for (int i = 0; i < this.Model.TopClass.Count; i++)
+            {
+                var strName = this.Model.TopClass[i].name;
+                strName = strName.Length > 2 ? strName.Substring(0, 2) : strName;
+        <a   onclick="updateSightInfo('/@(Model.CurrentCityInfo.ProvincePy)/all/@(Model.TopClass[i].Type)/1','updateContianer')" href= "javascript:;" title ='@this.Model.TopClass[i].name' >
+            @((Model != null && Model.CurrentClassId == Model.TopClass[i].Type) ? Html.Raw("<b>" + strName + "</b>") : Html.Raw(strName))
+        </a>        
+            }
+        }
+    }
+</div>
+<div class="sightContainer" id="SightList">
+    @{
+        if (this.Model.SightInfo != null && this.Model.SightInfo.Count > 0)
+        {
+            string abackGround = string.Empty;
+            foreach (var c in Model.SightInfo)
+            {
+                abackGround = string.Empty;
+                if (c.SortProv != null && c.SortProv.IndexOf(Model.CurrentCityInfo.province) >= 0)
+                {
+                    abackGround = "background:#efefef";
+                }
+                else
+                {
+                    if (c.IsSort > 0)
+                    {
+                        abackGround = "background:#efefef";
+                    }
+                }
+        <a href="@Url.Action("Index", "SightDetail", new { sight = c.Py, sid = c.ParkID, id = 1 })" title="@(c.Title)" target="_blank" style = "@(abackGround)">
+            <dl>
+                <dt>
+                    @((!string.IsNullOrEmpty(c.Title) && c.Title.Length > 6) ? c.Title.Substring(0, 5) : c.Title)
+                    <font class="fontBlue">￥@(c.Ticket == 0 ? "免费" : c.Ticket.ToString())
+                        @{
+                if (c.SortProv != null && c.SortProv.IndexOf(Model.CurrentCityInfo.province) >= 0)
+                {
+                            @Html.Raw("<em style = 'font-size:10px;'>推广</em>");
+                }
+                else
+                {
+                    if (c.IsSort > 0)
+                    {
+                            @Html.Raw("<em style = 'font-size:10px;'>推广</em>");
+                    }
+                }
+                        }
+                    </font></dt>
+                <dd class="img">
+                    @{
+                var pic = iPow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(c.ParkID);
+                        <img width="116px" height="103px;" 
+                        src="@( pic.Count == 3 ? pic[0] + "cutdown/116_103_" + pic[1] : "/images/nopic135.jpg")" 
+                        alt="@(pic.Count == 3 ? pic[2] : "暂无图片")"/>
+                    }
+                </dd>
+                <dd>
+                    @((!string.IsNullOrEmpty(c.Address) && c.Address.Length > 10) ? c.Address.Substring(0, 9) : c.Address)
+                </dd>
+                <dd>
+                    <em>@(c.WantCount)</em>人想去&nbsp;&nbsp;&nbsp;&nbsp;<em style="background-color: #286903;">@(c.GoCount)</em>人去过</dd>
+                <dd>
+                    <img src="@Url.Content("~/images/img_ico.jpg")" class="ico" align="absmiddle" />
+                    @(c.PicCount)
+                    &nbsp; &nbsp; &nbsp; &nbsp;<img src="/images/comm_ico.jpg" class="ico" align="absmiddle" alt="" />@(c.CommCount)</dd>
+                <dd class="more">
+                    查看详细</dd>
+            </dl>
+        </a>
+            }
+        }
+        else
+        {
+        <h2>
+            没有找到相关信息
+        </h2>
+        }
+    }
+</div>
+<div class="indexPage">
+    <div class="Pagecon">
+        @{
+            if (this.Model.SightInfo != null && this.Model.SightInfo.Count > 0)
+            {
+            @Html.AjaxPager(Model.SightInfo,
+            new PagerOptions
+            {
+                PageIndexParameterName = "id",
+                LastPageText = ">>",
+                FirstPageText = "<<",
+                PrevPageText = "<",
+                NextPageText = ">",
+                CurrentPagerItemWrapperFormatString = "<span class=\"\">{0}</span>"
+            },
+                    new AjaxOptions
+                    {
+                        UpdateTargetId = "updateContianer",
+                        OnBegin = "AjaxStart",
+                        OnComplete = "AjaxStop"
+                    });
+            }
+        }
+    </div>
+</div>

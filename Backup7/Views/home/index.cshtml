@@ -1,0 +1,56 @@
+﻿@{
+    var localtion = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
+        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+    var address = localtion.GetLocationInfo();
+    ViewBag.Title = ((address != null && address.Province != null) ? address.Province + "_" : "") + "酒店预订_";
+}
+@* message: 酒店 景点推广
+      datetime: 2012/3/31
+      by:张军朋
+*@
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/hotel_index.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/colorbox.css")" />
+<script src="@Url.Content("~/Scripts/jquery.colorbox.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".chinabaohuluiframe").colorbox({ iframe: true, width: "80%", height: "80%" });
+        $('.chinabaohuluiframe').trigger("click");
+    });
+</script>
+<!--页面头部结束-->
+<div id="hotContainer" class="mainContainer">
+ @*<a class='chinabaohuluiframe' href="http://www.chinabaohulu.com/" title="景区推广"></a>*@
+    @Html.Partial("HeadVouchDataPartial")
+</div>
+<!--页面头部结束-->
+<!--页面内容开始-->
+<div class="infoContainer">
+    <div class="leftContainer">
+        @Html.Partial("LeftMidPartial")
+    </div>
+    <div class="rightContainer">
+        <div class="rightTitle1">
+            <h3>
+                今日低价</h3>
+        </div>
+        <div class="rightContent">
+            <ul id="minPriceList">
+                @*@Html.Action("GetTodayLowPrice", "RightTodayLowPriceHotHotel");*@
+                      @Html.Partial("RightTodayLowPrice")
+            </ul>
+        </div>
+        <div class="rightTitle2">
+            <h3>
+                人气酒店排行榜</h3>
+        </div>
+        <div class="orderContent">
+            <ul id="visitList">
+                @*@Html.Action("GetHotHotel", "RightTodayLowPriceHotHotel");*@
+                      @Html.Partial("RightHotHotelPartial")
+            </ul>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<!--页面内容结束-->

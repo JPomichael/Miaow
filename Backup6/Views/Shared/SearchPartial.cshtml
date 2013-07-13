@@ -1,0 +1,44 @@
+﻿<script type="text/javascript">
+    $(function () {
+        $(":input[data-autocomplete]").each(function () {
+            $(this).autocomplete({
+                source: $(this).attr("data-autocomplete")
+            }
+            );
+        });
+
+        $("#txtKeyword").focus(function () {
+            if (this.value == "可输入景区名") {
+                $("#txtKeyword").val("");
+            }
+        }).blur(function () {
+            if (this.value == "") {
+                $("#txtKeyword").val("可输入景区名");
+            }
+        });
+    });
+
+    function checkForm() {
+        var ret = true;
+        var key = $('#txtKeyword')
+        if (key.val() == '') {
+            key.focus();
+            alert('关键字不能为空');
+            ret = false;
+        }
+        return ret;
+    }
+</script>
+<!--搜索工具条开始-->
+<form id="searchForm" action="/search/index" method="post">
+<div class="headerSearch">
+    <span class="spanText">关键字：</span> <span class="spanInput" style="width: 300px;">
+        <input type="text" class="inputText2" id="txtKeyword" name="txtKeyword" value="可输入景区名"
+            size="30" data-autocomplete="/search/tip" />
+    </span><span class="spanSearch">
+        <input type="submit" name="search" id="search" style="border: none;" class="aSearch"
+            value="" onclick="return checkForm();" />
+    </span>
+</div>
+</form>
+<!--搜索工具条结束-->

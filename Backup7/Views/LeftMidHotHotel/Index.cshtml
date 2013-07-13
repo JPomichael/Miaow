@@ -1,0 +1,37 @@
+﻿@model iPow.Application.Union.Dto.SearchHotelDto
+@{
+    var hotelTypeService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
+        iPow.Service.Union.Service.IHotelTypeService>();
+
+    if (Model != null && Model.hotel_list != null && Model.hotel_list.Count > 0)
+    {
+        var counter = 0;
+        foreach (var it in Model.hotel_list)
+        {
+            if (counter < 3)
+            {
+    <a href="/hotel/@(it.id)" target="_blank" class="aLeftList">
+        <ul>
+            <li><span class="spanPrice">￥@(it.price)</span> <span class="spanStat">@( string.IsNullOrEmpty(it.jdlx) == true ? hotelTypeService.GetHotelType(it.xingji) : it.jdlx)</span>
+                <span class="spanName">@(it.hotelname)</span> <span class="spanHot">@(it.totaldd)</span>
+            </li>
+        </ul>
+    </a>    
+            }
+            else
+            {
+                break;
+            }
+            counter++;
+        }
+    }
+    else
+    {
+    <a href="javascript:" class="aLeftList">
+        <ul>
+            <li><span class="spanPrice">￥0</span> <span class="spanStat">没有找到相应类型</span> <span
+                class="spanName">没有找到相应类型</span> <span class="spanHot">0</span> </li>
+        </ul>
+    </a> 
+    }
+}

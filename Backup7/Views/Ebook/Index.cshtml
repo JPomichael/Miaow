@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "酒店预订-";
+}
+<link type="text/css" rel="stylesheet" href=" @Url.Content("~/Content/ad.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/top.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/hotel.css")" />
+<script type="text/javascript">
+    try {
+        var _hash = window.location.hash, _height = _hash.split("#")[1] + "px";
+        var _iframe = window.parent.parent.document.getElementById("frame_content");
+        _iframe.style.height = _height;
+    } catch (e) { }
+</script>
+@{
+    if (ViewBag.id != null && ViewBag.rid != null && ViewBag.rpi != null)
+    {
+        var fig = iPow.Service.Union.Config.ConfigManager.GetConfigProvider().Initial();
+        var url = "http://www.128uu.com/ebook/ebook.asp?agent_id=" + fig.AgentId;
+        url += "&agent_md=" + fig.AgentMd;
+        url += "&typeid=" + fig.DingDanType;
+        url += "&hid=" + ViewBag.id;
+        url += "&roomid=" + ViewBag.rid;
+        url += "&rateplanid=" + ViewBag.rpi;
+        url += "&intime=" + ViewBag.intime;
+        url += "&outtime=" + ViewBag.outtime;
+
+        //测试
+        //url += "&webpath=http://localhost:9359";
+        //url += "&url=http://localhost:9359/ebook/" + ViewBag.id + "/" + ViewBag.rid + "/" + ViewBag.rpi;
+        //发布
+        url += "&webpath=http://hotel.ipow.cn";
+        url += "&url=http://hotel.ipow.cn/ebook/" + ViewBag.id + "/" + ViewBag.rid + "/" + ViewBag.rpi;
+        url += "&webname=" + iPow.Infrastructure.Crosscutting.Function.StringHelper.StrToUrlGbk(fig.WebName);//Server.UrlEncode(fig.WebName);
+    <div class="mainContainer">
+        <iframe id="frame_content" width="965" name="frame" height="730" scrolling="no" frameborder="0" src="@(url)">
+        </iframe>
+    </div>
+    }
+    else
+    {
+    <div class="mainContainer">
+        <h1>
+            提交参数错误
+        </h1>
+    </div>
+    }
+}

@@ -1,0 +1,37 @@
+﻿@model  iPow.Application.jq.Dto.HomeDto
+@{
+    if (Model != null)
+    {
+        ViewBag.Title = Model.CurrentCityInfo.province + "_景区列表_iPow自助旅行网";
+    }
+}
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_list.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/floatbox.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/areaArr.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/search.js")"></script>
+<!--广告位开始-->
+@Html.Partial("_ADLayout")
+<!--广告位结束-->
+<div class="mainContainer" id="updateContianer">
+    @{
+        Html.RenderPartial("ProvincePartial", Model);
+    }
+</div>
+<div id="addrProvince" style="left: 302.183px; top: 270px; display: none">
+    @Html.Partial("ProvinceLinksPartial")
+</div>
+<!--快速连接-->
+<div class="foot_cir">
+    @Html.Partial("IndexBottomLinkPartial")
+</div>
+<!--快速连接-->
+<!--尾部开始-->
+<div class="linkContainer"> 
+    <div class="LinkList">
+        @Html.Partial("ProvinceBottomLinksPartial")
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<!--尾部结束-->

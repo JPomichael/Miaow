@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 using Webdiyer.WebControls.Mvc;
 
-namespace iPow.dj.Controllers
+namespace Miaow.Presentation.dj.Controllers
 {
     [HandleError]
     public class ListController :

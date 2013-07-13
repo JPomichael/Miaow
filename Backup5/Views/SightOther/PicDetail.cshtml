@@ -1,0 +1,382 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model  iPow.Application.jq.Dto.PicDetailDto
+@{
+    var picService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Application.jq.Service.IPicInfoService>();
+
+    var hotelLeftMidService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Service.Union.Service.IHotelLeftMidService>();
+
+    if (Model != null)
+    {
+        ViewBag.Title = Model.PicInfo.PicName + "_" + this.Model.SightInfo.Title + "图片---iPow自助旅行网";
+    <meta name='description' content='本站提供最专业、最实时的@(Model.SightInfo.Title)图片，记录网友的精彩瞬间，难忘情景。上传你的@(Model.SightInfo.Title)图片，让我们一起来分享！iPow自助旅行网。' />
+    <meta content="@(this.Model.SightInfo.Title) 图片,@(this.Model.PicInfo.PicName),iPow自助旅行网" name="keywords" />
+    <meta name="Copyright" content="http://www.ipow.cn" />
+    } 
+}
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/main.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/marker.css")" />
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/colorbox.css")" />
+<script src="http://ditu.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAmoR-oBdyeH4Zkn00S2LOLhRdPH43yFVZ6O0pFnW8m54CGfsV9hSR2QH4wAlox0CoYhgKSKnpURoU3A"
+    type="text/javascript"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/sight.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/search.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/pkgHotelMarker.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/HG.Core.js")"></script>
+<script type="text/javascript"src="@Url.Content("~/Scripts/jquery.pagination.js")"></script>
+<script type="text/javascript"src="@Url.Content("~/Scripts/jquery.form.js")"></script>
+<script type="text/javascript"src="@Url.Content("~/Scripts/jquery.colorbox.js")"></script>  
+<script type="text/javascript"src="@Url.Content("~/Scripts/pic_browser.js")"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#addComm').submit(function () {
+            var options = {
+                target: '#Searchresult',   // target element(s) to be updated with server response 
+                beforeSubmit: showRequest,  // pre-submit callback 
+                success: showResponse,  // post-submit callback 
+                type: 'POST',
+                url: '/sight/picaddcomm',
+                data: null,
+                dataType: null,
+                timeout: 20000
+            };
+            $(this).ajaxSubmit(options);
+            return false;
+        });
+    });
+
+    function showRequest(formData, jqForm, options) {
+        if ($('#txtUserName').val() == '') {
+            alert('名称不能不空');
+            $('#txtUserName').focus();
+            return false;
+        }
+        if ($('#txtContent').val() == '') {
+            alert('评论内容不能为空');
+            $('#txtContent').focus();
+            return false;
+        }
+        return true;
+    }
+
+    function showResponse(responseText, statusText, xhr, $form) {
+        if (statusText = 'success') {
+            alert('评论成功');
+        }
+        else {
+            alert('评论失败，请稍后再评论');
+        }
+    } 
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //这个方法是用来评论分页用的
+        rightTab("cirTab", "cirList", "cirTab", "current");
+        $("#hrefCirHotel").mouseup(function () {
+            var list = mapDataProcess(hotelMap);
+            HotelMarker.resetMarkers(map, list);
+            HotelMarker.setCenterAndZoom(map, list);
+        });
+        $("#hrefCirSight").mouseup(function () {
+            var list = mapDataProcess(sightMap);
+            HotelMarker.resetMarkers(map, list);
+            HotelMarker.setCenterAndZoom(map, list);
+        });
+        mapinitialize(sightMap, "gMap");
+        leftTab("picvideoTab", "PicVideoList", "nocurrent", "current");
+        leftTab("sightIntroTab", "SightIntroInfo", "nocurrent", "current");
+
+    });
+</script>
+<!--广告位开始-->
+@Html.Partial("_ADLayout")
+<!--左侧内容开始-->
+<div class="mainContainer" style="text-align: center; line-height: 25px;">
+    <div class="leftContainerCopy" id="updateContianer">
+        @{
+            if (this.Model.SightInfo != null)
+            {
+            <div class="guidTitle">
+                <h2>@(Model.SightInfo.Title)</h2>
+                <span class="typeName">[@(Model.SightClass.ClassName)]</span> <span class="ticketName">
+                    门票价格：</span> <span class="ticketPrice">￥@(Model.SightInfo.Ticket)
+                    </span><span class="rightControl"><a href="javascript:;" onclick="GetSightData(@(Model.SightInfo.ParkID),'GoCount');" class="wantbutton">
+                        我去过</a> | <a href="javascript:;" onclick="GetSightData(@(Model.SightInfo.ParkID),'WantCount');">
+                            我想去</a> | <a href="#">添加到我的行程</a> </span>
+            </div>
+            <div class="guidMenu">
+                <span class="spanTab"><a href="@Url.Action("Index", "SightDetail", new { sight = Model.SightInfo.PY, sid = Model.SightInfo.ParkID, id = 1 })">
+                    基本信息</a> <a onclick = "updateSightInfo('/sight/ticket/@(Model.SightInfo.ParkID)/tic','updateContianer');" href="javascript:;" title="门票">
+                        门票</a> <a onclick = "updateSightInfo('/sight/article/@(Model.SightInfo.ParkID)/art/A/1','updateContianer');"
+                         href="javascript:;" title="攻略游记">攻略游记</a> <a onclick = "updateSightInfo('/sight/guide/@(Model.SightInfo.ParkID)/gui','updateContianer');"
+                            href="javascript:;"title="导游图">导游图</a> <a class="curren" onclick = "updateSightInfo('/sight/pic/@(Model.SightInfo.ParkID)/pic/A/1','updateContianer');" href="javascript:;" title="图片">
+                                图 片</a> <a onclick = "updateSightInfo('/sight/video/@(Model.SightInfo.ParkID)/vid/A/1','updateContianer');" href="javascript:;"title="视频">
+                                    视 频</a> </span><span class="spanInfo"><em style="background-color: #286903;" id="GoCount">@(Model.SightInfo.GoCount)</em>人去过&nbsp;&nbsp;
+                                        <em id="WantCount">@(Model.SightInfo.WantCount)</em>人想去
+                </span>
+            </div>
+            }
+        }
+        <div class="intro">
+            <div class="introMain">
+                <div class="introMenu" id="picvideoTab">
+                    <a href="javascript:;" id="pictab" title="图片" class="current">图 片</a>
+                </div>
+                <div class="infoContainer" id="PicVideoList">
+                    <div id="PicVideoList1" class="showPic">
+                        @{
+                            if (Model.PicInfo != null)
+                            { 
+                            <h1>
+                                @(Model.PicInfo.PicName)</h1>
+                            <span>发布时间：@Model.PicInfo.AddTime&nbsp;&nbsp;&nbsp;&nbsp;iPow族员评论：<em id="CommCount">@(Model.PicInfo.CommCount)</em>&nbsp;&nbsp;&nbsp;&nbsp;浏览：<em
+                                id="VisitCount">@(Model.PicInfo.ViewCount)</em></span>
+                            <div class="articleShow" style="text-align: center;">
+                            <a href="@(Model.PicInfo.PicPath + Model.PicInfo.FileName)" id="@(Model.PicInfo.PicPath + Model.PicInfo.FileName)" class ="test">
+                                <img  src="@(Model.PicInfo.PicPath + Model.PicInfo.FileName)" onload="if(this.width>550) this.width=550;"
+                                  title="点击查看大图" />
+                            </a>
+                            </div>
+                            }
+                        }
+                    </div>
+                </div>
+                <div class="infoContainer">
+                    <p>
+                    </p>
+                </div>
+            </div>
+            <div id="myAddComm">
+                <div class="commControl" style="margin-top: 20px;">
+                    <h1>
+                        发表评论</h1>
+                    <form id="addComm" method="post" action="" runat="server">
+                    <label>
+                        <input class="text" size="20" value="游客" name="txtUserName" id="txtUserName" />&nbsp;顺便打个分<br />
+                    </label>
+                    <div style="display: none">
+                        <input id = "txtPicId"  value = "@(Model.PicInfo.PicID)" name = "txtPicId" />
+                    </div>
+                    <input name="score" type="radio" id="score" class="radioStyle" value="5" title="5分" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <input name="score" type="radio" id="score" value="4" class="radioStyle" title="4分" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <input name="score" type="radio" id="score" value="3" class="radioStyle" title="3分" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <input name="score" type="radio" id="score" value="2" class="radioStyle" title="2分" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <input name="score" type="radio" id="score" value="1" class="radioStyle" title="1分" />
+                    <img height="11" src="/images/start.gif" width="12" />
+                    <span>
+                        <textarea id="txtContent" name="txtContent" cols="45" rows="5"></textarea>
+                    </span>
+                    <input type="submit" style="" value="" id="btnAddSightComm" />
+                    <!-- 下面的这个a是原来，我给他隐藏了-->
+                    <em>请iPow族员文明用语，保持iPow家园健康清洁。</em>
+                    </form>
+                </div>
+                <div class="introMain" id="commListInfo">
+                    <div class="commPage">
+                        <span class="leftTitle">>>评论列表：</span>
+                        <div class="indexPage">
+                            <div id="Searchresult" class="commListOut">
+                                @{
+                                    int total = 0;
+                                    var picCommList = picService.GetPicCommListById(Model.PicInfo.PicID, 1, 5, ref total);
+                                    foreach (var item in picCommList)
+                                    {
+                                        var userId = "user" + item.UserID.ToString();
+                                        var ips = item.Ip.Split('.');
+                                        var ip = ips[0] + "." + ips[1] + "*.*";
+                                        var contentId = "commContent" + item.UserID.ToString();
+                                    <p class="over">
+                                        <img src="/images/face/face1.jpg" width="45" height="45" class="face" />
+                                        <span class="spanUser" id='@(userId)'><b>iPow@(item.UserName)</b> ip：@(ip)</span>
+                                        <span class="spanScore"></span><span class="content" id="@(contentId)">@(item.Content)</span>
+                                        <span class="control">发表于：@(item.AddTime.ToString())&nbsp;&nbsp;&nbsp;&nbsp;<a
+                                href="javascript:;" onclick="showCommReply(@(item.UserID),@(item.PicID))" style = " display: none">引用回复</a>&nbsp;</span>
+                                    </p>
+                                    }
+                                }
+                                <div id="Pagination" class="Pagecon">
+                                    @Html.AjaxPager(total, 5, 1,
+                                "PicCommPage",
+                                "Pic",
+                                "SightPicCommPage",
+                                 new PagerOptions()
+                                {
+                                    PageIndexParameterName = "pi",
+                                    LastPageText = "尾页",
+                                    FirstPageText = "首页",
+                                    PrevPageText = "上一页",
+                                    NextPageText = "下一页",
+                                    NumericPagerItemCount = 5,
+                                    CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>"
+                                },
+                                new
+                                {
+                                    picid = Model.PicInfo.PicID,
+                                    pi = 1
+                                },
+                                new AjaxOptions()
+                                {
+                                    UpdateTargetId = "Searchresult",
+                                    OnBegin = "",
+                                    OnComplete = ""
+                                },
+                                null)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右侧内容开始-->
+    <div class="rightContainerCopy">
+        <div class="mapContainer1" id="jxMapTipPanel">
+        </div>
+        <div class="mapContainer" id="gMap" style="overflow: hidden;">
+            <img src="/images/loading2.gif" class="maploading" />
+        </div>
+        <div class="mapTab" id="cirTab">
+            <a href="javascript:;" class="current" id="hrefCirSight">周边景区</a> <a href="javascript:;"
+                id="hrefCirHotel" class="cirTab">周边酒店</a> <a href="javascript:;" class="cirTab" id="hrefCirTraffic">
+                    周边饮食</a>
+        </div>
+        <div class="cirList" id="cirList1">
+            @{
+                System.Text.StringBuilder sightCirSight = new System.Text.StringBuilder();
+
+                if (Model.CirSightInfoList != null && Model.CirSightInfoList.Count > 0)
+                {
+                    sightCirSight.AppendLine(" var sightMap = [");
+                    var count = 0;
+                    foreach (var item in Model.CirSightInfoList)
+                    {
+                        var cirSightId = "aCirSight" + count.ToString();
+                        var title = item.Title;
+                        string imgPath = "/images/icon/htop" + (count + 1) + ".jpg";
+                        title = title.Length > 8 ? title.Substring(0, 7) : title;
+                <a id="@cirSightId" href="@Url.Action("Detail", "SightDetail", new { sight = item.PY, sid = item.ParkID, id = 1 })" title="@item.Title">
+                    <img src="@imgPath" align="absmiddle" border="0" />
+                    <span>@title</span> <em>￥@item.Ticket.ToString()</em> </a>
+                        if (count >= Model.CirSightInfoList.Count - 1)
+                        {
+                            sightCirSight.AppendLine("  {Name:'" + item.Title + "',Url:'" + item.Url + "',Type:'Sight',Latitude:" + item.Latitude + ",Longitude:" + item.Longitude + ",Price:" + item.Ticket + ",ImageSrc:'" + item.PicPath + "',Address:'" + item.Address + "',CommCount:0,PicCount:0,SightType:'" + item.ClassID + "',DomID:'aCirSight" + count + "'}");
+                        }
+                        else
+                        {
+                            sightCirSight.AppendLine("  {Name:'" + item.Title + "',Url:'" + item.Url + "',Type:'Sight',Latitude:" + item.Latitude + ",Longitude:" + item.Longitude + ",Price:" + item.Ticket + ",ImageSrc:'" + item.PicPath + "',Address:'" + item.Address + "',CommCount:0,PicCount:0,SightType:'" + item.ClassID + "',DomID:'aCirSight" + count + "'},");
+                        }
+                        count++;
+                    }
+                    sightCirSight.AppendLine("]");
+                }
+            }
+        </div>
+        <div class="cirListHide" id="cirList2">
+            @{ System.Text.StringBuilder sightCirHotel = new System.Text.StringBuilder();
+               if (Model.SightInfo.Latitude != null && Model.SightInfo.Longitude != null)
+               {
+                   var intime = System.DateTime.Now.ToString("yyyy-MM-dd").Replace("-", "_");
+                   string cityName = "深圳";
+                   string latlon = "";
+                   string strMin = "0";
+                   string strMax = "0";
+                   cityName = Model.SightInfo.City.Replace("市", "");
+                   latlon = "(" + Model.SightInfo.Latitude.ToString() + "," + Model.SightInfo.Longitude.ToString() + ")";
+
+                   var cirHotelInfoList = hotelLeftMidService.GetMidHotHotelByLatLong(intime, cityName, System.Web.HttpUtility.UrlEncode(latlon), "1", strMin, strMax);
+
+                   if (cirHotelInfoList != null && cirHotelInfoList.hotel_list != null && cirHotelInfoList.hotel_list.Count > 0)
+                   {
+                       sightCirHotel.AppendLine(" var hotelMap = [ ");
+                       var count = 0;
+                       foreach (var item in cirHotelInfoList.hotel_list)
+                       {
+                           var pos = item.pos.Replace("(", "").Replace(")", "");
+                           var posList = pos.Split(',').ToList();
+                           if (posList.Count == 2)
+                           {
+                               var hotelId = "acirHotel" + count.ToString();
+                               var title = item.hotelname;
+                               string imgPath = "/images/icon/htop" + (count + 1) + ".jpg";
+                               title = title.Length > 8 ? title.Substring(0, 7) : title;
+                <a id="@(hotelId)" href="http://hotel.ipow.cn/hotel/@(item.id)" title="@(item.hotelname)">
+                    <img src="@(imgPath)" align="absmiddle" border="0" alt = ""/>
+                    <span>@(title)</span> <em>￥@(item.price.ToString())</em> </a>                       
+                               if (count >= cirHotelInfoList.hotel_list.Count - 1)
+                               {
+                                   sightCirHotel.AppendLine("   { Name: '" + item.hotelname + "', Url: '"
+                                       + item.pic + "', Type: 'Hotel', Latitude: "
+                                       + posList[0] + ", Longitude: "
+                                       + posList[0] + ", Price: "
+                                       + item.price + ", ImageSrc: '"
+                                       + item.pic + "', Address: '"
+                                       + item.address + "', CommCount: 0, PicCount: 0, HotelType: '"
+                                       + item.jdlx + "', DomID: 'acirHotel" + count + "' }");
+                               }
+                               else
+                               {
+                                   sightCirHotel.AppendLine("   { Name: '" + item.hotelname + "', Url: '"
+                                        + item.pic + "', Type: 'Hotel', Latitude: "
+                                        + posList[0] + ", Longitude: "
+                                        + posList[0] + ", Price: "
+                                        + item.price + ", ImageSrc: '"
+                                        + item.pic + "', Address: '"
+                                        + item.address + "', CommCount: 0, PicCount: 0, HotelType: '"
+                                        + item.jdlx + "', DomID: 'acirHotel" + count + "' },");
+                               }
+                           }
+                           count++;
+                       }
+                       sightCirHotel.AppendLine("]");
+                   }
+               }
+            }
+        </div>
+        <div class="cirListHide" id="cirList3">
+            <p>
+                敬请关注！</p>
+        </div>
+        <div class="aboutInfo">
+            联系方式
+        </div>
+        <div class="mapTab">
+            <p>
+                地址：@Model.SightInfo.Address<br />
+                电话：@Model.SightInfo.Telephone<br />
+                E-Mail：@Model.SightInfo.Email<br />
+                网址：<a href="@Model.SightInfo.Url" title="@Model.SightInfo.Title" target="_blank">@Model.SightInfo.Url</a>
+            </p>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <!--右侧内容结束-->
+    <div class="clear">
+    </div>
+</div>
+@Html.Raw("<script type=\"text/javascript\">     " + sightCirSight.ToString() + "</script>")
+@Html.Raw("<script type=\"text/javascript\">     " + sightCirHotel.ToString() + "</script>")
+<script type="text/javascript">
+
+
+</script>
+<!--左侧内容结束-->

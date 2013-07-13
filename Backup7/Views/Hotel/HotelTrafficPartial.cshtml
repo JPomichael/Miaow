@@ -1,0 +1,289 @@
+﻿@model iPow.Application.Union.Dto.HotelTrafficDto
+@{
+    var hotelTypeService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
+        iPow.Service.Union.Service.IHotelTypeService>();
+}
+<!--交通导航开始-->
+<input type="hidden" id="localAreaCode" value="@(Model.HotelAreaCode)" />
+<input type="hidden" id="fromAreaCode" value="" />
+<div class="infoGuid">
+    <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />交通导航 ///
+</div>
+<div class="infoContainer">
+    <div class="trafficTool">
+        <div class="trafficTab">
+            <div class="trafficNav" id="trafficMenu">
+                <ul>
+                    <li class="style1">公交查询 </li>
+                    <li class="style2_2">自驾车导航查询 </li>
+                    <li class="style3_2">租车服务 </li>
+                </ul>
+            </div>
+            <div class="trafficTabRight">
+                <img src="/images/ico01.gif" width="9" height="9" align="absmiddle" />&nbsp;<a href="javascript:void(0);"
+                    onclick="loadingHtml('sHowList','cirSightIDs')">周边景区</a>&nbsp;&nbsp;
+                <img src="/images/ico01.gif" width="9" height="9" align="absmiddle" />&nbsp;<a href="javascript:;"
+                    onclick="loadingHtml('sHowList','cirHotelIDs');">周边酒店</a>
+            </div>
+        </div>
+        <div class="trafficSearch">
+            <div class="trafficSearchLeft">
+            </div>
+            <div class="trafficSearchMid" id="trafficTools01">
+                <div class="divInput">
+                    <span class="spanText" style="width: 50px;">起点：</span> <span class="spanInput" style="width: 120px;">
+                        <input class="trafficInput" id="startName_bus" value="" size="20" /></span><span
+                            class="spanText" style="width: 50px;">终点：</span> <span class="spanInput" style="width: 120px;">
+                                <input class="trafficInput" id="endName_bus" value="深圳水云间酒店公寓" size="20" /></span><span
+                                    class="spanText" style="width: 70px;">线路类型：</span> <span class="spanInput" style="width: 130px;">
+                                        <select name="select" id="routeType">
+                                            <option value="0" selected="selected">最快捷模式</option>
+                                            <option value="1">最经济模式</option>
+                                            <option value="2">最少换乘模式 </option>
+                                            <option value="3">最少步行模式</option>
+                                            <option value="4">最舒适模式</option>
+                                        </select>
+                                    </span><a href="javascript:;" id="btnTrafficQuery" class="aFindT">
+                    </a>
+                </div>
+            </div>
+            <div class="trafficSearchMid" id="trafficTools02" style="display: none;">
+                <div class="divInput">
+                    <span class="spanText" style="width: 50px;">起点：</span> <span class="spanInput" style="width: 85px;
+                        background: #fff; border: 1px #ffad49 solid; height: 20px; margin-top: 3px; padding: 0px;">
+                        <input class="trafficInput" id="startCity_driver" value="选择城市" style="width: 60px;
+                            color: #CCC; border: 0px; margin: 0px; padding: 0px;" readonly="readonly" size="30" />
+                        <button class="buttonCity" id="chooseCity">
+                        </button>
+                    </span><span class="spanInput" style="width: 111px; background: #fff; border: 1px #ffad49 solid;
+                        height: 20px; margin-top: 3px; padding: 0px;">
+                        <input class="trafficInput" id="startName_driver" onclick="if(this.value == '请输入街道地址'){this.select();}"
+                            onkeydown="if(this.value == '请输入街道地址') {this.value='';this.style.color='#000'}"
+                            value="请输入街道地址" style="width: 100px; color: #CCC; border: 0px; margin: 0px; padding: 0px;"
+                            size="30" /></span> <span class="spanText" style="width: 50px;">终点：</span>
+                    <span class="spanInput" style="width: 90px;">
+                        <input class="trafficInput" id="endName_driver" value="深圳水云间酒店公寓" readonly="readonly"
+                            style="width: 80px;" size="20" /></span><span class="spanText" style="width: 70px;">线路类型：</span>
+                    <span class="spanInput" style="width: 100px!important; width: 90px;">
+                        <select name="route_way" style="width: 85px;" id="route_way">
+                            <option value="0" selected="selected">速度优先</option>
+                            <option value="1">费用优先</option>
+                            <option value="2">距离优先</option>
+                        </select>
+                    </span><a href="javascript:;" id="btnDriveQuery" class="aFindT"></a>
+                </div>
+            </div>
+            <div class="trafficSearchMid" id="trafficTools03" style="display: none;">
+                <p>
+                    敬请关注！
+                </p>
+            </div>
+            <div class="trafficSearchRight">
+            </div>
+        </div>
+    </div>
+    <div class="trafficTool" id="trafficTool1">
+        <div class="trafficResultL">
+            <div class="trafficResultLT">
+            </div>
+            <div class="trafficResultLM" style="overflow-y: auto; overflow-x: hidden;" id="sHowList">
+            </div>
+            <div class="trafficResultLB">
+            </div>
+        </div>
+        <div class="trafficResultR">
+            <div class="mapContainer1" id="jxMapTipPanel">
+            </div>
+            <div style="height: 331px; width: 406px;" id="gMap">
+                <img src="/images/loading2.gif" class="maploading" />
+            </div>
+        </div>
+    </div>
+</div>
+<!--交通导航结束-->
+<div style="float: left; width: 100%; height: 10px;">
+</div>
+<div id="cirSightIDs" class="tabcontainerhide">
+    @{
+        System.Text.StringBuilder sightCirSight = new System.Text.StringBuilder();
+        sightCirSight.AppendLine(" var sightMap = [");
+        var cirCount = 0;
+        if (Model != null && Model.SightInfo != null && Model.SightInfo.Count() > 0)
+        {
+            foreach (var item in Model.SightInfo)
+            {
+        <a href="http://jq.ipow.cn/sight/@(item.PY)/@(item.ParkID)/1" id="aCirSight@(cirCount)" title="@item.Title">
+            <img src="/images/icon/htop@(cirCount + 1).jpg" align="absmiddle" border="0" /><span>
+                @(item.Title.Length > 8 ? item.Title.Substring(0, 8) : item.Title)</span><em>￥@(item.Ticket)</em></a>
+                if (cirCount >= Model.SightInfo.Count() - 1)
+                {
+                    sightCirSight.AppendLine("  {Name:'" + item.Title + "',Url:'" + item.Url + "',Type:'Sight',Latitude:" + item.Latitude + ",Longitude:" + item.Longitude + ",Price:" + item.Ticket + ",ImageSrc:'" + item.PicPath + "',Address:'" + item.Address + "',CommCount:0,PicCount:0,SightType:'" + item.ClassID + "',DomID:'aCirSight" + cirCount + "'}");
+                }
+                else
+                {
+                    sightCirSight.AppendLine("  {Name:'" + item.Title + "',Url:'" + item.Url + "',Type:'Sight',Latitude:" + item.Latitude + ",Longitude:" + item.Longitude + ",Price:" + item.Ticket + ",ImageSrc:'" + item.PicPath + "',Address:'" + item.Address + "',CommCount:0,PicCount:0,SightType:'" + item.ClassID + "',DomID:'aCirSight" + cirCount + "'},");
+                }
+                cirCount++;
+            }
+        }
+        sightCirSight.AppendLine("];");
+    }
+</div>
+<div id="cirHotelIDs" class="tabcontainerhide">
+    <ul id="ddmainnav">
+        @{
+            System.Text.StringBuilder sightCirHotel = new System.Text.StringBuilder();
+            sightCirHotel.AppendLine(" var hotelMap = [ ");
+            if (Model.HotelInfo != null && Model.HotelInfo.Count() > 0)
+            {
+                cirCount = 0;
+                foreach (var item in Model.HotelInfo)
+                {
+            <a id="acirHotel@(cirCount)" href="/hotel/@(item.id)" title="@(item.hotelname)">
+                <img src="/images/icon/htop@(cirCount + 1).jpg" align="absmiddle" border="0" />
+                <span>@(item.hotelname.Length > 8 ? item.hotelname.Substring(0, 8) : item.hotelname)</span><em>￥@(item.lowprice)</em></a>
+
+                    var pos = item.hotelpos.Replace("(", "").Replace(")", "");
+                    var posList = pos.Split(',').ToList();
+                    if (posList.Count == 2)
+                    {
+                        var picList = item.pic.Split('|').ToList();
+                        var photo = "";
+                        if (picList.Count > 0)
+                        {
+                            photo = "http://www.128uu.com/UploadFiles/" + picList[0].Replace("../", "");
+                        }
+
+                        if (cirCount >= Model.HotelInfo.Count() - 1)
+                        {
+                            sightCirHotel.AppendLine("   { Name: '" + item.hotelname
+                                + "', Url: '" + ""
+                                + "', Type: 'Hotel', Latitude: " + posList[0]
+                                + ", Longitude: " + posList[1]
+                                + ", Price: " + item.lowprice
+                                + ", ImageSrc: '" + ""
+                                + "', Address: '" + item.address
+                                + "', CommCount: " + (item.haoping + item.chaping + item.zhongping)
+                                + ", PicCount: 0, HotelType: '" + hotelTypeService.GetHotelType(item.xingji)
+                                + "', DomID: 'acirHotel" + cirCount + "' }");
+                        }
+                        else
+                        {
+                            sightCirHotel.AppendLine("   { Name: '" + item.hotelname
+                                + "', Url: '" + ""
+                                + "', Type: 'Hotel', Latitude: " + posList[0]
+                                + ", Longitude: " + posList[1]
+                                + ", Price: " + item.lowprice
+                                + ", ImageSrc: '" + ""
+                                + "', Address: '" + item.address
+                                + "', CommCount: " + (item.haoping + item.chaping + item.zhongping)
+                                + ", PicCount: 0, HotelType: '" + hotelTypeService.GetHotelType(item.xingji)
+                                + "', DomID: 'acirHotel" + cirCount + "' },");
+                        }
+                    }
+
+                    cirCount++;
+                }
+            }
+            sightCirHotel.AppendLine("];");
+        }
+    </ul>
+</div>
+<script src="http://ditu.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAmoR-oBdyeH4Zkn00S2LOLhT-tqwx4-VCPSxFJFpWv08I4sXs-xSw-MRQol8MMydn49N-WwwDGVwBGA"
+    type="text/javascript">
+</script>
+<script src="http://api.mapabc.com/api/v1.0/js/ajaxsis.js?key=feb6ac31e3e5423d2c45245a56bf4f08e2c5ecfb057bb74e652ac554722269071b3c46ef594bc574"
+    type="text/javascript">
+</script>
+<link href="@Url.Content("~/Content/marker.css")" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="@Url.Content("~/Scripts/pkgHotelMarker.js")"></script>
+<script src="@Url.Content("~/Scripts/search.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/traffic.js")" type="text/javascript"></script>
+<script type="text/javascript">
+@{
+    @Html.Raw(sightCirSight.ToString());
+
+    @Html.Raw(sightCirHotel.ToString());
+}
+@{
+    System.Text.StringBuilder sbSingltHotel = new System.Text.StringBuilder();
+    if (Model.SigleHotelInfo != null)
+    {
+        sbSingltHotel.AppendLine(" var singleMark = [ ");
+        var count = 0;
+        if (Model.HotelInfo != null)
+        {
+            foreach (var item in Model.HotelInfo)
+            {
+                var pos = item.hotelpos.Replace("(", "").Replace(")", "");
+                var posList = pos.Split(',').ToList();
+                if (posList.Count == 2)
+                {
+                    var picList = item.pic.Split(',').ToList();
+                    var photo = "";
+                    if (picList.Count > 0)
+                    {
+                        photo = "http://www.128uu.com/UploadFiles/" + picList[0].Replace("../", "");
+                    }
+
+                    if (count >= Model.HotelInfo.Count() - 1)
+                    {
+                        sbSingltHotel.AppendLine("   { Name: '" + item.hotelname
+                            + "', Url: '" + ""
+                            + "', Type: 'Hotel', Latitude: " + posList[0]
+                            + ", Longitude: " + posList[1]
+                            + ", Price: " + item.lowprice
+                            + ", ImageSrc: '" + ""
+                            + "', Address: '" + item.address
+                            + "', CommCount: " + (item.haoping + item.chaping + item.zhongping)
+                            + ", PicCount: 0, HotelType: '" +hotelTypeService.GetHotelType(item.xingji)
+                            + "', DomID: 'acirHotel" + count + "' }");
+                    }
+                    else
+                    {
+                        sbSingltHotel.AppendLine("   { Name: '" + item.hotelname
+                            + "', Url: '" + ""
+                            + "', Type: 'Hotel', Latitude: " + posList[0]
+                            + ", Longitude: " + posList[1]
+                            + ", Price: " + item.lowprice
+                            + ", ImageSrc: '" + ""
+                            + "', Address: '" + item.address
+                            + "', CommCount: " + (item.haoping + item.chaping + item.zhongping)
+                            + ", PicCount: 0, HotelType: '" + hotelTypeService.GetHotelType(item.xingji)
+                            + "', DomID: 'acirHotel" + count + "' },");
+                    }
+                }
+                count++;
+            }
+        }
+
+        sbSingltHotel.AppendLine("];");
+    }
+     @Html.Raw(sbSingltHotel.ToString());
+}
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //交通
+        tabsDisplay("trafficMenu", "trafficTools");
+        mapinitialize(singleMark);
+        jQuery("#trafficMenu ul li").click(function () {
+            if (mapInital == false)
+                mapinitialize(singleMark);
+            else
+                HotelMarker.resetMarkers(map, mapDataProcess(singleMark));
+            jQuery("#sHowList").html("<ul id='mainnav'></ul>");
+        });
+
+        //地图用到的
+        mapinitialize(sightMap);
+        jQuery("#btnTrafficQuery").click(function () {
+            search_bus_map();
+        });
+        jQuery("#btnDriveQuery").click(function () {
+            search_route_map();
+        });
+        //地图里面的点击城市
+        jQuery("#chooseCity").click(showAreaCode);
+    });
+</script>

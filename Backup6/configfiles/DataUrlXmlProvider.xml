@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <dataurl id ="1"  name ="酒店介绍" ispara ="true">
+    <url>hotel_info/?</url>
+    <paras>
+      <para name ="hotelid"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="2"  name ="获得首页主推酒店" ispara ="true">
+    <url>hotel/?</url>
+    <paras>
+      <para name ="cid"></para>
+      <para name ="type_id"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="3"  name ="获得某个城市的所有连锁品牌" ispara ="true">
+    <url>allchain/?</url>
+    <paras>
+      <para name ="cid"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="4"  name ="获得某个品牌的所有城市" ispara ="true">
+    <url>chain_info/?</url>
+    <paras>
+      <para name ="chain"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="5"  name ="获得酒店点评" ispara ="true">
+    <url>hotel_dianpinglist/?</url>
+    <paras>
+      <para name ="hotelid"></para>
+      <para name ="cid"></para>
+      <para name ="px"></para>
+      <para name ="type"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="6"  name ="获得城市的大学和中学，1为大学，2为中学" ispara ="true">
+    <url>school_city/?</url>
+    <paras>
+      <para name ="cid"></para>
+      <para name ="type_id"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="7"  name ="获得搜索关键字的经纬度" ispara ="true">
+    <url>getsinglepos/?</url>
+    <paras>
+      <para name ="cid"></para>
+      <para name ="type_name"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="8"  name ="酒店的周边环境" ispara ="true">
+    <url>hotel_round/?</url>
+    <paras>
+      <para name ="cid"></para>
+      <para name ="hid"></para>
+      <para name ="pos"></para>
+      <para name ="type_id"></para>
+      <para name ="num"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="9"  name ="酒店图片" ispara ="true">
+    <url>around/?</url>
+    <paras>
+      <para name ="cid"></para>
+      <para name ="hid"></para>
+      <para name ="pos"></para>
+      <para name ="lowprice"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="10"  name ="酒店的周边酒店" ispara ="true">
+    <url>hotel_pic/?</url>
+    <paras>
+      <para name ="hotelid"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="11"  name ="获得专栏相关的数据 这个有点特别哦，调的时候，注意下，没有参数" ispara ="false">
+    <url>{type_name}/?</url>
+    <paras>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="12"  name ="最新酒店点评(最多10条) 这个有点特别哦，调的时候，注意下，没有参数" ispara ="false">
+    <url>newdianping/?</url>
+    <paras>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="13"  name ="最新酒店问答(最多10条) 这个有点特别哦，调的时候，注意下，没有参数" ispara ="false">
+    <url>newask/?</url>
+    <paras>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="14"  name ="最新酒店订单(最多10条) 这个有点特别哦，调的时候，注意下，没有参数" ispara ="false">
+    <url>newdingdan/?</url>
+    <paras>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="15"  name ="该城市有视频的酒店列表" ispara ="true">
+    <url>vedio/?</url>
+    <paras>
+      <para name ="cid"></para>
+    </paras>
+  </dataurl>
+
+  <dataurl id ="16"  name ="问答列表" ispara ="true">
+    <url>ask/?</url>
+    <paras>
+      <para name ="hotelid"></para>
+      <para name ="hotelidpage"></para>
+    </paras>
+  </dataurl>
+</root>

@@ -1,0 +1,122 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model  iPow.Application.jq.Dto.DetailSightBaseDto
+@{
+    var articleService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Application.jq.Service.IArticleService>();
+                    
+}
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
+@{
+    if (this.Model != null)
+    {
+    <div class="guidTitle">
+        <h2>@Model.Title</h2>
+        <span class="typeName">[@(Model.Type)]</span> <span class="ticketName">门票价格：</span>
+        <span class="ticketPrice">￥@(Model.Ticket)
+        </span><span class="rightControl"><a href="javascript:;" onclick="GetSightData(@(Model.ParkID),'GoCount');" class="wantbutton">
+            我去过</a> | <a href="javascript:;" onclick="GetSightData(@(Model.ParkID),'WantCount');">
+                我想去</a> | <a href="#">添加到我的行程</a> </span>
+    </div>
+    <div class="guidMenu">
+        <span class="spanTab"><a href="@Url.Action("Index", "SightDetail", new { sight = Model.Py, sid = Model.ParkID, id = 1 })">
+            基本信息</a> <a onclick = "updateSightInfo('/sight/ticket/@(Model.ParkID)/tic','updateContianer');" href="javascript:;" title="门票">
+                门票</a> <a  class="curren"  onclick = "updateSightInfo('/sight/article/@(Model.ParkID)/art/A/1','updateContianer');"
+                         href="javascript:;" title="攻略游记">攻略游记</a> <a onclick = "updateSightInfo('/sight/guide/@(Model.ParkID)/gui','updateContianer');"
+                            href="javascript:;"title="导游图">导游图</a> <a onclick = "updateSightInfo('/sight/pic/@(Model.ParkID)/pic/A/1','updateContianer');" href="javascript:;" title="图片">
+                                图 片</a> <a onclick = "updateSightInfo('/sight/video/@(Model.ParkID)/vid/A/1','updateContianer');" href="javascript:;"title="视频">
+                                    视 频</a> </span><span class="spanInfo"><em style="background-color: #286903;" id="GoCount">@(Model.GoCount)</em>人去过&nbsp;&nbsp;
+                                        <em id="WantCount">@(Model.WantCount)</em>人想去 </span>
+    </div>
+
+    <div class="intro">
+        <div class="introMain">
+            <div class="introMenu" id="picvideoTab">
+                <a href="javascript:;" id="pictab" title="游记攻略" class="current">游记攻略</a>
+                <div class="yjgl">
+                    <a   onclick = "updateSightInfo('/sight/article/@(Model.ParkID)/art/N/1','updateContianer');" href="javascript:;" title = "最新游记攻略">
+                        最新游记攻略 </a><a  onclick = "updateSightInfo('/sight/article/@(Model.ParkID)/art/H/1','updateContianer');" href="javascript:;" title = "最热游记攻略">
+                            最热游记攻略</a>
+                </div>
+            </div>
+            <div class="infoContainer" id="ArticleList">
+                @{
+        int total = 0;
+        IQueryable<iPow.Domain.Dto.Sys_ArticleInfoDto> articleList = null;
+        if (ViewBag.ord != null && ViewBag.ord == "H")
+        {
+            articleList = articleService.GetSightArticleByHot(Model.ParkID, ViewBag.id, 5, ref total);
+        }
+        else
+        {
+            articleList = articleService.GetSightArticleByNew(Model.ParkID, ViewBag.id, 5, ref total);
+        }
+        var tempArticleList = articleList.Select(e => new
+        {
+            ArticleID = e.ArticleID,
+            PicUrl = e.PicUrl,
+            Title = e.Title,
+            Content = e.Content,
+            VisitCount = e.VisitCount
+        });
+        foreach (var item in tempArticleList)
+        {
+                    <a class="arList" href="/sight/articledetail/@(this.Model.ParkID)/@item.ArticleID" target="_blank"
+                            title="@item.Title">
+                        @{
+                            <img width="135px" height="125px;"
+                            src=" @(!string.IsNullOrEmpty(item.PicUrl) ? item.PicUrl : "/images/nopic135.jpg")" 
+                            alt = "@(!string.IsNullOrEmpty(item.PicUrl) ? item.Title : "暂无图片")   "/>
+                        }
+                        <div>
+                            <span>
+                                <h4>
+                                    @(item.Title.Length > 15 ? item.Title.Substring(0, 14) : item.Title)…</h4>
+                                <em>浏览次数：@item.VisitCount</em></span>
+                            <p>
+                                @{ var sub = item.Content.Length > 80 ? item.Content.Substring(0, 80) : item.Content;}
+                                @Html.Raw(iPow.Infrastructure.Crosscutting.Function.StringHelper.ParseHtml(sub)) ...</p>
+                            <h3>
+                                查看详细</h3>
+                        </div>
+                    </a>
+        }
+                }
+            </div>
+            <div class="infoContainer">
+                <div class="indexPage">
+                    <div class="Pagecon">
+                        @Html.AjaxPager((total % 5) == 0 ? (total / 5) : (total / 5) + 1, 5, (int)(ViewBag.id == null ? 1 : ViewBag.id),
+                        "Article", "SightOther", "",
+                        new PagerOptions
+                        {
+                            PageIndexParameterName = "id",
+                            LastPageText = "尾页",
+                            FirstPageText = "首页",
+                            PrevPageText = "上一页",
+                            NextPageText = "下一页",
+                            NumericPagerItemCount = 5,
+                            CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>"
+                        },
+                        new
+                        {
+                            sid = Model.ParkID,
+                            other = "art",
+                            ord = (ViewBag.ord == null ? "N" : ViewBag.ord),
+                            id = (ViewBag.id == null ? 1 : ViewBag.id + 1)
+                        },
+                        new AjaxOptions
+                        {
+                            UpdateTargetId = "updateContianer",
+                            OnBegin = "AjaxStart",
+                            OnComplete = "AjaxStop"
+                        }
+                        , null)
+                    </div>
+                </div>
+            </div>
+            <br />
+            <br />
+        </div>
+    </div>
+    }
+}

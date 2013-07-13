@@ -1,0 +1,39 @@
+﻿<div class="commControl" style="margin-top: 20px;">
+    <h1>
+        发表评论</h1>
+    <form id="addComm" method="post" action="" runat="server">
+    <label>
+        <input class="text" size="20" value="游客" name="txtUserName" id="txtUserName" />&nbsp;顺便打个分<br />
+    </label>
+    <div style="display: none">
+        <input id = "txtSightId"  value = "@Model.SightInfo.ParkID" name = "txtSightId" />
+        <input id = "txtSightPy"  value = "@Model.SightInfo.PY"  name = "txtSightPy"/>
+    </div>
+    <input name="score" type="radio" id="score" class="radioStyle" value="5" title="5分" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <input name="score" type="radio" id="score" value="4" class="radioStyle" title="4分" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <input name="score" type="radio" id="score" value="3" class="radioStyle" title="3分" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <input name="score" type="radio" id="score" value="2" class="radioStyle" title="2分" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <input name="score" type="radio" id="score" value="1" class="radioStyle" title="1分" />
+    <img height="11" src="/images/start.gif" width="12" />
+    <span>
+        <textarea id="txtContent" name="txtContent" cols="45" rows="5"></textarea>
+    </span>
+    <input type="submit" style="" value="" id="btnAddSightComm" />
+    <!-- 下面的这个a是原来，我给他隐藏了-->
+    <a href="javascript:;" style="display: none"></a><em>请iPow族员文明用语，保持iPow家园健康清洁。</em>
+    </form>
+</div>

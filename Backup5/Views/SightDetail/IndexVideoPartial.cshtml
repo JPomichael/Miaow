@@ -1,0 +1,16 @@
+﻿@{
+    var videoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
+        iPow.Application.jq.Service.IVideoInfoService>();
+
+    var videoList = videoService.GetSightVideoListByScore(ViewBag.parkid, 1, 3);
+    foreach (var item in videoList)
+    {
+    <dl>
+        <dd class="img">
+            <a href="" target="_blank" title="@(item.VideoName)">
+                <img src="@(item.PicPath + item.PicFile)" alt = "@(item.VideoName)"/></a>
+        </dd>
+        <dd class="info">
+            @(item.VideoName)</dd></dl>
+    }
+}
