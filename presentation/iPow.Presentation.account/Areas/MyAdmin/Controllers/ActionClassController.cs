@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using Telerik.Web.Mvc;
 using iPow.Infrastructure.Crosscutting.EntityToDto;
 
-namespace iPow.Presentation.account.Areas.MyAdmin
+namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class ActionClassController : Controller

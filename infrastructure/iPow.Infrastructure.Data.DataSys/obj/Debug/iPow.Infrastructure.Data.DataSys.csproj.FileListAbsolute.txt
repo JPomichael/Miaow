@@ -39,3 +39,9 @@ D:\Programmer_程序员\Wrok\IPOW\infrastructure\iPow.Infrastructure.Data.DataSy
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\iPow.Infrastructure.Data.DataSys\obj\Debug\iPow.Infrastructure.Data.DataSys.csprojResolveAssemblyReference.cache
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\iPow.Infrastructure.Data.DataSys\obj\Debug\iPow.Infrastructure..Data.DataSys.dll
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\iPow.Infrastructure.Data.DataSys\obj\Debug\iPow.Infrastructure..Data.DataSys.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Data.DataSys\bin\Debug\iPow.Infrastructure..Data.DataSys.dll.config
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Data.DataSys\bin\Debug\iPow.Infrastructure..Data.DataSys.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Data.DataSys\bin\Debug\iPow.Infrastructure..Data.DataSys.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Data.DataSys\obj\Debug\iPow.Infrastructure.Data.DataSys.csprojResolveAssemblyReference.cache
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Data.DataSys\obj\Debug\iPow.Infrastructure..Data.DataSys.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Data.DataSys\obj\Debug\iPow.Infrastructure..Data.DataSys.pdb

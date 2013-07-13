@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace iPow.Presentation.account.Areas.MyTravel
+namespace Miaow.Presentation.account.Areas.MyTravel
 {
     public class MyTravelAreaRegistration : AreaRegistration
     {

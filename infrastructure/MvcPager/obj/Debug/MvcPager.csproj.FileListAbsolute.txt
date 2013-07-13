@@ -33,3 +33,8 @@ D:\Programmer_程序员\Wrok\IPOW\infrastructure\MvcPager\bin\Debug\MvcPager.pdb
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\MvcPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\MvcPager\obj\Debug\MvcPager.dll
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\MvcPager\obj\Debug\MvcPager.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\MvcPager\bin\Debug\MvcPager.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\MvcPager\bin\Debug\MvcPager.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\MvcPager\obj\Debug\MvcPager.csprojResolveAssemblyReference.cache
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\MvcPager\obj\Debug\MvcPager.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\MvcPager\obj\Debug\MvcPager.pdb

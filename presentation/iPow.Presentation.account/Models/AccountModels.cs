@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace iPow.Presentation.account.Models
+namespace Miaow.Presentation.account.Models
 {
 
     public class ChangePasswordModel

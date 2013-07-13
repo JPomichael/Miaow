@@ -6,12 +6,12 @@ using Autofac.Integration.Mvc;
 using iPow.Infrastructure.Crosscutting.NetFramework;
 using iPow.Infrastructure.Crosscutting.NetFramework.Fakes;
 
-namespace iPow.Presentation.account
+namespace Miaow.Presentation.account
 {
     /// <summary>
     /// 
     /// </summary>
-    public class iPowPreAccountIoc
+    public class MiaowPreAccountIoc
     {
         /// <summary>
         /// Registers the specified builder.

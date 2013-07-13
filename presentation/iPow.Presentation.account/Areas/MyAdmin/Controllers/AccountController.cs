@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using iPow.Presentation.account.Models;
+using Miaow.Presentation.account.Models;
 
-namespace iPow.Presentation.account.Areas.MyAdmin
+namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class AccountController :

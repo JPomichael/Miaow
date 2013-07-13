@@ -39,3 +39,10 @@ D:\Programmer_程序员\Wrok\IPOW\infrastructure\iPow.Infrastructure.Crosscuttin
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\iPow.Infrastructure.Crosscutting.Function\obj\Debug\iPow.Infrastructure.Crosscutting.Function.csprojResolveAssemblyReference.cache
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\iPow.Infrastructure.Crosscutting.Function\obj\Debug\iPow.Infrastructure.Crosscutting.Function.dll
 D:\Programmer_程序员\Wrok\IPOW\infrastructure\iPow.Infrastructure.Crosscutting.Function\obj\Debug\iPow.Infrastructure.Crosscutting.Function.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Crosscutting.Function\bin\Debug\iPow.Infrastructure.Crosscutting.Function.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Crosscutting.Function\bin\Debug\iPow.Infrastructure.Crosscutting.Function.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Crosscutting.Function\bin\Debug\Dimac.JMail.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Crosscutting.Function\bin\Debug\Dimac.JMail.Smtp.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Crosscutting.Function\obj\Debug\iPow.Infrastructure.Crosscutting.Function.csprojResolveAssemblyReference.cache
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Crosscutting.Function\obj\Debug\iPow.Infrastructure.Crosscutting.Function.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\iPow.Infrastructure.Crosscutting.Function\obj\Debug\iPow.Infrastructure.Crosscutting.Function.pdb

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace iPow.Presentation.account.Areas.MyAdmin
+namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class RolePermissionController : Controller

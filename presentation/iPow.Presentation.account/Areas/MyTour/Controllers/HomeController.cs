@@ -10,7 +10,7 @@ using System.Collections;
 using Webdiyer.WebControls.Mvc;
 using iPow.Infrastructure.Crosscutting.EntityToDto;
 
-namespace iPow.Presentation.account.Areas.MyTour
+namespace Miaow.Presentation.account.Areas.MyTour
 {
     [HandleError]
     public class HomeController :
@@ -213,7 +213,7 @@ namespace iPow.Presentation.account.Areas.MyTour
         {
             var res = tourPlanService.GetTourPlanByID(PlanID);
             var data = res.ToDto();
-            var sightInfoService = iPow.Presentation.account.iPowPreAccountEngine.Current.Resolve<
+            var sightInfoService = Miaow.Presentation.account.MiaowPreAccountEngine.Current.Resolve<
                 iPow.Application.account.Service.ISightInfoService>();
             Application.account.Dto.TourPlanDto dto = new Application.account.Dto.TourPlanDto();
             dto.CurrentCityInfo = cityInfoService.GetCityInfoSingleByName(res.Destination);

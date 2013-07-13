@@ -19,3 +19,10 @@ D:\Programmer_程序员\Wrok\IPOW\application\iPow.Application.dj.Dto\bin\Debug\
 D:\Programmer_程序员\Wrok\IPOW\application\iPow.Application.dj.Dto\obj\Debug\iPow.Application.dj.Dto.csprojResolveAssemblyReference.cache
 D:\Programmer_程序员\Wrok\IPOW\application\iPow.Application.dj.Dto\obj\Debug\iPow.Application.dj.Dtos.dll
 D:\Programmer_程序员\Wrok\IPOW\application\iPow.Application.dj.Dto\obj\Debug\iPow.Application.dj.Dtos.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\application\iPow.Application.dj.Dto\bin\Debug\iPow.Application.dj.Dtos.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\application\iPow.Application.dj.Dto\bin\Debug\iPow.Application.dj.Dtos.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\application\iPow.Application.dj.Dto\bin\Debug\MvcPager.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\application\iPow.Application.dj.Dto\bin\Debug\MvcPager.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\application\iPow.Application.dj.Dto\obj\Debug\iPow.Application.dj.Dto.csprojResolveAssemblyReference.cache
+C:\Users\JPomichael\Documents\GitHub\Miaow\application\iPow.Application.dj.Dto\obj\Debug\iPow.Application.dj.Dtos.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\application\iPow.Application.dj.Dto\obj\Debug\iPow.Application.dj.Dtos.pdb

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Reflection;
 
-namespace iPow.Presentation.account.Controllers
+namespace Miaow.Presentation.account.Controllers
 {
     [HandleError]
     public class HomeController :

@@ -7,7 +7,7 @@ using System.ComponentModel;
 using FluentValidation.Attributes;
 using FluentValidation.Mvc;
 
-namespace iPow.Presentation.account.Models
+namespace Miaow.Presentation.account.Models
 {
     public class UiTourPlanDetailDto
     {

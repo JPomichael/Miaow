@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace iPow.Presentation.Account.Controllers
+namespace Miaow.Presentation.Account.Controllers
 {
     public class ErrorController :
         iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController

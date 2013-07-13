@@ -5,9 +5,9 @@ using System.Web;
 
 using System.Web.Mvc;
 
-namespace iPow.Presentation.account
+namespace Miaow.Presentation.account
 {
-    public static class iPowPreAccountUiExtension
+    public static class MiaowPreAccountUiExtension
     {
         //public static MvcHtmlString Label(this HtmlHelper html, string expression)
         //{ 
@@ -25,7 +25,7 @@ namespace iPow.Presentation.account
 
     }
 
-    public static class iPowPreAccountExtension
+    public static class MiaowPreAccountExtension
     {
         public static IList<int> ToIntList(this IList<string> scource)
         {

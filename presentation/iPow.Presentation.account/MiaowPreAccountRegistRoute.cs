@@ -6,12 +6,12 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace iPow.Presentation.account
+namespace Miaow.Presentation.account
 {
     /// <summary>
     /// 
     /// </summary>
-    public class iPowPreAccountRegistRoute
+    public class MiaowPreAccountRegistRoute
     {
         /// <summary>
         /// Registers the specified routes.

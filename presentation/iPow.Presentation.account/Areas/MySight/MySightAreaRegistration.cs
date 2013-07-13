@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace iPow.Presentation.account.Areas.MySight
+namespace Miaow.Presentation.account.Areas.MySight
 {
     public class MySightAreaRegistration : AreaRegistration
     {

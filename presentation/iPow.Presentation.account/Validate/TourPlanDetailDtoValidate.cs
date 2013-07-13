@@ -6,10 +6,10 @@ using System.Web;
 using FluentValidation;
 using FluentValidation.Mvc;
 
-namespace iPow.Presentation.account.Validate
+namespace Miaow.Presentation.account.Validate
 {
     public class TourPlanDetailDtoValidate :
-        AbstractValidator<iPow.Presentation.account.Models.TourPlanDetailDto>
+        AbstractValidator<Miaow.Presentation.account.Models.TourPlanDetailDto>
     {
         public TourPlanDetailDtoValidate()
         {
