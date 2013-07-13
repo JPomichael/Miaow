@@ -1,26 +1,7 @@
 Thumbs.db
 
 /Backup  # 仅仅忽略项目根目录下的 this 文件
-/Backup1  # 仅仅忽略项目根目录下的 this 文件
-/Backup2  # 仅仅忽略项目根目录下的 this 文件
-/Backup3  # 仅仅忽略项目根目录下的 this 文件
-/Backup4  # 仅仅忽略项目根目录下的 this 文件
-/Backup5  # 仅仅忽略项目根目录下的 this 文件
-/Backup6  # 仅仅忽略项目根目录下的 this 文件
-/Backup7  # 仅仅忽略项目根目录下的 this 文件
-/Backup8  # 仅仅忽略项目根目录下的 this 文件
-/Backup9  # 仅仅忽略项目根目录下的 this 文件
-/Backup10  # 仅仅忽略项目根目录下的 this 文件
-/Backup11  # 仅仅忽略项目根目录下的 this 文件
-/Backup12  # 仅仅忽略项目根目录下的 this 文件
-/Backup13  # 仅仅忽略项目根目录下的 this 文件
-/Backup14  # 仅仅忽略项目根目录下的 this 文件
-/Backup15  # 仅仅忽略项目根目录下的 this 文件
-/Backup16  # 仅仅忽略项目根目录下的 this 文件
-/Backup17  # 仅仅忽略项目根目录下的 this 文件
-/Backup18  # 仅仅忽略项目根目录下的 this 文件
-/Backup19  # 仅仅忽略项目根目录下的 this 文件
-/Backup20  # 仅仅忽略项目根目录下的 this 文件
+/Backup%d # 仅仅忽略项目根目录下的 this 文件
 
 *.obj
 *.exe
