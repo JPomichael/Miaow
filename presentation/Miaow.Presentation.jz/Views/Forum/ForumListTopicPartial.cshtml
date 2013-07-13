@@ -1,0 +1,215 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model  Webdiyer.WebControls.Mvc.PagedList<iPow.DataSys.sns_topic>
+<div id="divFroum">
+    <div class="barFun">
+        <div class="ft_l">
+            <a class="btn_new" href="#say">发表新帖</a></div>
+        <div class="pagecontent ft_r">
+            <!--分页 -->
+            @{
+                if (Model != null)
+                { 
+                @Html.AjaxPager(Model, new PagerOptions()
+                   {
+                       SeparatorHtml = "",
+                       CssClass = "pg",
+                       CurrentPagerItemWrapperFormatString = "<b>{0}</b>",
+                       PageIndexParameterName = "pageIndex",
+                       ShowNumericPagerItems = true,
+                       ShowFirstLast = false,
+                       ShowPrevNext = false,
+                       NumericPagerItemCount = 10,
+                       FirstPageText = "<span class=\"pgpre\">首页</span>",
+                       LastPageText = "<span class=\"pgnext\">尾页</span>",
+                       PrevPageText = " <span class=\"pgpre\">上一页</span>",
+                       NextPageText = "<span class=\"pgnext\">下一页</span>",
+                   },
+                           new AjaxOptions()
+                           {
+                               UpdateTargetId = "divFroum",
+                               OnBegin = "AjaxStart",
+                               OnComplete = "AjaxStop"
+                           })    
+                }
+            }
+            <!--分页 -->
+        </div>
+        <div class="k">
+        </div>
+    </div>
+    <script type="text/javascript">
+        function getDiv(s) {
+            if (s == 1) {
+                document.getElementById("div1").style.display = "none";
+                document.getElementById("div2").style.display = "block";
+            } else {
+                document.getElementById("div1").style.display = "block";
+                document.getElementById("div2").style.display = "none";
+            }
+        }
+    </script>
+    <div class="barList">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr class="bg2">
+                <td class="wh_1">
+                    点击
+                </td>
+                <td class="wh_2">
+                    回复
+                </td>
+                <td class="title">
+                    <div class="bar_lei">
+                        <!-- IF Digest=="true" -->
+                        <div id="div1" style="display: none">
+                            <a href="/catalog/@(  (ViewBag.fid != null) ? ViewBag.fid : 10004)/2" onclick="getDiv(1)">
+                                全部帖子</a> <span class="ft_l tpl_top">|</span> <a href="#" onclick="getDiv(2)" class="on">
+                                    加精帖</a></div>
+                        <!-- ELSE -->
+                        <div id="div2">
+                            <a href="/catalog/@( (ViewBag.fid != null) ? ViewBag.fid : 10004))/2" onclick="getDiv(1)" class="on">
+                                全部帖子</a> <span class="ft_l tpl_top">|</span> <a href="./forum.php?fid={ForumArr.fid}&digest=1"
+                                    onclick="getDiv(2)">加精帖</a>
+                        </div>
+                        <!-- ENDIF Digest -->
+                    </div>
+                </td>
+                <td width="90">
+                    <div class="wh_3">
+                        作者</div>
+                </td>
+                <td width="140">
+                    <div class="wh_4">
+                        最后回复</div>
+                </td>
+            </tr>
+            @{
+                if (Model != null)
+                {
+                    int count = 0;
+                    foreach (var item in Model)
+                    {
+                        string cass = "";
+                        if (count % 2 == 1)
+                        {
+                            cass = "bg1";
+                        }
+                <tr class="@(cass)">
+                    <td>@(item.views)
+                    </td>
+                    <td>@(item.replies)
+                    </td>
+                    <td class="title">
+                        @{
+                        //如果不等于0,就是置顶帖
+                        if (item.stick != 0)
+                        {
+                            <span class="icon_ding" title="置顶帖">&nbsp;</span>
+                        }   //如果等于1,就是精华帖
+                        if (item.stick == 1)
+                        {
+                            <span class="icon_jing" title="精华帖">&nbsp;</span>
+                        }
+                        //如果等于1,就是图片帖
+                        if (item.picture == 1)
+                        {
+                            <span class="icon_huan" title="图片帖">&nbsp;</span>
+                        }
+                        }
+                        <a href="/topic/@(item.tid)/x" title="@(item.subject)" target="_blank" class="blue">@(item.subject)</a>
+                    </td>
+                    <td>
+                        @{
+                        if (item.authorid != 0)
+                        {
+                            <a href="http://192.168.1.65:211/index.php?s=/space/1697" target="_blank">@(item.author)</a> 
+                            if (item.authorid == 3)
+                            {
+                            <span class="icon_vip mgt hand" title="VIP会员">&nbsp;</span>
+                            }
+                            else if (item.authorid == 4)
+                            {
+                            <span class="icon_bazhu mgt" title="族长">&nbsp;</span>
+                            }
+                            else if (item.authorid == 5)
+                            {
+                            <span class="icon_generalAdmin mgt" title="普通管理员">&nbsp;</span>
+                            }
+                            else if (item.authorid == 6)
+                            {
+                            <span class="icon_highAdmin mgt" title="高级管理员">&nbsp;</span>
+                            }
+                            else
+                            { }
+                        }
+                        else
+                        {
+                            @(item.author)
+                        } 
+                        }
+                    </td>
+                    <td>
+                        @(iPow.function.DateHelper.GetMysqlDateTime(item.lasttime, DateTimeKind.Local).ToString("yyyy-MM"))
+                        @{
+                        if (item.lastauthorico != 0)
+                        { 
+                            <a href="http://192.168.1.65:211/index.php?s=/space/1697" target="_blank">@(item.author)</a>
+                            if (item.lastauthorico == 3)
+                            {
+                            <span class="icon_vip mgt hand" title="VIP会员">&nbsp;</span>
+                            }
+                            else if (item.lastauthorico == 4)
+                            {
+                            <span class="icon_bazhu mgt" title="族长">&nbsp;</span>
+                            }
+                            else if (item.lastauthorico == 5)
+                            {
+                            <span class="icon_generalAdmin mgt" title="普通管理员">&nbsp;</span>
+                            }
+                            else if (item.lastauthorico == 6)
+                            {
+                            <span class="icon_highAdmin mgt" title="高级管理员">&nbsp;</span>
+                            }
+                        }
+                        else
+                        {
+                            @(item.lastauthor)
+                        }
+                        count++;     
+                        }
+                    </td>
+                </tr>
+                    }
+                }
+            }
+        </table>
+    </div>
+    <div class="barPage">
+        <div class="pagecontent ft_r">
+            <!--分页 -->
+            @Html.AjaxPager(Model, new PagerOptions()
+               {
+                   SeparatorHtml = "",
+                   CssClass = "pg",
+                   CurrentPagerItemWrapperFormatString = "<b>{0}</b>",
+                   PageIndexParameterName = "pageIndex",
+                   ShowNumericPagerItems = true,
+                   ShowFirstLast = false,
+                   ShowPrevNext = false,
+                   NumericPagerItemCount = 10,
+                   FirstPageText = "<span class=\"pgpre\">首页</span>",
+                   LastPageText = "<span class=\"pgnext\">尾页</span>",
+                   PrevPageText = " <span class=\"pgpre\">上一页</span>",
+                   NextPageText = "<span class=\"pgnext\">下一页</span>",
+               },
+                    new AjaxOptions()
+                    {
+                        UpdateTargetId = "divFroum",
+                        OnBegin = "AjaxStart",
+                        OnComplete = "AjaxStop"
+                    })
+            <!--分页 -->
+        </div>
+        <div class="k">
+        </div>
+    </div>
+</div>

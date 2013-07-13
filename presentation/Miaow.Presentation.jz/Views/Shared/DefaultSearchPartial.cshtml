@@ -1,0 +1,15 @@
+﻿@model iPow.jz.Models.FroumModels
+<script src="@Url.Content("~/Scripts/index.js")" type="text/javascript" ></script>
+<div class="headerSearch">
+    @using (Html.BeginForm("search", "forum", FormMethod.Post, new {name = "searchForm" , id = "searchForm" }))
+    {
+        <span class="spanText">家族圈名：</span> 
+        <span style="width: 300px;" class="spanInput">
+            @Html.TextBox("fname", "上海欢乐谷", new { @class = "inputText2F" })
+        </span>
+        <span class="spanSearch" style="width: 212px;">
+            <input id="txtSeach" type="image" src="/images/btn_search01.jpg" class="btnSearch"
+                value="" />
+            <a id="createFroum" href="javascript:;" class="aCreate" title="创建家族圈"></a></span>
+    }
+</div>

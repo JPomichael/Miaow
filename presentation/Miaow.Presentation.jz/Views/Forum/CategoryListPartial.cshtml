@@ -1,0 +1,85 @@
+﻿@using Webdiyer.WebControls.Mvc;
+@model  Webdiyer.WebControls.Mvc.PagedList<iPow.DataSys.sns_forum>
+<table width="100%" cellspacing="0" cellpadding="0">
+    <tr class="tr1">
+        <td class="td1" width="28%">
+            家族名称
+        </td>
+        <td width="50%">
+            家族简介
+        </td>
+        <td width="25%">
+            族长
+        </td>
+    </tr>
+    @{
+        if (Model != null)
+        {
+            foreach (var item in Model)
+            { 
+        <tr>
+            <td class="td2">
+                <a href='/catalog/@(item.fid)/2' target="_blank">@(item.name)</a>
+            </td>
+            <td>@(item.synopsis.Length > 30 ? item.synopsis.Substring(0, 30) : item.synopsis + "...")
+            </td>
+            <td>
+                <a href="http://sns.ipow.cn/index.php?s=/space/{uid}" target="_blank">@(item.moderator)</a>
+            </td>
+        </tr>
+            }
+        }
+        else
+        { 
+        <tr class="td3">
+            <td colspan="3">
+            </td>
+        </tr>
+        }
+    }
+    <tr class="td3">
+        <td colspan="3">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" class="td4">
+            <!--分页 -->
+            @{
+                if (Model != null)
+                {
+                @Html.AjaxPager(Model.TotalPageCount,
+                        Model.CurrentPageIndex,
+                        "categorylist",
+                        "forum",
+                        "",
+                        new PagerOptions()
+                       {
+                           SeparatorHtml = "",
+                           CssClass = "nlpage",
+                           CurrentPagerItemWrapperFormatString = "<b>{0}</b>",
+                           PageIndexParameterName = "pageIndex",
+                           ShowNumericPagerItems = true,
+                           ShowFirstLast = false,
+                           ShowPrevNext = false,
+                           NumericPagerItemCount = 6,
+                           PrevPageText = "上一页",
+                           NextPageText = "下一页",
+                       },
+                       new
+                       {
+                           cid = (ViewBag.cid == null ? 0 : ViewBag.cid),
+                           t = 1,
+                           pageIndex = Model.CurrentPageIndex + 1
+                       },
+                       new AjaxOptions()
+                           {
+                               UpdateTargetId = "divFroum",
+                               OnBegin = "AjaxStart",
+                               OnComplete = "AjaxStop"
+                           },
+                       null)
+                }
+            }
+        </td>
+    </tr>
+</table>

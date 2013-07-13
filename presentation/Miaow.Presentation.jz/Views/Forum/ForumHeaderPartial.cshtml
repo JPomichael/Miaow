@@ -1,0 +1,89 @@
+﻿<link href="@Url.Content("~/Content/themes/base/jquery-ui.css")" rel="stylesheet" type="text/css" />
+@*<script src="@Url.Content("~/Scripts/jquery.1.4.2.min.js")" type="text/javascript"></script>*@
+<script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.form.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+<div id="header">
+    <input id="hdlValue" type="hidden" value="@(ViewBag.Name)" />
+    <div class="headertop">
+        <ul>
+            <!-- IF loginArr.state=="1" -->
+            <li><a href="javascript:;" onclick="logout()">退出</a></li>
+            <li class="split">|</li>
+            <!-- IF loginArr.group=="6" -->
+            <li><a href="./admin.php" target="_blank">系统管理</a></li>
+            <li class="split">|</li>
+            <!-- ENDIF loginArr.group -->
+            <li>您好！<a href="http://sns.ipow.cn/index.php?s=/space/{loginArr.uid}" title="{loginArr.name}">{loginArr.name}</a></li>
+            <!-- ELSE -->
+            <li><a href="http://sns.ipow.cn/default.php?getpass&ap=getpass" title="取回密码">取回密码</a></li>
+            <li class="split">|</li>
+            <li><a href="http://sns.ipow.cn/default.php?reg&ap=qz" title="注册">注册</a></li>
+            <li class="split">|</li>
+            <li><a href="./login.php?height=139&width=296" class="thickbox" title="用户登录">登录</a></li>
+            <!-- ENDIF loginArr.state -->
+        </ul>
+    </div>
+    <div class="k">
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $("#submit").click(function () {
+                if ($.trim($("#kw").val()) == "") {
+                    alert("请输入搜索的关键字!");
+                    return false;
+                }
+                var num;
+                for (var i = 1; i <= 3; i++) {
+                    var t = document.getElementById("proto" + i);
+                    if (t.checked) {
+                        num = t.value;
+                        document.getElementById("hdNum").value = num.toString();
+                    }
+                }
+                var uri;
+                if (num == 2) {
+                    window.location.href = "/seach/" + encodeURI($("#kw").val()) + "/" + num;
+                } else {
+                    uri = "/seach/" + encodeURI($("#kw").val()) + "/" + num;
+                    $.ajax({
+                        type: "POST",
+                        data: null,
+                        url: uri,
+                        timeout: 20000,
+                        success: function (data) {
+                            $('#main').html(data);
+                        }
+                    });
+                }
+            });
+        });
+
+        $(function () {
+            $(":input[data-autocomplete]").each(function () {
+                $(this).autocomplete({
+                    source: $(this).attr("data-autocomplete")
+                });
+            });
+        });
+    </script>
+    <input id="hdNum" type="hidden" value="" />
+    <ul class="search">
+        <li><a href="/">
+            <img src="/images/logo.jpg" alt="" title="到首页" border="0" class="logo_ft_l" /></a></li>
+        <li style="margin-top: 9px;">
+            <input type="text" id="kw" name="wd" maxlength="100" class="skeyword disableAutoComplete" data-autocomplete="@Url.Action("searchtopic", "forum", new { n = 1 })" />
+            <br />
+            <label for="proto1">
+                <input type="radio" value="2" checked="checked" name="tb" id="proto1" />进入家族圈</label>
+            <label for="proto2">
+                <input type="radio" value="1" name="tb" id="proto2" />帖子</label>
+            <label for="proto3">
+                <input type="radio" value="3" name="tb" id="proto3" />作者</label>
+        </li>
+        <li style="margin-top: 9px;">
+            <input id="submit" type="button" value="搜 索" class="bt" /></li>
+    </ul>
+</div>
+<div class="k">
+</div>

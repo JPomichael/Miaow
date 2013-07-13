@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@(ViewBag.Title)</title>
+    <link rel="Stylesheet" type="text/css" href="@Url.Content("~/Content/newindex.css")" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div class="topContainer">
+        <div class="topTop">
+            <div id="header">
+                <div class="logo">
+                </div>
+                <div id="headerMid">
+                    <div class="topNav">
+                        <ul>
+                            <li><a title="去度假" href="http://www.ipow.cn">去度假</a></li>
+                            <li><a title="逛景区" href="http://jq.ipow.cn">逛景区</a></li>
+                            <li><a title="住酒店" href="http://hotel.ipow.cn">住酒店</a></li>
+                            <li class="current"><a title="家族圈" href="javascript:;">家族圈</a></li>
+                            <li><a href="http://p.ipow.cn" title="互动旅行">互动旅行</a></li>
+                            @*<li><a title="查交通" href="http://www.ipow.cn/traffic.shtml">查交通</a></li>*@
+                        </ul>
+                    </div>
+                </div>
+                <div id="headerRight">
+                    <span class="login">
+                        <div id="header_links">
+                        </div>
+                    </span><span class="banner"><a title="iPow专题" target="_blank" href="http://www.ipow.cn/activity/">
+                        iPow专题</a> <a target="_blank" title="邻里圈" href="http://sns.ipow.cn/index.php">邻里圈</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="topBottom">
+            <!--搜索工具条开始-->
+            @Html.Partial("DefaultSearchPartial")
+            <!--搜索工具条结束-->
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    @RenderBody()
+    <div class="pageBottom">
+        @Html.Partial("DefaultBottomPartial")
+    </div>
+</body>
+</html>

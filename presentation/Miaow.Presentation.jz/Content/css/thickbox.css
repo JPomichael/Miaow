@@ -1,0 +1,214 @@
+﻿#TB_window {
+	font: 12px Arial, Helvetica, sans-serif;
+	color: #333333;
+}
+
+#TB_secondLine {
+	font: 10px Arial, Helvetica, sans-serif;
+	color:#666666;
+}
+
+#TB_window a:link {color: #666666;}
+#TB_window a:visited {color: #666666;}
+#TB_window a:hover {color: #000;}
+#TB_window a:active {color: #666666;}
+#TB_window a:focus{color: #666666;}
+
+#TB_overlay {
+	position: fixed;
+	z-index:100;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+}
+
+.TB_overlayMacFFBGHack {background: url(../images/macFFBgHack.png) repeat;}
+.TB_overlayBG {
+	background-color:#000;
+	filter:alpha(opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+}
+
+* html #TB_overlay { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_window {
+	position: fixed;
+	background: #ffffff;
+	z-index: 102;
+	color:#000000;
+	display:none;
+	border: 4px solid #525252;
+	text-align:left;
+	top:50%;
+	left:50%;
+}
+
+* html #TB_window { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_window img#TB_Image {
+	display:block;
+	margin: 15px 0 0 15px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
+}
+
+#TB_caption{
+	height:25px;
+	padding:7px 30px 10px 25px;
+	float:left;
+}
+
+#TB_closeWindow{
+	height:25px;
+	padding:11px 25px 10px 0;
+	float:right;
+}
+
+#TB_closeAjaxWindow{
+	float:right;
+	display:inline;
+	padding:3px 5px 3px 0;
+	margin-bottom:1px;
+	text-align:right;
+}
+
+#TB_ajaxWindowTitle{
+	float:left;
+	display:inline;
+	padding-left:10px;
+	margin-bottom:1px;
+	line-height:27px;
+}
+
+#TB_title{
+	background:#cccccc url(../images/TB_TitleBG.jpg) right center no-repeat;
+	height:27px;
+}
+#TB_closeWindowButton
+{
+	float:right;
+	width:22px;
+	height:21px;
+	background:url(../images/TB_WinClose.jpg) left center no-repeat;
+}
+#TB_closeWindowButton:hover
+{
+	background:url(../images/TB_WinClose.jpg) -22px center no-repeat;
+}
+#TB_ajaxContent{
+	clear:both;
+	padding:2px 15px 15px 15px;
+	overflow:auto;
+	text-align:left;
+	line-height:1.4em;
+}
+
+#TB_ajaxContent.TB_modal{
+	padding:15px;
+}
+
+#TB_ajaxContent p{
+	padding:5px 0px 5px 0px;
+}
+
+#TB_load{
+	position: fixed;
+	display:none;
+	height:13px;
+	width:208px;
+	z-index:103;
+	top: 50%;
+	left: 50%;
+	margin: -6px 0 0 -104px; /* -height/2 0 0 -width/2 */
+}
+
+* html #TB_load { /* ie6 hack */
+position: absolute;
+margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+#TB_HideSelect{
+	z-index:99;
+	position:fixed;
+	top: 0;
+	left: 0;
+	background-color:#fff;
+	border:none;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+	height:100%;
+	width:100%;
+}
+
+* html #TB_HideSelect { /* ie6 hack */
+     position: absolute;
+     height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+
+#TB_iframeContent{
+	clear:both;
+	border:none;
+	margin-bottom:-1px;
+	margin-top:1px;
+	_margin-bottom:1px;
+}
+
+/*div*/
+.admin_div{line-height:150%;font-size:14px;color:#555;text-align:center;margin:200px auto;}
+
+.admin_div li{border-top:1px dashed #b2d0ea;border-bottom:1px dashed #b2d0ea;padding-bottom:15px;list-style-type:none;}
+
+.login_div{line-height:150%;font-size:14px;color:#555;}
+
+.login_div li{margin-bottom:1px;text-align:left;list-style-type:none;}
+
+.login_div li label{width:75px;float:left;margin-left:2px; text-align:right;}
+
+.login_div li span{font-size:12px;color:#999;}
+
+.reg_div{line-height:150%;font-size:14px;color:#555;}
+
+.reg_div li{margin-bottom:1px;text-align:left;list-style-type:none;}
+
+.reg_div li label{width:70px;float:left;margin-left:2px;}
+
+.reg_div li span{font-size:12px;color:#999;}
+
+.btn_input{width:200px;padding:2px;border:1px solid #b2d0ea;font-size:12px;color:#666;font-family: "arial","simsun",sans-serif;}
+
+.btn_login{ float:left;background:url(../images/bar_bg03.gif) no-repeat;background-position:-40px -120px;color:#127c26;width:87px;height:24px;line-height:22px;font-size:12px;border:0;cursor:pointer;margin-right:10px; margin-top:5px;}
+
+.recover_div{line-height:150%;font-size:14px;color:#555;}
+
+.recover_div li{margin-bottom:1px;text-align:left;list-style-type:none;}
+
+.recover_div li label{width:70px;float:left;margin-left:2px;}
+
+.recover_div li span{font-size:12px;color:#999;}
+
+#recover_result{display:none;color:red;font-size:12px;padding-top:15px;}
+
+#recover_step2{display:none;}
+
+.report_div{line-height:150%;font-size:14px;color:#555;}
+
+.report_div li{margin-bottom:1px;text-align:left;list-style-type:none;}
+
+.report_div li label{width:70px;float:left;margin-left:2px;}
+
+.report_div li span{font-size:12px;color:#888;}
+
+.report_div .errorinfo{font:bold 14px "simsun";color:green;text-align:center;margin-top:50px;}
+
+.btn_textarea{width:210px; height:70px;padding:2px;border:1px solid #b2d0ea;font-size:14px;font-family:"arial","simsun",sans-serif;}
