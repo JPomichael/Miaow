@@ -1,7 +1,10 @@
 Thumbs.db
 
-#Backup #仅仅忽略项目根目录下的 this 文件
-#Backup%d #仅仅忽略项目根目录下的 this 文件
+#Backup
+#Backup%d 
+
+/Backup
+/Backup%d 
 
 *.obj
 *.exe
