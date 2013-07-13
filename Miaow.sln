@@ -60,7 +60,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Service.Open.Ioc", "di
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Service.Open.Contract", "distributedservices\iPow.Service.Open\iPow.Service.Open.Contract\iPow.Service.Open.Contract.csproj", "{B74D598A-AA07-4C6D-9813-F63F0871ED87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Presentation.account", "presentation\iPow.Presentation.account\iPow.Presentation.account.csproj", "{6772DA99-90E1-4AE8-B0A8-FC107EF83822}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miaow.Presentation.account", "presentation\iPow.Presentation.account\Miaow.Presentation.account.csproj", "{6772DA99-90E1-4AE8-B0A8-FC107EF83822}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Service.SSO.Entity", "distributedservices\iPow.Service.SSO.Entitiy\iPow.Service.SSO.Entity.csproj", "{C982E92E-AAC3-4104-85BA-F78560FB4B1A}"
 EndProject
@@ -82,7 +82,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Application.account.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Presentation.jq", "presentation\iPow.Presentation.jq\iPow.Presentation.jq.csproj", "{77BD3294-AF10-4867-8739-BF32F6352199}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Presentation.dj", "presentation\iPow.Presentation.dj\iPow.Presentation.dj.csproj", "{C282C053-3154-49F3-A940-1D957594C285}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miaow.Presentation.dj", "presentation\iPow.Presentation.dj\Miaow.Presentation.dj.csproj", "{C282C053-3154-49F3-A940-1D957594C285}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Presentation.jd", "presentation\iPow.Presentation.jd\iPow.Presentation.jd.csproj", "{8756AA6E-B620-4A3A-B2EC-FAE759FAF884}"
 EndProject

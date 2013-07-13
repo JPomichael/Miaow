@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using Webdiyer.WebControls.Mvc;
 using iPow.Application.dj.Dto;
 
-namespace iPow.Presentation.dj.Controllers
+namespace Miaow.Presentation.dj.Controllers
 {
     [HandleError]
     public class CatalogController :

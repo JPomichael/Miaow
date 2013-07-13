@@ -1,0 +1,23 @@
+﻿@{
+    var tourPlanService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+        iPow.Application.dj.Service.ITourPlanService>();
+    var hotTourPlans =tourPlanService.GetTourPlanListByCity(string.Empty, 5);
+    
+    if (hotTourPlans != null && hotTourPlans.Count() > 0)
+    {
+        foreach (var item in hotTourPlans)
+        {
+    <li>
+        <div class="conhotlu">
+            <h1>
+                <a href = "@Url.Action("index", "tour", new { id = item.Id })">@(item.PlanTitle)</a>
+            </h1>
+            <span class="mumdl">¥@(item.PlanTotalMoney)
+            </span>
+            <p>
+                线路定制：<span>@(item.UserName)</span> 人气：<span>@(item.ViCount)</span></p>
+        </div>
+    </li>
+        }
+    }
+}

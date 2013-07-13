@@ -1,6 +1,6 @@
 ﻿<!--线路内容-->
 @{
-    var tourPlanService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+    var tourPlanService = Miaow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
         iPow.Application.dj.Service.ITourPlanService>();
 }
 @{
@@ -250,7 +250,7 @@
             }
 
 
-            //mapHotelList = iPow.Presentation.dj.Bll.TourPlan.GetMapHotelInfoByTourIdAndDay(Model != null ? Model.Id : 0, i + 1);
+            //mapHotelList = Miaow.Presentation.dj.Bll.TourPlan.GetMapHotelInfoByTourIdAndDay(Model != null ? Model.Id : 0, i + 1);
             mapHotelList = tourPlanService.GetMapUnionHotelInfoByTourIdAndDay(Model != null ? Model.Id : 0, i + 1);
             scriptHotelMap.AppendLine("[");
             var mapHotelTag = 0;

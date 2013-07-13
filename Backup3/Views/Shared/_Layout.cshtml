@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>旅游-ipow互动旅行网-中国最好的自助旅游网站--让旅行更轻松</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Copyright" content="www.ipow.cn" />
+    <meta name="description" content="iPow,中国互动旅行网,中国主题公园旅游目的地,为你提供一站式的主题旅游目的地,通过ipow搜一下及时获得主题旅游出行计划、享受不同主题旅游消费服务，成就完美旅程。专业的出行搜索服务为您提供合适的旅游计划，是游客真正的旅游目的地平台。" />
+    <meta content="mix,主题旅游,主题商品,主题景区,主题图片,主题视频,主题活动,主题公园,互动力，IPOW，黑豆，供略，主体公园，游记，旅游图片，旅游视频，旅游访谈，推荐的主题公园，主题公园排行榜，旅游景点搜索，主题公园攻略，景区介绍，交通,住宿,饮食,购物,娱乐,特产,节庆,餐厅,酒店"
+        name="keywords" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/newtop.css")" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/newindex.css")" />
+    <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/indexlayout.css")" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    @Html.Partial("SSOPartial")
+    <div id="main">
+      @* @Html.Partial("_TopPartial")*@
+          @Html.Partial("_LogOnPartial")
+        <!--页面头头部开始-->
+        <div class="topContainer">
+            <div class="adtop">
+                @*edited by yjihrp  2012.3.5*@
+                @*@Html.Partial("TopAdPartial")*@
+                @*end edited by yjihrp  2012.3.5*@
+            </div>
+            <div class="topTop">
+                <div id="header">
+                    <div class="logo">
+                        <a href="http://www.ipow.cn/"></a>
+                    </div>
+                    <div id="headerMid">
+                        <div class="topNav">
+                            <ul>
+                                <li class="current"><a href="http://www.ipow.cn" title="去度假">去度假</a></li>
+                                <li><a href="http://jq.ipow.cn" title="逛景区">逛景区</a></li>
+                                <li><a href="http://hotel.ipow.cn" title="住酒店">住酒店</a></li>
+                                <li><a href="http://jz.ipow.cn/forum.php?fid=10004" title="家族圈">家族圈</a></li>
+                                <!--<li><a href="http://p.ipow.cn" title="互动旅行">互动旅行</a></li>-->
+                                <!--<li><a href="http://www.ipow.cn/traffic.shtml" target="_blank" title="查交通">查交通</a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="headerRight">
+                        <span class="login" id="loginUserInfo">
+                            @*@Html.Partial("_LogOnPartial")*@
+                        </span><span class="banner"><a href="/activity/index1.shtml" target="_blank" title="iPow专题">
+                            iPow专题</a>
+                            <!--<a href="http://sns.ipow.cn/index.php" target="_blank" title="邻里圈">邻里圈</a>-->
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div id="searchcon">
+                @Html.Partial("SearchPartial")
+            </div>
+        </div>
+        <!----------页面头部结束---------->
+        <!----------内容开始---------->
+        @RenderBody()
+        <!----------内容结束---------->
+        <div class="pageBottom">
+            @Html.Partial("BottomPartial")
+        </div>
+        <!--流量-->
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-7332262-1");
+                pageTracker._trackPageview();
+            } catch (err) { }
+        </script>
+        <!--流量结束-->
+    </div>
+</body>
+</html>

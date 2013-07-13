@@ -1,0 +1,430 @@
+﻿@charset "utf-8";
+* {
+	margin:0;
+	padding:0;
+}
+a {
+	text-decoration:none;
+}
+img {
+	border:0;
+}
+em, ins {
+	font-style:normal;
+	text-decoration:none;
+}
+#main {
+	background:#fff;
+	width:1003px;
+	margin:0 auto;/*	height:1300px;*/
+}
+#searchcon {
+	width:944px;
+	height:180px;
+	background:#ff9700;
+	padding:6px 7px 7px 9px;
+	display:inline;
+	float:left;
+	overflow:hidden;
+}
+#searchcku {
+	width:560px;
+	height:175px;
+	float:left;
+	background:url(../images/scherbg_left.gif) no-repeat;
+}
+.Sright {
+	width:379px;
+	height:175px;
+	float:left;
+	overflow:hidden;/*background:url(../images/scherbg_right.gif) no-repeat;*/
+}
+.Sleft {
+	width:460px;
+	float:left;
+	padding:11px 50px 11px;
+}
+.Slefttitle {
+	line-height:34px;
+	color:#676767;
+}
+.Slefttitle strong {
+	font-size:14px;
+	margin-right:26px;
+}
+/*.Sleftcon{ border:solid 1px #f00;}*/
+.searchtitle {
+	/*width:436px;*/
+	height:138px;
+	padding:15px 35px 21px 44px;
+	font-family:"宋体";
+	line-height:36px;
+	float:left;
+	display:inline;/*border:solid 1px #f00;*/
+}
+.searchmo {
+	width:436px;
+}
+.searchtitle .xingshear {
+	font-size:14px;
+	font-weight:bold;
+}
+.modd {
+	font-size:12px;
+	color:#0060ff;
+	/*	width:60px;*/
+/*	line-height:25px;*/
+	font-weight:bold;
+}
+.textbnie {
+	width:355px;
+	height:26px;
+	background:url(../images/searchkuanbg.jpg) no-repeat;
+	border:none;
+	color:#9d9d9d;
+	line-height:26px;
+}
+.searchtaday {
+	float:left;
+	/*	padding-left:5px;
+	display:inline;*/
+	color:#676767;
+	width:360px;
+}
+.searchtaday a {
+	color:#676767;
+	border:solid 1px #bbb;
+	display:block;
+	display:inline;
+	padding:4px 7px;
+	margin-left:7px;
+	float:left;
+}
+.searchtaday a:hover, .searchtaday .munshu {
+	color:#fff;
+	background:#36ff00;
+}
+.yusuan {
+	height:36px;
+	width:445px;
+	float:left;
+}
+.yusuan em {
+	font-family:Arial;
+	font-size:14px;
+	color:#ff9b00;
+	padding-right:10px;
+}
+/*added by yjihrp 2011.7.29.15.01*/
+.yusuan .divBg {
+	float: left;
+    display:inline;
+}
+
+#day4 {
+	margin-left:9px;
+	margin-right:0px;
+	display:inline;
+    *margin-left:12px;
+	border:solid 1px #3F0
+}
+/*added by yjihrp 2011.7.29.15.01*/
+
+
+.Sleft2 {
+	margin:10px 0;
+}
+
+.adiocn {
+	float:left;
+	width:377px;
+	height:172px;
+	padding-left: 8px;
+	display:inline;
+	overflow:hidden;
+}
+
+.adiocn img {
+	float:left;
+}
+
+#secity {
+	width:958px;
+	height:138px;
+	border:solid 1px #e1e1e1;
+	margin:10px 0 0 22px;
+	float:left;
+	display:inline;
+	padding-top:2px;
+}
+
+#secity {
+	margin-top:0px;
+}/*FF*/
+*html #secity {
+	margin-top:10px;
+}/*IE6*/
+/*edited by yjihrp 2011.9.2.16.36
+*+html #secity{ margin-top:120px;}   /*IE7*/
+*+html #secity {
+	margin-top:0px;
+}/*IE7*/
+.secitytitle {
+	background:url(../images/secitybg.jpg) repeat-x;
+	height:31px;
+	width:950px;
+	padding-left:8px;
+}
+.secitytitle ul li {
+	float:left;
+	color:#fff;
+	padding-right:10px;
+	line-height:31px;
+}
+.secitytitle ul li a {
+	color:#fff;
+	padding:10px;
+}
+.secitytitle ul li a:hover {
+	color:#ff9700;
+	background:url(../images/scherbgf.jpg) no-repeat bottom;
+	padding:10px;
+}
+.secitytitle .cityxu {
+	background:url(../images/scherbgf.jpg) no-repeat bottom;
+	color:#ff9700;
+	padding:10px;
+}
+.shancon {
+	width:300px;
+	float:left;
+	padding:25px 5px;
+	line-height:20px;
+	color:#5d5d5d;
+}
+.shancon h1 {
+	font-size:14px;
+	color:#0060ff;
+}
+.shancon h1 span {
+	color:#f08e00;
+	padding-left:10px;
+}
+#tourist_attraction {
+	width:960px;
+	margin:10px 0 0 20px;
+	float:left;
+	display:inline;
+}
+#tourist {
+	width:652px;
+	border-top:solid 1px #e1e1e1;
+	border-left:solid 1px #e1e1e1;
+	float:left;
+	margin-right:24px;
+}
+#tourist ul li {
+	float:left;
+	border-bottom:solid 1px #e1e1e1;
+	border-right:solid 1px #e1e1e1;
+	width:325px;
+	height:131px;
+	display:block;
+}
+#tourist ul li a:hover {
+	background:url(../images/ltouristbg.jpg) no-repeat;
+	width:325px;
+	height:131px;
+}
+.tottbg {
+	width:325px;
+	height:131px;
+	background:url(../images/ltouristbg.jpg) no-repeat;
+}
+.touricon {
+	padding:10px;
+	height:110px;
+	float:left;
+}
+.touricon a, #text li a {
+	width:325px;
+	height:131px;
+	color:#2F2F2F;
+}
+.touricon a:hover, #text li a:hover {
+	width:325px;
+	height:131px;
+	background:url(../images/ltouristbg.jpg) no-repeat;
+	color:#2F2F2F;
+}
+.touricon img {
+	padding:2px;
+	border:solid 1px #e1e1e1;
+	float:left;
+}
+.touricon h2, .touricon p {
+	color:5d5d5d;
+	padding-left:20px;
+	float:left;
+	width:155px;
+	display:inline;
+	line-height:20px;
+}
+.touricon h2 {
+	font-size:14px;
+}
+#mianright {
+	width:244px;
+	height:493px;
+	border:solid 1px #e1e1e1;
+	float:left;
+	padding:18px;
+	display:inline;
+	overflow:hidden;
+}
+.hotlutil {
+	width:242px;
+	height:266px;
+}
+.h-title {
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	line-height:27px;
+	text-indent:2em;
+	background:url(../images/hotlux.jpg) no-repeat;
+	width:242px;
+	height:27px;
+}
+.hotlutil li {
+	float:left;
+}
+.conhotlu {
+	height:35px;
+	padding-top:5px;
+	color:#848484;
+}
+.conhotlu h1 {
+	color:#353535;
+	font-size:14px;
+	float:left;
+	width:180px;
+}
+/*added by yjihrp 2011.8.31.14.25*/
+.conhotlu h1 a {
+	color:#353535;
+	font-size:14px;
+}
+.conhotlu h1 a:hover {
+	text-decoration:underline;
+}
+.mumdl {
+	color:#0060ff;
+	padding-right:8px;
+	font-family:Arial;
+	font-size:14px;
+	width:30px;
+	float:left;
+	display:inline;
+	float:right;
+}
+.conhotlu p {
+	float:left;
+	width:240px;
+	line-height:24px;
+}
+.conhotlu p span {
+	color:#ffa200;
+	font-family:Arial;
+}
+.h-hotel {
+	width:242px;
+	height:203px;
+	padding-top:20px;
+	display:inline;
+}
+.hot-hotel li {
+	float:left;
+}
+.title-hotel {
+	font-size:14px;
+	color:#fff;
+	font-weight:bold;
+	line-height:27px;
+	text-indent:2em;
+	background:url(../images/hotjdbg.jpg) no-repeat;
+	width:242px;
+	margin-top:10px;
+	display:inline;
+}
+/*edit by yjihrp 2011.7.19.11.58*/
+
+.conhot-hotel {
+	color:#353535;
+	padding-top:4px;
+	width:242px;
+}
+/*
+.conhot-hotel h1 {
+	font-size:14px;
+	float:left;
+}
+.conhot-hotel  p {
+	float:left;
+	width:190px;
+	line-height:25px;
+}*/
+/*end edit by yjihrp 2011.7.19.11.58*/
+
+/*edit by yjihrp  new */
+.conhot-hotel a {
+	color:#353535;
+	padding-top:4px;
+	width:242px;
+}
+.conhot-hotel a h1:hover {
+	text-decoration:underline;
+}
+.conhot-hotel a h1 {
+	font-size:14px;
+	float:left;
+}
+.conhot-hotel a p {
+	float:left;
+	width:190px;
+	line-height:25px;
+}
+#emad {
+	width:100%;
+	height:81px;
+	float:left;
+	margin:10px 0 10px 0px;
+	display:inline;
+	padding:0px 0 0 20px;
+}
+.emainput {
+	border:solid 1px #afafaf;
+	width:136px;
+	height:20px;
+	color:#666;
+	line-height:20px;
+}
+#dlink {
+	width:920px;
+	height:44px;
+	border:solid 1px #e1e1e1;
+	float:left;
+	margin:15px 0 0 20px;
+	margin-bottom:15px;
+	padding:14px 20px;
+	display:inline;
+	line-height:22px;
+	color:#666;
+	overflow:hidden;
+}
+#dlink a {
+	color:#666;
+}
+#dlink a:hover {
+	color:#fc9500;
+}

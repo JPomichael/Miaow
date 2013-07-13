@@ -1,0 +1,46 @@
+﻿@{ 
+    var cityLocationService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+
+    var address = cityLocationService.GetLocationInfo();
+    var cityName = "深圳";
+    if (address != null && !string.IsNullOrEmpty(address.City))
+    {
+        cityName = address.City;
+    }
+
+    var unionCityService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+    iPow.Service.Union.Service.ICityService>();
+    var todayLowPriceService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+    iPow.Service.Union.Service.ITodayLowPriceService>();
+    var cid = unionCityService.GetUnionCityIdByName(cityName);
+    if (cid > 0)
+    {
+        var hotels = todayLowPriceService.GetUnionTodayLowPriceByCityIdAndType(cid.ToString(), "0", true, 4);
+        if (hotels != null && hotels.Count > 0)
+        {
+            foreach (var item in hotels)
+            {
+    <li>
+        <div class="conhot-hotel">
+            <a href = "http://hotel.ipow.cn/hotel/@(item.id)" title = "@(item.name)">
+                <h1>
+                    @(item.name.Length > 10 ? item.name.Substring(0, 9) + "..." : item.name)</h1>
+                <span class="mumdl">¥@(item.price)</span>
+                <p>
+                    @(item.address.Length > 12 ? item.address.Substring(0, 11) + "..." : item.address)</p>
+            </a>
+        </div>
+    </li>           
+            }
+        }
+        else
+        {
+    <li>暂无酒店信息 </li>
+        }
+    }
+    else
+    { 
+    <li>暂无酒店信息 </li>
+    }
+}

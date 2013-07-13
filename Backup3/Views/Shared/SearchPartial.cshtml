@@ -1,0 +1,79 @@
+﻿<link href="@Url.Content("~/Content/jslider.css")" rel="stylesheet" type="text/css" />
+<!--[if IE 6]>
+    <link rel="stylesheet" href="@Url.Content("~/Content/jslider.ie6.css")" type="text/css" media="screen">
+<![endif]-->
+<script src="@Url.Content("~/Scripts/jquery.slider.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.slider.dependcalss.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/searchpart.js")" type="text/javascript"></script>
+<div id="searchcku">
+    <form id="searchform" name="searchform" method="post" action="@Url.Action("index", "search")">
+    <ul class="searchtitle">
+        <li>
+            <div class="searchmo">
+            @{
+                var totalCountService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
+                    iPow.Application.dj.Service.ILinksAndTopCountService>();
+            }
+                <span class="xingshear" style="padding-right: 15px;">出游行程搜索</span>实时搜索
+                @(totalCountService.GetTourInfoCount())条自助游线路,@(totalCountService.GetHotelInfoCount())家酒店,@(totalCountService.GetSightCount())个旅游景点
+            </div>
+        </li>
+        <li><span class="modd">目的地：</span>
+            <input id="txtSearch" name="txtSearch" type="text" class="textbnie" onfocus="if (value =='输入关键字，海南、桂林、京、上海、  没想到就输入不知道'){value =''}"
+                onblur="if (value ==''){value='输入关键字，海南、桂林、京、上海、  没想到就输入不知道'}" value='输入关键字，海南、桂林、京、上海、  没想到就输入不知道' />
+        </li>
+        <li><span style="float: left;" class="modd">出行天数：</span>
+            <div class="searchtaday" style="line-height: 7px; padding: 5px;">
+                <a id="day1" href="javascript:;" onclick="setSearchDay('day',1,5)">1</a><a id="day2"
+                    href="javascript:;" onclick="setSearchDay('day',2,5)">2</a><a id="day3" href="javascript:;"
+                        onclick="setSearchDay('day',3,5)">3</a><a id="day4" href="javascript:;" class="munshu"
+                            onclick="setSearchDay('day',4,5)">4</a><a id="day5" href="javascript:;" onclick="setSearchDay('day',5,5)">5+</a>
+                <p>
+                    <span style="padding-left: 15px; line-height: 10px;" class="modd">住宿标准：</span>
+                    <label>
+                        <input type="radio" name="RadioGroup1" value="酒店" id="radioHotel" />
+                        酒店</label>
+                    <label>
+                        <input type="radio" name="RadioGroup1" value="客栈" id="radioOther" />
+                        客栈</label>
+                </p>
+            </div>
+        </li>
+        <li>
+            <div class="yusuan">
+                <span class="modd" style="float: left; margin-right: 2px; width: 115px;">出行预算：<span
+                    id="money">¥0</span></span>
+                <div class="divBg">
+                    <div class="layout-slider" style="width: 120px; float: left; height: 100%;">
+                        <input id="SliderSingle" type="slider" name="price" value="20" />
+                    </div>
+                    <script type="text/javascript" charset="utf-8">
+                        jQuery("#SliderSingle").slider({
+                            from: 0,
+                            to: 5000,
+                            step: 100,
+                            round: 0,
+                            limits: false,
+                            scale: [0, 1300, 2500, 3800, '5000+'],
+                            dimension: '&nbsp;元',
+                            skin: "",
+                            callback: function (value) {
+                                $('#money').html(value);
+                            }
+                        });
+                    </script>
+                    <div style="float: left;">
+                        <input type="submit" value="" name="subSearch" id="subSearch" style="margin-left: 20px;
+                            border: 0px; width: 125px; height: 36px; background-image: url('/images/search_ico.gif');
+                            cursor: pointer" onclick="return searchCheckedForm();" />
+                    </div>
+                </div>
+        </li>
+    </ul>
+    <input type="hidden" value="4" name="txtDays" id="txtDays" />
+    <input type="hidden" value="1475" name="txtMoney" id="txtMoney" />
+    </form>
+</div>
+<div class="Sright">
+    @Html.Partial("SearchRightPartial")
+</div>

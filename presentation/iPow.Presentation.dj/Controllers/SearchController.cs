@@ -7,7 +7,7 @@ using Webdiyer.WebControls.Mvc;
 using iPow.Application.dj.Dto;
 using iPow.Infrastructure.Data.DataSys;
 
-namespace iPow.Presentation.dj.Controllers
+namespace Miaow.Presentation.dj.Controllers
 {
     [HandleError]
     public class SearchController :

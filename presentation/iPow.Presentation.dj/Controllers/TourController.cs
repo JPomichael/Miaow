@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 using iPow.Application.dj.Dto;
 
-namespace iPow.Presentation.dj.Controllers
+namespace Miaow.Presentation.dj.Controllers
 {
     public class TourController :
         iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController

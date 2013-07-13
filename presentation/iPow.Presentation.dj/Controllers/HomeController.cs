@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using System.Collections.Generic;
 using System.Data.Entity;
 
-namespace iPow.Presentation.dj.Controllers
+namespace Miaow.Presentation.dj.Controllers
 {
     public class HomeController :
         iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController

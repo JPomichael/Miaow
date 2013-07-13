@@ -321,11 +321,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="iPowPreAccountEngine.cs" />
-    <Compile Include="iPowPreAccountEntityCustomMap.cs" />
-    <Compile Include="iPowPreAccountIoc.cs" />
-    <Compile Include="iPowPreAccountRegistRoute.cs" />
-    <Compile Include="iPowPreAccountUiExtension.cs" />
+    <Compile Include="MiaowPreAccountEngine.cs" />
+    <Compile Include="MiaowPreAccountEntityCustomMap.cs" />
+    <Compile Include="MiaowPreAccountIoc.cs" />
+    <Compile Include="MiaowPreAccountRegistRoute.cs" />
+    <Compile Include="MiaowPreAccountUiExtension.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\TourPlanDetailDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

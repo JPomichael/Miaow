@@ -8,7 +8,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 
-namespace iPow.Presentation.dj
+namespace Miaow.Presentation.dj
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -21,7 +21,7 @@ namespace iPow.Presentation.dj
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("{resource}.html/{*pathInfo}");
-            iPowPreDjRegisteRoute.Register(routes);
+            MiaowPreDjRegisteRoute.Register(routes);
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
@@ -36,13 +36,13 @@ namespace iPow.Presentation.dj
             //入注器声明准备工作
             var builder = new ContainerBuilder();
             //注册类型
-            iPow.Presentation.dj.iPowPreDjIoc.Register(builder);
+            Miaow.Presentation.dj.MiaowPreDjIoc.Register(builder);
             builder.RegisterFilterProvider();
             //end 注册类型
             var container = builder.Build();
             //声明入注器
             var dependency = new AutofacDependencyResolver(container);
-            iPowPreDjEngine.Current.Container = container;
+            MiaowPreDjEngine.Current.Container = container;
             //告知mvc入注器为autofac
             DependencyResolver.SetResolver(dependency);
 

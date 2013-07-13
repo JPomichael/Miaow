@@ -1,8 +1,8 @@
 ﻿@{
-    var tourPlanService = iPow.Presentation.dj.iPowPreDjEngine
+    var tourPlanService = Miaow.Presentation.dj.MiaowPreDjEngine
         .Current.Resolve<iPow.Application.dj.Service.ITourPlanService>();
-        
-    var listService =  iPow.Presentation.dj.iPowPreDjEngine
+
+    var listService = Miaow.Presentation.dj.MiaowPreDjEngine
         .Current.Resolve<iPow.Application.dj.Service.IListService>();
 
     var tourClasses = tourPlanService.GetTourClass();

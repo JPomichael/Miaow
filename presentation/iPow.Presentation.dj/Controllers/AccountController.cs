@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 
-namespace iPow.Presentation.dj.Controllers
+namespace Miaow.Presentation.dj.Controllers
 {
     [HandleError]
     public class AccountController :
