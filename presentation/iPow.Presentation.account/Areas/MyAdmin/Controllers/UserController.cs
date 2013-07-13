@@ -57,7 +57,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         //为AddUser 做初始化
         public ActionResult AddUser()
         {
-            iPow.Domain.Dto.Sys_AdminUserDto user = new Domain.Dto.Sys_AdminUserDto();
+            iPow.Domain.Dto.Sys_AdminUserDto user = new iPow.Domain.Dto.Sys_AdminUserDto();
             return View(user);
         }
 
@@ -77,9 +77,9 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 }
                 else
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser addUser = new Infrastructure.Data.DataSys.Sys_AdminUser();
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Infrastructure.Data.DataSys.Sys_AdminUser();
-                    iPow.Infrastructure.Data.DataSys.Sys_UserRoles userRole = new Infrastructure.Data.DataSys.Sys_UserRoles();
+                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser addUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                    iPow.Infrastructure.Data.DataSys.Sys_UserRoles userRole = new iPow.Infrastructure.Data.DataSys.Sys_UserRoles();
                     addUser.username = user.username;
                     addUser.password = iPow.Infrastructure.Crosscutting.Function.StringHelper.Tomd5(user.password);
                     addUser.truename = user.truename;
@@ -165,7 +165,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                     model.sex = user.sex;
                     model.Phone = user.Phone;
                     model.Email = user.Email;
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Infrastructure.Data.DataSys.Sys_AdminUser();
+                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
                     operUser.id = model.id;
                     //执行更新吧
                     userService.Modify(model, operUser);

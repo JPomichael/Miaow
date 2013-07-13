@@ -9,6 +9,7 @@ using System.Collections;
 
 using Webdiyer.WebControls.Mvc;
 using iPow.Infrastructure.Crosscutting.EntityToDto;
+using iPow.Application;
 
 namespace Miaow.Presentation.account.Areas.MyTour
 {
@@ -95,7 +96,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
         /// <returns></returns>
         public ViewResult PlanList(int userId, int? Id)
         {
-            Application.account.Dto.TourPlanDto dto = new Application.account.Dto.TourPlanDto();
+            iPow.Application.account.Dto.TourPlanDto dto = new iPow.Application.account.Dto.TourPlanDto();
             if (userId != 0 || userId != null)
             {
                 int take = pageSize;
@@ -119,7 +120,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
         public ViewResult AllPlan(int? Id)
         {
             List<iPow.Domain.Dto.Sys_SightInfoDto> LSID = new List<Sys_SightInfoDto>();
-            Application.account.Dto.TourPlanDto dto = new Application.account.Dto.TourPlanDto();
+            iPow.Application.account.Dto.TourPlanDto dto = new iPow.Application.account.Dto.TourPlanDto();
             int take = pageSize;
             var pi = (Id.HasValue && Id.Value > 0) ? (int)Id : 1;
             dto.TourPlanList = tourPlanService.GetTourPlanList(pi, take);
@@ -160,7 +161,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
         public ActionResult CreatePlan(FormCollection tour)
         {
             var tp = new Sys_TourPlan();
-            var tt = new Infrastructure.Data.DataSys.Sys_TourPlan();
+            var tt = new iPow.Infrastructure.Data.DataSys.Sys_TourPlan();
             string AddTime = string.Empty;
             string Days = string.Empty;
             string PlanTitle = string.Empty;
@@ -215,7 +216,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
             var data = res.ToDto();
             var sightInfoService = Miaow.Presentation.account.MiaowPreAccountEngine.Current.Resolve<
                 iPow.Application.account.Service.ISightInfoService>();
-            Application.account.Dto.TourPlanDto dto = new Application.account.Dto.TourPlanDto();
+            iPow.Application.account.Dto.TourPlanDto dto = new iPow.Application.account.Dto.TourPlanDto();
             dto.CurrentCityInfo = cityInfoService.GetCityInfoSingleByName(res.Destination);
             var pi = id == null ? 1 : (int)id;
             int take = pageSize;
@@ -262,7 +263,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
         public ActionResult Edit(FormCollection tour)
         {
             var tp = new Sys_TourPlan();
-            var tt = new Infrastructure.Data.DataSys.Sys_TourPlan();
+            var tt = new iPow.Infrastructure.Data.DataSys.Sys_TourPlan();
             string AddTime = string.Empty;
             string Days = string.Empty;
             string PlanTitle = string.Empty;

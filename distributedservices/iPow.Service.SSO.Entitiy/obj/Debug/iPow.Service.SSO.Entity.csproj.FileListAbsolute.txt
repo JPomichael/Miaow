@@ -15,3 +15,8 @@ E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service
 E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\ResolveAssemblyReference.cache
 E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.dll
 E:\work\IPOW\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.dll.config
+C:\Users\JPomichael\Documents\GitHub\Miaow\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\distributedservices\iPow.Service.SSO.Entitiy\bin\Debug\iPow.Service.SSO.Entity.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\distributedservices\iPow.Service.SSO.Entitiy\obj\Debug\iPow.Service.SSO.Entity.pdb

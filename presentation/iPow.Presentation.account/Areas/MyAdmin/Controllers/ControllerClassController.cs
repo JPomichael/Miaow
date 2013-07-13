@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
 using iPow.Infrastructure.Crosscutting.EntityToDto;
+using iPow.Domain;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
@@ -58,7 +59,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// <returns></returns>
         public ViewResult Add()
         {
-            var model = new Domain.Dto.Sys_MvcControllerClassDto();
+            var model = new iPow.Domain.Dto.Sys_MvcControllerClassDto();
             return View(model);
         }
 
@@ -81,7 +82,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 {
                     dto.AddTime = System.DateTime.Now; //添加的当前时间
                     dto.SortNum = 0;
-                    iPow.Infrastructure.Data.DataSys.Sys_MvcControllerClass addClass = new Infrastructure.Data.DataSys.Sys_MvcControllerClass();
+                    iPow.Infrastructure.Data.DataSys.Sys_MvcControllerClass addClass = new iPow.Infrastructure.Data.DataSys.Sys_MvcControllerClass();
                     addClass.Name = dto.Name;
                     addClass.Remark = dto.Remark;
                     addClass.AddTime = dto.AddTime;

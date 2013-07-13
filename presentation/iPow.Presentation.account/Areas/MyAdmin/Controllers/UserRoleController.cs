@@ -76,7 +76,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         {
             //做为 DropDownList DataSource
             ViewBag.rolemodel = roleService.GetList();
-            var model = new Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto();
+            var model = new iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto();
             return View(model);
         }
 

@@ -3,3 +3,7 @@ E:\work\IPOW\infrastructure\Wbm.TencV2SDK\bin\Debug\Wbm.TencV2SDK.pdb
 E:\work\IPOW\infrastructure\Wbm.TencV2SDK\obj\Debug\ResolveAssemblyReference.cache
 E:\work\IPOW\infrastructure\Wbm.TencV2SDK\obj\Debug\Wbm.TencV2SDK.dll
 E:\work\IPOW\infrastructure\Wbm.TencV2SDK\obj\Debug\Wbm.TencV2SDK.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\Wbm.TencV2SDK\bin\Debug\Wbm.TencV2SDK.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\Wbm.TencV2SDK\bin\Debug\Wbm.TencV2SDK.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\Wbm.TencV2SDK\obj\Debug\Wbm.TencV2SDK.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\Wbm.TencV2SDK\obj\Debug\Wbm.TencV2SDK.pdb

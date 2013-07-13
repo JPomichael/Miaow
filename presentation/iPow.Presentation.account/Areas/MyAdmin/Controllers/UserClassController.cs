@@ -66,8 +66,8 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 }
                 else
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUserClass addUserClass = new Infrastructure.Data.DataSys.Sys_AdminUserClass();
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Infrastructure.Data.DataSys.Sys_AdminUser();
+                    iPow.Infrastructure.Data.DataSys.Sys_AdminUserClass addUserClass = new iPow.Infrastructure.Data.DataSys.Sys_AdminUserClass();
+                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
                     operUser.id = 1;
                     addUserClass.Name = dto.Name;
                     addUserClass.Remark = dto.Remark;
@@ -126,7 +126,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             {
                 if (Class != null && Class.Id > 0)
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Infrastructure.Data.DataSys.Sys_AdminUser();
+                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
                     operUser.id = 1;
                     var model = userClassService.GetList().Where(e => e.Id == Class.Id).First();
                     model.Name = Class.Name;

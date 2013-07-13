@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
 using iPow.Infrastructure.Crosscutting.EntityToDto;
+using iPow.Domain;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
@@ -79,7 +80,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         [GridAction]
         [HttpPost]
-        public JsonResult Add(Domain.Dto.Sys_RolesDto role)
+        public JsonResult Add(iPow.Domain.Dto.Sys_RolesDto role)
         {
             if (!string.IsNullOrEmpty(role.Description))
             {
@@ -95,7 +96,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         [GridAction]
         [HttpPost]
-        public JsonResult Edit(Domain.Dto.Sys_RolesDto role)
+        public JsonResult Edit(iPow.Domain.Dto.Sys_RolesDto role)
         {
             if (role != null && !string.IsNullOrEmpty(role.Description))
             {

@@ -66,7 +66,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         {
             //做为 DropDownList DataSource
             ViewBag.Actionmodel = mvcControllerService.GetList();
-            var model = new Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto();
+            var model = new iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto();
             return View(model);
         }
 

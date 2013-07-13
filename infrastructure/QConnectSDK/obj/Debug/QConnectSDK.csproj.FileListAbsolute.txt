@@ -8,3 +8,13 @@ E:\work\IPOW\infrastructure\QConnectSDK\bin\Debug\RestSharp.xml
 E:\work\IPOW\infrastructure\QConnectSDK\obj\Debug\ResolveAssemblyReference.cache
 E:\work\IPOW\infrastructure\QConnectSDK\obj\Debug\QConnectSDK.dll
 E:\work\IPOW\infrastructure\QConnectSDK\obj\Debug\QConnectSDK.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\bin\Debug\QConnectSDK.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\bin\Debug\QConnectSDK.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\bin\Debug\Newtonsoft.Json.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\bin\Debug\RestSharp.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\bin\Debug\Newtonsoft.Json.xml
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\bin\Debug\RestSharp.xml
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\obj\Debug\QConnectSDK.csprojResolveAssemblyReference.cache
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\obj\Debug\QConnectSDK.dll
+C:\Users\JPomichael\Documents\GitHub\Miaow\infrastructure\QConnectSDK\obj\Debug\QConnectSDK.pdb
