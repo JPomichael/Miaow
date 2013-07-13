@@ -5,12 +5,12 @@ using System.Web;
 
 using iPow.Infrastructure.Crosscutting.NetFramework.Engines;
 
-namespace iPow.Presentation.Union
+namespace Miaow.Presentation.Union
 {
     /// <summary>
     /// 
     /// </summary>
-    public class iPowPreUnionEngine :
+    public class MiaowPreUnionEngine :
         iPow.Infrastructure.Crosscutting.NetFramework.Engines.EngineManager
     {
 

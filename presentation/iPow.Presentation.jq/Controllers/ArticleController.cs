@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 
-namespace iPow.Presentation.jq.Controllers
+namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class ArticleController :

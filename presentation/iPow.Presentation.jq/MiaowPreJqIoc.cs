@@ -6,9 +6,12 @@ using Autofac.Integration.Mvc;
 using iPow.Infrastructure.Crosscutting.NetFramework;
 using iPow.Infrastructure.Crosscutting.NetFramework.Fakes;
 
-namespace iPow.Presentation.Union
+namespace Miaow.Presentation.jq
 {
-    public class iPowPreUnionIoc
+    /// <summary>
+    /// 
+    /// </summary>
+    public class MiaowPreJqIoc
     {
         /// <summary>
         /// Registers the specified builder.
@@ -39,6 +42,7 @@ namespace iPow.Presentation.Union
             //uow
             builder.RegisterType<iPow.Infrastructure.Data.iPowObjectUnitOfWork>()
             .As<iPow.Infrastructure.Data.IQueryableUnitOfWork>().InstancePerHttpRequest();
+
             //work context
             builder.RegisterType<iPowWebWorkContext>().As<IWorkContext>().InstancePerHttpRequest();
         }
@@ -140,40 +144,16 @@ namespace iPow.Presentation.Union
             .As<iPow.Domain.Repository.IVideoCommRepository>().InstancePerHttpRequest();
             builder.RegisterType<iPow.Infrastructure.Data.Repository.VideoInfoRepository>()
             .As<iPow.Domain.Repository.IVideoInfoRepository>().InstancePerHttpRequest();
-            builder.RegisterType<iPow.Infrastructure.Data.Repository.SightInfoCirHotelRepository>()
-            .As<iPow.Domain.Repository.ISightInfoCirHotelRepository>().InstancePerHttpRequest();
 
             //added by yjihrp 2012.3.6
             builder.RegisterType<iPow.Infrastructure.Data.Repository.SightInfoCirSightRepository>()
             .As<iPow.Domain.Repository.ISightInfoCirSightRepository>().InstancePerHttpRequest();
             builder.RegisterType<iPow.Infrastructure.Data.Repository.SightInfoSortRepository>()
             .As<iPow.Domain.Repository.ISightInfoSortRepository>().InstancePerHttpRequest();
+            builder.RegisterType<iPow.Infrastructure.Data.Repository.SightInfoCirHotelRepository>()
+            .As<iPow.Domain.Repository.ISightInfoCirHotelRepository>().InstancePerHttpRequest();
+
             //end added by yjihrp 2012.3.6
-
-            //added by 张军朋 2012/4/10
-            builder.RegisterType<iPow.Infrastructure.Data.Repository.RolesRepository>()
-            .As<iPow.Domain.Repository.IRolesRepository>().InstancePerHttpRequest();
-            //end 
-
-            //add by yjihrp 2012.4.12.17.2
-            builder.RegisterType<iPow.Infrastructure.Data.Repository.MvcControllerActionRepository>()
-            .As<iPow.Domain.Repository.IMvcControllerActionRepository>().InstancePerHttpRequest();
-            builder.RegisterType<iPow.Infrastructure.Data.Repository.MvcControllerClassRepository>()
-            .As<iPow.Domain.Repository.IMvcControllerClassRepository>().InstancePerHttpRequest();
-            builder.RegisterType<iPow.Infrastructure.Data.Repository.MvcControllerRepository>()
-            .As<iPow.Domain.Repository.IMvcControllerRepository>().InstancePerHttpRequest();
-            builder.RegisterType<iPow.Infrastructure.Data.Repository.MvcControllerRolePermissionRepository>()
-            .As<iPow.Domain.Repository.IMvcControllerRolePermissionRepository>().InstancePerHttpRequest();
-            //end add by yjihrp 2012.4.12.17.2
-
-            //add by jpomichael 2014/4/19
-            builder.RegisterType<iPow.Infrastructure.Data.Repository.AdminUserClassRepository>()
-                .As<iPow.Domain.Repository.IAdminUserClassRepository>().InstancePerHttpRequest();
-            builder.RegisterType<iPow.Infrastructure.Data.Repository.MvcControllerActionClassRepository>()
-                .As<iPow.Domain.Repository.IMvcControllerActionClassRepository>().InstancePerHttpRequest();
-            //end
-
-
 
         }
 
@@ -223,27 +203,32 @@ namespace iPow.Presentation.Union
         protected static void RegisterApplicationJqService(Autofac.ContainerBuilder builder)
         {
             builder.RegisterType<iPow.Application.jq.Service.AddSortService>()
-            .As<iPow.Application.jq.Service.IAddSortService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.IAddSortService>();
             builder.RegisterType<iPow.Application.jq.Service.ArticleService>()
-            .As<iPow.Application.jq.Service.IArticleService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.IArticleService>();
             builder.RegisterType<iPow.Application.jq.Service.HomeService>()
-            .As<iPow.Application.jq.Service.IHomeService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.IHomeService>();
             builder.RegisterType<iPow.Application.jq.Service.PageService>()
-            .As<iPow.Application.jq.Service.IPageService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.IPageService>();
             builder.RegisterType<iPow.Application.jq.Service.PicInfoService>()
-            .As<iPow.Application.jq.Service.IPicInfoService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.IPicInfoService>();
             builder.RegisterType<iPow.Application.jq.Service.SearchService>()
-            .As<iPow.Application.jq.Service.ISearchService>().InstancePerHttpRequest(); ;
+            .As<iPow.Application.jq.Service.ISearchService>();
             builder.RegisterType<iPow.Application.jq.Service.SightInfoService>()
-            .As<iPow.Application.jq.Service.ISightInfoService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.ISightInfoService>();
             builder.RegisterType<iPow.Application.jq.Service.SinaInfoService>()
-            .As<iPow.Application.jq.Service.ISinaInfoService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.ISinaInfoService>();
             builder.RegisterType<iPow.Application.jq.Service.TicketService>()
-            .As<iPow.Application.jq.Service.ITicketService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.ITicketService>();
             builder.RegisterType<iPow.Application.jq.Service.TopClassService>()
-            .As<iPow.Application.jq.Service.ITopClassService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.ITopClassService>();
             builder.RegisterType<iPow.Application.jq.Service.VideoInfoService>()
-            .As<iPow.Application.jq.Service.IVideoInfoService>().InstancePerHttpRequest();
+            .As<iPow.Application.jq.Service.IVideoInfoService>();
+
+            //add 2012-4-28  JPomichael
+            builder.RegisterType<iPow.Application.jq.Service.SightInfoSortService>()
+            .As<iPow.Application.jq.Service.ISightInfoSortService>();
+            //end
 
         }
 
@@ -254,37 +239,38 @@ namespace iPow.Presentation.Union
         protected static void RegisterServiceUnionService(Autofac.ContainerBuilder builder)
         {
             builder.RegisterType<iPow.Service.Union.CitySettingDefault>()
-            .As<iPow.Service.Union.CitySettingBase>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.CitySettingBase>();
             builder.RegisterType<iPow.Service.Union.UnionCityService>()
-            .As<iPow.Service.Union.IUnionCityService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.IUnionCityService>();
             builder.RegisterType<iPow.Service.Union.Service.CityService>()
-            .As<iPow.Service.Union.Service.ICityService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.ICityService>();
             builder.RegisterType<iPow.Service.Union.Service.HeadVouchDataService>()
-            .As<iPow.Service.Union.Service.IHeadVouchDataService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHeadVouchDataService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelAroundHotelService>()
-           .As<iPow.Service.Union.Service.IHotelAroundHotelService>().InstancePerHttpRequest();
+           .As<iPow.Service.Union.Service.IHotelAroundHotelService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelCommService>()
-            .As<iPow.Service.Union.Service.IHotelCommService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelCommService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelCommSysService>()
-            .As<iPow.Service.Union.Service.IHotelCommSysService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelCommSysService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelEbookService>()
-            .As<iPow.Service.Union.Service.IHotelEbookService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelEbookService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelInfoService>()
-            .As<iPow.Service.Union.Service.IHotelInfoService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelInfoService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelLeftMidService>()
-            .As<iPow.Service.Union.Service.IHotelLeftMidService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelLeftMidService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelPicService>()
-            .As<iPow.Service.Union.Service.IHotelPicService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelPicService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelRoomService>()
-            .As<iPow.Service.Union.Service.IHotelRoomService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelRoomService>();
+
             builder.RegisterType<iPow.Service.Union.Service.HotelSearchService>()
-            .As<iPow.Service.Union.Service.IHotelSearchService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelSearchService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelTrafficService>()
-            .As<iPow.Service.Union.Service.IHotelTrafficService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelTrafficService>();
             builder.RegisterType<iPow.Service.Union.Service.HotelTypeService>()
-            .As<iPow.Service.Union.Service.IHotelTypeService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.IHotelTypeService>();
             builder.RegisterType<iPow.Service.Union.Service.TodayLowPriceService>()
-            .As<iPow.Service.Union.Service.ITodayLowPriceService>().InstancePerHttpRequest();
+            .As<iPow.Service.Union.Service.ITodayLowPriceService>();
         }
 
         protected static void RegisterAuthorize(Autofac.ContainerBuilder builder)
@@ -303,11 +289,9 @@ namespace iPow.Presentation.Union
                 .As<iPow.Infrastructure.Crosscutting.Authorize.IUserRoleService>().InstancePerHttpRequest();
             builder.RegisterType<iPow.Infrastructure.Crosscutting.Authorize.UserService>()
                 .As<iPow.Infrastructure.Crosscutting.Authorize.IUserService>().InstancePerHttpRequest();
-
-            //add JPomichael 2012.4.17
+            //Add JPomichael 2012、4、17 
             builder.RegisterType<iPow.Infrastructure.Crosscutting.Authorize.UserExtensionService>()
               .As<iPow.Infrastructure.Crosscutting.Authorize.IUserExtensionService>().InstancePerHttpRequest();
-            //end add JPomichael 2012.4.17
 
             //added by yjihrp 2012.4.12
             builder.RegisterType<iPow.Infrastructure.Crosscutting.Authorize.AssemblyControllerService>();
@@ -318,7 +302,9 @@ namespace iPow.Presentation.Union
                 .As<iPow.Infrastructure.Crosscutting.Authorize.IAdminUserClassService>().InstancePerHttpRequest();
             builder.RegisterType<iPow.Infrastructure.Crosscutting.Authorize.MvcControllerActionClassService>()
                 .As<iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerActionClassService>().InstancePerHttpRequest();
-            //end add by jpomichael 2014/4/19
+            //end
+
+
         }
     }
 }

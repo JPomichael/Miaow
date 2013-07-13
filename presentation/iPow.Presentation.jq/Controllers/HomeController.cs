@@ -2,7 +2,7 @@
 using System.Web.Mvc;
 using iPow.Application.jq.Dto;
 
-namespace iPow.Presentation.jq.Controllers
+namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class HomeController :

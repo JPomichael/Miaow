@@ -3,7 +3,7 @@ using System.Linq;
 using System.Web.Mvc;
 using iPow.Application.Union.Dto;
 
-namespace iPow.Presentation.Union.Controllers
+namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class SearchController :

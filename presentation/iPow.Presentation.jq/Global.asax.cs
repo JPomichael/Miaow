@@ -8,7 +8,7 @@ using RouteDebug;
 using Autofac.Integration.Mvc;
 using Autofac;
 
-namespace iPow.Presentation.jq
+namespace Miaow.Presentation.jq
 {
     // 注意: 有关启用 IIS6 或 IIS7 经典模式的说明，
     // 请访问 http://go.microsoft.com/?LinkId=9394801
@@ -26,7 +26,7 @@ namespace iPow.Presentation.jq
             routes.IgnoreRoute("{resource}.jpg/{*pathInfo}");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            iPowPreJqRegistRoute.Register(routes);
+            MiaowPreJqRegistRoute.Register(routes);
 
             routes.MapRoute(
                 "Default", // 路由名称
@@ -42,14 +42,14 @@ namespace iPow.Presentation.jq
             //入注器声明准备工作
             var builder = new ContainerBuilder();
             //注册类型
-            iPow.Presentation.jq.iPowPreJqIoc.Register(builder);
+            Miaow.Presentation.jq.MiaowPreJqIoc.Register(builder);
             builder.RegisterFilterProvider();
             //end 注册类型
             var container = builder.Build();
             //声明入注器
             var dependency = new AutofacDependencyResolver(container);
 
-            iPowPreJqEngine.Current.Container = container;
+            MiaowPreJqEngine.Current.Container = container;
             //告知mvc入注器为autofac
             DependencyResolver.SetResolver(dependency);
 

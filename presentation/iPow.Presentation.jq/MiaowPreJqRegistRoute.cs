@@ -6,12 +6,12 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace iPow.Presentation.jq
+namespace Miaow.Presentation.jq
 {
     /// <summary>
     /// 
     /// </summary>
-    public class iPowPreJqRegistRoute
+    public class MiaowPreJqRegistRoute
     {
         /// <summary>
         /// Registers the specified routes.

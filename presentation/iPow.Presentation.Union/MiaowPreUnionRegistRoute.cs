@@ -6,12 +6,12 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace iPow.Presentation.Union
+namespace Miaow.Presentation.Union
 {
     /// <summary>
     /// 
     /// </summary>
-    public class iPowPreUnionRegistRoute
+    public class MiaowPreUnionRegistRoute
     {
         /// <summary>
         /// Registers the specified routes.

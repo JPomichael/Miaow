@@ -7,24 +7,28 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{77BD3294-AF10-4867-8739-BF32F6352199}</ProjectGuid>
+    <ProjectGuid>{D3919725-5EFA-48AA-97C1-2D4EF93714BD}</ProjectGuid>
     <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>iPow.Presentation.jq</RootNamespace>
-    <AssemblyName>iPow.Presentation.jq</AssemblyName>
+    <RootNamespace>Miaow.Presentation.Union</RootNamespace>
+    <AssemblyName>Miaow.Presentation.Union</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
-    <!--<SccProjectName>Svn</SccProjectName>
-    <SccLocalPath>Svn</SccLocalPath>
-    <SccAuxPath>Svn</SccAuxPath>
-    <SccProvider>SubversionScc</SccProvider>-->
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <!--<SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>-->
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,29 +60,24 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\Autofac.Mvc3.2.6.1.841\lib\NET40\Autofac.Integration.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="Elmah">
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
     </Reference>
-    <Reference Include="EmitMapper">
+    <Reference Include="EmitMapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\EmitMapper.1.0.0\lib\EmitMapper.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework">
       <HintPath>..\..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="RouteDebugger, Version=2.1.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="RouteDebugger">
       <HintPath>..\..\packages\routedebugger.2.1.3\lib\net40\RouteDebugger.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.Entity" />
-    <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel">
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
     <Reference Include="System.Web.Helpers" />
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -100,39 +99,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HeadVouchDataController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PicController.cs" />
+    <Compile Include="Controllers\HotelController.cs" />
+    <Compile Include="Controllers\LeftMidHotHotelController.cs" />
+    <Compile Include="Controllers\EbookController.cs" />
+    <Compile Include="Controllers\RightTodayLowPriceHotHotelController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
-    <Compile Include="Controllers\SightDetailController.cs" />
-    <Compile Include="Controllers\SightOtherController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="iPowPreJqEngine.cs" />
-    <Compile Include="iPowPreJqEntityCustomMap.cs" />
-    <Compile Include="iPowPreJqIoc.cs" />
-    <Compile Include="iPowPreJqRegistRoute.cs" />
+    <Compile Include="MiaowPreUnionIoc.cs" />
+    <Compile Include="MiaowPreUnionEngine.cs" />
+    <Compile Include="MiaowPreUnionEntityCustomMap.cs" />
+    <Compile Include="MiaowPreUnionRegistRoute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Readme\Elmah.txt" />
     <Content Include="configfiles\CityProvider.txt" />
     <Content Include="configfiles\DataUrlXmlProvider.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\ad.css" />
     <Content Include="Content\colorbox.css" />
-    <Content Include="Content\css\ad.css" />
-    <Content Include="Content\css\colorbox.css" />
-    <Content Include="Content\css\main.css" />
-    <Content Include="Content\css\map.css" />
-    <Content Include="Content\css\marker.css" />
-    <Content Include="Content\css\sight_index.css" />
-    <Content Include="Content\css\sight_list.css" />
-    <Content Include="Content\css\top.css" />
-    <Content Include="Content\player\minPlay.swf" />
-    <Content Include="Content\player\player.swf" />
+    <Content Include="Content\hotel.css" />
+    <Content Include="Content\hotel_index.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\marker.css" />
+    <Content Include="Content\sight_index.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -146,6 +142,7 @@
     <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Content\themes\base\jquery.ui.accordion.css" />
     <Content Include="Content\themes\base\jquery.ui.all.css" />
     <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
@@ -160,6 +157,8 @@
     <Content Include="Content\themes\base\jquery.ui.slider.css" />
     <Content Include="Content\themes\base\jquery.ui.tabs.css" />
     <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\top.css" />
+    <Content Include="Ebook\agent.html" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\001-1_01_01.jpg" />
@@ -338,7 +337,6 @@
     <Content Include="images\blogx_22.jpg" />
     <Content Include="images\blogx_23.jpg" />
     <Content Include="images\bluebuttonbg.gif" />
-    <Content Include="images\border.png" />
     <Content Include="images\border1.png" />
     <Content Include="images\bottomBG.jpg" />
     <Content Include="images\bottomLeft.jpg" />
@@ -353,7 +351,6 @@
     <Content Include="images\btnRed.jpg" />
     <Content Include="images\btnRegister.gif" />
     <Content Include="images\btnreview.GIF" />
-    <Content Include="images\btnSearch.gif" />
     <Content Include="images\btnSearchBG.jpg" />
     <Content Include="images\btn_bg.jpg" />
     <Content Include="images\btn_makeTrip.jpg" />
@@ -405,7 +402,6 @@
     <Content Include="images\company16.gif" />
     <Content Include="images\company32.gif" />
     <Content Include="images\constInput.jpg" />
-    <Content Include="images\controls.png" />
     <Content Include="images\count_banner.gif" />
     <Content Include="images\count_showBG.jpg" />
     <Content Include="images\css.css" />
@@ -506,9 +502,6 @@
     <Content Include="images\htopy4.jpg" />
     <Content Include="images\htopy5.jpg" />
     <Content Include="images\ico01.gif" />
-    <Content Include="images\icons\list_ico.gif" />
-    <Content Include="images\icons\sprite.png" />
-    <Content Include="images\icons\sprite1.png" />
     <Content Include="images\icon\htop1.jpg" />
     <Content Include="images\icon\htop10.jpg" />
     <Content Include="images\icon\htop2.jpg" />
@@ -618,7 +611,6 @@
     <Content Include="images\ipowsh.jpg" />
     <Content Include="images\ipowshwsj.jpg" />
     <Content Include="images\ipow_Title.jpg" />
-    <Content Include="images\itsbg.gif.jpg" />
     <Content Include="images\jgt.jpg" />
     <Content Include="images\jmdxg00.jpg" />
     <Content Include="images\jobjoin.jpg" />
@@ -642,6 +634,9 @@
     <Content Include="images\left-bj-2.gif" />
     <Content Include="images\left-bj-3.gif" />
     <Content Include="images\left-bj.gif" />
+    <Content Include="images\left.gif" />
+    <Content Include="images\left.png" />
+    <Content Include="images\leftbig.png" />
     <Content Include="images\leftSplit.jpg" />
     <Content Include="images\left_bar.gif" />
     <Content Include="images\link1.jpg" />
@@ -657,8 +652,6 @@
     <Content Include="images\loading.gif" />
     <Content Include="images\Loading1.gif" />
     <Content Include="images\loading2.gif" />
-    <Content Include="images\loading4.gif" />
-    <Content Include="images\loading_background.png" />
     <Content Include="images\login.css" />
     <Content Include="images\loginBg.gif" />
     <Content Include="images\loginweinan.jpg" />
@@ -853,6 +846,9 @@
     <Content Include="images\right-bj-3.gif" />
     <Content Include="images\right-bj.gif" />
     <Content Include="images\right.gif" />
+    <Content Include="images\right.png" />
+    <Content Include="images\right1.gif" />
+    <Content Include="images\rightbig.png" />
     <Content Include="images\rightRound1.jpg" />
     <Content Include="images\rightRound2.jpg" />
     <Content Include="images\rightSplit.jpg" />
@@ -907,15 +903,9 @@
     <Content Include="images\sooimage.jpg" />
     <Content Include="images\SPAbanner.jpg" />
     <Content Include="images\spacer.gif" />
-    <Content Include="images\sprite.jpg" />
-    <Content Include="images\sprite.png" />
-    <Content Include="images\sprite1.png" />
     <Content Include="images\stand_tab_bg.gif" />
     <Content Include="images\staroff.gif" />
     <Content Include="images\staron.gif" />
-    <Content Include="images\stars.jpg" />
-    <Content Include="images\stars.png" />
-    <Content Include="images\stars1.png" />
     <Content Include="images\start.gif" />
     <Content Include="images\style.css" />
     <Content Include="images\systemName.jpg" />
@@ -1040,7 +1030,6 @@
     <Content Include="images\xinx32.gif" />
     <Content Include="images\xu.gif" />
     <Content Include="images\xu.jpg" />
-    <Content Include="images\yuan.gif" />
     <Content Include="images\yw16.gif" />
     <Content Include="images\yw32.gif" />
     <Content Include="images\zhizhi.jpg" />
@@ -1049,38 +1038,22 @@
     <Content Include="images\zjsp16.gif" />
     <Content Include="images\zjsp32.gif" />
     <Content Include="README.jQuery.vsdoc.txt" />
-    <Content Include="Scripts\AC_RunActiveContent.js" />
-    <Content Include="Scripts\areaArr.js" />
     <Content Include="Scripts\areacode.js" />
     <Content Include="Scripts\calendar.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\floatbox.js" />
-    <Content Include="Scripts\Googlemap.js" />
-    <Content Include="Scripts\HG.Core.js" />
-    <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.js" />
     <Content Include="Scripts\jquery-ui-1.8.18.min.js" />
-    <Content Include="Scripts\jquery.blockUI.js" />
-    <Content Include="Scripts\jquery.colorbox-min.js" />
     <Content Include="Scripts\jquery.colorbox.js" />
     <Content Include="Scripts\jquery.form.js" />
-    <Content Include="Scripts\jquery.jsonp-2.1.4.js" />
-    <Content Include="Scripts\jquery.jsonp-2.1.4.min.js" />
-    <Content Include="Scripts\jquery.pagination.js" />
-    <Content Include="Scripts\main.js" />
-    <Content Include="Scripts\map.js" />
+    <Content Include="Scripts\jquery.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Scripts\pic_browser.js" />
     <Content Include="Scripts\pkgHotelMarker.js" />
     <Content Include="Scripts\search.js" />
-    <Content Include="Scripts\sight.js" />
-    <Content Include="Scripts\SimpleModal.js" />
-    <Content Include="Scripts\tour.js" />
     <Content Include="Scripts\traffic.js" />
-    <Content Include="Scripts\viewthread.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1090,7 +1063,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\themes\base\jquery-ui.css" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -1098,26 +1070,101 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Account\LogOn.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml">
+      <SubType>
+      </SubType>
+    </Content>
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Authenticate.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\home\index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\LogOff.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\LogOn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hotel\HotelCommListPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hotel\HotelCommPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hotel\HotelDesPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hotel\HotelPicListPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hotel\HotelPicPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hotel\HotelRoomPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hotel\HotelTrafficPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Hotel\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\LeftMidHotHotel\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Search\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Search\SearchAll.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\BottomLinkPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\BottomPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\HeadDiscountPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\HeadVouchDataPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\LeftMidPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SearchPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="App_Readme\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\application\iPow.Application.jq.Dto\iPow.Application.jq.Dto.csproj">
-      <Project>{4F6A4DA9-B5C4-40A0-A702-4BCB992750F7}</Project>
-      <Name>iPow.Application.jq.Dto</Name>
-    </ProjectReference>
+    <Content Include="Views\Ebook\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Ebook\Query.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\application\iPow.Application.jq.Service\iPow.Application.jq.Service.csproj">
       <Project>{BF576A93-AB73-40EC-9CCF-3171E32B8C2F}</Project>
       <Name>iPow.Application.jq.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\application\iPow.Application.Union.Dto\iPow.Application.Union.Dto.csproj">
+      <Project>{17626EA1-0F82-4F63-BF71-D28AA9E95E4B}</Project>
+      <Name>iPow.Application.Union.Dto</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\distributedservices\iPow.Service.SSO.Client\iPow.Service.SSO.Client.csproj">
       <Project>{BCD4F576-C42C-4450-8EB3-F4219B19ED52}</Project>
@@ -1185,48 +1232,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Account\Authenticate.cshtml" />
+    <Content Include="Views\Shared\SSOPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\desktop.ini" />
-    <Content Include="Views\Article\ArticleCommListPartial.cshtml" />
-    <Content Include="Views\Home\IndexBottomLinkPartial.cshtml" />
-    <Content Include="Views\Home\Province.cshtml" />
-    <Content Include="Views\Home\ProvincePartial.cshtml" />
-    <Content Include="Views\Home\Type.cshtml" />
-    <Content Include="Views\Home\UpdatePartial.cshtml" />
-    <Content Include="Views\Pic\PicCommListPartial.cshtml" />
-    <Content Include="Views\Search\Index.cshtml" />
-    <Content Include="Views\Shared\_ADLayout.cshtml" />
-    <Content Include="Views\Shared\_NavPartialPage.cshtml" />
-    <Content Include="Views\SightDetail\Index.cshtml" />
-    <Content Include="Views\SightOther\Article.cshtml" />
-    <Content Include="Views\SightOther\ArticleDetail.cshtml" />
-    <Content Include="Views\SightOther\Guide.cshtml" />
-    <Content Include="Views\SightOther\Pic.cshtml" />
-    <Content Include="Views\SightOther\PicDetail.cshtml" />
-    <Content Include="Views\SightOther\Ticket.cshtml" />
-    <Content Include="Views\SightOther\Video.cshtml" />
-    <Content Include="Views\Home\IndexRightArticlePartial.cshtml" />
-    <Content Include="Views\Home\ProvinceBottomLinksPartial.cshtml" />
-    <Content Include="Views\Home\ProvinceLinksPartial.cshtml" />
-    <Content Include="Views\Home\IndexJsPartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexVideoJsPartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexVouchItemPartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexPicPartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexVideoPartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexArticlePartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexTrafficPartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexSightCommPartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexCommListPartial.cshtml" />
-    <Content Include="Views\SightDetail\IndexGoogleJsPartial.cshtml" />
-    <Content Include="Views\SightDetail\CommList.cshtml" />
-    <Content Include="Views\Search\IndexPage.cshtml" />
-    <Content Include="Views\Shared\SearchPartial.cshtml" />
-    <Content Include="Views\Shared\BottomPartial.cshtml" />
-    <Content Include="packages.config" />
-    <Content Include="Views\Shared\SSOPartial.cshtml" />
     <Content Include="Views\Shared\_TopPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\RightHotHotelPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\RightTodayLowPrice.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -1250,9 +1265,9 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>55208</DevelopmentServerPort>
+          <DevelopmentServerPort>55218</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://jqipow.ipow.cn</IISUrl>
+          <IISUrl>http://jdipow.ipow.cn</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

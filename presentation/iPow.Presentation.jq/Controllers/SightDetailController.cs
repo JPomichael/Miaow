@@ -5,7 +5,7 @@ using System.Web.Mvc;
 
 using iPow.Infrastructure.Crosscutting.NetFramework.Attributes;
 
-namespace iPow.Presentation.jq.Controllers
+namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class SightDetailController :

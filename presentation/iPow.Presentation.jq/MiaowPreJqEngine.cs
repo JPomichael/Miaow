@@ -5,9 +5,9 @@ using System.Web;
 
 using iPow.Infrastructure.Crosscutting.NetFramework.Engines;
 
-namespace iPow.Presentation.jq
+namespace Miaow.Presentation.jq
 {
-    public class iPowPreJqEngine :
+    public class MiaowPreJqEngine :
         iPow.Infrastructure.Crosscutting.NetFramework.Engines.EngineManager
     {
 

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过下列特性集
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("iPow.jq")]
+[assembly: AssemblyTitle("Miaow.Presentation.jq")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("iPow.jq")]
-[assembly: AssemblyCopyright("版权所有(C) Microsoft 2011")]
+[assembly: AssemblyProduct("Miaow.Presentation.jq")]
+[assembly: AssemblyCopyright("版权所有(C) Microsoft 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

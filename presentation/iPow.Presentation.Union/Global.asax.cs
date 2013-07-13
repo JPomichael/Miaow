@@ -7,7 +7,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 
-namespace iPow.Presentation.Union
+namespace Miaow.Presentation.Union
 {
     public class MvcApplication : System.Web.HttpApplication
     {
@@ -20,7 +20,7 @@ namespace iPow.Presentation.Union
         {
             routes.IgnoreRoute("elmah.axd");
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            iPowPreUnionRegistRoute.Register(routes);
+            MiaowPreUnionRegistRoute.Register(routes);
             routes.MapRoute("Default", "{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional });
         }
@@ -32,12 +32,12 @@ namespace iPow.Presentation.Union
             //入注器声明准备工作
             var builder = new ContainerBuilder();
             //注册类型
-            iPow.Presentation.Union.iPowPreUnionIoc.Register(builder);
+            Miaow.Presentation.Union.MiaowPreUnionIoc.Register(builder);
             //end 注册类型
             //声明入注器
             var container = builder.Build();
             //初始化自己的Ioc
-            iPow.Presentation.Union.iPowPreUnionEngine.Current.Container = container;
+            Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Container = container;
             var dependency = new AutofacDependencyResolver(container);
             //告知mvc入注器为autofac
             DependencyResolver.SetResolver(dependency);

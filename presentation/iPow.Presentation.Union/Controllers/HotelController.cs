@@ -8,7 +8,7 @@ using Webdiyer.WebControls.Mvc;
 using iPow.Application.Union.Dto;
 using iPow.Infrastructure.Crosscutting.NetFramework.Attributes;
 
-namespace iPow.Presentation.Union.Controllers
+namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class HotelController :

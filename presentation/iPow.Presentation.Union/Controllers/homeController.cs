@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Collections.Generic;
 
-namespace iPow.Presentation.Union.Controllers
+namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class HomeController :
