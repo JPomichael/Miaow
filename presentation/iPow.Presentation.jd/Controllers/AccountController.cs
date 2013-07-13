@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Web.Mvc;
 using System.Web.Security;
-using iPow.jd.Models;
+using Miaow.Presentation.jd.Models;
 
 
-namespace iPow.jd.Controllers
+namespace Miaow.Presentation.jd.Controllers
 {
     public class AccountController : ControllerBase
     {

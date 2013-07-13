@@ -1,0 +1,13 @@
+﻿<span class="imgLink"></span>
+<span class="textLink">
+    @{
+        IQueryable<iPow.jd.Models.BottomHotelLinks> hl = iPow.jd.Bll.BottomHotelLinks.GetHotelBottomLinks();
+        if (hl != null)
+        {
+            foreach (var item in hl)
+            {
+        <a href="@(item.Url)" target="_blank" class="aText" title="@(item.Title)">@(item.Title)</a>
+            }
+        }
+    }
+</span>

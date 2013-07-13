@@ -1,0 +1,50 @@
+﻿<script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>
+<div class="hotTop">
+    <ul id="ulMenu">
+        <li><a href="javascript:" id="guangdong" onclick="GetVouchData('/HeadVouchData/GetVouchData' , '广州' , 'hotContainer')"
+            class="left">广州</a></li>
+        <li><a href="javascript:" id="shanghai" onclick="GetVouchData('/HeadVouchData/GetVouchData' , '上海' , 'hotContainer')">
+            上海</a></li>
+        <li><a href="javascript:" id="shenzhen" onclick="GetVouchData('/HeadVouchData/GetVouchData' , '深圳' , 'hotContainer')">
+            深圳</a></li>
+        <li><a href="javascript:" id="beijing" onclick="GetVouchData('/HeadVouchData/GetVouchData' , '北京' , 'hotContainer')"
+            class="right">北京</a></li>
+    </ul>
+    <div style="float: left; width: 200px; overflow: hidden; text-align: center; line-height: 23px;
+        text-align: left;">
+        << 全部<span id="spanArea"><a href="javascript:">
+            @(ViewBag.city != null ? ViewBag.city : "广州")景区</a></span></div>
+    <div class="hotButton">
+        <a href="javascript:void(0);">旅游目的地</a> <a href="javascript:" class="current">出行城市</a>
+    </div>
+</div>
+<div class="hotArea" id="hotSight">
+    @{
+        <h3>
+            热点景区</h3> 
+        IQueryable<iPow.jd.Models.HeadVouchSightInfo> si = null;
+        si =  iPow.jd.Bll.HeadVouchData.GetVouchSightByCityName(ViewBag.city != null ? ViewBag.city : "广州", 10);
+        if (si != null)
+        {
+            foreach (var item in si)
+            {
+        <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.Id)/1" title="@item.Title"  target="_blank">
+            <dl>
+                <dt>
+                    @(item.Title.Length >= 6 ? (item.Title.Substring(0, 5) + "…") : item.Title)
+                </dt>
+                <dd class="img">
+                    @{
+                List<string> list = iPow.BllComm.Utility.GetSightDefaultPic(item.Id);
+                        <img src="@(list.Count == 3 ? list[0] + "CutDown/116_103_" + list[1] : "#")" alt = "@(list.Count == 3 ? list[2] : "暂无图片")" />
+                    }
+                </dd>
+                <dd class="info">
+                    @(iPow.BllComm.Utility.GetSightCirHotelCount(item.Id).ToString())
+                    家酒店</dd>
+            </dl>
+        </a>
+            }
+        }
+    }
+</div>

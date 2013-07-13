@@ -7,7 +7,7 @@ using System.Web;
 using System.Configuration;
 using System.Data;
 
-namespace iPow.jd.Models
+namespace Miaow.Presentation.jd.Models
 {
     /// <summary>
     /// 

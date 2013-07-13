@@ -84,7 +84,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Presentation.jq", "pre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miaow.Presentation.dj", "presentation\iPow.Presentation.dj\Miaow.Presentation.dj.csproj", "{C282C053-3154-49F3-A940-1D957594C285}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Presentation.jd", "presentation\iPow.Presentation.jd\iPow.Presentation.jd.csproj", "{8756AA6E-B620-4A3A-B2EC-FAE759FAF884}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Miaow.Presentation.jd", "presentation\iPow.Presentation.jd\Miaow.Presentation.jd.csproj", "{8756AA6E-B620-4A3A-B2EC-FAE759FAF884}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPow.Presentation.Union", "presentation\iPow.Presentation.Union\iPow.Presentation.Union.csproj", "{D3919725-5EFA-48AA-97C1-2D4EF93714BD}"
 EndProject

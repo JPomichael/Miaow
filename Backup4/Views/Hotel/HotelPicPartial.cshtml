@@ -1,0 +1,44 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model PagedList<iPow.DataSys.Sys_HotelPic>
+<!--酒店图片开始-->
+@*<div class="tabcontainerhide" id="hotelInfo3">*@
+<div class="infoGuid">
+    <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />酒店图片 ///
+</div>
+<div class="infoContainer" style="padding-bottom: 5px;" id="updatePic">
+    @{
+        if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                if (!string.IsNullOrEmpty(item.PicPath) && !string.IsNullOrEmpty(item.PicName))
+                { 
+        <a href="@(item.PicPath + item.PicName)" class="imgList"
+                target="_blank">
+            <img src="@(item.PicPath + item.PicName)" alt="" /></a>
+                }
+            }
+        }
+    }
+    <p>
+        @{
+            @Html.AjaxPager(Model, "HotelPicList", "Hotel",
+                new PagerOptions()
+                {
+                    PageIndexParameterName = "pi",
+                    LastPageText = "尾页",
+                    FirstPageText = "首页",
+                    PrevPageText = "上一页",
+                    NextPageText = "下一页",
+                    CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>",
+                    CssClass = "Pagecon"
+                },
+                new AjaxOptions()
+                {
+                    UpdateTargetId = "updatePic",
+                    OnBegin = "",
+                    OnComplete = ""
+                })
+        }
+    </p>
+</div>

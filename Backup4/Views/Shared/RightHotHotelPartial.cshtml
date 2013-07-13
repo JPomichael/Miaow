@@ -1,0 +1,34 @@
+﻿@{
+    try
+    {
+        iPow.function.LocationInfo li = iPow.function.LocationFucntion.LocationInfo();
+        if (li != null)
+        {
+            IQueryable<iPow.jd.Models.RightTodayLowerPriceAndHoteHotel> hp = iPow.jd.Bll.RightTodayLowPrice.GetRightHotHotelByProvince(li.Province, 10);
+            if (hp != null)
+            {
+                int i = 1;
+                foreach (var item in hp)
+                {
+    <ul>
+        <li><a href="/hotel/@(item.IdentityId)" class="aOrderList" title="@item.HotelName"
+            target="_blank"><span class="name">
+                <img src="/images/icon/htop@(i).jpg" />@(item.HotelName.Length > 6 ? item.HotelName.Substring(0, 6) : item.HotelName)</span>
+            <span class="price">￥@(item.MinPrice)</span> <span class="visit">@(item.ViCount)</span>
+        </a></li>
+    </ul>
+                    i++;
+                }
+            }
+            else
+            { 
+    <ul>
+    </ul>
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+    @ex.Message
+    }
+}

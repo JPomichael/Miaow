@@ -1,0 +1,28 @@
+﻿@model IQueryable<iPow.jd.Models.MidHotHotelInfo>
+@{
+    if (Model != null)
+    {
+        if (Model.Count() > 0)
+        {
+            foreach (var it in Model)
+            {
+    <a href="/hotel/@(it.IdentityId)" target="_blank" class="aLeftList">
+        <ul>
+            <li><span class="spanPrice">￥@(it.MinPrice)</span> <span class="spanStat">@(it.ClassName)</span>
+                <span class="spanName">@(it.HotelName)</span> <span class="spanHot">@(it.ViCount)</span>
+            </li>
+        </ul>
+    </a>    
+            }
+        }
+        else
+        {
+    <a href="javascript:" class="aLeftList">
+        <ul>
+            <li><span class="spanPrice">￥0</span> <span class="spanStat">没有找到相应类型</span> <span
+                class="spanName">没有找到相应类型</span> <span class="spanHot">0</span> </li>
+        </ul>
+    </a> 
+        }
+    }
+}

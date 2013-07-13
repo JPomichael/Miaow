@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 
-namespace iPow.jd.Controllers
+namespace Miaow.Presentation.jd.Controllers
 {
     public class LeftMidHotHotelController : ControllerBase
     {

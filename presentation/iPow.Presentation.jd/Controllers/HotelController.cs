@@ -4,7 +4,7 @@ using System.Web.Mvc;
 
 using Webdiyer.WebControls.Mvc;
 
-namespace iPow.jd.Controllers
+namespace Miaow.Presentation.jd.Controllers
 {
     public class HotelController : ControllerBase
     {

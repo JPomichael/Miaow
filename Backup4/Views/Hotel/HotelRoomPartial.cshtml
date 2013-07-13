@@ -1,0 +1,36 @@
+﻿<!--酒店价格开始-->
+<div class="tabcontainershow" id="hotelInfo1">
+    <div class="infoGuid">
+        <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />房型价格 ///
+    </div>
+    <div class="hotelPrice">
+        <ul id="PriceUl">
+            <li class="tr0"><span class="width1">房型名称</span> <span class="width3">房价</span> <span
+                class="width4">房型描述</span> @*<span class="width5">在线预订</span>*@
+                <div class="clear">
+                </div>
+            </li>
+            @{
+                if (ViewBag.hotelid != null)
+                {
+                    IQueryable<iPow.jd.Models.HotelDetailMidRoomPrice> hd = iPow.jd.Bll.HotelDetail.GetHotelDetailMidRoomListByHotelId(ViewBag.hotelid);
+                    if (hd != null)
+                    {
+                        foreach (var item in hd)
+                        {
+                <li class="tr1"><span class="width1"><a href="javascript:void(0);" title="@(item.RoomName)">@(item.RoomName)</a></span>
+                    <span class="width33">RMB@(item.RoomPrice)</span> <span class="width4"><a href="javascript:void(0);"
+                        title="大床/双床 部分免费宽带">@(item.RoomDes)</a></span> <span class="width5">@*  <a href="/HotelReserve.aspx?hotelid=@(item.IdentfiyId)&rt=@item.RoomType&max=2"
+                            target="_blank" title="预定">
+                            <img src="/images/btn_reserver01.jpg" border="0" style="margin-top: 5px;" /></a>*@</span>
+                    <div class="clear">
+                    </div>
+                </li>
+                        }
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>
+<!--酒店价格结束-->

@@ -1,0 +1,40 @@
+﻿@{
+    var address = iPow.function.LocationFucntion.LocationInfo();
+    ViewBag.Title = ((address != null && address.Province != null) ? address.Province + "_" : "") + "酒店预订_";
+}
+
+<link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/hotel_index.css")" />
+<!--页面头部结束-->
+<div id="hotContainer" class="mainContainer">
+    @Html.Partial("HeadVouchDataPartial")
+</div>
+<!--页面头部结束-->
+<!--页面内容开始-->
+<div class="infoContainer">
+    <div class="leftContainer">
+        @Html.Partial("LeftMidPartial")
+    </div>
+    <div class="rightContainer">
+        <div class="rightTitle1">
+            <h3>
+                今日低价</h3>
+        </div>
+        <div class="rightContent">
+            <ul id="minPriceList">
+                @Html.Action("GetTodayLowPrice", "RightTodayLowPriceHotHotel")
+            </ul>
+        </div>
+        <div class="rightTitle2">
+            <h3>
+                人气酒店排行榜</h3>
+        </div>
+        <div class="orderContent">
+            <ul id="visitList">
+                @Html.Action("GetHotHotel", "RightTodayLowPriceHotHotel")
+            </ul>
+        </div>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+<!--页面内容结束-->

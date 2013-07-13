@@ -1,13 +1,13 @@
 ﻿using System;
 
 using System.Web.Mvc;
-using iPow.jd.Models;
+using Miaow.Presentation.jd.Models;
 using System.Web.Routing;
 using System.Security.Principal;
 using System.Web;
 using System.Web.Security;
 
-namespace iPow.jd.Controllers
+namespace Miaow.Presentation.jd.Controllers
 {
     public class ControllerBase : System.Web.Mvc.Controller
     {

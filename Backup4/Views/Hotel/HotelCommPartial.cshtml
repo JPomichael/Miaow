@@ -1,0 +1,141 @@
+﻿@using Webdiyer.WebControls.Mvc
+@model Webdiyer.WebControls.Mvc.PagedList<iPow.DataSys.Sys_HotelComm>
+<script src="@Url.Content("~/Scripts/jquery.form.js")" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#fromAddComm').submit(function () {
+            var options = {
+                target: '#updateCommList',   // target element(s) to be updated with server response 
+                beforeSubmit: showRequest,  // pre-submit callback 
+                success: showResponse,  // post-submit callback 
+                type: 'POST',
+                url: '/hotel/addhotelcomm/1',
+                data: null,
+                dataType: null,
+                timeout: 6000
+            };
+            $(this).ajaxSubmit(options);
+            return false;
+        });
+    });
+
+    function showRequest(formData, jqForm, options) {
+        var queryString = $.param(formData);
+        return checkedCommForm();
+    }
+
+    function checkedCommForm() {
+        if ($('#UserName').val() == '') {
+            $('#UserName').focus();
+            alert('写个称呼吧');
+            return false;
+        }
+        if ($('#Content').val() == '') {
+            $('#Content').focus();
+            alert('内容不能为空哦');
+            return false;
+        }
+        return true;
+    }
+
+    function showResponse(responseText, statusText, xhr, $form) {
+        //alert(responseText); //返回结果
+        //是否成功
+        if (statusText == 'success') {
+            alert('评论成功');
+        }
+        else {
+            alert('麻烦你再试一下看看');
+        }
+
+    } 
+</script>
+<!--用户评论开始-->
+@*<div class="tabcontainerhide" id="hotelInfo4">*@
+<div class="infoGuid">
+    <img src="/images/ico01.gif" width="16" height="16" align="absmiddle" />用户评论 ///
+</div>
+<div class="infoContainer">
+    <div id="updateCommList">
+        <div class="commBody" id="CommonList">
+            @{
+                if (Model != null && Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        var userId = "user" + item.UserID.ToString();
+                        var ips = item.Ip.Split('.');
+                        var ip = ips[0] + "." + ips[1] + ".*.*";
+                        var contentId = "commContent" + item.UserID.ToString();
+                <p class="over">
+                    <img src="/Content/images/face/face1.jpg" width="45" height="45" class="face" />
+                    <span class="spanUser" id='@(userId)'><b>iPow@(item.UserName)</b> ip：@(ip)</span>
+                    @* <span class="spanScore">@item.Point</span>*@ <span class="content" id="@(contentId)">@(item.Content)</span>
+                    <span class="control">发表于：@(item.AddTime.ToString())&nbsp;&nbsp;&nbsp;&nbsp; <a href="javascript:;"
+                        onclick="showCommReply('')" style="display: none">引用回复</a>&nbsp;</span>
+                </p>
+                    }
+                }
+                else
+                {
+                <p>
+                    暂时还没有评论的，评论一个吧……
+                </p>
+                }
+            }
+        </div>
+        <div class="" style="text-align: right;" id="PageList">
+            @{
+                @Html.AjaxPager(Model, "HotelCommList", "Hotel",
+                     new PagerOptions() { PageIndexParameterName = "pi", LastPageText = "尾页", FirstPageText = "首页", PrevPageText = "上一页", NextPageText = "下一页", CurrentPagerItemWrapperFormatString = "<span class=\"current\">{0}</span>" },
+                                       new AjaxOptions() { UpdateTargetId = "updateCommList", OnBegin = "", OnComplete = "" });
+            }
+        </div>
+    </div>
+    <div class="commBody">
+        <div class="commTitle" style="font-size: 14px; font-weight: bold;">
+            添加评论
+        </div>
+        <form id="fromAddComm">
+        <div style="display: none">
+            <input  value="@(ViewBag.hotelid == null ? "" : ViewBag.hotelid)"  id="HotelID" name = "HotelID" />
+            <input value="" id="UserId" name="UserId" />
+        </div>
+        <div class="commTitle">
+            <input class="input3" size="20" value="游客" name="UserName" id="UserName" />顺便打个分
+            <input name="Sroce" type="radio" id="Sroce" value="5" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <input name="Sroce" type="radio" id="Sroce" value="4" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <input name="Sroce" type="radio" id="Sroce" value="3" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <input name="Sroce" type="radio" id="Sroce" value="2" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <img height="11" src="/images/start.gif" width="12" />
+            <input name="Sroce" type="radio" id="Sroce" value="1" />
+            <img height="11" src="/images/start.gif" width="12" />
+        </div>
+        <div class="commTitle">
+            <textarea class="input3" id="Content" name="Content" rows="6" cols="70"></textarea>
+        </div>
+        <div class="commTitle">
+            <input type="submit" style="background: url('/images/btn_Submit.gif') no-repeat scroll 0 0 transparent;
+                width: 50px; height: 20px; cursor: pointer;" value="" id="btnAddHotelComm" />
+            请大伙遵纪守法并注意语言文明
+        </div>
+        </form>
+    </div>
+    <div class="clear">
+    </div>
+</div>
+@*</div>*@
+<!--用户评论结束-->

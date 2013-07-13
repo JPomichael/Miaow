@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
 
-namespace iPow.jd.Models
+namespace Miaow.Presentation.jd.Models
 {
     #region 模型
 

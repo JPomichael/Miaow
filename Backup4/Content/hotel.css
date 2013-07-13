@@ -1,0 +1,138 @@
+﻿@charset "utf-8"; 
+
+.mainContainer{width:960px; margin:0px auto; padding:7px 20px; background:#fff}
+.mainContainerLeft{float:left; width:678px}
+.mainContainerRight{float:right; width:265px}
+.guidInfo{float:left; width:676px; padding:1px; border:1px solid #e08300}
+.guidTop{float:left; width:100%; height:28px; background:url(/images/guid_bg.jpg) no-repeat}
+.guidBottom{float:left; width:100%; height:120px}
+.guidBottomLeft{float:left; width:450px; padding-left:10px}
+.spanTitle{float:left; height:56px; width:320px; line-height:56px}
+.spanClass{float:left; height:56px; width:120px; line-height:56px}
+.spanClass h4{font-size:14px}
+.guidBottomLeft1{float:left; width:100%; height:56px}
+.guidBottomLeft1 h1{font-size:18px}
+.guidBottomLeft1 p{margin:0px; padding:0px; line-height:26px}
+.guidBottomRight{float:left; width:185px; padding-top:18px; padding-left:18px}
+.guidGo{    width:72px; float:left; padding-right:15px}
+.guidGo1{    width:72px; float:left; padding:0px}
+.guidGoShow{float:left;     width:72px; height:58px; background-image:url(/images/count_showBG.jpg); line-height:27px; color:#FFF; text-align:center}
+.guidGoShowBanner{float:left;     width:72px; height:20px; margin-top:10px; background-image:url(/images/count_banner.gif); text-align:center; line-height:20px}
+.guidGoShowBanner A:link{color:#fff; text-decoration:none}
+.guidGoShowBanner A:visited{color:#fff; text-decoration:none}
+.guidGoShowBanner A:hover{color:#fff; text-decoration:none}
+.guidGoShowBanner A:active{color:#fff; text-decoration:none}
+
+.infoGuid{float:left; width:646px; border-bottom:1px dashed #888; padding-left:15px!important; padding-left:7px; padding-top:7px; padding-bottom:7px; color:#e08300; font-weight:bold}
+.tabcontainershow{float:left; width:100%}
+
+.hotelPrice{float:left; width:646px; margin:5px 15px!important; margin:5px 7px; padding-bottom:10px}
+.hotelPrice A:link{COLOR:#000; TEXT-DECORATION:none}
+.hotelPrice A:visited{COLOR:#000; TEXT-DECORATION:none}
+.hotelPrice A:hover{COLOR:#f00; TEXT-DECORATION:none}
+.hotelPrice A:active{COLOR:#f00; TEXT-DECORATION:none}
+ul{list-style:none}
+.hotelPrice ul{float:left; width:646px; border:0}
+.hotelPrice ul li{float:left; width:646px; margin-bottom:1px}
+.hotelPrice ul li.tr0{height:32px; background:#8e8e8e; color:#fff; font-size:14px; font-weight:bold}
+.hotelPrice ul li.tr1{height:32px; border-bottom:#8e8e8e 1px solid}
+.hotelPrice ul li.tr2{height:50px; background:#fff}
+.hotelPrice ul li span{float:left; line-height:32px}
+.width1{width:120px; text-align:center; word-break:break-all; word-wrap:break-word; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.width2{width:100px; text-align:center}
+.width22{width:100px; text-align:center; color:#0f9b00; font-weight:bold; text-decoration:line-through}
+.width3{width:100px; text-align:center}
+.width33{width:100px; text-align:center; color:#e08300; font-weight:bold}
+.width4{width:320px; text-align:left; word-break:break-all; word-wrap:break-word; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.width5{width:100px; text-align:center}
+.priceOver{background-color:#e5e5e5}
+.priceOut{background-color:#fff}
+
+.tabmenu{float:left; width:678px; height:46px}
+.tabmenu ul{position:absolute; float:left; width:450px; margin-left:20px; margin-top:14px}
+.tabmenu li{float:left; width:79px; height:33px; margin-right:5px; background:url(/images/Tab02.jpg) no-repeat; color:#000; line-height:33px; text-align:center; cursor:pointer}
+.tabmenu li.tabcurrent{background:url(/images/Tab01.jpg) no-repeat; color:#E34000; cursor:auto}
+.tabcontainerhide{width:0px; height:0px; overflow:hidden}
+#desc2{display:none}
+.infoContainer{float:left; width:662px; padding-top:10px; padding-left:7px}
+.infoContainer p{margin:0px; padding:0px; line-height:22px; text-indent:20px}
+
+.commBody{padding-top:10px; padding-bottom:10px}
+.commentback{WIDTH:640px; margin:0 auto; margin-top:10px; background-color:#FFFCF0; border:1px solid #EAEAEA; padding:10px}
+.commentfix{ WIDTH:54px; HEIGHT:60px; float:left}
+.commentBody1{ WIDTH:496px; height:22px; float:left}
+.commentBody1 .UserName{font-size:14px; color:#f07800; font-weight:bold}
+.commentBody1 .SendTime{font-size:12px; color:#a17b00; line-height:21px}
+.commentBody2{ WIDTH:110px; ; float:left; height:22px}
+.commentBody3{ WIDTH:80px; ; float:left; height:22px}
+.commentText{ WIDTH:570px; float:left}
+.commentText span{font-size:12px; color:#000; line-height:30px}
+.whonamepic{background-color:#FFF; border:1px solid #EAEAEA}
+.commTitle{WIDTH:640px; margin:0 auto; padding:5px; color:#f07800; font-size:12px}
+
+.pageList{float:left; width:100%; height:18px; padding:5px 0px; text-align:center}
+.pageList span{float:right; width:20px; height:20px; color:#f00; font-size:20px; font-style:normal}
+.pageList a{float:right; width:18px; height:18px; border:1px solid #f4d288; text-decoration:none; color:#C2702C; margin:0 0 0 5px; background-color:#FEF5E9}
+.pageList a:hover{border:1px solid #f4d288; text-decoration:none; color:#C2702C; background-color:#F9DEA2}
+
+.trafficTool{float:left; width:654px; margin-left:6px!important; margin-left:6px; margin-bottom:5px}
+.trafficTab{float:left; width:100%; height:29px}
+.trafficTabRight{float:left; width:337px; height:28px; border-bottom:1px #e1880a solid; line-height:28px; text-align:right; color:#f49200; font-weight:bold}
+.trafficNav{float:left; width:312px; height:29px}
+.trafficNav li{float:left; height:29px; line-height:29px; text-align:center; color:#FFF; font-weight:bold}
+.trafficNav li.style1, .trafficNav li.style3{width:92px; background:url(/images/traffic_nav1.jpg) no-repeat}
+.trafficNav li.style2{width:128px; background:url(/images/traffic_nav2_2.jpg) no-repeat}
+.trafficNav li.style1_2, .trafficNav li.style3_2{width:92px; background:url(/images/traffic_nav1_2.jpg) no-repeat; cursor:pointer}
+.trafficNav li.style2_2{width:128px; background:url(/images/traffic_nav2.jpg) no-repeat; cursor:pointer}
+.trafficSearch{float:left; width:100%; height:61px; background:url(/images/traffic_searchMid.jpg) repeat-x}
+.trafficSearchLeft{float:left; width:7px; height:61px; background:url(/images/traffic_searchLeft.jpg) no-repeat}
+.trafficSearchRight{float:right; width:7px; height:61px; background:url(/images/traffic_searchRight.jpg) no-repeat}
+.trafficSearchMid{float:left; width:636px; height:61px; color:#FFF}
+.trafficInput{height:18px; width:110px; border:1px #ffad49 solid; margin-left:3px; line-height:18px}
+.showInput{float:left; width:100%; height:22px; margin-top:15px}
+.trafficResultL{float:left; width:243px; background:url(/images/trafficResultBg.jpg) repeat-y}
+.trafficResultLT{float:left; width:243px; height:26px; background:url(/images/traffic_rLT.jpg) no-repeat}
+.trafficResultLM{float:left; width:243px; height:300px}
+.trafficResultLB{float:left; width:243px; height:7px; font-size:1px; background:url(/images/traffic_rLB.jpg) no-repeat}
+.trafficResultR{float:left; width:406px; height:331px; border:1px #e1880a solid; border-width:1px 1px 1px 0px}
+.mainContainerRight h3{text-indent:38px; font-size:14px; color:#fff}
+.rightGuid1{float:right; width:265px; height:27px; line-height:27px; background:url(/images/guid_tag03.jpg) no-repeat}
+
+.rightGuid2{float:right; width:265px; height:29px; line-height:29px; margin-top:10px; background:url(/images/guid_tag04.jpg) no-repeat}
+.rightContainer2, .rightContainer1{float:right; width:265px}
+.rightContainer1 a.aRightList{float:left; display:block; width:100%; height:33px; text-decoration:none}
+.rightContainer1 li{float:left; width:260px; margin-left:3px!important; margin-left:1px; height:34px; line-height:34px; background:url(/images/li_bg.jpg) repeat-x; list-style:none}
+.rightContainer1 li span{float:left; color:#767676; font-weight:700; font-size:14px; cursor:pointer}
+.rightContainer1 li em{float:right; margin-right:7px; color:#17a500; cursor:pointer}
+.rightContainer2 li{height:24px; line-height:24px}
+.rightContainer2 a.aOrderList{float:left; display:block; width:100%; height:24px; line-height:24px; border-bottom:1px solid #c0c0c0; text-decoration:none}
+.rightContainer2 a.aOrderList:hover{background-color:#f0f0f0; border-bottom:1px solid #c0c0c0}
+.rightContainer1 a.aRightList:hover{background-color:#f0f0f0}
+.rightContainer2 span{float:left; color:#000; text-align:center; cursor:pointer}
+.rightContainer2 img{float:left; display:block; width:13px; height:13px; padding:3px; padding-top:4px; border:0px}
+.rightContainer2 span.name{width:130px; line-height:24px; text-align:left}
+.rightContainer2 span.price{width:50px; font-size:14px; font-weight:700; color:#de7a00; font-family:Arial,Helvetica,sans-serif; overflow:visible}
+.rightContainer2 span.visit{width:50px; text-align:right}
+.divInput{float:left; width:100%; height:30px; padding-top:15px}
+.divInput span{float:left; padding-top:2px}
+a.aFindT{float:right; display:block; width:63px; height:25px; background:url(/images/btn_trafficSearch.jpg) no-repeat}
+
+.trafficResultLM a{display:block; width:223px; height:25px; padding:0 5px; margin:0 5px; line-height:20px; text-decoration:none}
+.trafficResultLM a:hover{background-color:#f0f0f0}
+.trafficResultLM a img{float:left; display:block; width:13px; height:13px; padding:5px 4px}
+.trafficResultLM a span{float:left; display:block; width:120px; text-align:left; cursor:pointer}
+.trafficResultLM a em{float:right; width:58px; text-align:left; color:#0060ff; font-family:Arial; cursor:pointer}
+.infoContainer a.imgList{display:block; float:left; width:208px; height:158px; margin-left:9px; margin-top:15px}
+.infoContainer a.imgList img{padding:3px; border:1px solid #555; width:200px; height:150px}
+
+
+
+
+/*added by yjihrp 2011.7.20.14.47*/
+.Pagecon{float:right; padding:5px 0;margin-right:0px;}
+.Pagecon a,.Pagecon span{font-family:Tahoma, Geneva, sans-serif;}
+.Pagecon a{border:1px solid #CCDBE4;color:#0061DE;font-family:Arial,Helvetica,sans-serif;line-height:16px;margin-right:2px;padding:3px 3px;text-decoration:none;}
+.Pagecon a:hover{background-color:#3666D4;border:1px solid #2B55AF;color:#FFFFFF;}
+.Pagecon span {color:#000000;font-weight:bold;margin-right:3px;padding:3px 3px;}
+.Pagecon .current{color:#000000;font-weight:bold;margin-right:3px;padding:3px 3px;}
+/*end added by yjihrp 2011.7.20.14.47*/
