@@ -22,20 +22,19 @@ Every Day + 1
      
 
 =================
-Project：喵我  mewl.me
-               miaul.me
-            
+Project：
+          喵我  mewl.me
+                miaul.me
 
-
-开发周期：5月零20天（520 哇！）
+开发周期：5月零20天（520 哇！）<br>
 采用框架：.NET4.0，MVC4，DDD, EF,DDD 
 
 =================
 
 
-数据库名：miaowsys 
-项目解决方案名：Miaow
-   记得随手添加注释/切勿删除其他喵友的成果！
+数据库名：miaowsys <br>
+项目解决方案名：Miaow<br>
+      
 ####命名规范：
 项目解决方案，引用命名空间示例如下：  
 ```C#
@@ -49,7 +48,9 @@ using Miaow.Application.account.Dto;
       所有表名   必须使用  前缀 m_+ 表名 +_info   （若为系统或管理表则前缀改为 sys_）
       其字段 user_id ,      (ID/编号 使用 MD5 加密程序)
              user_name,     
-             user_email     
+             user_email    
+             
+      记得随手添加注释/切勿删除其他喵友的成果！             
       ]
     
 
