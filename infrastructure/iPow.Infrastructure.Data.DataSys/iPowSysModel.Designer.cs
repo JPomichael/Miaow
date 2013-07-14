@@ -8,12 +8,13 @@
 //------------------------------------------------------------------------------
 
 using System;
+using System.ComponentModel;
+using System.Data.EntityClient;
 using System.Data.Objects;
 using System.Data.Objects.DataClasses;
-using System.Data.EntityClient;
-using System.ComponentModel;
-using System.Xml.Serialization;
+using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Serialization;
 
 [assembly: EdmSchemaAttribute()]
 #region EDM 关系源元数据
@@ -1288,6 +1289,7 @@ namespace iPow.Infrastructure.Data.DataSys
         private ObjectSet<Sys_MvcControllerRolePermission> _Sys_MvcControllerRolePermission;
 
         #endregion
+
         #region AddTo 方法
     
         /// <summary>
@@ -1899,6 +1901,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 函数导入
     
         /// <summary>
@@ -2346,11 +2349,11 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
     }
-    
 
     #endregion
-    
+
     #region 实体
     
     /// <summary>
@@ -2378,6 +2381,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -2546,6 +2550,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnareacodeChanged();
 
         #endregion
+
     
     }
     
@@ -2571,6 +2576,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -3129,6 +3135,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsArticleChanged();
 
         #endregion
+
     
     }
     
@@ -3178,6 +3185,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -4672,6 +4680,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsProcessChanged();
 
         #endregion
+
     
     }
     
@@ -4697,6 +4706,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -4823,6 +4833,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnActivityIDChanged();
 
         #endregion
+
     
     }
     
@@ -4851,6 +4862,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -5343,6 +5355,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnEmployeeIDChanged();
 
         #endregion
+
     
     }
     
@@ -5371,6 +5384,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -5593,6 +5607,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnStateChanged();
 
         #endregion
+
     
     }
     
@@ -5623,6 +5638,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -5980,6 +5996,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnStateChanged();
 
         #endregion
+
     
     }
     
@@ -6008,6 +6025,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -6230,6 +6248,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSortChanged();
 
         #endregion
+
     
     }
     
@@ -6258,6 +6277,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -6534,6 +6554,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnStateChanged();
 
         #endregion
+
     
     }
     
@@ -6559,6 +6580,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -6685,6 +6707,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnEmailChanged();
 
         #endregion
+
     
     }
     
@@ -6713,6 +6736,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -6962,6 +6986,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsDeleteChanged();
 
         #endregion
+
     
     }
     
@@ -7004,6 +7029,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -7226,6 +7252,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnFenChanged();
 
         #endregion
+
     
     }
     
@@ -7276,6 +7303,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -7903,6 +7931,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSourceChanged();
 
         #endregion
+
     
     }
     
@@ -7937,6 +7966,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -8159,6 +8189,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnProvincePyChanged();
 
         #endregion
+
     
     }
     
@@ -8193,6 +8224,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -8523,6 +8555,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnStateChanged();
 
         #endregion
+
     
     }
     
@@ -8548,6 +8581,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -8746,6 +8780,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnAddTimeChanged();
 
         #endregion
+
     
     }
     
@@ -8782,6 +8817,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -9031,6 +9067,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnDeleteTimeChanged();
 
         #endregion
+
     
     }
     
@@ -9067,6 +9104,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -9205,6 +9243,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnClassIDChanged();
 
         #endregion
+
     
     }
     
@@ -9245,6 +9284,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -9494,6 +9534,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsDeleteChanged();
 
         #endregion
+
     
     }
     
@@ -9542,6 +9583,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -9899,6 +9941,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnStateChanged();
 
         #endregion
+
     
     }
     
@@ -9945,6 +9988,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -10842,6 +10886,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSortNumChanged();
 
         #endregion
+
     
     }
     
@@ -10870,6 +10915,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -11065,6 +11111,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnEmailChanged();
 
         #endregion
+
     
     }
     
@@ -11107,6 +11154,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -11329,6 +11377,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnPointChanged();
 
         #endregion
+
     
     }
     
@@ -11354,6 +11403,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -11744,6 +11794,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnRoomAmountAdviceChanged();
 
         #endregion
+
     
     }
     
@@ -11778,6 +11829,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -11946,6 +11998,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSourceChanged();
 
         #endregion
+
     
     }
     
@@ -11974,6 +12027,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -13090,6 +13144,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnAreaCodeChanged();
 
         #endregion
+
     
     }
     
@@ -13115,6 +13170,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -14129,6 +14185,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnAreaCodeChanged();
 
         #endregion
+
     
     }
     
@@ -14154,6 +14211,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -14616,6 +14674,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnisSendEmailChanged();
 
         #endregion
+
     
     }
     
@@ -14641,6 +14700,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -14815,6 +14875,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnMaxOccupancyChanged();
 
         #endregion
+
     
     }
     
@@ -14843,6 +14904,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -14984,6 +15046,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnCityChanged();
 
         #endregion
+
     
     }
     
@@ -15012,6 +15075,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -15261,6 +15325,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsDeleteChanged();
 
         #endregion
+
     
     }
     
@@ -15312,6 +15377,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -15804,6 +15870,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnAudChanged();
 
         #endregion
+
     
     }
     
@@ -15833,6 +15900,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -16001,6 +16069,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnLogExceptionChanged();
 
         #endregion
+
     
     }
     
@@ -16030,6 +16099,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -16408,6 +16478,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnManageOptionChanged();
 
         #endregion
+
     
     }
     
@@ -16441,6 +16512,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -16690,6 +16762,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSortNumChanged();
 
         #endregion
+
     
     }
     
@@ -16725,6 +16798,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -16974,6 +17048,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSortNumChanged();
 
         #endregion
+
     
     }
     
@@ -17005,6 +17080,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -17200,6 +17276,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSortNumChanged();
 
         #endregion
+
     
     }
     
@@ -17231,6 +17308,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -17426,6 +17504,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSortNumChanged();
 
         #endregion
+
     
     }
     
@@ -17461,6 +17540,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -17710,6 +17790,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSortNumChanged();
 
         #endregion
+
     
     }
     
@@ -17743,6 +17824,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -18019,6 +18101,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnDeleteTimeChanged();
 
         #endregion
+
     
     }
     
@@ -18044,6 +18127,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -18347,6 +18431,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnClassIDChanged();
 
         #endregion
+
     
     }
     
@@ -18372,6 +18457,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -18432,6 +18518,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnDescriptionChanged();
 
         #endregion
+
     
     }
     
@@ -18457,6 +18544,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -18544,6 +18632,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnCategoryIDChanged();
 
         #endregion
+
     
     }
     
@@ -18569,6 +18658,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -18737,6 +18827,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnipChanged();
 
         #endregion
+
     
     }
     
@@ -18762,6 +18853,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -18849,6 +18941,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnkeywordChanged();
 
         #endregion
+
     
     }
     
@@ -18882,6 +18975,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -19158,6 +19252,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnDeleteTimeChanged();
 
         #endregion
+
     
     }
     
@@ -19197,6 +19292,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -19416,6 +19512,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnFenChanged();
 
         #endregion
+
     
     }
     
@@ -19441,6 +19538,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -20056,6 +20154,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsArticleChanged();
 
         #endregion
+
     
     }
     
@@ -20083,6 +20182,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -20143,6 +20243,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnPermissionIDChanged();
 
         #endregion
+
     
     }
     
@@ -20170,6 +20271,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -20257,6 +20359,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnDescriptionChanged();
 
         #endregion
+
     
     }
     
@@ -20282,6 +20385,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -20423,6 +20527,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnCityChanged();
 
         #endregion
+
     
     }
     
@@ -20456,6 +20561,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -20732,6 +20838,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnDeleteTimeChanged();
 
         #endregion
+
     
         #region 导航属性
     
@@ -20758,6 +20865,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -20798,6 +20906,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -21047,6 +21156,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnParentIDChanged();
 
         #endregion
+
     
     }
     
@@ -21096,6 +21206,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -22809,6 +22920,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnSortCityChanged();
 
         #endregion
+
     
         #region 导航属性
     
@@ -22873,6 +22985,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -22897,6 +23010,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -23092,6 +23206,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnStateChanged();
 
         #endregion
+
     
     }
     
@@ -23117,6 +23232,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -23285,6 +23401,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnStateChanged();
 
         #endregion
+
     
     }
     
@@ -23310,6 +23427,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -23532,6 +23650,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnStateChanged();
 
         #endregion
+
     
     }
     
@@ -23559,6 +23678,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -23808,6 +23928,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsDeleteChanged();
 
         #endregion
+
     
         #region 导航属性
     
@@ -23850,6 +23971,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
     }
     
     /// <summary>
@@ -23874,6 +23996,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -24123,6 +24246,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnProvinceChanged();
 
         #endregion
+
     
     }
     
@@ -24148,6 +24272,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -24370,6 +24495,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnRemarkChanged();
 
         #endregion
+
     
     }
     
@@ -24399,6 +24525,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -25053,6 +25180,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnPicUrlChanged();
 
         #endregion
+
     
     }
     
@@ -25078,6 +25206,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -25318,6 +25447,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsDeleteChanged();
 
         #endregion
+
     
     }
     
@@ -25343,6 +25473,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -25586,6 +25717,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIsDeleteChanged();
 
         #endregion
+
     
     }
     
@@ -25611,6 +25743,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -25968,6 +26101,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnVouchTimeChanged();
 
         #endregion
+
     
     }
     
@@ -25993,6 +26127,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -26404,6 +26539,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnAddTimeChanged();
 
         #endregion
+
     
     }
     
@@ -26429,6 +26565,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -26705,6 +26842,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnPlanIDChanged();
 
         #endregion
+
     
     }
     
@@ -26730,6 +26868,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -26790,6 +26929,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnChannelNameChanged();
 
         #endregion
+
     
     }
     
@@ -26819,6 +26959,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -26906,6 +27047,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnRoleIDChanged();
 
         #endregion
+
     
     }
     
@@ -26939,6 +27081,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -27206,6 +27349,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnDeleteTimeChanged();
 
         #endregion
+
     
     }
     
@@ -27247,6 +27391,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -27496,6 +27641,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnVideoTimeChanged();
 
         #endregion
+
     
     }
     
@@ -27525,6 +27671,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -28317,6 +28464,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnScoreChanged();
 
         #endregion
+
     
     }
     
@@ -28342,6 +28490,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -28591,6 +28740,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnCityQuanPChanged();
 
         #endregion
+
     
     }
     
@@ -28616,6 +28766,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -28703,6 +28854,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnCitySChanged();
 
         #endregion
+
     
     }
     
@@ -28728,6 +28880,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -29517,6 +29670,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnCreateDateChanged();
 
         #endregion
+
     
     }
     
@@ -29542,6 +29696,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -29818,6 +29973,7 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnHotelIDsChanged();
 
         #endregion
+
     
     }
     
@@ -29843,6 +29999,7 @@ namespace iPow.Infrastructure.Data.DataSys
         }
 
         #endregion
+
         #region 基元属性
     
         /// <summary>
@@ -30173,9 +30330,11 @@ namespace iPow.Infrastructure.Data.DataSys
         partial void OnIpChanged();
 
         #endregion
+
     
     }
 
     #endregion
+
     
 }

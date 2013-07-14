@@ -57,6 +57,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>iPowSysModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="MiaowSysModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiaowSysModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,9 +76,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>IpowIrainbow1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="MiaowSysModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MiaowSysModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Properties\DataSources\ipowsysEntities.datasource" />
     <None Include="Properties\DataSources\ipowsysEntities1.datasource" />
     <None Include="Properties\DataSources\irainbowEntities.datasource" />
+    <None Include="Properties\DataSources\miaowsysEntities.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
