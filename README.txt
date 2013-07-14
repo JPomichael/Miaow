@@ -21,7 +21,7 @@ Miaow.Infrastructure.Crosscutting
 Miaow.Infrastructure.Crosscutting.Comm.Dto
 Comm.Service要用到的模型
 Miaow.Infrastructure.Crosscutting.Comm.Service
-度假，景区，酒店要用到的公用方法，公用类，（图片获取，优惠信息，用户类）
+要用到的公用方法，公用类，（图片获取，优惠信息，用户类）
 Miaow.Infrastructure.Crosscutting.Function
 公用类库，时间，字符串，加密，Cookie，Session，File，XML，
 Miaow.Infrastructure.Crosscutting.NetFramework
@@ -41,14 +41,12 @@ Miaow.Infrastructure.Data.Repository
 4、mvcpager控件
 主项目路径：infrastructure/crosscutting/MvcPager
 项目已经有很多更新的了,比如说分页控件部分项目没有更新：Miaow.jd项目没有更新，若是要更新的话，请更新这些地方
-用到分页的地方大概有
-1、搜索
-2、酒店评论
+
 分页用了新版的，适合MVC3，所以在分页的时候，得加上了个js，源码可以在codeplex上找到
 5、项目Miaow.Presentation.jd说明
-这个项目是酒店，已经没有上线了，所以，在说明文档产生之前的改动都没有对该项目进行改动，
+已经没有上线了，所以，在说明文档产生之前的改动都没有对该项目进行改动，
 涉及到的项目都在presentation/jd路径下
-取而代之的是Miaow.Union酒店项目
+取而代之的是Miaow.Union项目
 6、项目存在的问题
 7、开发注意事项
 7.1、在code first 方式下开发的话
