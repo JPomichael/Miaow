@@ -101,11 +101,11 @@
       <Project>{F7BCE9A5-A826-410A-849D-D4F5C551B4DC}</Project>
       <Name>Miaow.Infrastructure.Crosscutting.Authorize</Name>
     </ProjectReference>
-    <ProjectReference Include="..\iPow.Infrastructure.Crosscutting.Comm.Dto\Miaow.Infrastructure.Crosscutting.Comm.Dto.csproj">
+    <ProjectReference Include="..\Miaow.Infrastructure.Data %282%29.Dto\Miaow.Infrastructure.Crosscutting.Comm.Dto.csproj">
       <Project>{00B1115B-0DDC-482D-AAF8-13D3C56A65D5}</Project>
       <Name>Miaow.Infrastructure.Crosscutting.Comm.Dto</Name>
     </ProjectReference>
-    <ProjectReference Include="..\iPow.Infrastructure.Crosscutting.Comm.Service\Miaow.Infrastructure.Crosscutting.Comm.Service.csproj">
+    <ProjectReference Include="..\Miaow.Infrastructure.Data.Service\Miaow.Infrastructure.Crosscutting.Comm.Service.csproj">
       <Project>{87E6A634-A50D-4277-982B-0B16CFAC5738}</Project>
       <Name>Miaow.Infrastructure.Crosscutting.Comm.Service</Name>
     </ProjectReference>
