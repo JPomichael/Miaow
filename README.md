@@ -6,7 +6,7 @@ Every Day + 1
 [![image]](Reversion https://github.com/Reversion)  
 [image]: https://secure.gravatar.com/avatar/07248c0b131ff07a5cd636707aed6f4d?s=120&d=https://a248.e.akamai.net/assets.github.com%2Fimages%2Fgravatars%2Fgravatar-org-120.png
 
---------------
+=================
 
 描述：日志记录类小清新网站，图文和音乐 （音乐采用虾米接口）
       采用新浪微博，腾讯QQ，豆瓣 第三方接口登陆注册  
@@ -22,7 +22,7 @@ Every Day + 1
       除管理员后台外，还需为小组设置一定的权限 对组，组员，活动 进行管理操作
      
 
---------------
+=================
 Project：喵我  mewl.me
                miaul.me
                项目解决方案为 Miaow
@@ -32,7 +32,7 @@ Project：喵我  mewl.me
 开发周期：5月零20天（520 哇！）
 采用框架：.NET4.0，MVC4，DDD(面向领域的多层分布式架构) , EF,DDD 
 
---------------
+=================
 
 
 数据库名为  miaowsys 
@@ -41,6 +41,8 @@ Project：喵我  mewl.me
 ```C#
 using Miaow.Application.account.Dto
 ```
+解决方案/命名空间示例：
+```C#
        
        [  Miaow.   前缀]
        注意命名规范 
@@ -49,5 +51,5 @@ using Miaow.Application.account.Dto
        其字段 user_id ,   user_name, user_email     (ID/编号 使用 MD5 加密程序)
        以上规范参考新浪微博数据库
 
---------------       
+=================      
 
