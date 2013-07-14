@@ -9,22 +9,22 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
     [HandleError]
     public class RolePermissionController : Controller
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IRoleService roleService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IRoleService roleService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcActionService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcActionService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClassService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClassService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcControllerService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcControllerService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService mvcRolePermissionService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService mvcRolePermissionService;
 
-        public RolePermissionController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IRoleService role,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcAction,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClass,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcController,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService rolePermission)
+        public RolePermissionController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IRoleService role,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcAction,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClass,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcController,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService rolePermission)
         {
             if (role == null)
             {
@@ -72,10 +72,10 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                     var hasActionModel = mvcActionService.GetList().Where(e => e.Id == actionId).FirstOrDefault();
                     if (hasActionModel != null && hasActionModel.Id > 0)
                     {
-                        var addPermissionModel = new iPow.Infrastructure.Data.DataSys.Sys_MvcControllerRolePermission();
+                        var addPermissionModel = new Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerRolePermission();
                         addPermissionModel.ActionId = actionId;
                         addPermissionModel.AddTime = System.DateTime.Now;
-                        addPermissionModel.IpAddress = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+                        addPermissionModel.IpAddress = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
                         addPermissionModel.Name = hasActionModel.Name;
                         addPermissionModel.Remark = hasActionModel.Remark;
                         addPermissionModel.RoleId = roleId;
@@ -131,11 +131,11 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             }
         }
 
-        protected iPow.Infrastructure.Crosscutting.Authorize.Dto.RolePermissionDto
+        protected Miaow.Infrastructure.Crosscutting.Authorize.Dto.RolePermissionDto
             GetRolePermissionDto(int roleId)
         {
             var data = roleService.Get(roleId);
-            var model = new iPow.Infrastructure.Crosscutting.Authorize.Dto.RolePermissionDto();
+            var model = new Miaow.Infrastructure.Crosscutting.Authorize.Dto.RolePermissionDto();
             model.Id = data.Id;
             model.RoleID = data.RoleID;
             model.Description = data.Description;
@@ -144,7 +144,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             var permission = permissionActionIdList.ToList();
 
             var actionList = mvcActionService.GetList(permissionActionIdList)
-                .Select(e => new iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcActionDto()
+                .Select(e => new Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcActionDto()
                 {
                     ActionId = e.Id,
                     ActionName = e.Name,

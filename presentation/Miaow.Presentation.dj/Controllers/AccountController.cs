@@ -5,10 +5,10 @@ namespace Miaow.Presentation.dj.Controllers
 {
     [HandleError]
     public class AccountController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
 
-        public AccountController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
+        public AccountController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
             : base(work)
         { }
 

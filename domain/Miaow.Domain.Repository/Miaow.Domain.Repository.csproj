@@ -45,69 +45,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAdminUserClassRepository.cs" />
-    <Compile Include="IArticleClassRepository.cs" />
-    <Compile Include="IArticleCommRepository.cs" />
-    <Compile Include="IArticleInfoRepository.cs" />
-    <Compile Include="ICityAreaCodeRepository.cs" />
-    <Compile Include="ICityInfoMoreRepository.cs" />
-    <Compile Include="ICityInfoRepository.cs" />
-    <Compile Include="IDiscountClassRepository.cs" />
-    <Compile Include="IDiscountCommRepository.cs" />
-    <Compile Include="IHotelCommRepository.cs" />
-    <Compile Include="IHotelDailyRates2Repository.cs" />
-    <Compile Include="IHotelReservationInfoRepository.cs" />
-    <Compile Include="IHotelRoomInfoRepository.cs" />
-    <Compile Include="ILinkInfoRepository.cs" />
-    <Compile Include="ILinksClassRepository.cs" />
-    <Compile Include="ILinksInfoRepository.cs" />
-    <Compile Include="IMvcControllerActionClassRepository.cs" />
-    <Compile Include="IMvcControllerActionRepository.cs" />
-    <Compile Include="IMvcControllerClassRepository.cs" />
-    <Compile Include="IMvcControllerRepository.cs" />
-    <Compile Include="IMvcControllerRolePermissionRepository.cs" />
-    <Compile Include="IPicInfoRepository.cs" />
-    <Compile Include="ISightInfoRepository.cs" />
-    <Compile Include="ISightVouchItemRepository.cs" />
-    <Compile Include="ISightVouchRepository.cs" />
-    <Compile Include="ITourInfoRepository.cs" />
+    <Compile Include="Im_group_infoRepository.cs" />
+    <Compile Include="Im_group_type_infoRepository.cs" />
+    <Compile Include="Im_profile_infoRepository.cs" />
+    <Compile Include="Im_tag_infoRepository.cs" />
+    <Compile Include="Im_user_index_infoRepository.cs" />
+    <Compile Include="Im_user_infoRepository.cs" />
+    <Compile Include="Isys_actionsRepository.cs" />
+    <Compile Include="Isys_administratorRepository.cs" />
+    <Compile Include="Isys_controllersRepository.cs" />
+    <Compile Include="Isys_controller_actionRepository.cs" />
+    <Compile Include="Isys_logsRepository.cs" />
+    <Compile Include="Isys_rolesRepository.cs" />
+    <Compile Include="Isys_role_adminRepository.cs" />
+    <Compile Include="Isys_role_controller_actionRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IPicCommRepository.cs" />
-    <Compile Include="IPicClassRepository.cs" />
-    <Compile Include="ISightCommRepository.cs" />
-    <Compile Include="ISightClassRepository.cs" />
-    <Compile Include="IHotelPropertyInfoRepository.cs" />
-    <Compile Include="ISightTicketRepository.cs" />
-    <Compile Include="IVideoInfoRepository.cs" />
-    <Compile Include="IVideoClassRepository.cs" />
-    <Compile Include="IVideoCommRepository.cs" />
-    <Compile Include="ITourPlanRepository.cs" />
-    <Compile Include="ITourPlanDetailRepository.cs" />
-    <Compile Include="ITourClassRepository.cs" />
-    <Compile Include="IHotelPicRepository.cs" />
-    <Compile Include="IHotelPropertyInfo2Repository.cs" />
-    <Compile Include="ISearchInfoRepository.cs" />
-    <Compile Include="IAdminUserRepository.cs" />
-    <Compile Include="IAdminUserExtensionRepository.cs" />
-    <Compile Include="IAdminUserIndividuationRepository.cs" />
-    <Compile Include="IDisCountInfoRepository.cs" />
-    <Compile Include="IUserActionRepository.cs" />
-    <Compile Include="IUserRoleRepository.cs" />
-    <Compile Include="IRolePermissionRepository.cs" />
-    <Compile Include="ISightInfoCirHotelRepository.cs" />
-    <Compile Include="ISightInfoCirSightRepository.cs" />
-    <Compile Include="ISightInfoSortRepository.cs" />
-    <Compile Include="IRolesRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.DataSys\iPow.Infrastructure.Data.DataSys.csproj">
-      <Project>{2C911DAF-3B6C-49C7-AF21-6224BFB0FE74}</Project>
-      <Name>iPow.Infrastructure.Data.DataSys</Name>
+    <ProjectReference Include="..\..\infrastructure\Miaow.Infrastructure.Data.DataSys\Miaow.Infrastructure.Data.DataSys.csproj">
+      <Project>{2c911daf-3b6c-49c7-af21-6224bfb0fe74}</Project>
+      <Name>Miaow.Infrastructure.Data.DataSys</Name>
     </ProjectReference>
     <ProjectReference Include="..\Miaow.Domain.Intrastructure\Miaow.Domain.Infrastructure.csproj">
       <Project>{36E4E2ED-E857-46DE-9CAB-F962AEFC26F3}</Project>
       <Name>Miaow.Domain.Infrastructure</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

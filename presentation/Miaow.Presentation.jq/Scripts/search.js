@@ -1,23 +1,23 @@
 /*
-* Copyright by iPow(www.xidea.org)
+* Copyright by Miaow(www.xidea.org)
 */
-var sightHttp = "http://localhost:2466/", iPowSearch = null, iPowUser = null, iPowResult = null, iPowHotel = null;
+var sightHttp = "http://localhost:2466/", MiaowSearch = null, MiaowUser = null, MiaowResult = null, MiaowHotel = null;
 function showArea() { $("#addrProvince").remove(); var D = $(this).attr("id"), G = $(this).offset(), E = G.left - 160, C = G.top + 20, B = "<div id='addrProvince'><span><em>\u8bf7\u9009\u62e9\u5730\u70b9</em><a id='gb'>[&nbsp;\u5173\u95ed&nbsp;]</a></span><ul></ul><div style='clear:both;'></div></div>"; areasLen = provinceArr.length; var A = ""; for (var F = 0; F < areasLen; F++) A = A + "<li id='" + provinceArr[F][0] + "'>" + provinceArr[F][1] + "</li>"; $("body").append(B); $("#addrProvince ul").append(A); $("#addrProvince").css({ left: E + "px", top: C + "px" }); $("#addrProvince span a#fh").bind("click", function () { $("#addrProvince ul").empty(); $("#addrProvince ul").append(A); $("#addrProvince ul li").bind("click", { iptn: D }, liBind) }); $("#addrProvince span a#gb").bind("click", function () { $("#addrProvince").remove() }); $("#SightList").bind("click", function () { $("#addrProvince").remove() }); $("#addrProvince ul li").bind("click", { iptn: D }, liBind) } function liBind(D) { var C = "", A = $(this).attr("id"), B = $(this).text(); B = StrCode(B.replace(/\+/g, "%2B").replace(/\//g, "%2F")); C = sightHttp; C = C + B; location.href = C; $("#addrProvince").css("display", "none") } function showCity() { $("#addr").remove(); var C = $(this).attr("id"), B = "<div id='addr'><span><em>\u8bf7\u9009\u62e9\u57ce\u5e02</em><a id='gb'>[&nbsp;\u5173\u95ed&nbsp;]</a></span><ul></ul><div style='clear:both;'></div></div>"; areasLen = cityArr.length; var A = ""; for (var D = 0; D < areasLen; D++) A = A + "<li id='" + cityArr[D] + "'>" + cityArr[D] + "</li>"; $("#cityShow").append(B); $("#addr ul").append(A); $("#addr span a#fh").bind("click", function () { $("#addr ul").empty(); $("#addr ul").append(A); $("#addr ul li").bind("click", { iptn: C }, liBind1) }); $("#addr span a#gb").bind("click", function () { $("#addr").remove() }); $("#SightList").bind("click", function () { $("#addr").remove() }); $("#addr ul li").bind("click", { iptn: C }, liBind1) } function liBind1(D) { var C = "", A = $(this).attr("id"), B = $(this).text(); B = StrCode(B.replace(/\+/g, "%2B").replace(/\//g, "%2F")); C = sightHttp; C = C + "search/?q=" + B; location.href = C; $("#addr").css("display", "none") }
-function showSightList(B, A, E, D, C) { if (iPowSearch != null) iPowSearch.showSightList(B, A, E, D, C) }
+function showSightList(B, A, E, D, C) { if (MiaowSearch != null) MiaowSearch.showSightList(B, A, E, D, C) }
 function StrCode(A) { if (encodeURIComponent) return encodeURIComponent(A); if (escape) return escape(A) }
 function isearch(B, A) {
     mapInital = false;
     var C = $("#txtKeyword").attr("value");
     C = C.replace("\u5e02", "");
-    if (iPowSearch != null)
-        iPowSearch.getResultList(C, B, A)
+    if (MiaowSearch != null)
+        MiaowSearch.getResultList(C, B, A)
 }
 function goSearch() {
     var A = $("#txtKeyword").attr("value");
     A = A.replace(/<.*>/gi, "");
     if (A != "") {
         A = StrCode(A.replace(/\+/g, "%2B").replace(/\//g, "%2F"));
-        var B = "http://jq.ipow.cn/search/?q=" + A; window.location.href = B;
+        var B = "http://jq.Miaow.cn/search/?q=" + A; window.location.href = B;
         return false
     }
     else {
@@ -39,7 +39,7 @@ function parseQuery(B) {
 function setPageLoad() {
     var A = UnStrCode(location.href.replace(/^[^\?]+\??/, "")), C = parseQuery(A), B = UnStrCode(C["q"]);
     if (B == "undefined" || B == "")
-        window.location.href = "http://jq.ipow.cn/";
+        window.location.href = "http://jq.Miaow.cn/";
     else {
         $("#txtKeyword").attr("value", B);
         isearch(1, 0)
@@ -82,11 +82,11 @@ function isearch_hotel() {
         $("#txtBide").focus(); return false
     }
     $("#hotelCity").text(B);
-    if (iPowSearch != null) iPowSearch.getHotelResultList(A, B, 0, 1)
+    if (MiaowSearch != null) MiaowSearch.getHotelResultList(A, B, 0, 1)
 }
 function setHPageLoad() {
     var B = UnStrCode(location.href.replace(/^[^\?]+\??/, "")), D = parseQuery(B), F = UnStrCode(D["city"]), E = UnStrCode(D["cometime"]), A = UnStrCode(D["leavetime"]), C = UnStrCode(D["q"]); if (E) if (C == "undefined") C = ""; if (E == "undefined") E = ""; if (A == "undefined") A = ""; if (F == "undefined" || F == "" || E == "undefined" || E == "") {
-        location.href = "http://hotel.ipow.cn/"; return false
+        location.href = "http://hotel.Miaow.cn/"; return false
     } else {
         $("#txtBide").attr("value", F);
         $("#txtComeTime").attr("value", E);
@@ -103,7 +103,7 @@ function gosearch_hotel() {
     } if (B != "") {
         B = StrCode(B.replace(/\+/g, "%2B").replace(/\//g, "%2F")); C = C + "&q=" + B
     } if (C != "") {
-        window.location.href = "http://hotel.ipow.cn/search/?" + C; return false
+        window.location.href = "http://hotel.Miaow.cn/search/?" + C; return false
     }
 }
 function UserLogin() {
@@ -113,7 +113,7 @@ function UserLogin() {
         return false
     } if (B == "") {
         alert("\u8bf7\u8f93\u5165\u60a8\u7684\u5bc6\u7801\uff01"); $("#txtPassword").focus(); return false
-    } if (iPowUser != null) iPowUser.userLogin(A, B)
+    } if (MiaowUser != null) MiaowUser.userLogin(A, B)
 }
 function ClearInput() {
     $("#iUserName").attr("value", "");
@@ -131,8 +131,8 @@ function rPage(C, A, E) {
         D++
     }
     if (F == "")
-        F += "<div class=\"noresult\"> \t<h1>\u62b1\u6b49\uff01\u6ca1\u6709\u627e\u5230\u4e0e\u201c" + $("#txtKeyword").attr("value") + "\u201d\u76f8\u5173\u7684\u666f\u70b9\u8d44\u6599</h1>\t\t\t\t\t<h3>iPow\u5efa\u8bae\u60a8\uff1a</h3> <p> 1.\u770b\u770b\u8f93\u5165\u7684\u6587\u5b57\u662f\u5426\u6709\u8bef\uff1b<br /> 2.\u7528\u5176\u4ed6\u76f8\u540c\u542b\u4e49\u7684\u6587\u5b57\u8bd5\u8bd5\uff1b<br /> 3.\u5728\u8f93\u5165\u7684\u6587\u5b57\u4e2d\u5305\u542b\u666f\u70b9\u540d\u79f0\u53ef\u80fd\u4f1a\u6709\u60a8\u9700\u8981\u7684\u7ed3\u679c\u3002 </p></div>"; else F = "<ul>" + F + "</ul>"; $("#ResultList").html(F);
-    jQuery("#ResultList .addTrip").click(function () { iPowDraw.init($(this)) });
+        F += "<div class=\"noresult\"> \t<h1>\u62b1\u6b49\uff01\u6ca1\u6709\u627e\u5230\u4e0e\u201c" + $("#txtKeyword").attr("value") + "\u201d\u76f8\u5173\u7684\u666f\u70b9\u8d44\u6599</h1>\t\t\t\t\t<h3>Miaow\u5efa\u8bae\u60a8\uff1a</h3> <p> 1.\u770b\u770b\u8f93\u5165\u7684\u6587\u5b57\u662f\u5426\u6709\u8bef\uff1b<br /> 2.\u7528\u5176\u4ed6\u76f8\u540c\u542b\u4e49\u7684\u6587\u5b57\u8bd5\u8bd5\uff1b<br /> 3.\u5728\u8f93\u5165\u7684\u6587\u5b57\u4e2d\u5305\u542b\u666f\u70b9\u540d\u79f0\u53ef\u80fd\u4f1a\u6709\u60a8\u9700\u8981\u7684\u7ed3\u679c\u3002 </p></div>"; else F = "<ul>" + F + "</ul>"; $("#ResultList").html(F);
+    jQuery("#ResultList .addTrip").click(function () { MiaowDraw.init($(this)) });
     mapinitialize(G, "gMap", "jxMapTipPanel");
     $("#RusultPage").html("<span class=\"pageContainer\">" + PageUi(C, E, A) + "</span>")
 }
@@ -181,7 +181,7 @@ function rhPage(G, A, I, B) {
         }
         D++
     }
-    if (K == "") K += "<div class=\"noresult\"> \t<h1>\u62b1\u6b49\uff01\u6ca1\u6709\u627e\u5230\u4e0e\u201c" + $("#txtKeyword").attr("value") + "\u201d\u76f8\u5173\u7684\u9152\u5e97\u8d44\u6599</h1>\t\t\t\t\t<h3>iPow\u5efa\u8bae\u60a8\uff1a</h3> <p> 1.\u770b\u770b\u8f93\u5165\u7684\u6587\u5b57\u662f\u5426\u6709\u8bef\uff1b<br /> 2.\u7528\u5176\u4ed6\u76f8\u540c\u542b\u4e49\u7684\u6587\u5b57\u8bd5\u8bd5\uff1b<br /> 3.\u5728\u8f93\u5165\u7684\u6587\u5b57\u4e2d\u5305\u542b\u666f\u70b9\u540d\u79f0\u53ef\u80fd\u4f1a\u6709\u60a8\u9700\u8981\u7684\u7ed3\u679c\u3002 </p></div>"; $("#ResultList").html(K); if (B == "pic") jQuery("#ResultList").mouseList({ over: "#EDEDED", out: "#fff", className: ".listHotelInfo" });
+    if (K == "") K += "<div class=\"noresult\"> \t<h1>\u62b1\u6b49\uff01\u6ca1\u6709\u627e\u5230\u4e0e\u201c" + $("#txtKeyword").attr("value") + "\u201d\u76f8\u5173\u7684\u9152\u5e97\u8d44\u6599</h1>\t\t\t\t\t<h3>Miaow\u5efa\u8bae\u60a8\uff1a</h3> <p> 1.\u770b\u770b\u8f93\u5165\u7684\u6587\u5b57\u662f\u5426\u6709\u8bef\uff1b<br /> 2.\u7528\u5176\u4ed6\u76f8\u540c\u542b\u4e49\u7684\u6587\u5b57\u8bd5\u8bd5\uff1b<br /> 3.\u5728\u8f93\u5165\u7684\u6587\u5b57\u4e2d\u5305\u542b\u666f\u70b9\u540d\u79f0\u53ef\u80fd\u4f1a\u6709\u60a8\u9700\u8981\u7684\u7ed3\u679c\u3002 </p></div>"; $("#ResultList").html(K); if (B == "pic") jQuery("#ResultList").mouseList({ over: "#EDEDED", out: "#fff", className: ".listHotelInfo" });
     if (mapInital == false) mapinitialize(E);
     else HotelMarker.resetMarkers(map, mapDataProcess(E));
     $("#RusultPage").html("<span class=\"pageContainer\">" + HotelPageUi(G, I, A, B) + "</span>")

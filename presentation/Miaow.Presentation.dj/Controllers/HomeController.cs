@@ -6,29 +6,29 @@ using System.Data.Entity;
 namespace Miaow.Presentation.dj.Controllers
 {
     public class HomeController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         int pageSize = 10;
 
-        iPow.Application.dj.Service.IHomeService homeService;
+        Miaow.Application.dj.Service.IHomeService homeService;
 
-        iPow.Application.dj.Service.ITourPlanService tourPlanService;
+        Miaow.Application.dj.Service.ITourPlanService tourPlanService;
 
-        public HomeController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.dj.Service.IHomeService ipowHomeService,
-            iPow.Application.dj.Service.ITourPlanService ipowTourPlanService) :
+        public HomeController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.dj.Service.IHomeService MiaowHomeService,
+            Miaow.Application.dj.Service.ITourPlanService MiaowTourPlanService) :
             base(work)
         {
-            if (ipowHomeService == null)
+            if (MiaowHomeService == null)
             {
                 throw new ArgumentNullException("homeService is null");
             }
-            if (ipowTourPlanService == null)
+            if (MiaowTourPlanService == null)
             {
                 throw new ArgumentNullException("tourPlanService is null");
             }
-            homeService = ipowHomeService;
-            tourPlanService = ipowTourPlanService;
+            homeService = MiaowHomeService;
+            tourPlanService = MiaowTourPlanService;
         }
 
         public ViewResult Index(int? pageIndex)

@@ -1,6 +1,6 @@
 ﻿@{
-    var tourPlanService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
-        iPow.Application.dj.Service.ITourPlanService>();
+    var tourPlanService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
+        Miaow.Application.dj.Service.ITourPlanService>();
     var hotTourPlans =tourPlanService.GetTourPlanListByCity(string.Empty, 5);
     
     if (hotTourPlans != null && hotTourPlans.Count() > 0)

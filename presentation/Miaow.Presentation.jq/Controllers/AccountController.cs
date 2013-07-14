@@ -5,11 +5,11 @@ namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class AccountController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         public const int pwdLength = 8;
 
-        public AccountController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
+        public AccountController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
             : base(work)
         {
 

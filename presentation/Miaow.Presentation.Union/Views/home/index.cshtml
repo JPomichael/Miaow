@@ -1,6 +1,6 @@
 ﻿@{
-    var localtion = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+    var localtion = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
     var address = localtion.GetLocationInfo();
     ViewBag.Title = ((address != null && address.Province != null) ? address.Province + "_" : "") + "酒店预订_";
 }

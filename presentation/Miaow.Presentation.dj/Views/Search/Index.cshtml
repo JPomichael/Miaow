@@ -1,10 +1,10 @@
 ﻿@using Webdiyer.WebControls.Mvc
-@model  PagedList<iPow.Application.dj.Dto.SearchTourDto>
+@model  PagedList<Miaow.Application.dj.Dto.SearchTourDto>
 @{
-    var listService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
-        iPow.Application.dj.Service.IListService>();
+    var listService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
+        Miaow.Application.dj.Service.IListService>();
 }
-<title>行程搜索-ipow自助旅行网-中国最好的自助旅游网站</title>
+<title>行程搜索-Miaow自助旅行网-中国最好的自助旅游网站</title>
 <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/tour.css")" />
 <script type="text/javascript">
     jQuery(document).ready(function () {
@@ -33,7 +33,7 @@
             @{
                 if (Model != null && Model.Count > 0)
                 {
-                    IQueryable<iPow.Application.dj.Dto.ListTypeMidSightDto> SightList = null;
+                    IQueryable<Miaow.Application.dj.Dto.ListTypeMidSightDto> SightList = null;
                     foreach (var item in Model)
                     {
                 <span><a href='@Url.Action("index", "tour", new { id = item.Id })' class='imgLeft'>
@@ -66,11 +66,11 @@
                             {  
                                 if (counter == sightTotal - 1)
                                 { 
-                                <a href='http://jq.ipow.cn/sight/@(it.Py)/@(it.Id)/1' target='_blank'>@(it.Name)</a>
+                                <a href='http://jq.Miaow.cn/sight/@(it.Py)/@(it.Id)/1' target='_blank'>@(it.Name)</a>
                                 }
                                 else
                                 {
-                                <a href='http://jq.ipow.cn/sight/@(it.Py)/@(it.Id)/1' target='_blank'>@(it.Name)</a>@("-")
+                                <a href='http://jq.Miaow.cn/sight/@(it.Py)/@(it.Id)/1' target='_blank'>@(it.Name)</a>@("-")
                                 }
                                 counter++;
                             }

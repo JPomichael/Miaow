@@ -1,10 +1,10 @@
 ﻿@{
-    var hotelVouchData = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Service.Union.Service.IHeadVouchDataService>();
+    var hotelVouchData = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Service.Union.Service.IHeadVouchDataService>();
 }
 <span class="imgLink"></span><span class="textLink">
     @{
-        IQueryable<iPow.Application.Union.Dto.HotelBottomLinkDto> hl = hotelVouchData.GetHotelBottomLinks();
+        IQueryable<Miaow.Application.Union.Dto.HotelBottomLinkDto> hl = hotelVouchData.GetHotelBottomLinks();
         if (hl != null)
         {
             foreach (var item in hl)

@@ -6,20 +6,20 @@ namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class PicController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         const int pageSize = 5;
 
-        iPow.Application.jq.Service.IPicInfoService picInfoService;
+        Miaow.Application.jq.Service.IPicInfoService picInfoService;
 
-        iPow.Domain.Repository.IPicCommRepository picCommRepository;
+        Miaow.Domain.Repository.IPicCommRepository picCommRepository;
 
-        public PicController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.jq.Service.IPicInfoService ipowPicInfo,
-            iPow.Domain.Repository.IPicCommRepository picComm)
+        public PicController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.jq.Service.IPicInfoService MiaowPicInfo,
+            Miaow.Domain.Repository.IPicCommRepository picComm)
             : base(work)
         {
-            if (ipowPicInfo == null)
+            if (MiaowPicInfo == null)
             {
                 throw new ArgumentNullException("picInfoService is null");
             }
@@ -27,7 +27,7 @@ namespace Miaow.Presentation.jq.Controllers
             {
                 throw new ArgumentNullException("picInfoRepository is null");
             }
-            picInfoService = ipowPicInfo;
+            picInfoService = MiaowPicInfo;
             picCommRepository = picComm;
         }
 
@@ -41,7 +41,7 @@ namespace Miaow.Presentation.jq.Controllers
         {
             try
             {
-                iPow.Infrastructure.Data.DataSys.Sys_PicComm comm = new Infrastructure.Data.DataSys.Sys_PicComm();
+                Miaow.Infrastructure.Data.DataSys.Sys_PicComm comm = new Infrastructure.Data.DataSys.Sys_PicComm();
                 comm.AddTime = System.DateTime.Now;
                 comm.UserName = f["txtUserName"].ToString();
                 comm.UserID = 0;

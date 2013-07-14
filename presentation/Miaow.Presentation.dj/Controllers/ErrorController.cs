@@ -4,9 +4,9 @@ using System.Web.Mvc;
 namespace Miaow.Presentation.dj.Controllers
 {
     public class ErrorController : 
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        public ErrorController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
+        public ErrorController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
             : base(work)
         {
 

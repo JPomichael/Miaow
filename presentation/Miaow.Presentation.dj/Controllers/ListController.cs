@@ -8,44 +8,44 @@ namespace Miaow.Presentation.dj.Controllers
 {
     [HandleError]
     public class ListController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         const int pageSize = 4;
 
-        iPow.Application.dj.Service.IListService listService;
+        Miaow.Application.dj.Service.IListService listService;
 
-        iPow.Application.dj.Service.IHomeService homeService;
+        Miaow.Application.dj.Service.IHomeService homeService;
 
-        iPow.Application.dj.Service.ITourPlanService tourPlanService;
+        Miaow.Application.dj.Service.ITourPlanService tourPlanService;
 
-        public ListController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-        iPow.Application.dj.Service.IListService ipowListService,
-            iPow.Application.dj.Service.IHomeService ipowHomeService,
-            iPow.Application.dj.Service.ITourPlanService ipowTourPlanService)
+        public ListController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+        Miaow.Application.dj.Service.IListService MiaowListService,
+            Miaow.Application.dj.Service.IHomeService MiaowHomeService,
+            Miaow.Application.dj.Service.ITourPlanService MiaowTourPlanService)
             : base(work)
         {
-            if (ipowHomeService == null)
+            if (MiaowHomeService == null)
             {
                 throw new ArgumentNullException("homeService is null");
             }
-            if (ipowTourPlanService == null)
+            if (MiaowTourPlanService == null)
             {
                 throw new ArgumentNullException("tourPlanService is null");
             }
-            if (ipowListService == null)
+            if (MiaowListService == null)
             {
                 throw new ArgumentNullException("listService is null");
             }
-            homeService = ipowHomeService;
-            tourPlanService = ipowTourPlanService;
-            listService = ipowListService;
+            homeService = MiaowHomeService;
+            tourPlanService = MiaowTourPlanService;
+            listService = MiaowListService;
         }
 
         public ViewResult Index(int id, int pi)
         {
             int total = 0;
             var data = listService.GetListTypeMidTourPlanListByTypeId(id, pi, pageSize, ref total);
-            PagedList<iPow.Application.dj.Dto.ListTypeMidTourPlanDto> model = new PagedList<iPow.Application.dj.Dto.ListTypeMidTourPlanDto>(data, pi, pageSize, total);
+            PagedList<Miaow.Application.dj.Dto.ListTypeMidTourPlanDto> model = new PagedList<Miaow.Application.dj.Dto.ListTypeMidTourPlanDto>(data, pi, pageSize, total);
             ViewBag.id = id;
             return View(model);
         }

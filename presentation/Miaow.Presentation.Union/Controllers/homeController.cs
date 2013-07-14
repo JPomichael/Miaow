@@ -5,13 +5,13 @@ namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class HomeController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HomeController"/> class.
         /// </summary>
         /// <param name="work">The work.</param>
-        public HomeController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
+        public HomeController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
             : base(work)
         { }
 

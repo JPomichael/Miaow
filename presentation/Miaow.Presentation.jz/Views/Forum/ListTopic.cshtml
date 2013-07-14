@@ -1,6 +1,6 @@
-﻿@using iPow.DataSys;
+﻿@using Miaow.DataSys;
 @using Webdiyer.WebControls.Mvc;
-@model iPow.DataClass.jz.TopPicDetail
+@model Miaow.DataClass.jz.TopPicDetail
 @{
     Layout = "~/Views/Shared/_CategoryOut.cshtml";
     ViewBag.Title = "ListTopic";
@@ -22,7 +22,7 @@
             @{
                 if (Model != null && Model.TopPic != null)
                 {
-                    var otherTopPic = iPow.DataClass.jz.Querys.GetOtherTopPicById(Model.TopPic.authorid, Model.TopPic.tid);
+                    var otherTopPic = Miaow.DataClass.jz.Querys.GetOtherTopPicById(Model.TopPic.authorid, Model.TopPic.tid);
                     if (otherTopPic != null && otherTopPic.Count() > 0)
                     {
                         foreach (var item in otherTopPic)
@@ -62,7 +62,7 @@
                 }
             <p>
                 点击数：@(Model.TopPic.views)&nbsp;&nbsp;|&nbsp;&nbsp;回复数：@(Model.TopPic.replies)&nbsp;&nbsp;|&nbsp;&nbsp;
-                最后回复发表于 @(iPow.function.DateHelper.GetMysqlDateTime(Model.TopPic.lasttime, DateTimeKind.Local).ToString("yyyy-MM-dd"))
+                最后回复发表于 @(Miaow.function.DateHelper.GetMysqlDateTime(Model.TopPic.lasttime, DateTimeKind.Local).ToString("yyyy-MM-dd"))
             </p>
             }
         }
@@ -118,10 +118,10 @@
             <!-- ENDIF loginArr.group -->
             <div class="pagecontent ft_r">
                 @{
-                    Webdiyer.WebControls.Mvc.PagedList<iPow.DataClass.jz.SinglePostDetail> forumPostList = null;
+                    Webdiyer.WebControls.Mvc.PagedList<Miaow.DataClass.jz.SinglePostDetail> forumPostList = null;
                     if (Model != null && Model.TopPic != null)
                     {
-                        forumPostList = iPow.DataClass.jz.Querys.GetTopPicPostDetailListById(Model.TopPic.tid, 1, 15);
+                        forumPostList = Miaow.DataClass.jz.Querys.GetTopPicPostDetailListById(Model.TopPic.tid, 1, 15);
                     }
                 }
                 <!--分页 -->
@@ -192,7 +192,7 @@
                             }
                             <dd>
                                 <span class="bar_info">
-                                发表于@( iPow.function.DateHelper.GetMysqlDateTime(forumPostList[i].dateline, DateTimeKind.Local).ToString())</span>
+                                发表于@( Miaow.function.DateHelper.GetMysqlDateTime(forumPostList[i].dateline, DateTimeKind.Local).ToString())</span>
                                 @(Html.Raw(Model.TopPic.replies > 50 ? "<span class=\"icon_hot\">&nbsp;</span>" : ""))
                             </dd>
                         </dl>
@@ -226,7 +226,7 @@
                         }
                         }
                         <span class="bar_info">
-                        发表于@(iPow.function.DateHelper.GetMysqlDateTime(forumPostList[i].dateline, DateTimeKind.Local).ToString())
+                        发表于@(Miaow.function.DateHelper.GetMysqlDateTime(forumPostList[i].dateline, DateTimeKind.Local).ToString())
                         </span>
                     </div>
                 </div>

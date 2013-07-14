@@ -1,7 +1,7 @@
 ﻿/*
-* Compressed by iPow(www.iPow.cn)
+* Compressed by Miaow(www.Miaow.cn)
 */
-var userAgent = navigator.userAgent.toLowerCase(), is_opera = userAgent.indexOf("opera") != -1 && opera.version(), is_moz = (navigator.product == "Gecko") && userAgent.substr(userAgent.indexOf("firefox") + 8, 3), is_ie = (userAgent.indexOf("msie") != -1 && !is_opera) && userAgent.substr(userAgent.indexOf("msie") + 5, 3), iPowComm;
+var userAgent = navigator.userAgent.toLowerCase(), is_opera = userAgent.indexOf("opera") != -1 && opera.version(), is_moz = (navigator.product == "Gecko") && userAgent.substr(userAgent.indexOf("firefox") + 8, 3), is_ie = (userAgent.indexOf("msie") != -1 && !is_opera) && userAgent.substr(userAgent.indexOf("msie") + 5, 3), MiaowComm;
 
 function GetSightData(sid, tarId) {
     var data = 0;
@@ -30,15 +30,15 @@ function showCommReply(B, A) {
     $("#commReply a").unbind("click");
     $("#commReply a").click(
   function () { replyComm(A, B) });
-    if (iPowComm != null) iPowComm.showCommReply(B, A)
+    if (MiaowComm != null) MiaowComm.showCommReply(B, A)
 }
 function replyComm(A, B)
-{ if (iPowComm != null) iPowComm.replyComm(A, B) }
-function getCommList(B, A, C) { if (iPowComm != null) iPowComm.getCommList(B, A, C) }
-function addCommInfo(A) { if (iPowComm != null) iPowComm.addCommInfo(A) }
-function statInfo(C, B, A) { if (iPowComm != null) iPowComm.statInfo(C, B, A) }
-function showPicList(A, E, C, D, B) { if (iPowComm != null) iPowComm.showPicList(A, E, C, D, B) }
-function showArticleList(A, D, B, C) { if (iPowComm != null) iPowComm.showArticleList(A, D, B, C) }
+{ if (MiaowComm != null) MiaowComm.replyComm(A, B) }
+function getCommList(B, A, C) { if (MiaowComm != null) MiaowComm.getCommList(B, A, C) }
+function addCommInfo(A) { if (MiaowComm != null) MiaowComm.addCommInfo(A) }
+function statInfo(C, B, A) { if (MiaowComm != null) MiaowComm.statInfo(C, B, A) }
+function showPicList(A, E, C, D, B) { if (MiaowComm != null) MiaowComm.showPicList(A, E, C, D, B) }
+function showArticleList(A, D, B, C) { if (MiaowComm != null) MiaowComm.showArticleList(A, D, B, C) }
 function rightTab(E, C, D, B) {
     var A;
     $("#" + E + " a").click(function () {

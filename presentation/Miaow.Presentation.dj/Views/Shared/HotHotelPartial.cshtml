@@ -1,6 +1,6 @@
 ﻿@{ 
-    var cityLocationService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
-        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+    var cityLocationService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
+        Miaow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
 
     var address = cityLocationService.GetLocationInfo();
     var cityName = "深圳";
@@ -9,10 +9,10 @@
         cityName = address.City;
     }
 
-    var unionCityService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
-    iPow.Service.Union.Service.ICityService>();
-    var todayLowPriceService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
-    iPow.Service.Union.Service.ITodayLowPriceService>();
+    var unionCityService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
+    Miaow.Service.Union.Service.ICityService>();
+    var todayLowPriceService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
+    Miaow.Service.Union.Service.ITodayLowPriceService>();
     var cid = unionCityService.GetUnionCityIdByName(cityName);
     if (cid > 0)
     {
@@ -23,7 +23,7 @@
             {
     <li>
         <div class="conhot-hotel">
-            <a href = "http://hotel.ipow.cn/hotel/@(item.id)" title = "@(item.name)">
+            <a href = "http://hotel.Miaow.cn/hotel/@(item.id)" title = "@(item.name)">
                 <h1>
                     @(item.name.Length > 10 ? item.name.Substring(0, 9) + "..." : item.name)</h1>
                 <span class="mumdl">¥@(item.price)</span>

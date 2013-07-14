@@ -1,6 +1,6 @@
 ﻿@using Telerik.Web.Mvc
 @using Telerik.Web.Mvc.UI
-@model IEnumerable<iPow.Domain.Dto.Sys_TourPlanDto>
+@model IEnumerable<Miaow.Domain.Dto.Sys_TourPlanDto>
 @{
     ViewBag.subtitle = "线路表";
     ViewBag.title = "线路表";
@@ -27,8 +27,8 @@
         columns.Bound(o => o.PlanID).Width(50).Title("线路Id").Hidden();
 
         columns.Bound(o => o.PlanTitle).Width(300).Title("线路名")
-        .Template(@<text><a href='http://www.ipow.cn/2011/tour/index/@(item.PlanID)' target ="_blank">@(item.PlanTitle)</a></text>)
-        .ClientTemplate("<a href='http://www.ipow.cn/2011/tour/index/<#= PlanID #>' target ='_blank'><#=PlanTitle#></a>");
+        .Template(@<text><a href='http://www.Miaow.cn/2011/tour/index/@(item.PlanID)' target ="_blank">@(item.PlanTitle)</a></text>)
+        .ClientTemplate("<a href='http://www.Miaow.cn/2011/tour/index/<#= PlanID #>' target ='_blank'><#=PlanTitle#></a>");
 
         columns.Bound(o => o.PlanClass).Width(50).Title("线路分类名");
         columns.Bound(o => o.Days).Width(20).Title("出行天数");

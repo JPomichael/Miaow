@@ -27,7 +27,7 @@ namespace Wbm.SinaV2API.SinaServices
         {
             get
             {
-                const string CONFIG_PATH = "~/iPow.SinaV2.config";
+                const string CONFIG_PATH = "~/Miaow.SinaV2.config";
                 const string CONFIG = "Wbm.SinaV2_CONFIG";
                 try
                 {

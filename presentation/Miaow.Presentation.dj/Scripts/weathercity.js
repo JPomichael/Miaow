@@ -503,8 +503,8 @@ function setCity(event) {
     var setipt2 = event.data.ipt2;
     var iptText = $(this).attr("title");
     var iptVal = $(this).attr("id");
-    if (iPowTour != null) {
-        iPowTour.getWeather(iptVal, "weatherPanel");
+    if (MiaowTour != null) {
+        MiaowTour.getWeather(iptVal, "weatherPanel");
         $("#areaWeather").text(iptText + "天气");
         $("#wProvince").remove();
     }

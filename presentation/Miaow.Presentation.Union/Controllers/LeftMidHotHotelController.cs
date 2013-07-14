@@ -6,39 +6,39 @@ namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class LeftMidHotHotelController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelLeftMidService hoteLeftMidService;
+        Miaow.Service.Union.Service.IHotelLeftMidService hoteLeftMidService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Application.jq.Service.ISightInfoService sightInfoService;
+        Miaow.Application.jq.Service.ISightInfoService sightInfoService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="LeftMidHotHotelController"/> class.
         /// </summary>
         /// <param name="work">The work.</param>
-        /// <param name="ipowHoteLeftMid">The ipow hote left mid.</param>
-        /// <param name="ipowSightInfo">The ipow sight info.</param>
-        public LeftMidHotHotelController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Service.Union.Service.IHotelLeftMidService ipowHoteLeftMid,
-            iPow.Application.jq.Service.ISightInfoService ipowSightInfo)
+        /// <param name="MiaowHoteLeftMid">The Miaow hote left mid.</param>
+        /// <param name="MiaowSightInfo">The Miaow sight info.</param>
+        public LeftMidHotHotelController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Service.Union.Service.IHotelLeftMidService MiaowHoteLeftMid,
+            Miaow.Application.jq.Service.ISightInfoService MiaowSightInfo)
             : base(work)
         {
-            if (ipowHoteLeftMid == null)
+            if (MiaowHoteLeftMid == null)
             {
                 throw new ArgumentNullException("hoteLeftMidService is null");
             }
-            if (ipowSightInfo == null)
+            if (MiaowSightInfo == null)
             {
                 throw new ArgumentNullException("sightInfoService is null");
             }
-            hoteLeftMidService = ipowHoteLeftMid;
-            sightInfoService = ipowSightInfo;
+            hoteLeftMidService = MiaowHoteLeftMid;
+            sightInfoService = MiaowSightInfo;
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Miaow.Presentation.Union.Controllers
         [HttpGet]
         public PartialViewResult Index(string ids, int? min, int? max)
         {
-            iPow.Application.Union.Dto.SearchHotelDto data = null;
+            Miaow.Application.Union.Dto.SearchHotelDto data = null;
             int id = Int32.Parse(ids);
             var res = sightInfoService.GetSightSingleById(id);
             if (res != null && res.Latitude != null && res.Longitude != null)

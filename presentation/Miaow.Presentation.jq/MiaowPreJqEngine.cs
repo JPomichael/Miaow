@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-using iPow.Infrastructure.Crosscutting.NetFramework.Engines;
+using Miaow.Infrastructure.Crosscutting.NetFramework.Engines;
 
 namespace Miaow.Presentation.jq
 {
     public class MiaowPreJqEngine :
-        iPow.Infrastructure.Crosscutting.NetFramework.Engines.EngineManager
+        Miaow.Infrastructure.Crosscutting.NetFramework.Engines.EngineManager
     {
 
     }

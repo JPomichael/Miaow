@@ -1,5 +1,5 @@
 ﻿@using Webdiyer.WebControls.Mvc;
-@model iPow.DataClass.jz.ForumCatalogList
+@model Miaow.DataClass.jz.ForumCatalogList
 @{
     Layout = "~/Views/Shared/_CategoryOut.cshtml";
     ViewBag.Title = "家族圈";
@@ -28,7 +28,7 @@
                 <!-- IF id == cid -->
                 <!-- ELSE -->
                 @{
-                    var allCatalogList = iPow.DataClass.jz.Querys.GetForumCatalogList();
+                    var allCatalogList = Miaow.DataClass.jz.Querys.GetForumCatalogList();
                     foreach (var item in allCatalogList)
                     {
                     <li class='@((Model.CurrentCatalog.name == item.name) ? "on" : "")'><a href='@((Model.CurrentCatalog.name == item.name) ? "#" : "/catalog/" + item.cid + "/1")'>@(item.name)</a></li>
@@ -41,7 +41,7 @@
     </div>
     <div id="R">
         @{
-            var currentCatalogDetailList = iPow.DataClass.jz.Querys.GetForumFamilyListByCatalogId(Model.CurrentCatalog.cid, 1, 15);
+            var currentCatalogDetailList = Miaow.DataClass.jz.Querys.GetForumFamilyListByCatalogId(Model.CurrentCatalog.cid, 1, 15);
         }
         <div class="nameset">
             共@(currentCatalogDetailList != null ? currentCatalogDetailList.TotalItemCount : 0)个家族圈</div>
@@ -71,7 +71,7 @@
                             @(item.synopsis.Length > 30 ? item.synopsis.Substring(0, 30) : item.synopsis + "...")
                         </td>
                         <td>
-                            <a href="http://sns.ipow.cn/index.php?s=/space/{uid}" target="_blank">@(item.moderator)</a>
+                            <a href="http://sns.Miaow.cn/index.php?s=/space/{uid}" target="_blank">@(item.moderator)</a>
                         </td>
                     </tr>
                         }

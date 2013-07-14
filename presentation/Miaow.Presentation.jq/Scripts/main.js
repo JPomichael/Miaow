@@ -1,5 +1,5 @@
 /*
-*  Copyright (c) 2010 iPow(www.iPow.cn)
+*  Copyright (c) 2010 Miaow(www.Miaow.cn)
 */
 
 

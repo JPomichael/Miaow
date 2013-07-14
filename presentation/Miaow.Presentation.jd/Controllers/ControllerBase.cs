@@ -34,7 +34,7 @@ namespace Miaow.Presentation.jd.Controllers
         protected override void OnActionExecuting(ActionExecutingContext context)
         {
             #region
-            var tokenModel = context.HttpContext.Request.Cookies[".ipow.cn"];
+            var tokenModel = context.HttpContext.Request.Cookies[".Miaow.cn"];
             if (tokenModel != null)
             {
                 string token = tokenModel.Value;

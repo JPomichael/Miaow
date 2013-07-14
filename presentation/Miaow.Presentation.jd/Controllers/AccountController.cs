@@ -72,7 +72,7 @@ namespace Miaow.Presentation.jd.Controllers
                 return Json(new { result = "DENIED" });
             }
             this.FormsService.SignIn(user.Username, true);
-            Session[iPow.function.Helper.SessionNameLogin] = "";
+            Session[Miaow.function.Helper.SessionNameLogin] = "";
             return Json(new { result = "SUCCESS" });
         }
 
@@ -88,7 +88,7 @@ namespace Miaow.Presentation.jd.Controllers
         {
             VerifyCode v = new VerifyCode();
             string code = v.CreateVerifyCode() + "";                //取随机码
-            Session[iPow.function.Helper.SessionNameLogin] = code;
+            Session[Miaow.function.Helper.SessionNameLogin] = code;
             v.Padding = 10;
             byte[] bytes = v.CreateImage(code);
             return File(bytes, @"image/jpeg");
@@ -102,9 +102,9 @@ namespace Miaow.Presentation.jd.Controllers
         public JsonResult GetVcode()
         {
             string temp = string.Empty;
-            if (Session[iPow.function.Helper.SessionNameLogin] != null)
+            if (Session[Miaow.function.Helper.SessionNameLogin] != null)
             {
-                temp = Session[iPow.function.Helper.SessionNameLogin].ToString();
+                temp = Session[Miaow.function.Helper.SessionNameLogin].ToString();
             }
             return Json(new { Vcode = temp }, JsonRequestBehavior.AllowGet);
         }

@@ -1,8 +1,8 @@
 ﻿@using Webdiyer.WebControls.Mvc
 @{
     int total = 0;
-    var sightInfoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Application.jq.Service.ISightInfoService>();
+    var sightInfoService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Application.jq.Service.ISightInfoService>();
 
     var sightCommList = sightInfoService.GetSightCommList(ViewBag.parkid, 1, 5, ref total);
     foreach (var item in sightCommList)
@@ -21,7 +21,7 @@
         var contentId = "commContent" + item.UserID.ToString();
     <p class="over">
         <img src="/images/face/face1.jpg" width="45" height="45" class="face" alt="" />
-        <span class="spanUser" id='@(userId)'><b>iPow @(item.UserName)</b> ip：@(ip)</span>
+        <span class="spanUser" id='@(userId)'><b>Miaow @(item.UserName)</b> ip：@(ip)</span>
         <span class="spanScore"></span><span class="content" id="@contentId">@item.Content</span>
         <span class="control">发表于：@(item.AddTime.ToString())&nbsp;&nbsp;&nbsp;&nbsp;<a
 href="javascript:;" onclick="showCommReply(@(item.UserID),@(item.SightID))" style = " display: none">引用回复</a>&nbsp;</span>

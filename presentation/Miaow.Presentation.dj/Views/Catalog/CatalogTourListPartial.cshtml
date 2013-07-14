@@ -1,9 +1,9 @@
 ﻿@{
     var tourPlanService = Miaow.Presentation.dj.MiaowPreDjEngine
-        .Current.Resolve<iPow.Application.dj.Service.ITourPlanService>();
+        .Current.Resolve<Miaow.Application.dj.Service.ITourPlanService>();
 
     var listService = Miaow.Presentation.dj.MiaowPreDjEngine
-        .Current.Resolve<iPow.Application.dj.Service.IListService>();
+        .Current.Resolve<Miaow.Application.dj.Service.IListService>();
 
     var tourClasses = tourPlanService.GetTourClass();
     if (tourClasses != null && tourClasses.Count() > 0)

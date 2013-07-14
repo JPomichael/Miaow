@@ -5,35 +5,35 @@ namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class SightOtherController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        iPow.Application.jq.Service.ITicketService ticketService;
+        Miaow.Application.jq.Service.ITicketService ticketService;
 
-        iPow.Application.jq.Service.IPicInfoService picInfoService;
+        Miaow.Application.jq.Service.IPicInfoService picInfoService;
 
-        iPow.Application.jq.Service.IArticleService articleService;
+        Miaow.Application.jq.Service.IArticleService articleService;
 
-        public SightOtherController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.jq.Service.ITicketService ipowTicket,
-            iPow.Application.jq.Service.IPicInfoService ipowPicInfo,
-            iPow.Application.jq.Service.IArticleService ipowArticle)
+        public SightOtherController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.jq.Service.ITicketService MiaowTicket,
+            Miaow.Application.jq.Service.IPicInfoService MiaowPicInfo,
+            Miaow.Application.jq.Service.IArticleService MiaowArticle)
             : base(work)
         {
-            if (ipowTicket == null)
+            if (MiaowTicket == null)
             {
                 throw new ArgumentNullException("ticketService is null");
             }
-            if (ipowPicInfo == null)
+            if (MiaowPicInfo == null)
             {
                 throw new ArgumentNullException("picInfoService is null");
             }
-            if (ipowArticle == null)
+            if (MiaowArticle == null)
             {
                 throw new ArgumentNullException("articleService is null");
             }
-            ticketService = ipowTicket;
-            picInfoService = ipowPicInfo;
-            articleService = ipowArticle;
+            ticketService = MiaowTicket;
+            picInfoService = MiaowPicInfo;
+            articleService = MiaowArticle;
         }
     
         [OutputCache(Duration = 60, VaryByParam = "sid")]

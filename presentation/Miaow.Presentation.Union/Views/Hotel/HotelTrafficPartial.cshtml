@@ -1,7 +1,7 @@
-﻿@model iPow.Application.Union.Dto.HotelTrafficDto
+﻿@model Miaow.Application.Union.Dto.HotelTrafficDto
 @{
-    var hotelTypeService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Service.Union.Service.IHotelTypeService>();
+    var hotelTypeService = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Service.Union.Service.IHotelTypeService>();
 }
 <!--交通导航开始-->
 <input type="hidden" id="localAreaCode" value="@(Model.HotelAreaCode)" />
@@ -112,7 +112,7 @@
         {
             foreach (var item in Model.SightInfo)
             {
-        <a href="http://jq.ipow.cn/sight/@(item.PY)/@(item.ParkID)/1" id="aCirSight@(cirCount)" title="@item.Title">
+        <a href="http://jq.Miaow.cn/sight/@(item.PY)/@(item.ParkID)/1" id="aCirSight@(cirCount)" title="@item.Title">
             <img src="/images/icon/htop@(cirCount + 1).jpg" align="absmiddle" border="0" /><span>
                 @(item.Title.Length > 8 ? item.Title.Substring(0, 8) : item.Title)</span><em>￥@(item.Ticket)</em></a>
                 if (cirCount >= Model.SightInfo.Count() - 1)

@@ -1,6 +1,6 @@
 ﻿@{
-    var articleService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Application.jq.Service.IArticleService>();
+    var articleService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Application.jq.Service.IArticleService>();
 
     int total = 0;
     var articleList = articleService.GetSightArticleByHot(ViewBag.parkid, 1, 5, ref total);
@@ -15,7 +15,7 @@
                 @(item.Title)</h4>
             <p>
                 @{ var sub = item.Content.Length > 80 ? item.Content.Substring(0, 80) : item.Content;}
-                @Html.Raw(iPow.Infrastructure.Crosscutting.Function.StringHelper.ParseHtml(sub))
+                @Html.Raw(Miaow.Infrastructure.Crosscutting.Function.StringHelper.ParseHtml(sub))
                 ...
             </p>
         </div>

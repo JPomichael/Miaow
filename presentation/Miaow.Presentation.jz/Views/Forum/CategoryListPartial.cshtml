@@ -1,5 +1,5 @@
 ﻿@using Webdiyer.WebControls.Mvc;
-@model  Webdiyer.WebControls.Mvc.PagedList<iPow.DataSys.sns_forum>
+@model  Webdiyer.WebControls.Mvc.PagedList<Miaow.DataSys.sns_forum>
 <table width="100%" cellspacing="0" cellpadding="0">
     <tr class="tr1">
         <td class="td1" width="28%">
@@ -24,7 +24,7 @@
             <td>@(item.synopsis.Length > 30 ? item.synopsis.Substring(0, 30) : item.synopsis + "...")
             </td>
             <td>
-                <a href="http://sns.ipow.cn/index.php?s=/space/{uid}" target="_blank">@(item.moderator)</a>
+                <a href="http://sns.Miaow.cn/index.php?s=/space/{uid}" target="_blank">@(item.moderator)</a>
             </td>
         </tr>
             }

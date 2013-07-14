@@ -68,12 +68,12 @@
             <ul>
                 <li>
                     <img src="/images/ShouIcon.gif"></li>
-                <li><a href="http://p.ipow.cn">手机版</a>|</li>
+                <li><a href="http://p.Miaow.cn">手机版</a>|</li>
                 <li>让旅行更轻松！</li>
                 @{
-                    if (Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] != null)
+                    if (Session[Miaow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] != null)
                     {
-                        var user = Session[iPow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] as iPow.Service.SSO.Client.AuthService.User;
+                        var user = Session[Miaow.Infrastructure.Crosscutting.Comm.Service.ConstService.SessionNameCurrentUser] as Miaow.Service.SSO.Client.AuthService.User;
                     <text><li><span >欢迎<strong>@user.username</strong>@Html.ActionLink("退出", "logoff", "account",null ,  new { style = "float: none" }) </span> 
                     
                     </li>
@@ -81,7 +81,7 @@
                     }
                     else
                     {
-                        var loginUrl = iPow.Infrastructure.Crosscutting.Comm.Service.SsoService.GetSsoLogOnAndReturnUrl();
+                        var loginUrl = Miaow.Infrastructure.Crosscutting.Comm.Service.SsoService.GetSsoLogOnAndReturnUrl();
                         //loginUrl = HttpUtility.UrlEncode(loginUrl);
                     <li><a href="@(loginUrl)" class="Topred">请登录</a> | </li>
                     <li><a href="javascript:;">免费注册</a> </li>

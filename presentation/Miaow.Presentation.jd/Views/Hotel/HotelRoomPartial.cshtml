@@ -13,7 +13,7 @@
             @{
                 if (ViewBag.hotelid != null)
                 {
-                    IQueryable<iPow.jd.Models.HotelDetailMidRoomPrice> hd = iPow.jd.Bll.HotelDetail.GetHotelDetailMidRoomListByHotelId(ViewBag.hotelid);
+                    IQueryable<Miaow.jd.Models.HotelDetailMidRoomPrice> hd = Miaow.jd.Bll.HotelDetail.GetHotelDetailMidRoomListByHotelId(ViewBag.hotelid);
                     if (hd != null)
                     {
                         foreach (var item in hd)

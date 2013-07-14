@@ -5,24 +5,24 @@ using System.Web;
 using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class TourController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        iPow.Domain.Repository.ITourClassRepository tourClassRepository;
+        Miaow.Domain.Repository.ITourClassRepository tourClassRepository;
 
-        iPow.Domain.Repository.ITourPlanDetailRepository tourPlanDetailRepository;
+        Miaow.Domain.Repository.ITourPlanDetailRepository tourPlanDetailRepository;
 
-        iPow.Domain.Repository.ITourPlanRepository tourPlanRepository;
+        Miaow.Domain.Repository.ITourPlanRepository tourPlanRepository;
 
-        public TourController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Domain.Repository.ITourClassRepository tourClass,
-            iPow.Domain.Repository.ITourPlanDetailRepository tourPlanDetail,
-            iPow.Domain.Repository.ITourPlanRepository tourPlan)
+        public TourController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Domain.Repository.ITourClassRepository tourClass,
+            Miaow.Domain.Repository.ITourPlanDetailRepository tourPlanDetail,
+            Miaow.Domain.Repository.ITourPlanRepository tourPlan)
             : base(work)
         {
             if (tourClass == null)
@@ -68,7 +68,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 data = data.Where(e => e.PlanTitle != null && e.PlanTitle.Contains(searchKey));
             }
             var dto = data.ToDto().OrderByDescending(e => e.AddTime);
-            var model = new GridModel<iPow.Domain.Dto.Sys_TourPlanDto>
+            var model = new GridModel<Miaow.Domain.Dto.Sys_TourPlanDto>
             {
                 Data = dto,
                 Total = dto.Count()
@@ -153,7 +153,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// <returns></returns>
         [GridAction]
         [HttpPost]
-        public JsonResult EditPlan(iPow.Domain.Dto.Sys_TourPlanDto tour)
+        public JsonResult EditPlan(Miaow.Domain.Dto.Sys_TourPlanDto tour)
         {
             try
             {
@@ -172,7 +172,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             {
             }
             var dto = this.CurrentUserTourPlan().ToDto().OrderByDescending(e => e.AddTime);
-            var data = new GridModel<iPow.Domain.Dto.Sys_TourPlanDto>
+            var data = new GridModel<Miaow.Domain.Dto.Sys_TourPlanDto>
             {
                 Data = dto,
                 Total = dto.Count()
@@ -187,7 +187,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// <returns></returns>
         [GridAction]
         [HttpPost]
-        public ViewResult CreatePlan(iPow.Domain.Dto.Sys_TourPlanDto tour)
+        public ViewResult CreatePlan(Miaow.Domain.Dto.Sys_TourPlanDto tour)
         {
             try
             {
@@ -197,7 +197,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 }
                 else
                 {
-                    var data = new iPow.Infrastructure.Data.DataSys.Sys_TourPlan();
+                    var data = new Miaow.Infrastructure.Data.DataSys.Sys_TourPlan();
                     data.AddTime = System.DateTime.Now;
                     data.Days = tour.Days;
                     data.Destination = tour.Destination;
@@ -230,7 +230,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         #region util
 
-        private IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_TourPlan> CurrentUserTourPlan()
+        private IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_TourPlan> CurrentUserTourPlan()
         {
             var data = tourPlanRepository.GetList().OrderByDescending(e => e.AddTime).AsEnumerable();
             var currentUserId = 0;
@@ -241,7 +241,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             return data;
         }
 
-        private iPow.Infrastructure.Data.DataSys.Sys_TourPlan SysSingleTourPlan(int id)
+        private Miaow.Infrastructure.Data.DataSys.Sys_TourPlan SysSingleTourPlan(int id)
         {
             var data = tourPlanRepository.GetList(e => e.PlanID == id).FirstOrDefault();
             return data;

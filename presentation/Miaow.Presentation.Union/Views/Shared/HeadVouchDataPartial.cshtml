@@ -1,9 +1,9 @@
 ﻿@{
-    var headVouchData = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Service.Union.Service.IHeadVouchDataService>();
+    var headVouchData = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Service.Union.Service.IHeadVouchDataService>();
 
-    var hotelLeftMidService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Service.Union.Service.IHotelLeftMidService>();
+    var hotelLeftMidService = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Service.Union.Service.IHotelLeftMidService>();
 }
 <script src="@Url.Content("~/Scripts/common.js")" type="text/javascript"></script>
 <style type="text/css">
@@ -73,20 +73,20 @@
     @{
         <h3>
             热点景区</h3> 
-        IQueryable<iPow.Application.Union.Dto.HeadVouchSightInfoDto> si = null;
+        IQueryable<Miaow.Application.Union.Dto.HeadVouchSightInfoDto> si = null;
         si = headVouchData.GetVouchSightByCityName(ViewBag.city != null ? ViewBag.city : "广州", 10);
         if (si != null)
         {
             foreach (var item in si)
             {
-        <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.Id.ToString())/1" title="@item.Title"  target="_blank">
+        <a href="http://jq.Miaow.cn/sight/@(item.Py)/@(item.Id.ToString())/1" title="@item.Title"  target="_blank">
             <dl>
                 <dt>
                     @(item.Title.Length >= 6 ? (item.Title.Substring(0, 5) + "…") : item.Title)
                 </dt>
                 <dd class="img">
                     @{
-                List<string> list = iPow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(item.Id);
+                List<string> list = Miaow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(item.Id);
                         <img src="@(list.Count == 3 ? list[0] + "CutDown/116_103_" + list[1] : "#")" alt = "@(list.Count == 3 ? list[2] : "暂无图片")" />
                     }
                 </dd>

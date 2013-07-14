@@ -5,17 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class UserClassController : Controller
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IAdminUserClassService userClassService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IAdminUserClassService userClassService;
 
-        public UserClassController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IAdminUserClassService userClass)
+        public UserClassController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IAdminUserClassService userClass)
         {
             if (userClass == null)
             {
@@ -40,7 +40,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 data = data.Where(e => e.Name.Contains(searchKey));
             }
             var dto = data.ToDto();
-            var model = new GridModel<iPow.Domain.Dto.Sys_AdminUserClassDto>
+            var model = new GridModel<Miaow.Domain.Dto.Sys_AdminUserClassDto>
             {
                 Data = dto,
                 Total = data.Count()
@@ -50,12 +50,12 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         public ViewResult Add()
         {
-            var model = new iPow.Domain.Dto.Sys_AdminUserClassDto();
+            var model = new Miaow.Domain.Dto.Sys_AdminUserClassDto();
             return View(model);
         }
 
         [HttpPost]
-        public ViewResult Add(iPow.Domain.Dto.Sys_AdminUserClassDto dto)
+        public ViewResult Add(Miaow.Domain.Dto.Sys_AdminUserClassDto dto)
         {
             if (dto != null)
             {
@@ -66,13 +66,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 }
                 else
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUserClass addUserClass = new iPow.Infrastructure.Data.DataSys.Sys_AdminUserClass();
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                    Miaow.Infrastructure.Data.DataSys.Sys_AdminUserClass addUserClass = new Miaow.Infrastructure.Data.DataSys.Sys_AdminUserClass();
+                    Miaow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Miaow.Infrastructure.Data.DataSys.Sys_AdminUser();
                     operUser.id = 1;
                     addUserClass.Name = dto.Name;
                     addUserClass.Remark = dto.Remark;
                     addUserClass.AddUserId = operUser.id;
-                    addUserClass.IpAddress = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+                    addUserClass.IpAddress = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
                     addUserClass.SortNum = dto.SortNum;
                     addUserClass.AddTime = System.DateTime.Now;
                     addUserClass.State = dto.State;
@@ -120,13 +120,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         }
 
         [HttpPost]
-        public ViewResult Edit(iPow.Domain.Dto.Sys_AdminUserClassDto Class, string State)
+        public ViewResult Edit(Miaow.Domain.Dto.Sys_AdminUserClassDto Class, string State)
         {
             try
             {
                 if (Class != null && Class.Id > 0)
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                    Miaow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Miaow.Infrastructure.Data.DataSys.Sys_AdminUser();
                     operUser.id = 1;
                     var model = userClassService.GetList().Where(e => e.Id == Class.Id).First();
                     model.Name = Class.Name;
@@ -180,13 +180,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         #region util
         
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_AdminUserClass> GetClassList()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_AdminUserClass> GetClassList()
         {
             var AllClass = userClassService.GetList();
             return AllClass;
         }
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_AdminUserClass> CurrentClassName()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_AdminUserClass> CurrentClassName()
         {
             var data = userClassService.GetList().OrderByDescending(e => e.Id).AsEnumerable();
             var currentClassId = 0;

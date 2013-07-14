@@ -1,5 +1,5 @@
 ﻿/*
-* Compressed by iPow(www.iPow.cn)
+* Compressed by Miaow(www.Miaow.cn)
 */
 var TimerControl = function (G, A) {
     var D, E, C = this; function B() { E = setTimeout(F, A) }

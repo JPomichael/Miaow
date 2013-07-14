@@ -14,7 +14,7 @@
 @{
     if (ViewBag.id != null && ViewBag.rid != null && ViewBag.rpi != null)
     {
-        var fig = iPow.Service.Union.Config.ConfigManager.GetConfigProvider().Initial();
+        var fig = Miaow.Service.Union.Config.ConfigManager.GetConfigProvider().Initial();
         var url = "http://www.128uu.com/ebook/ebook.asp?agent_id=" + fig.AgentId;
         url += "&agent_md=" + fig.AgentMd;
         url += "&typeid=" + fig.DingDanType;
@@ -28,9 +28,9 @@
         //url += "&webpath=http://localhost:9359";
         //url += "&url=http://localhost:9359/ebook/" + ViewBag.id + "/" + ViewBag.rid + "/" + ViewBag.rpi;
         //发布
-        url += "&webpath=http://hotel.ipow.cn";
-        url += "&url=http://hotel.ipow.cn/ebook/" + ViewBag.id + "/" + ViewBag.rid + "/" + ViewBag.rpi;
-        url += "&webname=" + iPow.Infrastructure.Crosscutting.Function.StringHelper.StrToUrlGbk(fig.WebName);//Server.UrlEncode(fig.WebName);
+        url += "&webpath=http://hotel.Miaow.cn";
+        url += "&url=http://hotel.Miaow.cn/ebook/" + ViewBag.id + "/" + ViewBag.rid + "/" + ViewBag.rpi;
+        url += "&webname=" + Miaow.Infrastructure.Crosscutting.Function.StringHelper.StrToUrlGbk(fig.WebName);//Server.UrlEncode(fig.WebName);
     <div class="mainContainer">
         <iframe id="frame_content" width="965" name="frame" height="730" scrolling="no" frameborder="0" src="@(url)">
         </iframe>

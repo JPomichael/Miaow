@@ -5,30 +5,30 @@ using System.Web;
 using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class TourDetailController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        iPow.Domain.Repository.ITourClassRepository tourClassRepository;
+        Miaow.Domain.Repository.ITourClassRepository tourClassRepository;
 
-        iPow.Domain.Repository.ITourPlanDetailRepository tourPlanDetailRepository;
+        Miaow.Domain.Repository.ITourPlanDetailRepository tourPlanDetailRepository;
 
-        iPow.Domain.Repository.ITourPlanRepository tourPlanRepository;
+        Miaow.Domain.Repository.ITourPlanRepository tourPlanRepository;
 
-        iPow.Domain.Repository.ISightInfoRepository sightInfoRepository;
+        Miaow.Domain.Repository.ISightInfoRepository sightInfoRepository;
 
-        iPow.Domain.Repository.IHotelPropertyInfoRepository hotelPropertyInfoRepository;
+        Miaow.Domain.Repository.IHotelPropertyInfoRepository hotelPropertyInfoRepository;
 
-        public TourDetailController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Domain.Repository.ITourClassRepository tourClass,
-            iPow.Domain.Repository.ITourPlanDetailRepository tourPlanDetail,
-            iPow.Domain.Repository.ITourPlanRepository tourPlan,
-            iPow.Domain.Repository.ISightInfoRepository sightInfo,
-            iPow.Domain.Repository.IHotelPropertyInfoRepository hotelPropertyInfo)
+        public TourDetailController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Domain.Repository.ITourClassRepository tourClass,
+            Miaow.Domain.Repository.ITourPlanDetailRepository tourPlanDetail,
+            Miaow.Domain.Repository.ITourPlanRepository tourPlan,
+            Miaow.Domain.Repository.ISightInfoRepository sightInfo,
+            Miaow.Domain.Repository.IHotelPropertyInfoRepository hotelPropertyInfo)
             : base(work)
         {
             if (tourClass == null)
@@ -321,7 +321,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         {
             if (data != null && ModelState.IsValid && id > 0)
             {
-                var model = new iPow.Infrastructure.Data.DataSys.Sys_TourPlanDetail();
+                var model = new Miaow.Infrastructure.Data.DataSys.Sys_TourPlanDetail();
                 model.AddTime = System.DateTime.Now;
                 model.CurrentPrice = data.CurrentPrice;
                 model.DayID = data.DayID;
@@ -396,7 +396,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                     if (sight != null)
                     {
                         item.TargetName = sight.Title;
-                        item.TargetUrl = "http://jq.ipow.cn/sight/" + sight.PY + sight.ParkID + "/1";
+                        item.TargetUrl = "http://jq.Miaow.cn/sight/" + sight.PY + sight.ParkID + "/1";
                         item.DetailTypeName = "景区";
                     }
                 }
@@ -406,14 +406,14 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                     if (hotel != null)
                     {
                         item.TargetName = hotel.HotelName;
-                        item.TargetUrl = "http://hotel.ipow.cn/hotel/" + hotel.HotelID;
+                        item.TargetUrl = "http://hotel.Miaow.cn/hotel/" + hotel.HotelID;
                         item.DetailTypeName = "酒店";
                     }
                 }
             }
         }
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_TourPlanDetail> CurrentUserTourPlanDetail()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_TourPlanDetail> CurrentUserTourPlanDetail()
         {
             var data = tourPlanDetailRepository.GetList().OrderByDescending(e => e.AddTime).AsEnumerable();
             var currentUserId = 0;
@@ -424,13 +424,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             return data;
         }
 
-        protected iPow.Infrastructure.Data.DataSys.Sys_TourPlanDetail SysSingleTourDetailPlan(int id)
+        protected Miaow.Infrastructure.Data.DataSys.Sys_TourPlanDetail SysSingleTourDetailPlan(int id)
         {
             var data = tourPlanDetailRepository.GetList(e => e.PlanID == id).FirstOrDefault();
             return data;
         }
 
-        protected iPow.Infrastructure.Data.DataSys.Sys_TourPlan SysSingleTourPlan(int id)
+        protected Miaow.Infrastructure.Data.DataSys.Sys_TourPlan SysSingleTourPlan(int id)
         {
             var data = tourPlanRepository.GetList(e => e.PlanID == id).FirstOrDefault();
             return data;

@@ -119,7 +119,7 @@ function UpdateHotelLiveIn(uri, id, updateid) {
                     if (msg != null && msg != undefined) {
                         if (msg.success) {
                             $("#" + updateid).html(msg.livein);
-                            alert('IPOW,感谢您的左键');
+                            alert('Miaow,感谢您的左键');
                         }
                         else {
                             alert('貌似服务器有点繁忙，麻烦您等一会儿吧！');
@@ -143,10 +143,10 @@ function UpdateHotelLiveIn(uri, id, updateid) {
 
 
 /*
-* Compressed by iPow(www.iPow.cn)
+* Compressed by Miaow(www.Miaow.cn)
 下面的这几个,都是交通调用
 */
-var userAgent = navigator.userAgent.toLowerCase(), is_opera = userAgent.indexOf("opera") != -1 && opera.version(), is_moz = (navigator.product == "Gecko") && userAgent.substr(userAgent.indexOf("firefox") + 8, 3), is_ie = (userAgent.indexOf("msie") != -1 && !is_opera) && userAgent.substr(userAgent.indexOf("msie") + 5, 3), iPowHotel = null;
+var userAgent = navigator.userAgent.toLowerCase(), is_opera = userAgent.indexOf("opera") != -1 && opera.version(), is_moz = (navigator.product == "Gecko") && userAgent.substr(userAgent.indexOf("firefox") + 8, 3), is_ie = (userAgent.indexOf("msie") != -1 && !is_opera) && userAgent.substr(userAgent.indexOf("msie") + 5, 3), MiaowHotel = null;
 
 function tabs(C, A, E) {
     var D = "#" + A, B = 0; $("#" + C + " ul li").click(function () {

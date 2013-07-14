@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace iPow.Presentation.account.Areas.MyAdmin
+namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     public class MyAdminAreaRegistration : AreaRegistration
     {
@@ -18,7 +18,7 @@ namespace iPow.Presentation.account.Areas.MyAdmin
                 "MyAdmin_default",
                 "MyAdmin/{controller}/{action}/{id}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional }, null,
-                new string[] { "iPow.Presentation.account.Areas.MyAdmin" }
+                new string[] { "Miaow.Presentation.account.Areas.MyAdmin" }
             );
         }
     }

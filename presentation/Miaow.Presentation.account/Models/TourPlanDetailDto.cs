@@ -15,7 +15,7 @@ namespace Miaow.Presentation.account.Models
         /// Gets or sets the tour plan.
         /// </summary>
         /// <value>The tour plan.</value>
-        public iPow.Domain.Dto.Sys_TourPlanDto Parent { get; set; }
+        public Miaow.Domain.Dto.Sys_TourPlanDto Parent { get; set; }
 
         /// <summary>
         /// Gets or sets the tour plan detail list.
@@ -28,7 +28,7 @@ namespace Miaow.Presentation.account.Models
     /// 
     /// </summary>
     [Validator(typeof(Validate.TourPlanDetailDtoValidate))]
-    public class TourPlanDetailDto : iPow.Domain.Dto.Sys_TourPlanDetailDto
+    public class TourPlanDetailDto : Miaow.Domain.Dto.Sys_TourPlanDetailDto
     {
         /// <summary>
         /// Gets or sets the name of the target.

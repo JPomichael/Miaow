@@ -1,5 +1,5 @@
 ﻿@using System.Configuration
-@model iPow.jq.Models.LogOnModel
+@model Miaow.jq.Models.LogOnModel
 @{
     ViewBag.Title = "登录";
 }
@@ -91,7 +91,7 @@
                             $("#error").text('验证码不正确').show();
                         }
                         else {
-                            $.get('http://account.ipow.cn/server/SSOService.svc/user/Login?callback=?',
+                            $.get('http://account.Miaow.cn/server/SSOService.svc/user/Login?callback=?',
     				        { username: $("#UserName").val(), password: $("#Password").val() },
     				        function (ssodata) {
     				            //第一种是禁止

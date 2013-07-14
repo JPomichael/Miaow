@@ -2,7 +2,7 @@
 using System.Web;
 using System.Drawing;
 
-namespace iPow.jz
+namespace Miaow.jz
 {
     /// <summary>
     /// vcode 的摘要说明

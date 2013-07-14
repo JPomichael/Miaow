@@ -1,1 +1,0 @@
-<%@ Application Codebehind="Global.asax.cs" Inherits="iPow.Service.Open.Web.Global" Language="C#" %>

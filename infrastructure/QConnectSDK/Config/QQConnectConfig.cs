@@ -22,7 +22,7 @@ namespace QConnectSDK.Config
         /// <returns></returns>
         public string GetAuthorizeURL()
         {
-            return QzoneSection["ipowTencentAuthorizeURL"];
+            return QzoneSection["MiaowTencentAuthorizeURL"];
         }
         /// <summary>
         /// 申请QQ登录成功后，分配给应用的appid
@@ -30,7 +30,7 @@ namespace QConnectSDK.Config
         /// <returns>string AppKey</returns>
         public string GetAppKey()
         {
-            return QzoneSection["ipowTencentAppKey"];
+            return QzoneSection["MiaowTencentAppKey"];
         }
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace QConnectSDK.Config
         /// <returns>string AppSecret</returns>
         public string GetAppSecret()
         {
-            return QzoneSection["ipowTencentAppSecret"];
+            return QzoneSection["MiaowTencentAppSecret"];
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace QConnectSDK.Config
         /// <returns></returns>
         public Uri GetCallBackURI()
         {
-            string callbackUrl = QzoneSection["ipowTencentAppCallback"];
+            string callbackUrl = QzoneSection["MiaowTencentAppCallback"];
             if (!Uri.IsWellFormedUriString(callbackUrl, UriKind.Absolute))
             {
                 var current = HttpContext.Current;

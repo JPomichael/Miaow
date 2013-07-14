@@ -5,19 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
-using iPow.Domain;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Domain;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class RoleController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IRoleService roleService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IRoleService roleService;
 
-        public RoleController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IRoleService role)
+        public RoleController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IRoleService role)
             : base(work)
         {
             if (role == null)
@@ -43,7 +43,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 data = data.Where(e => e.Description.Contains(searchKey));
             }
             var dto = data.ToDto();
-            var model = new GridModel<iPow.Domain.Dto.Sys_RolesDto>
+            var model = new GridModel<Miaow.Domain.Dto.Sys_RolesDto>
             {
                 Data = dto,
                 Total = data.Count()
@@ -80,11 +80,11 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         [GridAction]
         [HttpPost]
-        public JsonResult Add(iPow.Domain.Dto.Sys_RolesDto role)
+        public JsonResult Add(Miaow.Domain.Dto.Sys_RolesDto role)
         {
             if (!string.IsNullOrEmpty(role.Description))
             {
-                var model = new iPow.Infrastructure.Data.DataSys.Sys_Roles();
+                var model = new Miaow.Infrastructure.Data.DataSys.Sys_Roles();
                 model.Description = role.Description;
                 model.RoleID = roleService.GetNewRoleId();
                 roleService.Add(model,null);
@@ -96,7 +96,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         [GridAction]
         [HttpPost]
-        public JsonResult Edit(iPow.Domain.Dto.Sys_RolesDto role)
+        public JsonResult Edit(Miaow.Domain.Dto.Sys_RolesDto role)
         {
             if (role != null && !string.IsNullOrEmpty(role.Description))
             {
@@ -133,7 +133,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             }
         }
 
-        protected IQueryable<iPow.Infrastructure.Data.DataSys.Sys_Roles> GetStateTrueList()
+        protected IQueryable<Miaow.Infrastructure.Data.DataSys.Sys_Roles> GetStateTrueList()
         {
             var data = roleService.GetList().OrderByDescending(e => e.Id);
             return data;

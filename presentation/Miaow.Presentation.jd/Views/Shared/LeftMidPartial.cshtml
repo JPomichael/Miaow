@@ -1,7 +1,7 @@
 ﻿@{
     try
     {
-        iPow.function.LocationInfo li = iPow.function.LocationFucntion.LocationInfo();
+        Miaow.function.LocationInfo li = Miaow.function.LocationFucntion.LocationInfo();
         if (li != null)
         {
     <div class="leftTitle">
@@ -25,7 +25,7 @@
     </div>
     <div class="hotelContainer" id="HotelInfo">
         @{
-            IQueryable<iPow.jd.Models.LeftSightInfo> si = iPow.jd.Bll.LeftMidHotHotel.GetLeftHotSightInfoByProvince(li.Province, 3);
+            IQueryable<Miaow.jd.Models.LeftSightInfo> si = Miaow.jd.Bll.LeftMidHotHotel.GetLeftHotSightInfoByProvince(li.Province, 3);
             if (si != null)
             {
                 string sightIds = string.Empty;
@@ -33,17 +33,17 @@
                 {
             <div class="areaHotelInfo">
                 <div class="area">
-                    <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.Id)/1" target="_blank" title="查看@(item.Name)周边所有酒店">
+                    <a href="http://jq.Miaow.cn/sight/@(item.Py)/@(item.Id)/1" target="_blank" title="查看@(item.Name)周边所有酒店">
                         @{
                     sightIds += item.Id.ToString() + ",";
-                    List<string> list = iPow.BllComm.Utility.GetSightDefaultPic(item.Id);
+                    List<string> list = Miaow.BllComm.Utility.GetSightDefaultPic(item.Id);
                         }
                         <img src="@(list.Count == 3 ? list[0] + "CutDown/116_103_" + list[1] : "#")" alt = "@(list.Count == 3 ? list[2] : "暂无图片")" />
                         <span class="hotelname">@item.Name</span>更多酒店 </a>
                 </div>
                 <div id="Sight@(item.Id)" class="showHotelList">
                     @{
-                    IQueryable<iPow.jd.Models.MidHotHotelInfo> hi =  iPow.jd.Bll.LeftMidHotHotel.GetMidHotHotelListbySightId(item.Id, 3);
+                    IQueryable<Miaow.jd.Models.MidHotHotelInfo> hi =  Miaow.jd.Bll.LeftMidHotHotel.GetMidHotHotelListbySightId(item.Id, 3);
                     if (hi != null)
                     {
                         foreach (var it in hi)

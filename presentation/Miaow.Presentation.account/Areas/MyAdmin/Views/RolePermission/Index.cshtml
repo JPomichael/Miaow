@@ -1,4 +1,4 @@
-﻿@model iPow.Infrastructure.Crosscutting.Authorize.Dto.RolePermissionDto
+﻿@model Miaow.Infrastructure.Crosscutting.Authorize.Dto.RolePermissionDto
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -52,8 +52,8 @@
     <div id="permissionlist" style="margin-left: 5px;">
         <ul>
             @{
-    var allPermissionService = iPow.Presentation.account.iPowPreAccountEngine.Current
-        .Resolve<iPow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService>();
+    var allPermissionService = Miaow.Presentation.account.MiaowPreAccountEngine.Current
+        .Resolve<Miaow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService>();
     var permissionList = allPermissionService.GetAllPermissionFromDb().OrderBy(e => e.ControllerName).ThenBy(e => e.ActionId);
 
     foreach (var item in permissionList)

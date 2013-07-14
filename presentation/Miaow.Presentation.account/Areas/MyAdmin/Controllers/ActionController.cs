@@ -11,16 +11,16 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
     [HandleError]
     public class ActionController : Controller
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcActionService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcActionService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClassService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClassService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcControllerService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcControllerService;
 
-        public ActionController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcAction,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClass,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcController)
+        public ActionController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcAction,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClass,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcController)
         {
 
             if (mvcAction == null)
@@ -54,7 +54,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             {
                 data = data.Where(e => e.Name.Contains(searchKey));
             }
-            var model = new GridModel<iPow.Domain.Dto.Sys_MvcControllerActionDto>
+            var model = new GridModel<Miaow.Domain.Dto.Sys_MvcControllerActionDto>
             {
                 Data = data,
                 Total = data.Count()
@@ -66,12 +66,12 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         {
             //做为 DropDownList DataSource
             ViewBag.Actionmodel = mvcControllerService.GetList();
-            var model = new iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto();
+            var model = new Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto();
             return View(model);
         }
 
         [HttpPost]
-        public ViewResult Edit(iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto MvcControllerAction, string State)
+        public ViewResult Edit(Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto MvcControllerAction, string State)
         {
             var AllAction = this.GetControllerActionDtoList();
             try
@@ -133,7 +133,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         }
 
         [HttpPost]
-        public ViewResult Add(iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto MvcControllerAction, string State)
+        public ViewResult Add(Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto MvcControllerAction, string State)
         {
             ViewBag.Actionmodel = mvcControllerService.GetList();
             var MvcControllerName = mvcControllerService.GetControllerSingleById(Convert.ToInt32(MvcControllerAction.ClassId));
@@ -149,13 +149,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 }
                 else
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_MvcControllerAction addAction = new iPow.Infrastructure.Data.DataSys.Sys_MvcControllerAction();
+                    Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerAction addAction = new Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerAction();
                     addAction.ControllerId = Convert.ToInt32(MvcControllerAction.ClassId);
                     addAction.Name = MvcControllerAction.Name;
                     addAction.Remark = addAction.Name;
                     MvcControllerAction.AddTime = System.DateTime.Now;
                     addAction.AddTime = MvcControllerAction.AddTime;
-                    addAction.IpAddress = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+                    addAction.IpAddress = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
                     addAction.State = Convert.ToBoolean(State);
                     addAction.SortNum = MvcControllerAction.SortNum;
                     mvcActionService.Add(addAction, null);
@@ -212,7 +212,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         #region util
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_MvcControllerAction> CurrentActionName()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerAction> CurrentActionName()
         {
             var data = mvcActionService.GetList().OrderByDescending(e => e.Id).AsEnumerable();
             var currentClassId = 0;
@@ -223,7 +223,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             return data;
         }
 
-        protected IEnumerable<iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto> GetControllerActionDtoList()
+        protected IEnumerable<Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerActionDto> GetControllerActionDtoList()
         {
             var AllControllerAction = mvcActionService.GetActionDtoList().OrderBy(e => e.ControllerName);
             return AllControllerAction;

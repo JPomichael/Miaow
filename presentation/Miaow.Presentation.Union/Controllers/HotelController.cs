@@ -5,14 +5,14 @@ using System.Linq;
 using System.Web.Mvc;
 
 using Webdiyer.WebControls.Mvc;
-using iPow.Application.Union.Dto;
-using iPow.Infrastructure.Crosscutting.NetFramework.Attributes;
+using Miaow.Application.Union.Dto;
+using Miaow.Infrastructure.Crosscutting.NetFramework.Attributes;
 
 namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class HotelController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         /// <summary>
         /// 
@@ -27,80 +27,80 @@ namespace Miaow.Presentation.Union.Controllers
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelInfoService hotelInfoService;
+        Miaow.Service.Union.Service.IHotelInfoService hotelInfoService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelRoomService hotelRoomService;
+        Miaow.Service.Union.Service.IHotelRoomService hotelRoomService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelCommService hotelCommService;
+        Miaow.Service.Union.Service.IHotelCommService hotelCommService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelPicService hotelPicService;
+        Miaow.Service.Union.Service.IHotelPicService hotelPicService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelTrafficService hotelTrafficService;
+        Miaow.Service.Union.Service.IHotelTrafficService hotelTrafficService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Domain.Repository.IHotelCommRepository hotelCommRepository;
+        Miaow.Domain.Repository.IHotelCommRepository hotelCommRepository;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Domain.Repository.IHotelPropertyInfoRepository hotelPropertyInfoRepository;
+        Miaow.Domain.Repository.IHotelPropertyInfoRepository hotelPropertyInfoRepository;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelCommSysService hotelCommSysService;
+        Miaow.Service.Union.Service.IHotelCommSysService hotelCommSysService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="HotelController"/> class.
         /// </summary>
         /// <param name="work">The work.</param>
-        /// <param name="ipowHotelInfo">The ipow hotel info.</param>
-        /// <param name="ipowHotelRoom">The ipow hotel room.</param>
-        /// <param name="ipowHotelComm">The ipow hotel comm.</param>
-        /// <param name="ipowHotelPic">The ipow hotel pic.</param>
-        /// <param name="ipowHotelTraffic">The ipow hotel traffic.</param>
-        public HotelController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Service.Union.Service.IHotelInfoService ipowHotelInfo,
-            iPow.Service.Union.Service.IHotelRoomService ipowHotelRoom,
-            iPow.Service.Union.Service.IHotelCommService ipowHotelComm,
-            iPow.Service.Union.Service.IHotelPicService ipowHotelPic,
-            iPow.Service.Union.Service.IHotelTrafficService ipowHotelTraffic,
-            iPow.Domain.Repository.IHotelCommRepository hotelComm,
-            iPow.Domain.Repository.IHotelPropertyInfoRepository hotelPropertyInfo,
-            iPow.Service.Union.Service.IHotelCommSysService ipowHotelCommSys)
+        /// <param name="MiaowHotelInfo">The Miaow hotel info.</param>
+        /// <param name="MiaowHotelRoom">The Miaow hotel room.</param>
+        /// <param name="MiaowHotelComm">The Miaow hotel comm.</param>
+        /// <param name="MiaowHotelPic">The Miaow hotel pic.</param>
+        /// <param name="MiaowHotelTraffic">The Miaow hotel traffic.</param>
+        public HotelController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Service.Union.Service.IHotelInfoService MiaowHotelInfo,
+            Miaow.Service.Union.Service.IHotelRoomService MiaowHotelRoom,
+            Miaow.Service.Union.Service.IHotelCommService MiaowHotelComm,
+            Miaow.Service.Union.Service.IHotelPicService MiaowHotelPic,
+            Miaow.Service.Union.Service.IHotelTrafficService MiaowHotelTraffic,
+            Miaow.Domain.Repository.IHotelCommRepository hotelComm,
+            Miaow.Domain.Repository.IHotelPropertyInfoRepository hotelPropertyInfo,
+            Miaow.Service.Union.Service.IHotelCommSysService MiaowHotelCommSys)
             : base(work)
         {
-            if (ipowHotelInfo == null)
+            if (MiaowHotelInfo == null)
             {
                 throw new ArgumentNullException("hotelInfoService is null");
             }
-            if (ipowHotelRoom == null)
+            if (MiaowHotelRoom == null)
             {
                 throw new ArgumentNullException("hotelRoomService is null");
             }
-            if (ipowHotelComm == null)
+            if (MiaowHotelComm == null)
             {
                 throw new ArgumentNullException("hotelCommService is null");
             }
-            if (ipowHotelPic == null)
+            if (MiaowHotelPic == null)
             {
                 throw new ArgumentNullException("hotelPicService is null");
             }
-            if (ipowHotelTraffic == null)
+            if (MiaowHotelTraffic == null)
             {
                 throw new ArgumentNullException("hotelTrafficService is null");
             }
@@ -112,18 +112,18 @@ namespace Miaow.Presentation.Union.Controllers
             {
                 throw new ArgumentNullException("hotelPropertyInfoRepository is null");
             }
-            if (ipowHotelCommSys == null)
+            if (MiaowHotelCommSys == null)
             {
                 throw new ArgumentNullException("hotelCommSysService is null");
             }
-            hotelInfoService = ipowHotelInfo;
-            hotelRoomService = ipowHotelRoom;
-            hotelCommService = ipowHotelComm;
-            hotelPicService = ipowHotelPic;
-            hotelTrafficService = ipowHotelTraffic;
+            hotelInfoService = MiaowHotelInfo;
+            hotelRoomService = MiaowHotelRoom;
+            hotelCommService = MiaowHotelComm;
+            hotelPicService = MiaowHotelPic;
+            hotelTrafficService = MiaowHotelTraffic;
             hotelCommRepository = hotelComm;
             hotelPropertyInfoRepository = hotelPropertyInfo;
-            hotelCommSysService = ipowHotelCommSys;
+            hotelCommSysService = MiaowHotelCommSys;
         }
 
         /// <summary>
@@ -180,12 +180,12 @@ namespace Miaow.Presentation.Union.Controllers
         [HttpGet]
         public PartialViewResult HotelComm(int id)
         {
-            PagedList<iPow.Application.Union.Dto.HotelCommDto> data = null;
+            PagedList<Miaow.Application.Union.Dto.HotelCommDto> data = null;
             var hotelInfo = hotelInfoService.GetHotelInfoById(id.ToString());
             if (hotelInfo != null)
             {
                 var temp = hotelCommService.GetHotelCommById(hotelInfo.id.ToString(), hotelInfo.cid.ToString());
-                data = new PagedList<iPow.Application.Union.Dto.HotelCommDto>(temp.dianping_list, 1, 10, temp.total);
+                data = new PagedList<Miaow.Application.Union.Dto.HotelCommDto>(temp.dianping_list, 1, 10, temp.total);
             }
             ViewBag.id = id;
             ViewBag.hotelid = id;
@@ -203,12 +203,12 @@ namespace Miaow.Presentation.Union.Controllers
         public PartialViewResult HotelCommList(int id, int? pi)
         {
             int pageIdex = pi == null ? 1 : (int)pi;
-            PagedList<iPow.Application.Union.Dto.HotelCommDto> data = null;
+            PagedList<Miaow.Application.Union.Dto.HotelCommDto> data = null;
             var hotelInfo = hotelInfoService.GetHotelInfoById(id.ToString());
             if (hotelInfo != null)
             {
                 var temp = hotelCommService.GetHotelCommById(hotelInfo.id.ToString(), hotelInfo.cid.ToString(), pageIdex.ToString());
-                data = new PagedList<iPow.Application.Union.Dto.HotelCommDto>(temp.dianping_list, pageIdex, 10, temp.total);
+                data = new PagedList<Miaow.Application.Union.Dto.HotelCommDto>(temp.dianping_list, pageIdex, 10, temp.total);
             }
             ViewBag.id = id;
             ViewBag.hotelid = id;
@@ -228,7 +228,7 @@ namespace Miaow.Presentation.Union.Controllers
             {
                 try
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_HotelComm hc = new Infrastructure.Data.DataSys.Sys_HotelComm();
+                    Miaow.Infrastructure.Data.DataSys.Sys_HotelComm hc = new Infrastructure.Data.DataSys.Sys_HotelComm();
                     #region init
 
                     hc.AddTime = System.DateTime.Now;
@@ -241,7 +241,7 @@ namespace Miaow.Presentation.Union.Controllers
                     {
                         hc.HotelID = int.Parse(f["HotelID"].ToString());
                     }
-                    hc.Ip = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+                    hc.Ip = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
                     if (hc.Ip == "::1")
                     {
                         hc.Ip = "127.0.0.1";
@@ -262,11 +262,11 @@ namespace Miaow.Presentation.Union.Controllers
                     hotelInfo.CommCount += 1;
                     hotelPropertyInfoRepository.Uow.Commit();
                     int total = 0;
-                    List<iPow.Domain.Dto.Sys_HotelCommDto> hcs = hotelCommSysService.GetHotelCommPageListByHotelId(hc.HotelID, 1, 5, ref total);
-                    PagedList<iPow.Domain.Dto.Sys_HotelCommDto> hcList = null;
+                    List<Miaow.Domain.Dto.Sys_HotelCommDto> hcs = hotelCommSysService.GetHotelCommPageListByHotelId(hc.HotelID, 1, 5, ref total);
+                    PagedList<Miaow.Domain.Dto.Sys_HotelCommDto> hcList = null;
                     if (hcs != null && hcs.Count() > 0)
                     {
-                        hcList = new PagedList<iPow.Domain.Dto.Sys_HotelCommDto>(hcs, 1, commPageSize, total);
+                        hcList = new PagedList<Miaow.Domain.Dto.Sys_HotelCommDto>(hcs, 1, commPageSize, total);
                     }
                     ViewBag.hotelid = hc.HotelID;
                     return PartialView("HotelCommListPartial", hcList);
@@ -290,7 +290,7 @@ namespace Miaow.Presentation.Union.Controllers
         [HttpGet]
         public PartialViewResult HotelPic(int id)
         {
-            PagedList<iPow.Application.Union.Dto.HotelPicDto> data = null;
+            PagedList<Miaow.Application.Union.Dto.HotelPicDto> data = null;
             data = hotelPicService.GetHotelPicById(id.ToString(), 1, 9);
             return PartialView("HotelPicPartial", data);
         }
@@ -305,7 +305,7 @@ namespace Miaow.Presentation.Union.Controllers
         [HttpGet]
         public PartialViewResult HotelPicList(int id, int? pi)
         {
-            PagedList<iPow.Application.Union.Dto.HotelPicDto> data = null;
+            PagedList<Miaow.Application.Union.Dto.HotelPicDto> data = null;
             data = hotelPicService.GetHotelPicById(id.ToString(), pi == null ? (int)0 : (int)pi, 9);
             return PartialView("HotelPicListPartial", data);
         }
@@ -325,7 +325,7 @@ namespace Miaow.Presentation.Union.Controllers
             int? temp = 0;
             try
             {
-                iPow.Infrastructure.Data.DataSys.Sys_HotelPropertyInfo hi = hotelPropertyInfoRepository.GetList(e => e.ID == id).FirstOrDefault();
+                Miaow.Infrastructure.Data.DataSys.Sys_HotelPropertyInfo hi = hotelPropertyInfoRepository.GetList(e => e.ID == id).FirstOrDefault();
                 if (hi != null)
                 {
                     hi.LiveInCount += 1;
@@ -349,7 +349,7 @@ namespace Miaow.Presentation.Union.Controllers
         [ChildActionOnly]
         public PartialViewResult HotelTraffic(int id)
         {
-            iPow.Application.Union.Dto.HotelTrafficDto data = hotelTrafficService.GetHotelTrafficById(id.ToString());
+            Miaow.Application.Union.Dto.HotelTrafficDto data = hotelTrafficService.GetHotelTrafficById(id.ToString());
             return PartialView("HotelTrafficPartial", data);
         }
     }

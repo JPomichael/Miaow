@@ -2,23 +2,23 @@
 using System.Linq;
 using System.Web.Mvc;
 
-using iPow.Application.dj.Dto;
+using Miaow.Application.dj.Dto;
 
 namespace Miaow.Presentation.dj.Controllers
 {
     public class TourController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        iPow.Application.dj.Service.ITourPlanService tourPlanService;
+        Miaow.Application.dj.Service.ITourPlanService tourPlanService;
 
-        iPow.Domain.Repository.ITourPlanRepository tourPlanRepository;
+        Miaow.Domain.Repository.ITourPlanRepository tourPlanRepository;
 
-        public TourController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.dj.Service.ITourPlanService ipowTourPlanService,
-            iPow.Domain.Repository.ITourPlanRepository tourPlan)
+        public TourController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.dj.Service.ITourPlanService MiaowTourPlanService,
+            Miaow.Domain.Repository.ITourPlanRepository tourPlan)
             : base(work)
         {
-            if (ipowTourPlanService == null)
+            if (MiaowTourPlanService == null)
             {
                 throw new ArgumentNullException("tourPlanService is null");
             }
@@ -26,7 +26,7 @@ namespace Miaow.Presentation.dj.Controllers
             {
                 throw new ArgumentNullException("tourPlanRepository is null");
             }
-            tourPlanService = ipowTourPlanService;
+            tourPlanService = MiaowTourPlanService;
             tourPlanRepository = tourPlan;
         }
 

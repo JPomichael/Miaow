@@ -1,7 +1,7 @@
-﻿var iPowTour=null;
+﻿var MiaowTour=null;
 var tripData=[];//数据结构[{DayID:1,TName:"三日游",Destination:"目的地",Sight:[{SName:锦绣中华,SID:10003,Ticket:￥250,IMG:"",Latitude:32,Longitude:12}],Hotel:[{HName:酒店名称,HID:10003,Star:5,Address:横岗,HPrice:￥1250}],Traffic:[{Model:公交}],DTotal:￥2345,UserName:"",UserID:1}]
 var cirHotelInfo = [];//周边酒店信息
-var iPowApi = "http://192.168.1.65:199/";
+var MiaowApi = "http://192.168.1.65:199/";
 //行程定义类
 //数据结构[{ID:1,DayID:1,TName:三日游,Sight:[{SName:锦绣中华,Ticket:￥250,IMG:"",Latitude:32,Longitude:12}],Hotel:[{HName:酒店名称,Star:5,Address:横岗,HPrice:￥1250,Latitude:32,Longitude:12}],Traffic:[{Model:公交}],DTotal:￥2345}]
 //周边酒店信息：[{HotelID:1000,HName:酒店名称,Star:星级,Address:酒店地址,HPrice:价格,Latitude:32,Longitude:12}]
@@ -321,7 +321,7 @@ DrawTravel.prototype={
 					var domnum =  String(_temp) + String(m);
 					var sight = {
 						Name:s.SName,
-						Url:'http://jq.ipow.cn/szhys',
+						Url:'http://jq.Miaow.cn/szhys',
 						Type:'Sight',
 						Latitude:s.Latitude,
 						Longitude:s.Longitude,
@@ -392,12 +392,12 @@ DrawTravel.prototype={
 			$("#CirHotelList").html("");
 			var sightCount = sightjson.length;
 			$.each(cirHotelInfo[parseInt(daynum)].slice(startindex,endindex),function(index,h){
-				_html = '<li id="hotel'+h.HotelID+'"><a href="http://hotel.ipow.cn/'+h.HotelID+'.shtml" title="'+h.HName+'"><img src="/images/icon/htop'+parseInt(index+1)+'.jpg" border="0"/><span>'+h.HName+'</span><em>￥'+h.HPrice+'</em></a><span class="addHotel" id="hotelOpration'+index+'">添加</span></li>';	
+				_html = '<li id="hotel'+h.HotelID+'"><a href="http://hotel.Miaow.cn/'+h.HotelID+'.shtml" title="'+h.HName+'"><img src="/images/icon/htop'+parseInt(index+1)+'.jpg" border="0"/><span>'+h.HName+'</span><em>￥'+h.HPrice+'</em></a><span class="addHotel" id="hotelOpration'+index+'">添加</span></li>';	
 				$("#CirHotelList").append(_html);
 				$("#hotelOpration"+index+"").click(function(){tempThis.addHotel(this,h);});
 				var hoteljson = {
 					Name: h.HName,
-					Url: 'http://hotel.ipow.cn/3325.shtml',
+					Url: 'http://hotel.Miaow.cn/3325.shtml',
 					Type: 'Hotel',
 					Latitude:h.Latitude,
 					Longitude:h.Longitude,
@@ -461,7 +461,7 @@ DrawTravel.prototype={
 			var njson = {},cirhotel=[];
 			num = parseInt(num-1);
 			$("#CirHotelList").html("");
-			$.getScript(iPowApi + "IpowAPI/Hotel/Requset/GetHotelInfo.aspx?RequestType=GetCircleHotelByParkID&ParkID="+sightid+"&temp=" + Math.random(),function(){																																									   cirhotel=[];
+			$.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/GetHotelInfo.aspx?RequestType=GetCircleHotelByParkID&ParkID="+sightid+"&temp=" + Math.random(),function(){																																									   cirhotel=[];
 				$.each(hotelJson,function(index,json){
 					njson = {
 						HotelID:json.ID,
@@ -576,7 +576,7 @@ DrawTravel.prototype={
 				return false;
 			}
 			var tempThis = this;
-			jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/UserLogin.ashx?type=chk&CallBack=iPowDraw.saveuser&temp="+Math.random(),function(){
+			jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/UserLogin.ashx?type=chk&CallBack=MiaowDraw.saveuser&temp="+Math.random(),function(){
 				var username = getCookie("UserName");
 				if (username == "null"||username=="")
 				{
@@ -664,9 +664,9 @@ DrawTravel.prototype={
 		var Plan=JSON.stringify(_tourPlan);
 		var PlanDetail = JSON.stringify(_tourPlanDetail);
 		if (type == "edit")
-			jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/TourPlanHandler.ashx?Type=SaveTourPlan&CallBack=iPowEdit.savesuccess&Plan="+Plan+"&PlanDetail="+PlanDetail+"");
+			jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/TourPlanHandler.ashx?Type=SaveTourPlan&CallBack=MiaowEdit.savesuccess&Plan="+Plan+"&PlanDetail="+PlanDetail+"");
 			else
-			jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/TourPlanHandler.ashx?Type=SaveTourPlan&CallBack=iPowDraw.savesuccess&Plan="+Plan+"&PlanDetail="+PlanDetail+"");
+			jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/TourPlanHandler.ashx?Type=SaveTourPlan&CallBack=MiaowDraw.savesuccess&Plan="+Plan+"&PlanDetail="+PlanDetail+"");
 	},
 	clearHistory:function(){
 		var date=new Date();
@@ -687,7 +687,7 @@ DrawTravel.prototype={
 			$.each(tripJson.Sight,function(sindex,s){
 				var sight = {
 				Name:s.SName,
-				Url:'http://jq.ipow.cn/szhys',
+				Url:'http://jq.Miaow.cn/szhys',
 				Type:'Sight',
 				Latitude:s.Latitude,
 				Longitude:s.Longitude,
@@ -703,7 +703,7 @@ DrawTravel.prototype={
 			});
 			var hotel = {
 				Name:tripJson.Hotel.HName,
-				Url:'http://hotel.ipow.cn/szhys',
+				Url:'http://hotel.Miaow.cn/szhys',
 				Type:'hotel',
 				Latitude:tripJson.Hotel.Latitude,
 				Longitude:tripJson.Hotel.Longitude,
@@ -822,12 +822,12 @@ DrawTravel.prototype={
 					}
 					if (type == "save")
 					{
-						jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/UserLogin.ashx?username="+escape(_username)+"&password="+escape(_password)+"&type=login&CallBack=iPowDraw.saveuser&temp="+Math.random(),function(){
+						jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/UserLogin.ashx?username="+escape(_username)+"&password="+escape(_password)+"&type=login&CallBack=MiaowDraw.saveuser&temp="+Math.random(),function(){
 						tempThis.save(obj);																																																																																									});	
 					}
 					else
 					{
-						jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/UserLogin.ashx?username="+escape(_username)+"&password="+escape(_password)+"&type=login&CallBack=iPowDraw.saveuser&temp="+Math.random(),function(){
+						jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/UserLogin.ashx?username="+escape(_username)+"&password="+escape(_password)+"&type=login&CallBack=MiaowDraw.saveuser&temp="+Math.random(),function(){
 						$("#TB_Windows").animate({
 							top:136
 							}, 100).animate({
@@ -843,7 +843,7 @@ DrawTravel.prototype={
 		if (user.ChkLogin)
 		{
 			document.cookie = "UserName="+user.UserName;
-			$("#loginUserInfo").html('欢迎您，'+user.UserName+'！<a href="javascript:;" id="logout" onclick="iPowDraw.logout()" title="退出">退出</a>');
+			$("#loginUserInfo").html('欢迎您，'+user.UserName+'！<a href="javascript:;" id="logout" onclick="MiaowDraw.logout()" title="退出">退出</a>');
 		}
 		else
 		{
@@ -852,19 +852,19 @@ DrawTravel.prototype={
 	},
 	logout:function(){  //用户登出
 		var _this = this;
-		jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/UserLogin.ashx?type=out&temp="+Math.random(),function(){
+		jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/UserLogin.ashx?type=out&temp="+Math.random(),function(){
 			document.cookie = "UserName="+"";
 			$("#loginUserInfo").html('<a href="javascript:;" id="goLogin" title="用户登录">登录</a>&nbsp;&nbsp;<a href="javascript:;" id="goRegister" title="新用户注册">注册</a>');
 			$("#goLogin").click(function(){
 				_this.login(this,"login");			  
 			});
 			$("#goRegister").click(function(){
-				iPowDraw.register(this,"reg");				   
+				MiaowDraw.register(this,"reg");				   
 			});
 		});	
 	},
 	checkuser:function(){  //用户验证
-		jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/UserLogin.ashx?type=chk&CallBack=iPowDraw.saveuser&temp="+Math.random(),function(){
+		jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/UserLogin.ashx?type=chk&CallBack=MiaowDraw.saveuser&temp="+Math.random(),function(){
 			var _username = getCookie("UserName");																											   
 		});
 	},
@@ -938,7 +938,7 @@ DrawTravel.prototype={
 					}
 					if (type == "reg")
 					{
-						jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/UserLogin.ashx?username="+escape(_username)+"&password="+escape(_password)+"&email="+escape(_email)+"&type=register&CallBack=iPowDraw.saveuser&temp="+Math.random(),function(){
+						jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/UserLogin.ashx?username="+escape(_username)+"&password="+escape(_password)+"&email="+escape(_email)+"&type=register&CallBack=MiaowDraw.saveuser&temp="+Math.random(),function(){
 						$("#TB_Windows").animate({
 						  top:136
 						  }, 100).animate({
@@ -950,7 +950,7 @@ DrawTravel.prototype={
 					}
 					else
 					{
-						jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/UserLogin.ashx?username="+escape(_username)+"&password="+escape(_password)+"&email="+escape(_email)+"&type=register&CallBack=iPowDraw.saveuser&temp="+Math.random(),function(){																																																											   _this.save(obj);});
+						jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/UserLogin.ashx?username="+escape(_username)+"&password="+escape(_password)+"&email="+escape(_email)+"&type=register&CallBack=MiaowDraw.saveuser&temp="+Math.random(),function(){																																																											   _this.save(obj);});
 					}
 					
 					
@@ -979,7 +979,7 @@ DrawTravel.prototype={
 			$("#regUserName").focus();
 			return false;
 		}
-		jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/UserLogin.ashx?type=exist&username="+escape(_username)+"&CallBack=iPowDraw.userexit&temp="+Math.random());
+		jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/UserLogin.ashx?type=exist&username="+escape(_username)+"&CallBack=MiaowDraw.userexit&temp="+Math.random());
 	},
 	savesuccess:function(obj){    //数据保存成功
 		if (obj.Type == "OK")
@@ -1020,7 +1020,7 @@ DrawTravel.prototype={
 				$("#sTripInfo").html("");
 				if (_keyword == "" || _keyword == "null")
 				{
-					location.href = "http://www.ipow.cn/"
+					location.href = "http://www.Miaow.cn/"
 				}
 				if (_days!= "")
 				{
@@ -1043,7 +1043,7 @@ DrawTravel.prototype={
 				{
 					$("#txtKeyword").val(_keyword);
 					$("#fKeyword").text(_keyword);
-					jQuery.getScript(iPowApi + "IpowAPI/Search.ashx?q="+escape(_keyword)+"&type=tour&CallBack=iPowDraw.searchComplete&temp="+Math.random());
+					jQuery.getScript(MiaowApi + "MiaowAPI/Search.ashx?q="+escape(_keyword)+"&type=tour&CallBack=MiaowDraw.searchComplete&temp="+Math.random());
 				}
 				break;
 			case "gotour":
@@ -1367,7 +1367,7 @@ EditTravel.prototype = {
 				Latitude:_temp.Latitude,
 				Longitude:_temp.Longitude
 			};
-			if (!iPowDraw.isExist(sightJson))
+			if (!MiaowDraw.isExist(sightJson))
 			{
 				//弹出层表单数据
 				var _tempHtml = '<div class="TB_Form"><span><label>选择行程：</label>';
@@ -1549,15 +1549,15 @@ EditTravel.prototype = {
 						$("#btnSetHotel").click(function(){
 							var _selected = $("#selTravelHotel option:selected").attr("value");
 							_hotelHtml = '<div class="infoContent" style=" background-color:#EAEAEA;" id="hotel'+hoteljson.HotelID+'">\
-							<a href="http://hotel.ipow.cn/'+hoteljson.HotelID+'.shtml" class="aImg" target="_blank">\
+							<a href="http://hotel.Miaow.cn/'+hoteljson.HotelID+'.shtml" class="aImg" target="_blank">\
 								<img src="'+hoteljson.ImageSrc+'" />\
 							</a>\
 							<div class="tourInfo">\
-								<h3><a href="http://hotel.ipow.cn/'+hoteljson.HotelID+'.shtml" target="_blank">'+hoteljson.HName+'</a>&nbsp;&nbsp;&nbsp;&nbsp;'+hoteljson.HotelType+'</h3>\
+								<h3><a href="http://hotel.Miaow.cn/'+hoteljson.HotelID+'.shtml" target="_blank">'+hoteljson.HName+'</a>&nbsp;&nbsp;&nbsp;&nbsp;'+hoteljson.HotelType+'</h3>\
 								<dl>\
 									<dt>\
 										<span>￥<font class="fPrice">'+hoteljson.HPrice+'</font>/起</span>\
-										<a href="http://hotel.ipow.cn/'+hoteljson.HotelID+'.shtml" target="_blank" class="aLookMore">查看详细</a>\
+										<a href="http://hotel.Miaow.cn/'+hoteljson.HotelID+'.shtml" target="_blank" class="aLookMore">查看详细</a>\
 										<a href="javascript:;" class="aDeleteHotel" rel="hotel'+hoteljson.HotelID+'|'+_selected+'">移除行程</a>\
 									</dt>\
 									<dd class="dContent">地址：'+hoteljson.Address+'</dd>\
@@ -1573,15 +1573,15 @@ EditTravel.prototype = {
 			{
 				var _tempPrice = _this.travelElem.find(".tourContainer:eq(0) .insetContainer:eq(1) .fPrice").text();
 				_hotelHtml = '<div class="infoContent" style=" background-color:#EAEAEA;" id="hotel'+hoteljson.HotelID+'">\
-							<a href="http://hotel.ipow.cn/'+hoteljson.HotelID+'.shtml" class="aImg" target="_blank">\
+							<a href="http://hotel.Miaow.cn/'+hoteljson.HotelID+'.shtml" class="aImg" target="_blank">\
 								<img src="'+hoteljson.ImageSrc+'" />\
 							</a>\
 							<div class="tourInfo">\
-								<h3><a href="http://hotel.ipow.cn/'+hoteljson.HotelID+'.shtml" target="_blank">'+hoteljson.HName+'</a>&nbsp;&nbsp;&nbsp;&nbsp;'+hoteljson.HotelType+'</h3>\
+								<h3><a href="http://hotel.Miaow.cn/'+hoteljson.HotelID+'.shtml" target="_blank">'+hoteljson.HName+'</a>&nbsp;&nbsp;&nbsp;&nbsp;'+hoteljson.HotelType+'</h3>\
 								<dl>\
 									<dt>\
 										<span>￥<font class="fPrice">'+hoteljson.HPrice+'</font>/起</span>\
-										<a href="http://hotel.ipow.cn/'+hoteljson.HotelID+'.shtml" target="_blank" class="aLookMore">查看详细</a>\
+										<a href="http://hotel.Miaow.cn/'+hoteljson.HotelID+'.shtml" target="_blank" class="aLookMore">查看详细</a>\
 										<a href="javascript:;" class="aDeleteHotel" rel="hotel'+hoteljson.HotelID+'|1">移除行程</a>\
 									</dt>\
 									<dd class="dContent">地址：'+hoteljson.Address+'</dd>\
@@ -1732,9 +1732,9 @@ EditTravel.prototype = {
 	save:function(obj){
 		if (this.isEdit)
 		{
-			if (iPowDraw == null)
-				iPowDraw = new DrawTravel(null);
-			iPowDraw.save(obj,"edit");
+			if (MiaowDraw == null)
+				MiaowDraw = new DrawTravel(null);
+			MiaowDraw.save(obj,"edit");
 		}
 		else
 		{
@@ -1830,7 +1830,7 @@ EditTravel.prototype = {
         		<em></em>\
         		<span class="cost">总费用：<b>￥'+tripCost+'</b></span>\
     		</div>'+printHtml;
-		document.domain = "ipow.cn";
+		document.domain = "Miaow.cn";
 		var OpenWindow=window.open("", "newwin", "height=540, width=880,toolbar=no,scrollbars=yes,menubar=no");
 		//写成一行
 		OpenWindow.document.write("<title>"+$("#TourTitle").text()+"打印</title>")
@@ -1954,10 +1954,10 @@ EditTravel.prototype = {
 						var _tempType = _tempString[1];
 						switch(_tempType){
 							case "sight":
-								jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/SightHandler.ashx?Type=GetSight&SightID="+_tempID+"&CallBack=iPowEdit.addSight&temp="+Math.random());
+								jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/SightHandler.ashx?Type=GetSight&SightID="+_tempID+"&CallBack=MiaowEdit.addSight&temp="+Math.random());
 								break;
 							case "hotel":
-								jQuery.getScript(iPowApi + "IpowAPI/Hotel/Requset/HotelHandler.ashx?Type=GetHotel&HotelID="+_tempID+"&CallBack=iPowEdit.addHotel&temp="+Math.random());
+								jQuery.getScript(MiaowApi + "MiaowAPI/Hotel/Requset/HotelHandler.ashx?Type=GetHotel&HotelID="+_tempID+"&CallBack=MiaowEdit.addHotel&temp="+Math.random());
 								break;
 							default:
 								break;
@@ -2289,7 +2289,7 @@ var listMap = this.listMap = new function(){
 			}
 		}
 		this.showMapData = this.showMapData.concat(tempMap);
-		iPowDraw.sPage(this.showMapData,1);
+		MiaowDraw.sPage(this.showMapData,1);
     };
 	this.orderFace = function(field,order){   //数据排序
 		order = parseInt(order);
@@ -2422,11 +2422,11 @@ var listMap = this.listMap = new function(){
 		if (this.showMapData.length==0)
 		{
 			var _keyword = $("#fKeyword").text();
-			$("#ResultList").html('<p>暂无满足条件的线路<br>请修改您的搜索条件或者<a href="http://jq.ipow.cn/search/?q='+encodeURIComponent(_keyword)+'" target="_blank">制定线路</a></p>')
+			$("#ResultList").html('<p>暂无满足条件的线路<br>请修改您的搜索条件或者<a href="http://jq.Miaow.cn/search/?q='+encodeURIComponent(_keyword)+'" target="_blank">制定线路</a></p>')
 		}
 		else
 		{
-			iPowDraw.sPage(obj,1);
+			MiaowDraw.sPage(obj,1);
 		}
 	}
 }

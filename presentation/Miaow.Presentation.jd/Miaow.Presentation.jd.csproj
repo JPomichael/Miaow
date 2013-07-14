@@ -1096,10 +1096,6 @@
       <Project>{7EE33B70-CF56-424C-995D-480328B3C75A}</Project>
       <Name>iPow.Application.jd</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.DataSys\iPow.Infrastructure.Data.DataSys.csproj">
-      <Project>{2C911DAF-3B6C-49C7-AF21-6224BFB0FE74}</Project>
-      <Name>iPow.Infrastructure.Data.DataSys</Name>
-    </ProjectReference>
     <ProjectReference Include="..\iPow.jd.Models\iPow.jd.Models.csproj">
       <Project>{E11A65F8-5351-4026-8FCD-89E511670F04}</Project>
       <Name>iPow.jd.Models</Name>

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using iPow.Application.Union.Dto;
+using Miaow.Application.Union.Dto;
 
 namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class SearchController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         /// <summary>
         /// 
@@ -17,34 +17,34 @@ namespace Miaow.Presentation.Union.Controllers
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelSearchService hotelSearchService;
+        Miaow.Service.Union.Service.IHotelSearchService hotelSearchService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelTypeService hotelTypeService;
+        Miaow.Service.Union.Service.IHotelTypeService hotelTypeService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchController"/> class.
         /// </summary>
         /// <param name="work">The work.</param>
-        /// <param name="ipowHotelSearch">The ipow hotel search.</param>
-        /// <param name="ipowHotelType">Type of the ipow hotel.</param>
-        public SearchController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Service.Union.Service.IHotelSearchService ipowHotelSearch,
-            iPow.Service.Union.Service.IHotelTypeService ipowHotelType)
+        /// <param name="MiaowHotelSearch">The Miaow hotel search.</param>
+        /// <param name="MiaowHotelType">Type of the Miaow hotel.</param>
+        public SearchController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Service.Union.Service.IHotelSearchService MiaowHotelSearch,
+            Miaow.Service.Union.Service.IHotelTypeService MiaowHotelType)
             : base(work)
         {
-            if (ipowHotelSearch == null)
+            if (MiaowHotelSearch == null)
             {
                 throw new ArgumentNullException("hotelSearchService is null");
             }
-            if (ipowHotelType == null)
+            if (MiaowHotelType == null)
             {
                 throw new ArgumentNullException("hotelTypeService is null");
             }
-            hotelSearchService = ipowHotelSearch;
-            hotelTypeService = ipowHotelType;
+            hotelSearchService = MiaowHotelSearch;
+            hotelTypeService = MiaowHotelType;
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Miaow.Presentation.Union.Controllers
             int total = 0;
             if (!string.IsNullOrEmpty(bide))
             {
-                var keyCopy = iPow.Infrastructure.Crosscutting.Function.StringHelper.StrToUrlGbk(key);
+                var keyCopy = Miaow.Infrastructure.Crosscutting.Function.StringHelper.StrToUrlGbk(key);
                 var data = hotelSearchService.GetHotelSearchModel(comeTime.Replace("-", "_"), bide, keyCopy);
                 total = data.total;
                 sm.HotelBaseInfo = new Webdiyer.WebControls.Mvc.PagedList<SearchHotelDetailDto>(data.hotel_list, 1, pageSize, total);
@@ -165,7 +165,7 @@ namespace Miaow.Presentation.Union.Controllers
             ViewBag.starts = starts;
             if (!string.IsNullOrEmpty(bide))
             {
-                var keyCopy = iPow.Infrastructure.Crosscutting.Function.StringHelper.StrToUrlGbk(key);
+                var keyCopy = Miaow.Infrastructure.Crosscutting.Function.StringHelper.StrToUrlGbk(key);
                 var strMin = "0";
                 if (min == null)
                 {

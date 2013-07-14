@@ -22,25 +22,25 @@
     @{
         <h3>
             热点景区</h3> 
-        IQueryable<iPow.jd.Models.HeadVouchSightInfo> si = null;
-        si =  iPow.jd.Bll.HeadVouchData.GetVouchSightByCityName(ViewBag.city != null ? ViewBag.city : "广州", 10);
+        IQueryable<Miaow.jd.Models.HeadVouchSightInfo> si = null;
+        si =  Miaow.jd.Bll.HeadVouchData.GetVouchSightByCityName(ViewBag.city != null ? ViewBag.city : "广州", 10);
         if (si != null)
         {
             foreach (var item in si)
             {
-        <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.Id)/1" title="@item.Title"  target="_blank">
+        <a href="http://jq.Miaow.cn/sight/@(item.Py)/@(item.Id)/1" title="@item.Title"  target="_blank">
             <dl>
                 <dt>
                     @(item.Title.Length >= 6 ? (item.Title.Substring(0, 5) + "…") : item.Title)
                 </dt>
                 <dd class="img">
                     @{
-                List<string> list = iPow.BllComm.Utility.GetSightDefaultPic(item.Id);
+                List<string> list = Miaow.BllComm.Utility.GetSightDefaultPic(item.Id);
                         <img src="@(list.Count == 3 ? list[0] + "CutDown/116_103_" + list[1] : "#")" alt = "@(list.Count == 3 ? list[2] : "暂无图片")" />
                     }
                 </dd>
                 <dd class="info">
-                    @(iPow.BllComm.Utility.GetSightCirHotelCount(item.Id).ToString())
+                    @(Miaow.BllComm.Utility.GetSightCirHotelCount(item.Id).ToString())
                     家酒店</dd>
             </dl>
         </a>

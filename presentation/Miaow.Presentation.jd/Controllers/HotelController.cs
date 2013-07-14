@@ -92,8 +92,8 @@ namespace Miaow.Presentation.jd.Controllers
         public ActionResult HotelComm(int id)
         {
             int total = 0;
-            IQueryable<iPow.DataSys.Sys_HotelComm> hc =Bll.HotelDetail.GetHotelCommPageListByHotelId(id, 1, 5, ref total);
-            PagedList<iPow.DataSys.Sys_HotelComm> hcList = null;
+            IQueryable<Miaow.DataSys.Sys_HotelComm> hc =Bll.HotelDetail.GetHotelCommPageListByHotelId(id, 1, 5, ref total);
+            PagedList<Miaow.DataSys.Sys_HotelComm> hcList = null;
             if (hc != null && hc.Count() > 0)
             {
                 //ViewBag.id = id;
@@ -118,8 +118,8 @@ namespace Miaow.Presentation.jd.Controllers
         {
             int total = 0;
             int pageIdex = pi == null ? 1 : (int)pi;
-            IQueryable<iPow.DataSys.Sys_HotelComm> hc = Bll.HotelDetail.GetHotelCommPageListByHotelId(id, pageIdex, 5, ref total);
-            PagedList<iPow.DataSys.Sys_HotelComm> hcList = null;
+            IQueryable<Miaow.DataSys.Sys_HotelComm> hc = Bll.HotelDetail.GetHotelCommPageListByHotelId(id, pageIdex, 5, ref total);
+            PagedList<Miaow.DataSys.Sys_HotelComm> hcList = null;
             if (hc != null && hc.Count() > 0)
             {
                 //ViewBag.id = id;
@@ -144,7 +144,7 @@ namespace Miaow.Presentation.jd.Controllers
             {
                 try
                 {
-                    iPow.DataSys.Sys_HotelComm hc = new DataSys.Sys_HotelComm();
+                    Miaow.DataSys.Sys_HotelComm hc = new DataSys.Sys_HotelComm();
 
                     #region init
 
@@ -158,7 +158,7 @@ namespace Miaow.Presentation.jd.Controllers
                     {
                         hc.HotelID = int.Parse(f["HotelID"].ToString());
                     }
-                    hc.Ip = iPow.function.StringHelper.GetRealIP();
+                    hc.Ip = Miaow.function.StringHelper.GetRealIP();
                     if (hc.Ip == "::1")
                     {
                         hc.Ip = "127.0.0.1";
@@ -182,8 +182,8 @@ namespace Miaow.Presentation.jd.Controllers
                         Bll.DbSys.Db.Sys_HotelPropertyInfo.Context.SaveChanges();
 
                         int total = 0;
-                        IQueryable<iPow.DataSys.Sys_HotelComm> hcs = Bll.HotelDetail.GetHotelCommPageListByHotelId(hc.HotelID, 1, 5, ref total);
-                        PagedList<iPow.DataSys.Sys_HotelComm> hcList = null;
+                        IQueryable<Miaow.DataSys.Sys_HotelComm> hcs = Bll.HotelDetail.GetHotelCommPageListByHotelId(hc.HotelID, 1, 5, ref total);
+                        PagedList<Miaow.DataSys.Sys_HotelComm> hcList = null;
                         if (hcs != null && hcs.Count() > 0)
                         {
                             hcList = new PagedList<DataSys.Sys_HotelComm>(hcs, 1, commPageSize, total);
@@ -211,13 +211,13 @@ namespace Miaow.Presentation.jd.Controllers
         [HttpGet]
         public ActionResult HotelPic(int id)
         {
-            IQueryable<iPow.DataSys.Sys_HotelPic> hp = null;
-            PagedList<iPow.DataSys.Sys_HotelPic> hpList = null;
+            IQueryable<Miaow.DataSys.Sys_HotelPic> hp = null;
+            PagedList<Miaow.DataSys.Sys_HotelPic> hpList = null;
             int total = 0;
             hp = Bll.HotelDetail.GetHotelPicPageListByHotelId(id, 1, picPageSize, ref total);
             if (hp != null && hp.Count() > 0)
             {
-                hpList = new PagedList<iPow.DataSys.Sys_HotelPic>(hp, 1, picPageSize, total);
+                hpList = new PagedList<Miaow.DataSys.Sys_HotelPic>(hp, 1, picPageSize, total);
             }
             return PartialView("HotelPicPartial", hpList);
         }
@@ -235,14 +235,14 @@ namespace Miaow.Presentation.jd.Controllers
             //不用写单独的东西出来了，直接用数据库里面的就是了 ，数据量也不大
             //随机9张
             //可能会改进那种分页的那种
-            IQueryable<iPow.DataSys.Sys_HotelPic> hp = null;
-            PagedList<iPow.DataSys.Sys_HotelPic> hpList = null;
+            IQueryable<Miaow.DataSys.Sys_HotelPic> hp = null;
+            PagedList<Miaow.DataSys.Sys_HotelPic> hpList = null;
             int pageIndex = (pi == null ? 1 : (int)pi);
             int total = 0;
             hp = Bll.HotelDetail.GetHotelPicPageListByHotelId(id, pageIndex, picPageSize, ref total);
             if (hp != null && hp.Count() > 0)
             {
-                hpList = new PagedList<iPow.DataSys.Sys_HotelPic>(hp, pageIndex, picPageSize, total);
+                hpList = new PagedList<Miaow.DataSys.Sys_HotelPic>(hp, pageIndex, picPageSize, total);
             }
             return PartialView("HotelPicListPartial", hpList);
         }
@@ -262,7 +262,7 @@ namespace Miaow.Presentation.jd.Controllers
             int? temp = 0;
             try
             {
-                iPow.DataSys.Sys_HotelPropertyInfo hi = Bll.DbSys.Db.Sys_HotelPropertyInfo.Where(e => e.ID == id).FirstOrDefault();
+                Miaow.DataSys.Sys_HotelPropertyInfo hi = Bll.DbSys.Db.Sys_HotelPropertyInfo.Where(e => e.ID == id).FirstOrDefault();
                 if (hi != null)
                 {
                     hi.LiveInCount += 1;

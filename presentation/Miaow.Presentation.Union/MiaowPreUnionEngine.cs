@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-using iPow.Infrastructure.Crosscutting.NetFramework.Engines;
+using Miaow.Infrastructure.Crosscutting.NetFramework.Engines;
 
 namespace Miaow.Presentation.Union
 {
@@ -11,7 +11,7 @@ namespace Miaow.Presentation.Union
     /// 
     /// </summary>
     public class MiaowPreUnionEngine :
-        iPow.Infrastructure.Crosscutting.NetFramework.Engines.EngineManager
+        Miaow.Infrastructure.Crosscutting.NetFramework.Engines.EngineManager
     {
 
     }

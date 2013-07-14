@@ -2,54 +2,54 @@
 using System.Web.Mvc;
 using System.Collections.Generic;
 
-using iPow.Application.Union.Dto;
-using iPow.Infrastructure.Crosscutting.Comm.Dto;
+using Miaow.Application.Union.Dto;
+using Miaow.Infrastructure.Crosscutting.Comm.Dto;
 
 namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class RightTodayLowPriceHotHotelController : 
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         /// <summary>
         /// 
         /// </summary>
-        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService localtionService;
+        Miaow.Infrastructure.Crosscutting.Comm.Service.ILocationService localtionService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.ITodayLowPriceService todayLowPriceService;
+        Miaow.Service.Union.Service.ITodayLowPriceService todayLowPriceService;
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.ICityService cityService;
+        Miaow.Service.Union.Service.ICityService cityService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="RightTodayLowPriceHotHotelController"/> class.
         /// </summary>
-        public RightTodayLowPriceHotHotelController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService ipowLocaltion,
-            iPow.Service.Union.Service.ITodayLowPriceService ipowTodayLowPrice,
-            iPow.Service.Union.Service.ICityService ipowCity)
+        public RightTodayLowPriceHotHotelController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Comm.Service.ILocationService MiaowLocaltion,
+            Miaow.Service.Union.Service.ITodayLowPriceService MiaowTodayLowPrice,
+            Miaow.Service.Union.Service.ICityService MiaowCity)
             : base(work)
         {
-            if (ipowLocaltion == null)
+            if (MiaowLocaltion == null)
             {
                 throw new ArgumentNullException("localtionService is null");
             }
-            if (ipowTodayLowPrice == null)
+            if (MiaowTodayLowPrice == null)
             {
                 throw new ArgumentNullException("todayLowPriceService is null");
             }
-            if (ipowCity == null)
+            if (MiaowCity == null)
             {
                 throw new ArgumentNullException("cityService is null");
             }
-            localtionService = ipowLocaltion;
-            todayLowPriceService = ipowTodayLowPrice;
-            cityService = ipowCity;
+            localtionService = MiaowLocaltion;
+            todayLowPriceService = MiaowTodayLowPrice;
+            cityService = MiaowCity;
         }
 
         [ChildActionOnly]

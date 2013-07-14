@@ -10,20 +10,20 @@ namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class SearchController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         int pageSize = 10;
 
-        iPow.Application.jq.Service.ISearchService searchService;
+        Miaow.Application.jq.Service.ISearchService searchService;
 
-        iPow.Domain.Repository.ISightInfoRepository sightInfoRepository;
+        Miaow.Domain.Repository.ISightInfoRepository sightInfoRepository;
 
-        public SearchController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.jq.Service.ISearchService ipowSearch,
-            iPow.Domain.Repository.ISightInfoRepository sightInfo)
+        public SearchController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.jq.Service.ISearchService MiaowSearch,
+            Miaow.Domain.Repository.ISightInfoRepository sightInfo)
             : base(work)
         {
-            if (ipowSearch == null)
+            if (MiaowSearch == null)
             {
                 throw new ArgumentNullException("searchService is null");
             }
@@ -31,7 +31,7 @@ namespace Miaow.Presentation.jq.Controllers
             {
                 throw new ArgumentNullException("sightInfoRepository is null");
             }
-            searchService = ipowSearch;
+            searchService = MiaowSearch;
             sightInfoRepository = sightInfo;
         }
 

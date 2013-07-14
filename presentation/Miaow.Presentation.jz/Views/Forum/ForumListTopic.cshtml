@@ -1,5 +1,5 @@
 ﻿@using Webdiyer.WebControls.Mvc;
-@model  iPow.DataClass.jz.ForumDetail
+@model  Miaow.DataClass.jz.ForumDetail
 @{
     ViewBag.Title = "家庭圈帖子列表";
     Layout = "~/Views/Shared/_CategoryOut.cshtml";
@@ -22,17 +22,17 @@
                 <li>家族简介：
                     @((Model != null && Model.CurrentForum != null && Model.CurrentForum.synopsis.Length >= 150) ? Model.CurrentForum.synopsis.Substring(0, 150) + "..." : Model.CurrentForum.synopsis)
                 </li>
-                <li>帖子数：@((Model != null && Model.CurrentForum != null && Model.CurrentForum.fid > 0) ? iPow.DataClass.jz.Querys.GetForumDetailTopicNumById(Model.CurrentForum.fid) : 0)</li>
-                <li>回复数：@((Model != null && Model.CurrentForum != null && Model.CurrentForum.fid > 0) ? iPow.DataClass.jz.Querys.GetForumDetailReplayNumById(Model.CurrentForum.fid) : 0)</li>
+                <li>帖子数：@((Model != null && Model.CurrentForum != null && Model.CurrentForum.fid > 0) ? Miaow.DataClass.jz.Querys.GetForumDetailTopicNumById(Model.CurrentForum.fid) : 0)</li>
+                <li>回复数：@((Model != null && Model.CurrentForum != null && Model.CurrentForum.fid > 0) ? Miaow.DataClass.jz.Querys.GetForumDetailReplayNumById(Model.CurrentForum.fid) : 0)</li>
             </ul>
             <h2>
                 最新活动</h2>
             <ul class="ulRingAc">
                 @{
-                    Webdiyer.WebControls.Mvc.PagedList<iPow.DataSys.sns_topic> topicList = null;
+                    Webdiyer.WebControls.Mvc.PagedList<Miaow.DataSys.sns_topic> topicList = null;
                     if (Model != null && Model.CurrentForum != null)
                     {
-                        topicList = iPow.DataClass.jz.Querys.GetForumTopicListById(Model.CurrentForum.fid, 1, 50);
+                        topicList = Miaow.DataClass.jz.Querys.GetForumTopicListById(Model.CurrentForum.fid, 1, 50);
                         int count = 0;
                         foreach (var item in topicList)
                         {
@@ -68,7 +68,7 @@
                     {
                         if (Model.CurrentForum.moderator == "1")
                         {
-                    <span></span><em>族长：</em> <a href="http://sns.ipow.cn/index.php?s=/space/{uid}" target="_blank">@(Model.CurrentForum.name)</a>
+                    <span></span><em>族长：</em> <a href="http://sns.Miaow.cn/index.php?s=/space/{uid}" target="_blank">@(Model.CurrentForum.name)</a>
                     <a href='./forum_set.php?fid=@(Model.CurrentForum.fid)'>[族务管理]</a>
                         }
                         else
@@ -228,7 +228,7 @@
                                 }
                             </td>
                             <td>
-                                @(iPow.function.DateHelper.GetMysqlDateTime(item.lasttime, DateTimeKind.Local).ToString("yyyy-MM"))
+                                @(Miaow.function.DateHelper.GetMysqlDateTime(item.lasttime, DateTimeKind.Local).ToString("yyyy-MM"))
                                 @{
                                 if (item.lastauthorico != 0)
                                 { 

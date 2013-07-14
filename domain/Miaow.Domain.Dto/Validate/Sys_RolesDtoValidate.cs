@@ -7,12 +7,14 @@ using System.Collections.Specialized;
 using FluentValidation;
 using FluentValidation.Mvc;
 
-namespace iPow.Domain.Dto.Validate
+using Miaow.Domain.Dto;
+
+namespace Miaow.Domain.Dto.Validate
 {
-    using iPow.Domain.Dto;
-    public class Sys_RolesDtoValidate : AbstractValidator<Sys_RolesDto>
+    
+    public class sys_rolesDtoValidate : AbstractValidator<sys_rolesDto>
     {
-    	public Sys_RolesDtoValidate()
+    	public sys_rolesDtoValidate()
     	{
     
     	}

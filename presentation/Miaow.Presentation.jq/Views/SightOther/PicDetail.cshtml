@@ -1,18 +1,18 @@
 ﻿@using Webdiyer.WebControls.Mvc
-@model  iPow.Application.jq.Dto.PicDetailDto
+@model  Miaow.Application.jq.Dto.PicDetailDto
 @{
-    var picService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Application.jq.Service.IPicInfoService>();
+    var picService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Application.jq.Service.IPicInfoService>();
 
-    var hotelLeftMidService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Service.Union.Service.IHotelLeftMidService>();
+    var hotelLeftMidService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Service.Union.Service.IHotelLeftMidService>();
 
     if (Model != null)
     {
-        ViewBag.Title = Model.PicInfo.PicName + "_" + this.Model.SightInfo.Title + "图片---iPow自助旅行网";
-    <meta name='description' content='本站提供最专业、最实时的@(Model.SightInfo.Title)图片，记录网友的精彩瞬间，难忘情景。上传你的@(Model.SightInfo.Title)图片，让我们一起来分享！iPow自助旅行网。' />
-    <meta content="@(this.Model.SightInfo.Title) 图片,@(this.Model.PicInfo.PicName),iPow自助旅行网" name="keywords" />
-    <meta name="Copyright" content="http://www.ipow.cn" />
+        ViewBag.Title = Model.PicInfo.PicName + "_" + this.Model.SightInfo.Title + "图片---Miaow自助旅行网";
+    <meta name='description' content='本站提供最专业、最实时的@(Model.SightInfo.Title)图片，记录网友的精彩瞬间，难忘情景。上传你的@(Model.SightInfo.Title)图片，让我们一起来分享！Miaow自助旅行网。' />
+    <meta content="@(this.Model.SightInfo.Title) 图片,@(this.Model.PicInfo.PicName),Miaow自助旅行网" name="keywords" />
+    <meta name="Copyright" content="http://www.Miaow.cn" />
     } 
 }
 <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
@@ -131,7 +131,7 @@
                             { 
                             <h1>
                                 @(Model.PicInfo.PicName)</h1>
-                            <span>发布时间：@Model.PicInfo.AddTime&nbsp;&nbsp;&nbsp;&nbsp;iPow族员评论：<em id="CommCount">@(Model.PicInfo.CommCount)</em>&nbsp;&nbsp;&nbsp;&nbsp;浏览：<em
+                            <span>发布时间：@Model.PicInfo.AddTime&nbsp;&nbsp;&nbsp;&nbsp;Miaow族员评论：<em id="CommCount">@(Model.PicInfo.CommCount)</em>&nbsp;&nbsp;&nbsp;&nbsp;浏览：<em
                                 id="VisitCount">@(Model.PicInfo.ViewCount)</em></span>
                             <div class="articleShow" style="text-align: center;">
                             <a href="@(Model.PicInfo.PicPath + Model.PicInfo.FileName)" id="@(Model.PicInfo.PicPath + Model.PicInfo.FileName)" class ="test">
@@ -184,7 +184,7 @@
                     </span>
                     <input type="submit" style="" value="" id="btnAddSightComm" />
                     <!-- 下面的这个a是原来，我给他隐藏了-->
-                    <em>请iPow族员文明用语，保持iPow家园健康清洁。</em>
+                    <em>请Miaow族员文明用语，保持Miaow家园健康清洁。</em>
                     </form>
                 </div>
                 <div class="introMain" id="commListInfo">
@@ -203,7 +203,7 @@
                                         var contentId = "commContent" + item.UserID.ToString();
                                     <p class="over">
                                         <img src="/images/face/face1.jpg" width="45" height="45" class="face" />
-                                        <span class="spanUser" id='@(userId)'><b>iPow@(item.UserName)</b> ip：@(ip)</span>
+                                        <span class="spanUser" id='@(userId)'><b>Miaow@(item.UserName)</b> ip：@(ip)</span>
                                         <span class="spanScore"></span><span class="content" id="@(contentId)">@(item.Content)</span>
                                         <span class="control">发表于：@(item.AddTime.ToString())&nbsp;&nbsp;&nbsp;&nbsp;<a
                                 href="javascript:;" onclick="showCommReply(@(item.UserID),@(item.PicID))" style = " display: none">引用回复</a>&nbsp;</span>
@@ -318,7 +318,7 @@
                                var title = item.hotelname;
                                string imgPath = "/images/icon/htop" + (count + 1) + ".jpg";
                                title = title.Length > 8 ? title.Substring(0, 7) : title;
-                <a id="@(hotelId)" href="http://hotel.ipow.cn/hotel/@(item.id)" title="@(item.hotelname)">
+                <a id="@(hotelId)" href="http://hotel.Miaow.cn/hotel/@(item.id)" title="@(item.hotelname)">
                     <img src="@(imgPath)" align="absmiddle" border="0" alt = ""/>
                     <span>@(title)</span> <em>￥@(item.price.ToString())</em> </a>                       
                                if (count >= cirHotelInfoList.hotel_list.Count - 1)

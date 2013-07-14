@@ -8,28 +8,28 @@ namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class EbookController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
 
         /// <summary>
         /// 
         /// </summary>
-        iPow.Service.Union.Service.IHotelEbookService hotelEbookService;
+        Miaow.Service.Union.Service.IHotelEbookService hotelEbookService;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EbookController"/> class.
         /// </summary>
         /// <param name="work">The work.</param>
-        /// <param name="ipowHotelEbook">The ipow hotel ebook.</param>
-        public EbookController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Service.Union.Service.IHotelEbookService ipowHotelEbook)
+        /// <param name="MiaowHotelEbook">The Miaow hotel ebook.</param>
+        public EbookController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Service.Union.Service.IHotelEbookService MiaowHotelEbook)
             : base(work)
         {
-            if (ipowHotelEbook == null)
+            if (MiaowHotelEbook == null)
             {
                 throw new ArgumentNullException("hotelEbookService is null");
             }
-            hotelEbookService = ipowHotelEbook;
+            hotelEbookService = MiaowHotelEbook;
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace Miaow.Presentation.Union.Controllers
         public ViewResult Query(FormCollection f)
         {
             ViewBag.query = true;
-            List<iPow.Application.Union.Dto.HotelEbookDto> data = null;
+            List<Miaow.Application.Union.Dto.HotelEbookDto> data = null;
             if (f != null)
             {
                 if (f["phone"] != null)

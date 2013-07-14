@@ -1,7 +1,7 @@
-﻿@model iPow.Application.Union.Dto.SearchHotelDto
+﻿@model Miaow.Application.Union.Dto.SearchHotelDto
 @{
-    var hotelTypeService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Service.Union.Service.IHotelTypeService>();
+    var hotelTypeService = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Service.Union.Service.IHotelTypeService>();
 
     if (Model != null && Model.hotel_list != null && Model.hotel_list.Count > 0)
     {

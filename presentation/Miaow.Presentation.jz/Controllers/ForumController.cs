@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Miaow.Presentation.jz.Models;
-using iPow.DataSys;
+using Miaow.DataSys;
 
 namespace Miaow.Presentation.jz.Controllers
 {
@@ -55,10 +55,10 @@ namespace Miaow.Presentation.jz.Controllers
                 if (title == null)
                 {
                     #region 添加评论/楼数
-                    iPow.DataSys.sns_Post post = iPow.DataClass.jz.Querys.IrainDb.sns_Post.CreateObject();
+                    Miaow.DataSys.sns_Post post = Miaow.DataClass.jz.Querys.IrainDb.sns_Post.CreateObject();
                     if (anony == "" || anony == null)
                     {
-                        post.author = iPow.function.StringHelper.GetRealIP();
+                        post.author = Miaow.function.StringHelper.GetRealIP();
                     }
                     else
                     {
@@ -70,33 +70,33 @@ namespace Miaow.Presentation.jz.Controllers
                     post.authorid = 0;
                     post.guestname = 0;
                     post.subject = "";
-                    post.dateline = iPow.function.DateHelper.GetNowToMysqlTime();
+                    post.dateline = Miaow.function.DateHelper.GetNowToMysqlTime();
                     post.up = 0;
                     post.wave = 0;
                     post.down = 0;
-                    post.postip = iPow.function.StringHelper.GetRealIP();
+                    post.postip = Miaow.function.StringHelper.GetRealIP();
                     post.tid = Convert.ToInt32(tid1);
-                    post.replyfloor = (short)(iPow.DataClass.jz.Querys.GetPostMaxFloorByTid(post.tid) + 1);
-                    iPow.DataClass.jz.Querys.IrainDb.sns_Post.AddObject(post);
+                    post.replyfloor = (short)(Miaow.DataClass.jz.Querys.GetPostMaxFloorByTid(post.tid) + 1);
+                    Miaow.DataClass.jz.Querys.IrainDb.sns_Post.AddObject(post);
 
                     //更新回复详细表
-                    iPow.DataSys.sns_PostContent postContent = iPow.DataClass.jz.Querys.IrainDb.sns_PostContent.CreateObject();
+                    Miaow.DataSys.sns_PostContent postContent = Miaow.DataClass.jz.Querys.IrainDb.sns_PostContent.CreateObject();
                     postContent.message = content + "<br/>" + picurl;
                     postContent.picture = "";
                     postContent.tid = Convert.ToInt32(tid1);
-                    iPow.DataClass.jz.Querys.IrainDb.sns_PostContent.AddObject(postContent);
+                    Miaow.DataClass.jz.Querys.IrainDb.sns_PostContent.AddObject(postContent);
 
                     //更新楼数 最后一个回复人id username
-                    iPow.DataSys.sns_topic toppic = iPow.DataClass.jz.Querys.GetSingleTopPicByTid(post.tid);
+                    Miaow.DataSys.sns_topic toppic = Miaow.DataClass.jz.Querys.GetSingleTopPicByTid(post.tid);
                     toppic.replies += 1;
-                    toppic.lastauthor = iPow.function.StringHelper.GetAnonyIP();
+                    toppic.lastauthor = Miaow.function.StringHelper.GetAnonyIP();
                     toppic.lastauthorid = 0;
 
-                    int res = iPow.DataClass.jz.Querys.IrainDb.SaveChanges();
+                    int res = Miaow.DataClass.jz.Querys.IrainDb.SaveChanges();
 
                     //更新新鲜事儿首页会显示这些信息的
-                    iPow.DataSys.sns_feed_template tmeplate = iPow.DataClass.jz.Querys.GetSingleFeedTemplateByType("forum_reply");
-                    iPow.DataSys.sns_feed feed = iPow.DataClass.jz.Querys.IrainDb.sns_feed.CreateObject();
+                    Miaow.DataSys.sns_feed_template tmeplate = Miaow.DataClass.jz.Querys.GetSingleFeedTemplateByType("forum_reply");
+                    Miaow.DataSys.sns_feed feed = Miaow.DataClass.jz.Querys.IrainDb.sns_feed.CreateObject();
 
 
                     //这个地方得改改，不过现在，还不晓得怎么改的
@@ -106,13 +106,13 @@ namespace Miaow.Presentation.jz.Controllers
                     feed.type = "forum_reply";
                     feed.cTime = (int?)post.dateline;
                     feed.uid = 0;
-                    feed.username = iPow.function.StringHelper.GetAnonyIP();
+                    feed.username = Miaow.function.StringHelper.GetAnonyIP();
                     feed.title_data = feed.username + "回复了主题帖：<a href='/topic/" + post.tid + "/x' target='_blank'>" + toppic.subject + "</a>";
 
                     feed.body_data = feed.title_data;
 
-                    Webdiyer.WebControls.Mvc.PagedList<iPow.DataClass.jz.SinglePostDetail> model = null;
-                    model = iPow.DataClass.jz.Querys.GetTopPicPostDetailListById(post.tid, 1, pageSize, "last");
+                    Webdiyer.WebControls.Mvc.PagedList<Miaow.DataClass.jz.SinglePostDetail> model = null;
+                    model = Miaow.DataClass.jz.Querys.GetTopPicPostDetailListById(post.tid, 1, pageSize, "last");
                     return PartialView("ListTopicPartital", model);
                     #endregion
                 }
@@ -134,9 +134,9 @@ namespace Miaow.Presentation.jz.Controllers
                     postContent.picture = "";
                     if (username == null)
                     {
-                        post.author = iPow.function.StringHelper.GetRealIP();
-                        toppic.author = iPow.function.StringHelper.GetRealIP();
-                        toppic.lastauthor = iPow.function.StringHelper.GetRealIP();
+                        post.author = Miaow.function.StringHelper.GetRealIP();
+                        toppic.author = Miaow.function.StringHelper.GetRealIP();
+                        toppic.lastauthor = Miaow.function.StringHelper.GetRealIP();
                     }
                     else
                     {
@@ -148,29 +148,29 @@ namespace Miaow.Presentation.jz.Controllers
                     post.authorico = 0;
                     post.authorid = 0;
                     post.subject = title;
-                    post.dateline = iPow.function.DateHelper.GetNowToMysqlTime();
+                    post.dateline = Miaow.function.DateHelper.GetNowToMysqlTime();
                     post.up = 0;
                     post.wave = 0;
-                    post.postip = iPow.function.StringHelper.GetRealIP();
+                    post.postip = Miaow.function.StringHelper.GetRealIP();
                     post.replyfloor = 0;
-                    toppic.dateline = iPow.function.DateHelper.GetNowToMysqlTime();
-                    toppic.lasttime = iPow.function.DateHelper.GetNowToMysqlTime();
+                    toppic.dateline = Miaow.function.DateHelper.GetNowToMysqlTime();
+                    toppic.lasttime = Miaow.function.DateHelper.GetNowToMysqlTime();
                     toppic.fid = Convert.ToInt32(fid);
                     toppic.authorico = 0;
                     toppic.authorid = 0;
                     toppic.lastauthorid = 0;
                     toppic.subject = title;
-                    iPow.DataClass.jz.Querys.IrainDb.sns_topic.AddObject(toppic);
-                    int res =  iPow.DataClass.jz.Querys.IrainDb.SaveChanges();
+                    Miaow.DataClass.jz.Querys.IrainDb.sns_topic.AddObject(toppic);
+                    int res =  Miaow.DataClass.jz.Querys.IrainDb.SaveChanges();
                     if(res > 0 )
                     {
-                        sns_topic topic = iPow.DataClass.jz.Querys.GetSingleTopPicBySubject(title);
+                        sns_topic topic = Miaow.DataClass.jz.Querys.GetSingleTopPicBySubject(title);
                         int tid = topic.tid;
                         post.tid = tid;
                         postContent.tid = tid;
-                        iPow.DataClass.jz.Querys.IrainDb.sns_Post.AddObject(post);
-                        iPow.DataClass.jz.Querys.IrainDb.sns_PostContent.AddObject(postContent);
-                        iPow.DataClass.jz.Querys.IrainDb.SaveChanges();
+                        Miaow.DataClass.jz.Querys.IrainDb.sns_Post.AddObject(post);
+                        Miaow.DataClass.jz.Querys.IrainDb.sns_PostContent.AddObject(postContent);
+                        Miaow.DataClass.jz.Querys.IrainDb.SaveChanges();
                     }
                     return RedirectToAction("ListTopic", "Forum", new { tid = post.tid, num = "", pageIndex = 1 });
 
@@ -219,12 +219,12 @@ namespace Miaow.Presentation.jz.Controllers
                 sns_forum_temp snsForm = new sns_forum_temp();
                 snsForm.synopsis = intro;
                 snsForm.name = bar;
-                snsForm.ipaddress = iPow.function.StringHelper.GetRealIP();
-                snsForm.dateline = iPow.function.DateHelper.GetNowToMysqlTime();
+                snsForm.ipaddress = Miaow.function.StringHelper.GetRealIP();
+                snsForm.dateline = Miaow.function.DateHelper.GetNowToMysqlTime();
                 //   string d = new FroumModels().GetGMTDateTime(snsForm.dateline).ToString();
                 if (username == null)
                 {
-                    snsForm.founder = iPow.function.StringHelper.GetRealIP();
+                    snsForm.founder = Miaow.function.StringHelper.GetRealIP();
                 }
                 else
                 {
@@ -250,12 +250,12 @@ namespace Miaow.Presentation.jz.Controllers
             //如果等于1,代表是根据分类查询家族信息,否则是根据景区id查询景区帖子
             if (t == 1)
             {
-                iPow.DataClass.jz.ForumCatalogList model = new DataClass.jz.ForumCatalogList();
-                model.CurrentCatalog = iPow.DataClass.jz.Querys.GetForumSingleCatalogById((int)cid);
+                Miaow.DataClass.jz.ForumCatalogList model = new DataClass.jz.ForumCatalogList();
+                model.CurrentCatalog = Miaow.DataClass.jz.Querys.GetForumSingleCatalogById((int)cid);
                 //一个分类的分页
                 if (pageIndex != null)
                 {
-                    var data = iPow.DataClass.jz.Querys.GetForumFamilyListByCatalogId((int)cid, (int)pageIndex, pageSize);
+                    var data = Miaow.DataClass.jz.Querys.GetForumFamilyListByCatalogId((int)cid, (int)pageIndex, pageSize);
                     ViewBag.cid = cid;
                     return PartialView("CategoryListPartial", data);
                 }
@@ -265,20 +265,20 @@ namespace Miaow.Presentation.jz.Controllers
             else
             {
                 int fid = Convert.ToInt32(cid);
-                iPow.DataClass.jz.ForumDetail model = new DataClass.jz.ForumDetail();
+                Miaow.DataClass.jz.ForumDetail model = new DataClass.jz.ForumDetail();
                 //当前这个家庭圈基本信息
-                model.CurrentForum = iPow.DataClass.jz.Querys.GetForumBaseInfoById(fid);
+                model.CurrentForum = Miaow.DataClass.jz.Querys.GetForumBaseInfoById(fid);
                 //有翻页
                 if (pageIndex != null)
                 {
-                    var data = iPow.DataClass.jz.Querys.GetForumTopicListById(model.CurrentForum.fid, (int)pageIndex, pageSizeForumDetail);
+                    var data = Miaow.DataClass.jz.Querys.GetForumTopicListById(model.CurrentForum.fid, (int)pageIndex, pageSizeForumDetail);
                     ViewBag.fid = fid;
                     return PartialView("ForumListTopicPartial", data);
                 }
                 //第一，没有翻页
                 if (model != null)
                 {
-                    model.CurrentCatalog = iPow.DataClass.jz.Querys.GetForumSingleCatalogById(model.CurrentForum.cid);
+                    model.CurrentCatalog = Miaow.DataClass.jz.Querys.GetForumSingleCatalogById(model.CurrentForum.cid);
                 }
                 return PartialView("ForumListTopic", model);
             }
@@ -296,24 +296,24 @@ namespace Miaow.Presentation.jz.Controllers
         {
             if (pageIndex != null)
             {
-                Webdiyer.WebControls.Mvc.PagedList<iPow.DataClass.jz.SinglePostDetail> model = null;
-                model = iPow.DataClass.jz.Querys.GetTopPicPostDetailListById((int)tid, (int)pageIndex, pageSize);
+                Webdiyer.WebControls.Mvc.PagedList<Miaow.DataClass.jz.SinglePostDetail> model = null;
+                model = Miaow.DataClass.jz.Querys.GetTopPicPostDetailListById((int)tid, (int)pageIndex, pageSize);
                 return PartialView("ListTopicPartital", model);
             }
             else
             {
-                iPow.DataClass.jz.TopPicDetail model = new DataClass.jz.TopPicDetail();
-                int currentForumId = iPow.DataClass.jz.Querys.GetPostFidByTid((int)tid);
-                model.CurrentForum = iPow.DataClass.jz.Querys.GetForumBaseInfoById(currentForumId);
+                Miaow.DataClass.jz.TopPicDetail model = new DataClass.jz.TopPicDetail();
+                int currentForumId = Miaow.DataClass.jz.Querys.GetPostFidByTid((int)tid);
+                model.CurrentForum = Miaow.DataClass.jz.Querys.GetForumBaseInfoById(currentForumId);
                 if (model.CurrentForum != null)
                 {
-                    model.CurrentCatalog = iPow.DataClass.jz.Querys.GetForumSingleCatalogById(model.CurrentForum.cid);
+                    model.CurrentCatalog = Miaow.DataClass.jz.Querys.GetForumSingleCatalogById(model.CurrentForum.cid);
                 }
 
-                var toppic = iPow.DataClass.jz.Querys.GetSingleTopPicByTid((int)tid);
+                var toppic = Miaow.DataClass.jz.Querys.GetSingleTopPicByTid((int)tid);
                 toppic.views += 1;
                 model.TopPic = toppic;
-                iPow.DataClass.jz.Querys.IrainDb.sns_topic.Context.SaveChanges();
+                Miaow.DataClass.jz.Querys.IrainDb.sns_topic.Context.SaveChanges();
 
                 return PartialView(model);
             }
@@ -329,7 +329,7 @@ namespace Miaow.Presentation.jz.Controllers
         public JsonResult DeUp(int? pid, string type)
         {
             bool tar = true;
-            sns_Post post = iPow.DataClass.jz.Querys.GetSinglePostByPid((int)pid);
+            sns_Post post = Miaow.DataClass.jz.Querys.GetSinglePostByPid((int)pid);
             int count = 0;
             if (post != null)
             {
@@ -353,7 +353,7 @@ namespace Miaow.Presentation.jz.Controllers
                         post.down = post.down + 1;
                         count = post.down;
                     }
-                    iPow.DataClass.jz.Querys.IrainDb.SaveChanges();
+                    Miaow.DataClass.jz.Querys.IrainDb.SaveChanges();
                 }
                 catch (Exception)
                 {

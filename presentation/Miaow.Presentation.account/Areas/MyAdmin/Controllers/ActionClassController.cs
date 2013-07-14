@@ -5,17 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class ActionClassController : Controller
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerActionClassService actionClassService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerActionClassService actionClassService;
 
-        public ActionClassController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerActionClassService actionClass)
+        public ActionClassController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerActionClassService actionClass)
         {
             if (actionClass == null)
             {
@@ -40,7 +40,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 data = data.Where(e => e.Name.Contains(searchKey));
             }
             var dto = data.ToDto();
-            var model = new GridModel<iPow.Domain.Dto.Sys_MvcControllerActionClassDto>
+            var model = new GridModel<Miaow.Domain.Dto.Sys_MvcControllerActionClassDto>
             {
                 Data = dto,
                 Total = data.Count()
@@ -50,12 +50,12 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         public ViewResult Add()
         {
-            var model = new iPow.Domain.Dto.Sys_MvcControllerActionClassDto();
+            var model = new Miaow.Domain.Dto.Sys_MvcControllerActionClassDto();
             return View(model);
         }
 
         [HttpPost]
-        public ViewResult Add(iPow.Domain.Dto.Sys_MvcControllerActionClassDto dto)
+        public ViewResult Add(Miaow.Domain.Dto.Sys_MvcControllerActionClassDto dto)
         {
             if (dto != null)
             {
@@ -66,13 +66,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 }
                 else
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
-                    iPow.Infrastructure.Data.DataSys.Sys_MvcControllerActionClass addActionClass =
-                        new iPow.Infrastructure.Data.DataSys.Sys_MvcControllerActionClass();
+                    Miaow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Miaow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                    Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerActionClass addActionClass =
+                        new Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerActionClass();
                     operUser.id = 1;
                     addActionClass.Name = dto.Name;
                     addActionClass.Remark = dto.Remark;
-                    addActionClass.IpAddress = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+                    addActionClass.IpAddress = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
                     addActionClass.SortNum = dto.SortNum;
                     addActionClass.AddTime = System.DateTime.Now;
                     addActionClass.State = dto.State;
@@ -125,16 +125,16 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         }
 
         [HttpPost]
-        public ViewResult Edit(iPow.Domain.Dto.Sys_MvcControllerActionClassDto dto)
+        public ViewResult Edit(Miaow.Domain.Dto.Sys_MvcControllerActionClassDto dto)
         {
             if (dto != null && dto.Id > 0)
             {
-                iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                Miaow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Miaow.Infrastructure.Data.DataSys.Sys_AdminUser();
                 var model = actionClassService.GetList().Where(e => e.Id == dto.Id).First();
                 operUser.id = 1;
                 model.Name = dto.Name;
                 model.Remark = dto.Remark;
-                model.IpAddress = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+                model.IpAddress = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
                 model.SortNum = dto.SortNum;
                 model.AddTime = System.DateTime.Now;
                 model.State = dto.State;
@@ -168,7 +168,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         #region util
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_MvcControllerActionClass> CurrentClassName()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerActionClass> CurrentClassName()
         {
             var data = actionClassService.GetList().OrderByDescending(e => e.Id).AsEnumerable();
             var currentClassId = 0;

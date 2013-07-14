@@ -1,26 +1,26 @@
 ﻿using System;
 using System.Web.Mvc;
-using iPow.Application.jq.Dto;
+using Miaow.Application.jq.Dto;
 
 namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class HomeController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         const int pageSize = 10;
 
-        iPow.Application.jq.Service.IHomeService homeService;
+        Miaow.Application.jq.Service.IHomeService homeService;
 
-        public HomeController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.jq.Service.IHomeService ipowHome)
+        public HomeController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.jq.Service.IHomeService MiaowHome)
             : base(work)
         {
-            if (ipowHome == null)
+            if (MiaowHome == null)
             {
                 throw new ArgumentNullException("homeService is null");
             }
-            homeService = ipowHome;
+            homeService = MiaowHome;
         }
 
         public ActionResult Index(string city, int? id)

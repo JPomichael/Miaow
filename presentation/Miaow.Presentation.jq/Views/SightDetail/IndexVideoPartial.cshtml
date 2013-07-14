@@ -1,6 +1,6 @@
 ﻿@{
-    var videoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Application.jq.Service.IVideoInfoService>();
+    var videoService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Application.jq.Service.IVideoInfoService>();
 
     var videoList = videoService.GetSightVideoListByScore(ViewBag.parkid, 1, 3);
     foreach (var item in videoList)

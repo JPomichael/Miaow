@@ -4,13 +4,13 @@ namespace Miaow.Presentation.Union.Controllers
 {
     [HandleError]
     public class HeadVouchDataController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="HeadVouchDataController"/> class.
         /// </summary>
         /// <param name="work">The work.</param>
-        public HeadVouchDataController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
+        public HeadVouchDataController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work)
             : base(work)
         { }
 

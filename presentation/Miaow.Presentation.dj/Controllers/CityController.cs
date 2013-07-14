@@ -10,21 +10,21 @@ namespace Miaow.Presentation.dj.Controllers
 {
     [HandleError]
     public class CityController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         //单页显示4个
         const int pageSize = 4;
 
-        iPow.Application.dj.Service.IListService listService;
+        Miaow.Application.dj.Service.IListService listService;
 
-        iPow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService cityInfoService;
+        Miaow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService cityInfoService;
 
-        public CityController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-                     iPow.Application.dj.Service.IListService ipowListService,
-            iPow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService cityInfo)
+        public CityController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+                     Miaow.Application.dj.Service.IListService MiaowListService,
+            Miaow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService cityInfo)
             : base(work)
         {
-            if (ipowListService == null)
+            if (MiaowListService == null)
             {
                 throw new ArgumentNullException("listService is null");
             }
@@ -32,7 +32,7 @@ namespace Miaow.Presentation.dj.Controllers
             {
                 throw new ArgumentNullException("cityInfoService is null");
             }
-            listService = ipowListService;
+            listService = MiaowListService;
             cityInfoService = cityInfo;
         }
 
@@ -66,10 +66,10 @@ namespace Miaow.Presentation.dj.Controllers
             else
             {
                 id = cityInfo.city;
-                IQueryable<iPow.Application.dj.Dto.ListTypeMidTourPlanDto> data = null;
+                IQueryable<Miaow.Application.dj.Dto.ListTypeMidTourPlanDto> data = null;
                 int total = 0;    //总条数
                 data = listService.GetTourListByCity(id, intPi, pageSize, ref total);
-                PagedList<iPow.Application.dj.Dto.ListTypeMidTourPlanDto> model = new PagedList<iPow.Application.dj.Dto.ListTypeMidTourPlanDto>(data, intPi, pageSize, total);
+                PagedList<Miaow.Application.dj.Dto.ListTypeMidTourPlanDto> model = new PagedList<Miaow.Application.dj.Dto.ListTypeMidTourPlanDto>(data, intPi, pageSize, total);
                 return View(model);
             }
         }

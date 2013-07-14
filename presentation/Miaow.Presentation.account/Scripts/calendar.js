@@ -1,5 +1,5 @@
 ﻿/*
-* Compressed by iPow(www.iPow.cn)
+* Compressed by Miaow(www.Miaow.cn)
 */
 function c$(B, A) {
     var C = document.getElementById(B); if (!C) {

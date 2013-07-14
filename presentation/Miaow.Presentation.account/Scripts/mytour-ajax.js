@@ -170,7 +170,7 @@ function MapLoading(data, clickMapValue, PlanID) {
         if (data.Remark.length > 33) {
             var Remark = data.Remark.substring(0, 33) + "...";
         }
-        var infoWindow = new BMap.InfoWindow("<a  id='title' style='font-size: 12px;color:#069'>" + data.Title + "</a><br/><a style='font-size: 12px;'> " + data.VoIndex + "(" + data.CommCount + "条评论)" + "</a><br/><a  id='address' style='font-size: 12px;'>" + "地址:" + data.Address + "</a><br/><a style='font-size: 12px;'>" + "电话:" + data.Telephone + "</a><br/><a style='font-size: 12px;'>" + "票价:" + data.Ticket + "/元" + "</a><br/><a style='font-size: 12px;'>" + "介绍:<br/>" + Remark + "</a><br/><a href=" + data.Url + ">更多详情</a><br/><img src=" + "http://www.img1.ipow.cn" + data.PicPath + "><br/><a id='Path' href='javascript:void(0)' onclick='GetPathDIV(" + PlanID + ")'>公交查询</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id=' Ambitus' href='javascript:void(0)' onclick=' GetAmbitusDIV(" + data.ParkID + ") ' >周边搜索</a><br/>");
+        var infoWindow = new BMap.InfoWindow("<a  id='title' style='font-size: 12px;color:#069'>" + data.Title + "</a><br/><a style='font-size: 12px;'> " + data.VoIndex + "(" + data.CommCount + "条评论)" + "</a><br/><a  id='address' style='font-size: 12px;'>" + "地址:" + data.Address + "</a><br/><a style='font-size: 12px;'>" + "电话:" + data.Telephone + "</a><br/><a style='font-size: 12px;'>" + "票价:" + data.Ticket + "/元" + "</a><br/><a style='font-size: 12px;'>" + "介绍:<br/>" + Remark + "</a><br/><a href=" + data.Url + ">更多详情</a><br/><img src=" + "http://www.img1.Miaow.cn" + data.PicPath + "><br/><a id='Path' href='javascript:void(0)' onclick='GetPathDIV(" + PlanID + ")'>公交查询</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id=' Ambitus' href='javascript:void(0)' onclick=' GetAmbitusDIV(" + data.ParkID + ") ' >周边搜索</a><br/>");
         map.openInfoWindow(infoWindow, map.getCenter());
         marker.addEventListener("click", function () {
             this.openInfoWindow(infoWindow);
@@ -257,8 +257,8 @@ function CreatePathTitle(data) {
     document.getElementById("origin").innerHTML = "";
     document.getElementById("finish").innerHTML = "";
     if (data != null) {
-        $.map(data.List, function (ipow) {
-            PlusHtml += "<option   id=" + ipow.ParkID + " value=" + ipow.InSource + ">" + ipow.InSource + "</option>";
+        $.map(data.List, function (Miaow) {
+            PlusHtml += "<option   id=" + Miaow.ParkID + " value=" + Miaow.InSource + ">" + Miaow.InSource + "</option>";
         });
         document.getElementById("origin").innerHTML = PlusHtml;  //起点
         document.getElementById("finish").innerHTML = PlusHtml;   //终点
@@ -337,7 +337,7 @@ function AmbitusSightShow(data, PlanID) {
             if (sight.Remark.length > 33) {
                 var Remark = sight.Remark.substring(0, 33) + "...";
             }
-            var infoWindow = new BMap.InfoWindow("<a  id='title' style='font-size: 12px;color:#069'>" + sight.Title + "</a><br/><a style='font-size: 12px;'> " + sight.VoIndex + "(" + sight.CommCount + "条评论)" + "</a><br/><a  id='address' style='font-size: 12px;'>" + "地址:" + sight.Address + "</a><br/><a style='font-size: 12px;'>" + "电话:" + sight.Telephone + "</a><br/><a style='font-size: 12px;'>" + "票价:" + sight.Ticket + "/元" + "</a><br/><a style='font-size: 12px;'>" + "介绍:<br/>" + Remark + "</a><br/><a href=" + sight.Url + ">更多详情</a><br/><img src=" + "http://www.img1.ipow.cn" + sight.PicPath + "><br/>");
+            var infoWindow = new BMap.InfoWindow("<a  id='title' style='font-size: 12px;color:#069'>" + sight.Title + "</a><br/><a style='font-size: 12px;'> " + sight.VoIndex + "(" + sight.CommCount + "条评论)" + "</a><br/><a  id='address' style='font-size: 12px;'>" + "地址:" + sight.Address + "</a><br/><a style='font-size: 12px;'>" + "电话:" + sight.Telephone + "</a><br/><a style='font-size: 12px;'>" + "票价:" + sight.Ticket + "/元" + "</a><br/><a style='font-size: 12px;'>" + "介绍:<br/>" + Remark + "</a><br/><a href=" + sight.Url + ">更多详情</a><br/><img src=" + "http://www.img1.Miaow.cn" + sight.PicPath + "><br/>");
             //<a id='Path' href='javascript:void(0)' onclick='GetPathDIV(" + PlanID + ")'>公交查询</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id=' Ambitus' href='javascript:void(0)' onclick=' GetAmbitusDIV(" + sight.ParkID + ") ' >周边搜索</a><br/>
             map.openInfoWindow(infoWindow, map.getCenter());
             marker.addEventListener("click", function () {

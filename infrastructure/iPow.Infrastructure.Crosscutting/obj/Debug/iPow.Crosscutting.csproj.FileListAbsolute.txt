@@ -1,7 +1,0 @@
-C:\Users\Administrator\Desktop\IPOW\infrastructure\crosscutting\iPow.Crosscutting\bin\Debug\iPow.Crosscutting.dll
-C:\Users\Administrator\Desktop\IPOW\infrastructure\crosscutting\iPow.Crosscutting\bin\Debug\iPow.Crosscutting.pdb
-C:\Users\Administrator\Desktop\IPOW\infrastructure\crosscutting\iPow.Crosscutting\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\Administrator\Desktop\IPOW\infrastructure\crosscutting\iPow.Crosscutting\obj\Debug\iPow.Crosscutting.dll
-C:\Users\Administrator\Desktop\IPOW\infrastructure\crosscutting\iPow.Crosscutting\obj\Debug\iPow.Crosscutting.pdb
-E:\Dev\WorkWeb2\Project\IPOW\infrastructure\crosscutting\iPow.Crosscutting\obj\Debug\ResolveAssemblyReference.cache
-E:\Dev\WorkWeb2\Project\IPOW\infrastructure\iPow.Crosscutting\obj\Debug\ResolveAssemblyReference.cache

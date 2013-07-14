@@ -1,8 +1,8 @@
 ﻿@using Webdiyer.WebControls.Mvc;
-@model  iPow.Application.jq.Dto.DetailSightBaseDto
+@model  Miaow.Application.jq.Dto.DetailSightBaseDto
 @{
-    var articleService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Application.jq.Service.IArticleService>();
+    var articleService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Application.jq.Service.IArticleService>();
                     
 }
 <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
@@ -41,7 +41,7 @@
             <div class="infoContainer" id="ArticleList">
                 @{
         int total = 0;
-        IQueryable<iPow.Domain.Dto.Sys_ArticleInfoDto> articleList = null;
+        IQueryable<Miaow.Domain.Dto.Sys_ArticleInfoDto> articleList = null;
         if (ViewBag.ord != null && ViewBag.ord == "H")
         {
             articleList = articleService.GetSightArticleByHot(Model.ParkID, ViewBag.id, 5, ref total);
@@ -74,7 +74,7 @@
                                 <em>浏览次数：@item.VisitCount</em></span>
                             <p>
                                 @{ var sub = item.Content.Length > 80 ? item.Content.Substring(0, 80) : item.Content;}
-                                @Html.Raw(iPow.Infrastructure.Crosscutting.Function.StringHelper.ParseHtml(sub)) ...</p>
+                                @Html.Raw(Miaow.Infrastructure.Crosscutting.Function.StringHelper.ParseHtml(sub)) ...</p>
                             <h3>
                                 查看详细</h3>
                         </div>

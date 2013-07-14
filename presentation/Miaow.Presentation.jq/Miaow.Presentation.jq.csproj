@@ -1131,57 +1131,17 @@
       <Project>{50430C3E-A1D5-4BBF-9E4F-E86D1FB895C8}</Project>
       <Name>iPow.Service.Union</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\domain\iPow.Domain.Dto\iPow.Domain.Dto.csproj">
+    <ProjectReference Include="..\..\domain\Miaow.Domain.Dto\Miaow.Domain.Dto.csproj">
       <Project>{94ECD31C-902A-4734-9265-D6E3385B0490}</Project>
-      <Name>iPow.Domain.Dto</Name>
+      <Name>Miaow.Domain.Dto</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\domain\iPow.Domain.Intrastructure\iPow.Domain.Infrastructure.csproj">
+    <ProjectReference Include="..\..\domain\Miaow.Domain.Intrastructure\Miaow.Domain.Infrastructure.csproj">
       <Project>{36E4E2ED-E857-46DE-9CAB-F962AEFC26F3}</Project>
-      <Name>iPow.Domain.Infrastructure</Name>
+      <Name>Miaow.Domain.Infrastructure</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\domain\iPow.Domain.Repository\iPow.Domain.Repository.csproj">
+    <ProjectReference Include="..\..\domain\Miaow.Domain.Repository\Miaow.Domain.Repository.csproj">
       <Project>{5A44C5B5-A925-487D-B4FA-F7A187BFEF1A}</Project>
-      <Name>iPow.Domain.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Authorize\iPow.Infrastructure.Crosscutting.Authorize.csproj">
-      <Project>{F7BCE9A5-A826-410A-849D-D4F5C551B4DC}</Project>
-      <Name>iPow.Infrastructure.Crosscutting.Authorize</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Comm.Dto\iPow.Infrastructure.Crosscutting.Comm.Dto.csproj">
-      <Project>{00B1115B-0DDC-482D-AAF8-13D3C56A65D5}</Project>
-      <Name>iPow.Infrastructure.Crosscutting.Comm.Dto</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Comm.Service\iPow.Infrastructure.Crosscutting.Comm.Service.csproj">
-      <Project>{87E6A634-A50D-4277-982B-0B16CFAC5738}</Project>
-      <Name>iPow.Infrastructure.Crosscutting.Comm.Service</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.EntityToDto\iPow.Infrastructure.Crosscutting.EntityToDto.csproj">
-      <Project>{75F909AB-BBC3-44F0-BFC6-FA015E8EACA0}</Project>
-      <Name>iPow.Infrastructure.Crosscutting.EntityToDto</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.Function\iPow.Infrastructure.Crosscutting.Function.csproj">
-      <Project>{FB1A6D0D-D778-4431-9D3D-9CDC298EDFB0}</Project>
-      <Name>iPow.Infrastructure.Crosscutting.Function</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting.NetFramework\iPow.Infrastructure.Crosscutting.NetFramework.csproj">
-      <Project>{8E8BCEF4-5F46-49A2-B36E-B397A8A5F635}</Project>
-      <Name>iPow.Infrastructure.Crosscutting.NetFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Crosscutting\iPow.Infrastructure.Crosscutting.csproj">
-      <Project>{81DD913F-FD84-44E9-830D-EEB641E09DBD}</Project>
-      <Name>iPow.Infrastructure.Crosscutting</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.DataSys\iPow.Infrastructure.Data.DataSys.csproj">
-      <Project>{2C911DAF-3B6C-49C7-AF21-6224BFB0FE74}</Project>
-      <Name>iPow.Infrastructure.Data.DataSys</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data.Repository\iPow.Infrastructure.Data.Repository.csproj">
-      <Project>{B1F38D7C-A9AC-46D8-88F0-9980BEAA4DC3}</Project>
-      <Name>iPow.Infrastructure.Data.Repository</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\infrastructure\iPow.Infrastructure.Data\iPow.Infrastructure.Data.csproj">
-      <Project>{33D73385-13E6-4BFA-BC76-23AF380E7F3E}</Project>
-      <Name>iPow.Infrastructure.Data</Name>
+      <Name>Miaow.Domain.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\infrastructure\MvcPager\MvcPager.csproj">
       <Project>{23C75583-F15F-4464-BD48-6E5C656D7B78}</Project>

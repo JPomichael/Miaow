@@ -1,5 +1,5 @@
 ﻿@using Webdiyer.WebControls.Mvc;
-@model  Webdiyer.WebControls.Mvc.PagedList<iPow.DataSys.sns_topic>
+@model  Webdiyer.WebControls.Mvc.PagedList<Miaow.DataSys.sns_topic>
 <div id="divFroum">
     <div class="barFun">
         <div class="ft_l">
@@ -148,7 +148,7 @@
                         }
                     </td>
                     <td>
-                        @(iPow.function.DateHelper.GetMysqlDateTime(item.lasttime, DateTimeKind.Local).ToString("yyyy-MM"))
+                        @(Miaow.function.DateHelper.GetMysqlDateTime(item.lasttime, DateTimeKind.Local).ToString("yyyy-MM"))
                         @{
                         if (item.lastauthorico != 0)
                         { 

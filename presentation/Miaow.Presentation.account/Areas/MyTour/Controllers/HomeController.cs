@@ -3,50 +3,50 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using iPow.Infrastructure.Data.DataSys;
-using iPow.Domain.Dto;
+using Miaow.Infrastructure.Data.DataSys;
+using Miaow.Domain.Dto;
 using System.Collections;
 
 using Webdiyer.WebControls.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
-using iPow.Application;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Application;
 
 namespace Miaow.Presentation.account.Areas.MyTour
 {
     [HandleError]
     public class HomeController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.MyTourControllerBase
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MyTourControllerBase
     {
         const int pageSize = 15; //每页显示的数量
 
-        iPow.Application.jq.Service.IHomeService homeService;
+        Miaow.Application.jq.Service.IHomeService homeService;
 
-        iPow.Application.dj.Service.ITourPlanService tourPlanService;
+        Miaow.Application.dj.Service.ITourPlanService tourPlanService;
 
-        iPow.Application.account.Service.ITourPlanDetailService tourPlanDetailService;
+        Miaow.Application.account.Service.ITourPlanDetailService tourPlanDetailService;
 
-        iPow.Application.account.Service.ISightInfoService SightInfo;
+        Miaow.Application.account.Service.ISightInfoService SightInfo;
 
-        iPow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService cityInfoService;
+        Miaow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService cityInfoService;
 
-        iPow.Application.account.Service.ICityInfoMoreService cityInfoMoreService;
+        Miaow.Application.account.Service.ICityInfoMoreService cityInfoMoreService;
 
-        iPow.Application.account.Service.IHotelPropertyInfoService hotelPrpertyInfoService;
+        Miaow.Application.account.Service.IHotelPropertyInfoService hotelPrpertyInfoService;
 
-        public HomeController(iPow.Application.jq.Service.IHomeService ipowHome,
-            iPow.Application.dj.Service.ITourPlanService tour,
-            iPow.Application.account.Service.ISightInfoService Sight,
-            iPow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService city,
-            iPow.Application.account.Service.ITourPlanDetailService tourPlan,
-            iPow.Application.account.Service.ICityInfoMoreService cityInfoMore,
-            iPow.Application.account.Service.IHotelPropertyInfoService hotelPrpertyInfo
+        public HomeController(Miaow.Application.jq.Service.IHomeService MiaowHome,
+            Miaow.Application.dj.Service.ITourPlanService tour,
+            Miaow.Application.account.Service.ISightInfoService Sight,
+            Miaow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService city,
+            Miaow.Application.account.Service.ITourPlanDetailService tourPlan,
+            Miaow.Application.account.Service.ICityInfoMoreService cityInfoMore,
+            Miaow.Application.account.Service.IHotelPropertyInfoService hotelPrpertyInfo
             )
         {
             if (hotelPrpertyInfo == null)
             {
                 throw new ArgumentNullException("hotelPrpertyInfoService");
             }
-            if (ipowHome == null)
+            if (MiaowHome == null)
             {
                 throw new ArgumentNullException("homeService is null");
             }
@@ -71,7 +71,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
                 throw new ArgumentNullException("cityInfoMoreService");
             }
             tourPlanService = tour;
-            homeService = ipowHome;
+            homeService = MiaowHome;
             SightInfo = Sight;
             cityInfoService = city;
             tourPlanDetailService = tourPlan;
@@ -96,7 +96,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
         /// <returns></returns>
         public ViewResult PlanList(int userId, int? Id)
         {
-            iPow.Application.account.Dto.TourPlanDto dto = new iPow.Application.account.Dto.TourPlanDto();
+            Miaow.Application.account.Dto.TourPlanDto dto = new Miaow.Application.account.Dto.TourPlanDto();
             if (userId != 0 || userId != null)
             {
                 int take = pageSize;
@@ -119,8 +119,8 @@ namespace Miaow.Presentation.account.Areas.MyTour
         /// <returns></returns>
         public ViewResult AllPlan(int? Id)
         {
-            List<iPow.Domain.Dto.Sys_SightInfoDto> LSID = new List<Sys_SightInfoDto>();
-            iPow.Application.account.Dto.TourPlanDto dto = new iPow.Application.account.Dto.TourPlanDto();
+            List<Miaow.Domain.Dto.Sys_SightInfoDto> LSID = new List<Sys_SightInfoDto>();
+            Miaow.Application.account.Dto.TourPlanDto dto = new Miaow.Application.account.Dto.TourPlanDto();
             int take = pageSize;
             var pi = (Id.HasValue && Id.Value > 0) ? (int)Id : 1;
             dto.TourPlanList = tourPlanService.GetTourPlanList(pi, take);
@@ -137,7 +137,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
             //        {
             //            if (tourplan.SightIDOrHotelID != 0)
             //            {
-            //                iPow.Domain.Dto.Sys_SightInfoDto SID = new Sys_SightInfoDto();
+            //                Miaow.Domain.Dto.Sys_SightInfoDto SID = new Sys_SightInfoDto();
             //                var sight = SightInfo.GetSightByParkID(tourplan.SightIDOrHotelID);
             //                SID.ParkID = sight.ParkID;
             //                SID.Title = sight.Title;
@@ -161,7 +161,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
         public ActionResult CreatePlan(FormCollection tour)
         {
             var tp = new Sys_TourPlan();
-            var tt = new iPow.Infrastructure.Data.DataSys.Sys_TourPlan();
+            var tt = new Miaow.Infrastructure.Data.DataSys.Sys_TourPlan();
             string AddTime = string.Empty;
             string Days = string.Empty;
             string PlanTitle = string.Empty;
@@ -215,8 +215,8 @@ namespace Miaow.Presentation.account.Areas.MyTour
             var res = tourPlanService.GetTourPlanByID(PlanID);
             var data = res.ToDto();
             var sightInfoService = Miaow.Presentation.account.MiaowPreAccountEngine.Current.Resolve<
-                iPow.Application.account.Service.ISightInfoService>();
-            iPow.Application.account.Dto.TourPlanDto dto = new iPow.Application.account.Dto.TourPlanDto();
+                Miaow.Application.account.Service.ISightInfoService>();
+            Miaow.Application.account.Dto.TourPlanDto dto = new Miaow.Application.account.Dto.TourPlanDto();
             dto.CurrentCityInfo = cityInfoService.GetCityInfoSingleByName(res.Destination);
             var pi = id == null ? 1 : (int)id;
             int take = pageSize;
@@ -225,10 +225,10 @@ namespace Miaow.Presentation.account.Areas.MyTour
             var result = tourPlanDetailService.GetTourPlanByID(PlanID);
             if (result != null)
             {
-                List<iPow.Domain.Dto.Sys_SightInfoDto> LSIF = new List<Sys_SightInfoDto>();
+                List<Miaow.Domain.Dto.Sys_SightInfoDto> LSIF = new List<Sys_SightInfoDto>();
                 foreach (var item in result)
                 {
-                    iPow.Domain.Dto.Sys_SightInfoDto SIF = new Sys_SightInfoDto();
+                    Miaow.Domain.Dto.Sys_SightInfoDto SIF = new Sys_SightInfoDto();
                     SIF = sightInfoService.GetSightByPlanID(item.SightIDOrHotelID.HasValue ? (int)item.SightIDOrHotelID : 0);
                     LSIF.Add(SIF);
                 }
@@ -263,7 +263,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
         public ActionResult Edit(FormCollection tour)
         {
             var tp = new Sys_TourPlan();
-            var tt = new iPow.Infrastructure.Data.DataSys.Sys_TourPlan();
+            var tt = new Miaow.Infrastructure.Data.DataSys.Sys_TourPlan();
             string AddTime = string.Empty;
             string Days = string.Empty;
             string PlanTitle = string.Empty;
@@ -415,11 +415,11 @@ namespace Miaow.Presentation.account.Areas.MyTour
         [HttpGet]
         public JsonResult GetUserDIYTourByID(int Id)
         {
-            List<iPow.Domain.Dto.Sys_SightInfoDto> LSID = new List<Sys_SightInfoDto>();
+            List<Miaow.Domain.Dto.Sys_SightInfoDto> LSID = new List<Sys_SightInfoDto>();
             var res = tourPlanDetailService.GetSightTitleByID(Id);
             foreach (var item in res)
             {
-                iPow.Domain.Dto.Sys_SightInfoDto SID = new iPow.Domain.Dto.Sys_SightInfoDto();
+                Miaow.Domain.Dto.Sys_SightInfoDto SID = new Miaow.Domain.Dto.Sys_SightInfoDto();
                 SID = SightInfo.GetSightByID(item.SightIDOrHotelID.HasValue ? (int)item.SightIDOrHotelID : 0);
                 SID.ParkID = item.SightIDOrHotelID.HasValue ? (int)item.SightIDOrHotelID : 0;
                 LSID.Add(SID);
@@ -439,11 +439,11 @@ namespace Miaow.Presentation.account.Areas.MyTour
         [HttpGet]
         public JsonResult GetCirSightInfoByID(int Id)
         {
-            List<iPow.Domain.Dto.Sys_SightInfoDto> LSID = new List<Sys_SightInfoDto>();
+            List<Miaow.Domain.Dto.Sys_SightInfoDto> LSID = new List<Sys_SightInfoDto>();
             var res = SightInfo.GetCirSightIDByID(Id);
             foreach (var item in res)
             {
-                iPow.Domain.Dto.Sys_SightInfoDto SID = new iPow.Domain.Dto.Sys_SightInfoDto();
+                Miaow.Domain.Dto.Sys_SightInfoDto SID = new Miaow.Domain.Dto.Sys_SightInfoDto();
                 SID = SightInfo.GetSightByID(item.CirId.HasValue ? (int)item.CirId : 0);
                 LSID.Add(SID);
             }
@@ -460,11 +460,11 @@ namespace Miaow.Presentation.account.Areas.MyTour
         [HttpGet]
         public JsonResult GetHotelInfoByID(int Id)
         {
-            List<iPow.Domain.Dto.Sys_HotelPropertyInfoDto> LHID = new List<Sys_HotelPropertyInfoDto>();
+            List<Miaow.Domain.Dto.Sys_HotelPropertyInfoDto> LHID = new List<Sys_HotelPropertyInfoDto>();
             var res = SightInfo.GetCirHotalIDByID(Id);
             foreach (var item in res)
             {
-                iPow.Domain.Dto.Sys_HotelPropertyInfoDto HID = new Sys_HotelPropertyInfoDto();
+                Miaow.Domain.Dto.Sys_HotelPropertyInfoDto HID = new Sys_HotelPropertyInfoDto();
                 HID = hotelPrpertyInfoService.GetHotelInfoByID(item.HotelId.HasValue ? (int)item.HotelId : 0);
                 LHID.Add(HID);
             }
@@ -508,7 +508,7 @@ namespace Miaow.Presentation.account.Areas.MyTour
             return data;
         }
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_CityInfo> CurrentCityName()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_CityInfo> CurrentCityName()
         {
             var data = cityInfoService.GetList().OrderByDescending(e => e.id).AsEnumerable();
             var currentCityId = 0;

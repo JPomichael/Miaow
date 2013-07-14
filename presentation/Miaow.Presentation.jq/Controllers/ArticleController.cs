@@ -6,17 +6,17 @@ namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class ArticleController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         public const int pageSize = 5;
 
-        iPow.Application.jq.Service.IArticleService articleService;
+        Miaow.Application.jq.Service.IArticleService articleService;
 
-        iPow.Domain.Repository.IArticleCommRepository articleCommRepository;
+        Miaow.Domain.Repository.IArticleCommRepository articleCommRepository;
 
-        public ArticleController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.jq.Service.IArticleService article,
-            iPow.Domain.Repository.IArticleCommRepository articleComm)
+        public ArticleController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.jq.Service.IArticleService article,
+            Miaow.Domain.Repository.IArticleCommRepository articleComm)
             : base(work)
         {
             if (article == null)
@@ -42,7 +42,7 @@ namespace Miaow.Presentation.jq.Controllers
         {
             try
             {
-                iPow.Infrastructure.Data.DataSys.Sys_ArticleComm comm = new iPow.Infrastructure.Data.DataSys.Sys_ArticleComm();
+                Miaow.Infrastructure.Data.DataSys.Sys_ArticleComm comm = new Miaow.Infrastructure.Data.DataSys.Sys_ArticleComm();
                 comm.AddTime = System.DateTime.Now;
                 comm.UserName = f["txtUserName"].ToString();
                 comm.UserID = 0;
@@ -64,7 +64,7 @@ namespace Miaow.Presentation.jq.Controllers
                 int.TryParse(picId, out id);
                 comm.ArticleID = id;
                 articleCommRepository.Add(comm);
-                iPow.Infrastructure.Data.DataSys.Sys_ArticleInfo info = articleService.GetSysArticleSingleById(comm.ArticleID);
+                Miaow.Infrastructure.Data.DataSys.Sys_ArticleInfo info = articleService.GetSysArticleSingleById(comm.ArticleID);
                 if (info != null)
                 {
                     info.CommFlag += 1;

@@ -4,28 +4,28 @@ using System.Linq;
 using System.Web.Mvc;
 
 using Webdiyer.WebControls.Mvc;
-using iPow.Application.dj.Dto;
-using iPow.Infrastructure.Data.DataSys;
+using Miaow.Application.dj.Dto;
+using Miaow.Infrastructure.Data.DataSys;
 
 namespace Miaow.Presentation.dj.Controllers
 {
     [HandleError]
     public class SearchController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         //定义每页显示多少条
         const int pageSize = 4;
 
-        iPow.Application.dj.Service.ISearchService searchService;
+        Miaow.Application.dj.Service.ISearchService searchService;
 
-        iPow.Domain.Repository.ISearchInfoRepository searchInfoReopsitory;
+        Miaow.Domain.Repository.ISearchInfoRepository searchInfoReopsitory;
 
-        public SearchController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.dj.Service.ISearchService ipowSearchServer,
-            iPow.Domain.Repository.ISearchInfoRepository searchInfo)
+        public SearchController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.dj.Service.ISearchService MiaowSearchServer,
+            Miaow.Domain.Repository.ISearchInfoRepository searchInfo)
             : base(work)
         {
-            if (ipowSearchServer == null)
+            if (MiaowSearchServer == null)
             {
                 throw new ArgumentNullException("searchService is null");
             }
@@ -33,7 +33,7 @@ namespace Miaow.Presentation.dj.Controllers
             {
                 throw new ArgumentNullException("searchInfoReopsitory is null");
             }
-            searchService = ipowSearchServer;
+            searchService = MiaowSearchServer;
             searchInfoReopsitory = searchInfo;
         }
 
@@ -73,7 +73,7 @@ namespace Miaow.Presentation.dj.Controllers
             #region add
 
             var searchInfo = new Sys_SearchInfo();
-            searchInfo.Ip = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+            searchInfo.Ip = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
             if (searchInfo.Ip.Equals("::1"))
             {
                 searchInfo.Ip = "127.0.0.1";

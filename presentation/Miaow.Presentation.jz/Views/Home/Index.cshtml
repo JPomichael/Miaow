@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "家族圈_ipow自助旅行网-中国最好的自助旅游网站";
+    ViewBag.Title = "家族圈_Miaow自助旅行网-中国最好的自助旅游网站";
 }
 <script src="@Url.Content("~/Scripts/jquery.form.js")" type="text/javascript"></script>
 <script type="text/javascript">
@@ -33,7 +33,7 @@
 <div class="mainContainer">
     <div class="ppLeft">
         <div class="ppLeftAd">
-            <a href="http://sns.ipow.cn/index.php" target="_blank" title="邻里圈">
+            <a href="http://sns.Miaow.cn/index.php" target="_blank" title="邻里圈">
                 <img src="/images/tmep.jpg" border="0" alt="" /></a>
         </div>
         <div class="ppLeftBot">
@@ -79,7 +79,7 @@
                 <div class="ppLogList">
                     <ul>
                         @{
-                            var feedTopList = iPow.DataClass.jz.Querys.GetForumTopFeedList(15);
+                            var feedTopList = Miaow.DataClass.jz.Querys.GetForumTopFeedList(15);
                             foreach (var item in feedTopList)
                             {
                             <li>
@@ -102,7 +102,7 @@
     <div class="dirContainer">
         <ul>
             @{ 
-                var catalogList = iPow.DataClass.jz.Querys.GetForumCatalogList();
+                var catalogList = Miaow.DataClass.jz.Querys.GetForumCatalogList();
                 if (catalogList != null && catalogList.Count() > 0)
                 {
                     foreach (var item in catalogList)

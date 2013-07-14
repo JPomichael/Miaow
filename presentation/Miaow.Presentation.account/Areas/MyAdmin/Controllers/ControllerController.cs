@@ -5,26 +5,26 @@ using System.Web;
 using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class ControllerController : Controller
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcActionService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcActionService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClassService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClassService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcControllerService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcControllerService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService mvcRolePermissionService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService mvcRolePermissionService;
 
-        public ControllerController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcAction,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClass,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcController,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService rolePermission)
+        public ControllerController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcActionService mvcAction,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClass,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerService mvcController,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcRolePermissionService rolePermission)
         {
 
             if (mvcAction == null)
@@ -67,7 +67,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             {
                 data = data.Where(e => e.Name.Contains(searchKey));
             }
-            var model = new GridModel<iPow.Domain.Dto.Sys_MvcControllerDto>
+            var model = new GridModel<Miaow.Domain.Dto.Sys_MvcControllerDto>
             {
                 Data = data,
                 Total = data.Count()
@@ -84,7 +84,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         {
             //做为 DropDownList DataSource
             ViewBag.Controllermodel = mvcControllerClassService.GetList();
-            var model = new iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto();
+            var model = new Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto();
             return View(model);
         }
 
@@ -93,7 +93,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ViewResult Add(iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto MvcController, string State)
+        public ViewResult Add(Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto MvcController, string State)
         {
             //做为 DropDownList DataSource
             ViewBag.Controllermodel = mvcControllerClassService.GetList();
@@ -113,14 +113,14 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                     }
                     else
                     {
-                        iPow.Infrastructure.Data.DataSys.Sys_MvcController addController = new iPow.Infrastructure.Data.DataSys.Sys_MvcController();
+                        Miaow.Infrastructure.Data.DataSys.Sys_MvcController addController = new Miaow.Infrastructure.Data.DataSys.Sys_MvcController();
                         addController.ClassId = MvcController.ClassId;
                         addController.Name = MvcController.Name;
                         addController.AssemblyFullName = addController.Name;
                         addController.Remark = addController.Name;
                         MvcController.AddTime = System.DateTime.Now;
                         addController.AddTime = MvcController.AddTime;
-                        addController.IpAddress = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+                        addController.IpAddress = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
                         addController.State = Convert.ToBoolean(State);
                         addController.SortNum = MvcController.SortNum;
                         mvcControllerService.Add(addController, null);
@@ -167,7 +167,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// <param name="MvcController"></param>
         /// <returns></returns>
         [HttpPost]
-        public ViewResult Edit(iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto MvcController, string State)
+        public ViewResult Edit(Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto MvcController, string State)
         {
             ViewBag.Controllermodel = mvcControllerClassService.GetList();
             try
@@ -248,13 +248,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// 用于显示 ControllerList的提取方法
         /// </summary>
         /// <returns></returns>
-        protected IEnumerable<iPow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto> GetControllerDtoList()
+        protected IEnumerable<Miaow.Infrastructure.Crosscutting.Authorize.Dto.MvcControllerDto> GetControllerDtoList()
         {
             var AllController = mvcControllerService.GetControllerDtoList().OrderBy(e => e.ClassName);
             return AllController;
         }
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_MvcController> CurrentControllerName()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_MvcController> CurrentControllerName()
         {
             var data = mvcControllerService.GetList().OrderByDescending(e => e.Id).AsEnumerable();
             var currentClassId = 0;

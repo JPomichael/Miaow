@@ -1,8 +1,8 @@
 ﻿@using Webdiyer.WebControls.Mvc
-@model  iPow.Application.jq.Dto.DetailSightBaseDto
+@model  Miaow.Application.jq.Dto.DetailSightBaseDto
 @{
-    var videoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Application.jq.Service.IVideoInfoService>();
+    var videoService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Application.jq.Service.IVideoInfoService>();
 }
 <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
 <!--左侧内容开始-->
@@ -39,7 +39,7 @@
             </div>
             <div class="infoContainer" id="PicList">
                 @{
-        IQueryable<iPow.Domain.Dto.Sys_VideoInfoDto> videList = null;
+        IQueryable<Miaow.Domain.Dto.Sys_VideoInfoDto> videList = null;
         int total = 0;
         if (ViewBag.ord != null && ViewBag.ord == "H")
         {

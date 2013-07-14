@@ -1,10 +1,10 @@
 ﻿@{
     try
     {
-        iPow.function.LocationInfo li = iPow.function.LocationFucntion.LocationInfo();
+        Miaow.function.LocationInfo li = Miaow.function.LocationFucntion.LocationInfo();
         if (li != null)
         {
-            IQueryable<iPow.jd.Models.RightTodayLowerPriceAndHoteHotel> hp = iPow.jd.Bll.RightTodayLowPrice.GetRightHotHotelByProvince(li.Province, 10);
+            IQueryable<Miaow.jd.Models.RightTodayLowerPriceAndHoteHotel> hp = Miaow.jd.Bll.RightTodayLowPrice.GetRightHotHotelByProvince(li.Province, 10);
             if (hp != null)
             {
                 int i = 1;

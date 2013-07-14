@@ -1,4 +1,4 @@
-﻿@model iPow.Application.account.Dto.TourPlanDto
+﻿@model Miaow.Application.account.Dto.TourPlanDto
 @{  Layout = null;}
 <ul class="ulSights" id="updateContianer">
     @{
@@ -19,7 +19,7 @@
         <li id='lisight@(item.ParkID)'>
             <div class="imgShadows">
                 @{
-            var pic = iPow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(item.ParkID);
+            var pic = Miaow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(item.ParkID);
                     <img src='@(pic.Count == 3 ? pic[0] + "cutdown/126_99_" + pic[1] : "/images/nopic.jpg")' 
 					width="126" height="99" 
 					alt="@(pic.Count == 3 ? pic[2] : "暂无图片")" />
@@ -27,7 +27,7 @@
             </div>
             <div class="iSightInfo"  style = " background:@(liStyle)">
                 <h2>
-                    <span class="sNum">@(a)</span> <a href="http://jq.ipow.cn/sight/@(item.PY)/@(item.ParkID)/1" title="@(item.Title)" target="_blank">
+                    <span class="sNum">@(a)</span> <a href="http://jq.Miaow.cn/sight/@(item.PY)/@(item.ParkID)/1" title="@(item.Title)" target="_blank">
                         @(item.Title)</a>
                 </h2>
                 <h4  title="推荐指数：@(item.VoIndex)" >
@@ -44,12 +44,12 @@
                     @{
             if (item.IsShort == 1)
             {
-                        <a href="http://jq.ipow.cn/sight/@(item.PY)/@(item.ParkID)/1" title="@(item.Title)" target="_blank">
+                        <a href="http://jq.Miaow.cn/sight/@(item.PY)/@(item.ParkID)/1" title="@(item.Title)" target="_blank">
                             查看详细 </a>  
             }
             else
             {
-                        <a href="http://jq.ipow.cn/sight/@(item.PY)/@(item.ParkID)/1" title="@(item.Title)" target="_blank">
+                        <a href="http://jq.Miaow.cn/sight/@(item.PY)/@(item.ParkID)/1" title="@(item.Title)" target="_blank">
                             查看详细 </a> 
             }
                     }

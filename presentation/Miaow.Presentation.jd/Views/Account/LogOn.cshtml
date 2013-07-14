@@ -1,4 +1,4 @@
-﻿@model iPow.jd.Models.LogOnModel
+﻿@model Miaow.jd.Models.LogOnModel
 @{
     ViewBag.Title = "登录";
 }
@@ -52,7 +52,7 @@
                 </p>
                 <input id="logon" type="button" value="登录" />
                 @Html.ActionLink("找回密码?", "FindPwd", "Account")
-                @(Session[iPow.function.Helper.SessionNameLogin])
+                @(Session[Miaow.function.Helper.SessionNameLogin])
             </div>
         }
     </div>
@@ -77,7 +77,7 @@
                         }
                         else {
                             //发送消息过去
-                            $.get('http://account.ipow.cn/server/SSOService.svc/user/Login?callback=?',
+                            $.get('http://account.Miaow.cn/server/SSOService.svc/user/Login?callback=?',
     				        {username: $("#UserName").val(), password: $("#Password").val() },
     				        function (ssodata) {
     				            //第一种是禁止

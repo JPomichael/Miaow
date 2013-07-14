@@ -1,23 +1,23 @@
 ﻿<!--线路内容-->
 @{
-    var tourPlanService = Miaow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
-        iPow.Application.dj.Service.ITourPlanService>();
+    var tourPlanService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
+        Miaow.Application.dj.Service.ITourPlanService>();
 }
 @{
     if (Model != null)
     {
-        IQueryable<iPow.Application.dj.Dto.TourDetailSightDto> tourSightList = null;
-        IQueryable<iPow.Application.dj.Dto.TourDetailHotelDto> tourHotelList = null;
-        iPow.Application.dj.Dto.TourDetailTrafficDto traffic = null;
+        IQueryable<Miaow.Application.dj.Dto.TourDetailSightDto> tourSightList = null;
+        IQueryable<Miaow.Application.dj.Dto.TourDetailHotelDto> tourHotelList = null;
+        Miaow.Application.dj.Dto.TourDetailTrafficDto traffic = null;
 
         System.Text.StringBuilder scriptSightMap = new System.Text.StringBuilder();
-        IQueryable<iPow.Application.dj.Dto.MapSightInfoDto> mapSightList = null;
+        IQueryable<Miaow.Application.dj.Dto.MapSightInfoDto> mapSightList = null;
         scriptSightMap.AppendLine("var sightMap = [");
 
 
         System.Text.StringBuilder scriptHotelMap = new System.Text.StringBuilder();
-        //IQueryable<iPow.Application.dj.Dto.MapHotelInfo> mapHotelList = null;
-        iPow.Application.Union.Dto.SearchHotelDto mapHotelList = null;
+        //IQueryable<Miaow.Application.dj.Dto.MapHotelInfo> mapHotelList = null;
+        Miaow.Application.Union.Dto.SearchHotelDto mapHotelList = null;
         scriptHotelMap.AppendLine("var hotelMap = [");
 
         System.Text.StringBuilder scriptPlanAll = new System.Text.StringBuilder();
@@ -57,9 +57,9 @@
                     scriptPlanAll.AppendLine("            \"Ticket\": " + item.Ticket + ",");
                     tourSum += item.Ticket;
                 <div class="infoContent" id="sight@(item.SightId)">
-                    <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.SightId)/1" class="aImg">
+                    <a href="http://jq.Miaow.cn/sight/@(item.Py)/@(item.SightId)/1" class="aImg">
                         @{
-                    var list = iPow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(item.SightId);
+                    var list = Miaow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(item.SightId);
                     if (list.Count == 3)
                     { 
                             <img src="@(list[0])CutDown/116_103_@(list[1])" alt = "@(list[2])" />
@@ -72,7 +72,7 @@
 <script type="text/javascript">
 
     var bds_config = { "bdTop": 177,
-        'bdText': '@Model.PlanTitle' + ' ' + '@this.Model.Days' + '天' + '￥' + '@this.Model.PlanTotalMoney ' + ' ' + '-ipow互动旅行网 中国最好的自助旅游网站 @@互动旅行 ',
+        'bdText': '@Model.PlanTitle' + ' ' + '@this.Model.Days' + '天' + '￥' + '@this.Model.PlanTotalMoney ' + ' ' + '-Miaow互动旅行网 中国最好的自助旅游网站 @@互动旅行 ',
         'bdPic': "" + '@list[0]'+'@list[1]'
     }
     document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
@@ -104,9 +104,9 @@
                     </a>
                     <div class="tourInfo">
                         <h3>
-                            <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.SightId)/1" target="_blank">@(item.Name)</a>&nbsp;&nbsp;&nbsp;&nbsp;@(item.Type)</h3>
+                            <a href="http://jq.Miaow.cn/sight/@(item.Py)/@(item.SightId)/1" target="_blank">@(item.Name)</a>&nbsp;&nbsp;&nbsp;&nbsp;@(item.Type)</h3>
                         <dl>
-                            <dt><span>￥<font class="fPrice">@(item.Ticket)</font>/门票</span> <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.SightId)/1"
+                            <dt><span>￥<font class="fPrice">@(item.Ticket)</font>/门票</span> <a href="http://jq.Miaow.cn/sight/@(item.Py)/@(item.SightId)/1"
                                             target="_blank" class="aLookMore">查看详细</a> <a href="javascript:;" class="aDeleteSight"
                                                 rel="sight@(item.SightId)|@(i + 1)">移除行程</a> </dt>
                             <dd class="dTitle">
@@ -147,7 +147,7 @@
                 foreach (var item in tourHotelList)
                 {
                 <div id="hotel@(item.IdentityId)" style="background-color: #EAEAEA;" class="infoContent">
-                    <a target="_blank" class="aImg" href="http://hotel.ipow.cn/hotel/@(item.IdentityId)">
+                    <a target="_blank" class="aImg" href="http://hotel.Miaow.cn/hotel/@(item.IdentityId)">
                         @{
                     string hotelDefaultPic = tourPlanService.GetHotelDefaultPicByHotelId((int)item.HotelId);
                     if (!string.IsNullOrEmpty(hotelDefaultPic))
@@ -162,10 +162,10 @@
                     </a>
                     <div class="tourInfo">
                         <h3>
-                            <a target="_blank" href="http://hotel.ipow.cn/hotel/@(item.IdentityId)">@(item.Name)</a>&nbsp;&nbsp;&nbsp;&nbsp;@(item.Type)</h3>
+                            <a target="_blank" href="http://hotel.Miaow.cn/hotel/@(item.IdentityId)">@(item.Name)</a>&nbsp;&nbsp;&nbsp;&nbsp;@(item.Type)</h3>
                         <dl>
                             <dt><span>￥<font class="fPrice">@(item.MinPrice)</font>/起</span> <a class="aLookMore" target="_blank"
-                                href="http://hotel.ipow.cn/hotel/@(item.IdentityId)">查看详细</a> <a rel="hotel@(item.IdentityId)|@(i + 1)" class="aDeleteHotel"
+                                href="http://hotel.Miaow.cn/hotel/@(item.IdentityId)">查看详细</a> <a rel="hotel@(item.IdentityId)|@(i + 1)" class="aDeleteHotel"
                                     href="javascript:;">移除行程</a> </dt>
                             <dd class="dContent">
                                 地址：@(item.Address)</dd>
@@ -211,11 +211,11 @@
             foreach (var item in mapSightList)
             {
                 scriptSightMap.AppendLine("{\"Name\": \"" + item.Name + "\",");
-                scriptSightMap.AppendLine("\"Url\": \"http://jq.ipow.cn/sight/" + item.Py + "/" + item.SightId + "/1\",");
+                scriptSightMap.AppendLine("\"Url\": \"http://jq.Miaow.cn/sight/" + item.Py + "/" + item.SightId + "/1\",");
                 scriptSightMap.AppendLine("\"Latitude\": " + (item.Lat == null ? 0 : item.Lat) + ",");
                 scriptSightMap.AppendLine("\"Longitude\": " + (item.Long == null ? 0 : item.Long) + ",");
                 scriptSightMap.AppendLine("\"Price\": \"" + item.Ticket + "\",");
-                var list = iPow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(item.SightId);
+                var list = Miaow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(item.SightId);
                 if (list.Count == 2)
                 {
                     scriptSightMap.AppendLine("\"ImageSrc\": \"" + list[0] + "CutDown/116_103_" + list[1] + "\",");
@@ -263,7 +263,7 @@
                     if (posList.Count == 2)
                     {
                         scriptHotelMap.AppendLine("{\"Name\":\"" + hotelitem.hotelname + "\",");
-                        scriptHotelMap.AppendLine("\"Url\":\"http://hotel.ipow.cn/hotel/" + hotelitem.id + "\",");
+                        scriptHotelMap.AppendLine("\"Url\":\"http://hotel.Miaow.cn/hotel/" + hotelitem.id + "\",");
                         scriptHotelMap.AppendLine("\"Type\":\"Hotel\",");
                         scriptHotelMap.AppendLine("\"Latitude\":\"" + posList[0] + "\",");
                         scriptHotelMap.AppendLine("\"Longitude\":\"" + posList[1] + "\",");

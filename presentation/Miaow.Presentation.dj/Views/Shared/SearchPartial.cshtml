@@ -11,8 +11,8 @@
         <li>
             <div class="searchmo">
             @{
-                var totalCountService = iPow.Presentation.dj.iPowPreDjEngine.Current.Resolve<
-                    iPow.Application.dj.Service.ILinksAndTopCountService>();
+                var totalCountService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
+                    Miaow.Application.dj.Service.ILinksAndTopCountService>();
             }
                 <span class="xingshear" style="padding-right: 15px;">出游行程搜索</span>实时搜索
                 @(totalCountService.GetTourInfoCount())条自助游线路,@(totalCountService.GetHotelInfoCount())家酒店,@(totalCountService.GetSightCount())个旅游景点

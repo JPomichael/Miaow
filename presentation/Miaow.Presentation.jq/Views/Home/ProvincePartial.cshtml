@@ -1,5 +1,5 @@
 ﻿@using Webdiyer.WebControls.Mvc;
-@model  iPow.Application.jq.Dto.HomeDto
+@model  Miaow.Application.jq.Dto.HomeDto
 <div class="guidTitle">
     <span>您选择的目的地：<font class="fontBlue">@Model.CurrentCityInfo.province</font>&nbsp;&nbsp;&nbsp;&nbsp;景点：<font
         class="fontBlue" id="SightCount">
@@ -74,7 +74,7 @@
                     </font></dt>
                 <dd class="img">
                     @{
-                var pic = iPow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(c.ParkID);
+                var pic = Miaow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(c.ParkID);
                         <img width="116px" height="103px;" 
                         src="@( pic.Count == 3 ? pic[0] + "cutdown/116_103_" + pic[1] : "/images/nopic135.jpg")" 
                         alt="@(pic.Count == 3 ? pic[2] : "暂无图片")"/>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
-using iPow.DataSys;
+using Miaow.DataSys;
 using System.Configuration;
 using Miaow.Presentation.jz.Models;
 
@@ -41,9 +41,9 @@ namespace Miaow.Presentation.jz.Controllers
         [HttpPost]
         public ActionResult Login(string email, string password, bool rememberMe)
         {
-            if (iPow.DataClass.jz.Querys.IsExistUser(email, password))
+            if (Miaow.DataClass.jz.Querys.IsExistUser(email, password))
             {
-                sns_user user = iPow.DataClass.jz.Querys.GetForumSingleUserByEmailPwd(email, password);
+                sns_user user = Miaow.DataClass.jz.Querys.GetForumSingleUserByEmailPwd(email, password);
                 Session["user"] = email;
             }
             return View("Index", new FroumModels());
@@ -65,7 +65,7 @@ namespace Miaow.Presentation.jz.Controllers
             {
                 ModelState.AddModelError("Error", "你必须指定一个密码。");
             }
-            if (!iPow.DataClass.jz.Querys.IsExistUser(email, password))
+            if (!Miaow.DataClass.jz.Querys.IsExistUser(email, password))
             {
                 ModelState.AddModelError("Error", "用户名或密码错误.");
             }

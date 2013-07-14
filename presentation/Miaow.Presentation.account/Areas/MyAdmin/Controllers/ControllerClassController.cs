@@ -5,18 +5,18 @@ using System.Web;
 using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
-using iPow.Domain;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Domain;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class ControllerClassController : Controller
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClassService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClassService;
 
-        public ControllerClassController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClass)
+        public ControllerClassController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IMvcControllerClassService mvcControllerClass)
         {
             if (mvcControllerClass == null)
             {
@@ -45,7 +45,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 data = data.Where(e => e.Name.Contains(searchKey));
             }
             var dto = data.ToDto();
-            var model = new GridModel<iPow.Domain.Dto.Sys_MvcControllerClassDto>
+            var model = new GridModel<Miaow.Domain.Dto.Sys_MvcControllerClassDto>
             {
                 Data = dto,
                 Total = data.Count()
@@ -59,7 +59,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// <returns></returns>
         public ViewResult Add()
         {
-            var model = new iPow.Domain.Dto.Sys_MvcControllerClassDto();
+            var model = new Miaow.Domain.Dto.Sys_MvcControllerClassDto();
             return View(model);
         }
 
@@ -69,7 +69,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost]
-        public ViewResult Add(iPow.Domain.Dto.Sys_MvcControllerClassDto dto, string State)
+        public ViewResult Add(Miaow.Domain.Dto.Sys_MvcControllerClassDto dto, string State)
         {
             if (dto != null)
             {
@@ -82,13 +82,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 {
                     dto.AddTime = System.DateTime.Now; //添加的当前时间
                     dto.SortNum = 0;
-                    iPow.Infrastructure.Data.DataSys.Sys_MvcControllerClass addClass = new iPow.Infrastructure.Data.DataSys.Sys_MvcControllerClass();
+                    Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerClass addClass = new Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerClass();
                     addClass.Name = dto.Name;
                     addClass.Remark = dto.Remark;
                     addClass.AddTime = dto.AddTime;
                     addClass.State = Convert.ToBoolean(State);
                     addClass.SortNum = dto.SortNum;
-                    addClass.IpAddress = iPow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
+                    addClass.IpAddress = Miaow.Infrastructure.Crosscutting.Function.StringHelper.GetRealIP();
                     mvcControllerClassService.Add(addClass,null);
                     if (addClass.Id > 0)
                     {
@@ -153,7 +153,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// <param name="Class"></param>
         /// <returns></returns>
         [HttpPost]
-        public ViewResult Edit(iPow.Domain.Dto.Sys_MvcControllerClassDto Class, string State)
+        public ViewResult Edit(Miaow.Domain.Dto.Sys_MvcControllerClassDto Class, string State)
         {
             try
             {
@@ -204,7 +204,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         #region util
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_MvcControllerClass> CurrentClassName()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerClass> CurrentClassName()
         {
             var data = mvcControllerClassService.GetList().OrderByDescending(e => e.Id).AsEnumerable();
             var currentClassId = 0;
@@ -219,7 +219,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// 用于显示ClassList的提取方法
         /// </summary>
         /// <returns></returns>
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_MvcControllerClass> GetClassList()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_MvcControllerClass> GetClassList()
         {
             var AllClass = mvcControllerClassService.GetList();
             return AllClass;

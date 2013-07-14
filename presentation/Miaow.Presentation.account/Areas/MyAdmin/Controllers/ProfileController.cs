@@ -8,15 +8,15 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class ProfileController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IUserService userService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IUserService userService;
 
-        iPow.Infrastructure.Crosscutting.Comm.Service.IFormsAuthService formAuthService;
+        Miaow.Infrastructure.Crosscutting.Comm.Service.IFormsAuthService formAuthService;
 
-        public ProfileController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-        iPow.Infrastructure.Crosscutting.Authorize.IUserService user,
-            iPow.Infrastructure.Crosscutting.Comm.Service.IFormsAuthService formAuth)
+        public ProfileController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+        Miaow.Infrastructure.Crosscutting.Authorize.IUserService user,
+            Miaow.Infrastructure.Crosscutting.Comm.Service.IFormsAuthService formAuth)
             : base(work)
         {
             if (user == null)
@@ -39,12 +39,12 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         [HttpGet]
         public ViewResult Login()
         {
-            var model = new iPow.Domain.Dto.Sys_AdminUserDto();
+            var model = new Miaow.Domain.Dto.Sys_AdminUserDto();
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Login(iPow.Domain.Dto.Sys_AdminUserDto data)
+        public ActionResult Login(Miaow.Domain.Dto.Sys_AdminUserDto data)
         {
             //formAuthService.Login("", false);
             return RedirectToAction("index", "home");

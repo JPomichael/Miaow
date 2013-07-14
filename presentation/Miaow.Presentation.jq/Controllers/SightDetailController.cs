@@ -3,27 +3,27 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-using iPow.Infrastructure.Crosscutting.NetFramework.Attributes;
+using Miaow.Infrastructure.Crosscutting.NetFramework.Attributes;
 
 namespace Miaow.Presentation.jq.Controllers
 {
     [HandleError]
     public class SightDetailController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
         //这个是用于评论的哈，只显示5条
         const int pageSizeForCommList = 5;
 
-        iPow.Application.jq.Service.ISightInfoService sightInfoService;
+        Miaow.Application.jq.Service.ISightInfoService sightInfoService;
 
-        iPow.Domain.Repository.ISightCommRepository sightCommRepository;
+        Miaow.Domain.Repository.ISightCommRepository sightCommRepository;
 
-        public SightDetailController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Application.jq.Service.ISightInfoService ipowSightInfo,
-            iPow.Domain.Repository.ISightCommRepository sightComm)
+        public SightDetailController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Application.jq.Service.ISightInfoService MiaowSightInfo,
+            Miaow.Domain.Repository.ISightCommRepository sightComm)
             : base(work)
         {
-            if (ipowSightInfo == null)
+            if (MiaowSightInfo == null)
             {
                 throw new ArgumentNullException("sightInfoServiceis null");
             }
@@ -31,7 +31,7 @@ namespace Miaow.Presentation.jq.Controllers
             {
                 throw new ArgumentNullException("sightCommRepository null");
             }
-            sightInfoService = ipowSightInfo;
+            sightInfoService = MiaowSightInfo;
             sightCommRepository = sightComm;
         }
 
@@ -48,8 +48,8 @@ namespace Miaow.Presentation.jq.Controllers
         {
             int total = 0;
             var data = sightInfoService.GetSightCommList(sid, pi, pageSizeForCommList, ref total);
-            Webdiyer.WebControls.Mvc.PagedList<iPow.Domain.Dto.Sys_SightCommDto> model =
-                new Webdiyer.WebControls.Mvc.PagedList<iPow.Domain.Dto.Sys_SightCommDto>(data, pi, 5, total);
+            Webdiyer.WebControls.Mvc.PagedList<Miaow.Domain.Dto.Sys_SightCommDto> model =
+                new Webdiyer.WebControls.Mvc.PagedList<Miaow.Domain.Dto.Sys_SightCommDto>(data, pi, 5, total);
             ViewBag.parkid = sid;
             return PartialView(model);
         }
@@ -58,7 +58,7 @@ namespace Miaow.Presentation.jq.Controllers
         {
             try
             {
-                iPow.Infrastructure.Data.DataSys.Sys_SightComm comm = new Infrastructure.Data.DataSys.Sys_SightComm();
+                Miaow.Infrastructure.Data.DataSys.Sys_SightComm comm = new Infrastructure.Data.DataSys.Sys_SightComm();
                 comm.AddTime = System.DateTime.Now;
                 comm.UserName = f["txtUserName"].ToString();
                 comm.UserID = 0;
@@ -94,8 +94,8 @@ namespace Miaow.Presentation.jq.Controllers
                 sightCommRepository.Uow.Commit();
                 int total = 0;
                 var data = sightInfoService.GetSightCommList(comm.SightID, 1, pageSizeForCommList, ref total);
-                Webdiyer.WebControls.Mvc.PagedList<iPow.Domain.Dto.Sys_SightCommDto> model =
-                    new Webdiyer.WebControls.Mvc.PagedList<iPow.Domain.Dto.Sys_SightCommDto>(data, 1, 5, total);
+                Webdiyer.WebControls.Mvc.PagedList<Miaow.Domain.Dto.Sys_SightCommDto> model =
+                    new Webdiyer.WebControls.Mvc.PagedList<Miaow.Domain.Dto.Sys_SightCommDto>(data, 1, 5, total);
                 ViewBag.parkid = comm.SightID;
                 return PartialView("CommList", model);
             }
@@ -108,7 +108,7 @@ namespace Miaow.Presentation.jq.Controllers
         [NoCache]
         public JsonResult WantGo(int sid, int? id)
         {
-            iPow.Infrastructure.Data.DataSys.Sys_SightInfo s = sightInfoService.GetSysSightSingleById(sid);
+            Miaow.Infrastructure.Data.DataSys.Sys_SightInfo s = sightInfoService.GetSysSightSingleById(sid);
             int count = 0;
             bool tar = true;
             if (s != null)
@@ -135,7 +135,7 @@ namespace Miaow.Presentation.jq.Controllers
         [NoCache]
         public JsonResult GoCount(int sid, int? id)
         {
-            iPow.Infrastructure.Data.DataSys.Sys_SightInfo info = sightInfoService.GetSysSightSingleById(sid);
+            Miaow.Infrastructure.Data.DataSys.Sys_SightInfo info = sightInfoService.GetSysSightSingleById(sid);
             bool tar = true;
             int count = 0;
             if (info != null)
@@ -168,7 +168,7 @@ namespace Miaow.Presentation.jq.Controllers
         [NoCache]
         public JsonResult WoDing(int sid, int? id)
         {
-            iPow.Infrastructure.Data.DataSys.Sys_SightInfo info = sightInfoService.GetSysSightSingleById(sid);
+            Miaow.Infrastructure.Data.DataSys.Sys_SightInfo info = sightInfoService.GetSysSightSingleById(sid);
             bool tar = true;
             int count = 0;
             if (info != null)

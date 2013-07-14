@@ -1,14 +1,14 @@
 ﻿@{
     
-    List<iPow.Application.Union.Dto.TodayLowPriceDto> data = null;
-    iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService localtionService = iPow.Presentation.Union.iPowPreUnionEngine
-        .Current.Resolve<iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+    List<Miaow.Application.Union.Dto.TodayLowPriceDto> data = null;
+    Miaow.Infrastructure.Crosscutting.Comm.Service.ILocationService localtionService = Miaow.Presentation.Union.MiaowPreUnionEngine
+        .Current.Resolve<Miaow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
 
-    iPow.Service.Union.Service.ICityService cityService = iPow.Presentation.Union.iPowPreUnionEngine
-.Current.Resolve<iPow.Service.Union.Service.ICityService>();
+    Miaow.Service.Union.Service.ICityService cityService = Miaow.Presentation.Union.MiaowPreUnionEngine
+.Current.Resolve<Miaow.Service.Union.Service.ICityService>();
 
-    iPow.Service.Union.Service.ITodayLowPriceService todayLowPriceService = iPow.Presentation.Union.iPowPreUnionEngine
-.Current.Resolve<iPow.Service.Union.Service.ITodayLowPriceService>();
+    Miaow.Service.Union.Service.ITodayLowPriceService todayLowPriceService = Miaow.Presentation.Union.MiaowPreUnionEngine
+.Current.Resolve<Miaow.Service.Union.Service.ITodayLowPriceService>();
 
     var li = localtionService.GetLocationInfo();
     if (li != null)

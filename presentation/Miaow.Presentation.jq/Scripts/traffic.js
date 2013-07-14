@@ -1,5 +1,5 @@
 ﻿/*
-* Compressed by iPow(www.iPow.cn)
+* Compressed by Miaow(www.Miaow.cn)
 */
 var startName_driver, endName_driver, startcitycode, endcitycode, sis_driver, start_driver, end_driver, route_driver, gold = 0, nn_r = 1, r_start_x = "", r_start_y = "", r_start_name = "", r_start_type = "", r_start_address = "", r_start_tel = "", r_start_pid = "", r_start_citycode = "", r_start_cityname = "", r_end_x = "", r_end_y = "", r_end_name = "", r_end_type = "", r_end_address = "", r_end_tel = "", r_end_pid = "", r_end_citycode = "", r_end_cityname = "", r_xy_array, route_way, r_xy_hc_array = "", r_start_temp = "", r_end_temp = "", route_NN = 0;
 function search_route_map() {

@@ -1,2 +1,0 @@
-E:\work\IPOW\application\iPow.Application.SysService\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\JPomichael\Documents\GitHub\Miaow\application\iPow.Application.SysService\obj\Debug\iPow.Application.SysService.csprojResolveAssemblyReference.cache

@@ -1,8 +1,8 @@
 ﻿@using Webdiyer.WebControls.Mvc
-@model  iPow.Application.jq.Dto.DetailSightBaseDto
+@model  Miaow.Application.jq.Dto.DetailSightBaseDto
 @{
-    var picService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Application.jq.Service.IPicInfoService>();
+    var picService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Application.jq.Service.IPicInfoService>();
                     
 }
 <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/sight_index.css")" />
@@ -40,7 +40,7 @@
             </div>
             <div class="infoContainer" id="PicList">
                 @{
-        IQueryable<iPow.Domain.Dto.Sys_PicInfoDto> picData = null;
+        IQueryable<Miaow.Domain.Dto.Sys_PicInfoDto> picData = null;
         int total = 0;
         if (ViewBag.ord != null && ViewBag.ord == "H")
         {

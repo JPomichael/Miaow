@@ -1,10 +1,10 @@
-﻿@model  iPow.Application.jq.Dto.HomeDto
+﻿@model  Miaow.Application.jq.Dto.HomeDto
 @{
-    var cityInfoService = iPow.Presentation.jq.iPowPreJqEngine
-        .Current.Resolve<iPow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService>();
+    var cityInfoService = Miaow.Presentation.jq.MiaowPreJqEngine
+        .Current.Resolve<Miaow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService>();
 
-    var sightInfoSortService = iPow.Presentation.jq.iPowPreJqEngine
-        .Current.Resolve<iPow.Application.jq.Service.ISightInfoSortService>();
+    var sightInfoSortService = Miaow.Presentation.jq.MiaowPreJqEngine
+        .Current.Resolve<Miaow.Application.jq.Service.ISightInfoSortService>();
 }
 <script type="text/javascript">
     jQuery(document).ready(function () {
@@ -96,7 +96,7 @@
         <li id='lisight@(c.ParkID)'>
             <div class="imgShadows">
                 @{
-                var pic = iPow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(c.ParkID);
+                var pic = Miaow.Infrastructure.Crosscutting.Comm.Service.UtilityService.GetSightDefaultPic(c.ParkID);
                     <img src='@(pic.Count == 3 ? pic[0] + "cutdown/126_99_" + pic[1] : "/images/nopic.jpg")' 
                     width="126" height="99" 
                     alt="@(pic.Count == 3 ? pic[2] : "暂无图片")" />

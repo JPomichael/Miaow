@@ -1,13 +1,13 @@
-﻿@model iPow.Application.dj.Dto.TourDetailTopDto
+﻿@model Miaow.Application.dj.Dto.TourDetailTopDto
          
 @{
     var listService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
-        iPow.Application.dj.Service.IListService>();
+        Miaow.Application.dj.Service.IListService>();
     var tourPlanService = Miaow.Presentation.dj.MiaowPreDjEngine.Current.Resolve<
- iPow.Application.dj.Service.ITourPlanService>();
+ Miaow.Application.dj.Service.ITourPlanService>();
 }
 @{
-    <title>@( Model != null ? Model.PlanTitle : "IPOW")_度假_iPow自助旅行网</title>
+    <title>@( Model != null ? Model.PlanTitle : "Miaow")_度假_Miaow自助旅行网</title>
 }
 <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/tour.css")" />
 <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/marker.css")" />
@@ -18,7 +18,7 @@
 <script type="text/javascript" src="@Url.Content("~/Scripts/tour.js")"></script>
 <script type="text/javascript" src="@Url.Content("~/Scripts/weathercity.js")"></script>
 <script type="text/javascript">
-    var iPowEdit = null, iPowDraw = null;
+    var MiaowEdit = null, MiaowDraw = null;
     jQuery(document).ready(function () {
         jQuery("#tabDays").doGallery({
             itemsPerPage: 6,
@@ -28,27 +28,27 @@
             itemsPerPage: 5,
             tabContent: 'cirHotInfo'
         });
-        iPowEdit = new EditTravel(null);
-        iPowDraw = new DrawTravel(null);
-        iPowEdit.init();
-        iPowDraw.checkuser();
+        MiaowEdit = new EditTravel(null);
+        MiaowDraw = new DrawTravel(null);
+        MiaowEdit.init();
+        MiaowDraw.checkuser();
         $("#search").click(function () {
-            iPowDraw.iSearch("", "gotour");
+            MiaowDraw.iSearch("", "gotour");
         });
         $("#goLogin").click(function () {
-            iPowDraw.login(this, "login");
+            MiaowDraw.login(this, "login");
         });
         $("#goRegister").click(function () {
-            iPowDraw.register(this, "reg");
+            MiaowDraw.register(this, "reg");
         });
         $("#tripPrint").click(function () {
-            iPowEdit.doprint(this);
+            MiaowEdit.doprint(this);
         });
         $("#tripTranspond").click(function () {
-            iPowEdit.transpond(this);
+            MiaowEdit.transpond(this);
         });
         $("#tripEdit").click(function () {
-            iPowEdit.save(this);
+            MiaowEdit.save(this);
         });
     });
   
@@ -74,7 +74,7 @@
                     @(Model != null ? Model.PlanTitle : "")</h1>
                 <h2 id="sightAllInfo">
                     @{
-                        IQueryable<iPow.Application.dj.Dto.ListTypeMidSightDto> SightList = null;
+                        IQueryable<Miaow.Application.dj.Dto.ListTypeMidSightDto> SightList = null;
                         SightList = listService.GetListTypeMidSightListByTourPlanId(Model != null ? Model.Id : 0);
                         if (SightList != null && SightList.Count() > 0)
                         {
@@ -125,7 +125,7 @@
                         id="tripPrint">打印</a> </span><em class="emRight"></em>
             </div>
         </div>
-        <div class="iPowContainer" id="EditHodometer">
+        <div class="MiaowContainer" id="EditHodometer">
             @Html.Partial("TourContentPartial")
         </div>
     </div>

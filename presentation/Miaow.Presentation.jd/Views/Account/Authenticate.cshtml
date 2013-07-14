@@ -16,7 +16,7 @@
 
 <script type="text/javascript">
     $(function () {
-        $.get('http://account.ipow.cn/server/SSOService.svc/user/RequestToken?callback=?', {},
+        $.get('http://account.Miaow.cn/server/SSOService.svc/user/RequestToken?callback=?', {},
 				function (ssodata) {
 				    // get url to logon page in case this operation fails
 				    var logonPage = '@Url.Action("logon", "account")' + '?redirectUrl=' + encodeURI('@(Request.UrlReferrer == null ? "" : Request.UrlReferrer.ToString())');

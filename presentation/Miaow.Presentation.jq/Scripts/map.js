@@ -1,5 +1,5 @@
 ﻿/*
-* Copyright (c) 2010 iPow(www.iPow.cn)
+* Copyright (c) 2010 Miaow(www.Miaow.cn)
 */
 var map = null,
 TimerControl = function (C, E) {
@@ -44,14 +44,14 @@ function ddShow(D, B) {
             D.style.display = ""
         }
 }
-function iPowMap(A) {
+function MiaowMap(A) {
     this.te = "";
     this.center = A.center;
     this.points = A.points;
     this.dom = A.dom
 }
 
-iPowMap.prototype = {
+MiaowMap.prototype = {
     initialize: function (A) {
         var B = this;
         map = new GMap2(document.getElementById("mapContainer"));
@@ -110,7 +110,7 @@ SightMarker.prototype.initialize = function (E) {
     this._map = E; this.width = 27; this.height = 27;
     var A = this.props, C = "shape" + A.SightID,
         H = [];
-    H.push("<span><a href=\"http://jq.ipow.cn/" + A.py + "\" target=\"_blank\" title=\"" + A.name + "\">" + this.seq + "</a></span>");
+    H.push("<span><a href=\"http://jq.Miaow.cn/" + A.py + "\" target=\"_blank\" title=\"" + A.name + "\">" + this.seq + "</a></span>");
     var B = this.markerPanel = document.createElement("div");
     B.id = C;
     B.className = "mapLayerIco";

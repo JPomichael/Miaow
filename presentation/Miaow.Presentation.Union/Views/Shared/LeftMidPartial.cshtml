@@ -1,15 +1,15 @@
 ﻿@{
-    var headVouchData = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-    iPow.Service.Union.Service.IHeadVouchDataService>();
+    var headVouchData = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+    Miaow.Service.Union.Service.IHeadVouchDataService>();
 
-    var hotelLeftMidService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Service.Union.Service.IHotelLeftMidService>();
+    var hotelLeftMidService = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Service.Union.Service.IHotelLeftMidService>();
 
-    var locationService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+    var locationService = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
 
-    var hotelTypeService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-        iPow.Service.Union.Service.IHotelTypeService>();
+    var hotelTypeService = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+        Miaow.Service.Union.Service.IHotelTypeService>();
         
     try
     {
@@ -37,12 +37,12 @@
     </div>
     <div class="hotelContainer" id="HotelInfo">
         @{
-            IQueryable<iPow.Application.Union.Dto.HotelLeftSightInfoDto> si =
+            IQueryable<Miaow.Application.Union.Dto.HotelLeftSightInfoDto> si =
                 headVouchData.GetLeftHotSightInfoByProvince(li.Province, 3);
             if (si != null)
             {
                 string sightIds = string.Empty;
-                iPow.Application.Union.Dto.SearchHotelDto data = null;
+                Miaow.Application.Union.Dto.SearchHotelDto data = null;
                 var intime = System.DateTime.Now.ToString("yyyy-MM-dd").Replace("-", "_");
                 string cityName = "深圳";
                 string latlon = "";
@@ -53,10 +53,10 @@
                     {
             <div class="areaHotelInfo">
                 <div class="area">
-                    <a href="http://jq.ipow.cn/sight/@(item.Py)/@(item.Id)/1" target="_blank" title="查看@(item.Name)周边所有酒店">
+                    <a href="http://jq.Miaow.cn/sight/@(item.Py)/@(item.Id)/1" target="_blank" title="查看@(item.Name)周边所有酒店">
                         @{
                         sightIds += item.Id.ToString() + ",";
-                        List<string> list = iPow.Infrastructure.Crosscutting.Comm.Service
+                        List<string> list = Miaow.Infrastructure.Crosscutting.Comm.Service
                             .UtilityService.GetSightDefaultPic(item.Id);
                         }
                         <img src="@(list.Count == 3 ? list[0] + "CutDown/116_103_" + list[1] : "#")" alt = "@(list.Count == 3 ? list[2] : "暂无图片")" />

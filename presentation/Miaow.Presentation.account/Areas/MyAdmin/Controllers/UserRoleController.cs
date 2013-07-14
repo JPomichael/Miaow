@@ -9,18 +9,18 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class UserRoleController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IUserRoleService userRoleService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IUserRoleService userRoleService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IUserService userService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IUserService userService;
 
-        iPow.Infrastructure.Crosscutting.Authorize.IRoleService roleService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IRoleService roleService;
 
-        public UserRoleController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IUserRoleService userRole,
-            iPow.Infrastructure.Crosscutting.Authorize.IUserService user,
-            iPow.Infrastructure.Crosscutting.Authorize.IRoleService role)
+        public UserRoleController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IUserRoleService userRole,
+            Miaow.Infrastructure.Crosscutting.Authorize.IUserService user,
+            Miaow.Infrastructure.Crosscutting.Authorize.IRoleService role)
             : base(work)
         {
             if (userRole == null)
@@ -58,9 +58,9 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             }
             data = data.OrderByDescending(e => e.Id).AsEnumerable();
 
-            //iPow.Domain.Dto.Sys_UserRolesDto
+            //Miaow.Domain.Dto.Sys_UserRolesDto
 
-            var model = new GridModel<iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto>
+            var model = new GridModel<Miaow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto>
             {
                 Data = data,
                 Total = data.Count()
@@ -76,7 +76,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         {
             //做为 DropDownList DataSource
             ViewBag.rolemodel = roleService.GetList();
-            var model = new iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto();
+            var model = new Miaow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto();
             return View(model);
         }
 
@@ -85,7 +85,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public ViewResult AddUserRole(iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto userRole)
+        public ViewResult AddUserRole(Miaow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto userRole)
         {
             ViewBag.rolemodel = roleService.GetList();
             if (userRole != null && userRole.RoleID > 0)
@@ -101,7 +101,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                     }
                     else
                     {
-                        var addUserRole = new iPow.Infrastructure.Data.DataSys.Sys_UserRoles();
+                        var addUserRole = new Miaow.Infrastructure.Data.DataSys.Sys_UserRoles();
                         addUserRole.RoleID = userRole.RoleID;
                         addUserRole.UserID = user.id;
                         userRoleService.Add(addUserRole,null);
@@ -168,7 +168,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         /// <returns></returns>
 
         [HttpPost]
-        public ViewResult EditUserRole(iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto userRole)
+        public ViewResult EditUserRole(Miaow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto userRole)
         {
             try
             {
@@ -223,13 +223,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         #region util
 
-        protected iPow.Infrastructure.Data.DataSys.Sys_UserRoles SysSingleUserRole(int id)
+        protected Miaow.Infrastructure.Data.DataSys.Sys_UserRoles SysSingleUserRole(int id)
         {
             var data = userRoleService.GetList().Where(e => e.Id == id).FirstOrDefault();
             return data;
         }
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_AdminUser> CurrentUserName()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_AdminUser> CurrentUserName()
         {
             var data = userService.GetList().OrderByDescending(e => e.logintimes).AsEnumerable();
             var currentUserId = 0;
@@ -240,7 +240,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             return data;
         }
 
-        protected IEnumerable<iPow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto> GetUserRoleDtoList()
+        protected IEnumerable<Miaow.Infrastructure.Crosscutting.Authorize.Dto.UserRoleDto> GetUserRoleDtoList()
         {
             var data = userRoleService.GetUserRoleDtoList().OrderByDescending(e => e.Id);
             return data.AsEnumerable();

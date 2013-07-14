@@ -1,5 +1,0 @@
-E:\Dev\WorkWeb2\Project\IPOW\libs\iPow.Core\bin\Debug\iPow.Core.dll
-E:\Dev\WorkWeb2\Project\IPOW\libs\iPow.Core\bin\Debug\iPow.Core.pdb
-E:\Dev\WorkWeb2\Project\IPOW\libs\iPow.Core\obj\Debug\ResolveAssemblyReference.cache
-E:\Dev\WorkWeb2\Project\IPOW\libs\iPow.Core\obj\Debug\iPow.Core.dll
-E:\Dev\WorkWeb2\Project\IPOW\libs\iPow.Core\obj\Debug\iPow.Core.pdb

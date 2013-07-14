@@ -1,6 +1,6 @@
 ﻿@{
-    var videoInfoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Application.jq.Service.IVideoInfoService>();
+    var videoInfoService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Application.jq.Service.IVideoInfoService>();
 
     var videoInfo = videoInfoService.GetVideoRandSingleBySight(ViewBag.parkid);
     if (videoInfo != null)

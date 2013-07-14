@@ -1,7 +1,7 @@
-﻿@model iPow.Application.Union.Dto.HotelInfoDto
+﻿@model Miaow.Application.Union.Dto.HotelInfoDto
 @{ 
-	var hotelTypeService = iPow.Presentation.Union.iPowPreUnionEngine.Current.Resolve<
-		iPow.Service.Union.Service.IHotelTypeService>();
+	var hotelTypeService = Miaow.Presentation.Union.MiaowPreUnionEngine.Current.Resolve<
+		Miaow.Service.Union.Service.IHotelTypeService>();
 
 	ViewBag.Title = ((Model != null && !string.IsNullOrEmpty(Model.hotelname)) ? Model.hotelname + "_" : string.Empty) + "酒店预定_";
 }
@@ -21,7 +21,7 @@
 <script type="text/javascript" id="bdshell_js"></script>
 <script type="text/javascript">
 	var bds_config = { "bdTop": 177,
-	    'bdText': '酒店名：'+''+'@this.Model.hotelname' + ' 地址：' + '@this.Model.address' + ' ' + '-ipow互动旅行网 中国最好的自助旅游网站 @@互动旅行 ',
+	    'bdText': '酒店名：'+''+'@this.Model.hotelname' + ' 地址：' + '@this.Model.address' + ' ' + '-Miaow互动旅行网 中国最好的自助旅游网站 @@互动旅行 ',
 		'bdPic': '@this.Model.pic.Remove(@Model.pic.IndexOf('|'))'  
 	};
 	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();

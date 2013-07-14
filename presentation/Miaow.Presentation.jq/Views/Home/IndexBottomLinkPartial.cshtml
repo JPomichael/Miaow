@@ -1,10 +1,10 @@
-﻿@model  iPow.Application.jq.Dto.HomeDto
+﻿@model  Miaow.Application.jq.Dto.HomeDto
 @{
-    var locationService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
+    var locationService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Infrastructure.Crosscutting.Comm.Service.ILocationService>();
 
-    var cityInfoService = iPow.Presentation.jq.iPowPreJqEngine.Current.Resolve<
-        iPow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService>();
+    var cityInfoService = Miaow.Presentation.jq.MiaowPreJqEngine.Current.Resolve<
+        Miaow.Infrastructure.Crosscutting.Comm.Service.ICityInfoService>();
 }
 <div class="title">
     快速链接</div>

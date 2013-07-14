@@ -13,54 +13,116 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 
-namespace iPow.Domain.Dto
+using System.ComponentModel;
+using System.Runtime.Serialization;
+using Miaow.Domain.Dto.Validate;
+
+
+namespace Miaow.Domain.Dto
 {
-    using System.ComponentModel;
-    using System.Runtime.Serialization;
-    
+    ////
+    //using System.ComponentModel;
+    //////using System.Runtime.Serialization;
+    //
     /// <summary>
-    /// Sys_Roles
+    /// sys_roles
     /// </summary>
     [Serializable]
     [DataContract]
-    [FluentValidation.Attributes.Validator(typeof(Validate.Sys_RolesDtoValidate))]
-    public partial class Sys_RolesDto
+    [FluentValidation.Attributes.Validator(typeof(sys_rolesDtoValidate))]
+    public partial class sys_rolesDto
     {
         #region Primitive Properties
     
         /// <summary>
-        /// ID
+        /// role_id
         /// </summary>
     	[DataMember]
-    	[DisplayName("ID")]
-        public virtual int Id
+    	[DisplayName("role_id")]
+        public virtual string role_id
         {
             get;
             set;
         }
     
         /// <summary>
-        /// 角色ID
+        /// role_name
         /// </summary>
     	[DataMember]
-    	[DisplayName("角色ID")]
-        public virtual int RoleID
+    	[DisplayName("role_name")]
+        public virtual string role_name
         {
             get;
             set;
         }
     
         /// <summary>
-        /// 角色名
+        /// system_id
         /// </summary>
     	[DataMember]
-    	[DisplayName("角色名")]
-        public virtual string Description
+    	[DisplayName("system_id")]
+        public virtual string system_id
+        {
+            get;
+            set;
+        }
+    
+        /// <summary>
+        /// created_time
+        /// </summary>
+    	[DataMember]
+    	[DisplayName("created_time")]
+        public virtual System.DateTime created_time
+        {
+            get;
+            set;
+        }
+    
+        /// <summary>
+        /// updated_time
+        /// </summary>
+    	[DataMember]
+    	[DisplayName("updated_time")]
+        public virtual System.DateTime updated_time
+        {
+            get;
+            set;
+        }
+    
+        /// <summary>
+        /// remark
+        /// </summary>
+    	[DataMember]
+    	[DisplayName("remark")]
+        public virtual string remark
+        {
+            get;
+            set;
+        }
+    
+        /// <summary>
+        /// deleted
+        /// </summary>
+    	[DataMember]
+    	[DisplayName("deleted")]
+        public virtual int deleted
+        {
+            get;
+            set;
+        }
+    
+        /// <summary>
+        /// admin_id
+        /// </summary>
+    	[DataMember]
+    	[DisplayName("admin_id")]
+        public virtual string admin_id
         {
             get;
             set;
         }
 
         #endregion
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿@using Webdiyer.WebControls.Mvc;
-@model  iPow.Application.jq.Dto.SearchInfoDto
+@model  Miaow.Application.jq.Dto.SearchInfoDto
 @{
-    ViewBag.Title = "景区搜索_iPow自助旅行网";
+    ViewBag.Title = "景区搜索_Miaow自助旅行网";
 }
 <link href="@Url.Content("~/Content/css/sight_index.css")" rel="stylesheet" type="text/css" />
 <link type="text/css" rel="stylesheet" href="@Url.Content("~/Content/css/marker.css")" />
@@ -16,7 +16,7 @@
         if (keyCode == 13)
             isearch(1, 0);
     }
-    var iPowDraw;
+    var MiaowDraw;
     jQuery(document).ready(function () {
 
     //地图滚动
@@ -24,25 +24,25 @@
     //top: 100
     //});
 
-        //iPowDraw = new DrawTravel(null);
-        //iPowDraw.history();
+        //MiaowDraw = new DrawTravel(null);
+        //MiaowDraw.history();
         $("#hodometerSave").click(function () {
-            iPowDraw.save(this);
+            MiaowDraw.save(this);
         });
         $("#clearHistory").click(function () {
-            iPowDraw.clearHistory();
+            MiaowDraw.clearHistory();
         });
         $("#goLogin").click(function () {
-            iPowDraw.login(this, "login");
+            MiaowDraw.login(this, "login");
         });
         $("#goRegister").click(function () {
-            iPowDraw.register(this, "reg");
+            MiaowDraw.register(this, "reg");
         });
         $("#hodometerHide").click(function () {
-            iPowDraw.hide();
+            MiaowDraw.hide();
         });
         $("#myTrip").click(function () {
-            iPowDraw.show();
+            MiaowDraw.show();
         });
     })
 

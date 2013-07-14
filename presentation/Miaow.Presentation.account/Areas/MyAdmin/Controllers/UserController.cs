@@ -5,18 +5,18 @@ using System.Web;
 using System.Web.Mvc;
 
 using Telerik.Web.Mvc;
-using iPow.Infrastructure.Crosscutting.EntityToDto;
+using Miaow.Infrastructure.Crosscutting.EntityToDto;
 
 namespace Miaow.Presentation.account.Areas.MyAdmin
 {
     [HandleError]
     public class UserController :
-        iPow.Infrastructure.Crosscutting.NetFramework.Controllers.iPowBaseController
+        Miaow.Infrastructure.Crosscutting.NetFramework.Controllers.MiaowBaseController
     {
-        iPow.Infrastructure.Crosscutting.Authorize.IUserService userService;
+        Miaow.Infrastructure.Crosscutting.Authorize.IUserService userService;
 
-        public UserController(iPow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
-            iPow.Infrastructure.Crosscutting.Authorize.IUserService userRole)
+        public UserController(Miaow.Infrastructure.Crosscutting.NetFramework.IWorkContext work,
+            Miaow.Infrastructure.Crosscutting.Authorize.IUserService userRole)
             : base(work)
         {
             if (userRole == null)
@@ -46,7 +46,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             }
             var dto = data.ToDto();
             dto = dto.OrderByDescending(e => e.id).AsEnumerable();
-            var model = new GridModel<iPow.Domain.Dto.Sys_AdminUserDto>
+            var model = new GridModel<Miaow.Domain.Dto.Sys_AdminUserDto>
             {
                 Data = dto,
                 Total = data.Count()
@@ -57,13 +57,13 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         //为AddUser 做初始化
         public ActionResult AddUser()
         {
-            iPow.Domain.Dto.Sys_AdminUserDto user = new iPow.Domain.Dto.Sys_AdminUserDto();
+            Miaow.Domain.Dto.Sys_AdminUserDto user = new Miaow.Domain.Dto.Sys_AdminUserDto();
             return View(user);
         }
 
         //AddUser
         [HttpPost]
-        public ActionResult AddUser(iPow.Domain.Dto.Sys_AdminUserDto user, string UserType)
+        public ActionResult AddUser(Miaow.Domain.Dto.Sys_AdminUserDto user, string UserType)
         {
             //验证y用户数据是否为空
             if (user != null)
@@ -77,11 +77,11 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                 }
                 else
                 {
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser addUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
-                    iPow.Infrastructure.Data.DataSys.Sys_UserRoles userRole = new iPow.Infrastructure.Data.DataSys.Sys_UserRoles();
+                    Miaow.Infrastructure.Data.DataSys.Sys_AdminUser addUser = new Miaow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                    Miaow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Miaow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                    Miaow.Infrastructure.Data.DataSys.Sys_UserRoles userRole = new Miaow.Infrastructure.Data.DataSys.Sys_UserRoles();
                     addUser.username = user.username;
-                    addUser.password = iPow.Infrastructure.Crosscutting.Function.StringHelper.Tomd5(user.password);
+                    addUser.password = Miaow.Infrastructure.Crosscutting.Function.StringHelper.Tomd5(user.password);
                     addUser.truename = user.truename;
                     addUser.sex = user.sex; //根据用户选择去判断
                     addUser.Phone = user.Phone;
@@ -151,7 +151,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
         }
 
         [HttpPost]
-        public ViewResult EditUser(iPow.Domain.Dto.Sys_AdminUserDto user)
+        public ViewResult EditUser(Miaow.Domain.Dto.Sys_AdminUserDto user)
         {
             try
             {
@@ -165,7 +165,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
                     model.sex = user.sex;
                     model.Phone = user.Phone;
                     model.Email = user.Email;
-                    iPow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new iPow.Infrastructure.Data.DataSys.Sys_AdminUser();
+                    Miaow.Infrastructure.Data.DataSys.Sys_AdminUser operUser = new Miaow.Infrastructure.Data.DataSys.Sys_AdminUser();
                     operUser.id = model.id;
                     //执行更新吧
                     userService.Modify(model, operUser);
@@ -210,7 +210,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         #region util
 
-        protected IQueryable<iPow.Infrastructure.Data.DataSys.Sys_AdminUser> GetList()
+        protected IQueryable<Miaow.Infrastructure.Data.DataSys.Sys_AdminUser> GetList()
         {
             var data = userService.GetList().OrderByDescending(e => e.id);
             return data.AsQueryable();
@@ -218,7 +218,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
 
         //根据用户注册选择的UserType类型判断 UserRole
         [NonAction]
-        protected string GetUserType(string userSelected, iPow.Infrastructure.Data.DataSys.Sys_UserRoles userRole)
+        protected string GetUserType(string userSelected, Miaow.Infrastructure.Data.DataSys.Sys_UserRoles userRole)
         {
             if (userSelected == null)
             {
@@ -260,7 +260,7 @@ namespace Miaow.Presentation.account.Areas.MyAdmin
             return Convert.ToString(userRole.RoleID);
         }
 
-        protected IEnumerable<iPow.Infrastructure.Data.DataSys.Sys_AdminUser> CurrentUserName()
+        protected IEnumerable<Miaow.Infrastructure.Data.DataSys.Sys_AdminUser> CurrentUserName()
         {
             var data = this.GetList().OrderByDescending(e => e.logintimes).AsEnumerable();
             var currentUserId = 0;
