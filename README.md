@@ -22,9 +22,9 @@ Every Day + 1
      
 
 =================
-Project：
-          喵我  mewl.me
-                miaul.me
+Project：喵我  
+         mewl.me
+         miaul.me
 
 开发周期：5月零20天（520 哇！）<br>
 采用框架：.NET4.0，MVC4，DDD, EF,DDD 
@@ -34,7 +34,7 @@ Project：
 
 数据库名：miaowsys <br>
 项目解决方案名：Miaow<br>
-      
+记得随手添加注释/切勿删除其他喵友的成果！<br>     
 ####命名规范：
 项目解决方案，引用命名空间示例如下：  
 ```C#
@@ -50,7 +50,7 @@ using Miaow.Application.account.Dto;
              user_name,     
              user_email    
              
-      记得随手添加注释/切勿删除其他喵友的成果！             
+                   
       ]
     
 
