@@ -11,9 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "domain", "domain", "{BF3BE3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infrastructure", "infrastructure", "{5A22139D-3A25-44E0-87B1-499F40868CAF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "项目必看", "项目必看", "{83842EB7-3B86-4FE0-BD7B-5E680EC11118}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "readme", "readme", "{83842EB7-3B86-4FE0-BD7B-5E680EC11118}"
 	ProjectSection(SolutionItems) = preProject
-		说明.txt = 说明.txt
+		Project description.txt = Project description.txt
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcPager", "infrastructure\MvcPager\MvcPager.csproj", "{23C75583-F15F-4464-BD48-6E5C656D7B78}"
