@@ -7,7 +7,10 @@
     <Schema Namespace="MiaowSysModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="MiaowSysModelStoreContainer">
           <EntitySet Name="m_group_info" EntityType="MiaowSysModel.Store.m_group_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="m_group_member_info" EntityType="MiaowSysModel.Store.m_group_member_info" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="m_group_type_info" EntityType="MiaowSysModel.Store.m_group_type_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="m_msg_info" EntityType="MiaowSysModel.Store.m_msg_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="m_msg_msg_relation" EntityType="MiaowSysModel.Store.m_msg_msg_relation" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="m_profile_info" EntityType="MiaowSysModel.Store.m_profile_info" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="m_tag_info" EntityType="MiaowSysModel.Store.m_tag_info" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="m_user_index_info" EntityType="MiaowSysModel.Store.m_user_index_info" store:Type="Tables" store:Schema="dbo" store:Name="m_user_index_info">
@@ -20,7 +23,9 @@
       FROM [dbo].[m_user_index_info] AS [m_user_index_info]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="m_user_info" EntityType="MiaowSysModel.Store.m_user_info" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="m_user_msg_index" EntityType="MiaowSysModel.Store.m_user_msg_index" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sys_actions" EntityType="MiaowSysModel.Store.sys_actions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sys_admin_logs" EntityType="MiaowSysModel.Store.sys_admin_logs" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sys_administrator" EntityType="MiaowSysModel.Store.sys_administrator" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sys_controller_action" EntityType="MiaowSysModel.Store.sys_controller_action" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="sys_controllers" EntityType="MiaowSysModel.Store.sys_controllers" store:Type="Tables" Schema="dbo" />
@@ -33,43 +38,81 @@
           <Key>
             <PropertyRef Name="group_id" />
           </Key>
-          <Property Name="group_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="user_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="group_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="group_name" Type="nvarchar" MaxLength="100" />
-          <Property Name="group_type_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="describe" Type="nvarchar" MaxLength="200" />
+          <Property Name="group_type_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" />
-          <Property Name="deleted" Type="int" />
+          <Property Name="people_count" Type="int" />
+          <Property Name="deleted" Type="bit" />
           <Property Name="deleted_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="m_group_member_info">
+          <Key>
+            <PropertyRef Name="group_member_id" />
+          </Key>
+          <Property Name="group_member_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="group_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="join_time" Type="datetime" Nullable="false" />
+          <Property Name="quit_time" Type="datetime" />
+          <Property Name="state" Type="bit" />
         </EntityType>
         <EntityType Name="m_group_type_info">
           <Key>
             <PropertyRef Name="group_type_id" />
           </Key>
-          <Property Name="group_type_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="group_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="group_type_name" Type="nvarchar" Nullable="false" MaxLength="100" />
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" />
-          <Property Name="deleted" Type="int" />
+          <Property Name="deleted" Type="bit" />
           <Property Name="deleted_time" Type="datetime" />
+        </EntityType>
+        <EntityType Name="m_msg_info">
+          <Key>
+            <PropertyRef Name="msg_id" />
+          </Key>
+          <Property Name="msg_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="content" Type="ntext" Nullable="false" />
+          <Property Name="type" Type="int" />
+          <Property Name="commented_count" Type="int" />
+          <Property Name="comment_count" Type="int" />
+          <Property Name="transferred_count" Type="int" />
+          <Property Name="transfer_count" Type="int" />
+          <Property Name="time_t" Type="datetime" />
+        </EntityType>
+        <EntityType Name="m_msg_msg_relation">
+          <Key>
+            <PropertyRef Name="reference_id" />
+          </Key>
+          <Property Name="reference_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="reference _msg_id" Type="int" />
+          <Property Name="referenced_id" Type="varchar" MaxLength="50" />
+          <Property Name="referenced _msg_id" Type="int" />
+          <Property Name="type" Type="int" />
+          <Property Name="time_t" Type="datetime" />
         </EntityType>
         <EntityType Name="m_profile_info">
           <Key>
             <PropertyRef Name="profile_id" />
           </Key>
-          <Property Name="profile_id" Type="nvarchar" Nullable="false" MaxLength="40" />
-          <Property Name="user_id" Type="nvarchar" Nullable="false" MaxLength="40" />
-          <Property Name="profile_image_url" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="createdtime" Type="datetime" Nullable="false" />
+          <Property Name="profile_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="profile_image_url" Type="varchar" Nullable="false" MaxLength="100" />
+          <Property Name="created_time" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="m_tag_info">
           <Key>
             <PropertyRef Name="tag_id" />
           </Key>
           <Property Name="tag_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="user_id" Type="nvarchar" MaxLength="40" />
+          <Property Name="user_id" Type="varchar" MaxLength="50" />
           <Property Name="tags" Type="nvarchar" MaxLength="50" />
-          <Property Name="createdtime" Type="datetime" />
+          <Property Name="created_time" Type="datetime" />
         </EntityType>
         <!--生成过程中发现错误:
       警告 6002: 表/视图“miaowsys.dbo.m_user_index_info”未定义主键。已推断出该键，并将定义创建为只读的表/视图。
@@ -79,8 +122,8 @@
             <PropertyRef Name="user_id" />
             <PropertyRef Name="user_name" />
           </Key>
-          <Property Name="user_id" Type="int" Nullable="false" />
-          <Property Name="user_name" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="user_name" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="msg_count" Type="int" />
           <Property Name="fans_count" Type="int" />
           <Property Name="follow_count" Type="int" />
@@ -89,72 +132,98 @@
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Name="user_id" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="profile_id" Type="int" Nullable="false" />
-          <Property Name="user_name" Type="nvarchar" Nullable="false" MaxLength="40" />
-          <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="oldpassword" Type="nvarchar" MaxLength="50" />
-          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="user_name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="password" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="oldpassword" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="gender" Type="char" Nullable="false" MaxLength="1" />
           <Property Name="createdtime" Type="datetime" Nullable="false" />
           <Property Name="updatedtime" Type="datetime" />
           <Property Name="remark" Type="nvarchar" MaxLength="200" />
+          <Property Name="mobile_phone" Type="varchar" MaxLength="50" />
           <Property Name="location" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="netaddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="netaddress" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="state" Type="int" Nullable="false" />
           <Property Name="user_sexual_orientation" Type="char" MaxLength="1" />
           <Property Name="user_relationship_status" Type="char" MaxLength="1" />
           <Property Name="birthday" Type="datetime" />
-          <Property Name="blood_type" Type="char" MaxLength="2" />
-          <Property Name="blogs_url" Type="nvarchar" MaxLength="100" />
-          <Property Name="MSN" Type="nvarchar" MaxLength="100" />
-          <Property Name="QQ" Type="nchar" MaxLength="10" />
+          <Property Name="blood_type" Type="varchar" MaxLength="2" />
+          <Property Name="blogs_url" Type="varchar" MaxLength="100" />
+          <Property Name="MSN" Type="varchar" MaxLength="100" />
+          <Property Name="QQ" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="m_user_msg_index">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="author_id" Type="varchar" MaxLength="50" />
+          <Property Name="msg_id" Type="int" />
+          <Property Name="time_t" Type="datetime" />
         </EntityType>
         <EntityType Name="sys_actions">
           <Key>
-            <PropertyRef Name="action_Id" />
+            <PropertyRef Name="action_id" />
           </Key>
-          <Property Name="action_Id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="action_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="action_display_name" Type="nvarchar" Nullable="false" MaxLength="40" />
           <Property Name="action_name" Type="nvarchar" Nullable="false" MaxLength="40" />
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" />
           <Property Name="remark" Type="nvarchar" MaxLength="200" />
-          <Property Name="admin_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="deleted" Type="int" Nullable="false" />
+          <Property Name="admin_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_admin_logs">
+          <Key>
+            <PropertyRef Name="admin_logs_id" />
+          </Key>
+          <Property Name="admin_logs_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="admin_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="admin_log_title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="page_url" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="referrer_url" Type="nvarchar" MaxLength="200" />
+          <Property Name="created_time" Type="datetime" Nullable="false" />
+          <Property Name="updated_time" Type="datetime" />
+          <Property Name="remark" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
+          <Property Name="type_id" Type="int" Nullable="false" />
+          <Property Name="netaddress" Type="nvarchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="sys_administrator">
           <Key>
             <PropertyRef Name="admin_id" />
           </Key>
-          <Property Name="admin_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="admin_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="display_name" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="old_pasword" Type="nvarchar" MaxLength="50" />
           <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="enabled" Type="int" Nullable="false" />
+          <Property Name="enabled" Type="bit" Nullable="false" />
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" />
-          <Property Name="deleted" Type="int" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_controller_action">
           <Key>
             <PropertyRef Name="controller_action_id" />
           </Key>
-          <Property Name="controller_action_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="controller_id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="action_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="controller_action_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="controller_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="action_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" />
           <Property Name="remark" Type="nvarchar" MaxLength="200" />
-          <Property Name="admin_Id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="deleted" Type="int" Nullable="false" />
+          <Property Name="admin_Id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_controllers">
           <Key>
             <PropertyRef Name="controllers_id" />
           </Key>
-          <Property Name="controllers_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="controllers_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="controller_display_name" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="controller_name" Type="nvarchar" Nullable="false" MaxLength="50" />
           <Property Name="action_name" Type="nvarchar" Nullable="false" MaxLength="50" />
@@ -162,98 +231,58 @@
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" />
           <Property Name="remark" Type="nvarchar" MaxLength="200" />
-          <Property Name="admin_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="deleted" Type="int" Nullable="false" />
+          <Property Name="admin_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_logs">
           <Key>
-            <PropertyRef Name="admin_id" />
+            <PropertyRef Name="log_id" />
           </Key>
-          <Property Name="admin_id" Type="nvarchar" Nullable="false" MaxLength="40" />
-          <Property Name="log_id" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="log_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="log_title" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="page_url" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="referrer_url" Type="nvarchar" MaxLength="200" />
-          <Property Name="created_time" Type="datetime" Nullable="false" />
-          <Property Name="updated_time" Type="datetime" />
-          <Property Name="remark" Type="nvarchar" Nullable="false" MaxLength="200" />
-          <Property Name="deleted" Type="int" Nullable="false" />
-          <Property Name="type_Id" Type="int" Nullable="false" />
-          <Property Name="netaddress" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="thread" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="messages" Type="nvarchar" Nullable="false" MaxLength="200" />
         </EntityType>
         <EntityType Name="sys_role_admin">
           <Key>
-            <PropertyRef Name="role_sys_admin_id" />
+            <PropertyRef Name="role_admin_id" />
           </Key>
-          <Property Name="role_sys_admin_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="admin_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="role_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="role_admin_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="admin_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="role_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" />
           <Property Name="remark" Type="nvarchar" MaxLength="200" />
-          <Property Name="deleted" Type="int" Nullable="false" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_role_controller_action">
           <Key>
             <PropertyRef Name="role_controller_action_id" />
           </Key>
-          <Property Name="role_controller_action_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="role_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="controller_action_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="role_controller_action_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="role_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="controller_action_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" />
           <Property Name="remark" Type="nvarchar" MaxLength="200" />
-          <Property Name="admin_id" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="deleted" Type="int" Nullable="false" />
+          <Property Name="admin_id" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_roles">
           <Key>
             <PropertyRef Name="role_id" />
           </Key>
-          <Property Name="role_id" Type="nvarchar" Nullable="false" MaxLength="40" />
+          <Property Name="role_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="role_name" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="system_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="system_id" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="created_time" Type="datetime" Nullable="false" />
           <Property Name="updated_time" Type="datetime" Nullable="false" />
           <Property Name="remark" Type="nvarchar" MaxLength="200" />
-          <Property Name="deleted" Type="int" Nullable="false" />
-          <Property Name="admin_id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="admin_id" Type="varchar" MaxLength="50" />
+          <Property Name="deleted" Type="bit" Nullable="false" />
         </EntityType>
         <!--生成过程中发现错误:
-      警告 6013: 表/视图“miaowsys.dbo.m_msg_info”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-      
-      <EntityType Name="m_msg_info">
-        <Property Name="user_id" Type="int" />
-        <Property Name="msg_id" Type="int" />
-        <Property Name="content" Type="ntext" />
-        <Property Name="type" Type="int" />
-        <Property Name="commented_count" Type="int" />
-        <Property Name="comment_count" Type="int" />
-        <Property Name="transferred_count" Type="int" />
-        <Property Name="transfer_count" Type="int" />
-        <Property Name="time_t" Type="datetime" />
-      </EntityType>
-      生成过程中发现错误:
-      警告 6013: 表/视图“miaowsys.dbo.m_msg_msg_relation”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-      
-      <EntityType Name="m_msg_msg_relation">
-        <Property Name="reference_id" Type="int" />
-        <Property Name="reference _msg_id" Type="int" />
-        <Property Name="referenced_id" Type="int" />
-        <Property Name="referenced _msg_id" Type="int" />
-        <Property Name="type" Type="int" />
-        <Property Name="time_t" Type="datetime" />
-      </EntityType>
-      生成过程中发现错误:
-      警告 6013: 表/视图“miaowsys.dbo.m_user_msg_index”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
-      
-      <EntityType Name="m_user_msg_index">
-        <Property Name="user_id" Type="int" />
-        <Property Name="author_id" Type="int" />
-        <Property Name="msg_id" Type="int" />
-        <Property Name="time_t" Type="datetime" />
-      </EntityType>
-      生成过程中发现错误:
       警告 6013: 表/视图“miaowsys.dbo.m_user_relation”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
       
       <EntityType Name="m_user_relation">
@@ -267,73 +296,112 @@
       <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="miaowsysModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" >
         <EntityContainer Name="miaowsysEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="m_group_info" EntityType="miaowsysModel.m_group_info" />
+          <EntitySet Name="m_group_member_info" EntityType="miaowsysModel.m_group_member_info" />
           <EntitySet Name="m_group_type_info" EntityType="miaowsysModel.m_group_type_info" />
+          <EntitySet Name="m_msg_info" EntityType="miaowsysModel.m_msg_info" />
+          <EntitySet Name="m_msg_msg_relation" EntityType="miaowsysModel.m_msg_msg_relation" />
           <EntitySet Name="m_profile_info" EntityType="miaowsysModel.m_profile_info" />
           <EntitySet Name="m_tag_info" EntityType="miaowsysModel.m_tag_info" />
           <EntitySet Name="m_user_index_info" EntityType="miaowsysModel.m_user_index_info" />
           <EntitySet Name="m_user_info" EntityType="miaowsysModel.m_user_info" />
+          <EntitySet Name="m_user_msg_index" EntityType="miaowsysModel.m_user_msg_index" />
           <EntitySet Name="sys_actions" EntityType="miaowsysModel.sys_actions" />
+          <EntitySet Name="sys_admin_logs" EntityType="miaowsysModel.sys_admin_logs" />
           <EntitySet Name="sys_administrator" EntityType="miaowsysModel.sys_administrator" />
           <EntitySet Name="sys_controller_action" EntityType="miaowsysModel.sys_controller_action" />
           <EntitySet Name="sys_controllers" EntityType="miaowsysModel.sys_controllers" />
-          <EntitySet Name="sys_role_admin" EntityType="miaowsysModel.sys_role_admin" />
-          <EntitySet Name="sys_roles" EntityType="miaowsysModel.sys_roles" />
-          <EntitySet Name="sys_role_controller_action" EntityType="miaowsysModel.sys_role_controller_action" />
           <EntitySet Name="sys_logs" EntityType="miaowsysModel.sys_logs" />
+          <EntitySet Name="sys_role_admin" EntityType="miaowsysModel.sys_role_admin" />
+          <EntitySet Name="sys_role_controller_action" EntityType="miaowsysModel.sys_role_controller_action" />
+          <EntitySet Name="sys_roles" EntityType="miaowsysModel.sys_roles" />
         </EntityContainer>
         <EntityType Name="m_group_info">
-          <Documentation>
-            <Summary>小组表</Summary>
-            <LongDescription>小组表</LongDescription>
-          </Documentation>
           <Key>
             <PropertyRef Name="group_id" />
           </Key>
-          <Property Type="String" Name="group_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="user_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="group_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="user_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="group_name" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="group_type_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="describe" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="group_type_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updated_time" Precision="3" />
-          <Property Type="Int32" Name="deleted" />
+          <Property Type="Int32" Name="people_count" />
+          <Property Type="Boolean" Name="deleted" />
           <Property Type="DateTime" Name="deleted_time" Precision="3" />
+        </EntityType>
+        <EntityType Name="m_group_member_info">
+          <Key>
+            <PropertyRef Name="group_member_id" />
+          </Key>
+          <Property Type="Int32" Name="group_member_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="group_id" Nullable="false" />
+          <Property Type="String" Name="user_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="join_time" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="quit_time" Precision="3" />
+          <Property Type="Boolean" Name="state" />
         </EntityType>
         <EntityType Name="m_group_type_info">
           <Key>
             <PropertyRef Name="group_type_id" />
           </Key>
-          <Property Type="String" Name="group_type_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="group_type_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="group_type_name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updated_time" Precision="3" />
-          <Property Type="Int32" Name="deleted" />
+          <Property Type="Boolean" Name="deleted" />
           <Property Type="DateTime" Name="deleted_time" Precision="3" />
+        </EntityType>
+        <EntityType Name="m_msg_info">
+          <Key>
+            <PropertyRef Name="msg_id" />
+          </Key>
+          <Property Type="Int32" Name="msg_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="user_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="type" />
+          <Property Type="Int32" Name="commented_count" />
+          <Property Type="Int32" Name="comment_count" />
+          <Property Type="Int32" Name="transferred_count" />
+          <Property Type="Int32" Name="transfer_count" />
+          <Property Type="DateTime" Name="time_t" Precision="3" />
+        </EntityType>
+        <EntityType Name="m_msg_msg_relation">
+          <Key>
+            <PropertyRef Name="reference_id" />
+          </Key>
+          <Property Type="String" Name="reference_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="reference__msg_id" />
+          <Property Type="String" Name="referenced_id" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="referenced__msg_id" />
+          <Property Type="Int32" Name="type" />
+          <Property Type="DateTime" Name="time_t" Precision="3" />
         </EntityType>
         <EntityType Name="m_profile_info">
           <Key>
             <PropertyRef Name="profile_id" />
           </Key>
-          <Property Type="String" Name="profile_id" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="user_id" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="profile_image_url" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="createdtime" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="profile_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="user_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="profile_image_url" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="m_tag_info">
           <Key>
             <PropertyRef Name="tag_id" />
           </Key>
           <Property Type="Int32" Name="tag_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="user_id" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="user_id" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="tags" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="createdtime" Precision="3" />
+          <Property Type="DateTime" Name="created_time" Precision="3" />
         </EntityType>
         <EntityType Name="m_user_index_info">
           <Key>
             <PropertyRef Name="user_id" />
             <PropertyRef Name="user_name" />
           </Key>
-          <Property Type="Int32" Name="user_id" Nullable="false" />
-          <Property Type="String" Name="user_name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="user_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="user_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="msg_count" />
           <Property Type="Int32" Name="fans_count" />
           <Property Type="Int32" Name="follow_count" />
@@ -342,72 +410,98 @@
           <Key>
             <PropertyRef Name="user_id" />
           </Key>
-          <Property Type="String" Name="user_id" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="user_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="profile_id" Nullable="false" />
-          <Property Type="String" Name="user_name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="oldpassword" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="user_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="oldpassword" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="gender" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Type="DateTime" Name="createdtime" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updatedtime" Precision="3" />
           <Property Type="String" Name="C_remark" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="mobile_phone" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="location" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="netaddress" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="netaddress" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="state" Nullable="false" />
           <Property Type="String" Name="user_sexual_orientation" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Type="String" Name="user_relationship_status" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Type="DateTime" Name="birthday" Precision="3" />
-          <Property Type="String" Name="blood_type" MaxLength="2" FixedLength="true" Unicode="false" />
-          <Property Type="String" Name="blogs_url" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="MSN" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="QQ" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="blood_type" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="blogs_url" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="MSN" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="QQ" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="m_user_msg_index">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Type="String" Name="user_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="author_id" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="msg_id" />
+          <Property Type="DateTime" Name="time_t" Precision="3" />
         </EntityType>
         <EntityType Name="sys_actions">
           <Key>
-            <PropertyRef Name="action_Id" />
+            <PropertyRef Name="action_id" />
           </Key>
-          <Property Type="String" Name="action_Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="action_display_name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="action_name" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updated_time" Precision="3" />
           <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="deleted" Nullable="false" />
+          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="deleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_admin_logs">
+          <Key>
+            <PropertyRef Name="admin_logs_id" />
+          </Key>
+          <Property Type="Int32" Name="admin_logs_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="admin_log_title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="page_url" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="referrer_url" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
+          <Property Type="DateTime" Name="updated_time" Precision="3" />
+          <Property Type="String" Name="remark" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="deleted" Nullable="false" />
+          <Property Type="Int32" Name="type_id" Nullable="false" />
+          <Property Type="String" Name="netaddress" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sys_administrator">
           <Key>
             <PropertyRef Name="admin_id" />
           </Key>
-          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="display_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="password" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="old_pasword" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="email" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="enabled" Nullable="false" />
+          <Property Type="Boolean" Name="enabled" Nullable="false" />
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updated_time" Precision="3" />
-          <Property Type="Int32" Name="deleted" />
+          <Property Type="Boolean" Name="deleted" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_controller_action">
           <Key>
             <PropertyRef Name="controller_action_id" />
           </Key>
-          <Property Type="String" Name="controller_action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Guid" Name="controller_id" Nullable="false" />
-          <Property Type="String" Name="action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="controller_action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="controller_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updated_time" Precision="3" />
           <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="admin_Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="deleted" Nullable="false" />
+          <Property Type="String" Name="admin_Id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="deleted" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_controllers">
           <Key>
             <PropertyRef Name="controllers_id" />
           </Key>
-          <Property Type="String" Name="controllers_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="controllers_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="controller_display_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="controller_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="String" Name="action_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -415,64 +509,58 @@
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updated_time" Precision="3" />
           <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="deleted" Nullable="false" />
+          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="deleted" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sys_logs">
+          <Key>
+            <PropertyRef Name="log_id" />
+          </Key>
+          <Property Type="Int32" Name="log_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="log_title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="time" Nullable="false" Precision="3" />
+          <Property Type="String" Name="thread" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="messages" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="sys_role_admin">
           <Key>
-            <PropertyRef Name="role_sys_admin_id" />
+            <PropertyRef Name="role_admin_id" />
           </Key>
-          <Property Type="String" Name="role_sys_admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="role_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="role_admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="role_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updated_time" Precision="3" />
           <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="deleted" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sys_roles">
-          <Key>
-            <PropertyRef Name="role_id" />
-          </Key>
-          <Property Type="String" Name="role_id" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="role_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="system_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
-          <Property Type="DateTime" Name="updated_time" Nullable="false" Precision="3" />
-          <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="deleted" Nullable="false" />
-          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="deleted" Nullable="false" />
         </EntityType>
         <EntityType Name="sys_role_controller_action">
           <Key>
             <PropertyRef Name="role_controller_action_id" />
           </Key>
-          <Property Type="String" Name="role_controller_action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="role_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="controller_action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="role_controller_action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="role_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="controller_action_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
           <Property Type="DateTime" Name="updated_time" Precision="3" />
           <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="deleted" Nullable="false" />
+          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="deleted" Nullable="false" />
         </EntityType>
-        <EntityType Name="sys_logs">
+        <EntityType Name="sys_roles">
           <Key>
-            <PropertyRef Name="admin_id" />
+            <PropertyRef Name="role_id" />
           </Key>
-          <Property Type="String" Name="admin_id" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="log_id" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="log_title" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="page_url" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="referrer_url" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="role_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="role_name" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="system_id" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="created_time" Nullable="false" Precision="3" />
-          <Property Type="DateTime" Name="updated_time" Precision="3" />
-          <Property Type="String" Name="remark" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="deleted" Nullable="false" />
-          <Property Type="Int32" Name="type_Id" Nullable="false" />
-          <Property Type="String" Name="netaddress" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="updated_time" Nullable="false" Precision="3" />
+          <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="admin_id" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="deleted" Nullable="false" />
         </EntityType>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -485,12 +573,26 @@
               <MappingFragment StoreEntitySet="m_group_info">
                 <ScalarProperty Name="deleted_time" ColumnName="deleted_time" />
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="people_count" ColumnName="people_count" />
                 <ScalarProperty Name="updated_time" ColumnName="updated_time" />
                 <ScalarProperty Name="created_time" ColumnName="created_time" />
                 <ScalarProperty Name="group_type_id" ColumnName="group_type_id" />
+                <ScalarProperty Name="describe" ColumnName="describe" />
                 <ScalarProperty Name="group_name" ColumnName="group_name" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="group_id" ColumnName="group_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="m_group_member_info">
+            <EntityTypeMapping TypeName="miaowsysModel.m_group_member_info">
+              <MappingFragment StoreEntitySet="m_group_member_info">
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="quit_time" ColumnName="quit_time" />
+                <ScalarProperty Name="join_time" ColumnName="join_time" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="group_id" ColumnName="group_id" />
+                <ScalarProperty Name="group_member_id" ColumnName="group_member_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -506,10 +608,37 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="m_msg_info">
+            <EntityTypeMapping TypeName="miaowsysModel.m_msg_info">
+              <MappingFragment StoreEntitySet="m_msg_info">
+                <ScalarProperty Name="time_t" ColumnName="time_t" />
+                <ScalarProperty Name="transfer_count" ColumnName="transfer_count" />
+                <ScalarProperty Name="transferred_count" ColumnName="transferred_count" />
+                <ScalarProperty Name="comment_count" ColumnName="comment_count" />
+                <ScalarProperty Name="commented_count" ColumnName="commented_count" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="content" ColumnName="content" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="msg_id" ColumnName="msg_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="m_msg_msg_relation">
+            <EntityTypeMapping TypeName="miaowsysModel.m_msg_msg_relation">
+              <MappingFragment StoreEntitySet="m_msg_msg_relation">
+                <ScalarProperty Name="time_t" ColumnName="time_t" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="referenced__msg_id" ColumnName="referenced _msg_id" />
+                <ScalarProperty Name="referenced_id" ColumnName="referenced_id" />
+                <ScalarProperty Name="reference__msg_id" ColumnName="reference _msg_id" />
+                <ScalarProperty Name="reference_id" ColumnName="reference_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="m_profile_info">
             <EntityTypeMapping TypeName="miaowsysModel.m_profile_info">
               <MappingFragment StoreEntitySet="m_profile_info">
-                <ScalarProperty Name="createdtime" ColumnName="createdtime" />
+                <ScalarProperty Name="created_time" ColumnName="created_time" />
                 <ScalarProperty Name="profile_image_url" ColumnName="profile_image_url" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="profile_id" ColumnName="profile_id" />
@@ -519,7 +648,7 @@
           <EntitySetMapping Name="m_tag_info">
             <EntityTypeMapping TypeName="miaowsysModel.m_tag_info">
               <MappingFragment StoreEntitySet="m_tag_info">
-                <ScalarProperty Name="createdtime" ColumnName="createdtime" />
+                <ScalarProperty Name="created_time" ColumnName="created_time" />
                 <ScalarProperty Name="tags" ColumnName="tags" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="tag_id" ColumnName="tag_id" />
@@ -550,6 +679,7 @@
                 <ScalarProperty Name="state" ColumnName="state" />
                 <ScalarProperty Name="netaddress" ColumnName="netaddress" />
                 <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="mobile_phone" ColumnName="mobile_phone" />
                 <ScalarProperty Name="C_remark" ColumnName="remark" />
                 <ScalarProperty Name="updatedtime" ColumnName="updatedtime" />
                 <ScalarProperty Name="createdtime" ColumnName="createdtime" />
@@ -559,6 +689,16 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="user_name" ColumnName="user_name" />
                 <ScalarProperty Name="profile_id" ColumnName="profile_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="m_user_msg_index">
+            <EntityTypeMapping TypeName="miaowsysModel.m_user_msg_index">
+              <MappingFragment StoreEntitySet="m_user_msg_index">
+                <ScalarProperty Name="time_t" ColumnName="time_t" />
+                <ScalarProperty Name="msg_id" ColumnName="msg_id" />
+                <ScalarProperty Name="author_id" ColumnName="author_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -573,7 +713,24 @@
                 <ScalarProperty Name="created_time" ColumnName="created_time" />
                 <ScalarProperty Name="action_name" ColumnName="action_name" />
                 <ScalarProperty Name="action_display_name" ColumnName="action_display_name" />
-                <ScalarProperty Name="action_Id" ColumnName="action_Id" />
+                <ScalarProperty Name="action_id" ColumnName="action_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sys_admin_logs">
+            <EntityTypeMapping TypeName="miaowsysModel.sys_admin_logs">
+              <MappingFragment StoreEntitySet="sys_admin_logs">
+                <ScalarProperty Name="netaddress" ColumnName="netaddress" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="updated_time" ColumnName="updated_time" />
+                <ScalarProperty Name="created_time" ColumnName="created_time" />
+                <ScalarProperty Name="referrer_url" ColumnName="referrer_url" />
+                <ScalarProperty Name="page_url" ColumnName="page_url" />
+                <ScalarProperty Name="admin_log_title" ColumnName="admin_log_title" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="admin_logs_id" ColumnName="admin_logs_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -622,6 +779,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sys_logs">
+            <EntityTypeMapping TypeName="miaowsysModel.sys_logs">
+              <MappingFragment StoreEntitySet="sys_logs">
+                <ScalarProperty Name="messages" ColumnName="messages" />
+                <ScalarProperty Name="thread" ColumnName="thread" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="log_title" ColumnName="log_title" />
+                <ScalarProperty Name="log_id" ColumnName="log_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sys_role_admin">
             <EntityTypeMapping TypeName="miaowsysModel.sys_role_admin">
               <MappingFragment StoreEntitySet="sys_role_admin">
@@ -631,21 +799,7 @@
                 <ScalarProperty Name="created_time" ColumnName="created_time" />
                 <ScalarProperty Name="role_id" ColumnName="role_id" />
                 <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-                <ScalarProperty Name="role_sys_admin_id" ColumnName="role_sys_admin_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sys_roles">
-            <EntityTypeMapping TypeName="miaowsysModel.sys_roles">
-              <MappingFragment StoreEntitySet="sys_roles">
-                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
-                <ScalarProperty Name="deleted" ColumnName="deleted" />
-                <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="updated_time" ColumnName="updated_time" />
-                <ScalarProperty Name="created_time" ColumnName="created_time" />
-                <ScalarProperty Name="system_id" ColumnName="system_id" />
-                <ScalarProperty Name="role_name" ColumnName="role_name" />
-                <ScalarProperty Name="role_id" ColumnName="role_id" />
+                <ScalarProperty Name="role_admin_id" ColumnName="role_admin_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -663,20 +817,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sys_logs">
-            <EntityTypeMapping TypeName="miaowsysModel.sys_logs">
-              <MappingFragment StoreEntitySet="sys_logs">
-                <ScalarProperty Name="netaddress" ColumnName="netaddress" />
-                <ScalarProperty Name="type_Id" ColumnName="type_Id" />
+          <EntitySetMapping Name="sys_roles">
+            <EntityTypeMapping TypeName="miaowsysModel.sys_roles">
+              <MappingFragment StoreEntitySet="sys_roles">
                 <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
                 <ScalarProperty Name="remark" ColumnName="remark" />
                 <ScalarProperty Name="updated_time" ColumnName="updated_time" />
                 <ScalarProperty Name="created_time" ColumnName="created_time" />
-                <ScalarProperty Name="referrer_url" ColumnName="referrer_url" />
-                <ScalarProperty Name="page_url" ColumnName="page_url" />
-                <ScalarProperty Name="log_title" ColumnName="log_title" />
-                <ScalarProperty Name="log_id" ColumnName="log_id" />
-                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="system_id" ColumnName="system_id" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+                <ScalarProperty Name="role_id" ColumnName="role_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -701,21 +852,26 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bcc28b2939e8462eaf4f08b9cff46923" Name="MiaowSysModel" ZoomLevel="187">
-        <EntityTypeShape EntityType="miaowsysModel.m_group_info" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.m_group_type_info" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.m_profile_info" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="miaowsysModel.m_tag_info" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.m_user_index_info" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="miaowsysModel.m_user_info" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="false" />
-        <EntityTypeShape EntityType="miaowsysModel.sys_actions" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.sys_administrator" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.sys_controller_action" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.sys_controllers" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.sys_role_admin" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.sys_roles" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="miaowsysModel.sys_role_controller_action" Width="2.375" PointX="6.25" PointY="14.625" />
-        <EntityTypeShape EntityType="miaowsysModel.sys_logs" Width="1.5" PointX="11.063006780605301" PointY="0.20820577452341363" />
+      <Diagram DiagramId="bcc28b2939e8462eaf4f08b9cff46923" Name="MiaowSysModel" ZoomLevel="10">
+        <EntityTypeShape EntityType="miaowsysModel.m_group_info" Width="1.5" PointX="7.0772547717565928" PointY="5.7778848287546474" />
+        <EntityTypeShape EntityType="miaowsysModel.m_group_member_info" Width="1.5" PointX="1.8021668334501642" PointY="3.0912749036640279" />
+        <EntityTypeShape EntityType="miaowsysModel.m_group_type_info" Width="1.5" PointX="10.682762693000381" PointY="20.774498263734625" />
+        <EntityTypeShape EntityType="miaowsysModel.m_msg_info" Width="1.5" PointX="0.49555371724793396" PointY="21.534467096223715" />
+        <EntityTypeShape EntityType="miaowsysModel.m_msg_msg_relation" Width="1.5" PointX="5.7926533826592621" PointY="31.521688774005366" />
+        <EntityTypeShape EntityType="miaowsysModel.m_profile_info" Width="1.5" PointX="0.31207423112917421" PointY="15.724375791719359" />
+        <EntityTypeShape EntityType="miaowsysModel.m_tag_info" Width="1.5" PointX="7.2771301489682543" PointY="10.650308092427583" />
+        <EntityTypeShape EntityType="miaowsysModel.m_user_index_info" Width="1.5" PointX="11.743384223311853" PointY="28.807266993824051" />
+        <EntityTypeShape EntityType="miaowsysModel.m_user_info" Width="1.5" PointX="8.1622911543409771" PointY="26.395946783198021" />
+        <EntityTypeShape EntityType="miaowsysModel.m_user_msg_index" Width="1.5" PointX="3.3633762464688046" PointY="29.637100546451798" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_actions" Width="1.5" PointX="5.0834345822611056" PointY="5.0454577678094887" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_admin_logs" Width="1.5" PointX="9.95511810013797" PointY="21.688860262599242" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_administrator" Width="1.5" PointX="8.5955809711458073" PointY="4.37761892582179" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_controller_action" Width="1.5" PointX="9.9315036525630873" PointY="19.472401598222742" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_controllers" Width="1.5" PointX="9.10488168015372" PointY="0.59113639620651326" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_logs" Width="1.5" PointX="3.5798126885573436" PointY="0.62043471663279215" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_role_admin" Width="1.5" PointX="8.7830076128165278" PointY="31.64793016000089" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_role_controller_action" Width="1.5" PointX="8.5281714762226546" PointY="25.52383985813886" />
+        <EntityTypeShape EntityType="miaowsysModel.sys_roles" Width="1.5" PointX="3.5121230257265843" PointY="13.877271092439662" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

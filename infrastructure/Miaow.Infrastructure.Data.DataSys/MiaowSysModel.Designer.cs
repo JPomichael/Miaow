@@ -84,6 +84,22 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
+        public ObjectSet<m_group_member_info> m_group_member_info
+        {
+            get
+            {
+                if ((_m_group_member_info == null))
+                {
+                    _m_group_member_info = base.CreateObjectSet<m_group_member_info>("m_group_member_info");
+                }
+                return _m_group_member_info;
+            }
+        }
+        private ObjectSet<m_group_member_info> _m_group_member_info;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
         public ObjectSet<m_group_type_info> m_group_type_info
         {
             get
@@ -96,6 +112,38 @@ namespace Miaow.Infrastructure.Data.DataSys
             }
         }
         private ObjectSet<m_group_type_info> _m_group_type_info;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<m_msg_info> m_msg_info
+        {
+            get
+            {
+                if ((_m_msg_info == null))
+                {
+                    _m_msg_info = base.CreateObjectSet<m_msg_info>("m_msg_info");
+                }
+                return _m_msg_info;
+            }
+        }
+        private ObjectSet<m_msg_info> _m_msg_info;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<m_msg_msg_relation> m_msg_msg_relation
+        {
+            get
+            {
+                if ((_m_msg_msg_relation == null))
+                {
+                    _m_msg_msg_relation = base.CreateObjectSet<m_msg_msg_relation>("m_msg_msg_relation");
+                }
+                return _m_msg_msg_relation;
+            }
+        }
+        private ObjectSet<m_msg_msg_relation> _m_msg_msg_relation;
     
         /// <summary>
         /// 没有元数据文档可用。
@@ -164,6 +212,22 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
+        public ObjectSet<m_user_msg_index> m_user_msg_index
+        {
+            get
+            {
+                if ((_m_user_msg_index == null))
+                {
+                    _m_user_msg_index = base.CreateObjectSet<m_user_msg_index>("m_user_msg_index");
+                }
+                return _m_user_msg_index;
+            }
+        }
+        private ObjectSet<m_user_msg_index> _m_user_msg_index;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
         public ObjectSet<sys_actions> sys_actions
         {
             get
@@ -176,6 +240,22 @@ namespace Miaow.Infrastructure.Data.DataSys
             }
         }
         private ObjectSet<sys_actions> _sys_actions;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        public ObjectSet<sys_admin_logs> sys_admin_logs
+        {
+            get
+            {
+                if ((_sys_admin_logs == null))
+                {
+                    _sys_admin_logs = base.CreateObjectSet<sys_admin_logs>("sys_admin_logs");
+                }
+                return _sys_admin_logs;
+            }
+        }
+        private ObjectSet<sys_admin_logs> _sys_admin_logs;
     
         /// <summary>
         /// 没有元数据文档可用。
@@ -228,6 +308,22 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
+        public ObjectSet<sys_logs> sys_logs
+        {
+            get
+            {
+                if ((_sys_logs == null))
+                {
+                    _sys_logs = base.CreateObjectSet<sys_logs>("sys_logs");
+                }
+                return _sys_logs;
+            }
+        }
+        private ObjectSet<sys_logs> _sys_logs;
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
         public ObjectSet<sys_role_admin> sys_role_admin
         {
             get
@@ -240,22 +336,6 @@ namespace Miaow.Infrastructure.Data.DataSys
             }
         }
         private ObjectSet<sys_role_admin> _sys_role_admin;
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        public ObjectSet<sys_roles> sys_roles
-        {
-            get
-            {
-                if ((_sys_roles == null))
-                {
-                    _sys_roles = base.CreateObjectSet<sys_roles>("sys_roles");
-                }
-                return _sys_roles;
-            }
-        }
-        private ObjectSet<sys_roles> _sys_roles;
     
         /// <summary>
         /// 没有元数据文档可用。
@@ -276,18 +356,18 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        public ObjectSet<sys_logs> sys_logs
+        public ObjectSet<sys_roles> sys_roles
         {
             get
             {
-                if ((_sys_logs == null))
+                if ((_sys_roles == null))
                 {
-                    _sys_logs = base.CreateObjectSet<sys_logs>("sys_logs");
+                    _sys_roles = base.CreateObjectSet<sys_roles>("sys_roles");
                 }
-                return _sys_logs;
+                return _sys_roles;
             }
         }
-        private ObjectSet<sys_logs> _sys_logs;
+        private ObjectSet<sys_roles> _sys_roles;
 
         #endregion
 
@@ -302,11 +382,35 @@ namespace Miaow.Infrastructure.Data.DataSys
         }
     
         /// <summary>
+        /// 用于向 m_group_member_info EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTom_group_member_info(m_group_member_info m_group_member_info)
+        {
+            base.AddObject("m_group_member_info", m_group_member_info);
+        }
+    
+        /// <summary>
         /// 用于向 m_group_type_info EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
         public void AddTom_group_type_info(m_group_type_info m_group_type_info)
         {
             base.AddObject("m_group_type_info", m_group_type_info);
+        }
+    
+        /// <summary>
+        /// 用于向 m_msg_info EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTom_msg_info(m_msg_info m_msg_info)
+        {
+            base.AddObject("m_msg_info", m_msg_info);
+        }
+    
+        /// <summary>
+        /// 用于向 m_msg_msg_relation EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTom_msg_msg_relation(m_msg_msg_relation m_msg_msg_relation)
+        {
+            base.AddObject("m_msg_msg_relation", m_msg_msg_relation);
         }
     
         /// <summary>
@@ -342,11 +446,27 @@ namespace Miaow.Infrastructure.Data.DataSys
         }
     
         /// <summary>
+        /// 用于向 m_user_msg_index EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTom_user_msg_index(m_user_msg_index m_user_msg_index)
+        {
+            base.AddObject("m_user_msg_index", m_user_msg_index);
+        }
+    
+        /// <summary>
         /// 用于向 sys_actions EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
         public void AddTosys_actions(sys_actions sys_actions)
         {
             base.AddObject("sys_actions", sys_actions);
+        }
+    
+        /// <summary>
+        /// 用于向 sys_admin_logs EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTosys_admin_logs(sys_admin_logs sys_admin_logs)
+        {
+            base.AddObject("sys_admin_logs", sys_admin_logs);
         }
     
         /// <summary>
@@ -374,19 +494,19 @@ namespace Miaow.Infrastructure.Data.DataSys
         }
     
         /// <summary>
+        /// 用于向 sys_logs EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// </summary>
+        public void AddTosys_logs(sys_logs sys_logs)
+        {
+            base.AddObject("sys_logs", sys_logs);
+        }
+    
+        /// <summary>
         /// 用于向 sys_role_admin EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
         public void AddTosys_role_admin(sys_role_admin sys_role_admin)
         {
             base.AddObject("sys_role_admin", sys_role_admin);
-        }
-    
-        /// <summary>
-        /// 用于向 sys_roles EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
-        /// </summary>
-        public void AddTosys_roles(sys_roles sys_roles)
-        {
-            base.AddObject("sys_roles", sys_roles);
         }
     
         /// <summary>
@@ -398,11 +518,11 @@ namespace Miaow.Infrastructure.Data.DataSys
         }
     
         /// <summary>
-        /// 用于向 sys_logs EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
+        /// 用于向 sys_roles EntitySet 添加新对象的方法，已弃用。请考虑改用关联的 ObjectSet&lt;T&gt; 属性的 .Add 方法。
         /// </summary>
-        public void AddTosys_logs(sys_logs sys_logs)
+        public void AddTosys_roles(sys_roles sys_roles)
         {
-            base.AddObject("sys_logs", sys_logs);
+            base.AddObject("sys_roles", sys_roles);
         }
 
         #endregion
@@ -414,11 +534,8 @@ namespace Miaow.Infrastructure.Data.DataSys
     #region 实体
     
     /// <summary>
-    /// 小组表
+    /// 没有元数据文档可用。
     /// </summary>
-    /// <LongDescription>
-    /// 小组表
-    /// </LongDescription>
     [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="m_group_info")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -433,7 +550,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <param name="user_id">user_id 属性的初始值。</param>
         /// <param name="group_type_id">group_type_id 属性的初始值。</param>
         /// <param name="created_time">created_time 属性的初始值。</param>
-        public static m_group_info Createm_group_info(global::System.String group_id, global::System.String user_id, global::System.String group_type_id, global::System.DateTime created_time)
+        public static m_group_info Createm_group_info(global::System.Int32 group_id, global::System.String user_id, global::System.String group_type_id, global::System.DateTime created_time)
         {
             m_group_info m_group_info = new m_group_info();
             m_group_info.group_id = group_id;
@@ -452,7 +569,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String group_id
+        public global::System.Int32 group_id
         {
             get
             {
@@ -464,14 +581,14 @@ namespace Miaow.Infrastructure.Data.DataSys
                 {
                     Ongroup_idChanging(value);
                     ReportPropertyChanging("group_id");
-                    _group_id = StructuralObject.SetValidValue(value, false);
+                    _group_id = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("group_id");
                     Ongroup_idChanged();
                 }
             }
         }
-        private global::System.String _group_id;
-        partial void Ongroup_idChanging(global::System.String value);
+        private global::System.Int32 _group_id;
+        partial void Ongroup_idChanging(global::System.Int32 value);
         partial void Ongroup_idChanged();
     
         /// <summary>
@@ -521,6 +638,30 @@ namespace Miaow.Infrastructure.Data.DataSys
         private global::System.String _group_name;
         partial void Ongroup_nameChanging(global::System.String value);
         partial void Ongroup_nameChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String describe
+        {
+            get
+            {
+                return _describe;
+            }
+            set
+            {
+                OndescribeChanging(value);
+                ReportPropertyChanging("describe");
+                _describe = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("describe");
+                OndescribeChanged();
+            }
+        }
+        private global::System.String _describe;
+        partial void OndescribeChanging(global::System.String value);
+        partial void OndescribeChanged();
     
         /// <summary>
         /// 没有元数据文档可用。
@@ -599,7 +740,31 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> deleted
+        public Nullable<global::System.Int32> people_count
+        {
+            get
+            {
+                return _people_count;
+            }
+            set
+            {
+                Onpeople_countChanging(value);
+                ReportPropertyChanging("people_count");
+                _people_count = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("people_count");
+                Onpeople_countChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _people_count;
+        partial void Onpeople_countChanging(Nullable<global::System.Int32> value);
+        partial void Onpeople_countChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> deleted
         {
             get
             {
@@ -614,8 +779,8 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private Nullable<global::System.Int32> _deleted;
-        partial void OndeletedChanging(Nullable<global::System.Int32> value);
+        private Nullable<global::System.Boolean> _deleted;
+        partial void OndeletedChanging(Nullable<global::System.Boolean> value);
         partial void OndeletedChanged();
     
         /// <summary>
@@ -650,6 +815,189 @@ namespace Miaow.Infrastructure.Data.DataSys
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="m_group_member_info")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class m_group_member_info : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 m_group_member_info 对象。
+        /// </summary>
+        /// <param name="group_member_id">group_member_id 属性的初始值。</param>
+        /// <param name="group_id">group_id 属性的初始值。</param>
+        /// <param name="user_id">user_id 属性的初始值。</param>
+        /// <param name="join_time">join_time 属性的初始值。</param>
+        public static m_group_member_info Createm_group_member_info(global::System.Int32 group_member_id, global::System.Int32 group_id, global::System.String user_id, global::System.DateTime join_time)
+        {
+            m_group_member_info m_group_member_info = new m_group_member_info();
+            m_group_member_info.group_member_id = group_member_id;
+            m_group_member_info.group_id = group_id;
+            m_group_member_info.user_id = user_id;
+            m_group_member_info.join_time = join_time;
+            return m_group_member_info;
+        }
+
+        #endregion
+
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 group_member_id
+        {
+            get
+            {
+                return _group_member_id;
+            }
+            set
+            {
+                if (_group_member_id != value)
+                {
+                    Ongroup_member_idChanging(value);
+                    ReportPropertyChanging("group_member_id");
+                    _group_member_id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("group_member_id");
+                    Ongroup_member_idChanged();
+                }
+            }
+        }
+        private global::System.Int32 _group_member_id;
+        partial void Ongroup_member_idChanging(global::System.Int32 value);
+        partial void Ongroup_member_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 group_id
+        {
+            get
+            {
+                return _group_id;
+            }
+            set
+            {
+                Ongroup_idChanging(value);
+                ReportPropertyChanging("group_id");
+                _group_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("group_id");
+                Ongroup_idChanged();
+            }
+        }
+        private global::System.Int32 _group_id;
+        partial void Ongroup_idChanging(global::System.Int32 value);
+        partial void Ongroup_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String user_id
+        {
+            get
+            {
+                return _user_id;
+            }
+            set
+            {
+                Onuser_idChanging(value);
+                ReportPropertyChanging("user_id");
+                _user_id = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("user_id");
+                Onuser_idChanged();
+            }
+        }
+        private global::System.String _user_id;
+        partial void Onuser_idChanging(global::System.String value);
+        partial void Onuser_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime join_time
+        {
+            get
+            {
+                return _join_time;
+            }
+            set
+            {
+                Onjoin_timeChanging(value);
+                ReportPropertyChanging("join_time");
+                _join_time = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("join_time");
+                Onjoin_timeChanged();
+            }
+        }
+        private global::System.DateTime _join_time;
+        partial void Onjoin_timeChanging(global::System.DateTime value);
+        partial void Onjoin_timeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> quit_time
+        {
+            get
+            {
+                return _quit_time;
+            }
+            set
+            {
+                Onquit_timeChanging(value);
+                ReportPropertyChanging("quit_time");
+                _quit_time = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("quit_time");
+                Onquit_timeChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _quit_time;
+        partial void Onquit_timeChanging(Nullable<global::System.DateTime> value);
+        partial void Onquit_timeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Boolean> state
+        {
+            get
+            {
+                return _state;
+            }
+            set
+            {
+                OnstateChanging(value);
+                ReportPropertyChanging("state");
+                _state = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("state");
+                OnstateChanged();
+            }
+        }
+        private Nullable<global::System.Boolean> _state;
+        partial void OnstateChanging(Nullable<global::System.Boolean> value);
+        partial void OnstateChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="m_group_type_info")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -663,7 +1011,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <param name="group_type_id">group_type_id 属性的初始值。</param>
         /// <param name="group_type_name">group_type_name 属性的初始值。</param>
         /// <param name="created_time">created_time 属性的初始值。</param>
-        public static m_group_type_info Createm_group_type_info(global::System.String group_type_id, global::System.String group_type_name, global::System.DateTime created_time)
+        public static m_group_type_info Createm_group_type_info(global::System.Int32 group_type_id, global::System.String group_type_name, global::System.DateTime created_time)
         {
             m_group_type_info m_group_type_info = new m_group_type_info();
             m_group_type_info.group_type_id = group_type_id;
@@ -681,7 +1029,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String group_type_id
+        public global::System.Int32 group_type_id
         {
             get
             {
@@ -693,14 +1041,14 @@ namespace Miaow.Infrastructure.Data.DataSys
                 {
                     Ongroup_type_idChanging(value);
                     ReportPropertyChanging("group_type_id");
-                    _group_type_id = StructuralObject.SetValidValue(value, false);
+                    _group_type_id = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("group_type_id");
                     Ongroup_type_idChanged();
                 }
             }
         }
-        private global::System.String _group_type_id;
-        partial void Ongroup_type_idChanging(global::System.String value);
+        private global::System.Int32 _group_type_id;
+        partial void Ongroup_type_idChanging(global::System.Int32 value);
         partial void Ongroup_type_idChanged();
     
         /// <summary>
@@ -780,7 +1128,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> deleted
+        public Nullable<global::System.Boolean> deleted
         {
             get
             {
@@ -795,8 +1143,8 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private Nullable<global::System.Int32> _deleted;
-        partial void OndeletedChanging(Nullable<global::System.Int32> value);
+        private Nullable<global::System.Boolean> _deleted;
+        partial void OndeletedChanging(Nullable<global::System.Boolean> value);
         partial void OndeletedChanged();
     
         /// <summary>
@@ -831,6 +1179,436 @@ namespace Miaow.Infrastructure.Data.DataSys
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="m_msg_info")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class m_msg_info : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 m_msg_info 对象。
+        /// </summary>
+        /// <param name="msg_id">msg_id 属性的初始值。</param>
+        /// <param name="user_id">user_id 属性的初始值。</param>
+        /// <param name="content">content 属性的初始值。</param>
+        public static m_msg_info Createm_msg_info(global::System.Int32 msg_id, global::System.String user_id, global::System.String content)
+        {
+            m_msg_info m_msg_info = new m_msg_info();
+            m_msg_info.msg_id = msg_id;
+            m_msg_info.user_id = user_id;
+            m_msg_info.content = content;
+            return m_msg_info;
+        }
+
+        #endregion
+
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 msg_id
+        {
+            get
+            {
+                return _msg_id;
+            }
+            set
+            {
+                if (_msg_id != value)
+                {
+                    Onmsg_idChanging(value);
+                    ReportPropertyChanging("msg_id");
+                    _msg_id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("msg_id");
+                    Onmsg_idChanged();
+                }
+            }
+        }
+        private global::System.Int32 _msg_id;
+        partial void Onmsg_idChanging(global::System.Int32 value);
+        partial void Onmsg_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String user_id
+        {
+            get
+            {
+                return _user_id;
+            }
+            set
+            {
+                Onuser_idChanging(value);
+                ReportPropertyChanging("user_id");
+                _user_id = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("user_id");
+                Onuser_idChanged();
+            }
+        }
+        private global::System.String _user_id;
+        partial void Onuser_idChanging(global::System.String value);
+        partial void Onuser_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String content
+        {
+            get
+            {
+                return _content;
+            }
+            set
+            {
+                OncontentChanging(value);
+                ReportPropertyChanging("content");
+                _content = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("content");
+                OncontentChanged();
+            }
+        }
+        private global::System.String _content;
+        partial void OncontentChanging(global::System.String value);
+        partial void OncontentChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                OntypeChanging(value);
+                ReportPropertyChanging("type");
+                _type = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("type");
+                OntypeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _type;
+        partial void OntypeChanging(Nullable<global::System.Int32> value);
+        partial void OntypeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> commented_count
+        {
+            get
+            {
+                return _commented_count;
+            }
+            set
+            {
+                Oncommented_countChanging(value);
+                ReportPropertyChanging("commented_count");
+                _commented_count = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("commented_count");
+                Oncommented_countChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _commented_count;
+        partial void Oncommented_countChanging(Nullable<global::System.Int32> value);
+        partial void Oncommented_countChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> comment_count
+        {
+            get
+            {
+                return _comment_count;
+            }
+            set
+            {
+                Oncomment_countChanging(value);
+                ReportPropertyChanging("comment_count");
+                _comment_count = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("comment_count");
+                Oncomment_countChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _comment_count;
+        partial void Oncomment_countChanging(Nullable<global::System.Int32> value);
+        partial void Oncomment_countChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> transferred_count
+        {
+            get
+            {
+                return _transferred_count;
+            }
+            set
+            {
+                Ontransferred_countChanging(value);
+                ReportPropertyChanging("transferred_count");
+                _transferred_count = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("transferred_count");
+                Ontransferred_countChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _transferred_count;
+        partial void Ontransferred_countChanging(Nullable<global::System.Int32> value);
+        partial void Ontransferred_countChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> transfer_count
+        {
+            get
+            {
+                return _transfer_count;
+            }
+            set
+            {
+                Ontransfer_countChanging(value);
+                ReportPropertyChanging("transfer_count");
+                _transfer_count = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("transfer_count");
+                Ontransfer_countChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _transfer_count;
+        partial void Ontransfer_countChanging(Nullable<global::System.Int32> value);
+        partial void Ontransfer_countChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> time_t
+        {
+            get
+            {
+                return _time_t;
+            }
+            set
+            {
+                Ontime_tChanging(value);
+                ReportPropertyChanging("time_t");
+                _time_t = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("time_t");
+                Ontime_tChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _time_t;
+        partial void Ontime_tChanging(Nullable<global::System.DateTime> value);
+        partial void Ontime_tChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="m_msg_msg_relation")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class m_msg_msg_relation : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 m_msg_msg_relation 对象。
+        /// </summary>
+        /// <param name="reference_id">reference_id 属性的初始值。</param>
+        public static m_msg_msg_relation Createm_msg_msg_relation(global::System.String reference_id)
+        {
+            m_msg_msg_relation m_msg_msg_relation = new m_msg_msg_relation();
+            m_msg_msg_relation.reference_id = reference_id;
+            return m_msg_msg_relation;
+        }
+
+        #endregion
+
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String reference_id
+        {
+            get
+            {
+                return _reference_id;
+            }
+            set
+            {
+                if (_reference_id != value)
+                {
+                    Onreference_idChanging(value);
+                    ReportPropertyChanging("reference_id");
+                    _reference_id = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("reference_id");
+                    Onreference_idChanged();
+                }
+            }
+        }
+        private global::System.String _reference_id;
+        partial void Onreference_idChanging(global::System.String value);
+        partial void Onreference_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> reference__msg_id
+        {
+            get
+            {
+                return _reference__msg_id;
+            }
+            set
+            {
+                Onreference__msg_idChanging(value);
+                ReportPropertyChanging("reference__msg_id");
+                _reference__msg_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("reference__msg_id");
+                Onreference__msg_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _reference__msg_id;
+        partial void Onreference__msg_idChanging(Nullable<global::System.Int32> value);
+        partial void Onreference__msg_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String referenced_id
+        {
+            get
+            {
+                return _referenced_id;
+            }
+            set
+            {
+                Onreferenced_idChanging(value);
+                ReportPropertyChanging("referenced_id");
+                _referenced_id = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("referenced_id");
+                Onreferenced_idChanged();
+            }
+        }
+        private global::System.String _referenced_id;
+        partial void Onreferenced_idChanging(global::System.String value);
+        partial void Onreferenced_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> referenced__msg_id
+        {
+            get
+            {
+                return _referenced__msg_id;
+            }
+            set
+            {
+                Onreferenced__msg_idChanging(value);
+                ReportPropertyChanging("referenced__msg_id");
+                _referenced__msg_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("referenced__msg_id");
+                Onreferenced__msg_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _referenced__msg_id;
+        partial void Onreferenced__msg_idChanging(Nullable<global::System.Int32> value);
+        partial void Onreferenced__msg_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> type
+        {
+            get
+            {
+                return _type;
+            }
+            set
+            {
+                OntypeChanging(value);
+                ReportPropertyChanging("type");
+                _type = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("type");
+                OntypeChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _type;
+        partial void OntypeChanging(Nullable<global::System.Int32> value);
+        partial void OntypeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> time_t
+        {
+            get
+            {
+                return _time_t;
+            }
+            set
+            {
+                Ontime_tChanging(value);
+                ReportPropertyChanging("time_t");
+                _time_t = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("time_t");
+                Ontime_tChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _time_t;
+        partial void Ontime_tChanging(Nullable<global::System.DateTime> value);
+        partial void Ontime_tChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="m_profile_info")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -844,14 +1622,14 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <param name="profile_id">profile_id 属性的初始值。</param>
         /// <param name="user_id">user_id 属性的初始值。</param>
         /// <param name="profile_image_url">profile_image_url 属性的初始值。</param>
-        /// <param name="createdtime">createdtime 属性的初始值。</param>
-        public static m_profile_info Createm_profile_info(global::System.String profile_id, global::System.String user_id, global::System.String profile_image_url, global::System.DateTime createdtime)
+        /// <param name="created_time">created_time 属性的初始值。</param>
+        public static m_profile_info Createm_profile_info(global::System.Int32 profile_id, global::System.String user_id, global::System.String profile_image_url, global::System.DateTime created_time)
         {
             m_profile_info m_profile_info = new m_profile_info();
             m_profile_info.profile_id = profile_id;
             m_profile_info.user_id = user_id;
             m_profile_info.profile_image_url = profile_image_url;
-            m_profile_info.createdtime = createdtime;
+            m_profile_info.created_time = created_time;
             return m_profile_info;
         }
 
@@ -864,7 +1642,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String profile_id
+        public global::System.Int32 profile_id
         {
             get
             {
@@ -876,14 +1654,14 @@ namespace Miaow.Infrastructure.Data.DataSys
                 {
                     Onprofile_idChanging(value);
                     ReportPropertyChanging("profile_id");
-                    _profile_id = StructuralObject.SetValidValue(value, false);
+                    _profile_id = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("profile_id");
                     Onprofile_idChanged();
                 }
             }
         }
-        private global::System.String _profile_id;
-        partial void Onprofile_idChanging(global::System.String value);
+        private global::System.Int32 _profile_id;
+        partial void Onprofile_idChanging(global::System.Int32 value);
         partial void Onprofile_idChanged();
     
         /// <summary>
@@ -939,24 +1717,24 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime createdtime
+        public global::System.DateTime created_time
         {
             get
             {
-                return _createdtime;
+                return _created_time;
             }
             set
             {
-                OncreatedtimeChanging(value);
-                ReportPropertyChanging("createdtime");
-                _createdtime = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("createdtime");
-                OncreatedtimeChanged();
+                Oncreated_timeChanging(value);
+                ReportPropertyChanging("created_time");
+                _created_time = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("created_time");
+                Oncreated_timeChanged();
             }
         }
-        private global::System.DateTime _createdtime;
-        partial void OncreatedtimeChanging(global::System.DateTime value);
-        partial void OncreatedtimeChanged();
+        private global::System.DateTime _created_time;
+        partial void Oncreated_timeChanging(global::System.DateTime value);
+        partial void Oncreated_timeChanged();
 
         #endregion
 
@@ -1068,24 +1846,24 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> createdtime
+        public Nullable<global::System.DateTime> created_time
         {
             get
             {
-                return _createdtime;
+                return _created_time;
             }
             set
             {
-                OncreatedtimeChanging(value);
-                ReportPropertyChanging("createdtime");
-                _createdtime = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("createdtime");
-                OncreatedtimeChanged();
+                Oncreated_timeChanging(value);
+                ReportPropertyChanging("created_time");
+                _created_time = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("created_time");
+                Oncreated_timeChanged();
             }
         }
-        private Nullable<global::System.DateTime> _createdtime;
-        partial void OncreatedtimeChanging(Nullable<global::System.DateTime> value);
-        partial void OncreatedtimeChanged();
+        private Nullable<global::System.DateTime> _created_time;
+        partial void Oncreated_timeChanging(Nullable<global::System.DateTime> value);
+        partial void Oncreated_timeChanged();
 
         #endregion
 
@@ -1107,7 +1885,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         /// <param name="user_id">user_id 属性的初始值。</param>
         /// <param name="user_name">user_name 属性的初始值。</param>
-        public static m_user_index_info Createm_user_index_info(global::System.Int32 user_id, global::System.String user_name)
+        public static m_user_index_info Createm_user_index_info(global::System.String user_id, global::System.String user_name)
         {
             m_user_index_info m_user_index_info = new m_user_index_info();
             m_user_index_info.user_id = user_id;
@@ -1124,7 +1902,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 user_id
+        public global::System.String user_id
         {
             get
             {
@@ -1136,14 +1914,14 @@ namespace Miaow.Infrastructure.Data.DataSys
                 {
                     Onuser_idChanging(value);
                     ReportPropertyChanging("user_id");
-                    _user_id = StructuralObject.SetValidValue(value);
+                    _user_id = StructuralObject.SetValidValue(value, false);
                     ReportPropertyChanged("user_id");
                     Onuser_idChanged();
                 }
             }
         }
-        private global::System.Int32 _user_id;
-        partial void Onuser_idChanging(global::System.Int32 value);
+        private global::System.String _user_id;
+        partial void Onuser_idChanging(global::System.String value);
         partial void Onuser_idChanged();
     
         /// <summary>
@@ -1539,6 +2317,30 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String mobile_phone
+        {
+            get
+            {
+                return _mobile_phone;
+            }
+            set
+            {
+                Onmobile_phoneChanging(value);
+                ReportPropertyChanging("mobile_phone");
+                _mobile_phone = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("mobile_phone");
+                Onmobile_phoneChanged();
+            }
+        }
+        private global::System.String _mobile_phone;
+        partial void Onmobile_phoneChanging(global::System.String value);
+        partial void Onmobile_phoneChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
         public global::System.String location
@@ -1784,6 +2586,135 @@ namespace Miaow.Infrastructure.Data.DataSys
     /// <summary>
     /// 没有元数据文档可用。
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="m_user_msg_index")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class m_user_msg_index : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 m_user_msg_index 对象。
+        /// </summary>
+        /// <param name="user_id">user_id 属性的初始值。</param>
+        public static m_user_msg_index Createm_user_msg_index(global::System.String user_id)
+        {
+            m_user_msg_index m_user_msg_index = new m_user_msg_index();
+            m_user_msg_index.user_id = user_id;
+            return m_user_msg_index;
+        }
+
+        #endregion
+
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String user_id
+        {
+            get
+            {
+                return _user_id;
+            }
+            set
+            {
+                if (_user_id != value)
+                {
+                    Onuser_idChanging(value);
+                    ReportPropertyChanging("user_id");
+                    _user_id = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("user_id");
+                    Onuser_idChanged();
+                }
+            }
+        }
+        private global::System.String _user_id;
+        partial void Onuser_idChanging(global::System.String value);
+        partial void Onuser_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String author_id
+        {
+            get
+            {
+                return _author_id;
+            }
+            set
+            {
+                Onauthor_idChanging(value);
+                ReportPropertyChanging("author_id");
+                _author_id = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("author_id");
+                Onauthor_idChanged();
+            }
+        }
+        private global::System.String _author_id;
+        partial void Onauthor_idChanging(global::System.String value);
+        partial void Onauthor_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> msg_id
+        {
+            get
+            {
+                return _msg_id;
+            }
+            set
+            {
+                Onmsg_idChanging(value);
+                ReportPropertyChanging("msg_id");
+                _msg_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("msg_id");
+                Onmsg_idChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _msg_id;
+        partial void Onmsg_idChanging(Nullable<global::System.Int32> value);
+        partial void Onmsg_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> time_t
+        {
+            get
+            {
+                return _time_t;
+            }
+            set
+            {
+                Ontime_tChanging(value);
+                ReportPropertyChanging("time_t");
+                _time_t = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("time_t");
+                Ontime_tChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _time_t;
+        partial void Ontime_tChanging(Nullable<global::System.DateTime> value);
+        partial void Ontime_tChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="sys_actions")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -1794,16 +2725,16 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 创建新的 sys_actions 对象。
         /// </summary>
-        /// <param name="action_Id">action_Id 属性的初始值。</param>
+        /// <param name="action_id">action_id 属性的初始值。</param>
         /// <param name="action_display_name">action_display_name 属性的初始值。</param>
         /// <param name="action_name">action_name 属性的初始值。</param>
         /// <param name="created_time">created_time 属性的初始值。</param>
         /// <param name="admin_id">admin_id 属性的初始值。</param>
         /// <param name="deleted">deleted 属性的初始值。</param>
-        public static sys_actions Createsys_actions(global::System.String action_Id, global::System.String action_display_name, global::System.String action_name, global::System.DateTime created_time, global::System.String admin_id, global::System.Int32 deleted)
+        public static sys_actions Createsys_actions(global::System.String action_id, global::System.String action_display_name, global::System.String action_name, global::System.DateTime created_time, global::System.String admin_id, global::System.Boolean deleted)
         {
             sys_actions sys_actions = new sys_actions();
-            sys_actions.action_Id = action_Id;
+            sys_actions.action_id = action_id;
             sys_actions.action_display_name = action_display_name;
             sys_actions.action_name = action_name;
             sys_actions.created_time = created_time;
@@ -1821,27 +2752,27 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String action_Id
+        public global::System.String action_id
         {
             get
             {
-                return _action_Id;
+                return _action_id;
             }
             set
             {
-                if (_action_Id != value)
+                if (_action_id != value)
                 {
-                    Onaction_IdChanging(value);
-                    ReportPropertyChanging("action_Id");
-                    _action_Id = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("action_Id");
-                    Onaction_IdChanged();
+                    Onaction_idChanging(value);
+                    ReportPropertyChanging("action_id");
+                    _action_id = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("action_id");
+                    Onaction_idChanged();
                 }
             }
         }
-        private global::System.String _action_Id;
-        partial void Onaction_IdChanging(global::System.String value);
-        partial void Onaction_IdChanged();
+        private global::System.String _action_id;
+        partial void Onaction_idChanging(global::System.String value);
+        partial void Onaction_idChanged();
     
         /// <summary>
         /// 没有元数据文档可用。
@@ -1992,7 +2923,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 deleted
+        public global::System.Boolean deleted
         {
             get
             {
@@ -2007,9 +2938,322 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private global::System.Int32 _deleted;
-        partial void OndeletedChanging(global::System.Int32 value);
+        private global::System.Boolean _deleted;
+        partial void OndeletedChanging(global::System.Boolean value);
         partial void OndeletedChanged();
+
+        #endregion
+
+    
+    }
+    
+    /// <summary>
+    /// 没有元数据文档可用。
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="miaowsysModel", Name="sys_admin_logs")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class sys_admin_logs : EntityObject
+    {
+        #region 工厂方法
+    
+        /// <summary>
+        /// 创建新的 sys_admin_logs 对象。
+        /// </summary>
+        /// <param name="admin_logs_id">admin_logs_id 属性的初始值。</param>
+        /// <param name="admin_id">admin_id 属性的初始值。</param>
+        /// <param name="admin_log_title">admin_log_title 属性的初始值。</param>
+        /// <param name="page_url">page_url 属性的初始值。</param>
+        /// <param name="created_time">created_time 属性的初始值。</param>
+        /// <param name="remark">remark 属性的初始值。</param>
+        /// <param name="deleted">deleted 属性的初始值。</param>
+        /// <param name="type_id">type_id 属性的初始值。</param>
+        /// <param name="netaddress">netaddress 属性的初始值。</param>
+        public static sys_admin_logs Createsys_admin_logs(global::System.Int32 admin_logs_id, global::System.String admin_id, global::System.String admin_log_title, global::System.String page_url, global::System.DateTime created_time, global::System.String remark, global::System.Boolean deleted, global::System.Int32 type_id, global::System.String netaddress)
+        {
+            sys_admin_logs sys_admin_logs = new sys_admin_logs();
+            sys_admin_logs.admin_logs_id = admin_logs_id;
+            sys_admin_logs.admin_id = admin_id;
+            sys_admin_logs.admin_log_title = admin_log_title;
+            sys_admin_logs.page_url = page_url;
+            sys_admin_logs.created_time = created_time;
+            sys_admin_logs.remark = remark;
+            sys_admin_logs.deleted = deleted;
+            sys_admin_logs.type_id = type_id;
+            sys_admin_logs.netaddress = netaddress;
+            return sys_admin_logs;
+        }
+
+        #endregion
+
+        #region 基元属性
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 admin_logs_id
+        {
+            get
+            {
+                return _admin_logs_id;
+            }
+            set
+            {
+                if (_admin_logs_id != value)
+                {
+                    Onadmin_logs_idChanging(value);
+                    ReportPropertyChanging("admin_logs_id");
+                    _admin_logs_id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("admin_logs_id");
+                    Onadmin_logs_idChanged();
+                }
+            }
+        }
+        private global::System.Int32 _admin_logs_id;
+        partial void Onadmin_logs_idChanging(global::System.Int32 value);
+        partial void Onadmin_logs_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String admin_id
+        {
+            get
+            {
+                return _admin_id;
+            }
+            set
+            {
+                Onadmin_idChanging(value);
+                ReportPropertyChanging("admin_id");
+                _admin_id = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("admin_id");
+                Onadmin_idChanged();
+            }
+        }
+        private global::System.String _admin_id;
+        partial void Onadmin_idChanging(global::System.String value);
+        partial void Onadmin_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String admin_log_title
+        {
+            get
+            {
+                return _admin_log_title;
+            }
+            set
+            {
+                Onadmin_log_titleChanging(value);
+                ReportPropertyChanging("admin_log_title");
+                _admin_log_title = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("admin_log_title");
+                Onadmin_log_titleChanged();
+            }
+        }
+        private global::System.String _admin_log_title;
+        partial void Onadmin_log_titleChanging(global::System.String value);
+        partial void Onadmin_log_titleChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String page_url
+        {
+            get
+            {
+                return _page_url;
+            }
+            set
+            {
+                Onpage_urlChanging(value);
+                ReportPropertyChanging("page_url");
+                _page_url = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("page_url");
+                Onpage_urlChanged();
+            }
+        }
+        private global::System.String _page_url;
+        partial void Onpage_urlChanging(global::System.String value);
+        partial void Onpage_urlChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String referrer_url
+        {
+            get
+            {
+                return _referrer_url;
+            }
+            set
+            {
+                Onreferrer_urlChanging(value);
+                ReportPropertyChanging("referrer_url");
+                _referrer_url = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("referrer_url");
+                Onreferrer_urlChanged();
+            }
+        }
+        private global::System.String _referrer_url;
+        partial void Onreferrer_urlChanging(global::System.String value);
+        partial void Onreferrer_urlChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.DateTime created_time
+        {
+            get
+            {
+                return _created_time;
+            }
+            set
+            {
+                Oncreated_timeChanging(value);
+                ReportPropertyChanging("created_time");
+                _created_time = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("created_time");
+                Oncreated_timeChanged();
+            }
+        }
+        private global::System.DateTime _created_time;
+        partial void Oncreated_timeChanging(global::System.DateTime value);
+        partial void Oncreated_timeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> updated_time
+        {
+            get
+            {
+                return _updated_time;
+            }
+            set
+            {
+                Onupdated_timeChanging(value);
+                ReportPropertyChanging("updated_time");
+                _updated_time = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("updated_time");
+                Onupdated_timeChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _updated_time;
+        partial void Onupdated_timeChanging(Nullable<global::System.DateTime> value);
+        partial void Onupdated_timeChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String remark
+        {
+            get
+            {
+                return _remark;
+            }
+            set
+            {
+                OnremarkChanging(value);
+                ReportPropertyChanging("remark");
+                _remark = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("remark");
+                OnremarkChanged();
+            }
+        }
+        private global::System.String _remark;
+        partial void OnremarkChanging(global::System.String value);
+        partial void OnremarkChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Boolean deleted
+        {
+            get
+            {
+                return _deleted;
+            }
+            set
+            {
+                OndeletedChanging(value);
+                ReportPropertyChanging("deleted");
+                _deleted = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("deleted");
+                OndeletedChanged();
+            }
+        }
+        private global::System.Boolean _deleted;
+        partial void OndeletedChanging(global::System.Boolean value);
+        partial void OndeletedChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 type_id
+        {
+            get
+            {
+                return _type_id;
+            }
+            set
+            {
+                Ontype_idChanging(value);
+                ReportPropertyChanging("type_id");
+                _type_id = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("type_id");
+                Ontype_idChanged();
+            }
+        }
+        private global::System.Int32 _type_id;
+        partial void Ontype_idChanging(global::System.Int32 value);
+        partial void Ontype_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.String netaddress
+        {
+            get
+            {
+                return _netaddress;
+            }
+            set
+            {
+                OnnetaddressChanging(value);
+                ReportPropertyChanging("netaddress");
+                _netaddress = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("netaddress");
+                OnnetaddressChanged();
+            }
+        }
+        private global::System.String _netaddress;
+        partial void OnnetaddressChanging(global::System.String value);
+        partial void OnnetaddressChanged();
 
         #endregion
 
@@ -2035,7 +3279,8 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <param name="email">email 属性的初始值。</param>
         /// <param name="enabled">enabled 属性的初始值。</param>
         /// <param name="created_time">created_time 属性的初始值。</param>
-        public static sys_administrator Createsys_administrator(global::System.String admin_id, global::System.String display_name, global::System.String password, global::System.String email, global::System.Int32 enabled, global::System.DateTime created_time)
+        /// <param name="deleted">deleted 属性的初始值。</param>
+        public static sys_administrator Createsys_administrator(global::System.String admin_id, global::System.String display_name, global::System.String password, global::System.String email, global::System.Boolean enabled, global::System.DateTime created_time, global::System.Boolean deleted)
         {
             sys_administrator sys_administrator = new sys_administrator();
             sys_administrator.admin_id = admin_id;
@@ -2044,6 +3289,7 @@ namespace Miaow.Infrastructure.Data.DataSys
             sys_administrator.email = email;
             sys_administrator.enabled = enabled;
             sys_administrator.created_time = created_time;
+            sys_administrator.deleted = deleted;
             return sys_administrator;
         }
 
@@ -2179,7 +3425,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 enabled
+        public global::System.Boolean enabled
         {
             get
             {
@@ -2194,8 +3440,8 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OnenabledChanged();
             }
         }
-        private global::System.Int32 _enabled;
-        partial void OnenabledChanging(global::System.Int32 value);
+        private global::System.Boolean _enabled;
+        partial void OnenabledChanging(global::System.Boolean value);
         partial void OnenabledChanged();
     
         /// <summary>
@@ -2249,9 +3495,9 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> deleted
+        public global::System.Boolean deleted
         {
             get
             {
@@ -2266,8 +3512,8 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private Nullable<global::System.Int32> _deleted;
-        partial void OndeletedChanging(Nullable<global::System.Int32> value);
+        private global::System.Boolean _deleted;
+        partial void OndeletedChanging(global::System.Boolean value);
         partial void OndeletedChanged();
 
         #endregion
@@ -2294,7 +3540,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <param name="created_time">created_time 属性的初始值。</param>
         /// <param name="admin_Id">admin_Id 属性的初始值。</param>
         /// <param name="deleted">deleted 属性的初始值。</param>
-        public static sys_controller_action Createsys_controller_action(global::System.String controller_action_id, global::System.Guid controller_id, global::System.String action_id, global::System.DateTime created_time, global::System.String admin_Id, global::System.Int32 deleted)
+        public static sys_controller_action Createsys_controller_action(global::System.String controller_action_id, global::System.String controller_id, global::System.String action_id, global::System.DateTime created_time, global::System.String admin_Id, global::System.Boolean deleted)
         {
             sys_controller_action sys_controller_action = new sys_controller_action();
             sys_controller_action.controller_action_id = controller_action_id;
@@ -2342,7 +3588,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Guid controller_id
+        public global::System.String controller_id
         {
             get
             {
@@ -2352,13 +3598,13 @@ namespace Miaow.Infrastructure.Data.DataSys
             {
                 Oncontroller_idChanging(value);
                 ReportPropertyChanging("controller_id");
-                _controller_id = StructuralObject.SetValidValue(value);
+                _controller_id = StructuralObject.SetValidValue(value, false);
                 ReportPropertyChanged("controller_id");
                 Oncontroller_idChanged();
             }
         }
-        private global::System.Guid _controller_id;
-        partial void Oncontroller_idChanging(global::System.Guid value);
+        private global::System.String _controller_id;
+        partial void Oncontroller_idChanging(global::System.String value);
         partial void Oncontroller_idChanged();
     
         /// <summary>
@@ -2486,7 +3732,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 deleted
+        public global::System.Boolean deleted
         {
             get
             {
@@ -2501,8 +3747,8 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private global::System.Int32 _deleted;
-        partial void OndeletedChanging(global::System.Int32 value);
+        private global::System.Boolean _deleted;
+        partial void OndeletedChanging(global::System.Boolean value);
         partial void OndeletedChanged();
 
         #endregion
@@ -2531,7 +3777,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <param name="created_time">created_time 属性的初始值。</param>
         /// <param name="admin_id">admin_id 属性的初始值。</param>
         /// <param name="deleted">deleted 属性的初始值。</param>
-        public static sys_controllers Createsys_controllers(global::System.String controllers_id, global::System.String controller_display_name, global::System.String controller_name, global::System.String action_name, global::System.Int32 target_blank, global::System.DateTime created_time, global::System.String admin_id, global::System.Int32 deleted)
+        public static sys_controllers Createsys_controllers(global::System.String controllers_id, global::System.String controller_display_name, global::System.String controller_name, global::System.String action_name, global::System.Int32 target_blank, global::System.DateTime created_time, global::System.String admin_id, global::System.Boolean deleted)
         {
             sys_controllers sys_controllers = new sys_controllers();
             sys_controllers.controllers_id = controllers_id;
@@ -2773,7 +4019,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 deleted
+        public global::System.Boolean deleted
         {
             get
             {
@@ -2788,8 +4034,8 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private global::System.Int32 _deleted;
-        partial void OndeletedChanging(global::System.Int32 value);
+        private global::System.Boolean _deleted;
+        partial void OndeletedChanging(global::System.Boolean value);
         partial void OndeletedChanged();
 
         #endregion
@@ -2810,27 +4056,19 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 创建新的 sys_logs 对象。
         /// </summary>
-        /// <param name="admin_id">admin_id 属性的初始值。</param>
         /// <param name="log_id">log_id 属性的初始值。</param>
         /// <param name="log_title">log_title 属性的初始值。</param>
-        /// <param name="page_url">page_url 属性的初始值。</param>
-        /// <param name="created_time">created_time 属性的初始值。</param>
-        /// <param name="remark">remark 属性的初始值。</param>
-        /// <param name="deleted">deleted 属性的初始值。</param>
-        /// <param name="type_Id">type_Id 属性的初始值。</param>
-        /// <param name="netaddress">netaddress 属性的初始值。</param>
-        public static sys_logs Createsys_logs(global::System.String admin_id, global::System.String log_id, global::System.String log_title, global::System.String page_url, global::System.DateTime created_time, global::System.String remark, global::System.Int32 deleted, global::System.Int32 type_Id, global::System.String netaddress)
+        /// <param name="time">time 属性的初始值。</param>
+        /// <param name="thread">thread 属性的初始值。</param>
+        /// <param name="messages">messages 属性的初始值。</param>
+        public static sys_logs Createsys_logs(global::System.Int32 log_id, global::System.String log_title, global::System.DateTime time, global::System.String thread, global::System.String messages)
         {
             sys_logs sys_logs = new sys_logs();
-            sys_logs.admin_id = admin_id;
             sys_logs.log_id = log_id;
             sys_logs.log_title = log_title;
-            sys_logs.page_url = page_url;
-            sys_logs.created_time = created_time;
-            sys_logs.remark = remark;
-            sys_logs.deleted = deleted;
-            sys_logs.type_Id = type_Id;
-            sys_logs.netaddress = netaddress;
+            sys_logs.time = time;
+            sys_logs.thread = thread;
+            sys_logs.messages = messages;
             return sys_logs;
         }
 
@@ -2843,34 +4081,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String admin_id
-        {
-            get
-            {
-                return _admin_id;
-            }
-            set
-            {
-                if (_admin_id != value)
-                {
-                    Onadmin_idChanging(value);
-                    ReportPropertyChanging("admin_id");
-                    _admin_id = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("admin_id");
-                    Onadmin_idChanged();
-                }
-            }
-        }
-        private global::System.String _admin_id;
-        partial void Onadmin_idChanging(global::System.String value);
-        partial void Onadmin_idChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String log_id
+        public global::System.Int32 log_id
         {
             get
             {
@@ -2878,15 +4089,18 @@ namespace Miaow.Infrastructure.Data.DataSys
             }
             set
             {
-                Onlog_idChanging(value);
-                ReportPropertyChanging("log_id");
-                _log_id = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("log_id");
-                Onlog_idChanged();
+                if (_log_id != value)
+                {
+                    Onlog_idChanging(value);
+                    ReportPropertyChanging("log_id");
+                    _log_id = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("log_id");
+                    Onlog_idChanged();
+                }
             }
         }
-        private global::System.String _log_id;
-        partial void Onlog_idChanging(global::System.String value);
+        private global::System.Int32 _log_id;
+        partial void Onlog_idChanging(global::System.Int32 value);
         partial void Onlog_idChanged();
     
         /// <summary>
@@ -2918,192 +4132,72 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String page_url
+        public global::System.DateTime time
         {
             get
             {
-                return _page_url;
+                return _time;
             }
             set
             {
-                Onpage_urlChanging(value);
-                ReportPropertyChanging("page_url");
-                _page_url = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("page_url");
-                Onpage_urlChanged();
+                OntimeChanging(value);
+                ReportPropertyChanging("time");
+                _time = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("time");
+                OntimeChanged();
             }
         }
-        private global::System.String _page_url;
-        partial void Onpage_urlChanging(global::System.String value);
-        partial void Onpage_urlChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String referrer_url
-        {
-            get
-            {
-                return _referrer_url;
-            }
-            set
-            {
-                Onreferrer_urlChanging(value);
-                ReportPropertyChanging("referrer_url");
-                _referrer_url = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("referrer_url");
-                Onreferrer_urlChanged();
-            }
-        }
-        private global::System.String _referrer_url;
-        partial void Onreferrer_urlChanging(global::System.String value);
-        partial void Onreferrer_urlChanged();
+        private global::System.DateTime _time;
+        partial void OntimeChanging(global::System.DateTime value);
+        partial void OntimeChanged();
     
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.DateTime created_time
+        public global::System.String thread
         {
             get
             {
-                return _created_time;
+                return _thread;
             }
             set
             {
-                Oncreated_timeChanging(value);
-                ReportPropertyChanging("created_time");
-                _created_time = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("created_time");
-                Oncreated_timeChanged();
+                OnthreadChanging(value);
+                ReportPropertyChanging("thread");
+                _thread = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("thread");
+                OnthreadChanged();
             }
         }
-        private global::System.DateTime _created_time;
-        partial void Oncreated_timeChanging(global::System.DateTime value);
-        partial void Oncreated_timeChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.DateTime> updated_time
-        {
-            get
-            {
-                return _updated_time;
-            }
-            set
-            {
-                Onupdated_timeChanging(value);
-                ReportPropertyChanging("updated_time");
-                _updated_time = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("updated_time");
-                Onupdated_timeChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _updated_time;
-        partial void Onupdated_timeChanging(Nullable<global::System.DateTime> value);
-        partial void Onupdated_timeChanged();
+        private global::System.String _thread;
+        partial void OnthreadChanging(global::System.String value);
+        partial void OnthreadChanged();
     
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String remark
+        public global::System.String messages
         {
             get
             {
-                return _remark;
+                return _messages;
             }
             set
             {
-                OnremarkChanging(value);
-                ReportPropertyChanging("remark");
-                _remark = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("remark");
-                OnremarkChanged();
+                OnmessagesChanging(value);
+                ReportPropertyChanging("messages");
+                _messages = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("messages");
+                OnmessagesChanged();
             }
         }
-        private global::System.String _remark;
-        partial void OnremarkChanging(global::System.String value);
-        partial void OnremarkChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 deleted
-        {
-            get
-            {
-                return _deleted;
-            }
-            set
-            {
-                OndeletedChanging(value);
-                ReportPropertyChanging("deleted");
-                _deleted = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("deleted");
-                OndeletedChanged();
-            }
-        }
-        private global::System.Int32 _deleted;
-        partial void OndeletedChanging(global::System.Int32 value);
-        partial void OndeletedChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 type_Id
-        {
-            get
-            {
-                return _type_Id;
-            }
-            set
-            {
-                Ontype_IdChanging(value);
-                ReportPropertyChanging("type_Id");
-                _type_Id = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("type_Id");
-                Ontype_IdChanged();
-            }
-        }
-        private global::System.Int32 _type_Id;
-        partial void Ontype_IdChanging(global::System.Int32 value);
-        partial void Ontype_IdChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String netaddress
-        {
-            get
-            {
-                return _netaddress;
-            }
-            set
-            {
-                OnnetaddressChanging(value);
-                ReportPropertyChanging("netaddress");
-                _netaddress = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("netaddress");
-                OnnetaddressChanged();
-            }
-        }
-        private global::System.String _netaddress;
-        partial void OnnetaddressChanging(global::System.String value);
-        partial void OnnetaddressChanged();
+        private global::System.String _messages;
+        partial void OnmessagesChanging(global::System.String value);
+        partial void OnmessagesChanged();
 
         #endregion
 
@@ -3123,15 +4217,15 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 创建新的 sys_role_admin 对象。
         /// </summary>
-        /// <param name="role_sys_admin_id">role_sys_admin_id 属性的初始值。</param>
+        /// <param name="role_admin_id">role_admin_id 属性的初始值。</param>
         /// <param name="admin_id">admin_id 属性的初始值。</param>
         /// <param name="role_id">role_id 属性的初始值。</param>
         /// <param name="created_time">created_time 属性的初始值。</param>
         /// <param name="deleted">deleted 属性的初始值。</param>
-        public static sys_role_admin Createsys_role_admin(global::System.String role_sys_admin_id, global::System.String admin_id, global::System.String role_id, global::System.DateTime created_time, global::System.Int32 deleted)
+        public static sys_role_admin Createsys_role_admin(global::System.String role_admin_id, global::System.String admin_id, global::System.String role_id, global::System.DateTime created_time, global::System.Boolean deleted)
         {
             sys_role_admin sys_role_admin = new sys_role_admin();
-            sys_role_admin.role_sys_admin_id = role_sys_admin_id;
+            sys_role_admin.role_admin_id = role_admin_id;
             sys_role_admin.admin_id = admin_id;
             sys_role_admin.role_id = role_id;
             sys_role_admin.created_time = created_time;
@@ -3148,27 +4242,27 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String role_sys_admin_id
+        public global::System.String role_admin_id
         {
             get
             {
-                return _role_sys_admin_id;
+                return _role_admin_id;
             }
             set
             {
-                if (_role_sys_admin_id != value)
+                if (_role_admin_id != value)
                 {
-                    Onrole_sys_admin_idChanging(value);
-                    ReportPropertyChanging("role_sys_admin_id");
-                    _role_sys_admin_id = StructuralObject.SetValidValue(value, false);
-                    ReportPropertyChanged("role_sys_admin_id");
-                    Onrole_sys_admin_idChanged();
+                    Onrole_admin_idChanging(value);
+                    ReportPropertyChanging("role_admin_id");
+                    _role_admin_id = StructuralObject.SetValidValue(value, false);
+                    ReportPropertyChanged("role_admin_id");
+                    Onrole_admin_idChanged();
                 }
             }
         }
-        private global::System.String _role_sys_admin_id;
-        partial void Onrole_sys_admin_idChanging(global::System.String value);
-        partial void Onrole_sys_admin_idChanged();
+        private global::System.String _role_admin_id;
+        partial void Onrole_admin_idChanging(global::System.String value);
+        partial void Onrole_admin_idChanged();
     
         /// <summary>
         /// 没有元数据文档可用。
@@ -3295,7 +4389,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 deleted
+        public global::System.Boolean deleted
         {
             get
             {
@@ -3310,8 +4404,8 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private global::System.Int32 _deleted;
-        partial void OndeletedChanging(global::System.Int32 value);
+        private global::System.Boolean _deleted;
+        partial void OndeletedChanging(global::System.Boolean value);
         partial void OndeletedChanged();
 
         #endregion
@@ -3338,7 +4432,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <param name="created_time">created_time 属性的初始值。</param>
         /// <param name="admin_id">admin_id 属性的初始值。</param>
         /// <param name="deleted">deleted 属性的初始值。</param>
-        public static sys_role_controller_action Createsys_role_controller_action(global::System.String role_controller_action_id, global::System.String role_id, global::System.String controller_action_id, global::System.DateTime created_time, global::System.String admin_id, global::System.Int32 deleted)
+        public static sys_role_controller_action Createsys_role_controller_action(global::System.String role_controller_action_id, global::System.String role_id, global::System.String controller_action_id, global::System.DateTime created_time, global::System.String admin_id, global::System.Boolean deleted)
         {
             sys_role_controller_action sys_role_controller_action = new sys_role_controller_action();
             sys_role_controller_action.role_controller_action_id = role_controller_action_id;
@@ -3530,7 +4624,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 deleted
+        public global::System.Boolean deleted
         {
             get
             {
@@ -3545,8 +4639,8 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private global::System.Int32 _deleted;
-        partial void OndeletedChanging(global::System.Int32 value);
+        private global::System.Boolean _deleted;
+        partial void OndeletedChanging(global::System.Boolean value);
         partial void OndeletedChanged();
 
         #endregion
@@ -3573,8 +4667,7 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <param name="created_time">created_time 属性的初始值。</param>
         /// <param name="updated_time">updated_time 属性的初始值。</param>
         /// <param name="deleted">deleted 属性的初始值。</param>
-        /// <param name="admin_id">admin_id 属性的初始值。</param>
-        public static sys_roles Createsys_roles(global::System.String role_id, global::System.String role_name, global::System.String system_id, global::System.DateTime created_time, global::System.DateTime updated_time, global::System.Int32 deleted, global::System.String admin_id)
+        public static sys_roles Createsys_roles(global::System.String role_id, global::System.String role_name, global::System.String system_id, global::System.DateTime created_time, global::System.DateTime updated_time, global::System.Boolean deleted)
         {
             sys_roles sys_roles = new sys_roles();
             sys_roles.role_id = role_id;
@@ -3583,7 +4676,6 @@ namespace Miaow.Infrastructure.Data.DataSys
             sys_roles.created_time = created_time;
             sys_roles.updated_time = updated_time;
             sys_roles.deleted = deleted;
-            sys_roles.admin_id = admin_id;
             return sys_roles;
         }
 
@@ -3741,9 +4833,33 @@ namespace Miaow.Infrastructure.Data.DataSys
         /// <summary>
         /// 没有元数据文档可用。
         /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String admin_id
+        {
+            get
+            {
+                return _admin_id;
+            }
+            set
+            {
+                Onadmin_idChanging(value);
+                ReportPropertyChanging("admin_id");
+                _admin_id = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("admin_id");
+                Onadmin_idChanged();
+            }
+        }
+        private global::System.String _admin_id;
+        partial void Onadmin_idChanging(global::System.String value);
+        partial void Onadmin_idChanged();
+    
+        /// <summary>
+        /// 没有元数据文档可用。
+        /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Int32 deleted
+        public global::System.Boolean deleted
         {
             get
             {
@@ -3758,33 +4874,9 @@ namespace Miaow.Infrastructure.Data.DataSys
                 OndeletedChanged();
             }
         }
-        private global::System.Int32 _deleted;
-        partial void OndeletedChanging(global::System.Int32 value);
+        private global::System.Boolean _deleted;
+        partial void OndeletedChanging(global::System.Boolean value);
         partial void OndeletedChanged();
-    
-        /// <summary>
-        /// 没有元数据文档可用。
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.String admin_id
-        {
-            get
-            {
-                return _admin_id;
-            }
-            set
-            {
-                Onadmin_idChanging(value);
-                ReportPropertyChanging("admin_id");
-                _admin_id = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("admin_id");
-                Onadmin_idChanged();
-            }
-        }
-        private global::System.String _admin_id;
-        partial void Onadmin_idChanging(global::System.String value);
-        partial void Onadmin_idChanged();
 
         #endregion
 
